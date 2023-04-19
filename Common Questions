@@ -29,7 +29,46 @@ In my free time, I enjoy staying up-to-date with the latest technologies and tre
 I also enjoy contributing to open-source projects and 
 attending tech meetups and conferences to network with other developers and learn from their experiences."
 
+//////////////////////////////////////////////////////////////Project Question 
+Here are some common interview questions that a software developer might be asked about their projects:
 
+Can you tell me about a project you worked on that you're particularly proud of?
+What was your role on the project, and what specific contributions did you make?
+What challenges did you face while working on the project, and how did you overcome them?
+Can you walk me through the architecture and design of the project?
+How did you ensure that the project met the requirements and specifications provided by the client or stakeholders?
+How did you approach testing and quality assurance for the project?
+What technologies or programming languages did you use on the project, and why did you choose them?
+How did you collaborate with other team members or stakeholders on the project?
+Can you provide examples of how the project impacted the end-users or stakeholders?
+Looking back on the project, what would you have done differently, and why?
+
+
+////////////////////////////////////////////
+Can you tell me about a project you worked on that you're particularly proud of?
+
+"One project that I'm particularly proud of is a mobile app that I developed for a local non-profit organization.
+The app was designed to help the organization streamline their volunteer management process, which was previously being done manually using spreadsheets 
+and paper forms.
+
+As the lead developer on the project, I worked closely with the client to gather their requirements and specifications.
+I designed the app's user interface and developed the app using React Native, which allowed us to create a cross-platform app that worked on both iOS
+and Android devices.
+
+One of the biggest challenges we faced on the project was integrating the app with the organization's existing backend system, 
+which was built on a different technology stack. To overcome this challenge, I worked with the backend team to design and 
+implement a RESTful API that allowed the app to securely access and update the organization's database.
+
+After several rounds of testing and quality assurance, we launched the app and received very positive feedback from the client 
+and their volunteers. The app made it much easier for volunteers to sign up for events, track their hours, and 
+communicate with the organization, which ultimately led to an increase in volunteer engagement and retention.
+
+Overall, I'm very proud of this project because it allowed me to use my technical skills to create a solution that had a real impact on the organization 
+and its volunteers."
+
+
+
+////////////////////////////////////
 
 ///////////////////////////////What is your greatest strength?
 
