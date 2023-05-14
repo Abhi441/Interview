@@ -26,7 +26,7 @@
 25>Tell me about a time you had to handle pressure.
 26>Do you have any questions for me?
 
-///////////////////////Tell me about yourself.
+1>///////////////////////Tell me about yourself.
 Hi My name is Abhishek."I'm a software developer with a degree in computer science and having 1.7 years of experience in the industry.
 I have a strong technical background 
 and am proficient in a variety of Technology including c#,.netcore,WebApi,Mvc,Sql,Angular,TypeScript. 
@@ -47,6 +47,17 @@ Designing a database schema to store user data and database changes,
  And Implementing user authentication and authorization,'
  Also involve in several rounds of testing befor going to QA and UAT region.
 
+2>////////////////////////////Strenth
+"My greatest strength as a software developer is my problem-solving skills. I love tackling complex problems and coming up with innovative solutions. 
+I have a strong technical background in several programming languages and development methodologies, which helps me to analyze problems from multiple angles
+and find the best solution.
+
+In addition to my technical expertise, I also have excellent attention to detail. I am able to identify errors and bugs in my code quickly and take the
+necessary steps to correct them. This ensures that the software I develop is of high quality and meets the requirements of the project.
+
+I also believe that communication is essential in software development. I am able to communicate effectively with other team members, listen actively, 
+and collaborate to ensure that projects are completed successfully. Overall, my problem-solving skills, attention to detail, and communication skills make me 
+a valuable asset to any software development team."
 ////////////////////////////////////////Weakness
 public speaking skill makes me nervous although I don't need public speaking for my role as software Engineer but I still think it's an important
 skill especially when I want to
