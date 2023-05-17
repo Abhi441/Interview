@@ -11,6 +11,24 @@ When do you choose classic ASP.NET MVC over ASP.NET Core?
 
 What is a web application framework, and what are its benefits?
 
+///////////////////////////////////////////////////////////////////////// Get Started
+
+What is Kestrel and what are advantages of Kestrel in Asp.Net Core?
+
+What is the difference between IIS and Kestrel? Why do we need two web servers?
+
+What is the purpose of launchSettings.json in asp.net core?
+
+What is generic host or HostBuilder in .NET Core?
+
+What is the purpose of the .csproj file?
+
+What is IIS?
+
+What is the “Startup” class in ASP.NET core prior to Asp.Net Core 6?
+
+What does WebApplication.CreateBuilder() do?
+
 /////////////////////////////////////////////HTTP
 What is HTTP?
 
