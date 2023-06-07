@@ -1,2 +1,6 @@
 Q> Why we arenot using file Like XML.
 Q> What is Concurrency.
+Q> What is Diffrence between Union and Join.
+https://www.youtube.com/watch?v=8nb_CVmjBrI.
+-> UNOIN : - 1> Number of Column must be same for both select statement.
+2>The colomn must be same datatype.
