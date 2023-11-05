@@ -1,0 +1,43 @@
+// Original class violating SRP
+public class User
+{
+    public string Name { get; set; }
+    public string Email { get; set; }
+
+    // Methods for managing user data
+    public void SaveUserToDatabase()
+    {
+        // Code to save user to the database
+    }
+
+    // Methods for sending email notifications
+    public void SendEmailNotification(string message)
+    {
+        // Code to send email
+    }
+}
+
+// Refactored classes following SRP
+public class User
+{
+    public string Name { get; set; }
+    public string Email { get; set; }
+}
+
+public class UserManager
+{
+    // Methods for managing user data
+    public void SaveUserToDatabase(User user)
+    {
+        // Code to save user to the database
+    }
+}
+
+public class EmailService
+{
+    // Methods for sending email notifications
+    public void SendEmailNotification(User user, string message)
+    {
+        // Code to send email
+    }
+}
