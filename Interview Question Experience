@@ -34,3 +34,104 @@ Repository Pattern
 OOps 
 Solid Pattern
 
+///////////////////////////////Gagan
+Q> What is Threading in C# ?
+
+Multithreading in C# is a process in which multiple threads work simultaneously. 
+It is a process to achieve multitasking. It saves time because multiple tasks are being executed at a time.
+To create multithreaded application in C#, we need to use System.Threding namespace.
+
+Q> What is diffence between PUT And Patch 
+
+
+User
+What is the diffence between Put And Patch 
+ChatGPT
+PUT and PATCH are two HTTP methods used in RESTful API design, and they serve different purposes.
+
+PUT:
+
+The PUT method is used to update or create a resource at a specific URI (Uniform Resource Identifier).
+When a client sends a PUT request, it typically includes the full representation of the resource in the request body.
+If the resource exists at the specified URI, the PUT request will update it with the new representation provided in the request body.
+If the resource does not exist, a new resource will be created at the specified URI with the provided representation.
+Example:
+
+http
+Copy code
+PUT /users/123
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "age": 30
+}
+In this example, the resource representing user with ID 123 is either updated with the new data or created if it doesn't exist.
+
+PATCH:
+
+The PATCH method is used to apply partial modifications to a resource.
+When a client sends a PATCH request, it includes only the changes to the resource, not the full representation.
+PATCH is useful when you want to update specific fields of a resource without sending the entire representation.
+Example:
+
+http
+Copy code
+PATCH /users/123
+Content-Type: application/json
+
+{
+  "age": 31
+}
+In this example, the resource representing user with ID 123 is updated by changing the value of the "age" field to 31. Other fields, if they exist, are not affected unless explicitly specified.
+
+In summary, PUT is used for updating or creating a resource with a full representation, while PATCH is used for applying partial modifications to a resource. The choice between them depends on the specific requirements of the API and the desired behavior for updating resources.
+
+User
+can you explain this once again
+ChatGPT
+Certainly! Let's break down the differences between PUT and PATCH in a simpler way:
+
+PUT:
+
+Purpose: Updating or creating a resource at a specific location (URI).
+
+Request Body: The client sends the complete representation of the resource in the request body.
+
+Effect: If the resource exists at the specified URI, it's updated with the full data provided in the request body. If it doesn't exist, a new resource is created.
+
+Example:
+
+http
+Copy code
+PUT /users/123
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "age": 30
+}
+This updates or creates a user with ID 123, setting their name to "John Doe" and age to 30.
+
+PATCH:
+
+Purpose: Applying partial modifications to a resource.
+
+Request Body: The client sends only the changes to the resource, not the complete representation.
+
+Effect: The resource is updated with the specific changes provided in the request body. Other fields are unaffected unless explicitly mentioned.
+
+Example:
+
+http
+Copy code
+PATCH /users/123
+Content-Type: application/json
+
+{
+  "age": 31
+}
+This updates the user with ID 123, changing only the age to 31. Other fields remain unchanged unless included in the request.
+
+In short, PUT is for complete updates or creation with full data, while PATCH is for partial updates where only specific changes are applied to the resource.
+The choice between them depends on whether you want to send the entire data or just the changes when modifying a resource.
