@@ -135,3 +135,12 @@ This updates the user with ID 123, changing only the age to 31. Other fields rem
 
 In short, PUT is for complete updates or creation with full data, while PATCH is for partial updates where only specific changes are applied to the resource.
 The choice between them depends on whether you want to send the entire data or just the changes when modifying a resource.
+
+////////////////////////
+cts in sql
+temp table in sql
+middleware
+type of routing in sql
+direct and indirect in Ado.net
+cluster and non cluster in sql
+
