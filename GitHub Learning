@@ -5,3 +5,5 @@
 5> All the commit that have made in History : git log
 6> To Delete this file : rm -rf filename
 7>if I want that my git show till date file on github I want to put all the above files in unstaging area : git reset 
+8>if I want that Whatever I am adding it will go to backStage , whenever it required I will add it : Git stash 
+9> those who are backside come to staging area : git stash pop
