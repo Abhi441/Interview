@@ -7,3 +7,7 @@
 7>if I want that my git show till date file on github I want to put all the above files in unstaging area : git reset 
 8>if I want that Whatever I am adding it will go to backStage , whenever it required I will add it : Git stash 
 9> those who are backside come to staging area : git stash pop
+10> when you pushing it goes to master : git push origin master.
+11> when you do not have access of any git reposetary : fist Fork it , it will come to your account , then you can clone it.
+12> Whenever you are working on new bug create new branch : git branch kunal
+13> git checked kunal : Mian is pointng to kunal
