@@ -11,3 +11,4 @@
 11> when you do not have access of any git reposetary : fist Fork it , it will come to your account , then you can clone it.
 12> Whenever you are working on new bug create new branch : git branch kunal
 13> git checked kunal : Mian is pointng to kunal
+14>if you want to do unstage file from gihub : git reset ase456789gfth678934rfgyhji00 
