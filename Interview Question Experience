@@ -152,3 +152,20 @@ where is root component is available
 Lasy Loading in Angular
 Observable and observer 
 
+
+///////////////////////////////////////////////////////////////////////////////////////Interview Question From Google
+What is Partial class in C#?
+
+Once we create a class we can not create a second one with the same name, unless they are in different namespaces. So, Microsoft decided to change this, with the introduction of something called partial classes.
+
+This means that by using the partial classes we can create 2 classes with the same name within the same namespace.
+
+With Partial Classes multiple developers can work simultaneously with a single class in separate files
+
+Q> What is Model Binding ?
+The Model binding will take the data as input it will find the exact name of properties that using in asp.netcore and it will bind the data
+The process of binding the HTTP Request data to the parameters of application Controllers or Properties is know as Model Binding.
+There are lots of built-in methods and atttributes for model binder.
+
+
+
