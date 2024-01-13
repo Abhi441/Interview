@@ -1,10 +1,32 @@
-//Tell me about your self
+///////////////////Tell me about your self (Making you comfortable)
 
-//About your current Project ?
+/////////////////////////About your current Project ?
+1> High Level Functionality INfo
+2>Domain
+3>Technology
+4>Model
+
+
 => Highlevel use of enduser(cleratity)
 currently I am working in Business Profiler. It is Business Domain Project .Objective of project is
 =>Roles and responsobility in your project
+/////////////////////////////////////////Roles and responsibility in Project?
+1>Estimation
+2>Design
+3>Development
+4>Unit Test Cases
+5>Deployment
+6>Bug Fixing
+As full stack .net developer my role estamate the story, requirement , creating the design,development , unit test cases , finally changes publish in the diffrent enviroment
+and also I am providing the support to production while fixing bugs.
+ 
+//////////////////////////////////////////////////Technical design of project
+// Do not speak any word those who do not know.
+  My Project is Three Thir Artitecture as .netCore We are using Dependecies injection to injecting the services Ado.net for database , active directory and JWT token for authentication and autorization  , Azure app insights for logging purpose and X unit for unit test cases and we follows solid principle to achieve Loosely coupled design so 
 
+//////////////////////////////Rate you self in c#
+always rate inbetween of 6 to 9
 
-//At last movement of project delivery, the requiremnt is changes ?
+////////////////////////////////////////
+At last movement of project delivery, the requiremnt is changes ?
 I will be their with team with when difficukt sitution will come.
