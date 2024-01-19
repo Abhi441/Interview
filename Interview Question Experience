@@ -177,6 +177,16 @@ There are lots of built-in methods and atttributes for model binder.
 4>logging
 5>ddl and dml
 6>window functions
+7> Explain how logging works in Asp.Net Core?
+Logging is a way of recording what happens in your application, such as errors, warnings, or information. Logging can help you debug and troubleshoot problems, as well as monitor the performance and behavior of your application.
+
+In ASP.NET Core, logging is done by using an ILogger<TCategoryName> object, where TCategoryName is the name of the class or component that is logging. You can get an ILogger<TCategoryName> object from dependency injection (DI), which is a technique for creating and managing objects in your application.
+
+To log something, you call one of the methods of the ILogger<TCategoryName> object, such as LogInformation, LogWarning, or LogError. These methods take a message and optionally some parameters, and write them to one or more logging providers. Logging providers are components that store or display the logs, such as the console, a file, or a database.
+
+You can configure logging by using the Logging section of the appsettings.json file, or by using code in the Program.cs file. You can specify which logging providers to use, what level of logging to use for each provider, and what categories of logs to include or exclude.
+
+For more information on logging in ASP.NET Core, you can check out these resources:
 
 
 
