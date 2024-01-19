@@ -188,6 +188,24 @@ You can configure logging by using the Logging section of the appsettings.json f
 
 For more information on logging in ASP.NET Core, you can check out these resources:
 
+8>What is diffrence between layer artitecture and 3 tire artitecture , what is advantages.Which one is using in your project.
+9>Singalton design patter.
+//why we are creating singlaton design pattern,instead of object.
+10>Diffrence between Scoped and transient.
+11>Two Method name is used in Startup.cs file.
+12>How does you right Authentication in Program.cs file
+13>How does partial class compiles if same name with two class .
+13>What is global exceptional handling.
+13>Excecution of catch block.
+13>What is use of cts.
+13>What is datatime table, where does it store.
+15>Write the basic syntax of store procedure.
+16>excution flow of sql.
+14>What is intercept.
+15>Cogfiguration.Json file.
+16>What is last life cycle in Angular.
+17>Where does we configure any thing.
+
 
 
 
