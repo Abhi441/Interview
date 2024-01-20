@@ -191,13 +191,273 @@ For more information on logging in ASP.NET Core, you can check out these resourc
 8>What is diffrence between layer artitecture and 3 tire artitecture , what is advantages.Which one is using in your project.
 9>Singalton design patter.
 //why we are creating singlaton design pattern,instead of object.
+The Singleton design pattern is used to ensure that a class has only one instance and provides a global point of access to that instance. There are several reasons why you might choose to use the Singleton pattern instead of creating multiple instances of a class:
+
+Global Access Point:
+
+A Singleton provides a centralized point of access to its instance. This is useful when exactly one object is needed to coordinate actions across the system.
+Resource Sharing:
+
+If multiple instances of a class would share and modify the same resource, a Singleton pattern ensures that all modifications are done through the same instance, preventing conflicts and ensuring consistency.
+Resource Management:
+
+In some cases, creating multiple instances of a class might be resource-intensive or inefficient. Using a Singleton ensures that there is only one instance, saving resources.
+Configuration Management:
+
+Singletons are often used for managing configuration settings or global application state. Having a single instance makes it easy to maintain and manage these settings.
+Lazy Initialization:
+
+With a Singleton, you can implement lazy initialization, meaning the instance is created only when it is first requested. This can be beneficial for performance, especially if the initialization process is resource-intensive.
+Prevention of Multiple Instances:
+
+Some classes are designed to have only one instance due to their nature or purpose. The Singleton pattern enforces this constraint and ensures that there is only one instance of the class.
+Managing Shared Resources:
+
+In scenarios where multiple parts of the application need to share the same resource, a Singleton provides a way to centralize access and modifications to that resource.
+Maintaining State:
+
+Singletons are often used to maintain a consistent state across the application. Any changes made to the state are reflected in a single instance.
+However, it's important to note that the Singleton pattern also has its drawbacks, such as potential for global state, difficulty in testing, and limited flexibility in certain scenarios. Therefore, it's essential to carefully consider whether the Singleton pattern is appropriate for a particular use case.
 10>Diffrence between Scoped and transient.
+In ASP.NET Core, services (like classes or components that provide certain functionality) can be registered with different lifetimes, and two common lifetimes are "Scoped" and "Transient." Let's break down the difference between them in simpler terms:
+
+Transient:
+What it means:
+
+A service with a transient lifetime is created every time it is requested or injected.
+It is short-lived and a new instance is provided whenever someone needs it.
+Example:
+
+Think of it like ordering a cup of coffee. Each time you ask for coffee, you get a new cup. The cups are not shared; they are independent.
+Scoped:
+What it means:
+
+A service with a scoped lifetime is created once per request.
+It lives throughout the duration of a single HTTP request. If something requests the service multiple times during the same request, it gets the same instance.
+Example:
+
+Imagine you are at a restaurant, and the waiter gives you a menu when you sit down. Throughout your meal, you use the same menu. The menu is specific to your "scope" (your table and your dining experience).
+Summary:
+Transient:
+
+Created every time requested.
+Short-lived, not shared.
+New instance for each request.
+Scoped:
+
+Created once per request.
+Lives throughout a single request.
+Shared within the same request scope.
+In practical terms, if a service doesn't need to maintain state or share information across different parts of the application, and it's okay to create a new instance each time it's requested, then you might use a transient lifetime.
+
+If a service needs to maintain state or share information within the same request (for example, across different components processing the same HTTP request), you might use a scoped lifetime.
 11>Two Method name is used in Startup.cs file.
-12>How does you right Authentication in Program.cs file
-13>How does partial class compiles if same name with two class .
-13>What is global exceptional handling.
-13>Excecution of catch block.
-13>What is use of cts.
+In a typical ASP.NET Core application, the Startup.cs file is used to configure various aspects of your web application, such as setting up services and defining how the application should respond to HTTP requests. In the Startup.cs file, there are two important methods: ConfigureServices and Configure.
+
+ConfigureServices:
+What it does:
+
+This method is responsible for configuring the services that your application will use.
+Services can be things like database connections, authentication mechanisms, or other components that your application needs to function.
+Why it's important:
+
+It's where you "register" or "configure" the services that your application will use.
+This method is called by the framework during application startup.
+Example:
+
+If your application needs to connect to a database, you might configure a database service here.
+Configure:
+What it does:
+
+This method is responsible for setting up how your application responds to HTTP requests.
+It defines the middleware pipeline, which are components that process requests and responses as they flow through the application.
+Why it's important:
+
+It's where you define how the application handles requests, what kind of responses it sends, and what processing happens in between.
+Example:
+
+You might use this method to set up authentication, define routes, or add other middleware components.
+Summary:
+ConfigureServices:
+
+Configures services that your application will use.
+Called at application startup.
+Configure:
+
+Configures how your application responds to HTTP requests.
+Defines the middleware pipeline.
+Also called at application startup.
+In simpler terms, ConfigureServices is where you say, "Hey, application, these are the services we're going to need," and Configure is where you say, "Alright, application, this is how we're going to handle requests and responses." Both methods play a crucial role in setting up and configuring your ASP.NET Core application.
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////12>How does you right Authentication in Program.cs file
+/////////////////////////////////////////////////////////////////////////13>How does partial class compiles if same name with two class .
+What it is:
+
+A partial class in C# is a way to split the definition of a class into multiple files.
+Why it's useful:
+
+It allows developers to organize and manage large classes by dividing them into smaller, more manageable parts.
+How it works:
+
+When you define a class as partial (partial class MyClass), you can spread the class definition across multiple files.
+Each file contains a part of the class. All parts together make up the complete class.
+During compilation, the C# compiler combines all the parts into a single class.
+Example:
+csharp
+Copy code
+// File1.cs
+partial class MyClass
+{
+    public void Method1()
+    {
+        // Code for Method1
+    }
+}
+
+// File2.cs
+partial class MyClass
+{
+    public void Method2()
+    {
+        // Code for Method2
+    }
+}
+
+// Main.cs
+class Program
+{
+    static void Main()
+    {
+        MyClass myObject = new MyClass();
+        myObject.Method1();
+        myObject.Method2();
+    }
+}
+In this example, MyClass is split into two files (File1.cs and File2.cs). Each file has a part of the class. When the program is compiled, the compiler combines both parts into a single MyClass definition.
+
+Benefits:
+Organization:
+
+Helps keep large classes organized by spreading their code across multiple files.
+Separation of Concerns:
+
+Each file can focus on a specific aspect or functionality of the class.
+Collaboration:
+
+Useful in scenarios where different developers work on different parts of the same class.
+Summary:
+Partial classes in C# allow you to split the definition of a class into multiple files for better organization and management.
+During compilation, the parts of the class from different files are combined to create the complete class.
+
+////////////////////////////////////////////////////////////////////////////////////////////////13>What is global exceptional handling.
+
+Sure, let's break down the concept of global exception handling in simple terms:
+
+Global Exception Handling:
+What it is:
+
+Global exception handling is a way to deal with unexpected errors or issues that may occur in your entire application.
+Why it's useful:
+
+It provides a centralized mechanism to handle errors, making it easier to manage and log unexpected situations.
+How it works:
+
+When an error occurs anywhere in your application (during the execution of code), the global exception handling mechanism captures it before it crashes the program.
+Instead of letting the error propagate and potentially cause the application to stop, you can define a set of actions to take when an error occurs.
+Example:
+csharp
+Copy code
+class Program
+{
+    static void Main()
+    {
+        try
+        {
+            // Code that might throw an exception
+            int result = Divide(10, 0);
+            Console.WriteLine("Result: " + result);
+        }
+        catch (Exception ex)
+        {
+            // Global exception handling
+            Console.WriteLine("An error occurred: " + ex.Message);
+        }
+    }
+
+    static int Divide(int a, int b)
+    {
+        // Division operation that might throw an exception
+        return a / b;
+    }
+}
+In this example, the Divide method attempts to perform a division operation, which could lead to an exception if b is zero. The try-catch block in the Main method captures any exception that occurs during the execution of the code.
+
+Benefits:
+Centralized Handling:
+
+All exceptions can be handled in one central place in your application.
+Prevent Crashes:
+
+Helps prevent the entire application from crashing due to unhandled exceptions.
+Logging and Reporting:
+
+Allows you to log error details, report issues, or take other actions when an unexpected situation occurs.
+Summary:
+Global exception handling is like having a safety net for your application. It catches unexpected errors, preventing them from causing the entire application to crash. This mechanism provides a way to gracefully handle errors, log relevant information, and potentially recover from certain issues.
+
+/////////////////////////////////////////////////////////////////////////////////////////13>Excecution of catch block.
+
+In most programming languages, including C# (which is commonly used in ASP.NET Core), the catch blocks are evaluated in the order in which they appear. The first catch block that matches the type of the thrown exception is executed, and subsequent catch blocks are ignored.
+
+Here is an example in C#:
+
+csharp
+Copy code
+try
+{
+    // Code that might throw an exception
+    int result = Divide(10, 0);
+    Console.WriteLine("Result: " + result);
+}
+catch (DivideByZeroException ex)
+{
+    Console.WriteLine("Caught DivideByZeroException: " + ex.Message);
+}
+catch (ArithmeticException ex)
+{
+    Console.WriteLine("Caught ArithmeticException: " + ex.Message);
+}
+catch (Exception ex)
+{
+    Console.WriteLine("Caught general Exception: " + ex.Message);
+}
+In this example, if the Divide method throws a DivideByZeroException, the first catch block will be executed, and the subsequent catch blocks will be skipped.
+
+It's important to order your catch blocks from the most specific exception type to the more general ones. If you have a catch block for a more general exception type before a more specific one, the more general block will catch the exception, and subsequent blocks will be ignored.
+
+csharp
+Copy code
+try
+{
+    // Code that might throw an exception
+    int result = Divide(10, 0);
+    Console.WriteLine("Result: " + result);
+}
+catch (Exception ex)
+{
+    Console.WriteLine("Caught general Exception: " + ex.Message);
+}
+catch (DivideByZeroException ex)
+{
+    Console.WriteLine("Caught DivideByZeroException: " + ex.Message);  // This block will never be reached
+}
+In this case, the catch block for Exception will catch the exception, and the more specific DivideByZeroException block will be ignored. Therefore, it's crucial to order catch blocks appropriately based on the exception hierarchy.
+
+///////////////////////////////////////////////////////////////////////13>What is use of cts.
+
+
 13>What is datatime table, where does it store.
 15>Write the basic syntax of store procedure.
 16>excution flow of sql.
@@ -205,6 +465,13 @@ For more information on logging in ASP.NET Core, you can check out these resourc
 15>Cogfiguration.Json file.
 16>What is last life cycle in Angular.
 17>Where does we configure any thing.
+/////////////////
+Graph
+DP
+Pririty Ques
+Array 
+HashMap
+String
 
 
 
