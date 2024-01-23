@@ -473,7 +473,8 @@ GO
 ///////////////////////////////////////////////////16>excution flow of sql.
 FROM>WHERE>GROUP BY >HAVING > SELECT > ORDER BY > LIMIT.
 
-14>What is intercept.
+///////////////////////////////////////////////////////14>What is interceptor.
+An interceptor is a service that can modify or handle the HTTP requests and responses that are sent or received by your Angular application.
 15>Cogfiguration.Json file.
 16>What is last life cycle in Angular.
 17>Where does we configure any thing.
