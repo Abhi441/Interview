@@ -459,8 +459,20 @@ In this case, the catch block for Exception will catch the exception, and the mo
 
 
 13>What is datatime table, where does it store.
-15>Write the basic syntax of store procedure.
-16>excution flow of sql.
+/////////////////////////////////////////////////////////////////////15>Write the basic syntax of store procedure.
+CREATE PROCEDURE procedure_name
+    @parameter1 datatype,
+    @parameter2 datatype,
+    ...
+AS
+    -- SQL statements to define the stored procedure logic
+    -- This can include SELECT, INSERT, UPDATE, DELETE, and more
+
+GO
+
+///////////////////////////////////////////////////16>excution flow of sql.
+FROM>WHERE>GROUP BY >HAVING > SELECT > ORDER BY > LIMIT.
+
 14>What is intercept.
 15>Cogfiguration.Json file.
 16>What is last life cycle in Angular.
