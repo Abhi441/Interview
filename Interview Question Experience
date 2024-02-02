@@ -486,8 +486,9 @@ Array
 HashMap
 String
 ////////////////////////////
-Associate in Sql 
-Serialisation and deserialisation
+//////////////////////////////////////////////////////////////////////////Associate in Sql
+aggregate functions include: AVG, COUNT, SUM, MIN, MAX. 
+////////////////////////////////////////////////////Serialisation and deserialisation
 Json
 Groupby stntax
 post,put ,delect.
