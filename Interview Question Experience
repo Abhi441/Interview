@@ -492,6 +492,10 @@ aggregate functions include: AVG, COUNT, SUM, MIN, MAX.
 Json
 Groupby stntax
 post,put ,delect.
+/////////////////////////Advantage of Enum
+1>readability
+2>Maintainability
+3>
 
 
 
