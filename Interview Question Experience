@@ -496,6 +496,11 @@ post,put ,delect.
 1>readability
 2>Maintainability
 3>
-
-
+////////////////////Difference between var and dynamic in C#
+////////////Var
+--->If the variable does not initialized it throw an error.
+---->returning values from the function. It can only used as a local variable in function.
+/////Dynamic
+----->If the variable does not initialized it will not throw an error.
+----->It can be used for properties or returning values from the function.
 
