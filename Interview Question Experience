@@ -533,17 +533,10 @@ foreach (var num in evenNumbers)
 
 ///////////////////////////////////////////////////Diffrent type of LINQ
 1> LINQ to Objects: allows you to query in-memory collections, such as arrays, lists, dictionaries, and other 
-IEnumerable<T> implementations.
+IEnumerable<T> implementations
 
-
-4>
-
-
-
-
-
-
-You can achieve this using LINQ.
+2>LINQ to Entities (Entity Framework Core): Allow data in relational databases using Entity Framework Core.
+Allow conceptual model mapped to database tables.
 
 
 
