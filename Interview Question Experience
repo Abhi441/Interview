@@ -538,5 +538,9 @@ IEnumerable<T> implementations
 2>LINQ to Entities (Entity Framework Core): Allow data in relational databases using Entity Framework Core.
 Allow conceptual model mapped to database tables.
 
+3>LINQ to SQL:
+4>LINQ to XML:
+5>LINQ to DataSet:
+
 
 
