@@ -503,4 +503,47 @@ post,put ,delect.
 /////Dynamic
 ----->If the variable does not initialized it will not throw an error.
 ----->It can be used for properties or returning values from the function.
+//////////////////////////////////What is LINQ , Diffrent type of LINQ.
+LINQ allow you to query and manipulate data using a SQL-like syntax directly within your c# or VB.NET code making
+data access and manipulation more intuitive and efficient.
+
+Example : Suppose you have a list of numbers and you want to filter out only the even numbers from it. 
+
+1> Create a List of Numbers: First, let's create a list of numbers in C#:
+
+List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+2> Write a LINQ Query: Next, you write a LINQ query to filter out the even numbers:
+
+var evenNumbers = from num in numbers
+                  where num % 2 == 0
+                  select num;
+
+In this query:
+
+from num in numbers specifies the data source (the list of numbers).
+where num % 2 == 0 filters out only the even numbers.
+select num selects the even numbers from the list.
+
+3> Iterate Over the Result: Finally, you can iterate over the result and perform further operations if needed:
+foreach (var num in evenNumbers)
+{
+    Console.WriteLine(num);
+}
+
+///////////////////////////////////////////////////Diffrent type of LINQ
+1> LINQ to Objects: allows you to query in-memory collections, such as arrays, lists, dictionaries, and other 
+IEnumerable<T> implementations.
+
+
+4>
+
+
+
+
+
+
+You can achieve this using LINQ.
+
+
 
