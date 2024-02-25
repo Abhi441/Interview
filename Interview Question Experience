@@ -750,6 +750,22 @@ Code Readability : List provides clear type specification to improved readabilit
 
 Performance : List performs better as it avoids boxing/unboxing.
 
+/////////////////////////////Principle of Rest API
+1> Client-Server Architecture : In our example, the client will be a web browser or a mobile application, while the server will be
+an ASP.NET Core web application hosting the RESTful API.
+
+Statelessness:
+Each HTTP request from the client to the server will contain all the information needed for the server to process the request. For example, when creating a new blog post, the request will 
+include the post data (title, content, etc.), and the server will process the request based on this information.
+2> Uniform Interface:
+We'll use standard HTTP methods to perform CRUD operations on resources. For example:
+GET /api/posts to retrieve all blog posts.
+POST /api/posts to create a new blog post.
+PUT /api/posts/{id} to update an existing blog post.
+DELETE /api/posts/{id} to delete a blog post.
+
+
+
 
 
 
