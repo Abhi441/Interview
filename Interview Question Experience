@@ -719,4 +719,19 @@ Uses:
 Class: Classes are commonly used to model complex entities with behavior and state.
 Struct: Structs are often used for lightweight objects that represent simple data structures
 
+////////////////////////////////////////////////////What is the Diffrence Between Generic Vs Non Generic
+Collection are categorized into two parts Generic and Non Generics
+Generic Collection :
+Type Safety : Generic collections provide strong type safety.
+Usability : Generic collections are more user-friendly because they eliminate the need for explicit casting.
+Performance : Generic collections are generally more efficient in terms of both execution speed and memory
+because they avoid the overhead of boxing and unboxing.
+
+Non-Generic Collection:
+Type Safety : Non-generic collections are not type-safe because they store elements as object types.
+Usability : Non-generic collections are less user-friendly because they involve casting and boxing/unboxing.
+Performance : Non-generic collections may have performance overhead due to the need for boxing (converting value types to reference types) and unboxing
+(converting reference types back to value types).
+
+
 
