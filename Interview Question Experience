@@ -733,5 +733,23 @@ Usability : Non-generic collections are less user-friendly because they involve 
 Performance : Non-generic collections may have performance overhead due to the need for boxing (converting value types to reference types) and unboxing
 (converting reference types back to value types).
 
+////////////////////////////////////////////////What is diffrence between ArrayLIst and List
+//ArraList :
+Type Safety : ArrayList is not type-safe as it can store any type of object.
+Performance: ArrayList may be slower due to boxing/unboxing.
+Code Readability : ArrayList may require explicit type casting.
+.NET Version : ArrayList was introduced in earlier versions of .NET framework (2.0)
+Flexibility : List can only store elements of the specified type.
+//List
+Type Safety : List is Type-safe as it can store elements of a specific type only.
+Performance : List performs better as it avoids boxing/unboxing.
+.NET Version : List was introduced in .NET 3.0
+Flexibility : ArrayList can store elements of any type.
+
+Code Readability : List provides clear type specification to improved readability.
+
+Performance : List performs better as it avoids boxing/unboxing.
+
+
 
 
