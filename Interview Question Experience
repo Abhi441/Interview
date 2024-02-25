@@ -705,4 +705,18 @@ Controllers and views are created for displaying recipes and handling user login
 Authorization attributes like [Authorize] and [AllowAnonymous] are used to restrict access to certain actions.
 Views are created to display website pages, such as the recipe index and login page.
 
-////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////What is Diffrence between Struct and Class
+Definition:
+Class: A class is a reference type.
+Struct: A struct is a value type.
+Inheritance:
+Class: Classes support inheritance.
+Struct: Structs do not support inheritance.
+Performance:
+Class: Because classes are reference types, they are allocated on the heap.accessing them involves an extra level
+Struct: Structs are value types, and they are typically allocated on the stack.Accessing struct members is generally faster than accessing class members.
+Uses:
+Class: Classes are commonly used to model complex entities with behavior and state.
+Struct: Structs are often used for lightweight objects that represent simple data structures
+
+
