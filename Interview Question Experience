@@ -801,6 +801,14 @@ Specific type
 Array Size is not fixed
 Elements can be added/removed at runtime.
 
+////////////////////////////////What is Jagged Array
+A jagged array in C# is an array whose elements are arrays. The elements of a jagged array can be of different dimensions and sizes.
+A jagged array is sometimes called an "array of arrays." A special type of array is introduced in C#.
+A Jagged Array is an array of an array in which the length of each array index can differ.
+
+Example: Movies Counter
+
+Uses : you have a data structure where the size of each "inner" array varies.
 
 
 
