@@ -764,6 +764,44 @@ POST /api/posts to create a new blog post.
 PUT /api/posts/{id} to update an existing blog post.
 DELETE /api/posts/{id} to delete a blog post.
 
+///////////////////////////////////////////What is Collection in C#
+
+C# collection types are designed to store, manage and manipulate similar data more efficiently. Data manipulation includes adding, removing, finding, and inserting data in the collection. Collection types implement the following common functionality: 
+
+Adding and inserting items to a collection
+Removing items from a collection
+Finding, sorting, and searching items
+Replacing items
+Copy and clone collections and items
+Capacity and Count properties to find the capacity of the collection and the number of items in the collection
+.NET supports two types of collections, generic collections, and non-generic collections. Before NET 2.0, it was just collections, and when generics were added to .NET, generics collections were added as well.
+
+The following table lists and matches these classes.
+
+Non-generic                          Generic
+
+ArrayList     ------------->          List
+
+HashTable  ------------->          Dictionary
+
+SortedList   ------------->          SortedList  
+
+Stack           ------------->          Stack
+
+Queue         ------------->          Queue
+
+1. Non-Generic
+In non-generic collections, each element can represent a value of a different type. The collection size is not fixed. Items from the collection can be added or removed at runtime. 
+
+
+Generic Collections
+Generic Collections work on the specific type specified in the program, whereas non-generic collections work on the object type. 
+
+Specific type
+Array Size is not fixed
+Elements can be added/removed at runtime.
+
+
 
 
 
