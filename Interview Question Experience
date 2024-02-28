@@ -1,3 +1,9 @@
+///////////////////////////////////What is Inheritance and Type of Inheritance
+The following are some key points about inheritance:
+
+C# does not support multiple inheritances of classes, the same thing can be done using interfaces.
+Private members are not accessed in a derived class when one class is derived from another.
+
 ///////////////////////////////////Deloide
 1>Middleware
 
