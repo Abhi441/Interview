@@ -4,6 +4,13 @@ The following are some key points about inheritance:
 C# does not support multiple inheritances of classes, the same thing can be done using interfaces.
 Private members are not accessed in a derived class when one class is derived from another.
 
+//////////////////////////////////////////////What are the differences between method hiding and overriding in C#?
+////////////method hiding
+the implementation to call is based on the compile-time type
+New is reference-type specific
+///////////////overriding
+the implementation to be called is based on the run-time
+, overriding is object-type specific
 ///////////////////////////////////Deloide
 1>Middleware
 
