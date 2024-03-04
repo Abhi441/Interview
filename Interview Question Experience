@@ -15,6 +15,19 @@ the implementation to be called is based on the run-time
 //////////////////////////////////////////////////////////////What is Boxing and UnBoxing.
 value type - int, char, double, and bool are built-in value types in C#.
 refrence type - string and object are built-in reference types in C#.
+
+//////////////////////Difference between ArrayList and Hashtable in C#
+//////ArrayList
+The arraylist is useful to store the collection of elements of different types.
+The arraylist elements can be accessed either by using loops or index values.
+The performance of the arraylist is less because it will iterate through the collection of items.
+In arraylist you are allowed to add duplicate values.
+////////HashTable
+The hashtable is useful to store the collection of key/value pairs of different types.
+The hashtable elements can be accessed by using a key or DictionaryEntry object.
+The hashtable uses a hash function to find the elements with a key so it will return the data faster.
+In hashtable, the value can be duplicated but the key shouldn't be duplicated.
+
 ///////////////////////////////////Deloide
 1>Middleware
 
