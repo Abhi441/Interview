@@ -28,6 +28,8 @@ The hashtable elements can be accessed by using a key or DictionaryEntry object.
 The hashtable uses a hash function to find the elements with a key so it will return the data faster.
 In hashtable, the value can be duplicated but the key shouldn't be duplicated.
 
+///////////////////////////////////////////////////////////////////////////
+
 ///////////////////////////////////Deloide
 1>Middleware
 
