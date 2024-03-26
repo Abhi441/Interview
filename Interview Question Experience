@@ -174,8 +174,20 @@ In short, PUT is for complete updates or creation with full data, while PATCH is
 The choice between them depends on whether you want to send the entire data or just the changes when modifying a resource.
 
 ////////////////////////
-cts in sql
-temp table in sql
+/////////////////////////////////////////////////////////cts in sql
+//What is Cts
+A Common Table Expression,is a TEMPORARY named result set, that you can reference within a Select, INSERT,UPDATE,DELETE statement.
+
+Example : Book.
+//Why I using cts :
+Code Reusability
+Readability:
+Query Optimization:
+//When to CTS
+Recursive Queries
+Complex Queries
+
+////////////////////////////////////////////////////////temp table in sql
 middleware
 type of routing in sql
 direct and indirect in Ado.net
