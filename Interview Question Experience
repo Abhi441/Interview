@@ -188,6 +188,22 @@ Recursive Queries
 Complex Queries
 
 ////////////////////////////////////////////////////////temp table in sql
+////What is temp
+Temporary tables provide temporary data storage in exact form of original tables for quick access of data.
+Two type of Temporary table
+1>Local Temporary Tables
+2>Global Temporary Tables
+
+//where stored
+Temporary tables are stored inside the Temporary Folder of TempDB.
+
+//A Temporary table differs in the following two ways from regular tables:
+Each temporary table is implicitly dropped by the system.
+Each temporary table is stored in the tempdb system database. The table variable doesn't.
+
+//where to use
+Complex Data Manipulation
+Temporary Storage in Stored Procedures
 middleware
 type of routing in sql
 direct and indirect in Ado.net
