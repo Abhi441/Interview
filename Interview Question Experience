@@ -204,8 +204,22 @@ Each temporary table is stored in the tempdb system database. The table variable
 //where to use
 Complex Data Manipulation
 Temporary Storage in Stored Procedures
-middleware
-type of routing in sql
+////////////////////////////////////////////////////////////middleware
+////What is middlewa
+Middleware is a piece of code in an application pipeline used to handle requests and responses.
+/////Why is Middleware ordering important ?
+Middleware components are executed in the order they are added to the pipeline, and care should be taken to add the middleware in the right order; 
+otherwise, the application may not function as expected. This ordering is critical for security, performance, and functionality.
+///app.Run() Method
+this acts as a terminal middleware and is added at the end of the request pipeline, as it cannot call the next middleware.
+/////app.Use() Method
+We can include the next parameter into it, which calls the next request delegate in the pipeline.
+///app.Map() Method
+The map branches the request pipeline based on matches of the given request path.
+
+///////////////////////////////////////////////////////////////////////type of routing in sql
+//What is routing
+its a process of matching incoming http requests to a corresponding endpoint where it will execute functions or necessary middlewares.
 direct and indirect in Ado.net
 cluster and non cluster in sql
 Adapter
