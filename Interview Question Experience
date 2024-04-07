@@ -890,7 +890,25 @@ Uses : you have a data structure where the size of each "inner" array varies.
 ///////////////////////////////////////////////////////////////////////////////////Oracle Interview Question
 Q> What is diffrence between Extensition Methed and Overloading
 Q> Can we inject the class Those who inheriting the implemented class of dependenncies injection.
-Q>Lasy Loading
+////////////////////////////////////Q>Lasy Loading
+///////What is LazyLoading
+Lazy loading is a technique where an object or resource is not loaded until it is specifically requested. Instead of loading all dependencies or resources upfront,
+lazy loading defers the loading process until the moment they are needed. 
+This can help improve performance and resource utilization by only loading what is necessary at the time.
+
+/////////////Why we use Lasy Loading
+Lazy loading is used to improve performance and optimize resource consumption. By delaying the loading of certain objects or data until they are needed, 
+lazy loading reduces the initial load time and conserves memory.
+
+//////////////When to Use Lazy Loading
+Not all resources are needed immediately upon application startup.
+There is a need to optimize memory usage and reduce memory footprint.
+
+//////////Why Use Lazy Loading in .NET Core?
+In .NET Core applications, lazy loading is often used to delay the loading of related entities in Entity Framework Core, 
+an Object-Relational Mapping (ORM) framework used for database access. By default, Entity Framework Core uses lazy loading for navigation properties,
+allowing related entities to be loaded only when accessed, rather than loading all related entities eagerly.
+
 Q>What is Web Development and Web Api.
 Q>One api is their Huge amount of data is their , that api is not giving data(should I have to compress to give the data)
 Q>Weak refreshes.
