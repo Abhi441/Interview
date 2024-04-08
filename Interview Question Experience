@@ -925,3 +925,152 @@ Q>What is diffrence between ADO.net and Entity framework ,(which part of code th
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////Kindle Question Simplyfied
+WHAT ARE SOLID PRINCIPLES? WHAT IS THE DIFFERENCE BETWEEN SOLID PRINCIPLES AND DESIGN PATTERNS?
+/////////What is SOLID PRINCIPLES
+SOLID is an acronym for a set of design principles in object-oriented programming (OOP) that aim to make software designs more understandable,
+flexible, and maintainable. 
+Each letter in SOLID stands for a different principle.
+
+///////////Why Use SOLID Principles
+Maintainable:
+Testable:
+Flexible:
+Scalable:
+
+///////////When to Use SOLID Principles?
+Designing complex systems that require flexibility and maintainability.
+Working on long-term projects where codebase evolution and maintenance are expected.
+
+///////////////Why Even Use SOLID Principles?
+Improved Code Quality:
+Easier Maintenance:
+Enhanced Testability:
+Increased Reusability:
+Better Collaboration:
+
+//////////////////////Diffrence 
+SOLID principles aren't concrete - rather abstract. Meaning there can be multiple ways to implement the SOLID principles. 
+Design patterns are concrete and solve a particular kind of problem in a particular way.
+
+////////////////////WHAT IS SINGLE RESPONSIBILITY PRINCIPLE?
+///////////////What
+The Single Responsibility Principle (SRP) is one of the SOLID principles of object-oriented programming. 
+It states that a class should have only one reason to change, meaning that a class should have only one responsibility or job. In other words, 
+a class should have only one primary purpose or concern.
+
+///////////Why Use the Single Responsibility Principle?
+The Single Responsibility Principle is used to:
+
+Improve Maintainability: By ensuring that each class has a single responsibility, code becomes easier to understand, modify, and maintain. This leads to better code quality and reduces the risk of introducing bugs during maintenance.
+
+Enhance Testability: Classes with a single responsibility are easier to test because they have a clear and focused purpose. This makes it easier to write unit tests and verify the correctness of the class's behavior.
+
+Promote Reusability: Classes that adhere to the Single Responsibility Principle are more reusable because they are focused on a specific task or responsibility. This encourages code reuse and helps avoid code duplication.
+
+When to Use the Single Responsibility Principle?
+The Single Responsibility Principle should be applied when:
+
+Designing or refactoring classes and components in software systems.
+Collaborating on team-based projects where code maintainability and understandability are important.
+Developing long-term projects where code evolution and maintenance are expected.
+Real-World Example and Code:
+Let's consider a real-world example of a NotificationService class responsible for sending notifications via email and SMS. However, following the Single Responsibility Principle, we split the class into two separate classes: EmailNotificationService and SMSNotificationService, each responsible for handling a specific type of notification.
+
+csharp
+Copy code
+// Before applying SRP
+
+public class NotificationService
+{
+    public void SendNotification(string recipient, string message)
+    {
+        // Send notification via email
+        EmailService.SendEmail(recipient, message);
+
+        // Send notification via SMS
+        SMSService.SendSMS(recipient, message);
+    }
+}
+
+// After applying SRP
+
+public class EmailNotificationService
+{
+    public void SendNotification(string recipient, string message)
+    {
+        // Send notification via email
+        EmailService.SendEmail(recipient, message);
+    }
+}
+
+public class SMSNotificationService
+{
+    public void SendNotification(string recipient, string message)
+    {
+        // Send notification via SMS
+        SMSService.SendSMS(recipient, message);
+    }
+}
+In the above example, we have split the NotificationService class into two separate classes: 
+EmailNotificationService and SMSNotificationService, each with a single responsibility. The EmailNotificationService class is responsible 
+for sending email notifications, while the SMSNotificationService class is responsible for sending SMS notifications. This adheres to the Single Responsibility
+Principle and makes the code easier to maintain and understand.
+
+/////////////////////////////////////////////////////////////////////////////WHAT IS OPEN-CLOSED PRINCIPLE?
+
+ 
+
+
+
+
+
