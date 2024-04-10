@@ -264,7 +264,24 @@ You can configure logging by using the Logging section of the appsettings.json f
 For more information on logging in ASP.NET Core, you can check out these resources:
 
 8>What is diffrence between layer artitecture and 3 tire artitecture , what is advantages.Which one is using in your project.
-9>Singalton design patter.
+/////////////////////////////////////////////////////////////////9>Singalton design patter.
+//////////////////What  is Singalton design patter.
+The Singleton design pattern ensures that a class has only one instance and provides a global point of access to that instance.
+/////////////////////Why Singalton design patter
+1>Ensure Single Instance
+2>Global Access
+3>Resource Sharing
+////////////////////////When to Use the Singleton Design Pattern
+1>There must be exactly one instance of a class, and it must be accessible globally.
+/////////////Why Even Use the Singleton Design Pattern
+1>Managing database connections: A Singleton class can be used to manage database connections, ensuring that only one connection
+is created and shared across multiple parts of the application.
+2>Logging: A Singleton logger class can be used to centralize logging functionality, allowing different components of the system to log 
+messages to the same log file or stream.
+3>Configuration settings: A Singleton configuration manager class can be used to load and cache application configuration settings, 
+ensuring that the settings are loaded once and accessed globally throughout the application.
+
+
 //why we are creating singlaton design pattern,instead of object.
 The Singleton design pattern is used to ensure that a class has only one instance and provides a global point of access to that instance. There are several reasons why you might choose to use the Singleton pattern instead of creating multiple instances of a class:
 
