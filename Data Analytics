@@ -1,0 +1,117 @@
+/////////////////// Different between DIStinct and unique
+
+### 1. `DISTINCT`
+
+The `DISTINCT` keyword is used in the `SELECT` statement to remove duplicate rows from the result set. It ensures that the result set contains only unique rows.
+
+**Example:**
+
+Consider the following `Employees` table:
+
+| ID  | Name    | Department |
+|-----|---------|------------|
+| 1   | John    | HR         |
+| 2   | Alice   | IT         |
+| 3   | Bob     | HR         |
+| 4   | John    | HR         |
+| 5   | Alice   | Finance    |
+
+To get unique names from this table, you can use the `DISTINCT` keyword:
+
+```sql
+SELECT DISTINCT Name FROM Employees;
+```
+
+**Result:**
+
+| Name  |
+|-------|
+| John  |
+| Alice |
+| Bob   |
+
+In this case, `DISTINCT` eliminates duplicate names from the result set.
+
+### 2. `UNIQUE`
+
+The `UNIQUE` constraint is used to ensure that all values in a column are different. This constraint ensures that no duplicate values are entered into a specific column.
+
+**Example:**
+
+Consider you want to make sure that the `Email` column in the `Employees` table contains only unique email addresses. You can define the table with a `UNIQUE` constraint on the `Email` column.
+
+```sql
+CREATE TABLE Employees (
+    ID INT PRIMARY KEY,
+    Name VARCHAR(50),
+    Department VARCHAR(50),
+    Email VARCHAR(100) UNIQUE
+);
+```
+
+Now, if you try to insert duplicate email addresses, the database will throw an error.
+
+```sql
+-- Inserting a new record
+INSERT INTO Employees (ID, Name, Department, Email)
+VALUES (1, 'John', 'HR', 'john@example.com');
+
+-- Attempting to insert a duplicate email
+INSERT INTO Employees (ID, Name, Department, Email)
+VALUES (2, 'Alice', 'IT', 'john@example.com');
+```
+
+The second `INSERT` statement will fail because the email `john@example.com` already exists.
+
+### Practical Example in a SQL Environment
+
+Let's consider another practical example:
+
+#### Table: `Sales`
+
+| OrderID | Product  | Quantity | Price |
+|---------|----------|----------|-------|
+| 1       | Laptop   | 1        | 1000  |
+| 2       | Laptop   | 1        | 1000  |
+| 3       | Mouse    | 2        | 20    |
+| 4       | Keyboard | 1        | 50    |
+| 5       | Mouse    | 2        | 20    |
+
+#### Using `DISTINCT`
+
+To get unique product names from the `Sales` table:
+
+```sql
+SELECT DISTINCT Product FROM Sales;
+```
+
+**Result:**
+
+| Product  |
+|----------|
+| Laptop   |
+| Mouse    |
+| Keyboard |
+
+#### Using `UNIQUE` Constraint
+
+Suppose we want to ensure that each `OrderID` in the `Sales` table is unique:
+
+```sql
+CREATE TABLE Sales (
+    OrderID INT PRIMARY KEY,
+    Product VARCHAR(50),
+    Quantity INT,
+    Price DECIMAL(10, 2),
+    UNIQUE (OrderID)
+);
+```
+
+This constraint ensures that no two orders can have the same `OrderID`.
+
+### Summary
+
+- **`DISTINCT`**: Used in `SELECT` statements to remove duplicate rows from the result set.
+- **`UNIQUE`**: A constraint applied to a column to ensure that all values in that column are different.
+
+Understanding these concepts will help you manage and query your database more effectively.
