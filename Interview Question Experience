@@ -1176,6 +1176,16 @@ Principle and makes the code easier to maintain and understand.
 /////What is a Selector and Template ?
 
 /////////////////////////////////////Diffrence between api , Restapi, Restfulapi
+In .NET Core, an API is a general interface for communication between systems, while a REST API specifically follows REST
+principles and uses HTTP for resource-based communication.
+
+////////////////////////////////////////Rest Api
+REST API: Refers to any API that adheres to the principles of REST (Representational State Transfer). 
+It might not fully implement all the constraints of REST architecture.
+
+//////////////////////////////////////RESTful API:
+RESTful API: Specifically refers to APIs that strictly adhere to REST principles, including statelessness, 
+client-server architecture, cacheability, a uniform interface, and a layered system.
 
 
  
