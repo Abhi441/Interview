@@ -1207,6 +1207,14 @@ Liskov Substitution Principle: Objects of a superclass should be replaceable wit
 Interface Segregation Principle: A client should not be forced to depend on interfaces it does not use.
 Dependency Inversion Principle: High-level modules should not depend on low-level modules. Both should depend on abstractions.
 By associating each principle with a key concept, you can more easily recall what each letter stands for and what it entails.
+
+///////////////////////////////////////////////////////////////////////diffrence between  Database First, Code First , Model first in Entity framework in one line
+
+Sure! Here are the differences in one line each:
+
+Database First: The database schema is created first, and the code models are generated from the existing database.
+Code First: The code models are created first, and the database schema is generated from the code models.
+Model First: The conceptual model is designed first using a designer, and both the code models and database schema are generated from the model.
  
 
 
