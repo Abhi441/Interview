@@ -1187,7 +1187,26 @@ It might not fully implement all the constraints of REST architecture.
 RESTful API: Specifically refers to APIs that strictly adhere to REST principles, including statelessness, 
 client-server architecture, cacheability, a uniform interface, and a layered system.
 
+//////////////////////////////////////////////////////////////////////////////////Solid Principle
+The SOLID principles are a set of design principles in object-oriented programming to ensure that software is modular, scalable, and maintainable. Here’s a mnemonic to help remember them:
 
+S: Single Responsibility Principle (SRP)
+O: Open/Closed Principle (OCP)
+L: Liskov Substitution Principle (LSP)
+I: Interface Segregation Principle (ISP)
+D: Dependency Inversion Principle (DIP)
+Mnemonic for SOLID
+Smart Objects Love Intelligent Design
+
+This mnemonic encapsulates the idea that well-designed objects (Smart Objects) follow these principles, leading to Intelligent Design.
+
+Explanation
+Single Responsibility Principle: A class should have only one reason to change.
+Open/Closed Principle: Software entities should be open for extension but closed for modification.
+Liskov Substitution Principle: Objects of a superclass should be replaceable with objects of a subclass without affecting the correctness of the program.
+Interface Segregation Principle: A client should not be forced to depend on interfaces it does not use.
+Dependency Inversion Principle: High-level modules should not depend on low-level modules. Both should depend on abstractions.
+By associating each principle with a key concept, you can more easily recall what each letter stands for and what it entails.
  
 
 
