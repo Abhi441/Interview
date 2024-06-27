@@ -1215,6 +1215,9 @@ Sure! Here are the differences in one line each:
 Database First: The database schema is created first, and the code models are generated from the existing database.
 Code First: The code models are created first, and the database schema is generated from the code models.
 Model First: The conceptual model is designed first using a designer, and both the code models and database schema are generated from the model.
+
+
+
  
 
 
