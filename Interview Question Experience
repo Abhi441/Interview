@@ -977,8 +977,15 @@ allowing related entities to be loaded only when accessed, rather than loading a
 Q>What is Web Development and Web Api.
 Q>One api is their Huge amount of data is their , that api is not giving data(should I have to compress to give the data)
 Q>Weak refreshes.
-Q>How can I know this class is generic.
-Q>What file will made after compiler c# code. And What file will make after compiling .net Code
+////////////////////////////////////////////////////////////////////Q>How can I know this class is generic.
+To determine if a class is generic in C#, you can inspect the class definition, use reflection, or utilize the typeof operator with generic type parameters.
+Reflection is particularly useful for runtime checks, while inspecting the class definition is straightforward for compile-time checks.
+//////////////////////////////Q>What file will made after compiler c# code. And What file will make after compiling .net Code
+C# Compilation:
+
+Executable: .exe
+Library: .dll
+
 Q>What is the Scope of  Object.
 Q>When Does refrence object deleted.
 Q>Crossed question for Injection.
