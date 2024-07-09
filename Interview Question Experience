@@ -1229,5 +1229,20 @@ Model First: The conceptual model is designed first using a designer, and both t
 
 
 
+///////////////////////////////////////////////////////////////////////////////////////////FULLSTACKCAFE Question 
+////////////////////////1> What is Property Accessor ?
+The get and set portions or blocks of a property are called accessors.
+class Person
+{
+  private string name; // field
+
+  public string Name   // property
+  {
+    get { return name; }   // get method
+    set { name = value; }  // set method
+  }
+}
+
+//////////////////////////2>
 
 
