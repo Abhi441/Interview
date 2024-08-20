@@ -7,7 +7,8 @@ We use reflection in C# to dynamically inspect, invoke, and manipulate assemblie
 or accessing metadata and invoking methods without knowing the specifics at compile-time.
 
 /////////////////////////////////////////codeforce,Dataforce
-which kind of Jwt that you are using.
+////////////////////////which kind of Jwt that you are using.
+Explain in JWT.
 why abtract class does useses multiple inheritance
 what is DBcontext and DBset.
 what is dataset and dataadaptet
