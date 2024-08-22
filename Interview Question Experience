@@ -9,7 +9,19 @@ or accessing metadata and invoking methods without knowing the specifics at comp
 /////////////////////////////////////////codeforce,Dataforce
 ////////////////////////which kind of Jwt that you are using.
 Explain in JWT.
-//////////////////////////////////////////why abtract class does useses multiple inheritance
+//////////////////////////////////////////why c# doesnot uses multiple inheritance
+/////////////1>Avoiding the Diamond Problem
+    Class A
+   /      \
+Class B   Class C
+   \      /
+    Class D
+
+The diamond problem occurs when a class inherits from two classes that both inherit from a common base class.
+This can cause ambiguity in determining which version of a method or property should be inherited from the base class.
+In this scenario, if Class B and Class C both inherit a method from Class A, then Class D could inherit two conflicting versions of that method. C# avoids this ambiguity by allowing only single inheritance,
+ensuring that each class has a clear and singular parent class.
+2>Simplicity and Maintainability
 what is DBcontext and DBset.
 what is dataset and dataadaptet
 What is filter.
