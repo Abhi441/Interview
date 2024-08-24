@@ -86,12 +86,13 @@ sql querying
 Q>Artichecture of Project : https://www.youtube.com/watch?v=X7CGyBZrEh8
 Q>Framework that is using in  EntityFramework
 //////////////////Q>How you can add two coloum in table by Entityframework.
-I have created new one you can see ?
+I have created new file one you can see
 Q>What is function.
-Q>How can we make one form in another component.
-
-
-
+Q>what are the various ways to communicate between the components.
+1>@Input @Output
+2>Ng - content
+3>@ViewChild   @ViewChildren
+4>@ContentChild @ContentChilren
 ///////////////////////////////
 Authentiation,authorisation
 How can I consume Api
