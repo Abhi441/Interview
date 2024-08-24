@@ -645,7 +645,13 @@ FROM>WHERE>GROUP BY >HAVING > SELECT > ORDER BY > LIMIT.
 
 ///////////////////////////////////////////////////////14>What is interceptor.
 An interceptor is a service that can modify or handle the HTTP requests and responses that are sent or received by your Angular application.
-15>Cogfiguration.Json file.
+//////////////////////////////15>Cogfiguration.Json file.
+1>Configures TypeScript Compilation: 
+It defines various options that affect how the TypeScript code is compiled, such as the target JavaScript version, module system, source maps, and more.
+2>Defines File Inclusion/Exclusion:It specifies which files to include or exclude during the compilation process. This ensures that only the necessary files are processed by the compiler.
+
+
+
 16>What is last life cycle in Angular.
 17>Where does we configure any thing.
 /////////////////
