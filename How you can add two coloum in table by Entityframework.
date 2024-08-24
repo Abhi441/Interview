@@ -1,0 +1,86 @@
+In Entity Framework Core, you can add columns to an existing table by creating a migration and applying it to the database. Here’s how you can add two new columns to an existing table using Entity Framework in .NET Core.
+
+Step-by-Step Guide:
+1. Modify the Model
+Assume you have an existing model Employee in your project, and you want to add two new columns MiddleName and DateOfJoining.
+
+Original Model:
+
+csharp
+Copy code
+public class Employee
+{
+    public int EmployeeId { get; set; }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+}
+Modify the model to include the new columns:
+
+csharp
+Copy code
+public class Employee
+{
+    public int EmployeeId { get; set; }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    
+    // New columns
+    public string MiddleName { get; set; }  // New column
+    public DateTime DateOfJoining { get; set; }  // New column
+}
+2. Create a Migration
+After modifying the model, you need to create a migration so that Entity Framework can update the database schema to match the model changes.
+
+Run the following command in the Package Manager Console or Terminal:
+
+bash
+Copy code
+dotnet ef migrations add AddMiddleNameAndDateOfJoiningToEmployee
+This will create a new migration file with the necessary code to add the columns to the Employee table.
+
+3. Inspect the Migration File
+The migration file will be generated in the Migrations folder. It should look something like this:
+
+csharp
+Copy code
+public partial class AddMiddleNameAndDateOfJoiningToEmployee : Migration
+{
+    protected override void Up(MigrationBuilder migrationBuilder)
+    {
+        migrationBuilder.AddColumn<string>(
+            name: "MiddleName",
+            table: "Employees",
+            type: "nvarchar(max)",
+            nullable: true);
+
+        migrationBuilder.AddColumn<DateTime>(
+            name: "DateOfJoining",
+            table: "Employees",
+            type: "datetime2",
+            nullable: false,
+            defaultValue: new DateTime(2024, 1, 1));  // Provide a default value for non-nullable column
+    }
+
+    protected override void Down(MigrationBuilder migrationBuilder)
+    {
+        migrationBuilder.DropColumn(
+            name: "MiddleName",
+            table: "Employees");
+
+        migrationBuilder.DropColumn(
+            name: "DateOfJoining",
+            table: "Employees");
+    }
+}
+The Up method adds the new columns to the table, while the Down method removes them if the migration is rolled back.
+
+4. Apply the Migration
+To apply the migration and update the database schema, run the following command:
+
+bash
+Copy code
+dotnet ef database update
+This will apply the migration, and the Employees table will now have the MiddleName and DateOfJoining columns added.
+
+Conclusion
+By following these steps, you can easily add new columns to an existing table using Entity Framework Core in .NET Core. The process involves modifying the model, creating a migration, and applying the migration to update the database schema.
