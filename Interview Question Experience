@@ -76,7 +76,8 @@ Basic
 OOp
 Inheritance
 /////////Solid Priciple:
-sigalton 
+/////////////////////////////////////////sigalton
+we do not use Singalton code Manually , we use built-in Dependency Injection framework BECAUSE Thread-Safety , Simplicity ,Lifetime Management.
 All 5 also 
 ////////////////Sql
 sql querying
