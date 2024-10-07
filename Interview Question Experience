@@ -1285,3 +1285,34 @@ class Person
 Microservices is a software development architecture that breaks large applications into smaller, independent parts, or services
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////////////////////////////////
+Q)Explain how dependency injection works in ASP.NET Core?
+ It involves supplying dependencies to a class from outside the class itself. The most common way to do this in ASP.NET Core
+is through constructor injection, but there are also other techniques like property injection and method injection.
+
+Q>“ASP.NET Core has dependency injection to manage services; are you aware of the different lifetimes? What are they, and what does each mean?”
+Transient:
+
+Creation: A new instance is created each time the service is requested (injected).
+Lifetime: The instance lives only as long as it's needed to fulfill the current request.
+Example: Database context, logger, helper classes.
+
+
+
+
