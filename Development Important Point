@@ -10,3 +10,5 @@ Create a ViewStart.cshtml
 just give Layout of start of view
 Create Razorview Import 
 import Services
+
+while clicking on the Method you can crete the Index.schtml
