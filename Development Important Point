@@ -1,0 +1,12 @@
+Head 
+inside the head you can put the link
+body
+put all the thing , How does UI should be their.
+
+
+
+///////////
+Create a ViewStart.cshtml 
+just give Layout of start of view
+Create Razorview Import 
+import Services
