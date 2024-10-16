@@ -1325,6 +1325,7 @@ Transient:
 Creation: A new instance is created each time the service is requested (injected).
 Lifetime: The instance lives only as long as it's needed to fulfill the current request.
 Example: Database context, logger, helper classes.
+Q> Varchar and Nvarchar
 
 
 
