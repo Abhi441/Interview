@@ -1284,9 +1284,10 @@ class Person
 ///////////////////////////Microservices
 Microservices is a software development architecture that breaks large applications into smaller, independent parts, or services
 //////////////////////
-Artitecture of Project.
+Artitecture of Project. // check later
 Interface//testing multiple method
-How you give Security to Api.
+///////////////////////How you give Security to Api.
+See in the copy.
 if you want security of multiple api , but not one.
 Logout Session
 Emitter, Interpolation.
