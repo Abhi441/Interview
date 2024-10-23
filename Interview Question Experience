@@ -1,7 +1,7 @@
 ///////////////////////////////////////////////////
 //////////////////////////Reflection
 /////////what is reflection in c#
-Reflection in C# is the process of inspecting and interacting with the metadata of types, methods, and properties at runtime.
+reflection in C# is a way for your program to look at itself. It lets you inspect the structure of types (like classes, methods, properties) at runtime
 //////////Why we use reflection in c#
 We use reflection in C# to dynamically inspect, invoke, and manipulate assemblies, types, methods, and properties at runtime, allowing for more flexible and adaptable code, such as for creating plug-in architectures, dynamic object creation, 
 or accessing metadata and invoking methods without knowing the specifics at compile-time.
