@@ -23,7 +23,8 @@ In this scenario, if Class B and Class C both inherit a method from Class A, the
 ensuring that each class has a clear and singular parent class.
 2>Simplicity and Maintainability
 ////////////////////////////////////////////what is DBcontext and DBset.
-
+DBcontest - An instance of DbContext is responsible to hold a set of DbSets' and represent a connection with database.
+DBset - Represents a single database table; each column is represented as a model property.
 /////////////////////////////////////what is dataset and dataadaptet
 DataSet class - A DataSet is basically a container which gets the data from one or more then one tables from the database.
 It follows disconnected architecture.
