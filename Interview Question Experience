@@ -1343,4 +1343,39 @@ Q>What is the diffrence between equal(), and ==.
 Q>trigger
 last 2question of interview I have solve.
 
-
+///////////////////////////////////////////////////////////////
+Function 1(){
+	Statement 1;
+	SetTimeout(()=>{
+		Statement 2;		
+	},0);
+	Statement 3;
+}
+Function 2(){
+	Statement 4;
+}
+Function 1();
+Function 2();
+Expected output
+?
+output : statement 1 , Statement 2;Statemen... by Abhishek Singh (Guest)
+11:48 AM
+Abhishek Singh (Guest)
+output : statement 1 , Statement 2;Statement 3 ,Statement 4
+Code sample Service  	a=0;     API 1: ... by Unknown User
+Unknown User
+11:50 AM
+Code sample
+Service 
+	a=0;
+ 
+ 
+API 1:
+	a++;
+ 
+API 2:
+	Read a;
+ 
+Expected output
+?
+has context menu
