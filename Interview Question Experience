@@ -89,6 +89,7 @@ Q>Framework that is using in  EntityFramework
 //////////////////Q>How you can add two coloum in table by Entityframework.
 I have created new file one you can see
 Q>What is function.
+A function in C# is a group of statements that perform a specific task and return a value
 Q>what are the various ways to communicate between the components.
 1>@Input @Output
 2>Ng - content
