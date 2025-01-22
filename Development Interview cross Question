@@ -1,0 +1,114 @@
+//////////////////////////////////////// Most Asked Questions About .NET Core 3.1 File Structure and Features
+When preparing for a .NET Core 3.1 interview, questions often focus on its file structure, configuration, and commonly used components. Below are the most asked questions, possible cross-questions, and scenario-based questions, along with answers in easiest language.
+
+1. Questions on .NET Core 3.1 File Structure
+Q1. What is the purpose of the Program.cs file?
+Answer:
+
+Program.cs is the entry point of a .NET Core application.
+It defines the main method, which builds and runs the application.
+Cross-Question:
+
+How does the application start in .NET Core?
+The application starts by calling the Main method in Program.cs, which uses the CreateHostBuilder method to set up the web server and middleware.
+Q2. What is the purpose of the Startup.cs file?
+Answer:
+
+Startup.cs configures the application’s services and middleware.
+It contains two main methods:
+ConfigureServices: Registers dependencies like controllers, services, and database contexts.
+Configure: Defines the middleware pipeline (e.g., routing, exception handling).
+Cross-Question:
+
+Can the application work without Startup.cs?
+Yes, you can configure everything in Program.cs in .NET 6 or later, but in .NET Core 3.1, Startup.cs is mandatory.
+Q3. What is appsettings.json, and how is it used?
+Answer:
+
+It is a configuration file used to store settings such as database connections, API keys, and environment-specific configurations.
+These settings are accessed using the IConfiguration interface.
+Cross-Question:
+
+What is the difference between appsettings.json and appsettings.Development.json?
+appsettings.json contains default configurations.
+appsettings.Development.json contains environment-specific settings for development mode, overriding appsettings.json values.
+2. Scenario-Based Questions
+Q1. How would you implement dependency injection in .NET Core 3.1?
+Answer:
+
+Use the ConfigureServices method in Startup.cs to register dependencies.
+Example:
+
+csharp
+Copy
+Edit
+services.AddScoped<IService, ServiceImplementation>();
+Scenario:
+
+If your dependency needs to be shared across multiple requests, what would you do?
+Use AddSingleton for a single instance across the application's lifetime.
+Q2. How do you handle errors in .NET Core 3.1?
+Answer:
+
+Use the UseExceptionHandler middleware in Startup.cs for global error handling.
+Example:
+
+csharp
+Copy
+Edit
+app.UseExceptionHandler("/Error");
+Scenario:
+
+What if you want custom error pages for different status codes?
+Use UseStatusCodePagesWithReExecute.
+3. Common Questions on ADO.NET: Dataset and DataAdapter
+Q1. What is a Dataset in ADO.NET?
+Answer:
+
+A Dataset is an in-memory data store that holds multiple tables, their data, and relationships.
+It is disconnected from the database, meaning it doesn’t maintain a live connection.
+Real-World Example:
+
+Think of a dataset as a spreadsheet where each sheet is a table. You can manipulate it offline and later sync changes.
+Q2. What is a DataAdapter in ADO.NET?
+Answer:
+
+A DataAdapter is a bridge between the database and the dataset.
+It helps fetch data from the database and fill it into the dataset and can also update the database with changes made to the dataset.
+Real-World Example:
+
+If a Dataset is a spreadsheet, the DataAdapter is the tool that loads data into it and saves changes back to the database.
+Q3. How do Dataset and DataAdapter work together?
+Answer:
+
+The DataAdapter fetches data using a SQL query.
+It fills the Dataset with the data.
+Changes made to the Dataset can be saved back to the database using the DataAdapter.
+Example Code:
+
+csharp
+Copy
+Edit
+SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Employees", connection);
+DataSet dataset = new DataSet();
+adapter.Fill(dataset, "Employees");
+Most Asked Cross-Questions About Dataset and DataAdapter
+What is the difference between a Dataset and a DataReader?
+
+Dataset: Disconnected, holds multiple tables, and allows offline data manipulation.
+DataReader: Connected, forward-only, and faster for reading large datasets.
+How does the DataAdapter handle conflicts during updates?
+
+It uses CommandBuilder or custom SQL commands for resolving conflicts.
+Can you update a database without a DataAdapter?
+
+Yes, by using SqlCommand directly for executing insert, update, or delete queries.
+Summary
+.NET Core 3.1 File Structure:
+Program.cs: Entry point of the application.
+Startup.cs: Configures services and middleware.
+appsettings.json: Stores configuration settings.
+ADO.NET: Dataset and DataAdapter:
+Dataset: An in-memory data store for offline operations.
+DataAdapter: Acts as a bridge between the dataset and the database.
+By understanding the file structure, the flow of dependency injection, and the roles of Dataset and DataAdapter, you can answer these questions confidently in interviews. Let me know if you’d like further explanation or examples!
