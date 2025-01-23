@@ -1340,8 +1340,14 @@ Example: Database context, logger, helper classes.
 Q> Varchar and Nvarchar
 Q> diffrence between Dictionary vs List
 Q>What is magic table in Sql.
+
 Q>What is the diffrence between equal(), and ==.
+"==" Operator:
+--> Checks if two object references point to the same memory location (reference equality). 
+"Equals()" Method:
+A virtual method that can be overridden in derived classes to define how equality should be checked for that specific type. 
 Q>trigger
+
 last 2question of interview I have solve.
 
 ///////////////////////////////////////////////////////////////
@@ -1359,10 +1365,17 @@ Function 1();
 Function 2();
 Expected output
 ?
+output:
+Statement 1 (from Function 1)
+Statement 3 (from Function 1)
+Statement 4 (from Function 2)
+Statement 2 (from the setTimeout callback)
+
 output : statement 1 , Statement 2;Statemen... by Abhishek Singh (Guest)
 11:48 AM
 Abhishek Singh (Guest)
 output : statement 1 , Statement 2;Statement 3 ,Statement 4
+////////////////////////////////
 Code sample Service  	a=0;     API 1: ... by Unknown User
 Unknown User
 11:50 AM
@@ -1383,8 +1396,47 @@ has context menu
 
 ////////////////////////////////////////////
 Write code for Service.
-Write the code for getting 5 hightly salary.(use function that is best approach).
+
+///////////////////////////Write the code for getting 5 hightly salary.(use function that is best approach).
+Salary Distict Salary
+from Employee
+where Salary Desc
+Offset 4 rows Next 1 rows Only;
+////////////////////////////////////
 What is the yeild classes in c#.
+The yield keyword in C# helps to create a sequence of values one at a time, instead of returning them all at once.
+It makes the code simpler and more memory-efficient when working with large collections or sequences.
+
+Example:
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static IEnumerable<int> GetNumbers()
+    {
+        yield return 1;  // First number
+        yield return 2;  // Second number
+        yield return 3;  // Third number
+    }
+
+    static void Main()
+    {
+        foreach (int number in GetNumbers())
+        {
+            Console.WriteLine(number);
+        }
+    }
+}
+
+Summary of Real-World Use Cases for yield:
+Lazy Loading: Fetch or process data one element at a time, saving memory and improving performance.
+Infinite Sequences: Useful for generating sequences like Fibonacci that can go on indefinitely.
+Filtering Data: Apply filters on data without holding everything in memory.
+Efficient File/Log Processing: Process large files line by line, without loading them entirely into memory.
+Paged API Requests: Fetch and process data from APIs page by page, one item at a time.
+
+
 
 q>Normally what happen if we do not put the Await keyword in Asny method.
 Q>How many type of json file will be their.
