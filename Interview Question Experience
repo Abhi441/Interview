@@ -1454,6 +1454,14 @@ Q)How can you communicate components with service.
 Q) question will not asked directly.
 Q> What Proxy Design Patter
 Q> What is the latest feature addes in Entyty framework after .Net 6 , 7;
+Q>TempData
+Q>Minification and Bundling.
+Q>Render page Vs Render body.
+Q>CTE vs Temp Table
+Q> Unique Key Vs Foreign Key
+Q>Why ViewData require typeCasting
+Q> What is the diffrence between viewdata and View Bags
+Q> 
 
 
 
