@@ -1466,5 +1466,75 @@ Q> What are the diffrent http word.
 Q>What are the architecture in dot.net core.
 Q> minimum parameter for Ajax
 
+//////////////////////////////////////////////OOPS
+Q> Create a class hierarchy for different types of fights (e.g., Domestic Flights, International Flights, Charter Flights). Each flight should have common properties (e.g., flight number, departure time, arrival time) and specific properties (e.g., flight duration, layovers, charter company).
+
+Implement methods for booking flights, cancelling flights, and displaying flight details
+
+
+Q> 1️⃣ Library Management System
+Problem:
+Design a class hierarchy for a Library Management System. Implement the following:
+
+A base class Book with common properties: Title, Author, ISBN, PublicationYear.
+Derived classes:
+EBook (additional properties: DownloadLink, FileSize).
+PrintedBook (additional properties: ShelfLocation, CopiesAvailable).
+Implement methods for:
+Issuing and returning books.
+Displaying book details.
+
+2️⃣ Vehicle Rental System
+Problem:
+Create a Vehicle Rental System using OOP principles.
+
+Define a base class Vehicle with properties like VehicleID, Model, Year, RentalPrice.
+Create derived classes:
+Car (additional property: SeatingCapacity).
+Bike (additional property: HasHelmet).
+Implement methods for:
+Renting a vehicle.
+Returning a vehicle.
+Displaying rental details.
+
+3️⃣ Employee Management System
+Problem:
+Design a class hierarchy for an Employee Management System.
+
+Define a base class Employee with properties: EmployeeID, Name, Salary, Department.
+Create derived classes:
+Manager (additional properties: Bonus, TeamSize).
+Developer (additional properties: ProgrammingLanguage, ExperienceLevel).
+Implement methods for:
+Calculating salary (including bonuses for managers).
+Promoting employees.
+Displaying employee details.
+
+4️⃣ Online Shopping System
+Problem:
+Develop an Online Shopping System using OOP.
+
+Create a base class Product with properties: ProductID, Name, Price, StockQuantity.
+Derive classes:
+Electronics (additional properties: WarrantyPeriod).
+Clothing (additional properties: Size, Material).
+Implement methods for:
+Adding products to the cart.
+Calculating the total bill.
+Displaying product details.
+
+5️⃣ Hospital Management System
+Problem:
+Design a Hospital Management System with OOP.
+
+Define a base class Person with properties: Name, Age, Gender.
+Create derived classes:
+Doctor (additional properties: Specialization, Experience).
+Patient (additional properties: Disease, AdmissionDate).
+Implement methods for:
+Scheduling appointments.
+Admitting a patient.
+Displaying patient/doctor details.
+
 
 
