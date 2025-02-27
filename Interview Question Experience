@@ -1535,6 +1535,10 @@ Implement methods for:
 Scheduling appointments.
 Admitting a patient.
 Displaying patient/doctor details.
-
-
-
+///////////////////////What is the Cross join 
+Key Differences
+Feature	                                CROSS JOIN	                         FULL JOIN (FULL OUTER JOIN)
+Condition	                         No condition needed	                  Needs ON condition
+Result	                                 Cartesian product (A × B)	       Matching + unmatched records from both tables
+NULL values	                         No NULLs	                   NULLs appear for unmatched records
+Use case	                          Generate all combinations	Get complete dataset from both tables
