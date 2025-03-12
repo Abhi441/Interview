@@ -1,0 +1,115 @@
+Sure! A Stored Procedure in SQL is a precompiled collection of SQL statements that can be executed as a single unit. Stored procedures help improve performance, security, and reusability.
+
+
+---
+
+1. Basic Syntax of a Stored Procedure
+
+CREATE PROCEDURE ProcedureName
+AS
+BEGIN
+    -- SQL Statements
+    SELECT * FROM Employees;
+END;
+
+Executing the Procedure:
+
+EXEC ProcedureName;
+
+
+---
+
+2. Stored Procedure with Input Parameter
+
+CREATE PROCEDURE GetEmployeesByDepartment
+    @DeptID INT
+AS
+BEGIN
+    SELECT EmployeeID, FirstName, LastName
+    FROM Employees
+    WHERE DepartmentID = @DeptID;
+END;
+
+Executing the Procedure with a Parameter:
+
+EXEC GetEmployeesByDepartment @DeptID = 3;
+
+
+---
+
+3. Stored Procedure with Output Parameter
+
+CREATE PROCEDURE GetEmployeeCountByDepartment
+    @DeptID INT,
+    @EmployeeCount INT OUTPUT
+AS
+BEGIN
+    SELECT @EmployeeCount = COUNT(*) FROM Employees WHERE DepartmentID = @DeptID;
+END;
+
+Executing the Procedure with an Output Parameter:
+
+DECLARE @Count INT;
+EXEC GetEmployeeCountByDepartment @DeptID = 3, @EmployeeCount = @Count OUTPUT;
+PRINT @Count;
+
+
+---
+
+4. Stored Procedure with Multiple Parameters
+
+CREATE PROCEDURE UpdateEmployeeSalary
+    @EmpID INT,
+    @NewSalary DECIMAL(10,2)
+AS
+BEGIN
+    UPDATE Employees
+    SET Salary = @NewSalary
+    WHERE EmployeeID = @EmpID;
+END;
+
+Executing the Procedure with Multiple Parameters:
+
+EXEC UpdateEmployeeSalary @EmpID = 101, @NewSalary = 75000.00;
+
+
+---
+
+5. Stored Procedure with Transactions & Error Handling
+
+CREATE PROCEDURE TransferSalary
+    @FromEmpID INT,
+    @ToEmpID INT,
+    @Amount DECIMAL(10,2)
+AS
+BEGIN
+    BEGIN TRANSACTION;
+
+    BEGIN TRY
+        UPDATE Employees SET Salary = Salary - @Amount WHERE EmployeeID = @FromEmpID;
+        UPDATE Employees SET Salary = Salary + @Amount WHERE EmployeeID = @ToEmpID;
+
+        COMMIT TRANSACTION;
+    END TRY
+    BEGIN CATCH
+        ROLLBACK TRANSACTION;
+        PRINT 'Error occurred during transaction.';
+    END CATCH;
+END;
+
+Executing the Procedure:
+
+EXEC TransferSalary @FromEmpID = 101, @ToEmpID = 102, @Amount = 5000.00;
+
+
+---
+
+Key Benefits of Stored Procedures:
+
+✔ Performance Improvement – Precompiled SQL code runs faster
+✔ Security – Reduces SQL injection risks by parameterized execution
+✔ Reusability – Can be used multiple times with different parameters
+✔ Transaction Management – Ensures data consistency with COMMIT/ROLLBACK
+
+Would you like an example for dynamic SQL stored procedures as well?
+
