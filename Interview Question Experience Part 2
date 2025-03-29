@@ -73,3 +73,60 @@ Changing car2.Brand does NOT affect car1.Brand.
 
 
 /////////////////////////////Access Modifier
+revision from udemy courses.
+
+//////////////////////////////Diffrence between Unique key and Foreign key.
+Difference Between Unique Key and Foreign Key in SQL
+
+---
+
+🔹 Example of Unique Key
+
+CREATE TABLE Employees (
+    EmployeeID INT PRIMARY KEY,
+    Email VARCHAR(100) UNIQUE,  -- Ensures all emails are unique
+    Name VARCHAR(50)
+);
+
+✅ Key Takeaway:
+
+Email column cannot have duplicate values but can have one NULL.
+
+
+---
+
+🔹 Example of Foreign Key
+
+CREATE TABLE Departments (
+    DepartmentID INT PRIMARY KEY,
+    DepartmentName VARCHAR(50)
+);
+
+CREATE TABLE Employees (
+    EmployeeID INT PRIMARY KEY,
+    Name VARCHAR(50),
+    DepartmentID INT,
+    FOREIGN KEY (DepartmentID) REFERENCES Departments(DepartmentID)  -- Foreign Key linking to Departments
+);
+
+✅ Key Takeaway:
+
+DepartmentID in Employees refers to DepartmentID in Departments table.
+
+Ensures an employee must belong to a valid department.
+
+
+---
+
+🔹 Interview-Friendly Answer
+
+1. Unique Key ensures uniqueness in a column, Foreign Key links two tables.
+
+2. Unique Key allows one NULL, Foreign Key allows multiple matching values.
+
+3. Unique Key prevents duplicates, Foreign Key ensures referential integrity.
+
+4. Unique Key is used for unique constraints (like emails), Foreign Key is used for table relationships (like Employee-Department).
+
+
+////////////////////////////////
