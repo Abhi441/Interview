@@ -1,0 +1,73 @@
+Q> What is the diffrence between Class and Struct
+
+🔹 Example of a Class (Reference Type)
+
+class Car
+{
+    public string Brand;
+}
+
+class Program
+{
+    static void Main()
+    {
+        Car car1 = new Car();
+        car1.Brand = "Tesla";
+
+        Car car2 = car1;  // Reference is copied (not a new object)
+        car2.Brand = "BMW";
+
+        Console.WriteLine(car1.Brand);  // Output: BMW (same reference)
+    }
+}
+
+✅ Key Takeaway:
+
+car1 and car2 point to the same object in memory.
+
+Changing car2.Brand also changes car1.Brand.
+
+
+---
+
+🔹 Example of a Struct (Value Type)
+
+struct Car
+{
+    public string Brand;
+}
+
+class Program
+{
+    static void Main()
+    {
+        Car car1 = new Car();
+        car1.Brand = "Tesla";
+
+        Car car2 = car1;  // Copy is created (separate memory)
+        car2.Brand = "BMW";
+
+        Console.WriteLine(car1.Brand);  // Output: Tesla (original unchanged)
+    }
+}
+
+✅ Key Takeaway:
+
+car1 and car2 are separate copies in memory.
+
+Changing car2.Brand does NOT affect car1.Brand.
+
+
+---
+
+🔹 Interview-Friendly Answer
+
+1. Class is a reference type (stored in Heap), Struct is a value type (stored in Stack).
+
+2. Class supports inheritance, Struct does not.
+
+3. Class objects are passed by reference, Structs are copied.
+
+4. Use Struct for small, lightweight objects (like Point), and Class for large, complex objects (like Car).
+
+
