@@ -129,4 +129,32 @@ Ensures an employee must belong to a valid department.
 4. Unique Key is used for unique constraints (like emails), Foreign Key is used for table relationships (like Employee-Department).
 
 
-////////////////////////////////
+////////////////////////////////IEnumerable and IQuerable.
+Difference Between IEnumerable and IQueryable in C# (Easy Explanation for Interviews)
+🔹 Example of IEnumerable (Client-Side Execution, Inefficient for Databases)
+List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+IEnumerable<int> evenNumbers = numbers.Where(n => n % 2 == 0); // Filters in memory
+✅ Key Takeaway:
+
+Loads all data into memory, then filters it.
+Bad for large data (wastes memory and performance).
+🔹 Example of IQueryable (Database Execution, Efficient for SQL Queries)
+using (var context = new MyDbContext())
+{
+    IQueryable<Employee> employees = context.Employees.Where(e => e.Salary > 50000);
+}
+✅ Key Takeaway:
+
+Query executes in SQL Server, filtering before data is loaded.
+Much faster for large databases.
+🔹 Why Use IQueryable for SQL Queries?
+Reduces Load on Database: Only fetches required data.
+Optimized Queries: Generates efficient SQL (SELECT statements).
+Supports Deferred Execution: Query runs only when needed, improving performance.
+Scales Better: Ideal for handling large datasets in real applications.
+🔹 Interview-Friendly Answer
+IEnumerable processes data in memory, IQueryable runs the query on the database.
+IEnumerable is better for in-memory collections, IQueryable is best for SQL queries.
+IQueryable improves performance by filtering at the database level.
+Use IQueryable in Entity Framework to generate efficient SQL queries automatically.
