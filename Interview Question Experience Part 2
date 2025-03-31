@@ -158,3 +158,8 @@ IEnumerable processes data in memory, IQueryable runs the query on the database.
 IEnumerable is better for in-memory collections, IQueryable is best for SQL queries.
 IQueryable improves performance by filtering at the database level.
 Use IQueryable in Entity Framework to generate efficient SQL queries automatically.
+
+/////////////difference between JIT and AOt
+"JIT compiles the code while the app is running, which makes it slower. AOT compiles the code before running the app, making it faster and better for production."
+
+
