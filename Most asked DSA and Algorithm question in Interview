@@ -1,0 +1,42 @@
+Q>////////////////////////////////////////////////////////
+Find the second largest element in array.
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+        int[] arr = { 4, 6, 7, 5, 6, 8, 9, 4, 5, 7, };
+        Console.WriteLine(FindSecondLargestNumber(arr));
+    }
+    public static int FindSecondLargestNumber(int[] arr)
+    {
+        if (arr.Length < 2)
+        {
+            throw new ArgumentException("their is no second largest ");
+        }
+        int firstLargest = int.MinValue;
+        int secondLargest = int.MinValue;
+
+        foreach(int num in arr)
+        {
+            if (num > firstLargest)
+            {
+                secondLargest = firstLargest;
+                firstLargest = num;
+            }
+
+            else if (num > secondLargest && num != firstLargest)
+            {
+                secondLargest = num;
+            }
+        }
+        if(secondLargest == int.MinValue)
+        {
+           throw new InvalidOperationException("their is no largest number exits");
+        }
+          
+
+        return secondLargest;
+    }
+}
+  
