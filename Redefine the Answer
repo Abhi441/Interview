@@ -1,0 +1,331 @@
+Asynchrouns operstion :- Task running in the background without stopping the application.
+
+->
+->
+->
+->
+->
+->
+
+Synchrouns operation :- Task excute one after another and app waits for each task to complete 
+moving to the next one.
+
+->
+  ->
+    ->
+      ->
+        ->
+          ->
+
+
+
+Observables                                 Promises
+
+-> Emit multiple value over a          Emit single value over the time
+   period of time.
+
+
+->Are lazy. they're not excuted until          -> excute Immediate after creation
+  we subscribe to they  using the subscriptiom
+
+-> have cancell by using unsubcribe.            -> Are not cancelled.
+
+
+/////////////////////////
+RxJx
+Rxjs is library of javaScript used in angular for handling asynchrouns data such as Api calls. It provide observables.
+
+////////////////////////
+What is observable? How to implement it.
+An Observable in RxJx helps us handle data strems like Api response or user input , in a smooth and flexible way.
+
+1> Import Observable from Rxjx.
+2> Create the Observable that emits data.
+3> Subscribe to the component.
+
+/////////////////////
+What is the role of HttpClient in Angular ?
+ 
+Httpclient is build in service provided by angular to http requests(Get , post , put , delect 
+to send and receive the data from api or server.
+
+///////////////////////////
+What are Angualr Forms ? What are the type of Angualar Forms  ?
+
+->What forms are used to handle user's input and manage form data in an application.
+->Two type of Angular form.
+
+Template Driven Forms             
+-> Most of the code Written in Html.
+
+-> Add FormModule in AddModule to Activate It.
+
+-> best for simple form and have less control.
+
+
+  Reactive Forms
+
+-> Most of the code Written in TypeScript file.
+
+-> Add ReactiveModule in AppModule to Activate it.
+-> Best for large App Application and have more control.
+
+
+/////////////////////////////
+What is Authentication and Authorization in Angular
+
+Authentication : - Confirms who the user is(valid login or not)
+Autherisation :- Check what the user is allowed to do(access control for resourse)
+
+//////////////////////////////////// C#
+///////////////////////////////////  C#
+//////////////////////////////////   C#
+
+///////////////////////////////////////////////
+What is Inheritance and why is it Important
+
+
+->Inheritance is a OOPs concept , child class gets the properties from and behaviors(methods) of a parent class. 
+
+-> Inheritance is used to reusibility and abtraction of code.
+
+Example :
+public class Employee
+{
+public Employee()
+{
+  //
+}
+ private int salary;
+ 
+ public class Salary
+{
+  get
+ {
+   return experience;
+ }
+ set
+  {
+  experience = value ;
+ }
+}
+}
+
+
+class ContractEmplyee : Employee
+  public void CalculateSalary()
+ {
+  int salary = Experience * 300000 ;
+  }
+
+  Console.WriteLine(salary);
+  
+}
+
+
+///////////////////////////////////////////
+What are type of Inheritance
+
+//////////////////////////////////////
+What are the Diffrent type of Inheritance.
+
+1>Single Inheritance
+one child class inheritance from one parent class
+
+class Parent
+{
+public void Show()
+{
+ Console.WriteLine("This is Parent class");
+}
+
+}
+
+class Child : Parent
+{
+ // child inheritance from parent
+}
+
+class Program
+{
+ static void Main()
+ {
+  Child obj = new Child();
+  obj.Show();
+}
+}
+
+2> Multilevel Inheritance
+
+A Child class inherits from Parent, and Parent inherits from GrandParent
+
+class GrandParent
+{
+ public void ShowGrandParent()
+{
+  Console.WriteLine("GrandParent class");
+}
+
+class Parent : GrandParent
+{
+ public void ShowParent()
+{
+ Console.WriteLine("Parent class";)
+}
+}
+
+
+class Child : Parent
+{
+ public void ShowParent()
+ {
+  Console.WriteLine("");
+ }
+}
+class Program
+{
+ static void Main()
+{
+ Child obj = new Child();
+ obj.ShowGrandParent();
+obj.ShowParent();
+obj.ShowChild();
+}
+}
+
+3>One Parent class is get inherited by multiple Child classes
+
+class Employee
+{
+  public void Work()
+ {
+   Console.WriteLine("Employee working");
+ }
+}
+
+class ContractEmplyee : Employee
+{
+  public void ContractType()
+ {
+  Console.WriteLine("Contract Employee")
+ }
+}
+
+class ParmanentEmployee : Employee
+{
+  public void PermanentType()
+  {
+   Console.WriteLine("Permanent Employee");
+  } 
+}
+
+class Program
+{
+ static void main()
+ {
+  ContractEmplyee cEmp = new ContractEmplyee();
+   cEmp.Work();
+   cEmp.ContractType();
+
+  PermanemtEmplyee pEmp = new PermanentEmplyee();
+   pEmp.Work();
+   pEmp.PermanentType();
+ }
+}
+
+
+///////////////////////////////////////////////////
+What is Abtraction
+Abraction is oops concept , it will show the important part and hide the implementation part ,
+    let take the example when we  give exlerate of bike speed to bike will increase but we do
+    not know how the speed of bike is increasing
+
+class Employee
+{
+    public void Main(string[] args)
+    {
+
+        Salary();
+    }
+
+    public  void Salary()
+    {
+        ContactEmployeeSalary();
+        ParmantEmplyeeSalary();
+    }
+
+    public  void ContactEmployeeSalary()
+    {
+        
+    }
+    public  void ParmantEmplyeeSalary()
+    {
+        
+    }
+}
+
+/////////////////////////////////////
+What is Encapsulation
+Encapsulation is oops concept , it is used to wrap the data method and property into single units.
+
+example
+
+public class Employee
+{
+public class EmExperience;
+
+public int Employee
+{
+ get
+{
+ return emExperience;
+}
+ get
+{
+ emExperience = value;
+}
+}
+
+public void Main(string[] args)
+{
+ Employee obj = new Employee();
+ 
+ obj.EmExperience = 3;
+ 
+}
+
+//////////////////////////////
+////////////////////////////
+//////////////////////////// This part is new laptop.
+//////////////////////////////
+///////////////////////////
+///////////////////////////
+
+/////////////////////////////////////////////
+what is Extensition Methods :::
+An extension method is a static method in a static class that uses the this keyword before the first parameter to
+extend the functionality of an existing type without modifying the original type
+
+public static class IntExtensition
+{
+    public static int DoubleIt(this int number)
+    {
+        return number * 2;
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        int x = 5;
+        int result = x.DoubleIt();// Calls the extensitiom method
+        Console.WriteLine(result); // Output: 10
+    }
+}
+///////////////////////////////////////
+//What are the important components of .Net Framework ? What are their roles?
+//-->CLR : It's the engion of .Net that runs your code, manages memory,and handle security.
+//-->cts : It ensure all .net languages use the same data types so they can work together.
+//-->FCL or BCL :It's a big collection of ready-made classes and functions you can use to build your apps faster.
+//-->CLS :It's a set of rules that .Net languages follow so they can talk to each other easily.
