@@ -39,4 +39,27 @@ class Program
         return secondLargest;
     }
 }
-  
+  ///////////////////////////////////////////////////////Reverse String the string
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+        string str = "Hello, World!";
+        Console.WriteLine(ReverseString(str));
+    }
+
+    public static string ReverseString(string str)
+    {
+       if(string.IsNullOrEmpty(str))
+        {
+            return "String is null or empty";
+
+        }
+        char[] chararray = str.ToCharArray();
+        Array.Reverse(chararray);
+        return new string(chararray);
+
+
+    }
+}
