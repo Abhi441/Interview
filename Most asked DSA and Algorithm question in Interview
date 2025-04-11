@@ -106,3 +106,66 @@ class Program
         return sb.ToString();
     }
 }
+///////////////////////////////////////
+Find the First Non-Repeating Character in a String
+Problem Statement:
+
+> Given a string, find and return the first non-repeating character.
+If there is no such character, return -1.
+
+Example 1:
+
+Input:  "aabbcddbe"
+Output: 'c'
+
+Example 2:
+
+Input:  "aabbcc"
+Output: -1
+
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+        String str = "aaabbbcccddfggghhrrr";
+        char result = FindNonRepeatingCharacters(str);  
+        if(result != '0')
+        {
+            Console.WriteLine("The first non-repeating character is: " + result);
+        }
+        else
+        {
+            Console.WriteLine("No non-repeating character found.");
+        }
+
+    }
+    public static char FindNonRepeatingCharacters(String str)
+    {
+        Dictionary<char, int> keyValuePairs = new Dictionary<char, int>();
+
+        foreach (char c in str)
+        {
+            if (keyValuePairs.ContainsKey(c))
+            {
+                keyValuePairs[c]++;
+            }
+            else
+            {
+                keyValuePairs.Add(c, 1);
+            }
+        }
+            foreach (char ch in str)
+            {
+                if (keyValuePairs[ch] == 1)
+                {
+                    return ch;
+                }
+            }
+        
+            return '0';
+
+        
+    }
+}
+
