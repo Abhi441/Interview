@@ -1657,3 +1657,46 @@ Would you like an example where both are combined?
 //////////////////////////////////Q> Write the sql query find max salary from whose age is greater than 52.
 Select Max(Salary) as MaxSalary from Employee table
 where age > 55.
+
+///////////////////////////////////////////////////////
+input : "R@*IG#H@T"
+output : "T@*HG#I@R"
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        string str = "R@*IG#H@T";
+        string str1 = ReverseString(str);
+        Console.WriteLine(str1);
+    }
+    
+    public static string ReverseString(string str)
+  {
+    char[] ch = str.ToCharArray();
+    int left = 0;
+    int right = str.Length - 1 ;
+  while(right > left)
+  {
+      if(!Char.IsLetter(ch[left]))
+      {
+          left++;
+      }
+     else if(!Char.IsLetter(ch[right]))
+      {
+          right--;
+      }
+      else
+      {
+      char temp = ch[left];
+      ch[left] = ch[right];
+      ch[right] = temp;
+      left++;
+      right--;
+  }
+  }
+  return new string(ch);
+}
+}
