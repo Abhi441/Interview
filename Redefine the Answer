@@ -769,3 +769,30 @@ Having AVG(Salary) > 50000;
 Open-Sourse
 Cross-plateform
 Used for building modern web apps,APIs,cloud services, console apps and more. 
+/////////////////////////////////////////////////////How to handle the error in Asp.netcore.
+
+Global- Error Handling - so the whole app doesn't crash:
+
+if(app.Enviroment.IsDevelopment())
+{
+app.UseDeveloperExceptionPage();//Show detailed error in development;
+}
+else
+{
+ app.UseExceptionHandler("/Home/Error");//Show friendly erro page in Production.
+}
+
+Try-catch Block -for specific code
+try
+{
+
+}
+catch(Exception ex)
+{
+_logger.LogError(ex,"Something went wrong.");
+return StatusCode(500, "An error occured.");
+}
+
+-> Global error handling saves the full app.
+-> Try-Catch handles errors in specific code blocks.
+-> Logging helps us track the issue.
