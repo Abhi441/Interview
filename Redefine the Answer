@@ -734,3 +734,25 @@ class Program
 //-->cts : It ensure all .net languages use the same data types so they can work together.
 //-->FCL or BCL :It's a big collection of ready-made classes and functions you can use to build your apps faster.
 //-->CLS :It's a set of rules that .Net languages follow so they can talk to each other easily.
+
+
+//////////////////////////////////////////////////
+////////////////////////////////////////////////SQL
+////////////////////////////////////////////////
+///////////////////////////////////////////////
+What is the diffrence between where and having in sql?
+//where
+-->Where is used to filter the rows before grouping.
+-->you cannot .
+Having
+-->Having is used to filter groups after using the Group By.
+--> You can use aggregate functions in HAVING.
+
+Example:
+Select Department , Avg(salary) AS
+AverageSalary from Employee
+where status = 'Active'
+group by Department
+Having AVG(Salary) > 50000;
+
+-->In short Where filters individual recoreds, Having filters grouped results.
