@@ -77,6 +77,10 @@ What is Authentication and Authorization in Angular
 Authentication : - Confirms who the user is(valid login or not)
 Autherisation :- Check what the user is allowed to do(access control for resourse)
 
+//////////////////////////////////////
+Can I give the answer for interview, What is the role of HttpClinet in Angular : HttpClient is built in service provided by 
+angular for Http request (Get, post, patch , delete) to send and receive the request , if wrong pls correct with most easiest word for human being
+
 //////////////////////////////////// C#
 ///////////////////////////////////  C#
 //////////////////////////////////   C#
@@ -294,12 +298,413 @@ public void Main(string[] args)
  
 }
 
-//////////////////////////////
-////////////////////////////
-//////////////////////////// This part is new laptop.
-//////////////////////////////
-///////////////////////////
-///////////////////////////
+
+/////////////////////////////////////////////////////////////////
+what is Abstraction.
+
+👉 Abstraction is an OOP concept that hides unnecessary details and only shows important parts to the user.
+
+Example:
+When you accelerate a bike, the speed increases, but you don’t see how the engine works internally.
+The complexity is hidden, and only the important part (speed control) is visible.
+
+How do we achieve Abstraction in C#?
+✔ Using abstract classes (with abstract methods).
+✔ Using interface (where methods are declared but not defined).
+
+Example Code in C#:
+csharp
+Copy
+Edit
+// Abstract class: Defines common structure but hides implementation
+abstract class Employee  
+{  
+    public abstract void CalculateSalary();  // Only method definition (no implementation)  
+
+    public void ShowDetails()  
+    {  
+        Console.WriteLine("Showing Employee Details");  
+    }  
+}  
+
+// Permanent Employee class implements its own salary calculation
+class PermanentEmployee : Employee  
+{  
+    public override void CalculateSalary()  
+    {  
+        Console.WriteLine("Salary = HoursWorked * HourlyRate");  
+    }  
+}
+
+// Contract Employee class implements a different salary calculation
+class ContractEmployee : Employee  
+{  
+    public override void CalculateSalary()  
+    {  
+        Console.WriteLine("Salary = (HoursWorked * HourlyRate) - 4000");  
+    }  
+}
+
+// Main Program
+class Program  
+{  
+    static void Main()  
+    {  
+        Employee emp1 = new PermanentEmployee();  
+        emp1.CalculateSalary();  // Output: Salary = HoursWorked * HourlyRate  
+        emp1.ShowDetails();  
+
+        Employee emp2 = new ContractEmployee();  
+        emp2.CalculateSalary();  // Output: Salary = (HoursWorked * HourlyRate) - 4000  
+    }  
+}
+
+
+//////////////////////////////////////////////////////////
+What is Encapsulation
+
+Q: What is Encapsulation?
+👉 Encapsulation is an OOP concept that wraps data (variables) and methods (functions) inside a single unit (class).
+👉 It hides the data from direct access and provides controlled access using getter and setter methods.
+
+✅ Corrected Example in C#:
+csharp
+Copy
+Edit
+public class Employee
+{
+    private int empExperience;  // Private variable (cannot be accessed directly)
+
+    // Public property with getter and setter
+    public int EmpExperience
+    {
+        get 
+        { 
+            return empExperience;  
+        }
+        set 
+        { 
+            if (value > 0) // Prevents negative experience
+                empExperience = value;  
+            else
+                Console.WriteLine("Experience cannot be negative");  
+        }
+    }
+}
+
+// Main Program
+class Department
+{
+    static void Main(string[] args)  // Fixed the typo in Main()
+    {
+        Employee emp = new Employee();  
+        emp.EmpExperience = 3;  // Setting the experience
+        Console.WriteLine("Employee Experience: " + emp.EmpExperience);  // Getting the experience
+    }
+}
+
+/////////////////////////////////////////////////////////////////////Polymorphism
+
+
+
+Polymorphism is oops concept , poly means many and form means form , it will behave diffrent in diffrent place .
+
+The word "Run" can be used in different contexts:
+1️⃣ "Running a business"(managing it)
+2️⃣ "Running a bike"(riding it)
+
+     -> we have two type of polymorphism 
+    1> overloading : In overloading method have the same name in the same class and all the method work diffrently ways. It will happen at compiletime.
+    2> overriding  : In overriding  method have the same name and signature but in the diffrent class . it will happen at Runtime.
+
+    or
+     Types of Polymorphism in C#:
+1️⃣ Method Overloading (Compile-Time Polymorphism)
+
+The same method name is used with different parameters in the same class.
+
+This is resolved at compile time.
+
+2️⃣ Method Overriding(Runtime Polymorphism)
+
+A child class provides a new implementation of a method already present in the parent class.
+
+This happens at runtime.
+
+
+// Overloading
+    class Calculator
+{
+    // Same method name but different parameters
+    public int Add(int a, int b)
+    {
+        return a + b;
+    }
+
+    public int Add(int a, int b, int c)
+    {
+        return a + b + c;
+    }
+
+    public double Add(double a, double b)
+    {
+        return a + b;
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Calculator calc = new Calculator();
+        Console.WriteLine(calc.Add(5, 10));      // Calls method with 2 parameters
+        Console.WriteLine(calc.Add(5, 10, 15));  // Calls method with 3 parameters
+        Console.WriteLine(calc.Add(5.5, 10.5));  // Calls method with double parameters
+    }
+}
+
+// Overrinding
+class BaseClass
+{
+    public virtual void Greet()
+    {
+        Console.WriteLine("Welcome from Base Class!");
+    }
+}
+
+class SubClass : BaseClass
+{
+    public override void Greet()
+    {
+        Console.WriteLine("Welcome from Sub Class!");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        BaseClass obj = new SubClass();
+        obj.Greet();  // Calls the overridden method from SubClass
+    }
+}
+
+/////////////////////////////////////////////////////
+
+WHEN TO USE INTERFACE AND WHEN ABSTRACT CLASS? :::
+
+
+
+Abstarction: -
+--> common Property / behavior to all the derived class.
+--> when we need property, feild, method, contructor.
+--> when we want that implementation of method in the same way then go for abstraction.
+
+abstract public Employee
+{
+    public abstract void CalculateSalary(); 
+    
+   public void CalculateSalary()
+   {
+    Console.WriteLine("Tax calculation");
+   }
+}
+Interface: -
+
+--> when you want multiple inheritance achieve then go for Intrface,
+--> when you go for contract.
+--> when we want loosely coupled thing.
+--> 
+interface emEmployee
+{ 
+  void play();
+}
+
+
+
+
+///////////////////////////////////////////////
+What is Nullable type Nullable type is used to store null values;
+this is useful when you want to represent a value that may or may not be present.
+
+using System;
+class Program
+{
+    static void Main(string[] args)
+    {
+        int? a = null;
+        Console.WriteLine(a);
+    }
+}
+///////////////////////Generic
+What are Generics in C#?
+
+Generics allow us to create classes, methods, and interfaces that work with any data type in a type-safe way.
+
+Instead of writing the same code for different types (like int, string, etc.), we write it once using generics — and it will work for any type.
+
+Why and When to Use Generics?
+Type safety – No need for casting.
+
+Code reusability – Write one method for all data types.
+
+Performance – Avoids boxing/unboxing (in value types).
+
+Clean and maintainable code.
+
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        bool isEqual = Calculator.AreEqual<int>(10, 10);
+        bool isStrEqual = Calculator.AreEqual<string>("Hello", "Hello");
+
+        Console.WriteLine("Int equal: " + isEqual);
+        Console.WriteLine("String equal: " + isStrEqual);
+    }
+}
+
+public class Calculator
+{
+    public static bool AreEqual<T>(T a, T b)
+    {
+        return a.Equals(b);
+    }
+}
+
+///////////////////////////////////////////////////////////
+using System.Security.AccessControl;
+
+What is the diffrence between arr and arralist :::
+
+Array
+
+-->Arrays is fixed in size.
+-->Arrays are strongly typed.
+-->better in performance because typed is Known at compile time.
+
+EXample Array
+class Program
+{
+    public static void Main(string[] args)
+    {
+        int[] array = new int[10];
+        array[0] = 1;
+        array[1] = 2;
+    }
+}
+
+ArrayList
+
+-->Arraylist is not in fixed size.
+-->Arraylist is not strongly typed.
+--> Arraylist is not better in performance because it is not strongly typed.
+
+EXample Arratlist
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+        ArrayList ar = new ArrayList();
+        ar.Add(1);
+        ar.Add(2);
+    }
+}
+
+///////////////////////////////////////
+using System;
+
+What is the Imumerable in c# :::
+--> IEnumerable is an interface in C# that allows us to loop through a collection using a foreach loop.
+--> It works internally with IEnumerator, which moves one item at a time.
+--> When we use IEnumerable, it pulls data one by one — not all at once in memory.
+--> It is useful for read-only access to a collection.
+
+
+when to use:
+
+--> When you just want to iterate (loop) through a collection like List, Array, Dictionary, etc.
+--> Ideal when you don’t need to modify the collection.
+--> You can use LINQ with it (Where, Select, etc.).
+
+example
+class Program
+{
+    public static void Main(string[] agts)
+    {
+        var employee = new List<Employee>()
+        {
+            new Employee() { ID = 1, Name = "John", Salary = 1000 },
+            new Employee() { ID = 2, Name = "Jane", Salary = 2000 }
+        };
+        foreach(var emp in employee)
+        {
+            Console.WriteLine($"ID: {emp.ID}, Name: {emp.Name}, Salary: {emp.Salary}");
+        }
+    }
+}
+
+public class Employee
+{
+    public int ID { get; set; }
+    public string Name { get; set; }
+    public double Salary { get; set; }
+}
+
+--> IEnumerable is lazy - loaded — it fetches data only when you access it. This is great for performance 
+    when dealing with large datasets.
+
+///////////////////////////////////////////////////////////////
+
+
+What is the diffrence betwenn Inumerator and Inumerable :::
+
+    IEnumerable
+    -- > It represents a collection that can be iterated (looped) using foreach.
+    -- > It has one method: GetEnumerator(), which returns an IEnumerator
+
+    IEnumerable<string> fruits = new List<string> { "Apple", "Banana" };
+
+IEnumerator
+
+    It is used to loop through each item one by one in a collection
+    It has two main methods:
+
+MoveNext() → moves to next item
+
+Current → gives the current item
+
+    Real-Life Analogy:
+IEnumerable = TV Remote(it lets you go through channels)
+
+IEnumerator = Finger that presses Next button (moves from one channel to another)
+
+    using System;
+using System.Collections;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        List<string> colors = new List<string> { "Red", "Green", "Blue" };
+
+        IEnumerable<string> enumerable = colors;
+        IEnumerator<string> enumerator = enumerable.GetEnumerator();
+
+        while (enumerator.MoveNext())
+        {
+            Console.WriteLine(enumerator.Current);
+        }
+    }
+}
+
+Final One-Liner (For Interview):
+"IEnumerable represents the whole collection, and IEnumerator is the tool that moves through each item in that collection."
+
 
 /////////////////////////////////////////////
 what is Extensition Methods :::
