@@ -756,3 +756,16 @@ group by Department
 Having AVG(Salary) > 50000;
 
 -->In short Where filters individual recoreds, Having filters grouped results.
+
+//////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////.NetCore
+///////////////////////////////////////////////////////
+////////What is .NetCore
+--> .Net Core is a free, open-sourse,and cross-plateform framework for building diffrent types of applications like web apps, Apis and cloud services
+--> it runs on windowns , Linux and Mac.
+
+//////////Key Point
+Open-Sourse
+Cross-plateform
+Used for building modern web apps,APIs,cloud services, console apps and more. 
