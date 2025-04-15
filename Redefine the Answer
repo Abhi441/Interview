@@ -536,6 +536,97 @@ class Program
         Console.WriteLine(a);
     }
 }
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////What is the Constructor and type.
+--> A Constructor is a special method in a class that is automatically called when we create an object.
+
+--> It is mainly used to initialize the object.
+
+--> The constructor name is same as the class name and it has no return type.
+
+--> Application
+1> Initializing the objects with default or required data.
+2>Dependency Injection
+
+
+1> Default Constructor
+-->No parameters.
+-->Automatically initizes object when no value is passes.
+
+Application
+Frameworks like Entity Framework require a parameterless constructor for mapping.
+
+example
+
+public class Product
+{
+public int Id {get; set ;}
+public string Name {get ; set ;}
+
+// Default construction for EF or serialization
+public Product()
+{
+}
+}
+
+2> Parameterized Constructor
+-> Takes parameter to set values when object is created.
+
+Application 
+Dependency Injection., Injecting services in ASP.Net Core
+Example
+public class OrderServices
+{
+ private readonly IOrderRepository _repository;
+
+ public OrderService(IOrderRepository repository)
+{
+ _repository = repository;
+}
+}
+
+3> Static Constructor
+-> Used to initialize static member of the class.
+-> Called only once, automatically, when the class is first used.
+
+use : When you want to initialize static data, like connection strings, only once before the class is used. ex : Loading configuration.
+
+Example
+public class ConfigManager
+{
+pulic static string ConnectionString;
+static ConfigManager()
+{
+  ConnectionString = "Server=MyServer";
+}
+}
+
+4> Private Constructor
+   -> Used when we want to restrict the object creation fro  outside.
+   -> Mostly used in Singleton Desigb Pattern.
+   -> Cannot be inherited.
+
+example:
+public class Logger
+{
+ private static Logger _instance;
+ private Logger() {} // Private constructor
+
+ public static Logger GetInstance()
+{
+   if(_instance == null)
+{
+  _instance = new Logger();
+}
+return _instance;
+}
+}
+
+
 ///////////////////////Generic
 What are Generics in C#?
 
