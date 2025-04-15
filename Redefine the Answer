@@ -832,7 +832,55 @@ class Program
 
 Final One-Liner (For Interview):
 "IEnumerable represents the whole collection, and IEnumerator is the tool that moves through each item in that collection."
+//////////////////////////////////////////////////
+//Diffrence between Method Overriding and Method hinding
+overrding
+Say all the point from kindle
+public class Parent
+{
+    public virtual void Show() => Console.WriteLine("Parent");
+}
 
+public class Child : Parent
+{
+    public override void Show() => Console.WriteLine("Child");
+}
+
+Parent obj = new Child();
+obj.Show();  // Output: Child  (object type decides)
+
+
+Method Overriding:
+→ Child class changes the parent’s method.
+→ Uses override keyword.
+→ Runs based on object type.
+→ Decided at runtime.
+
+
+//Hiding
+Hiding
+
+public class Parent
+{
+    public void Show() => Console.WriteLine("Parent");
+}
+
+public class Child : Parent
+{
+    public new void Show() => Console.WriteLine("Child");
+}
+
+Parent obj = new Child();
+obj.Show();  // Output: Parent  (reference type decides)
+
+
+Method Hiding:
+→ Child class hides the parent’s method.
+→ Uses new keyword.
+→ Runs based on reference type.
+→ Decided at compile time.
+
+ 
 
 /////////////////////////////////////////////
 what is Extensition Methods :::
