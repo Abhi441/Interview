@@ -626,7 +626,44 @@ return _instance;
 }
 }
 
+///////////////////////////////////////////////////////////////////////////What is Method Hinding
+--> We use Method Hinding when a child class define a method with the same name as a method in the parent class - but we don't want to override it , just hide or replace it in the child class. 
 
+In Method Hinding , you can hide the implementation of the methods of a base class from the derived class using the new keyword.
+
+
+When to use it.
+--> When the parent class method is not virtual or can't be overridden.
+--> When you want the child method to behave diffrently - but only when acccessed throught the child refrence.
+
+
+example
+
+public class Parent
+{
+ public void Show()
+{
+  Console.WriteLine("Parent Show Method");
+}
+}
+
+public class Child : Parent
+{
+ public new void Show()
+{
+ Console.WriteLine("Child Show Method");
+}
+}
+
+
+Parent p = new Parent();
+p.Show() // output : Parent Show Method
+
+Child c = new Child();
+c.Show(); // Child Show Method
+
+Parent pc  = new Child();
+pc.Child(); // Parent show Method(hidding , not overring)
 ///////////////////////Generic
 What are Generics in C#?
 
