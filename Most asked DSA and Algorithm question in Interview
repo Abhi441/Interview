@@ -173,7 +173,44 @@ Q.1: How to reverse a string?
 Q.2: How to find if the given string is a palindrome or not?
 Q.3: How to reverse the order of words in a given string?
 Q.4: How to reverse each word in a given string?
-Q.5: How to count the occurrence of each character in a string?
+//////////////////////////////////////Q.5: How to count the occurrence of each character in a string?
+
+using System;
+using System.Collections.Generic;
+
+public class HelloWorld
+{
+public static void Main(string[] args)
+ {
+ string str = "Hello   world";
+ FindCount(str);
+     
+ }
+
+  public static void FindCount(string str)
+  {
+   Dictionary<char, int> dis = new Dictionary<char, int>();
+     foreach (char ch in str)
+       {
+           if(ch != ' ')
+           {
+           if (dis.ContainsKey(ch))
+          {
+          dis[ch]++;
+             }
+             else
+                {
+               dis.Add(ch, 1);
+                }
+           }
+       }
+            foreach (var item in dis)
+           {
+       //  Console.WriteLine($"{item.Key}: {item.Value}");
+         Console.WriteLine($"{item.Key} : {item.Value}");
+          }
+    }
+}
 Q.6: How to remove duplicate characters from a string?
 Q.7: How to find all possible substring of a given string?
 Q.8: How to perform Left circular rotation of an array?
