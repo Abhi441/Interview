@@ -169,9 +169,9 @@ class Program
     }
 }
 //////////////////////////////
-Q.1: How to reverse a string?
+
 Q.2: How to find if the given string is a palindrome or not?
-Q.3: How to reverse the order of words in a given string?
+
 Q.4: How to reverse each word in a given string?
 //////////////////////////////////////Q.5: How to count the occurrence of each character in a string?
 
