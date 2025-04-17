@@ -281,7 +281,32 @@ class Program
         Console.WriteLine(sb.ToString());
     }
 }
-Q.7: How to find all possible substring of a given string?
+///////////////////////////////////////////Q.7: How to find all possible substring of a given string?
+//input: abcd , output : a ab abc abcd b bc bcd c cd d
+
+using System;
+using System.Text;
+class Program
+{
+    public static void Main(string[] args)
+    {
+        string str = "abcd";
+        PosSub(str);
+    }
+    public static void PosSub(string str)
+    {
+        for(int i = 0 ; i < str.Length ; i++)
+        {
+        StringBuilder sb = new StringBuilder(str.Length - 1);
+            for(int j = i ; j < str.Length ; j++)
+             {
+                sb.Append(str[j]);
+                Console.Write(sb + " ");
+             }
+             
+        }
+    }
+}
 Q.8: How to perform Left circular rotation of an array?
 Q.9: How to perform Right circular rotation of an array?
 Q.10: How to find if a positive integer is a prime number or not?
