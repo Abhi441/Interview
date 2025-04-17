@@ -254,9 +254,11 @@ public static void Main(string[] args)
           }
     }
 }
-Q.6: How to remove duplicate characters from a string?
-//How to remove duplicate characters from a string? 
-//Time : 12:00
+///////////////////////////////////////////////Q.6: How to remove duplicate characters from a string?
+The user will input a string and the method should remove multiple occurrences of characters in the string
+input: csharpcorner, output: csharpone
+
+
 using System;
 using System.Text;
 class Program
