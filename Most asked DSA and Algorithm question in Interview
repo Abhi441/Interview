@@ -171,6 +171,11 @@ class Program
 //////////////////////////////
 
 Q.2: How to find if the given string is a palindrome or not?
+
+ /////////////////////////////////////////////////////Q.4: How to reverse each word in a given string?
+Ans.: The user will input a sentence and we need to reverse each word individually without changing its position in the sentence.
+input: Welcome to Csharp corner, output: emocleW ot prahsC renroc
+
 using System.Text;
 using System.Collections.Generic;
 using System;
@@ -211,7 +216,6 @@ class Program
         Console.WriteLine(sb.ToString());
     }
 }
-Q.4: How to reverse each word in a given string?
 //////////////////////////////////////Q.5: How to count the occurrence of each character in a string?
 
 using System;
