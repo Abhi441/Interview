@@ -171,7 +171,46 @@ class Program
 //////////////////////////////
 
 Q.2: How to find if the given string is a palindrome or not?
-
+using System.Text;
+using System.Collections.Generic;
+using System;
+class Program
+{
+    
+    public static void Main(string[] args)
+    {
+        string str = "Abhishek is Intelligent boys";
+        RSEW(str);
+    }
+    public static void RSEW(string str)
+    {
+        StringBuilder sb = new StringBuilder();
+        List<char> ls = new List<char>();
+        for(int i = 0 ; i < str.Length ; i++)
+        {
+            if(str[i] == ' ' || i == str.Length - 1 )
+            {
+                if(i == str.Length - 1)
+                {
+                    ls.Add(str[i]);
+                }
+                
+                    for(int j = ls.Count - 1 ; j >= 0 ; j--)
+                    {
+                        sb.Append(ls[j]);
+                    }
+                    sb.Append(' ');
+                    ls = new List<char>();
+                
+            }
+            else
+            {
+                ls.Add(str[i]);
+            }
+        }
+        Console.WriteLine(sb.ToString());
+    }
+}
 Q.4: How to reverse each word in a given string?
 //////////////////////////////////////Q.5: How to count the occurrence of each character in a string?
 
