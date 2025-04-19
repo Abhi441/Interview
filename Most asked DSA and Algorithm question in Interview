@@ -363,6 +363,38 @@ public class HelloWorld
     }
 }
 Q.10: How to find if a positive integer is a prime number or not?
+using System;
+class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+    bool res = CheckPrime(25);
+    Console.WriteLine(res);
+}
+public static bool CheckPrime(int n)
+{
+    if(n == 0 || n == 1)
+    {
+        return false;
+    }
+    if(n == 2 || n == 3)
+    {
+        return true;
+    }
+    if(n % 2 == 0 || n % 3 == 0)
+    {
+        return false;
+    }
+    for(int i = 5 ; i * i <= n ; i = i +  6)
+    {
+        if(n % i == 0 || n % (i + 2) == 0 )
+        {
+            return false;
+        }
+    }
+    return true;
+}
+}
 Q.11: How to find the sum of digits of a positive integer?
 Q.12: How to find second largest integer in an array using only one loop?
 Q.13: How to find third largest integer in an array using only one loop?
