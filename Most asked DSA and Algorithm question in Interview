@@ -336,7 +336,32 @@ class Program
           }
      }
 }
-Q.9: How to perform Right circular rotation of an array?
+///////////////////////////////////Q.9: How to perform Right circular rotation of an array?
+input: 1 2 3 4 5, output: 5,1,2,3,4
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        int[] arr = { 5, 1, 2, 3, 4 };
+        RotateRight(arr);
+    }
+    public static void RotateRight(int[] arr)
+    {
+        int last = arr[arr.Length - 1];
+        for (int i = arr.Length - 1 ; i > 0 ; i--)
+        {
+            arr[i] = arr[i - 1];
+        }
+        arr[0] = last;
+        for (int j = 0; j < arr.Length; j++)
+        {
+            Console.WriteLine(arr[j]);
+        }
+    }
+}
 Q.10: How to find if a positive integer is a prime number or not?
 Q.11: How to find the sum of digits of a positive integer?
 Q.12: How to find second largest integer in an array using only one loop?
