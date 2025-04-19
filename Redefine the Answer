@@ -1,3 +1,29 @@
+//What is Angular ?
+Angular is a component-based framework for building structured, scalable and single page application.
+//What is the Angular Advantages ?
+1> it is relatively simple to build a single page application.
+2> Flexible and structural client application.
+3>Angular is cross Plateform and opensourse.
+4>Writing Reusable code is easy.
+5> Testing is easy.
+
+//What is the diffrence between Angular and Angular JS ? or What are the advantages of Angularover AngularJS ?
+ ///Angular js
+1> It is only supports javaScript.
+2> This framework has a model-view-controller(MVC) architecture.
+3>It does have CLI tool.
+4>It does not use Dependency Injection.
+5> It is not a so fast.
+
+/////Angular
+1>It support both JavaScript and TypeScript.
+2> This framework has a component archotecture.
+3> It has CLI
+4> It uses Dependency Injection.
+5> It also support moble browser.
+6> It is very fast.
+
+
 Asynchrouns operstion :- Task running in the background without stopping the application.
 
 ->
