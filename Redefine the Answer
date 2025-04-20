@@ -988,6 +988,32 @@ Drop Table Employee;
 
 -->In short Where filters individual recoreds, Having filters grouped results.
 
+///////////////////////////////////////////////////////What is the diffrence between Union And Union All.
+//Union
+--> Combines the result of two or more Select statements.
+--> Remove duplicate rows(show only unique data).
+--> All SELECT statements must have the same number of columns and the same data type.
+
+Example
+Select Name from TableA
+Union 
+Select Name from TablesB
+
+UNION All
+--> Combines the result of two or more SELECT statements.
+--> Keeps all the rows, including duplicates.
+--> All SELECT statement must have the same number of coloums and the same data type
+
+
+Example
+SELECT Name from TableA.
+Union All
+Select Name from TablesB.
+
+Final
+Union --> remove duplicate row
+UnionALL --> Keep all the rows.
+
 //////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////.NetCore
