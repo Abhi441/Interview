@@ -417,10 +417,10 @@ class Program
         return sum ;
     }
 }
-Q.12: How to find second largest integer in an array using only one loop?
 Q.13: How to find third largest integer in an array using only one loop?
 Q.14: How to convert a two-dimensional array to a one-dimensional array?
 Q.15: How to convert a one-dimensional array to a two-dimensional array?
+
 Q.16: How to find the angle between hour and minute hands of a clock at any given time?
 Q.17: Explain Bubble Sort Algorithm In C#
 Q.18: Explain Quick Sort Algorithm In C#
