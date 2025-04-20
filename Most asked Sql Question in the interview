@@ -4,3 +4,11 @@ FROM EMPLOYEE
 ORDER BY salary DESC 
 OFFSET 1 ROW 
 FETCH NEXT 1 ROW ONLY;
+
+/////////////////////////if I have to find 10 th highest salary 
+SELECT DISTINCT salary 
+FROM EMPLOYEE 
+ORDER BY salary DESC 
+OFFSET 9 ROW 
+FETCH NEXT 1 ROW ONLY;
+ 
