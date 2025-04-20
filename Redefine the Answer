@@ -956,6 +956,35 @@ AverageSalary from Employee
 where status = 'Active'
 group by Department
 Having AVG(Salary) > 50000;
+//////////////////////////////What is Diffrence bewteen Delete,Truncate , Drop in Sql
+
+////Delect 
+1> Used to remove the specific rows from a table.
+2>you can use where to delete the 
+3>can be rolled back(if inside a transaction)
+4>It is a DML(Data Manipulation Language) command.
+5>Table structure does not changes.
+
+Example:
+Delect from Employee Where Employee = 5 ;
+
+//////Truncate
+1>Remove all rows from table(empties the table).
+2>Cannot be rolled back in many 
+databases(in SQL Server, rollback is possible if used a transaction).
+3>It is a DDL(Data Defination Language) command.
+4> Table structure does not changes.
+
+Example
+TRUNCATE Table Employee;
+
+//Drop
+-->Delete the entire table from database(structure + data);
+--> Cannot be rolled back.
+--> It is DDL(Data Defination Language) command
+
+Example
+Drop Table Employee;
 
 -->In short Where filters individual recoreds, Having filters grouped results.
 
