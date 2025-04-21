@@ -19,3 +19,27 @@ over(Order by salary desc) AS Rank from EMPLOYEE)
 
 Select salary , empId from SalaryRank where Rank = 2 ;
 
+////////////////////////////////////////////////////
+Write a Sql query to find duplicate records from a table called Employees based on the EmployeeNmae coloum.
+
+Select EmployeeName , Count(*) As NameCount
+from Employee group by EmployeeName Having Count(*) > 1 ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
