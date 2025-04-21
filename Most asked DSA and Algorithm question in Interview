@@ -460,7 +460,36 @@ class Program
 
     }
 }
-Q.14: How to convert a two-dimensional array to a one-dimensional array?
+/////////////////////////////////////////Q.14: How to convert a two-dimensional array to a one-dimensional array?
+
+//input: { { 1, 2, 3 }, { 4, 5, 6 } }, output: 1 4 2 5 3 6
+using System;
+class Program
+{
+    public static void Main(string[] args)
+    {
+        int[,] arr1 = {{1,2,3},{4,5,6}};
+        ConvertAndPrintArray(arr1);
+    }
+    public static void ConvertAndPrintArray(int[,] arr1)
+    {
+        int rows = arr1.GetLength(0);
+        int cols = arr1.GetLength(1);
+        int[] result = new int[rows * cols];
+       
+        int index = 0 ;
+        
+        for(int col = 0 ; col < cols ; col++)
+        {
+            for(int row = 0; row < rows ; row++)
+            {
+                result[index] = arr1[row, col];
+                Console.Write(result[index] + " ");
+                index++;
+            }
+        }
+    }
+}
 Q.15: How to convert a one-dimensional array to a two-dimensional array?
 
 Q.16: How to find the angle between hour and minute hands of a clock at any given time?
