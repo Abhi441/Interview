@@ -36,7 +36,30 @@ Write a Sql query to find all employee who have the same salary in the Employee 
 Select Employee,EmployeeName,Salary from Employee where Salary In  (
 Select Salary from Employee  group by Salary Having Count(*) > 1 );
 
+////////////////////////////////////////////////////////////////////////
+Write a SQL query to retrieve the list of employees who have the highest salary in each department.
+SELECT E.EmployeeId, E.EmployeeName, E.Salary, E.DepartmentId
+FROM Employee E
+INNER JOIN
+(
+    SELECT DepartmentId, MAX(Salary) AS MaxSalary
+    FROM Employee
+    GROUP BY DepartmentId
+) DeptMax
+ON E.DepartmentId = DeptMax.DepartmentId AND E.Salary = DeptMax.MaxSalary;
 
+
+//////////////////////////////////////////////////////////////////////////////////
+Write an SQL query to get the list of employees who do not have any manager.
+Employee
+---------
+EmployeeId
+EmployeeName
+ManagerId
+
+SELECT EmployeeName
+FROM Employee
+WHERE ManagerId IS NULL;
 
 
 
