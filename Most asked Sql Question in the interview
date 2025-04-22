@@ -25,6 +25,18 @@ Write a Sql query to find duplicate records from a table called Employees based 
 Select EmployeeName , Count(*) As NameCount
 from Employee group by EmployeeName Having Count(*) > 1 ;
 
+////////////////////////////////////////////
+Write a Sql query to retrive the top 3 highest  salaries from the Employee table
+
+Select Distinct Salary
+From Employee ORDER BY Salary DESC Offset 0 Rows Fetch Next 3 rows only;
+
+/////////////////////////////////////////////////////////////////////////////////////////
+Write a Sql query to find all employee who have the same salary in the Employee table.
+Select Employee,EmployeeName,Salary from Employee where Salary In  (
+Select Salary from Employee  group by Salary Having Count(*) > 1 );
+
+
 
 
 
