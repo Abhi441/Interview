@@ -491,6 +491,39 @@ class Program
     }
 }
 Q.15: How to convert a one-dimensional array to a two-dimensional array?
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+ //input: {1, 2, 3, 4, 5, 6} ,2 ,3
+//output:
+//1 2 3
+//4 5 6
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        int[] arr = new int[] {1, 2, 3, 4, 5, 6};
+        OneDToTwoD(arr, 2, 3);
+    }
+
+    public static void OneDToTwoD(int[] arr, int row, int col)
+    {
+        int index = 0;
+        int[,] arr1 = new int[row, col];
+        for (int i = 0; i < row; i++)
+        {
+            for (int j = 0; j < col; j++)
+            {
+                arr1[i, j] = arr[index];
+                index++;
+                Console.Write(arr1[i, j] + " ");
+            }
+            Console.WriteLine();
+        }
+    }
+}
 
 Q.16: How to find the angle between hour and minute hands of a clock at any given time?
 Q.17: Explain Bubble Sort Algorithm In C#
