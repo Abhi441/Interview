@@ -26,7 +26,11 @@ Angular is a component-based framework for building structured, scalable and sin
 //////////////
 Study from File.
 
+What is NPM?
+--> NPM(Node Pakage Manager ) is an online repository from where you get thousands of free libraries which can be used in your angular application 
 
+//What is the cli
+--> The Angular Cli(command-line interface) is a tool that you use to initialise and deplop Angular applications directly from Terminal.
 Asynchrouns operstion :- Task running in the background without stopping the application.
 
 ->
@@ -1056,3 +1060,51 @@ return StatusCode(500, "An error occured.");
 -> Global error handling saves the full app.
 -> Try-Catch handles errors in specific code blocks.
 -> Logging helps us track the issue.
+
+////////////////////////////////////
+///////////////////////////////////Some of important question
+///////////////////////////////////
+What is diffrence between rest api and Soap api.
+
+//Rest Api
+--> Works over HTTP protocol.
+--> Sends data in JSON format(easy to read/write).
+--> It's lightweight and faster.
+--> Used in modern web and mobile apps.
+
+
+//Soap API
+-->Used only XML format.
+-->Has strict rules and security.
+-->More heavyweigth and slower than REST.
+--> Often used in bancking, finance, enterprise systems.
+--> Example: XML request with a predefined structure.
+
+Simple Analogy:
+REST is like a WhatsApp message - quick and simple.
+SOAP is like a legal document - formal, secure and structure.
+
+Summary(one-liner for interview)
+REST is faster and simple; Soap is strict and more secure.
+
+//////////////////////////////////////
+First() and FirstOrDefault() are used to get the first matching element from a list or collection.
+
+
+///First()
+--> Meaning : Return the first element that matches your condition.
+-->If no match is found : It will throw an exception.
+-->When to use : When you are sure the collection will have at lease one matching item.
+ 
+example :
+var number = new List<int>{1,2,3,4,5};
+var firstEven = numbers.First(n => n % == 0);
+
+2) FirstOrfault()
+ --> Meaning : Return the first element that matches your condition.
+ --> If no match is found : It will return the default value(like null for classes, 0 for numbers).
+ When to use --> When you're not sure if the list contains a match, and you want to avoid errors.
+
+example :
+ var number = new List<int> {1,3,5};
+ var firstEven = number.FirstOrDefault(n => n % 2 == 0);
