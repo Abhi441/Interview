@@ -33,6 +33,25 @@ What is NPM?
 --> The Angular Cli(command-line interface) is a tool that you use to initialise and deplop Angular applications directly from Terminal.
 Asynchrouns operstion :- Task running in the background without stopping the application.
 
+/////////////////////
+What is the diffrence between JIO and AOT in Angular ?
+
+-->Both JIT and Aot are used to compile Angular Typescript component to Javascript , because browser understands Javascript not Typescript.
+
+Just-In-Time(JIT)   Compiles your application in the browser at runtime.
+
+Ahead-of-Time(AOT)  Compile your application and libraries at build time.
+
+
+-->All the latest Angulae versions use AOT to compile Typescript to Javascript.
+////////////////////////
+What is a Selector and Template
+Selector :- A selector is used to identify each component uniquely into the component tree.
+--> Where to show.
+
+Templete --> A Templete is a HTML View of an Angular component.
+Templete --> What to show
+
 ->
 ->
 ->
