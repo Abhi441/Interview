@@ -76,8 +76,20 @@ Write a SQL query to fetch the department names along with the total number of e
 Select  D.DepartmentName , Count(E.EmployeeId) , from Employee E Left Join Department D On D.DepartmentId  = E.DepartmentId 
 group by  D.DepartmentName ;
  
+/////////////////////////////////////////////////////////
+Write a SQl Query to display departments that have more than 5 employees.
 
-
+SELECT
+    D.DepartmentName,
+    COUNT(E.EmployeeId) AS TotalEmployees
+FROM
+    Employee E
+LEFT JOIN
+    Department D ON D.DepartmentId = E.DepartmentId
+GROUP BY
+    D.DepartmentName
+HAVING
+    COUNT(E.EmployeeId) > 5;
 
 
 
