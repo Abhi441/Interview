@@ -61,8 +61,21 @@ SELECT EmployeeName
 FROM Employee
 WHERE ManagerId IS NULL;
 
+//////////////////////////////////
+Write a Sql query to retrive the names of employees who earn than the average salary in the Employee table.
+Table structure:
+Employee(EmployeeId, EmployeeName , Salary)
 
+Select EmployeeId , EmployeeName from Employee where Salary > (Select AVG(Salary) from 
+Employee ) ; 
 
+////////////////////////////////
+Write a SQL query to fetch the department names along with the total number of employees in each department.
+(Assume there are two tables: Employee(EmployeeId , EmployeeName , DepartmentId) and  Department(DepartmentId , DepartmentName)
+
+Select  D.DepartmentName , Count(E.EmployeeId) , from Employee E Left Join Department D On D.DepartmentId  = E.DepartmentId 
+group by  D.DepartmentName ;
+ 
 
 
 
