@@ -28,4 +28,59 @@ foreach(var prop in type.GetProperties())
 }
 }
 
-//////////////////////
+///////////////////////////
+why c# doesnot uses multiple inheritance
+
+-->C# does not support multiple class inheritance to avoid ambiguity(Diamond Problem).
+-->But you can use multiple interfaces, which gives flexibility without confusion.
+--> Because it can create confusion and conflicts especially when two parent classes have the same method or property name.
+--> This is called the diamond Problem - and c# avoids it by not allowing a class to inherit from more than one class.
+
+Real life example
+Two bosses -->  diffrent instructions -->  same task --> now you are confuse.
+
+Class A
+   /      \
+Class B   Class C
+   \      /
+    Class D
+
+In this scenario, if Class B and Class C both inherit a method from Class A, then Class D could inherit two conflicting versions of that method. C# avoids this ambiguity by allowing only single inheritance,
+ensuring that each class has a clear and singular parent class.
+
+//////////////////////////////////////
+DbContext : Manages the connection to the database.
+DbSet : Represent a table in the database and provide methods to interact with data in the table
+what is DBcontext and DBset.
+DbContext :
+Think of DbContext as a bridge between your c# code and your database. It is like a manager rthat handles the interaction with database, like retrieving, updating ,and saving data.
+
+what id does : It connects to the database and helps you work the data.
+Where it is used : In Entity Framework Core to represent your database connection.
+
+DbSet:
+DbSet is like a collection of a special type of data from the database(like a table).It allows yoiu to perform operations(add, delete,update etc.)
+on the table.
+
+What it does : Represent a table in your database and gives you access to the rows(records) of the table.
+Where it is used : Inside the DbContest to interract with specific table.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
