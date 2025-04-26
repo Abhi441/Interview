@@ -1,0 +1,56 @@
+///////////////
+Method Hinding
+
+public class Parent
+{
+    public void Display()
+    {
+        Console.WriteLine("Parent Display");
+    }
+}
+
+public class Child : Parent
+{
+    public new void Display()
+    {
+        Console.WriteLine("Child Display");
+    }
+}
+
+Parent p = new Parent();
+p.Display(); // Parent Display
+
+Child c = new Child();
+c.Display(); // Child Display
+
+Parent pc = new Child();
+pc.Display(); // Parent Display
+
+////////////////////////////////////////////
+Method Overring
+
+public class Animal
+{
+    public virtual void Eat()
+    {
+        Console.WriteLine("This animal eats food.");
+    }
+}
+
+public class Dog : Animal
+{
+    public override void Eat()
+    {
+        Console.WriteLine("Dog barks.");
+    }
+}
+
+public class Program
+{
+    public static void Main()
+    {
+        Animal myDog = new Dog();
+        myDog.Eat(); //Output : This animal eats food.
+    }
+}
+
