@@ -12,7 +12,7 @@ ORDER BY salary DESC
 OFFSET 9 ROW 
 FETCH NEXT 1 ROW ONLY;
 
-
+//////////////////////need to review.
 //////////////////////Write the SQL query to find the second highest salary along with the empId from the Employee table.
 with SalaryRank As (Select salary, empId, ROW_Number()
 over(Order by salary desc) AS Rank from EMPLOYEE)
