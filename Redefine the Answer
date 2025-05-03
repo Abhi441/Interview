@@ -936,9 +936,60 @@ Method Hiding:
 
 /////////////////////////////////////////////
 what is Extensition Methods :::
-An extension method is a static method in a static class that uses the this keyword before the first parameter to
-extend the functionality of an existing type without modifying the original type
+Extension method is a method injected (added) into an existing class
+(or struct or interfaces), without modifying the sourse code of that 
+class(or struct or interface).
 
+--> Create the class without extensions method.
+--> Create the static class with static method.
+-->static class that uses the this keyword before the first parameter 
+--> to extend the functionality of an existing type without modifying the original type
+
+
+///As developer
+//
+namespace Products
+{
+    public class Product
+    {
+        public int WorkingHours ;
+        public int WorkingPerWages;
+    }
+}
+//
+
+using Products;
+
+namespace ProductExtensions
+{
+
+    public static class ProductExtension
+    {
+        public static int CalculateSalary(this Product product)
+        {
+           return  product.WorkingHours * product.WorkingPerWages;
+        }
+    }
+}
+//
+using Products;
+
+using ProductExtensions;
+
+namespace Programs
+{
+  class program
+  {
+        public static void Main(string[] args)
+        {
+            Product p = new Product() { WorkingHours = 100 ,
+         WorkingPerWages = 500 };
+            Console.WriteLine(p.CalculateSalary());
+        }
+  }
+}
+
+//As the base library
 public static class IntExtensition
 {
     public static int DoubleIt(this int number)
@@ -956,6 +1007,7 @@ class Program
         Console.WriteLine(result); // Output: 10
     }
 }
+
 ///////////////////////////////////////
 //What are the important components of .Net Framework ? What are their roles?
 //-->CLR : It's the engion of .Net that runs your code, manages memory,and handle security.
