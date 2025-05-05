@@ -260,6 +260,38 @@ The map branches the request pipeline based on matches of the given request path
 ///////////////////////////////////////////////////////////////////////type of routing in sql
 //What is routing
 its a process of matching incoming http requests to a corresponding endpoint where it will execute functions or necessary middlewares.
+
+//Type of Routing
+1> Conventional Routing
+Definition : Routing is defined in a central place (usually Program.cs) and follows a URL
+pattern convention like {controller}/{action}/{id}.
+--> Used when your application follow a consistence structure or naming convention.
+//code
+app.MapControllerRoute(
+name : "defalut",
+pattern : "{controller = Home}/{action = Index}/{id?}");
+
+//Attribute Routing :
+Defination : Route are defined directly on controller or action using {Route} or [HttpGet("route")]
+or [HttpGet("route")] attributes.
+//Use cases:
+Used when you want custom URLs or more control over routing.
+// ProductController.cs
+[Route("products")]
+public class ProductController : Controller
+{
+    [HttpGet("list")]
+    public IActionResult List()
+    {
+        return View();
+    }
+
+    [HttpGet("details/{id}")]
+    public IActionResult Details(int id)
+    {
+        return View();
+    }
+}
 ///////////////////////////////////////////////////////////////////direct and indirect in Ado.net
 It can be direct or indirect. In other words "connected" or "disconnected".
 //////////////////////////////cluster and non cluster in sql
