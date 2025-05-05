@@ -1,3 +1,41 @@
+////////////////////////////////////////////////////////
+//input : "Hello World"
+//output : "Hello dlroW"
+using System;
+using System.Text;
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        string input = "HelloABC WORLD";
+        StringBuilder sb = new StringBuilder();
+        //Hello dlroW
+        string[] str = input.Split(' ');
+        string First = str[0];
+        string Second = str[1];
+        for(int i = 0 ; i < First.Length ; i++)
+        {
+            sb.Append(First[i]);
+        }
+        char[] ch = Second.ToCharArray();
+        int j = 0;
+        int k = ch.Length - 1;
+
+        while (j < k)
+        {
+            // swap characters
+            char temp = ch[j];
+            ch[j] = ch[k];
+            ch[k] = temp;
+            j++;
+            k--;
+        }
+         sb.Append(' ');
+        sb.Append(ch);
+         Console.WriteLine(sb.ToString());
+    }
+}
+
 Q>////////////////////////////////////////////////////////
 Find the second largest element in array.
 
