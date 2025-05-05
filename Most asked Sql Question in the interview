@@ -1,4 +1,4 @@
-////////////////////Write a Sql query to fetch the second highest salary from the employee table.
+////////////////////Write a Sql query to fetch the second highest salary from the employee table.(You can try by rank() and dence rank() )
 SELECT DISTINCT salary 
 FROM EMPLOYEE 
 ORDER BY salary DESC 
