@@ -1092,6 +1092,143 @@ Final
 Union --> remove duplicate row
 UnionALL --> Keep all the rows.
 
+/////////////////////////////////////////
+How to optimise the SQL Query 
+1. Use Proper Indexing
+
+You have a Customers table and want to find a customer by their email.
+
+---
+
+Step 1: Create a Table
+
+CREATE TABLE Customers (
+    CustomerID INT PRIMARY KEY,
+    Name NVARCHAR(100),
+    Email NVARCHAR(100),
+    Phone NVARCHAR(20)
+);
+
+Step 2: Insert Sample Data
+
+INSERT INTO Customers (CustomerID, Name, Email, Phone)
+VALUES
+(1, 'Alice', 'alice@example.com', '12345'),
+(2, 'Bob', 'bob@example.com', '67890'),
+(3, 'Charlie', 'charlie@example.com', '24680');
+
+---
+
+Step 3: Query Without Index
+
+SELECT * FROM Customers WHERE Email = 'bob@example.com';
+
+This will scan the whole table (called Table Scan) because no index exists on Email.
+
+
+---
+
+Step 4: Add an Index
+
+CREATE NONCLUSTERED INDEX IX_Customers_Email ON Customers(Email);
+
+---
+
+Step 5: Run the Same Query Again
+
+SELECT * FROM Customers WHERE Email = 'bob@example.com';
+
+Now SQL Server will use the index on Email to quickly find the row, instead of scanning the whole table.
+
+2. Avoid SELECT *
+
+Fetch only needed columns.
+
+-- Bad
+SELECT * FROM Orders;
+
+-- Good
+SELECT OrderID, OrderDate, CustomerID FROM Orders;
+
+
+---
+
+3. Use EXISTS Instead of IN for Subqueries
+
+EXISTS is faster when checking existence.
+
+-- Slower
+SELECT Name FROM Employees
+WHERE DepartmentID IN (SELECT DepartmentID FROM Departments WHERE Location = 'NY');
+
+-- Faster
+SELECT Name FROM Employees e
+WHERE EXISTS (
+  SELECT 1 FROM Departments d
+  WHERE d.Location = 'NY' AND e.DepartmentID = d.DepartmentID
+);
+
+
+---
+
+4. Avoid Functions on Indexed Columns in WHERE
+
+Functions prevent index use.
+
+-- Bad: can't use index
+SELECT * FROM Users WHERE YEAR(DateOfBirth) = 1990;
+
+-- Good
+SELECT * FROM Users WHERE DateOfBirth >= '1990-01-01' AND DateOfBirth < '1991-01-01';
+
+
+---
+
+5. Use Joins Instead of Subqueries Where Appropriate
+
+-- Subquery (can be slower)
+SELECT Name FROM Students
+WHERE StudentID IN (SELECT StudentID FROM Results WHERE Score > 90);
+
+-- Better
+SELECT DISTINCT s.Name
+FROM Students s
+JOIN Results r ON s.StudentID = r.StudentID
+WHERE r.Score > 90;
+
+
+---
+
+6. Use Table Variables or Temporary Tables for Large Intermediate Data
+
+-- Using temp table for heavy processing
+SELECT * INTO #TempLargeData FROM LargeTable WHERE Status = 'Active';
+
+-- Then work with #TempLargeData
+SELECT COUNT(*) FROM #TempLargeData;
+
+
+---
+
+7. Update Statistics and Use Query Plans
+
+-- Update statistics
+UPDATE STATISTICS Products;
+
+-- View execution plan in SSMS (Ctrl + M before running query)
+
+
+---
+
+8. Use WITH (NOLOCK) Carefully for Read-Only Queries
+
+-- Avoids locking (but allows dirty reads)
+SELECT * FROM Orders WITH (NOLOCK);
+
+
+
+
+
 //////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////.NetCore
@@ -1179,3 +1316,4 @@ var firstEven = numbers.First(n => n % == 0);
 example :
  var number = new List<int> {1,3,5};
  var firstEven = number.FirstOrDefault(n => n % 2 == 0);
+
