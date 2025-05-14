@@ -1317,3 +1317,94 @@ example :
  var number = new List<int> {1,3,5};
  var firstEven = number.FirstOrDefault(n => n % 2 == 0);
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////Performance and Security Question for L2 Round
+Q> How do you improve the performance of .net Core application?
+-> Caching strategies(In-Memory, Distribution Cache).
+-> Async programming and Task Parallel Library.
+->Reducing database calls and optimizing LINQ queries.
+->Using IQueryable vs IEnumerable.
+
+Q>What are the best practices for optimizing SQL queries ?
+->Proper indexing(Clustered , Non-Clustered).
+->Avoiding SELECT *; using only required coloums.
+->Using Stored Procedure instead of raw queries.
+->Optimizing joins and subqueries.
+
+Q>How can you improve the startup time of an ASP.NET Core application?
+->Minimize middleware components.
+->Use AddRazorRuntimeCompilation() only in development.
+->Eager loading vs Lazy loading optimization.
+
+Q>What is lazy loading and eager loading in Entity Framework, and which one is better for performance?
+-> Explanation of both approaches.
+->Scenarios where each is optimal for performance.
+
+Q>Using pagination with Skip and Take.
+-> Using pagination with Skip and Take.
+-> Implementing bulk inserts with sqlBulkCopy.
+->Leveraging Asynchronous data`base operations.
+
+
+////////////////////Security Best Practises
+1.> How do you secure WEB APIs in .NET Core ?
+-> Authentication(JWT,OAuth2 , OpenID Connect).
+->Authorization with poicies and roles.
+->Preventing over-posting with DTOs.
+
+2>What is CORS AND WHY is it important in Angular applications ?
+Explanation of Corss-Origin Resourse Sharing.
+How to Configure CORS in .NET Core.
+
+3>What is CORS and why is it important in Angular applications?
+Explanation of Cross-Origin Resource Sharing.
+How to configure CORS in .NET Core.
+
+4>What are the common vulnerabilities in web applications and how do you prevent them?
+
+SQL Injection → Parameterized Queries.
+Cross-Site Scripting (XSS) → Proper Encoding and Validation.
+Cross-Site Request Forgery (CSRF) → Anti-Forgery Tokens.
+5>How do you handle data encryption in .NET Core applications?
+
+Usage of AES, RSA for data encryption.
+Hashing passwords with Identity or BCrypt.
+
+6>What is the difference between Authentication and Authorization?
+
+Explanation with real-world examples.
+Role-based vs Policy-based authorization in .NET Core.
+
+///////////////////////////////////////////////////Angular Specific (Performance + Security):
+1>How do you optimize Angular applications for better performance?
+
+Lazy Loading of modules.
+Ahead-of-Time (AOT) Compilation.
+Change detection strategy (OnPush).
+2>How do you prevent XSS attacks in Angular?
+
+Angular's DOM sanitization.
+Safe navigation ([innerHTML] with caution).
+3>How do you handle large list rendering in Angular?
+
+Using ngFor with trackBy.
+Virtual scrolling for large lists.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
