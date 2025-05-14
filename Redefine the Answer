@@ -1339,7 +1339,8 @@ Q>What is lazy loading and eager loading in Entity Framework, and which one is b
 -> Explanation of both approaches.
 ->Scenarios where each is optimal for performance.
 
-Q>Using pagination with Skip and Take.
+Q> How do you handle large data loads efficiently in .NET Core and SQL Server?
+Using pagination with Skip and Take.
 -> Using pagination with Skip and Take.
 -> Implementing bulk inserts with sqlBulkCopy.
 ->Leveraging Asynchronous data`base operations.
@@ -1380,12 +1381,12 @@ Role-based vs Policy-based authorization in .NET Core.
 Lazy Loading of modules.
 Ahead-of-Time (AOT) Compilation.
 Change detection strategy (OnPush).
-2>How do you prevent XSS attacks in Angular?
 
+2>How do you prevent XSS attacks in Angular?
 Angular's DOM sanitization.
 Safe navigation ([innerHTML] with caution).
-3>How do you handle large list rendering in Angular?
 
+3>How do you handle large list rendering in Angular?
 Using ngFor with trackBy.
 Virtual scrolling for large lists.
 
