@@ -1,0 +1,29 @@
+You are given a list of Order objects. Each order has a CustomerName, OrderId, and OrderDate. Write a method that:
+Groups orders by customer name.
+Sorts each customer’s orders by OrderDate descending.
+Returns a dictionary: Dictionary<string, List<Order>> where the key is the customer name and the value is the list of sorted orders.
+
+public class Order
+{
+public string CustomerName{get ; set;};
+public int OrderId {get ; set ;}
+public DataTime OrderDate {get ; set ;}
+}
+
+public class orderGrouper
+{
+ public static Dictionary<string , List<order>> GASO(List<Order> orders)
+{
+  var groupedOrders = orders.GroupBY(o=> o.customername);
+
+ var result = new Disctionary<string,List<List<Order>>();
+ foreach(var group in groupedOrders)
+ {
+   var sorttedOrder = group.OrderByDescending(o => o.OrderDate).ToList();
+   
+   result[group.Key] = sortedOrders;
+ }
+ return result;
+} 
+
+}
