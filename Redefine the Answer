@@ -1,3 +1,64 @@
+//////////////////////L1 round topis
+//C#
+1. OOP Concepts (Inheritance, Polymorphism, Encapsulation, Abstraction)
+2. Exception Handling (try-catch-finally, custom exceptions)
+3. Collections (List, Dictionary, HashSet, Queue, Stack)
+4. LINQ (Filtering, Projections, Joins, Aggregations)
+5. Delegates and Events (Multicast Delegates, Event Handlers)
+6. Async and Await (Task, Task.Run, Parallel Programming)
+7. SOLID Principles and Design Patterns (Singleton, Factory, Repository)
+8. File I/O Operations (StreamReader, StreamWriter, FileInfo) // Less Important
+9. Memory Management (Garbage Collection, IDisposable, using statement)
+10. Reflection and Attributes
+
+//.Net Core
+1. Middleware and Request Pipeline
+2. Dependency Injection (Transient, Scoped, Singleton)
+3. Configuration Management (appsettings.json, Environment Variables)
+4. Logging (Serilog, NLog, Microsoft Extensions Logging)
+5. Entity Framework Core (Migrations, LINQ Queries, Relationships)
+6. Web API Development (GET, POST, PUT, DELETE, Versioning)
+7. Authentication and Authorization (JWT, Identity, Roles)
+8. Caching (In-Memory, Distributed)
+9. Global Exception Handling
+10. API Documentation (Swagger)
+
+//Angular
+1. Components and Modules (Lifecycle Hooks, Communication)
+2. Services and Dependency Injection
+3. Routing and Navigation (Lazy Loading, Guards)
+4. Forms (Template-driven, Reactive Forms, Validation)
+5. HTTP Client (GET, POST, PUT, DELETE, Interceptors)
+6. Observables and RxJS (map, filter, switchMap, debounceTime)
+7. Component Communication (Input, Output, EventEmitter)
+8. State Management (ngRx basics)
+9. Error Handling and Global Interceptors
+10. Angular Material for UI Components
+
+//Ms Sql Server
+MS SQL Server
+
+1. Joins (Inner, Left, Right, Full Outer)
+2. CRUD Operations (Insert, Update, Delete, Select)
+3. Stored Procedures and Functions
+4. Indexing (Clustered, Non-clustered)
+5. Transactions and Locking Mechanisms
+6. Views and Triggers
+7. Query Optimization and Execution Plans
+8. CTE (Common Table Expressions) and Window Function
+9. Data Types and Constraints
+10. Backup and Restore.
+
+
+///Soft Skills & Concepts:
+1. Agile Methodologies (Scrum, Sprint Planning, Retrospectives)
+2. Code Review Practices and Best Coding Standards
+3. Debugging Techniques and Troubleshooting
+4. Communication Skills for Team Collaboration
+5. Time Management for Delivering Features on Time
+
+//////////////////////L2 round topics
+
 //What is Angular ?
 Angular is a component-based framework for building structured, scalable and single page application.
 //What is the Angular Advantages ?
