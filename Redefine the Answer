@@ -9,7 +9,7 @@
 7. SOLID Principles and Design Patterns (Singleton, Factory, Repository)
 8. File I/O Operations (StreamReader, StreamWriter, FileInfo) // Less Important
 9. Memory Management (Garbage Collection, IDisposable, using statement)
-10. Reflection and Attributes
+10. Reflection and Attributes //Not Yet Revision
 
 //.Net Core
 1. Middleware and Request Pipeline
