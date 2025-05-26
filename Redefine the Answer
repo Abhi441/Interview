@@ -1472,6 +1472,7 @@ Virtual scrolling for large lists.
 // Expectation:
 
 // Candidate should use a priority queue or sorted data structure, and follow good OO design.
+// Promises , emitter, even emitter, canActivate, 
 
 
 
