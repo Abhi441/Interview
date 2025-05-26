@@ -1459,7 +1459,19 @@ Virtual scrolling for large lists.
 
 
 
+///////////////////////////////pls check this solution
+// Problem:
 
+// Design a basic task scheduler where tasks can be added with a scheduled time, and the scheduler will return tasks in execution order.
+
+// Requirements:
+
+// void AddTask(string taskName, DateTime executeAt)
+// string? GetNextTask() — returns the next task to execute based on time
+
+// Expectation:
+
+// Candidate should use a priority queue or sorted data structure, and follow good OO design.
 
 
 
