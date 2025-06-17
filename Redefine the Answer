@@ -1,6 +1,7 @@
 //////////////////////L1 round topis
 //C#
 1. OOP Concepts (Inheritance, Polymorphism, Encapsulation, Abstraction)
+1.1 extension method - 18 june.
 2. Exception Handling (try-catch-finally, custom exceptions)
 3. Collections (List, Dictionary, HashSet, Queue, Stack)
 4. LINQ (Filtering, Projections, Joins, Aggregations)
