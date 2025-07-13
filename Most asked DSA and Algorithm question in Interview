@@ -7,32 +7,25 @@ public class HelloWorld
 {
     public static void Main(string[] args)
     {
-        string input = "HelloABC WORLD";
+        string s = "Hello World";
+        String[] arr = s.Split(' ');
         StringBuilder sb = new StringBuilder();
-        //Hello dlroW
-        string[] str = input.Split(' ');
-        string First = str[0];
-        string Second = str[1];
-        for(int i = 0 ; i < First.Length ; i++)
+        sb.Append(arr[0]);
+        sb.Append(' ');
+        string str = arr[1];
+        int i = 0 ;
+        int j = str.Length -  1 ;
+        char[] ch = str.ToCharArray();
+        while(i < j)
         {
-            sb.Append(First[i]);
+            char cha = ch[i];
+            ch[i] = ch[j];
+            ch[j] = cha ;
+            i++;
+            j--;
         }
-        char[] ch = Second.ToCharArray();
-        int j = 0;
-        int k = ch.Length - 1;
-
-        while (j < k)
-        {
-            // swap characters
-            char temp = ch[j];
-            ch[j] = ch[k];
-            ch[k] = temp;
-            j++;
-            k--;
-        }
-         sb.Append(' ');
-        sb.Append(ch);
-         Console.WriteLine(sb.ToString());
+       sb.Append(ch);
+        Console.WriteLine (sb.ToString());
     }
 }
 
