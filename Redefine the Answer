@@ -11,6 +11,7 @@
 8. File I/O Operations (StreamReader, StreamWriter, FileInfo) // Less Important
 9. Memory Management (Garbage Collection, IDisposable, using statement)
 10. Reflection and Attributes //Not Yet Revision
+11. Performance and Security.
 
 //.Net Core
 1. Middleware and Request Pipeline
@@ -23,6 +24,7 @@
 8. Caching (In-Memory, Distributed)
 9. Global Exception Handling
 10. API Documentation (Swagger)
+11. Performance and Security.
 
 //Angular
 1. Components and Modules (Lifecycle Hooks, Communication)
@@ -35,6 +37,7 @@
 8. State Management (ngRx basics)
 9. Error Handling and Global Interceptors
 10. Angular Material for UI Components
+11.  Performance and Security.
 
 //Ms Sql Server
 MS SQL Server
