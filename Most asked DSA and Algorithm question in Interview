@@ -60,9 +60,6 @@ public class Program
             if (i > 0)
                 result.Append(' ');
         }
-
-        result.Append(" I"); // Add " I" at the end
-
         Console.WriteLine(result.ToString());
     }
 }
