@@ -26,6 +26,17 @@ Employee(EmployeeId, EmployeeName , Salary)
 Select EmployeeName , Count(*) As NameCount
 from Employee group by EmployeeName Having Count(*) > 1 ;
 
+/////////////////////////////////////////////To remove duplicate records while keeping only one entry per EmployeeName, you can use a DELETE with a CTE and ROW_NUMBER():
+WITH CTE AS (
+    SELECT *,
+           ROW_NUMBER() OVER (PARTITION BY EmployeeName ORDER BY EmployeeId) AS rn
+    FROM Employee
+)
+DELETE FROM Employee
+WHERE EmployeeId IN (
+    SELECT EmployeeId FROM CTE WHERE rn > 1
+);
+
 ////////////////////////////////////////////
 Write a Sql query to retrive the top 3 highest  salaries from the Employee table
 Employee(EmployeeId, EmployeeName , Salary)
