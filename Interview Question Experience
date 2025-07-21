@@ -1,4 +1,210 @@
-to///////////////////////////////////////////////////
+to///////////////////////////////////////////////////OOPs
+
+/////////////////////////////////////////Inheritance
+//namespace Pro
+//{ 
+
+//class Employee
+//{
+//    int a = 10;
+//    public  void CalculateSalary()
+//    {
+//        Console.WriteLine("CalculateSalary");
+//    }
+//}
+
+//class Department : Employee
+//{
+//    int b = 20;
+//    public  void Depart()
+//    {
+//        Console.WriteLine("This  is DepartMent");
+//    }
+//}
+
+//class Program
+//{
+//    public static void Main()
+//    {
+//        Department Dm = new Department();
+
+//           Dm.CalculateSalary(); // CalculateSalary method is not present Department class but we can call the CalculateSalary() by refrences of Department class.
+
+//    }
+// }
+//}
+
+///////////////////PolyMorphism
+///Overloading (compile time check)
+//class Employee
+//{
+//    public void ClaculateSalary(int a, int b)
+//    {
+//        Console.WriteLine(a * b);
+//    }
+//    public void ClaculateSalary(int a, int b, int c) // changing the number of parameter
+//    {
+//        Console.WriteLine(a * b * c);
+//    }
+//    public void ClaculateSalary(long a, int b, int c)
+//    {
+//        Console.WriteLine(a * b * c);
+//    }
+
+//}
+
+//class Program
+//{
+// public static void Main(string[] args)
+//   {
+//        Employee Em = new Employee();
+
+//        Em.ClaculateSalary(3, 4);
+//        Em.ClaculateSalary(3, 4 , 5);
+//        Em.ClaculateSalary(300000000000, 4, 5);
+
+//    }
+//}
+
+//Overrding
+//Overriding in c# allows a subclass(derived class) to provide a specific implementation of a method that is already defind in its base class.
+//It is achieved using the virtual keyword in the base class and the override keyword in the derived class.
+
+////Example:
+//using System ;
+
+//public class Animal
+//{
+//   public virtual void MakeSound()
+//    {
+//        Console.WriteLine("Animal makes the sound");
+//    }
+//}
+
+//public class Dog : Animal
+//{
+//    public override void MakeSound()
+//    {
+//        Console.WriteLine("Dog barks");
+//    }
+//}
+
+//public class Cat : Animal
+//{
+//    public override void MakeSound()
+//    {
+//        Console.WriteLine("Cat meows");
+//    }
+//}
+
+//public class Program
+//{
+//    public static void Main(string[] args)
+//    {
+//        Animal myDog = new Dog();
+//        Animal myCat = new Cat();
+//        // Polymorphic behavior - the method called is determined at runtime
+//        myDog.MakeSound(); //Dog bargs  // Method selection is based on object type not refrence type.
+//        myCat.MakeSound(); //Cat meows  // Even when refrence as Animal , the overriden method in Dog or cat is called.
+//        // when overriden is not used the base class method is called.
+//    }
+//}
+
+///////////////////////////////////////////////////////Abstraction
+//It is the process of hinding implementation details and showing only the essential features of an object .
+// In C# , abstraction is achived using Abstarct Classes and Interfaces.
+
+//1> Abstract Class
+//    -> An abstract class is declared with the abstract keyword.
+//    -> It cannot be instantiated directly.
+//    -> It can contain abstract methods (no implementation) and concrete methods (with Implementation).
+//    -> Abstract methods must be overriden in derived classes.
+//    
+
+//Interfaces
+//An interfaces is a constract that define the signatures of methods , properties , events , or indexers.
+//It only contains method declarations, not  implementations.
+// Classes that implement the interface must provide implementations for all its methods.
+
+//using System;
+//public abstract class Vehicle
+//{
+//    public abstract void StartEngine();// only the declaration is provided; the implementation 
+
+//    public void DisplayInfo()
+//    {
+//        Console.WriteLine("This is a vehicle");
+//    }
+//}
+
+//public class Car : Vehicle
+//{
+//    public override void StartEngine()
+//    {
+//        Console.WriteLine("Car engion started");
+//    }
+//}
+
+//public interface IRefuelable
+//{
+//    void Refuel();
+//}
+
+//public class Bike : Vehicle , IRefuelable
+//{
+//    public override void StartEngine()
+//    {
+//        Console.WriteLine("Bikes engion started");
+//    }
+
+//    public void Refuel()
+//    {
+//        Console.WriteLine("Bike refueled.");
+//    }
+//}
+
+//public class Program
+//{
+//   public static void Main(string[] args)
+//    {
+//        Vehicle car = new Car();
+//        car.StartEngine(); // Car engine started.
+//        car.DisplayInfo(); // This is a vehicle.
+
+//        Bike bike = new Bike();
+//        bike.StartEngine();  //Bike engion started.
+//        bike.Refuel();       //Bike refueled
+//    }
+//}
+
+//    ///////////////////////////////Encapsulation
+//    //
+// class Employee
+//{
+//    private int experience; //This feild can not be excess without Property.
+//    public int Experience
+//    {
+//        get
+//        {
+//            return experience;
+//        }
+//        set
+//        {
+//            experience = value;
+//        }
+//    }
+//}
+
+//class Program
+//{
+//    public static void Main(string[] args)
+//    {
+//        Employee em = new Employee();
+//        em.Experience = 10;
+//    }
+
+//}
+
 //////////////////////////Reflection
 /////////what is reflection in c#
 reflection in C# is a way for your program to look at itself. It lets you inspect the structure of types (like classes, methods, properties) at runtime
