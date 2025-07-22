@@ -1,0 +1,115 @@
+////////////////////////////////Q> 32
+
+Difference between ArrayList and Hashtable in C#
+
+🔷 1. ArrayList in C#
+
+✅ Simple Meaning:
+
+-->It stores a list of items, even if they are of different types.
+
+-->You can access items by index (like array).
+
+-->Allows duplicate values.
+
+-->Slower for large data sets (it searches by position, not key).
+
+
+✅ Real-World Analogy:
+
+Imagine a shopping basket — you just throw items in, one after another. You don’t label them, you just remember the position.
+
+
+---
+
+✅ Example Code:
+
+using System;
+using System.Collections;
+
+class Program
+{
+    static void Main()
+    {
+        ArrayList basket = new ArrayList();
+        basket.Add("Apple"); // string
+        basket.Add(3); // int
+        basket.Add(4.5); // double
+        basket.Add("Apple"); // duplicate allowed
+
+        foreach (var item in basket)
+        {
+            Console.WriteLine(item);
+        }
+    }
+}
+
+
+//You can access items by index (like array)
+class Program
+{
+    static void Main()
+    {
+        ArrayList basket = new ArrayList();
+        basket.Add("Apple"); // string
+        basket.Add(3); // int
+        basket.Add(4.5); // double
+        basket.Add("Apple"); // duplicate allowed
+
+        foreach (var item in basket)
+        {
+            Console.WriteLine(item);
+        }
+    }
+}
+---
+
+🔷 2. Hashtable in C#
+
+✅ Simple Meaning:
+
+-->It stores data as Key → Value pairs.
+
+-->Each key must be unique, but values can be repeated.
+
+-->Fast access using the key (uses hash function).
+
+-->Used when you want to look up values based on a name, ID, etc.
+
+
+✅ Real-World Analogy:
+
+Think of a dictionary: You search a word (key) to get its meaning (value). You don’t care where it is physically — it finds it fast.
+
+
+---
+
+✅ Example Code:
+
+using System;
+using System.Collections;
+
+class Program
+{
+    static void Main()
+    {
+        Hashtable phoneBook = new Hashtable();
+        phoneBook.Add("John", "123456");
+        phoneBook.Add("Alice", "789012");
+        phoneBook.Add("Bob", "345678");
+        phoneBook["Alice"] = "999999"; // ✅ updates value
+        // phoneBook.Add("John", "000000"); ❌ Error – duplicate key
+
+        foreach (DictionaryEntry entry in phoneBook)
+        {
+            Console.WriteLine($"{entry.Key}: {entry.Value}");
+        }
+    }
+}
+
+✅ Real-Life Use Cases:
+
+ArrayList → Storing a random collection like UI controls, logs, temporary mixed data.
+
+Hashtable → Storing user settings ("Theme" → "Dark"), phone books, ID → Names.
+
