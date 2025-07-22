@@ -46,12 +46,6 @@ public class Program
         string input = "   Abhishek   kumar   singh  ";
         string[] words = input.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
-        if (words.Length == 0)
-        {
-            Console.WriteLine("I");  // If string was empty or only spaces
-            return;
-        }
-
         StringBuilder result = new StringBuilder();
 
         for (int i = words.Length - 1; i >= 0; i--)
