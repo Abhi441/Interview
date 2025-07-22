@@ -205,6 +205,47 @@ public static void Main(string[] args)
           }
     }
 }
+
+////////////////////////////////////////////////////////////////
+
+
+//input :1,2,3,1,2,3,4
+//o/p - 4
+using System;
+using System.Collections.Generic;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        int[] arr = new int[] {1, 2, 3, 1, 2, 3, 4};
+        Occurence(arr);
+    }
+
+    public static void Occurence(int[] arr)
+    {
+        Dictionary<int, int> dis = new Dictionary<int, int>();
+        foreach (var a in arr)
+        {
+            if (dis.ContainsKey(a))
+            {
+                dis[a]++;
+            }
+            else
+            {
+                dis.Add(a, 1);
+            }
+        }
+
+        foreach (var d in dis)
+        {
+            if (d.Value == 1)
+            {
+                Console.WriteLine($"{d.Key}");
+            }
+        }
+    }
+}
 ///////////////////////////////////////////////Q.6: How to remove duplicate characters from a string?
 The user will input a string and the method should remove multiple occurrences of characters in the string
 input: csharpcorner, output: csharpone
