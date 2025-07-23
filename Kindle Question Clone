@@ -113,3 +113,78 @@ ArrayList → Storing a random collection like UI controls, logs, temporary mixe
 
 Hashtable → Storing user settings ("Theme" → "Dark"), phone books, ID → Names.
 
+/////////////////////////////////////////////Q40
+what is Extensition Methods :::
+Extension method is a method injected (added) into an existing class
+(or struct or interfaces), without modifying the sourse code of that 
+class(or struct or interface).
+
+--> Create the class without extensions method.
+--> Create the static class with static method.
+-->static class that uses the this keyword before the first parameter 
+--> to extend the functionality of an existing type without modifying the original type
+
+
+///As developer
+//
+namespace Products
+{
+    public class Product
+    {
+        public int WorkingHours ;
+        public int WorkingPerWages;
+    }
+}
+//
+
+using Products;
+
+namespace ProductExtensions
+{
+
+    public static class ProductExtension
+    {
+        public static int CalculateSalary(this Product product)
+        {
+           return  product.WorkingHours * product.WorkingPerWages;
+        }
+    }
+}
+//
+using Products;
+
+using ProductExtensions;
+
+namespace Programs
+{
+  class program
+  {
+        public static void Main(string[] args)
+        {
+            Product p = new Product() { WorkingHours = 100 ,
+         WorkingPerWages = 500 };
+            Console.WriteLine(p.CalculateSalary());
+        }
+  }
+}
+
+//As the base library
+public static class IntExtensition
+{
+    public static int DoubleIt(this int number)
+    {
+        return number * 2;
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        int x = 5;
+        int result = x.DoubleIt();// Calls the extensitiom method
+        Console.WriteLine(result); // Output: 10
+    }
+}
+
+
