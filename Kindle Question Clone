@@ -318,5 +318,64 @@ public class Program
 PaymentService doesn’t care how the notification is shown — it's decoupled.
 
 We just inject the logic using a delegate
+////////////////////////////////////////////////////////////////Q 42
+//What is Multiple delegate 
+=>A multiple Delegate is a delegate that holds the refrences of more than one function.
+✅ Real-Life Analogy
 
+> Imagine one button click is connected to 3 things:
+
+✅ Show message
+✅ Save to database
+✅ Send email
+
+One action → many methods = Multicast Delegate
+
+
+
+
+---
+
+✅ Code Example (C#)
+
+using System;
+
+public class Program
+{
+    // Step 1: Define a delegate type
+    public delegate void Notify();
+
+    // Step 2: Define methods to link
+    public static void Message1()
+    {
+        Console.WriteLine("Message 1: Logging info...");
+    }
+
+    public static void Message2()
+    {
+        Console.WriteLine("Message 2: Sending email...");
+    }
+
+    public static void Main()
+    {
+        // Step 3: Create multicast delegate
+        Notify notify = Message1;
+        notify += Message2; // Add second method
+
+        // Step 4: Invoke delegate → both methods will run
+        notify();
+    }
+}
+
+✅ Output:
+
+Message 1: Logging info...
+Message 2: Sending email...
+
+
+---
+
+✅ Summary for Interview (One-liner):
+
+> A multicast delegate holds multiple methods and calls them in order when the delegate is invoked. Useful when one action should trigger many things.
 
