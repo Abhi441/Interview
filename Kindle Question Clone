@@ -379,3 +379,168 @@ Message 2: Sending email...
 
 > A multicast delegate holds multiple methods and calls them in order when the delegate is invoked. Useful when one action should trigger many things.
 
+////////////////////////////////////////////////////////Q43
+//What are ANonymous delegate in C#
+In Anomyous Delegate, you can create a delegate, but there is no  need to declare the method associated with it.
+
+✅ Interview-Ready Definition:
+
+> Anonymous delegates are methods without a name, used directly where they are needed.
+
+
+
+They are useful when:
+
+You want to write a small method on the spot.
+
+You don’t want to define a separate named method.
+
+
+
+---
+
+✅ Super Simple Explanation:
+
+Imagine instead of creating a named function like AddNumbers(), you just write the logic right where it’s needed — that’s an anonymous delegate.
+
+
+---
+
+✅ Code Example:
+
+using System;
+
+public class Program
+{
+    // Step 1: Define a delegate type
+    public delegate void GreetDelegate(string name);
+
+    public static void Main()
+    {
+        // Step 2: Use an anonymous delegate directly
+        GreetDelegate greet = delegate(string name)
+        {
+            Console.WriteLine("Hello " + name);
+        };
+
+        // Step 3: Call the delegate
+        greet("Abhishek");
+    }
+}
+
+
+---
+
+✅ Output:
+
+Hello Abhishek
+
+
+---
+
+✅ Real-World Use Case:
+
+Let’s say you’re writing code to log a message or handle a button click quickly — you don’t need a separate method, just use an anonymous delegate right there.
+
+
+---
+
+✅ Summary for Interview:
+
+> Anonymous delegate = a method without a name, written inline where it's used.
+Saves time and makes code shorter and cleaner, especially for small logic blocks.
+
+/////////////////////////////////////////////////////////////////////Q44)
+//What is the diffrence between Events And Delegate.
+->A Delegate is a variable that hold the refrence to a method or pointer to a function.
+->The event is a notification mechanism 
+
+//yet to fill the kindle answer.
+
+---
+
+✅ Interview-Ready Explanation (in Human Words)
+
+🎯 Delegate is like a reference to a method — it knows how to call a method.
+
+🎯 Event is a wrapper built on top of a delegate, used when something happens (like a button click). It helps restrict who can trigger the action.
+
+
+---
+
+✅ Simple Analogy:
+
+Delegate is like your mobile phone — you can call anyone if you have their number (method).
+
+Event is like a doorbell — others can press it (subscribe), but only the house (class) can decide what happens when it rings (raise the event).
+
+
+
+---
+
+✅ Real-Life Example in Code:
+
+using System;
+
+public delegate void Notify(); // Delegate declaration
+
+public class Process
+{
+    // EVENT based on delegate
+    public event Notify OnCompleted;
+
+    public void StartProcess()
+    {
+        Console.WriteLine("Process Started...");
+        // Do some work here...
+        Console.WriteLine("Process Completed.");
+        
+        // Raise the event
+        OnCompleted?.Invoke(); // Only this class can raise it
+    }
+}
+
+public class Program
+{
+    public static void Main()
+    {
+        Process process = new Process();
+
+        // Subscribe to the event
+        process.OnCompleted += () => Console.WriteLine("Notification: Process finished!");
+
+        process.StartProcess(); // This will trigger the event
+    }
+}
+
+
+---
+
+✅ Output:
+
+Process Started...
+Process Completed.
+Notification: Process finished!
+
+
+---
+
+✅ Summary for Interview:
+
+Feature Delegate Event
+
+What it is A pointer to a method A message broadcaster built on delegates
+Who can call Anyone with reference Only the class that declares it
+Use case When you want to pass a method When you want to notify subscribers
+
+
+
+---
+
+✅ 1-Line Answer:
+
+> Delegates hold a reference to methods; Events use delegates to notify when something happens, and only the class that defines the event can raise it.
+
+
+
+
