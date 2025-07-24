@@ -186,5 +186,137 @@ class Program
         Console.WriteLine(result); // Output: 10
     }
 }
+//////////////////////////////////////////////////////////Q41
+=> Delegate is a variable that holds the refrences to a methods.Or you can say it's a pointer to a function.
+=> A delegate can  refre to more  than one methods  of same return  type and parameters.
+
+//
+👨‍💻 Code Example (Super Easy):
+
+using System;
+
+public class Program
+{
+    // Step 1: Declare a delegate
+    public delegate void GreetDelegate(string name);
+
+    // Step 2: Create a method to point to
+    public static void SayHello(string name)
+    {
+        Console.WriteLine("Hello " + name);
+    }
+
+    public static void Main()
+    {
+        // Step 3: Create delegate instance and assign method
+        GreetDelegate greet = SayHello;
+
+        // Step 4: Call method using delegate
+        greet("Abhishek");
+    }
+}
+
+Output:
+
+Hello Abhishek
+
+//
+
+> A delegate is like a function pointer in C#.
+It lets us pass methods as arguments or call them indirectly.
+It's useful when we want to decouple logic or use event-based programming.
+1. Passing methods as arguments using a delegate
+
+
+2. Decoupling logic via event-like behavior
+
+
+
+
+---
+
+✅ 1. Passing Methods as Arguments (Callback-style)
+
+using System;
+
+public class Program
+{
+    // Delegate definition
+    public delegate void Operation(int a, int b);
+
+    // Method 1
+    public static void Add(int a, int b)
+    {
+        Console.WriteLine("Add: " + (a + b));
+    }
+
+    // Method 2
+    public static void Multiply(int a, int b)
+    {
+        Console.WriteLine("Multiply: " + (a * b));
+    }
+
+    // A method that takes a delegate (method) as argument
+    public static void Calculate(int x, int y, Operation op)
+    {
+        op(x, y); // Indirectly calling the passed method
+    }
+
+    public static void Main()
+    {
+        Calculate(5, 3, Add); // Output: Add: 8
+        Calculate(5, 3, Multiply); // Output: Multiply: 15
+    }
+}
+
+🎯 What’s Happening:
+
+Calculate method is reusable for different operations.
+
+We are passing Add and Multiply as arguments using delegate Operation.
+
+
+
+---
+
+✅ 2. Decoupling Logic Using Delegates (Real-Life Style)
+
+using System;
+
+public class PaymentService
+{
+    public delegate void PaymentHandler(string message);
+
+    public void ProcessPayment(PaymentHandler notify)
+    {
+        // Business logic
+        Console.WriteLine("Processing payment...");
+
+        // Notify after success
+        notify("Payment successful!");
+    }
+}
+
+public class Program
+{
+    public static void ShowMessage(string msg)
+    {
+        Console.WriteLine("Notification: " + msg);
+    }
+
+    public static void Main()
+    {
+        var service = new PaymentService();
+
+        // Pass ShowMessage as delegate (event-style decoupling)
+        service.ProcessPayment(ShowMessage);
+    }
+}
+
+🎯 What’s Happening:
+
+PaymentService doesn’t care how the notification is shown — it's decoupled.
+
+We just inject the logic using a delegate
 
 
