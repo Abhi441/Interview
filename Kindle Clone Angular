@@ -1,0 +1,7 @@
+//////////////////////////////////Q92
+//What are various ways to communicate between the component.
+Q>what are the various ways to communicate between the components.
+1>@Input @Output
+2>Ng - content
+3>@ViewChild   @ViewChildren
+4>@ContentChild @ContentChilren
