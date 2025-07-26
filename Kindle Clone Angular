@@ -89,7 +89,118 @@ Ahead-of-Time(AOT)  Compile your application and libraries at build time.
 ////////////////////////
 What is a Selector and Template
 Selector :- A selector is used to identify each component uniquely into the component tree.
+
+///////////////////////////////15
+What is Data Binding in Angular?V. IMP.
+
+
+Data binding is the way to communicate between your typescript code of your component and html view of component.
+What is Data Binding in Angular?
+
+
+
+Think of it like a two-way road between logic and UI.
+
+
+---
+
+🔄 Types of Data Binding (with simple explanation + example)
+
+
+---
+
+🔹 1. Interpolation (One-Way Binding: Component → View)
+String Interpolation is a one-way data-binding technique that is used to transfer the data from a TypeScript code(component) to an HTML template (view).
+
+String interpolation can work on string type only not numbers or any other type.
+
+2. It is represented inside ({data); double curly braces.
+
+➡️ Show data from TypeScript in HTML using {{ }}.
+
+// app.component.ts
+export class AppComponent {
+  title = 'Hello Abhishek!';
+}
+
+<!-- app.component.html -->
+<h1>{{ title }}</h1>
+
+🧠 Interview line:
+
+> "Interpolation displays data from the component in the view using double curly braces."
+
+
+
+
+---
+
+🔹 2. Property Binding (One-Way Binding: Component → View)
+
+➡️ Bind a property of an HTML element to a value in the component.
+
+<input [value]="title" />
+
+🧠 Interview line:
+
+> "Property binding sets element properties using square brackets []."
+
+
+
+
+---
+
+🔹 3. Event Binding (One-Way: View → Component)
+Event binding is used to handle the events raised by the user actions like button click.
+
+➡️ When something happens in the UI (like button click), call a method in TypeScript.
+
+<button (click)="showMessage()">Click Me</button>
+
+showMessage() {
+  alert("Hello from Angular!");
+}
+
+🧠 Interview line:
+
+> "Event binding listens to user actions like clicks and calls a method using ()."
+
+
+
+
+---
+
+🔹 4. Two-Way Binding (Component ⇄ View)
+
+➡️ Sync data in both directions using [(ngModel)].
+
+// app.component.ts
+export class AppComponent {
+  name = '';
+}
+
+<input [(ngModel)]="name" />
+<p>Hello {{ name }}</p>
+
+🧠 Interview line:
+
+> "Two-way binding uses [(ngModel)] to sync data between the UI and the component."
+
+
+
+✔️ Don't forget to import FormsModule in app.module.ts to use ngModel.
+
+
+---
+
+✅ Final Summary (for interview):
+
+> "Data Binding in Angular connects HTML and TypeScript.
+It lets data flow one-way (from component to UI or UI to component), or two-way using ngModel.
+Angular supports 4 types: Interpolation, Property Binding, Event Binding, and Two-Way Binding."
+
 --> Where to show.
+
 
 Templete --> A Templete is a HTML View of an Angular component.
 Templete --> What to show
