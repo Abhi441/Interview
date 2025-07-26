@@ -1,3 +1,181 @@
+
+What is Angular ?
+Angular is a component-based framework for building structured, scalable and single page application.
+//What is the Angular Advantages ?
+1> it is relatively simple to build a single page application.
+2> Flexible and structural client application.
+3>Angular is cross Plateform and opensourse.
+4>Writing Reusable code is easy.
+5> Testing is easy.
+
+//What is the diffrence between Angular and Angular JS ? or What are the advantages of Angularover AngularJS ?
+ ///Angular js
+1> It is only supports javaScript.
+2> This framework has a model-view-controller(MVC) architecture.
+3>It does have CLI tool.
+4>It does not use Dependency Injection.
+5> It is not a so fast.
+
+/////Angular
+1>It support both JavaScript and TypeScript.
+2> This framework has a component archotecture.
+3> It has CLI
+4> It uses Dependency Injection.
+5> It also support moble browser.
+6> It is very fast.
+
+//////////////
+Study from File.
+
+What is NPM?
+--> NPM(Node Pakage Manager ) is an online repository from where you get thousands of free libraries which can be used in your angular application 
+
+//What is the cli
+--> The Angular Cli(command-line interface) is a tool that you use to initialise and deplop Angular applications directly from Terminal.
+Asynchrouns operstion :- Task running in the background without stopping the application.
+
+////////////////////////////////Q8)
+=) what is the role of Angular.json file in Angular
+=The angular.json file is the primary configuration file 
+for an Angular project.
+
+///////////////////////////Q9)
+What is the difference between JIT and AOT in Angular? V. IMP.
+
+
+Both JIT and AOT are used to compile Angular Typescript components to Javascript, because browser understands Javascript not Typescript.
+
+ANGULAR COMPILE
+
+DETAILS
+
+Just-in-Time (JIT)
+
+Compiles your application in the browser at runtime.
+
+ng serve --configuration development   # Uses JIT
+
+Ahead-of-Time (AOT)
+
+
+This was the default until Angular 8.
+
+Compiles your application and libraries at build time.
+
+This is the default starting in Angular 9.
+
+All the latest Angular versions use AOT to compile Typescript to Javascript.
+
+Advantage of AOT-Loading in AOT is much quicker than the JIT, because it already has compiled your code at build time.
+
+ng build --configuration production    # Uses AOT
+
+Interview Analogy:
+
+JIT is like cooking food when the guest arrives flexible, but makes them wait.
+
+AOT is like cooking in advance - ready to serve fast.
+/////////////////////
+What is the diffrence between JIO and AOT in Angular ?
+
+-->Both JIT and Aot are used to compile Angular Typescript component to Javascript , because browser understands Javascript not Typescript.
+
+Just-In-Time(JIT)   Compiles your application in the browser at runtime.
+
+Ahead-of-Time(AOT)  Compile your application and libraries at build time.
+
+
+-->All the latest Angulae versions use AOT to compile Typescript to Javascript.
+////////////////////////
+What is a Selector and Template
+Selector :- A selector is used to identify each component uniquely into the component tree.
+--> Where to show.
+
+Templete --> A Templete is a HTML View of an Angular component.
+Templete --> What to show
+
+->
+->
+->
+->
+->
+->
+
+Synchrouns operation :- Task excute one after another and app waits for each task to complete 
+moving to the next one.
+
+->
+  ->
+    ->
+      ->
+        ->
+          ->
+
+
+
+Observables                                 Promises
+
+-> Emit multiple value over a          Emit single value over the time
+   period of time.
+
+
+->Are lazy. they're not excuted until          -> excute Immediate after creation
+  we subscribe to they  using the subscriptiom
+
+-> have cancell by using unsubcribe.            -> Are not cancelled.
+
+
+/////////////////////////
+RxJx
+Rxjs is library of javaScript used in angular for handling asynchrouns data such as Api calls. It provide observables.
+
+////////////////////////
+What is observable? How to implement it.
+An Observable in RxJx helps us handle data strems like Api response or user input , in a smooth and flexible way.
+
+1> Import Observable from Rxjx.
+2> Create the Observable that emits data.
+3> Subscribe to the component.
+
+/////////////////////
+What is the role of HttpClient in Angular ?
+ 
+Httpclient is build in service provided by angular to http requests(Get , post , put , delect 
+to send and receive the data from api or server.
+
+///////////////////////////
+What are Angualr Forms ? What are the type of Angualar Forms  ?
+
+->What forms are used to handle user's input and manage form data in an application.
+->Two type of Angular form.
+
+Template Driven Forms             
+-> Most of the code Written in Html.
+
+-> Add FormModule in AddModule to Activate It.
+
+-> best for simple form and have less control.
+
+
+  Reactive Forms
+
+-> Most of the code Written in TypeScript file.
+
+-> Add ReactiveModule in AppModule to Activate it.
+-> Best for large App Application and have more control.
+
+
+/////////////////////////////
+What is Authentication and Authorization in Angular
+
+Authentication : - Confirms who the user is(valid login or not)
+Autherisation :- Check what the user is allowed to do(access control for resourse)
+
+//////////////////////////////////////
+Can I give the answer for interview, What is the role of HttpClinet in Angular : HttpClient is built in service provided by 
+angular for Http request (Get, post, patch , delete) to send and receive the request , if wrong pls correct with most easiest word for human being
+
+
 //////////////////////////////////Q92
 //What are various ways to communicate between the component.
 Q>what are the various ways to communicate between the components.
