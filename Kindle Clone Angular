@@ -199,6 +199,177 @@ export class AppComponent {
 It lets data flow one-way (from component to UI or UI to component), or two-way using ngModel.
 Angular supports 4 types: Interpolation, Property Binding, Event Binding, and Two-Way Binding."
 
+
+/////////////////////////////////////
+Absolutely, Abhishek! Here's a clean, human-friendly and interview-ready answer for Q20 to Q26 — with examples and simple words so even a non-tech person can understand.
+
+
+---
+
+✅ Q20. What are Directives in Angular? What are the types?
+
+Answer:
+
+> Directives are instructions in the HTML that tell Angular to do something.
+
+
+
+They are used to change the appearance, behavior, or layout of elements in the DOM.
+
+
+---
+
+✅ Three Types of Directives:
+
+Type	What It Does	Example
+
+1. Component Directive	Custom HTML element (comes with template + logic)	<app-header></app-header>
+2. Structural Directive	Changes structure/layout of DOM (adds/removes HTML)	*ngIf, *ngFor, *ngSwitch
+3. Attribute Directive	Changes the look or behavior of an element	[ngStyle], [ngClass]
+
+
+
+---
+
+✅ Q21. What is *ngIf Structural Directive?
+
+Answer:
+
+> *ngIf is used to show or hide elements based on a condition.
+
+
+
+📦 Think of it like: "If this is true, show it. If false, hide it."
+
+✅ Example:
+
+<p *ngIf="isLoggedIn">Welcome, Abhishek!</p>
+
+In TypeScript:
+
+isLoggedIn = true;
+
+If isLoggedIn is false, the <p> will not be in the HTML at all.
+
+
+---
+
+✅ Q22. What is *ngFor Structural Directive?
+
+Answer:
+
+> *ngFor is used to loop through a list and show multiple elements.
+
+
+
+📦 Think of it like: "For each item in the list, show this block."
+
+✅ Example:
+
+<ul>
+  <li *ngFor="let user of users">{{ user }}</li>
+</ul>
+
+users = ['Abhishek', 'Raj', 'Kiran'];
+
+This will create 3 <li> items.
+
+
+---
+
+✅ Q23. What is *ngSwitch Structural Directive?
+
+Answer:
+
+> *ngSwitch is used to switch between views based on a value — like a switch-case.
+
+
+
+✅ Example:
+
+<div [ngSwitch]="role">
+  <p *ngSwitchCase="'admin'">Admin Panel</p>
+  <p *ngSwitchCase="'user'">User Dashboard</p>
+  <p *ngSwitchDefault>Guest View</p>
+</div>
+
+role = 'admin';
+
+It will show "Admin Panel".
+
+
+---
+
+✅ Q24. What is [ngStyle] Attribute Directive?
+
+Answer:
+
+> ngStyle is used to apply CSS styles dynamically.
+
+
+
+✅ Example:
+
+<p [ngStyle]="{ color: isActive ? 'green' : 'red' }">
+  Status: {{ isActive ? 'Active' : 'Inactive' }}
+</p>
+
+isActive = true;
+
+The <p> text will be green if isActive is true.
+
+
+---
+
+✅ Q25. What is [ngClass] Attribute Directive?
+
+Answer:
+
+> ngClass is used to add or remove CSS classes dynamically.
+
+
+
+✅ Example:
+
+<p [ngClass]="{ 'online': isOnline, 'offline': !isOnline }">
+  Connection Status
+</p>
+
+.online { color: green; }
+.offline { color: red; }
+
+isOnline = true;
+
+The <p> will get class="online" when online.
+
+
+---
+
+✅ Q26. What is the difference between Component, Structural, and Attribute Directives?
+
+Feature	Component	Structural Directive	Attribute Directive
+
+What it does	Creates a custom UI element	Adds/removes elements	Modifies existing element
+Example	<app-user>	*ngIf, *ngFor	[ngStyle], [ngClass]
+Template required?	✅ Yes	❌ No	❌ No
+Use case	UI & logic container	Show/hide or repeat HTML	Change CSS, behavior
+
+
+🧠 Analogy:
+
+Component = Your own full widget
+
+Structural = Decides what HTML appears
+
+Attribute = Styles or behaviors applied to HTML
+
+
+
+---
+
+Let me know if you'd like a quiz or real project task using these!
+
+
 --> Where to show.
 
 
