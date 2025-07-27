@@ -369,6 +369,154 @@ Attribute = Styles or behaviors applied to HTML
 
 Let me know if you'd like a quiz or real project task using these!
 
+/////////////////////////////////////
+
+Absolutely, Abhishek! Here's a very easy-to-remember, interview-friendly, and code-based explanation for each Angular question (Q27 to Q30 + repeated Q20). Think of these as smart short answers with real understanding.
+
+
+---
+
+✅ Q27. What is a Decorator in Angular?
+
+> Decorator is a special function in Angular that adds extra features to classes, properties, methods, or parameters.
+
+
+
+You’ll see them starting with @ symbol like @Component, @Input, @Injectable.
+
+
+---
+
+✅ Example:
+
+@Component({
+  selector: 'app-user',
+  templateUrl: './user.component.html'
+})
+export class UserComponent {}
+
+🧠 This tells Angular:
+“Hey, this class is a component and it has a selector + template.”
+
+
+---
+
+✅ Q28. What are the types of Decorators in Angular?
+
+There are 4 main types:
+
+Decorator	Use Case	Example
+
+@Component()	Declares a class as a component	@Component({...})
+@Directive()	Declares a custom directive	@Directive({...})
+@Injectable()	Marks a class for Dependency Injection	@Injectable()
+@Input() / @Output()	For component communication (parent-child)	@Input() name: string;
+
+
+
+---
+
+✅ Q29. What are Pipes in Angular?
+
+> Pipes are used to transform data in the template.
+
+
+
+🧠 Example: Format dates, currency, uppercase/lowercase.
+
+
+---
+
+✅ Built-in Pipe Example:
+
+<p>{{ today | date:'fullDate' }}</p>
+
+today = new Date();
+
+Output: Wednesday, May 29, 2025
+
+
+---
+
+✅ Types of Pipes:
+
+Type	Example	Description
+
+Built-in	date, uppercase, currency, json, percent	Already provided by Angular
+Custom	You create your own	@Pipe({ name: 'myPipe' })
+
+
+
+---
+
+✅ Parameterized Pipe:
+
+> You pass a parameter to the pipe for customization.
+
+
+
+✅ Example:
+
+<p>{{ price | currency:'INR':'symbol' }}</p>
+
+Converts number to: ₹1,000.00
+
+
+---
+
+✅ Q30. What is Chaining Pipes?
+
+> You can apply multiple pipes together, one after the other.
+
+
+
+✅ Example:
+
+<p>{{ name | uppercase | slice:0:4 }}</p>
+
+If name = "abhishek", output = ABHI
+(First uppercase, then slice first 4 letters)
+
+
+---
+
+✅ Q20 (Repeated). What are Directives? Types?
+
+Already answered above, but in short:
+
+> Directives are instructions in the HTML to tell Angular how to behave.
+
+
+
+
+---
+
+Type	Example	Use
+
+Structural	*ngIf, *ngFor	Add/remove elements
+Attribute	[ngStyle], [ngClass]	Change look/behavior
+Component	@Component()	Custom element
+
+
+
+---
+
+🔚 Summary Table (Quick Glance)
+
+Feature	Purpose	Example
+
+Decorator	Add metadata to class/property	@Component, @Input
+Pipe	Transform data in template	`{{ name
+Directive	Control HTML layout/behavior	*ngIf, [ngClass]
+
+
+
+---
+
+Let me know if you'd like mock interview questions or project-based tasks using these!
+
+
+
 
 --> Where to show.
 
