@@ -520,6 +520,168 @@ Let me know if you'd like mock interview questions or project-based tasks using 
 
 --> Where to show.
 
+Absolutely, Abhishek! Here's the interview-ready, simple explanation, and code examples for each question from Q31 to Q36 — one by one. You’ll be able to explain these like a top 1% developer in the most human-friendly way!
+
+
+---
+
+✅ Q31. What is a Service in Angular?
+
+> A Service is a reusable TypeScript class in Angular used to share logic, fetch data, or hold values across components.
+
+
+
+🧠 Think of a service like a helper file.
+
+
+---
+
+✅ Q32. How to create a Service in Angular?
+
+Use Angular CLI:
+
+ng generate service my-data
+
+This creates:
+
+my-data.service.ts
+
+
+
+---
+
+✅ Example:
+
+// my-data.service.ts
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class MyDataService {
+  getUserName() {
+    return "Abhishek Singh";
+  }
+}
+
+
+---
+
+✅ Q33. How to use Dependency Injection with a Service in Angular?
+
+We inject the service in a component’s constructor.
+
+✅ Example:
+
+// app.component.ts
+import { Component } from '@angular/core';
+import { MyDataService } from './my-data.service';
+
+@Component({
+  selector: 'app-root',
+  template: `<p>{{ name }}</p>`
+})
+export class AppComponent {
+  name: string = '';
+
+  constructor(private myService: MyDataService) {
+    this.name = myService.getUserName(); // using the service
+  }
+}
+
+🧠 This is called Constructor Injection.
+
+
+---
+
+✅ Q34. What is Hierarchical Dependency Injection?
+
+> Angular creates a tree of injectors. Each component can have its own service instance or share a global one.
+
+
+
+🧠 Example:
+
+Service in @Injectable({ providedIn: 'root' }) → global singleton.
+
+Service provided in component.ts → new instance only for that component.
+
+
+✅ Example:
+
+@Component({
+  selector: 'child-component',
+  providers: [MyDataService]  // new instance just for this component
+})
+
+This is useful when:
+
+You want separate copies of a service (e.g., counters, temporary storage).
+
+
+
+---
+
+✅ Q35. What is a Provider in Angular?
+
+> A provider tells Angular how to create and inject a service.
+
+
+
+You define it in:
+
+@Injectable({ providedIn: 'root' }) → auto global provider.
+
+OR inside providers: [] in module/component.
+
+
+✅ Example:
+
+@NgModule({
+  providers: [MyDataService]  // this is a provider
+})
+
+
+---
+
+✅ Q36. What is the role of @Injectable in a Service?
+
+> @Injectable() tells Angular that this class can be injected using Dependency Injection.
+
+
+
+✅ Example:
+
+@Injectable({
+  providedIn: 'root'
+})
+export class MyDataService {
+  // Angular knows this is injectable now
+}
+
+Without @Injectable, Angular will throw an error if the service has dependencies.
+
+
+---
+
+🔚 Summary Table (Quick Recap):
+
+Topic	In Simple Words
+
+Service	Reusable class for logic or data
+Create Service	ng generate service name
+DI with Service	Inject in constructor
+Hierarchical DI	Separate or shared instance depending on scope
+Provider	How Angular knows to create the service
+@Injectable	Marks service as injectable
+
+
+
+---
+
+Want a quick real-world example of a Weather API service or Login Auth service to master this?
+
+
 
 Templete --> A Templete is a HTML View of an Angular component.
 Templete --> What to show
