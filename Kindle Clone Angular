@@ -936,7 +936,7 @@ Observables                                 Promises
 ->Are lazy. they're not excuted until          -> excute Immediate after creation
   we subscribe to they  using the subscriptiom
 
--> have cancell by using unsubcribe.            -> Are not cancelled.
+-> have cancell by  unsubcribe.            -> Are not cancelled.
 
 
 /////////////////////////
@@ -988,6 +988,134 @@ Autherisation :- Check what the user is allowed to do(access control for resours
 //////////////////////////////////////
 Can I give the answer for interview, What is the role of HttpClinet in Angular : HttpClient is built in service provided by 
 angular for Http request (Get, post, patch , delete) to send and receive the request , if wrong pls correct with most easiest word for human being
+
+///////////////////////////////////////87
+what is the interceptor,When and why we should use 
+Great question, Abhishek! Let’s break down HTTP Interceptor in Angular with the most human-friendly explanation, real-world analogy, and simple code — so it’s interview-perfect and you don’t need to memorize anything.
+
+
+---
+
+✅ Q: What is an HTTP Interceptor in Angular?
+
+🧠 Easy Answer (Human Words):
+
+> An HTTP Interceptor is like a security checkpoint.
+It sits in the middle of every API request or response and lets you:
+
+
+
+Add something (like a token),
+
+Change something (like a header),
+
+Or handle errors (like unauthorized access).
+
+
+It runs before the request goes out and after the response comes in.
+
+
+---
+
+🔐 Real-World Analogy:
+
+Think of it like a security guard at a gate:
+
+Before you go out: the guard adds your ID badge (token).
+
+After you come back: the guard checks your package (response).
+
+
+
+---
+
+✅ Why & When to Use Interceptor?
+
+📌 Use it when you want to:
+
+Automatically attach JWT tokens to every request.
+
+Log every request or response.
+
+Catch errors globally in one place (like 401 Unauthorized).
+
+Add custom headers, loading spinners, etc.
+
+
+
+---
+
+✅ Code Example: Add Token to All Requests
+
+
+---
+
+🔹 Step 1: Create the Interceptor
+
+import { Injectable } from '@angular/core';
+import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+@Injectable()
+export class AuthInterceptor implements HttpInterceptor {
+  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    const token = 'sample-jwt-token'; // In real life, get it from localStorage or AuthService
+
+    const clonedRequest = req.clone({
+      setHeaders: {
+        Authorization: `Bearer ${token}`
+      }
+    });
+
+    return next.handle(clonedRequest);
+  }
+}
+
+
+---
+
+🔹 Step 2: Register Interceptor in App Module
+
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './auth.interceptor';
+
+@NgModule({
+  // ...
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ]
+})
+export class AppModule { }
+
+
+---
+
+🔍 What Happens Now:
+
+✅ Every time your Angular app sends an HTTP request, the interceptor automatically adds the token.
+
+
+---
+
+📝 Summary for Interview (One-liners):
+
+Interceptor is a middleman for HTTP requests/responses.
+
+Used to add token, handle errors, log data, etc.
+
+Helps avoid repeating code in every service or request.
+
+Think of it like a security filter for your API calls.
+
+
+
+---
+
+Would you like to also learn how to handle errors with Interceptor or practice a mock interview-style question?
 
 
 //////////////////////////////////Q92
