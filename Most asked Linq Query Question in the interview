@@ -12,3 +12,17 @@ var result = students.GroupJoin(departments,
                   x.s.Departmet,
                   DepartmentName = d?.DepartmentName
                   });
+
+/////////////////////////////////////Select the first row from a table
+//Using LINQ Method Syntax(Most common)
+var firstRow = table.FirstOrDefault();
+
+This will return the first row of the table.
+
+//apply condition
+var firstRow = table.FirstOrDefault(x => x.Age > 25);
+
+//
+Using LINQ Query Syntax:
+var firstRow = (from t in table select t).FirstOrDefault();
+
