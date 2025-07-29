@@ -119,10 +119,46 @@ class Program
         
     }
 }
-//////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////
 
 Q.2: How to find if the given string is a palindrome or not?
 
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        String str = "MadaM";
+        CheckPalidrom(str);
+        
+    }
+    public static void CheckPalidrom(String str)
+     {
+         int i = 0;
+         int j = str.Length - 1 ;
+         bool IsPalidrop = true;
+          while(i < j)
+           {
+               if(str[i] != str[j])
+               {
+                   IsPalidrop = false;
+                   break;
+               }
+               i++;
+               j--;
+           }
+           if(IsPalidrop == true)
+           {
+               Console.WriteLine("Paidrom");
+           }
+           else
+           {
+               Console.WriteLine(" Not Paidrom");
+           }
+     }
+}
  /////////////////////////////////////////////////////Q.4: How to reverse each word in a given string?
 Ans.: The user will input a sentence and we need to reverse each word individually without changing its position in the sentence.
 input: Welcome to Csharp corner, output: emocleW ot prahsC renroc
