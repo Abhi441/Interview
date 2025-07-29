@@ -1,0 +1,14 @@
+///////////////////////////// Do the left join in Linq
+var result = students.GroupJoin(departments,
+                               s => s.DepartmentId , 
+                               d=> DepartmentId
+                               (s, dGroup) => new {s, dGroup })
+                .SelectMany(
+                 x => x.dGroup.DefaultIfEmpty(),
+                 (x,d) => new 
+                  {
+                  x.s.StudentId,
+                  x.s.StudentName,
+                  x.s.Departmet,
+                  DepartmentName = d?.DepartmentName
+                  });
