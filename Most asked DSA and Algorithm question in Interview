@@ -638,3 +638,31 @@ class Program
 
 
 
+/////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////UI
+////////////////////////////////////////////////////////////////////////////////
+Find Palidrom
+
+let str = "SAMPLE";
+str = str.toLowerCase(); // Convert to lowercase for case-insensitive comparison
+
+let i = 0;
+let j = str.length - 1;
+let isPalindrome = true;
+
+while (i < j) {
+    if (str[i] !== str[j]) {
+        isPalindrome = false;
+        break;
+    }
+    i++;
+    j--;
+}
+
+if (isPalindrome) {
+    console.log(`${str} is a palindrome.`);
+} else {
+    console.log(`${str} is not a palindrome.`);
+}
+
+
