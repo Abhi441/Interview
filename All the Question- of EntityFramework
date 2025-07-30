@@ -1,0 +1,106 @@
+////////////////////////////////////////////Previous Interview Question
+It is their in diffrence sheet.
+
+
+
+
+
+////////////////////////////////////////////////////////ChatGpt Question
+Beginner-Level Questions
+
+////////////////////////////////////////////////////////1. What is Entity Framework?
+
+
+
+2. What are the different approaches in EF?
+
+Code First
+
+Database First
+
+Model First
+
+
+
+3. What is DbContext and DbSet?
+
+
+4. What is the difference between Code First and Database First approach?
+
+
+5. How do you perform CRUD operations in Entity Framework?
+
+
+6. What is Lazy Loading, Eager Loading, and Explicit Loading?
+
+
+7. What is a navigation property in EF?
+
+
+8. How do you configure relationships (One-to-Many, Many-to-Many) in EF?
+
+
+
+
+---
+
+⚙️ Intermediate-Level Questions
+
+9. What is the difference between EF Core and EF6?
+
+
+10. What are Migrations in EF Core?
+
+How to create and apply migrations?
+
+
+
+11. How does EF handle concurrency?
+
+
+12. What are shadow properties?
+
+
+13. What is change tracking in EF?
+
+
+14. What is the difference between Add(), Attach(), and Update() methods?
+
+
+15. How do you configure Fluent API vs Data Annotations?
+
+
+16. How can you execute raw SQL queries in EF Core?
+
+
+17. What is the use of AsNoTracking()?
+
+
+
+
+---
+
+🚀 Advanced/Real-World Development Questions
+
+18. How do you optimize performance in Entity Framework Core?
+
+
+19. How to handle transactions in EF?
+
+
+20. How do you seed initial data in EF Core?
+
+
+21. How do you implement Unit of Work and Repository Pattern with EF?
+
+
+22. How do you test Entity Framework code (Mocking DbContext)?
+
+
+23. What are global query filters in EF Core?
+
+
+24. What is Query Splitting in EF Core?
+
+
+25. How does EF Core handle connection pooling and resource management?
