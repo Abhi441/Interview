@@ -1,0 +1,208 @@
+///////////////////////////////Chatgpt 
+Here’s a curated list of the most frequently asked ADO.NET interview questions for a .NET developer (especially with 3–5 years of experience). These are often asked by technical panelists to test your hands-on knowledge, connection handling, and real-world implementation.
+
+
+---
+
+✅ Top ADO.NET Interview Questions
+
+🔹 1. What is ADO.NET?
+
+> ADO.NET is a part of the .NET Framework used to interact with databases like SQL Server. It provides classes to connect, retrieve, insert, update, and delete data.
+
+
+
+
+---
+
+🔹 2. What are the core components of ADO.NET?
+
+> SqlConnection
+
+SqlCommand
+
+SqlDataReader
+
+SqlDataAdapter
+
+DataSet
+
+DataTable
+
+
+
+
+
+---
+
+🔹 3. What is the difference between ExecuteReader(), ExecuteScalar(), and ExecuteNonQuery()?
+
+Method	Use For	Returns
+
+ExecuteReader()	SELECT query	DataReader object (rows)
+ExecuteScalar()	Aggregate (e.g. COUNT)	Single value (first column)
+ExecuteNonQuery()	INSERT, UPDATE, DELETE	Number of rows affected
+
+
+
+---
+
+🔹 4. How do you use SqlConnection in ADO.NET?
+
+using(SqlConnection conn = new SqlConnection("Your_Connection_String"))
+{
+    conn.Open();
+    // Execute commands
+}
+
+
+---
+
+🔹 5. What is SqlDataReader and how does it work?
+
+> Forward-only, read-only way of reading rows.
+
+Very fast and memory efficient.
+
+Used with ExecuteReader().
+
+
+
+
+SqlCommand cmd = new SqlCommand("SELECT * FROM Employees", conn);
+SqlDataReader reader = cmd.ExecuteReader();
+while(reader.Read())
+{
+    var name = reader["Name"].ToString();
+}
+
+
+---
+
+🔹 6. What is the difference between DataReader and DataAdapter?
+
+Feature	DataReader	DataAdapter
+
+Mode	Connected	Disconnected
+Usage	Read-only	Fill/update DataSet
+Forward only	Yes	No
+Best for	Fast reads	Multiple-table datasets
+
+
+
+---
+
+🔹 7. What is a DataSet and DataTable?
+
+DataSet: In-memory collection of data tables.
+
+DataTable: Represents one in-memory table.
+
+
+DataSet ds = new DataSet();
+adapter.Fill(ds, "Employees");
+DataTable dt = ds.Tables["Employees"];
+
+
+---
+
+🔹 8. What are Parameterized Queries in ADO.NET? Why are they important?
+
+> Used to prevent SQL Injection and to pass parameters safely.
+
+
+
+SqlCommand cmd = new SqlCommand("SELECT * FROM Users WHERE Id = @Id", conn);
+cmd.Parameters.AddWithValue("@Id", userId);
+
+
+---
+
+🔹 9. What are connection pooling and its benefits?
+
+> ADO.NET maintains a pool of connections to reuse for better performance. It avoids opening/closing DB connections repeatedly.
+
+
+
+
+---
+
+🔹 10. How to handle transactions in ADO.NET?
+
+SqlTransaction transaction = conn.BeginTransaction();
+SqlCommand cmd = conn.CreateCommand();
+cmd.Transaction = transaction;
+
+try
+{
+    cmd.CommandText = "INSERT INTO Orders VALUES (...)";
+    cmd.ExecuteNonQuery();
+
+    transaction.Commit();
+}
+catch
+{
+    transaction.Rollback();
+}
+
+
+---
+
+🔹 11. What is the difference between Fill() and Update() in SqlDataAdapter?
+
+Fill() → Populates a DataSet with data.
+
+Update() → Pushes changes made in DataSet back to the database.
+
+
+
+---
+
+🔹 12. How can you call a stored procedure using ADO.NET?
+
+SqlCommand cmd = new SqlCommand("sp_GetUser", conn);
+cmd.CommandType = CommandType.StoredProcedure;
+cmd.Parameters.AddWithValue("@UserId", 1);
+
+
+---
+
+🔹 13. What are the different CommandType values in ADO.NET?
+
+Text → SQL query
+
+StoredProcedure → Procedure call
+
+TableDirect → Select all from table (rarely used)
+
+
+
+---
+
+🔹 14. What are some best practices when using ADO.NET?
+
+Always use using() blocks.
+
+Use parameterized queries.
+
+Close connections in finally block.
+
+Handle exceptions properly.
+
+Avoid unnecessary DataSet use if only one table is needed.
+
+
+
+---
+
+✅ Would you like:
+
+A full CRUD example using ADO.NET in .NET 8?
+
+Practice questions?
+
+Mock interview Q&A from ADO.NET?
+
+
+Let me know!
+
