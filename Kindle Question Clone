@@ -544,6 +544,13 @@ Use case When you want to pass a method When you want to notify subscribers
 
 
 
+
+
+///////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////END OF KINDLE
+///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////Singleton
 ✅ Interview-Friendly Answer:
 Q: What is a Singleton Class in C#?
@@ -637,7 +644,7 @@ So, we use locking to make sure only one thread can create the object — this i
 
 
 ////////////////////
-
+//How to make Signaloton Thread Safe
 ---
 
 
@@ -769,5 +776,49 @@ lock ensures only one thread creates the object.
 
 
 This avoids race conditions in multithreaded environments.
+
+
+
+////////////////////////////////////////////////////////////////
+//What is reference type and Value Type
+--> “Value types store actual values in stack memory . Reference types store the memory address and point to shared data in heap. 
+
+-->with value types, changes don’t affect others. But with reference types, changes reflect across all references.”
+
+-->🔍 Common Value Types in C#:
+
+int, float, bool, char, double, struct
+
+
+-->🔍 Common Reference Types in C#:
+
+class, string, array, object, interface
+
+-->
+EXAMPLE : 
+Code Example (Value Type):
+
+int a = 5;
+int b = a;
+b = 10;
+
+Console.WriteLine(a); // Output: 5
+Console.WriteLine(b); // Output: 10
+
+📌 a and b are separate copies, so changing b does not affect a.
+-->
+ Code Example (Reference Type):
+
+class Person
+{
+    public string Name;
+}
+
+Person p1 = new Person { Name = "Abhishek" };
+Person p2 = p1;
+p2.Name = "Sunil";
+
+Console.WriteLine(p1.Name); // Output: Sunil
+Console.WriteLine(p2.Name); // Output: Sunil
 
 
