@@ -578,6 +578,117 @@ Use it
 Example : SELECT * FROM EMPLOYEE WHERE Name = 'Abhishek';
 
 
+////////////////////////////////////////////////////////////////////////////////83>
+What is the diffrence between clustered and non clustored index ?
+=>
+A clustered index defines the order in which data is physically stored in a table. for example Dictionary.
+A non-clustred index is stored at one place and table data is stored in another place. for example , Bookplace
+
+A table can have only one clustred index.
+Atable can have multiple non-clustred index.
+
+Clustered index is faster.
+Non-Clustered index is slower.
+
+////////////////////////////////////////////////86>
+1. SP may or may not return a value, but Function must return a value
+🔸 Stored Procedure Example:
+CREATE PROCEDURE sp_GetEmployee
+AS
+BEGIN
+    SELECT * FROM Employees; -- No return needed
+END
+✅ Here, it just performs an action, doesn't return any single value.
+
+🔹 Function Example:
+CREATE FUNCTION fn_GetTotalSalary()
+RETURNS INT
+AS
+BEGIN
+    DECLARE @total INT;
+    SELECT @total = SUM(Salary) FROM Employees;
+    RETURN @total;
+END
+✅ Function must return a value (here: total salary).
+
+2. SP can have input/output parameters, Function only has input parameters
+🔸 Stored Procedure with Output:
+CREATE PROCEDURE sp_GetEmployeeCount
+    @DeptId INT,
+    @Count INT OUTPUT
+AS
+BEGIN
+    SELECT @Count = COUNT(*) FROM Employees WHERE DepartmentId = @DeptId;
+END
+🔹 Function can only have input:
+CREATE FUNCTION fn_GetDeptSalary(@DeptId INT)
+RETURNS INT
+AS
+BEGIN
+    DECLARE @salary INT;
+    SELECT @salary = SUM(Salary) FROM Employees WHERE DepartmentId = @DeptId;
+    RETURN @salary;
+END
+❌ You cannot use OUTPUT parameters in a function.
+
+3. We can call a Function inside a SP, but cannot call SP inside a Function
+✅ Call function inside SP:
+CREATE PROCEDURE sp_ShowSalary
+AS
+BEGIN
+    DECLARE @total INT;
+    SET @total = dbo.fn_GetTotalSalary(); -- calling function
+    PRINT @total;
+END
+❌ Cannot do this in function:
+-- INVALID:
+-- You cannot write this inside a FUNCTION
+
+-- EXEC sp_GetEmployee; -- ❌ Not allowed inside a function
+4. Cannot use SP in SELECT/INSERT/UPDATE — but can use Function
+❌ SP cannot be used:
+-- INVALID:
+SELECT *, sp_GetEmployee() FROM Employees; -- ❌ Error
+✅ Function can be used:
+-- Valid:
+SELECT Name, dbo.fn_GetDeptSalary(DepartmentId) AS TotalDeptSalary FROM Employees;
+✅ Functions can be used inside SELECT, WHERE, JOIN, etc.
+
+5. TRY-CATCH works in SP, not in Function
+✅ TRY-CATCH in SP:
+CREATE PROCEDURE sp_TryCatchDemo
+AS
+BEGIN
+    BEGIN TRY
+        SELECT 1 / 0; -- Will cause error
+    END TRY
+    BEGIN CATCH
+        PRINT 'Error occurred!';
+    END CATCH
+END
+❌ NOT allowed in Function:
+-- TRY-CATCH is not allowed inside a FUNCTION in SQL Server
+6. Transactions possible in SP, not in Function
+✅ SP with transaction:
+CREATE PROCEDURE sp_UpdateSalary
+AS
+BEGIN
+    BEGIN TRANSACTION
+        UPDATE Employees SET Salary = Salary + 1000;
+    COMMIT TRANSACTION
+END
+❌ Transactions NOT allowed in function:
+-- BEGIN TRAN / COMMIT TRAN are not allowed inside FUNCTION
+🔚 Summary Table:
+Feature	Stored Procedure (SP)	Function
+Return Value	Optional	Must return something
+Parameters	Input + Output	Input only
+Callable from SQL query	❌ No	✅ Yes
+Use in SELECT/UPDATE/DELETE	❌ No	✅ Yes
+Use inside Function	❌ No	✅ Function only
+TRY-CATCH / Transactions	✅ Yes	❌ No
+
+
 
 
 ///////////////////////////////////////////////////////////////////////////////////
