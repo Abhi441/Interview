@@ -542,6 +542,16 @@ Use case When you want to pass a method When you want to notify subscribers
 > Delegates hold a reference to methods; Events use delegates to notify when something happens, and only the class that defines the event can raise it.
 
 
+////////////////////////////////////////////////////81>
+What is CLUSTRED INDEX ?
+--> A clustered indexdefines the order in which  data is physically stored into table.
+--> only one clustered index allowed per table.
+Example :
+CREATE TABLE EMPLOYEE(
+ID INT PRIMARY KEY , // By default create a clusred indes
+NAME  VARCHAR(100),
+Salary INT
+)
 
 
 
