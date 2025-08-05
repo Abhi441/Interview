@@ -553,6 +553,30 @@ NAME  VARCHAR(100),
 Salary INT
 )
 
+////////////////////////////////////////////82>
+What is NON-CLUSTERED INDEX ?
+A non -clustred index is stored at one place and table is stored in another place.So this is not physically stored.
+
+Example :
+CREATE TABLE EMPLOYEE(
+ID INT PRIMARY KEY , // By default create a clusred indes
+NAME  VARCHAR(100),
+Salary INT
+)
+//Example
+Non-Clustered Index
+
+CREATE NONCLUSTERED INDEX IX_Employee_Name
+ON Employee(name);
+
+Clustered Index = Sorted actual data.
+Non-Clustored Index = Pointer to actial data.
+
+//ADVANTAGES
+Use it
+-> You Serch frequently by coloumns other than the primary key.
+Example : SELECT * FROM EMPLOYEE WHERE Name = 'Abhishek';
+
 
 
 
