@@ -1,7 +1,124 @@
 ////////////////////////////////////////////Previous Interview Question
 It is their in diffrence sheet.
 
+/////////////////////////////////////////////////Interview Previous
+//Introduction
+Entity Framework(EF) is an open source object-Relational Mapper(ORM)for .net application.
 
+//Key Feature of Entity Framework
+=> Code-First Approach : Define your database structure using c# or VB.Net classes and EF will generate the database schema.
+
+=>Database-First Approaches : Reverse-engine an existing database into a .Net model.
+=>Query Support : use LINQ for database operation.
+
+//Why we use Entity Framework
+1) Productivity : Eliminate the need to write repetitive SQL Code.
+
+//How does EntityFramework work High Level understanding
+
+Context class : Acts as session to connect with database(e.g DbContext)
+Entity Classes:  Represent the table in the coloum.
+Linq Query : Translate LInq state into Sql Command.
+Database Provider : Hnadle the connection and interaction  with the actual database.
+
+//////////////////////////////Use and Limitations
+//Use
+-> Rapid application development.
+//Limitation
+->May not perform as well as raw SQL for highly Complex queries.
+
+//How does EntityFramework work Low Level understanding
+1) Model Creation :-> The developer creates entity classes(code-First) or generative Classes from an existing 
+database Schema(Database - First).
+
+2) Query Execution : LINQ query or method calls are processed by the Query processor.
+The Query processor Convert this into SQL.
+
+////////////////////////////////Implementation (I have already tested)
+
+//Model
+ public class Property
+ {
+     [Key]
+     public int Id { get; set; }
+     
+     public string Title { get; set; }
+     
+     public string Description { get; set; }
+     
+     public string Location { get; set; }
+    
+    
+     public int Price { get; set; }
+
+     public DateTime CreateAt { get; set; } = DateTime.Now;
+
+ }
+
+//ApplicationDbContest
+
+   public class ApplicationDbContext : DbContext
+   {
+       public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
+       public DbSet<Property> Property { get; set; }
+   }
+
+//Reposetory
+ public class PropertyRepository : IProperty
+ {
+     private readonly ApplicationDbContext _context;
+
+     public PropertyRepository(ApplicationDbContext context)
+     {
+         _context = context;
+     }
+
+     public async Task<IEnumerable<Property>> GetAllPropertyAsync()
+     {
+         return await _context.Property.ToListAsync();
+     }
+
+     public async Task Create(Property property)
+     {
+         _context.Property.Add(property);
+         await _context.SaveChangesAsync();
+     }
+
+     public async Task<Property> Edit(int? id)
+     {
+         return await _context.Property.Where(p => p.Id == id).FirstOrDefaultAsync();
+     }
+
+     public async Task Update(Property property)
+     {
+         var existingProperty = await _context.Property.Where(p => p.Id == property.Id).FirstOrDefaultAsync();
+         if (existingProperty != null)
+         {
+             existingProperty.Title = property.Title;
+             existingProperty.Description = property.Description;
+             existingProperty.Location = property.Location;
+             existingProperty.Price = property.Price;
+             await _context.SaveChangesAsync();
+         }
+     }
+
+     public async Task<Property> GetPropertyById(int? id)
+     {
+         return await _context.Property.Where(p => p.Id == id).FirstOrDefaultAsync();
+     }
+
+     public async Task Delete(int id)
+     {
+         var property = await _context.Property.Where(p => p.Id == id).FirstOrDefaultAsync();
+         if (property != null)
+         {
+             _context.Property.Remove(property);
+             await _context.SaveChangesAsync();
+         }
+     }
+
+     
+ }
 
 
 
