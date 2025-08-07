@@ -127,13 +127,14 @@ Beginner-Level Questions
 
 ////////////////////////////////////////////////////////1. What is Entity Framework?
 
+Entity Framework(EF) is an open source object-Relational Mapper(ORM)for .net application.
 
 
 2. What are the different approaches in EF?
 
-Code First
+=> Code-First Approach : Define your database structure using c# or VB.Net classes and EF will generate the database schema.
 
-Database First
+=>Database-First Approaches : Reverse-engine an existing database into a .Net model.
 
 Model First
 
@@ -141,6 +142,8 @@ Model First
 
 3. What is DbContext and DbSet?
 
+DbContect : Thinks of DbContext as your main connection between your c# code and database.
+DbSet<T> represents a table in the database where T is the model/class.
 
 4. What is the difference between Code First and Database First approach?
 
@@ -148,7 +151,113 @@ Model First
 5. How do you perform CRUD operations in Entity Framework?
 
 
-6. What is Lazy Loading, Eager Loading, and Explicit Loading?
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////6. What is Lazy Loading, Eager Loading, and Explicit Loading?
+Simple Definition for Interview
+
+🔸 Lazy Loading:
+Related data is loaded automatically when accessed.
+
+🔸 Eager Loading:
+Related data is loaded immediately when the main data is fetched using .Include().
+
+🔸 Explicit Loading:
+You manually load related data after the main object is loaded.
+
+
+---
+
+✅ Real-life Analogy (interview-friendly)
+
+Think of Student and Courses:
+
+Lazy Loading: You visit the student, and only when you ask about their courses, they go fetch it.
+
+Eager Loading: You tell them to bring their course list at the time you meet them.
+
+Explicit Loading: You visit the student, and later say, “Hey, now show me your courses.”
+
+
+
+---
+
+✅ Sample Entity Classes
+
+public class Student
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+
+    // Navigation Property
+    public virtual ICollection<Course> Courses { get; set; } = new List<Course>();
+}
+
+public class Course
+{
+    public int Id { get; set; }
+    public string Title { get; set; }
+    public int StudentId { get; set; }
+}
+
+
+---
+
+✅ 1. Lazy Loading (load when accessed)
+
+Setup:
+You must use virtual keyword on navigation property + install Microsoft.EntityFrameworkCore.Proxies.
+
+services.AddDbContext<AppDbContext>(options =>
+    options.UseLazyLoadingProxies().UseSqlServer("connection_string"));
+
+Code:
+
+var student = await context.Students.FindAsync(1);
+var courses = student.Courses; // Triggers lazy load here!
+
+
+---
+
+✅ 2. Eager Loading (load early with Include)
+
+Code:
+
+var student = await context.Students
+    .Include(s => s.Courses)
+    .FirstOrDefaultAsync(s => s.Id == 1);
+
+🧠 Best for performance when you know you’ll need related data.
+
+
+---
+
+✅ 3. Explicit Loading (manually load after main)
+
+var student = await context.Students.FirstOrDefaultAsync(s => s.Id == 1);
+
+// Now explicitly load courses
+await context.Entry(student)
+    .Collection(s => s.Courses)
+    .LoadAsync();
+
+🧠 Useful when you want full control over when related data loads.
+
+
+---
+
+✅ Interview Summary (One-liner ready):
+
+Loading Type Loads When? How?
+
+Lazy Loading When navigation accessed virtual + proxy
+Eager Loading With main query .Include()
+Explicit Loading Manually later .Entry().LoadAsync()
+
+
+
+---
+
+Would you like a diagram or real-world scenario to help remember this even better?
+
 
 
 7. What is a navigation property in EF?
