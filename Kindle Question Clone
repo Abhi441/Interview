@@ -602,6 +602,29 @@ CONSTRAINT UC Student UNIQUE (ID, Nane)
 
 DEFAULT specifies a default value for the colume when on value i specified by the e
 
+//////////////////////////////////////////////////////////////////////////////////70)
+//WHAT IS THE DIFFERENCE BETWEEN PRI-MARY KEY AND UNIQUE KEY?
+
+Primary Key
+
+1 Primary Key Can't Accept Null Values.
+
+2 Creates Clustered Index
+
+3
+
+Only One Primary key in a Table
+
+Unique Key
+
+Unique Key Can Accept Only One Null Value
+
+Creates Non-Clustered Index
+
+More than One Unique Key in a Table.
+///////////////////////////////////////////////////////71
+
+
 ////////////////////////////////////////////82>
 What is NON-CLUSTERED INDEX ?
 A non -clustred index is stored at one place and table is stored in another place.So this is not physically stored.
