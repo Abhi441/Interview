@@ -624,6 +624,114 @@ Creates Non-Clustered Index
 More than One Unique Key in a Table.
 ///////////////////////////////////////////////////////71
 
+What is a Trigger in SQL Server?
+
+Triggers are stored programs, which are AUTOMATIC-ALLY executed or fired when some events (insert, delete and update) occur.
+
+
+
+---
+
+✅ Why Do We Use Triggers?
+
+To enforce business rules automatically
+
+To log changes or maintain audit trails
+
+To prevent invalid data from being inserted
+
+To enforce relationships or complex constraints
+
+To automatically update other tables
+
+
+
+---
+
+📚 Types of Triggers in SQL Server
+
+Category Trigger Type When it Fires
+
+🔁 DML Triggers AFTER Triggers After INSERT/UPDATE/DELETE operations
+ INSTEAD OF Triggers Replaces INSERT/UPDATE/DELETE operation
+⏱️ DDL Triggers ON DATABASE / ON ALL SERVER On schema changes like CREATE, ALTER
+💣 Logon Triggers AFTER LOGON Fires when a user logs in to SQL Server
+
+
+
+---
+
+🔁 1. DML Triggers (Data Manipulation Language)
+
+These are most commonly used.
+
+✅ a) AFTER Trigger
+
+Executes after the operation (INSERT, UPDATE, DELETE).
+
+
+CREATE TRIGGER trg_AfterInsert
+ON Employees
+AFTER INSERT
+AS
+BEGIN
+   PRINT 'A row was inserted in Employees table.'
+END
+
+✅ b) INSTEAD OF Trigger
+
+Executes instead of the operation — can be used on views too.
+
+
+CREATE TRIGGER trg_InsteadOfDelete
+ON Employees
+INSTEAD OF DELETE
+AS
+BEGIN
+   PRINT 'Delete operation blocked on Employees table.'
+END
+
+
+---
+
+⏱️ 2. DDL Triggers (Data Definition Language)
+
+Fires when you run commands like CREATE, DROP, or ALTER.
+
+CREATE TRIGGER trg_DDL_Log
+ON DATABASE
+FOR CREATE_TABLE, DROP_TABLE
+AS
+BEGIN
+   PRINT 'DDL Change detected on the database!'
+END
+
+
+---
+
+💣 3. Logon Triggers
+
+Used to control or monitor SQL Server logins.
+
+CREATE TRIGGER trg_LogonCheck
+ON ALL SERVER
+FOR LOGON
+AS
+BEGIN
+   PRINT 'A user just logged in.'
+END
+
+
+---
+
+🔍 Trigger Concepts to Understand Deeply
+
+Concept Explanation
+
+INSERTED table Contains new rows being inserted or updated
+DELETED table Contains old rows being deleted or updated
+Can't call triggers manually Triggers are automatic, not manually executable
+Triggers are transactional If a trigger fails, the whole operation rolls back
 
 ////////////////////////////////////////////82>
 What is NON-CLUSTERED INDEX ?
@@ -648,6 +756,7 @@ Non-Clustored Index = Pointer to actial data.
 Use it
 -> You Serch frequently by coloumns other than the primary key.
 Example : SELECT * FROM EMPLOYEE WHERE Name = 'Abhishek';
+
 
 
 ////////////////////////////////////////////////////////////////////////////////83>
