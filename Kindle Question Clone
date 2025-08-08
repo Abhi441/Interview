@@ -733,6 +733,198 @@ DELETED table Contains old rows being deleted or updated
 Can't call triggers manually Triggers are automatic, not manually executable
 Triggers are transactional If a trigger fails, the whole operation rolls back
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////72)
+View : view is Virtual table which contains of a subset of data contains in a table of more than one table.
+
+-->View are not stored in memory like table then why to use views :
+1> Views can be easily Indexed to improve the performance.
+2>Extra security - DBA can hide the actual table names and expose views for read only operation 
+3> User don't need to know where data comes from.
+4>Don't repeat the same JOINS or filters in 10 places.
+--> Remember, in a view query is stored but the data is never stored like a table.
+
+
+Example :
+CREATE VIEW vw_ActiveEmployees AS
+SELECT EmpID , FullName ,Department
+from Employees
+WHERE Status = 'Active';
+
+Select * From vw_ActiveEmployees;
+
+//////////////////////////////////////////////////////////////////////////////////////73)
+WHAT IS THE DIFFERENCE BETWEEN HAV-ING CLAUSE AND WHERE CLAUSE?
+
+1. WHERE Clause is used before GROUP BY Clause.
+
+HAVING Clause is used after GROUP BY Clause.
+
+2. WHERE Clause cannot contain AGGREGATE function. HAVING Clause can contain aggregate function.
+
+SELECT COUNT(CustomerID), Country FROM Customers
+
+WHERE Country = "India"
+
+GROUP BY Country
+
+HAVING COUNT (CustomerID) > 5;
+
+////////////////////
+WHAT IS SUB QUERY OR NESTED QUERY OR INNER QUERY IN SQL?
+
+A Subquery or Inner query or a Nested query is a query within another SQL query and embedded within the WHERE clause.
+///////////////////////////75)
+WHAT IS AUTO INCREMENT/ IDENTITY COLUMN IN SQL SERVER?
+
+Auto-increment allows a unique number to be generated automatically when a new record is inserted into a table.
+
+CREATE TABLE Persons (
+
+Personid int IDENTITY(1,1) PRIMARY KEY,
+
+FirstName varchar(255),
+
+Age int
+
+);
+
+///////////////////////////////////76)
+WHAT ARE JOINS IN SQL?
+
+A join clause is used to COMBINE rows from two or more tables, based on a related column between them.
+
+///////////////////////////////////////////////77)
+What is join and type ?
+LEFT OUTER JOIN: As you can see in the diagram It returns all records from the
+
+left table, and the matched records from the right table.
+
+RIGHT (OUTER) JOIN: Returns all records from the right table, and the matched rec-ords from the left table.
+
+FULL (OUTER) JOIN: Returns all records when there is a match in either left or right table.
+
+(INNER) JOIN: Returns records that have matching values in both tables. Inner join is the mostly used join in all joins.
+
+///////////////////////////////////78
+WHAT IS SELF-JOIN?
+
+A self-join is a join of a table to itself.
+
+//////////////////////////////////80
+WHAT ARE INDEXES IN SQL SERVER?
+
+SQL Indexes are used in relational databases to retrieve data VERY FAST.
+
+They are like indexes at the start of the BOOKS, which pur-pose is to find a topic quickly.
+
+//////////////////////////////81)
+WHAT IS CLUSTERED INDEX?
+
+CLUSTERED INDEX
+
+A clustered index defines the order in which data is phys-ically stored in a table.
+
+Clustered index are similar to the Dictionary. See how you will find any word.
+
+There is only one way to find a word so similarly there can be only one clustered index per table possible.
+
+In SQL Server, if you set a primary key on a column then it will automatically create a clustered index on that col-umn.
+
+//////////////////////////82)
+WHAT IS NON-CLUSTERED INDEX? NON-CLUSTERED INDEX A non-clustered index is stored at one place and table data is stored in another place. So, this index is not physically stored. It is like the index of a BOOK.
+
+///////////////////////83)
+WHAT IS THE DIFFERENCE BETWEEN CLUSTERED AND NON-CLUSTERED INDEX? 1. A clustered index defines the order in which data is physically stored in a table. For example, Dictionary. A non-clustered index is stored at one place and table data is stored in another place. For example, Book Index. 2. A table can have only one clustered index. A table can have multiple non-clustered index. 3. Clustered index is faster. Non-clustered index is slower.
+
+
+//////////////////////////////84)
+HOW TO CREATE CLUSTERED AND NON-CLUSTERED INDEX IN A TABLE? CLUSTERED INDEX When you create a PRIMARY KEY constraint, a clustered index on the column or columns is automatically created. NON-CLUSTERED INDEX
+
+
+//////////////////////////85)
+IN WHICH COLUMN YOU WILL APPLY THE INDEXING TO OPTIMIZE THIS QUERY. “select id, class from student where name=”happy””? The column after WHERE condition, which is “name” here.
+
+
+/////////////////////86)
+WHAT IS THE DIFFERENCE BETWEEN STORED PROCEDURE AND FUNCTIONS?
+
+/////////////////////87)
+HOW TO OPTIMIZE A STORED PROCEDURE OR SQL QUERY? Below are some techniques to optimize a stored procedure: Use SET NOCOUNT ON Specify column names instead of using * in SELECT statement. Use schema name before objects or table names. Example: SELECT EmpID, Name FROM dbo.Employee Do not use DYNAMIC QUERIES. They are vulnerable to SQL Injections. Use EXISTS () instead of COUNT (). Example: IF( EXISTS (SELECT 1 FROM db.Employees)) is better than SELECT Count(1) FROM dbo. Employee Use TRANSACTION when required only
+
+
+/////////////////////////////88)
+WHAT IS A CURSOR? WHY TO AVOID THEM? A database Cursor is a control which enables traversal/ iteration over the rows or records in the table. It’s a 5-step process: 1. Declare 2. Open 3. Fetch using while loop 4. Close 5. Deallocate
+
+/////////////////////////////89)
+WHAT IS THE DIFFERENCE BETWEEN SCOPE_IDENTITY AND @@IDENTITY? scope_identity and @@identity, both are used to get the last value entered in the identity column of the table. The @@identity returns the last identity created in the same session. The session is the database connection. The scope_identity() function returns the last identity created in the same session and the same scope. The scope is the current query or the current stored procedure. Normally we have to use scope_identity() function inside stored procedures.
+
+
+//////////////////////////90)
+WHAT IS CTE IN SQL SERVER? A Common Table Expression, is a TEMPORARY named result set, that you can reference within a SELECT, INSERT, UPDATE, or DELETE statement.
+
+//////////////////////91)
+WHAT IS THE DIFFERENCE BETWEEN DELETE, TRUNCATE AND DROP COMMANDS? 
+
+DELETE
+
+1. It is a DML.
+
+2. It is used to delete the one or more rows(data) of a table.
+
+3. It can be rollback.
+
+DELETE FROM Employees WHERE Emp_Id = 7;
+
+TRUNCATE
+
+1. It is a DDL.
+
+2. It is used to delete all rows from the table.
+
+3. It can be rollback.
+
+4. Trincate will remove all the records from the table Employees but not the structure/ schema.
+
+TRUNCATE TABLE Employees;
+
+DROP
+
+1. It is a DDL.
+
+2. It is used to drop the whole table with STRUCTURE/SCHEMA.
+
+3. It can not be rollback.
+
+4. It will remove the structure/schema also.
+
+DROP TABLE Employees;
+
+
+/////////////////////////////
+WHAT ARE ACID PROPERTIES?
+
+ACID properties are used when you are handling transac-tions in SQL.
+
+Atomicity
+
+Each transaction is "all or nothing"
+
+Consistency
+
+Data should be valid according to all defined rules
+
+Isolation
+
+Transactions do not affect each other
+
+Durability
+
+Committed data would not be lost, even after power failure.
+
+//////////////////////////////94
+WHAT ARE MAGIC TABLES IN SQL SERVER? Magic tables are the temporary logical tables that are created by the SQL server whenever there are insertion or deletion or update( D.M.L) operations. Types of magic tables: INSERTED – The recently inserted row gets added to the
+INSERTED magic table. DELETED – The recently deleted row gets added to the DELETED magic table. The use of magic tables are TRIGGERS.
+
 ////////////////////////////////////////////82>
 What is NON-CLUSTERED INDEX ?
 A non -clustred index is stored at one place and table is stored in another place.So this is not physically stored.
