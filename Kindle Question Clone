@@ -576,6 +576,31 @@ Constrains are used to limit the type of data that can go into a table.
 
 Example
 
+LA PRIMARY KEY field which can uniquely identify each tow in a table
+
+LA FOREIGN Plaid which can uniquely idently sad row in in another table,
+
+4. CHECK constraint helps to validate the valves of cuta meet a particular condition.
+
+CREATE TABLE Students(
+
+10 In NOT NULL PRIMARY KEY
+
+Nase varchar(255) NOT NULL,
+
+CoursaID int FOREIGN REFERENCES Courses (CourseID)。
+
+Age Int NOT NULL CHECK (AGE 18),
+
+AdmissionDate date DEFAULT GETDATE().
+
+CONSTRAINT UC Student UNIQUE (ID, Nane)
+
+6.UNIQUE constraint tells that all the values in the column must be unique
+
+2. NOT NULL maint telh that we cannot store a null value in a
+
+DEFAULT specifies a default value for the colume when on value i specified by the e
 
 ////////////////////////////////////////////82>
 What is NON-CLUSTERED INDEX ?
