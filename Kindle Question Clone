@@ -553,6 +553,30 @@ NAME  VARCHAR(100),
 Salary INT
 )
 
+///////////////////////////////////////////////////////////////////////////////////////////////68>
+what is the diffrence between DBMS And RDBMS.
+//DBMS
+1) DBMS stores data as file.
+2) No relationship between data.
+3)Normilation is not present.
+4) It deals with small quantity of data.
+5)Examples : XML.
+
+//RDBMS
+1)RDBMS stores data in Tabular form.
+2)Data is stored in the  form of table which are RELATED to each other. Eg: Foreign key reelationsheep.
+3)Normalization is present.
+4)It deals with LARZE amount of data.
+5)Example : MySql, PostSql, SqlServer, Oracle.
+
+///////////////////////////////////////////////////////////////////////////69)
+//What is a Constrains in SQL? What are its TYPE.
+Sql constrains are used to specify rules for the data in a table.
+Constrains are used to limit the type of data that can go into a table.
+
+Example
+
+
 ////////////////////////////////////////////82>
 What is NON-CLUSTERED INDEX ?
 A non -clustred index is stored at one place and table is stored in another place.So this is not physically stored.
