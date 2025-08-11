@@ -1,3 +1,15 @@
+///////////////////////////////////////////////////////////////////////////////////////////Q)1
+What are the Main Concept of OOPS ? WHAT ARE CLASSES AND OBJECTS ?
+
+//Class : A class is a LOGICAL UNIT OR BLUEPRINT that contains feilds, methods , and Properties.
+1) Constructor is a method in the class which gets excuted when a class object is created.
+2) A feilds is avariable of any type. It is basically the data.
+3) A property  is a member that provides helps in read and write of private feilds.
+4) A methods is a code blocks that contains a series of statement.
+
+
+
+
 ////////////////////////////////Q> 32
 
 Difference between ArrayList and Hashtable in C#
