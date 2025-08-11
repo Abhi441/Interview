@@ -50,8 +50,13 @@ What is Inheritance ? Why INHERITANCE IS IMPORTANT ?
 -> Inheritance is creating a PARENT-CHLD relationship between two classes where child automaticallyy get the properties and
 get the properties and methods of the parent.
 
-->
+-> It allows you to reused code and establish a relatiship between classes(e.g., is-a relationship).
+//
+Why is Inheritance Impotant ?
+1) Code Reusability : Avoid duplicating code across related classes.
+2) Extensibility : Enables adding new features to existing code without modification it.
 
+Example
 
 
 ////////////////////////////////Q> 32
