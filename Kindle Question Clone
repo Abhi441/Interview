@@ -1,12 +1,56 @@
 ///////////////////////////////////////////////////////////////////////////////////////////Q)1
 What are the Main Concept of OOPS ? WHAT ARE CLASSES AND OBJECTS ?
 
-//Class : A class is a LOGICAL UNIT OR BLUEPRINT that contains feilds, methods , and Properties.
+//Class : A class is a LOGICAL UNIT OR BLUEPRINT that contains feilds, methods , and Properties
+-> It doesn't occupy memory until an object is crated.
 1) Constructor is a method in the class which gets excuted when a class object is created.
 2) A feilds is avariable of any type. It is basically the data.
 3) A property  is a member that provides helps in read and write of private feilds.
 4) A methods is a code blocks that contains a series of statement.
+//
+OBJECT - An object is an INSTANCE of a class.
+-> It is a real-world entity created based on the class blueprint.
+->It occupies memory and can have unique value for its properties.
 
+
+//Real-World Example
+Example 1 : Car Blueprint
+Class : A blueprint of a Car defines.
+properties : Color , brand , engine type.
+methods : start(), sleep() , accelerator().
+
+Object : A specific car type
+car1 : Red, Tesla, Electric.
+Car2 : Blue , BMW, Diesel.
+
+///
+Code Example
+Public Class Car
+{
+public string Colour {get ; set ;}
+public string Brand  {get ; set; }
+
+public void Start()
+{
+Console.WriteLine("Car Started");
+}
+Car car1 = new Car{colour = "Red" , Brand = "Tesla"};
+Car car2 = new Car{Colour = "Blue" , Brand = "BMW"};
+
+car1.Start();
+
+}
+Output : Car started;
+//
+EXAMPLE 2 : In Book
+
+
+////////////////////////////////////////////////////////////////////////////////////2)
+What is Inheritance ? Why INHERITANCE IS IMPORTANT ?
+-> Inheritance is creating a PARENT-CHLD relationship between two classes where child automaticallyy get the properties and
+get the properties and methods of the parent.
+
+->
 
 
 
