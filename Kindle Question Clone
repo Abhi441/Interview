@@ -54,10 +54,44 @@ get the properties and methods of the parent.
 //
 Why is Inheritance Impotant ?
 1) Code Reusability : Avoid duplicating code across related classes.
+2) Abraction of code.
 2) Extensibility : Enables adding new features to existing code without modification it.
 
 Example
+//namespace Pro
+//{ 
 
+//class Employee
+//{
+//    int a = 10;
+//    public  void CalculateSalary()
+//    {
+//        Console.WriteLine("CalculateSalary");
+//    }
+//}
+
+//class Department : Employee
+//{
+//    int b = 20;
+//    public  void Depart()
+//    {
+//        Console.WriteLine("This  is DepartMent");
+//    }
+//}
+
+//class Program
+//{
+//    public static void Main()
+//    {
+//        Department Dm = new Department();
+
+//           Dm.CalculateSalary(); // CalculateSalary method is not present Department class but we can call the CalculateSalary() by refrences of Department class.
+
+//    }
+// }
+//}
+
+/////////////////////////////////////////////////////////////////////////////////3)
 
 ////////////////////////////////Q> 32
 
