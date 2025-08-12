@@ -92,7 +92,95 @@ Example
 //}
 
 /////////////////////////////////////////////////////////////////////////////////3)
+What are the diffrence type of inheritance ?
+-> Single Inheritance : One bae class with one derived class
+Example : 
+class BaseClass1
+{
+public void Animal()
+{
+Console.WriteLine("Animals");
+}
+}
+class DerivedClass1 : BaseClass
+{
+public void Dog()
+{
+Console.WriteLine("Dog");
+}
+}
 
+->Multiple Inheritance :Multiple Inheritance - In this case Multiple Base classes can be there for single derived class. Remember in C#,
+multiple inheritance can only be achieved with the help of interfaces. Which means only one base or
+abstract class is allowed, and rest must be interfaces.
+
+Example:
+class BaseClass2
+{
+public void Animal() {
+Console.WriteLine("Animal");
+}
+}
+interface I2
+{
+public void Fly();
+}
+
+class DerivedClass2: BaseClass2, I2
+{
+public void Eagle() {
+Console.WriteLine("Eagle");
+}
+public void Fly() {
+Console.WriteLine("Fly");
+
+}
+}
+
+->Multilevel inheritance – In this, there is a GrandParent class then there is a Parent class which is derived from GrandParent class and then there is Child class which is derived from Parent class.
+Grandparent class -> Parent class -> Child class Here the Child class will get the properties
+of both Parent class and GrandParent class automatically.
+
+class BaseClass2
+{
+public void Animal() {
+Console.WriteLine("Animal"); }
+}
+class DerivedClass3: BaseClass2
+{
+public void Dog() {
+Console.WriteLine("Dog");
+}
+}
+class DerivedClass4 : DerivedClass3
+{
+public void Labrador() {
+
+ Console.WriteLine("Labrador");
+}
+
+->Hierarchal inheritance - In this One, child class is derived more from than one base class. This is the most used type of inheritance.
+EXAMPLE :
+class BaseClass4
+{
+public void Animal() {
+Console.WriteLine("Animal");
+}
+}
+
+class DerivedClass5: BaseClass4
+{
+public void Dog() 
+{
+Console.WriteLine("Dog");
+}
+}
+class DerivedClass6: BaseClass4
+{
+public void Cat() {
+Console.WriteLine("Dog");
+}
+}
 ////////////////////////////////Q> 32
 
 Difference between ArrayList and Hashtable in C#
