@@ -181,6 +181,31 @@ public void Cat() {
 Console.WriteLine("Dog");
 }
 }
+
+///////////////////////////////////////////////////////////////////////////////////////Q4)
+//HOW TO PREVENT A CLASS FROM BEING INHERITED?
+
+By using SEALED keyword in class.
+
+See the screenshot below, you marked the class ABC as sealed. If you will try to derive this class "ABC" in a child class "XYZ" then
+it will give a compiler error because ABC is marked as Sealed.
+
+EXAMPLE : 
+sealed class ABC {}
+class XYZ: ABC { } //Invalid
+class Sealed ClassEx.ABC
+CS0509: 'XYZ': cannot derive from sealed type 'ABC
+
+///////////////////////////////////////////////////////////////////////////////////////Q5)
+WHAT IS ABSTRACTION? 
+Defination :-
+Abstraction means showing only required things and hide the BACKGROUND details.
+->It allows you to focus on what an object does, not how it does it.
+
+//Why is Abraction Important
+->Simplifies complex system by breaking them into smaller , more manageable parts.
+-> Hides unnessary implemention details , reducing.
+-> promotes code reusability and maintainbility.
 ////////////////////////////////Q> 32
 
 Difference between ArrayList and Hashtable in C#
