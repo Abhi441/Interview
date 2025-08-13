@@ -206,6 +206,277 @@ Abstraction means showing only required things and hide the BACKGROUND details.
 ->Simplifies complex system by breaking them into smaller , more manageable parts.
 -> Hides unnessary implemention details , reducing.
 -> promotes code reusability and maintainbility.
+
+Example :
+//using System;
+//public abstract class Vehicle
+//{
+//    public abstract void StartEngine();// only the declaration is provided; the implementation 
+
+//    public void DisplayInfo()
+//    {
+//        Console.WriteLine("This is a vehicle");
+//    }
+//}
+
+//public class Car : Vehicle
+//{
+//    public override void StartEngine()
+//    {
+//        Console.WriteLine("Car engion started");
+//    }
+//}
+
+//public interface IRefuelable
+//{
+//    void Refuel();
+//}
+
+//public class Bike : Vehicle , IRefuelable
+//{
+//    public override void StartEngine()
+//    {
+//        Console.WriteLine("Bikes engion started");
+//    }
+
+//    public void Refuel()
+//    {
+//        Console.WriteLine("Bike refueled.");
+//    }
+//}
+
+//public class Program
+//{
+//   public static void Main(string[] args)
+//    {
+//        Vehicle car = new Car();
+//        car.StartEngine(); // Car engine started.
+//        car.DisplayInfo(); // This is a vehicle.
+
+//        Bike bike = new Bike();
+//        bike.StartEngine();  //Bike engion started.
+//        bike.Refuel();       //Bike refueled
+//    }
+//}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////Q6)
+Encapsulation means WRAPPING of data and methods/properties into a single unit. Why I included properties 
+here because properties are nothing else but special methods only. Why they special methods, 
+because they just do one thing and that is getting and setting private fields.
+
+Example : 
+//    //
+// class Employee
+//{
+//    private int experience; //This feild can not be excess without Property.
+//    public int Experience
+//    {
+//        get
+//        {
+//            return experience;
+//        }
+//        set
+//        {
+//            experience = value;
+//        }
+//    }
+//}
+
+//class Program
+//{
+//    public static void Main(string[] args)
+//    {
+//        Employee em = new Employee();
+//        em.Experience = 10;
+//    }
+
+//}
+
+///////////////////////////////////////////////////////////////////////////////////Q7)
+//WHAT IS POLYMORPHISM AND WHAT ARE ITS TYPES? ❖      
+Polymorphism is the ability of a variable, object, or function to take on MULTIPLE FORMS. 
+What is multiple forms? For example, in English “RUNNING” word can be used for “running a race” or “running a business”. 
+In both cases the meaning is different but the name “RUNNING” is same.
+
+///Overloading (compile time check)
+//class Employee
+//{
+//    public void ClaculateSalary(int a, int b)
+//    {
+//        Console.WriteLine(a * b);
+//    }
+//    public void ClaculateSalary(int a, int b, int c) // changing the number of parameter
+//    {
+//        Console.WriteLine(a * b * c);
+//    }
+//    public void ClaculateSalary(long a, int b, int c)
+//    {
+//        Console.WriteLine(a * b * c);
+//    }
+
+//}
+
+//class Program
+//{
+// public static void Main(string[] args)
+//   {
+//        Employee Em = new Employee();
+
+//        Em.ClaculateSalary(3, 4);
+//        Em.ClaculateSalary(3, 4 , 5);
+//        Em.ClaculateSalary(300000000000, 4, 5);
+
+//    }
+//}
+
+//Overrding
+//Overriding in c# allows a subclass(derived class) to provide a specific implementation of a method that is already defind in its base class.
+//It is achieved using the virtual keyword in the base class and the override keyword in the derived class.
+
+////Example:
+//using System ;
+
+//public class Animal
+//{
+//   public virtual void MakeSound()
+//    {
+//        Console.WriteLine("Animal makes the sound");
+//    }
+//}
+
+//public class Dog : Animal
+//{
+//    public override void MakeSound()
+//    {
+//        Console.WriteLine("Dog barks");
+//    }
+//}
+
+//public class Cat : Animal
+//{
+//    public override void MakeSound()
+//    {
+//        Console.WriteLine("Cat meows");
+//    }
+//}
+
+//public class Program
+//{
+//    public static void Main(string[] args)
+//    {
+//        Animal myDog = new Dog();
+//        Animal myCat = new Cat();
+//        // Polymorphic behavior - the method called is determined at runtime
+//        myDog.MakeSound(); //Dog bargs  // Method selection is based on object type not refrence type.
+//        myCat.MakeSound(); //Cat meows  // Even when refrence as Animal , the overriden method in Dog or cat is called.
+//        // when overriden is not used the base class method is called.
+//    }
+//}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////8)
+//What is Method Overloading ? In How many ways a methods can be overloaded ?
+-> Method Overloading is a type of polymorphism in which we can create multiple methods of the same name in the same class, 
+and all the methods works diffrent ways.
+->The Compiler determines which method to invoke based on the arguments passed at compile time(hence it's part of Compiler-Time Polymorphism)
+
+//Why is methods Overloading is important ?
+Code Readability :-> use the same methods name for similar operations.
+Flexibility : Allows calling methods with diffrent types or numbers of arguments.
+//How many ways can a Methods Be Overloaded?
+1)By Changing the Number of Parameters.
+Example : Add(int a , int b) and Add(int a , int b , int c).
+2)By changing the Number of Prameters : 
+Example : Add(int a , int b) and Add(double a , double b)
+3)By Changing the Order of Parameters :
+Example : Print(string name , int age) and Print(int age , string name)
+//Example:
+public class MethodOverloading
+{
+public int Add(int a, int b)
+{
+return a + b;
+}
+public int Add(int a, int b, int c)
+{
+return a + b + c;
+}
+public double Add(double a, double b, int c)
+{ return a + b + c;
+}
+
+public double Add(double a, int c, double b)
+{
+return a + b + c;
+}
+}
+
+////////////////////////////////////////////////////////////////////////////////////9)
+//WHAT IS THE DIFFERENCE BETWEEN OVERLOADING AND OVERRIDING?
+
+1. Method overloading is a type polymorphism, in which we can create multiple methods of the same name in the same class, and all methods work in different ways.
+1. Method overriding is having methods with the SAME NAME and SIGNATURE but in different classes.
+
+2.Method Overloading will not use any special keywords.
+2. Overriding uses VIRTUAL keyword for base class method and OVERRIDE keyword for derived class method. 
+
+3. Method overloading doesn’t need inheritance. It is in same class. 
+3. Method overriding NEEDS INHERITANCE (Base class/ Derived class). It is not possible in same class.
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////10)
+//What is the diffrence between method Overriding and Method Hiding.
+//Method Overloading
+What :-> Ref Redefining a method in derived classe that exists in the base class.
+
+When :-> used to change or extend the behavior of a base method.
+
+How  :-> it Achieved resing virtual (in the base clans/ and override (in the derived class),
+
+Binding :-> Resolved at runtime (runtime polymorphism).
+//Method Hiding
+Whet :-> Hiding a method in the base class by a neur method in the derived class with the the same home.
+When :-> used to replace a baser class meshed in the derived class without affecting ther bate class.
+
+How :-> Achieved sesing the now keyword.
+
+Bindings Resolved at compile time.
+
+//Kindle Answer
+Q)An method overriding is having method with the Some Nome and Signature but in different classe
+
+public class Base Class
+
+public virtual void print ()
+
+C
+
+Condole.WriteLine("BaseClass Print");
+
+22
+
+3
+
+Pubile public class Scrived Class: Base class
+
+public public override void print()
+
+Console.WriteLine(" Child Clals Print");
+[12:05 am, 14/8/2025] abhisheksinghchauhan442: →
+
+Method Hiding, you can hide ther & implementation of the method of a base class from the derived class dlong the now keyword.
+
+public class Base Class
+
+public void Print()
+
+Condole.WriteLine("Baseclass Print ");
+
+Public public class Derived Class: BaseClass.
+
+public now void Print()
+
+Console.WriteLine("childrenllall Print");
+
 ////////////////////////////////Q> 32
 
 Difference between ArrayList and Hashtable in C#
