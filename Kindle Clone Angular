@@ -1117,7 +1117,27 @@ Think of it like a security filter for your API calls.
 
 Would you like to also learn how to handle errors with Interceptor or practice a mock interview-style question?
 
+////////////////////////////////////////////////////////////////////////////83
+1)POST(USERNAME, Password).
+2)Authenticate and Create JET Token.
+3)Return Reponse(JWT Tokens)
+4)Soted the JWT TOKEN at stored storage.
+5)Send Back Requested data(JWT token : Header)
+6)Validate token signature
+7)Send Data.
 
+
+
+/////////////////////////////////////////////////////////////////////////////////85
+1)Ceate a reactive loginform, setup email and password.
+2)Create one SubmitLogin method and check whether form is valid or not.
+3)if valid, call service(authservice) method(proceedLogin) and send the loginform value and use 
+subscribe method to get result from the observable.
+4)Store the token in  local storage of browser, so that for next subsequence request, only token is send , not the credentials again.
+5) create Service(AuthService).
+6) Inside service set API url()apiurl.
+7) Setup HTTPCLIENT to send the request using API url.
+8)Use Observable to received the data or token from the request and return it to the component. 
 //////////////////////////////////Q92
 //What are various ways to communicate between the component.
 Q>what are the various ways to communicate between the components.
