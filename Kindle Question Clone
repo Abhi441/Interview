@@ -445,37 +445,36 @@ Bindings Resolved at compile time.
 Q)An method overriding is having method with the Some Nome and Signature but in different classe
 
 public class Base Class
-
+{
 public virtual void print ()
-
-C
-
+{
 Condole.WriteLine("BaseClass Print");
-
-22
-
-3
-
+}
+}
 Pubile public class Scrived Class: Base class
-
+{
 public public override void print()
-
+{
 Console.WriteLine(" Child Clals Print");
-[12:05 am, 14/8/2025] abhisheksinghchauhan442: →
+}
+}
 
-Method Hiding, you can hide ther & implementation of the method of a base class from the derived class dlong the now keyword.
+-->Method Hiding, you can hide ther & implementation of the method of a base class from the derived class dlong the now keyword.
 
 public class Base Class
-
+{
 public void Print()
-
+{
 Condole.WriteLine("Baseclass Print ");
-
+}
+}
 Public public class Derived Class: BaseClass.
-
+{
 public now void Print()
-
+{
 Console.WriteLine("childrenllall Print");
+}
+}
 
 ////////////////////////////////Q> 32
 
