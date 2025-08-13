@@ -1145,3 +1145,68 @@ Q>what are the various ways to communicate between the components.
 2>Ng - content
 3>@ViewChild   @ViewChildren
 4>@ContentChild @ContentChilren
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////Interciew Question
+//////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+Create a custom Angular directive to convert color of highlighted text to green?
+<div>Hello</div>, on hoving hello it will change the colour in Angular 18
+
+
+//
+Here’s how you can create a custom Angular 18 directive that changes the color of the text to green when you hover over it:
+
+
+---
+
+1️⃣ Create the Directive
+
+ng generate directive highlight-green
+
+
+---
+
+2️⃣ highlight-green.directive.ts
+
+import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
+
+@Directive({
+  selector: '[appHighlightGreen]'
+})
+export class HighlightGreenDirective {
+
+  constructor(private el: ElementRef, private renderer: Renderer2) { }
+
+  @HostListener('mouseenter') onMouseEnter() {
+    this.renderer.setStyle(this.el.nativeElement, 'color', 'green');
+  }
+
+  @HostListener('mouseleave') onMouseLeave() {
+    this.renderer.removeStyle(this.el.nativeElement, 'color');
+  }
+
+}
+
+
+---
+
+3️⃣ Use It in HTML
+
+<div appHighlightGreen>Hello</div>
+
+Explanation:
+
+@HostListener('mouseenter') → triggers when you hover over the element.
+
+@HostListener('mouseleave') → resets when you move the mouse away.
+
+Renderer2 → safely updates DOM styles.
+
+
+
