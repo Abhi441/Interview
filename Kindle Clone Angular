@@ -94,8 +94,9 @@ Selector :- A selector is used to identify each component uniquely into the comp
 What is Data Binding in Angular?V. IMP.
 
 
-Data binding is the way to communicate between your typescript code of your component and html view of component.
-What is Data Binding in Angular?
+Data binding is the way to communicate between your typescript
+code of your component and html view of component.
+
 
 
 
@@ -109,10 +110,11 @@ Think of it like a two-way road between logic and UI.
 
 ---
 
-🔹 1. Interpolation (One-Way Binding: Component → View)
-String Interpolation is a one-way data-binding technique that is used to transfer the data from a TypeScript code(component) to an HTML template (view).
+🔹 1.String Interpolation (One-Way Binding: Component → View)
+String Interpolation is a one-way data-binding technique that is
+used to transfer the data from a TypeScript code(component)
+to an HTML template (view).
 
-String interpolation can work on string type only not numbers or any other type.
 
 2. It is represented inside ({data); double curly braces.
 
@@ -137,7 +139,9 @@ export class AppComponent {
 
 🔹 2. Property Binding (One-Way Binding: Component → View)
 
-➡️ Bind a property of an HTML element to a value in the component.
+➡️ Property binding is a superset of interpolation.
+It can do whatever interpolation can do. In addition, it can set an
+element property to a non-string data value like Boolean.
 
 <input [value]="title" />
 
@@ -171,7 +175,9 @@ showMessage() {
 ---
 
 🔹 4. Two-Way Binding (Component ⇄ View)
-
+Two-way data binding in Angular will help users to
+exchange data from the view to component and
+then from component to the view at the same time.
 ➡️ Sync data in both directions using [(ngModel)].
 
 // app.component.ts
