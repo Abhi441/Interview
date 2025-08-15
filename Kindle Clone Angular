@@ -1262,4 +1262,10 @@ Explanation:
 Renderer2 → safely updates DOM styles.
 
 
-
+/////////////////////////////////////////////////////////////////////////////////////////////////Angular Performance
+1. LozyLoading :- Load only the parts of the app when they are needed.
+2. OnPuch Change Detection :- Update only what changes instead of checking everything.
+3. TrackBy in ngFor :- Reuse existing list items  instead of rebuilding them.
+4. Optiming Imaze And Assets :- Call only when required ,and cache results if posssible.
+5. Use Async Pipes :- Helps Angular handle data without extra manual subscription.
+2.
