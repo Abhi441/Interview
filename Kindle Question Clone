@@ -1869,3 +1869,109 @@ Indicates that the server failed to fulfill an apparently valid request.
 500 Internal Server Error: A generic error message, given when an unexpected condition was encountered by the server.
 501 Not Implemented: The server does not support the functionality required to fulfill the request.
 503 Service Unavailable: The server is currently unable to handle the request due to temporary overloading or maintenance.
+
+/////////////////////////////////////////////////////////////////////////Web Api Security
+1. Authentication (Who are you?)
+This step checks who the user is.
+Example: Login with username/password → API gives a token (JWT or OAuth2).
+Every time the user calls API, they must send this token in the request header.
+If token is missing or fake → API rejects.
+👉 This makes sure only real users can call the API.
+
+2. Authorization (What can you do?)
+After knowing the user, we check what permissions they have.
+Example:
+A buyer can view properties but cannot delete.
+An admin can manage users and listings.
+This is usually role-based or policy-based in .NET.
+👉 This makes sure users cannot do operations outside their role.
+
+3. Data Protection (Keep data safe in travel)
+Use HTTPS so data is encrypted while moving between server and client.
+Use password hashing & encryption in database (never store plain text).
+Example: bcrypt, SHA-256.
+👉 This protects from hackers stealing sensitive info.
+
+4. Other API Security Best Practices
+CORS Policy → Only allow trusted websites/apps to use your API.
+Rate Limiting / Throttling → Prevent misuse by limiting requests per user.
+Input Validation → Avoid SQL Injection, XSS by cleaning user input.
+Logging & Monitoring → Keep track of suspicious activities.
+API Gateway / Firewall → Extra shield for enterprise systems.
+🚀 Example (in .NET + Angular project like yours):
+User logs in → API checks credentials → API returns a JWT token.
+Angular app stores token (in memory/local storage).
+For every API call → Angular sends token in Authorization header.
+.NET API middleware validates token → allows or denies request.
+
+////////////////////////////////////////////////////////////////////////////////////////Performance
+1. Use Asynchronous Code (async/await) –
+
+Don’t block the thread. Example: Instead of waiting for a database call to finish, let the app do other work in parallel.
+
+
+
+
+
+2. Caching –
+
+Store frequently used data in memory (like Redis or In-Memory Cache) so we don’t always hit the database.
+
+
+
+
+
+3. Database Optimization –
+
+
+
+Use AsNoTracking() in EF Core for read-only queries (it avoids unnecessary tracking).
+
+
+
+Write efficient SQL queries and indexes.
+
+
+
+
+
+
+
+4. Use Dependency Injection Wisely –
+
+Register services with correct lifetimes (Singleton, Scoped, Transient) so memory is not wasted.
+
+
+
+
+
+5. Reduce Startup Time –
+
+Only load what is needed when the application starts.
+
+
+
+
+
+6. Compression & Minification –
+
+Enable response compression (gzip/brotli) so data transfer is smaller.
+
+
+
+
+
+7. Logging & Monitoring –
+
+Use structured logging (Serilog, Application Insights) to find performance bottlenecks.
+
+
+
+
+
+8. Use Background Services –
+
+Heavy tasks (like sending emails, reports) should run in background jobs (Hangfire, Quartz) instead of blocking user requests.
+
+
+////////////////////////////////////////////////////////////////////////////////////////////
