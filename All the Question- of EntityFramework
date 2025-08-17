@@ -177,31 +177,35 @@ Eager Loading: You tell them to bring their course list at the time you meet the
 Explicit Loading: You visit the student, and later say, “Hey, now show me your courses.”
 
 
+Lazy LOADING :
 
+EXAMPLE :
 ---
 
 ✅ Sample Entity Classes
 
-public class Student
+public class Author
 {
     public int Id { get; set; }
     public string Name { get; set; }
 
-    // Navigation Property
-    public virtual ICollection<Course> Courses { get; set; } = new List<Course>();
+    // Lazy loading: virtual navigation property
+    public virtual ICollection<Book> Books { get; set; }
 }
 
-public class Course
+public class Book
 {
     public int Id { get; set; }
     public string Title { get; set; }
-    public int StudentId { get; set; }
+    
+    public int AuthorId { get; set; }
+    public virtual Author Author { get; set; }
 }
+🔑 Important for Lazy Loading: Navigation properties must be virtual and EF proxies must be enabled.
 
 
----
 
-✅ 1. Lazy Loading (load when accessed)
+
 
 Setup:
 You must use virtual keyword on navigation property + install Microsoft.EntityFrameworkCore.Proxies.
