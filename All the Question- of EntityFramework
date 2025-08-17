@@ -182,8 +182,6 @@ Lazy LOADING :
 EXAMPLE :
 ---
 
-✅ Sample Entity Classes
-
 public class Author
 {
     public int Id { get; set; }
@@ -203,24 +201,71 @@ public class Book
 }
 🔑 Important for Lazy Loading: Navigation properties must be virtual and EF proxies must be enabled.
 
+Step 3: Setup DbContext
+using Microsoft.EntityFrameworkCore;
 
+public class AppDbContext : DbContext
+{
+    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
+    public DbSet<Author> Authors { get; set; }
+    public DbSet<Book> Books { get; set; }
 
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        optionsBuilder.UseLazyLoadingProxies()
+                      .UseSqlServer("Server=.;Database=LazyLoadingDemoDb;Trusted_Connection=True;");
+    }
+}
+UseLazyLoadingProxies() is required for lazy loading to work.
 
-Setup:
-You must use virtual keyword on navigation property + install Microsoft.EntityFrameworkCore.Proxies.
+Step 4: Add Controller with GET Method
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
-services.AddDbContext<AppDbContext>(options =>
-    options.UseLazyLoadingProxies().UseSqlServer("connection_string"));
+[Route("api/[controller]")]
+[ApiController]
+public class AuthorsController : ControllerBase
+{
+    private readonly AppDbContext _context;
 
-Code:
+    public AuthorsController(AppDbContext context)
+    {
+        _context = context;
+    }
 
-var student = await context.Students.FindAsync(1);
-var courses = student.Courses; // Triggers lazy load here!
+    [HttpGet]
+    public IActionResult GetAuthors()
+    {
+        // Lazy loading: Books will be loaded only when accessed
+        var authors = _context.Authors.ToList();
 
+        // Example access to trigger lazy loading
+        foreach (var author in authors)
+        {
+            var bookCount = author.Books.Count; // EF will load books here
+        }
 
+        return Ok(authors);
+    }
+}
+Step 5: Explanation of Lazy Loading
+Lazy Loading in EF Core:
+
+Data is not loaded automatically when querying the parent.
+Only when you access a navigation property, EF will query the database for that data.
+In our example:
+_context.Authors.ToList() → loads only authors
+author.Books.Count → triggers EF to load books for that author on demand
+Pros:
+
+Reduces initial query load.
+Loads related data only when needed.
+Cons:
+
+Can cause N+1 query problem if not careful.
 ---
-
+///
 ✅ 2. Eager Loading (load early with Include)
 
 Code:
@@ -233,17 +278,206 @@ var student = await context.Students
 
 
 ---
+Step 2: Create Models
 
-✅ 3. Explicit Loading (manually load after main)
+We don’t make navigation properties virtual, because we won’t use lazy loading:
 
-var student = await context.Students.FirstOrDefaultAsync(s => s.Id == 1);
+public class Author
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
 
-// Now explicitly load courses
-await context.Entry(student)
-    .Collection(s => s.Courses)
-    .LoadAsync();
+    // Eager loading: no virtual keyword needed
+    public ICollection<Book> Books { get; set; }
+}
 
-🧠 Useful when you want full control over when related data loads.
+public class Book
+{
+    public int Id { get; set; }
+    public string Title { get; set; }
+    
+    public int AuthorId { get; set; }
+    public Author Author { get; set; }
+}
+
+
+---
+
+Step 3: Setup DbContext
+
+using Microsoft.EntityFrameworkCore;
+
+public class AppDbContext : DbContext
+{
+    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
+
+    public DbSet<Author> Authors { get; set; }
+    public DbSet<Book> Books { get; set; }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        optionsBuilder.UseSqlServer("Server=.;Database=EagerLoadingDemoDb;Trusted_Connection=True;");
+    }
+}
+
+> No UseLazyLoadingProxies() needed.
+
+
+
+
+---
+
+Step 4: Add Controller with GET Method
+
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+
+[Route("api/[controller]")]
+[ApiController]
+public class AuthorsController : ControllerBase
+{
+    private readonly AppDbContext _context;
+
+    public AuthorsController(AppDbContext context)
+    {
+        _context = context;
+    }
+
+    [HttpGet]
+    public IActionResult GetAuthors()
+    {
+        // Eager loading: load authors and their books together
+        var authors = _context.Authors
+                              .Include(a => a.Books) // Eagerly load books
+                              .ToList();
+
+        return Ok(authors);
+    }
+}
+
+> Include(a => a.Books) tells EF to load related books immediately with authors.
+
+
+
+
+---
+
+Step 5: Explanation of Eager Loading
+
+Eager Loading in EF Core:
+
+1. Data is loaded together with the parent in a single query.
+
+
+2. In our example:
+
+_context.Authors.Include(a => a.Books).ToList() → loads authors and their books in one query.
+
+
+
+3. Pros:
+
+Avoids multiple queries (no N+1 problem).
+
+Better for small-to-medium datasets where you know related data is needed.
+
+
+
+4. Cons:
+
+Loads all related data even if you don’t need it → more memory.
+
+//
+Step 1: Models (same as eager example, no virtual keyword)
+
+public class Author
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public ICollection<Book> Books { get; set; }
+}
+
+public class Book
+{
+    public int Id { get; set; }
+    public string Title { get; set; }
+
+    public int AuthorId { get; set; }
+    public Author Author { get; set; }
+}
+
+
+---
+
+Step 2: DbContext (same as eager example)
+
+using Microsoft.EntityFrameworkCore;
+
+public class AppDbContext : DbContext
+{
+    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
+
+    public DbSet<Author> Authors { get; set; }
+    public DbSet<Book> Books { get; set; }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        optionsBuilder.UseSqlServer("Server=.;Database=ExplicitLoadingDemoDb;Trusted_Connection=True;");
+    }
+}
+
+
+---
+
+Step 3: Controller with GET Method (Explicit Loading)
+
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+
+[Route("api/[controller]")]
+[ApiController]
+public class AuthorsController : ControllerBase
+{
+    private readonly AppDbContext _context;
+
+    public AuthorsController(AppDbContext context)
+    {
+        _context = context;
+    }
+
+    [HttpGet]
+    public IActionResult GetAuthors()
+    {
+        // Step 1: Load only authors (Books are not loaded yet)
+        var authors = _context.Authors.ToList();
+
+        // Step 2: Explicitly load Books for each author
+        foreach (var author in authors)
+        {
+            _context.Entry(author)
+                    .Collection(a => a.Books) // navigation collection
+                    .Load(); // manually load
+        }
+
+        return Ok(authors);
+    }
+}
+
+
+---
+
+Step 4: Explanation of Explicit Loading
+
+How it works:
+
+1. First query → loads only authors.
+
+
+2. For each author, when we call .Collection(a => a.Books).Load(), EF makes another query to load that author’s books.
+
+
+
+
 
 
 ---
