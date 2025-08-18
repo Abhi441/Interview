@@ -301,7 +301,7 @@ var secondHighest = employees
 
 ---
 
-🔹 5. What is the difference between First(), FirstOrDefault(), Single(), and SingleOrDefault()?
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////🔹 5. What is the difference between First(), FirstOrDefault(), Single(), and SingleOrDefault()?
 
 Great question! These four LINQ methods are very commonly asked in interviews — and they confuse many developers. Let's explain them in the easiest, human-friendly way — with examples and a real-world analogy.
 
@@ -388,7 +388,7 @@ Would you like a mini-practice quiz to check if you remember this under pressure
 
 ---
 
-🔹 6. What is GroupBy in LINQ?
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////🔹 6. What is GroupBy in LINQ?
 
 Used to group elements by a key (like SQL GROUP BY).
 
@@ -399,7 +399,7 @@ var grouped = employees
 
 ---
 
-🔹 7. How do you perform Left Join in LINQ?
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////🔹 7. How do you perform Left Join in LINQ?
 
 var result = from s in students
              join d in departments on s.DeptId equals d.Id into deptGroup
@@ -412,7 +412,7 @@ var result = from s in students
 
 ---
 
-🔹 8. What is the difference between IEnumerable and IQueryable in LINQ?
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////🔹 8. What is the difference between IEnumerable and IQueryable in LINQ?
 
 IEnumerable → used for in-memory data.
 
@@ -422,7 +422,7 @@ IQueryable → used for remote data (like Entity Framework queries to SQL DB).
 
 ---
 
-🔹 9. Can you write a LINQ query to count how many employees per department?
+/////////////////////////////////////////////////////////////////////////////////////🔹 9. Can you write a LINQ query to count how many employees per department?
 
 var countByDept = employees
     .GroupBy(e => e.Department)
@@ -431,7 +431,7 @@ var countByDept = employees
 
 ---
 
-🔹 10. What is Deferred Execution in LINQ?
+////////////////////////////////////////////////////////////////////////////////////////////////🔹 10. What is Deferred Execution in LINQ?
 
 LINQ queries are not executed until you iterate over them (like in a foreach or .ToList()).
 
