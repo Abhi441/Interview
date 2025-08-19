@@ -95,7 +95,7 @@ using(SqlConnection conn = new SqlConnection("Your_Connection_String"))
 ---
 
 ////////////////////////////////////////////////////////////////////////////////////////🔹 5. What is SqlDataReader and how does it work?
-
+->Read() -> Moves to the next record(returns false when nomore rows).
 > Forward-only, read-only way of reading rows.
 
 Very fast and memory efficient.
