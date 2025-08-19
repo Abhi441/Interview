@@ -449,13 +449,26 @@ var grouped = employees
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////🔹 7. How do you perform Left Join in LINQ?
 
-var result = from s in students
-             join d in departments on s.DeptId equals d.Id into deptGroup
-             from dept in deptGroup.DefaultIfEmpty()
-             select new {
-                 s.Name,
-                 DepartmentName = dept?.Name ?? "No Department"
-             };
+var leftJoin = employees
+    .GroupJoin(
+        departments,                     // right table
+        e => e.DeptId,                   // key from employees
+        d => d.DeptId,                   // key from departments
+        (emp, dept) => new { emp, dept } // result selector
+    )
+    .SelectMany(
+        x => x.dept.DefaultIfEmpty(),    // ensures left join (include even if no dept match)
+        (x, d) => new
+        {
+            EmployeeName = x.emp.Name,
+            DepartmentName = d?.DeptName ?? "No Department"
+        }
+    );
+
+foreach (var item in leftJoin)
+{
+    Console.WriteLine($"{item.EmployeeName} - {item.DepartmentName}");
+}
 
 
 ---
