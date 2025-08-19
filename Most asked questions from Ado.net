@@ -6,7 +6,7 @@ Here’s a curated list of the most frequently asked ADO.NET interview questions
 
 ✅ Top ADO.NET Interview Questions
 
-🔹 1. What is ADO.NET?
+//////////////////////////////////////////////////////////////////////////////////////////////🔹 1. What is ADO.NET?
 
 > ADO.NET is a part of the .NET Framework used to interact with databases like SQL Server. It provides classes to connect, retrieve, insert, update, and delete data.
 
@@ -15,7 +15,7 @@ Here’s a curated list of the most frequently asked ADO.NET interview questions
 
 ---
 
-🔹 2. What are the core components of ADO.NET?
+/////////////////////////////////////////////////////////////////////////////////////////////////🔹 2. What are the core components of ADO.NET?
 
 > SqlConnection
 
@@ -83,7 +83,7 @@ Let me know when you're ready and I’ll give you the polished answer for:
 
 ---
 
-🔹 4. How do you use SqlConnection in ADO.NET?
+/////////////////////////////////////////////////////////////////////////////////////////////////////🔹 4. How do you use SqlConnection in ADO.NET?
 
 using(SqlConnection conn = new SqlConnection("Your_Connection_String"))
 {
@@ -94,7 +94,7 @@ using(SqlConnection conn = new SqlConnection("Your_Connection_String"))
 
 ---
 
-🔹 5. What is SqlDataReader and how does it work?
+////////////////////////////////////////////////////////////////////////////////////////🔹 5. What is SqlDataReader and how does it work?
 
 > Forward-only, read-only way of reading rows.
 
@@ -115,7 +115,7 @@ while(reader.Read())
 
 ---
 
-🔹 6. What is the difference between DataReader and DataAdapter?
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////🔹 6. What is the difference between DataReader and DataAdapter?
 
 Feature	DataReader	DataAdapter
 
@@ -128,7 +128,7 @@ Best for	Fast reads	Multiple-table datasets
 
 ---
 
-🔹 7. What is a DataSet and DataTable?
+//////////////////////////////////////////////////////////////////////////////////////////////🔹 7. What is a DataSet and DataTable?
 
 DataSet: In-memory collection of data tables.
 
@@ -142,7 +142,7 @@ DataTable dt = ds.Tables["Employees"];
 
 ---
 
-🔹 8. What are Parameterized Queries in ADO.NET? Why are they important?
+////////////////////////////////////////////////////////////////////////////////🔹 8. What are Parameterized Queries in ADO.NET? Why are they important?
 
 > Used to prevent SQL Injection and to pass parameters safely.
 
@@ -154,7 +154,7 @@ cmd.Parameters.AddWithValue("@Id", userId);
 
 ---
 
-🔹 9. What are connection pooling and its benefits?
+//////////////////////////////////////////////////////////////////////////////////////////🔹 9. What are connection pooling and its benefits?
 
 > ADO.NET maintains a pool of connections to reuse for better performance. It avoids opening/closing DB connections repeatedly.
 
@@ -163,7 +163,7 @@ cmd.Parameters.AddWithValue("@Id", userId);
 
 ---
 
-🔹 10. How to handle transactions in ADO.NET?
+////////////////////////////////////////////////////////////////////////////////////////🔹 10. How to handle transactions in ADO.NET?
 
 SqlTransaction transaction = conn.BeginTransaction();
 SqlCommand cmd = conn.CreateCommand();
@@ -184,7 +184,7 @@ catch
 
 ---
 
-🔹 11. What is the difference between Fill() and Update() in SqlDataAdapter?
+////////////////////////////////////////////////////////////////////////////////////////////////////////🔹 11. What is the difference between Fill() and Update() in SqlDataAdapter?
 
 Fill() → Populates a DataSet with data.
 
@@ -194,7 +194,7 @@ Update() → Pushes changes made in DataSet back to the database.
 
 ---
 
-🔹 12. How can you call a stored procedure using ADO.NET?
+///////////////////////////////////////////////////////////////////////////////////////////////🔹 12. How can you call a stored procedure using ADO.NET?
 
 SqlCommand cmd = new SqlCommand("sp_GetUser", conn);
 cmd.CommandType = CommandType.StoredProcedure;
@@ -203,7 +203,7 @@ cmd.Parameters.AddWithValue("@UserId", 1);
 
 ---
 
-🔹 13. What are the different CommandType values in ADO.NET?
+///////////////////////////////////////////////////////////////////////////////////////////////////🔹 13. What are the different CommandType values in ADO.NET?
 
 Text → SQL query
 
@@ -215,7 +215,7 @@ TableDirect → Select all from table (rarely used)
 
 ---
 
-🔹 14. What are some best practices when using ADO.NET?
+////////////////////////////////////////////////////////////////////////////////////////////🔹 14. What are some best practices when using ADO.NET?
 
 Always use using() blocks.
 
