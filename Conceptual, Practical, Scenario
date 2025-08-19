@@ -1,0 +1,15 @@
+/////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////Dependency Injection
+////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////Conceptual
+/////////////////////////////////////////What is dependency Injection and Why is it important ?
+Dependency Injection(DI) is a design patter used in Software developemnt to manage dependencies 
+between object and promote loose coupling.
+
+////////////////////////////////////////////////////////////////////Explain the diffrence between Dependency Injection and Inversion of control.
+Ioc is a principle that says "a class  should not control its dependencies".
+//Imagine you go to a restaturent .Instead of cooking food yourself, the resturent provdes food to you .You  don't contol cooking , you only eat. 
+DI ia a ways to implement IOC by injecting dependencies (via constructor , property or method) instead of creating them inside.
+
+////////////////////////////////////////////////////////////////What are the type of Dependency Injection , And When you would each ?
+1) Constructor Injection(Most common) : When a class cannot  
