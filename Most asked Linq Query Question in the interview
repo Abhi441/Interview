@@ -336,52 +336,100 @@ SingleOrDefault() → “I expect at most one, if none, return null, if more, er
 
 
 ---
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
-🔹 C# Code Example:
+namespace LinqExamples
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Example lists
+            List<int> numbers = new List<int> { 10, 20, 30 };
+            List<int> emptyList = new List<int>();
+            List<int> singleItem = new List<int> { 99 };
+            List<int> duplicates = new List<int> { 5, 5 };
 
-List<int> numbers = new List<int> { 10, 20, 30 };
-List<int> emptyList = new List<int>();
-List<int> duplicates = new List<int> { 5, 5 };
+            Console.WriteLine("==== First() ====");
+            try
+            {
+                var first = numbers.First();
+                Console.WriteLine($"First from numbers: {first}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error in First(numbers): {ex.Message}");
+            }
 
-✅ First()
+            try
+            {
+                var firstEmpty = emptyList.First();
+                Console.WriteLine($"First from emptyList: {firstEmpty}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error in First(emptyList): {ex.Message}");
+            }
 
-var first = numbers.First();      // returns 10
-var error1 = emptyList.First();   // ❌ throws InvalidOperationException
+            Console.WriteLine("\n==== FirstOrDefault() ====");
+            var firstOrDefault = numbers.FirstOrDefault();
+            Console.WriteLine($"FirstOrDefault from numbers: {firstOrDefault}");
 
-✅ FirstOrDefault()
+            var firstOrDefaultEmpty = emptyList.FirstOrDefault();
+            Console.WriteLine($"FirstOrDefault from emptyList: {firstOrDefaultEmpty}");
 
-var firstOrDefault = numbers.FirstOrDefault();   // returns 10
-var result = emptyList.FirstOrDefault();         // returns 0 (default of int)
+            Console.WriteLine("\n==== Single() ====");
+            try
+            {
+                var single = singleItem.Single();
+                Console.WriteLine($"Single from singleItem: {single}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error in Single(singleItem): {ex.Message}");
+            }
 
-✅ Single()
+            try
+            {
+                var singleError = numbers.Single();
+                Console.WriteLine($"Single from numbers: {singleError}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error in Single(numbers): {ex.Message}");
+            }
 
-var single = new List<int> { 99 };
-var result = single.Single();                   // ✅ returns 99
-var error2 = numbers.Single();                  // ❌ throws: more than one item
+            Console.WriteLine("\n==== SingleOrDefault() ====");
+            try
+            {
+                var singleOrDefault = singleItem.SingleOrDefault();
+                Console.WriteLine($"SingleOrDefault from singleItem: {singleOrDefault}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error in SingleOrDefault(singleItem): {ex.Message}");
+            }
 
-✅ SingleOrDefault()
+            var singleOrDefaultEmpty = emptyList.SingleOrDefault();
+            Console.WriteLine($"SingleOrDefault from emptyList: {singleOrDefaultEmpty}");
 
-var result = single.SingleOrDefault();          // ✅ returns 99
-var result2 = emptyList.SingleOrDefault();      // ✅ returns 0
-var error3 = duplicates.SingleOrDefault();      // ❌ throws: more than one match
+            try
+            {
+                var singleOrDefaultDup = duplicates.SingleOrDefault();
+                Console.WriteLine($"SingleOrDefault from duplicates: {singleOrDefaultDup}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error in SingleOrDefault(duplicates): {ex.Message}");
+            }
 
+            Console.WriteLine("\n=== Program Finished ===");
+        }
+    }
+}
 
----
-
-✅ Interview Summary:
-
-Method	Safe when Empty?	Throws if More Than One?	Use When You Expect
-
-First()	❌ No	✅ No	At least 1 item
-FirstOrDefault()	✅ Yes	✅ No	Maybe 0 or more
-Single()	❌ No	❌ Yes	Exactly 1 item
-SingleOrDefault()	✅ Yes	❌ Yes	0 or 1 item
-
-
-
----
-
-Would you like a mini-practice quiz to check if you remember this under pressure?
 
 
 
