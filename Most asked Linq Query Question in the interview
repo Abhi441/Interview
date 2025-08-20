@@ -1,3 +1,51 @@
+/////////////////////////////////////////////////////////Interview Asked Question
+///////////////////////////////////////////////////////What is the stateof EntityFramework.
+✅ What are Entity States in EF?
+When you work with EF (like EF Core), every object (entity) you load or create is tracked by the DbContext.
+EF marks each object with a state – which tells EF what action it should take when you call SaveChanges().
+
+🔑 The 5 Entity States in EF
+Detached 🟡
+
+Entity is not tracked by the DbContext.
+Example: You just created new Student() but haven’t added it to context yet.
+Usage: When you don’t want EF to keep track (for performance reasons).
+var student = new Student(); // Detached by default
+Unchanged 🟢
+
+Entity is tracked by the DbContext, and no changes have been made since it was fetched from DB.
+Example: You just queried a record but didn’t modify it.
+Usage: EF won’t send any SQL for this entity on SaveChanges().
+var student = context.Students.FirstOrDefault(s => s.Id == 1);
+// State is Unchanged
+Added 🔵
+
+Entity is new and should be INSERTED into DB when SaveChanges() is called.
+Example: You call context.Add(student).
+var student = new Student { Name = "Abhishek" };
+context.Students.Add(student);  // State = Added
+context.SaveChanges(); // INSERT executed
+Modified 🟠
+
+Entity exists in DB but some property value has been changed.
+Example: You update student.Name and EF will generate UPDATE.
+var student = context.Students.FirstOrDefault(s => s.Id == 1);
+student.Name = "Updated Name"; // State = Modified
+context.SaveChanges(); // UPDATE executed
+Deleted 🔴
+
+Entity is marked for deletion from DB.
+Example: You call context.Remove(student).
+var student = context.Students.FirstOrDefault(s => s.Id == 1);
+context.Students.Remove(student); // State = Deleted
+context.SaveChanges(); // DELETE executed
+🚀 Quick Way to Remember in Interview
+Detached = Not tracked
+Unchanged = No changes
+Added = INSERT
+Modified = UPDATE
+Deleted = DELETE
+
 //////////////////////////////////////////Linq Theoratic questions
 Here are the most frequently asked LINQ questions in C# interviews for 3–5 years of experience, especially useful for .NET full-stack or backend developer roles:
 
