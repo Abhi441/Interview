@@ -93,9 +93,278 @@ A new instance of the service is created every time , it is requested.
 builder.Services.AddTransient<IService, Service>(); //Transient Service
 Example : helper classes , New GUI Number
 /////////////////////////////////////////////////////////////////////////////How would you handle circular dependencies in DI ?
+🔄 What is Circular Dependency in DI?
 
+It happens when two or more classes depend on each other directly or indirectly, so DI container gets stuck trying to build them.
+
+Example:
+
+public class ServiceA
+{
+    private readonly ServiceB _serviceB;
+    public ServiceA(ServiceB serviceB) { _serviceB = serviceB; }
+}
+
+public class ServiceB
+{
+    private readonly ServiceA _serviceA;
+    public ServiceB(ServiceA serviceA) { _serviceA = serviceA; }
+}
+
+Here:
+
+ServiceA needs ServiceB
+
+ServiceB needs ServiceA
+➡️ Infinite loop 🔁
+
+
+
+---
+
+✅ How to Handle Circular Dependencies in DI?
+
+1. Re-design the classes (Best Solution)
+
+Usually, circular dependencies are a design smell 🚨.
+
+Try to split responsibilities or introduce a third class (mediator).
+
+Example:
+
+Instead of ServiceA ↔ ServiceB, make ServiceC handle coordination.
+
+
+
+
+
+
+---
+
+2. Use Interfaces instead of concrete classes
+
+Break direct dependency.
+
+
+public interface IServiceA { }
+public class ServiceA : IServiceA { }
+public class ServiceB 
+{
+    private readonly IServiceA _serviceA;
+    public ServiceB(IServiceA serviceA) { _serviceA = serviceA; }
+}
+
+
+
+
+---
+
+3. Use Lazy Injection (Lazy<T> or Func<T>)
+
+Load dependency only when it’s really needed, avoiding the infinite loop.
+
+
+public class ServiceA
+{
+    private readonly Lazy<ServiceB> _serviceB;
+    public ServiceA(Lazy<ServiceB> serviceB) { _serviceB = serviceB; }
+}
+
+
+
+
+---
+
+4. Property Injection (rare)
+
+Instead of constructor injection, let DI set the property later.
+
+
+public class ServiceA
+{
+    public ServiceB ServiceB { get; set; }
+}
+
+
+
+
+---
+
+🏢 Real-World Example
+
+Database + Logging:
+
+If Repository depends on Logger, and Logger depends on Repository for saving logs → circular dependency ❌.
+
+Fix: Let Logger log independently, don’t make it depend on Repository.
+
+
+🔄 What is Circular Dependency in DI?
+
+It happens when two or more classes depend on each other directly or indirectly, so DI container gets stuck trying to build them.
+
+Example:
+
+public class ServiceA
+{
+    private readonly ServiceB _serviceB;
+    public ServiceA(ServiceB serviceB) { _serviceB = serviceB; }
+}
+
+public class ServiceB
+{
+    private readonly ServiceA _serviceA;
+    public ServiceB(ServiceA serviceA) { _serviceA = serviceA; }
+}
+
+Here:
+
+ServiceA needs ServiceB
+
+ServiceB needs ServiceA
+➡️ Infinite loop 🔁
+
+
+
+---
+
+✅ How to Handle Circular Dependencies in DI?
+
+1. Re-design the classes (Best Solution)
+
+Usually, circular dependencies are a design smell 🚨.
+
+Try to split responsibilities or introduce a third class (mediator).
+
+Example:
+
+Instead of ServiceA ↔ ServiceB, make ServiceC handle coordination.
+
+
+
+
+
+
+---
+
+2. Use Interfaces instead of concrete classes
+
+Break direct dependency.
+
+
+public interface IServiceA { }
+public class ServiceA : IServiceA { }
+public class ServiceB 
+{
+    private readonly IServiceA _serviceA;
+    public ServiceB(IServiceA serviceA) { _serviceA = serviceA; }
+}
+
+
+
+
+---
+
+3. Use Lazy Injection (Lazy<T> or Func<T>)
+
+Load dependency only when it’s really needed, avoiding the infinite loop.
+
+
+public class ServiceA
+{
+    private readonly Lazy<ServiceB> _serviceB;
+    public ServiceA(Lazy<ServiceB> serviceB) { _serviceB = serviceB; }
+}
+
+
+
+
+---
+
+4. Property Injection (rare)
+
+Instead of constructor injection, let DI set the property later.
+
+
+public class ServiceA
+{
+    public ServiceB ServiceB { get; set; }
+}
+
+
+
+
+---
+
+🏢 Real-World Example
+
+Database + Logging:
+
+If Repository depends on Logger, and Logger depends on Repository for saving logs → circular dependency ❌.
+
+Fix: Let Logger log independently, don’t make it depend on Repository.
 ///////////////////////////////////////////////////////////////////////////What happen if a required denpendencies is not registored in the DI Container.
 
+
+
+What happens if a required dependency is NOT registered in the DI container?
+
+👉 If you try to use (resolve) a dependency that is not registered in the DI container, the application will throw an error at runtime.
+
+In .NET, this error usually looks like:
+
+InvalidOperationException: Unable to resolve service for type 'MyApp.Services.IMyService' 
+while attempting to activate 'MyApp.Controllers.HomeController'.
+
+
+---
+
+🧠 Example:
+
+public interface IMyService
+{
+    string GetData();
+}
+
+public class MyService : IMyService
+{
+    public string GetData() => "Hello from Service!";
+}
+
+public class HomeController : ControllerBase
+{
+    private readonly IMyService _service;
+
+    public HomeController(IMyService service) // dependency needed here
+    {
+        _service = service;
+    }
+
+    [HttpGet]
+    public string Get() => _service.GetData();
+}
+
+If you forget to register it in Program.cs / Startup.cs like this:
+
+builder.Services.AddScoped<IMyService, MyService>();
+
+When you run the app, it crashes with an exception, because DI container doesn’t know how to create IMyService.
+
+
+---
+
+🔑 Real-World Impact
+
+If dependency is not registered → App won’t even start properly or API request will fail immediately.
+
+This is why proper DI registration is critical in enterprise apps.
+
+
+
+---
+
+✅ Interview-Smart Answer:
+"If a required dependency is not registered in the DI container, .NET will throw an InvalidOperationException at runtime because it cannot resolve the service. To avoid this, we must ensure all required dependencies are properly registered in Program.cs or Startup.cs. Tools like unit tests and build-time checks can also help catch missing registrations early."
 
 
 
