@@ -72,8 +72,29 @@ _paymentService = paymentService ;
 --> Easily replaced with a mock implementation during testing.
 
 
-//////////////////////////////////////////What is diffrence between AddTransi
+//////////////////////////////////////////What is diffrence between AddTransient , AddScoped , And AddSingleton.
 
+//Singleton
+A single instance is shared across the application life cycle.
+Service instances are disposed at application shutdown.
+
+builder.Services.AddSingleton<IService, Service>(); //Singleton Service
+
+Example : Application-wise configuration settings , shared caches,Logger service(N LOG , Serilog)
+
+//Scoped
+A Single instance is created of the service is created per Scope(e.g , per HTTP Service in a web application).
+
+builder.Services.AddScoped<IService, Service>(); //Scoped Service
+
+Example : User-specific data , transaction, Database Context
+//Transient
+A new instance of the service is created every time , it is requested.
+builder.Services.AddTransient<IService, Service>(); //Transient Service
+Example : helper classes , New GUI Number
+/////////////////////////////////////////////////////////////////////////////How would you handle circular dependencies in DI ?
+
+///////////////////////////////////////////////////////////////////////////What happen if a required denpendencies is not registored in the DI Container.
 
 
 
