@@ -12,4 +12,82 @@ Ioc is a principle that says "a class  should not control its dependencies".
 DI ia a ways to implement IOC by injecting dependencies (via constructor , property or method) instead of creating them inside.
 
 ////////////////////////////////////////////////////////////////What are the type of Dependency Injection , And When you would each ?
-1) Constructor Injection(Most common) : When a class cannot  
+1) Constructor Injection(Most common) : 
+1) Most common type.
+2) When the dependency is required always.
+
+Example :
+public class OrderService
+{
+private readonly IPaymentService _paymentService;
+
+//Constructor Injection
+public OrderService(IPaymentService paymentService)
+{
+_paymentService = paymentService;
+}
+
+public void Placement()
+{
+ _paymentService.ProcessPayment();
+}
+}
+
+//Property Injection:
+1) When dependency is optional.
+2)Example : Logging -> a service can work without logging, but if available, it will use it.
+
+
+//Method Services :
+1) Used when dependency is needed only in one method.
+
+/////////////////////////////////////////////////////What are the some challenges using dependencies Injection ?
+Dependency Injection is powerful but has some challenges. It can make code harder for beginners, add some extra complexity in samll apps , 
+dedugging issue like missing registrations can be tricky and there's a little performance overhead.Also , if overused , ot can lead to too many hidden dependencies .
+
+//////////////////////////////////////////////////////////////Practicle Question
+//////////////////////////////How do you implement DI in .NetCore ?
+/////With Dependency Injection
+public interface IPaymentService
+{
+ void ProcessPayment();
+}
+
+public void ProcessPayment : IPaymentService
+{
+Console.WriteLine("Payment process.");
+}
+//
+public class OrderService
+{
+Private readonly IPaymentService _paymentService;
+//Dependency Injection via Constructor.
+public OrderService(IPaymentService paymentService)
+{
+_paymentService = paymentService ;
+}
+}
+
+--> OrderService depends on the IPaymentService interfaces, not the console process payment class.
+--> Easily replaced with a mock implementation during testing.
+
+
+//////////////////////////////////////////What is diffrence between AddTransi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
