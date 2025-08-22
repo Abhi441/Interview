@@ -386,6 +386,175 @@ Middleware is lightweight , modular and uses an explicit pipeline , unlike the e
 /////////////////////////////////////////////////////////////////////////////////////////PracticleModule
 
 
+///////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////Exception HANDLING
+///////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////
+ Scenario-Based Questions on try-catch in C#
+
+/////////////////////////////////////////////////////////////////////////1. What happens if an exception occurs and there is no catch block?
+
+👉 Interviewer wants to check if you know about unhandled exceptions.
+Answer: The application will crash if the exception is not handled.
+
+
+---
+
+////////////////////////////////////////////////////////////////////////2. Can we have multiple catch blocks?
+
+👉 Scenario: You’re connecting to a database, and you want to handle SqlException differently from a general Exception.
+Answer: Yes, multiple catch blocks are allowed, and they run top-to-bottom, so the most specific exception type should come first.
+
+
+---
+
+///////////////////////////////////////////////////////////////////////////////3. What if exception occurs inside catch block?
+
+👉 Example: You log the error in a file, but logging itself throws an exception.
+Answer: If another exception happens inside catch, and it’s not handled, the program will still crash. That’s why logging frameworks are often used (to minimize this risk).
+
+
+---
+
+///////////////////////////////////////////////////////////////////////////////////4. Can finally block be skipped?
+
+👉 Scenario: You’re closing a database connection in finally. Will it always run?
+Answer: finally always runs except in two cases:
+
+If the program crashes due to Environment.FailFast() or system crash
+
+If the process is terminated (e.g., kill command).
+
+
+
+---
+
+///////////////////////////////////////////////////////////////////////////////5. What happens if both catch and finally have return statements?
+
+👉 Example:
+
+try { return 1; }
+catch { return 2; }
+finally { return 3; }
+
+Answer: The finally return will override everything. Output will be 3.
+
+
+---
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////6. Can we use try without catch?
+
+👉 Scenario: You only want to clean up resources.
+Answer: Yes, try can be used with finally only, no catch is required.
+
+
+---
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////7. What’s the difference between throw ex; and throw;?
+
+👉 Scenario: You caught an exception, logged it, and want to re-throw.
+Answer:
+
+With throw ex;
+The stack trace shows the exception originating in MethodA (re-throw line).
+With throw;
+The stack trace shows the exception originating in MethodB (actual divide by zero line).
+
+///////Example throw ex
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        try
+        {
+            MethodA();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Caught in Main:");
+            Console.WriteLine(ex);
+        }
+    }
+
+    static void MethodA()
+    {
+        try
+        {
+            MethodB();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Logging in MethodA: " + ex.Message);
+
+            // Try switching between "throw ex;" and "throw;"
+            throw ex; // or just throw;
+        }
+    }
+
+    static void MethodB()
+    {
+        int x = 0;
+        int y = 5 / x; // Exception originates here
+    }
+}
+
+////////Example throw
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        try
+        {
+            MethodA();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Caught in Main:");
+            Console.WriteLine(ex);
+        }
+    }
+
+    static void MethodA()
+    {
+        try
+        {
+            MethodB();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Logging in MethodA: " + ex.Message);
+
+            // Try switching between "throw ex;" and "throw;"
+            throw ex; // or just throw;
+        }
+    }
+
+    static void MethodB()
+    {
+        int x = 0;
+        int y = 5 / x; // Exception originates here
+    }
+}
+
+---
+
+8. Nested try-catch blocks: which one handles exception?
+
+👉 Scenario: You have a try-catch inside another try-catch.
+Answer: The nearest catch block that matches the exception type will handle it.
+
+
+---
+
+9. Can a finally block throw an exception? What happens then?
+
+👉 Scenario: You’re closing a file in finally and that itself throws.
+Answer: Yes, it can throw, and if it does, the new exception hides the original one. This can make debugging harder.
+
 
 
 
