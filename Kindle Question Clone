@@ -1984,4 +1984,311 @@ SUM() , Count() , AVG() .
 ////////////////////////////////////////////////////////////////////////////////////////////Single IR 
 Single IR in live data processing means using a single integration Runtime(the engine of ADF / Synapse) to fetch transform ,and load live seaming data with low latency and less overhead , instead of manahging multiple IRs. 
 ///////////////////////////////////////////////////////////////////////////////////////////////
-design patter 
+///////////////////////////////////////////////////////////////////////////////////////////////What are design patter used in making Stock market application.
+1. Observer Pattern (very important in stock market apps)
+Why: Stock prices keep changing in real time. If one price changes, all users looking at that stock should get updated immediately.
+How: Observer pattern allows me to notify all users automatically whenever there is a change.
+Example in app: When the price of TCS shares changes, all traders' dashboards update instantly.
+2. Factory Pattern
+Why: The application might need to create different types of financial instruments (Stocks, Bonds, Mutual Funds, Options). Instead of writing messy new everywhere, a Factory can create objects in a clean way.
+Example in app: If tomorrow a new type of asset is added, we don’t have to change everywhere, just extend the factory.
+3. Singleton Pattern
+Why: Some components like logging service, configuration, cache, or database connection should have only one instance across the whole app.
+Example in app: One global configuration for connecting to stock market APIs.
+4. Strategy Pattern (optional, but good to mention)
+Why: Different users might have different order execution strategies (e.g., Market Order, Limit Order, Stop Loss). Strategy pattern allows plugging in new algorithms without rewriting code.
+Example in app: A trader can switch between "Market order" and "Limit order" easily.
+🎯 Final Easy Answer (interview-ready):
+
+"For a stock market application, I would use the Observer pattern to handle real-time stock price updates to all users, the Factory pattern to create different financial instruments cleanly, and the Singleton pattern for shared resources like logging or database connections. If we need different trading strategies, I can also use the Strategy pattern. These patterns will keep the system scalable, easy to maintain, and ready for future changes."
+
+/////////////////////////////////////////////////////////////////////////////////Observable Patter
+👉 "Observer Pattern is like a WhatsApp group.
+
+When the admin posts a message (event), all group members (subscribers) get notified immediately.
+In stock market applications:
+ 1. Observer
+
+👉 An Observer is like a person waiting for updates.
+It says: “Tell me when something changes.”
+
+Example:
+You (Observer) subscribe to a YouTube channel. You don’t keep checking daily—YouTube tells you when a new video is uploaded.
+
+
+---
+
+🔹 2. Observable
+
+👉 An Observable is the thing that produces updates.
+It’s the source of truth that others can watch.
+
+Example:
+The YouTube channel is the Observable. It produces videos (data/events) and notifies all subscribers (Observers).
+
+
+---
+
+🔹 3. Subscriber
+
+👉 A Subscriber is the one who connects to the Observable to actually receive the updates.
+
+Example:
+When you click “Subscribe” on YouTube, you become a Subscriber. Now whenever a video is uploaded, you’ll get notified.
+
+
+The Stock is the subject (Observable).
+Investors/Traders are observers (Subscribers).
+When a stock price changes, the Stock notifies all Investors instantly.
+This way, we avoid checking prices again and again, and changes are pushed in real-time."
+---
+🏢 Enterprise-Level Example: Stock Market
+We’ll implement a Stock Price Notification System using the Observer Pattern.
+Step 1: Create Observer Interface
+// IObserver.cs
+
+public interface IObserver
+
+{
+
+    void Update(string stockName, decimal price);
+
+}
+
+
+
+Step 2: Create Subject (Observable) Interface
+
+
+
+// IStock.cs
+
+public interface IStock
+
+{
+
+    void Attach(IObserver observer);
+
+    void Detach(IObserver observer);
+
+    void Notify();
+
+}
+
+
+
+Step 3: Concrete Subject (Stock)
+
+
+
+// Stock.cs
+
+using System.Collections.Generic;
+
+
+
+public class Stock : IStock
+
+{
+
+    private List<IObserver> _observers = new();
+
+    private string _stockName;
+
+    private decimal _price;
+
+
+
+    public Stock(string stockName, decimal price)
+
+    {
+
+        _stockName = stockName;
+
+        _price = price;
+
+    }
+
+
+
+    public void Attach(IObserver observer) => _observers.Add(observer);
+
+    public void Detach(IObserver observer) => _observers.Remove(observer);
+
+
+
+    public void SetPrice(decimal price)
+
+    {
+
+        _price = price;
+
+        Notify(); // Notify observers whenever price changes
+
+    }
+
+
+
+    public void Notify()
+
+    {
+
+        foreach (var observer in _observers)
+
+        {
+
+            observer.Update(_stockName, _price);
+
+        }
+
+    }
+
+}
+
+
+
+Step 4: Concrete Observer (Investor)
+
+
+
+// Investor.cs
+
+public class Investor : IObserver
+
+{
+
+    private string _name;
+
+
+
+    public Investor(string name)
+
+    {
+
+        _name = name;
+
+    }
+
+
+
+    public void Update(string stockName, decimal price)
+
+    {
+
+        Console.WriteLine($"Notification for {_name}: {stockName} is now ₹{price}");
+
+    }
+
+}
+
+
+
+Step 5: Test Implementation
+
+
+
+// Program.cs
+
+using System;
+
+
+
+class Program
+
+{
+
+    static void Main()
+
+    {
+
+        // Create Stock (Observable)
+
+        Stock reliance = new Stock("Reliance", 2500);
+
+
+
+        // Create Investors (Observers)
+
+        Investor abhishek = new Investor("Abhishek");
+
+        Investor rahul = new Investor("Rahul");
+
+
+
+        // Attach observers
+
+        reliance.Attach(abhishek);
+
+        reliance.Attach(rahul);
+
+
+
+        // Price Change -> Notifies Investors
+
+        reliance.SetPrice(2600);
+
+        reliance.SetPrice(2700);
+
+
+
+        // Rahul leaves the subscription
+
+        reliance.Detach(rahul);
+
+
+
+        // Only Abhishek gets notified
+
+        reliance.SetPrice(2800);
+
+    }
+
+}
+
+
+
+
+
+---
+
+
+
+✅ Output
+
+
+
+Notification for Abhishek: Reliance is now ₹2600
+
+Notification for Rahul: Reliance is now ₹2600
+
+Notification for Abhishek: Reliance is now ₹2700
+
+Notification for Rahul: Reliance is now ₹2700
+
+Notification for Abhishek: Reliance is now ₹2800
+
+
+
+
+
+---
+
+
+
+🏆 Where is this used in real enterprise apps?
+
+
+
+Stock Market / Trading Apps (price updates → traders)
+
+
+
+News Feeds (new post → followers)
+
+
+
+E-commerce (stock available → notify users)
+
+
+
+Event-driven Microservices (publish/subscribe model)
