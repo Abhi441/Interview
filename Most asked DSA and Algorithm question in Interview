@@ -38,23 +38,20 @@ public class HelloWorld
 
 using System;
 using System.Text;
-
-public class Program
+public class HelloWorld
 {
-    public static void Main()
+    public static void Main(string[] args)
     {
-        string input = "   Abhishek   kumar   singh  ";
-        string[] words = input.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-
-        StringBuilder result = new StringBuilder();
-
-        for (int i = words.Length - 1; i >= 0; i--)
+        string str = "Abhishek kumar singh jhbg bnhju nhbgfy bhgytu";
+        String[] ch = str.Split(' ');
+        StringBuilder sb = new StringBuilder();
+        
+        for(int i = ch.Length - 1 ; i >=  0 ;  i--)
         {
-            result.Append(words[i]);
-            if (i > 0)
-                result.Append(' ');
+            sb.Append(ch[i]);
+            sb.Append(" ");
         }
-        Console.WriteLine(result.ToString());
+        Console.WriteLine (sb.ToString());
     }
 }
 ///////////////////////////////////////
