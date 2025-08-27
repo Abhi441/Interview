@@ -1548,6 +1548,38 @@ Use inside Function	❌ No	✅ Function only
 TRY-CATCH / Transactions	✅ Yes	❌ No
 
 
+///////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////.NetCore
+///////////////////////////////////////////////////////////////////164
+//what is .Net Core
+=> .Net Core is completely a New framework , which is a Free and Open-Source platorm developed and maintained by Microsoft.
+
+//////////////////////////////////////////////////////////////165
+What is .Net STANDARN ?
+=>.Net Standard is not a framework. .Net Standard define a set of API's or you can say libraries or set of rules.
+If any Framework will follow these rules that  means it is compliant with .NET standard Right now .NET Framework, .NET Core
+and Xamarin follow .Net standard.
+/////////////////////////////////////////////////////////////////166
+//What is the Advantages of .NetCore OVER .NET FRAMEWORK
+.Net core
+Cross Plateform => Window ,Linux ,MacOS
+OPEN SOURCE => Free to use , Modify, Distribution
+HOSTING =>Kestrel , IIS, Nginx.
+BUILD-IN DEPENDENCY INJECTION => Loosely Coupled Design, Reusability, Tesability.
+Support Multiple IDE => Visual Studio, Visual Studio for Mac , Visual Studio Code.
+
+
+.NETFRAMEWORK
+.Net Framework only supports Windows.
+.NET Framework is paid.
+.NET Framework only support IIS Hosting.
+.NET framework don't have build in dependency injection.
+.NET framework only support Visual Studio IDE.
+
+/////////////////////////////////////////////////////////////////////////////////////////167
+
+
+
 
 
 ///////////////////////////////////////////////////////////////////////////////////
