@@ -1576,11 +1576,43 @@ Support Multiple IDE => Visual Studio, Visual Studio for Mac , Visual Studio Cod
 .NET framework don't have build in dependency injection.
 .NET framework only support Visual Studio IDE.
 
-/////////////////////////////////////////////////////////////////////////////////////////167
+/////////////////////////////////////////////////////////////////////////////////////////170
+What is the role of configuration methods ? 
+=>Configuration method specifies how the app responds to Http request and responde .It is used to setup request pipeline. 
+it is not optional
+//Example :
 
+public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+{
+if (env.IsDevelopment())
+{
+app. UseDeveloperExceptionPage();
+}
+else
+{
+}
 
+app.UseExceptionHandler("/Home/Error");
 
+app.UseStaticFiles();
 
+app.UseRouting();
+
+app.UseAuthorization();
+
+app.UseEndpoints (endpoints =>
+
+{
+
+endpoints.MapControllerRoute(
+
+name: "default",
+
+pattern: "(controller-Home}/{action-Index}/{id?)");
+
+});
+
+/////////////////////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
