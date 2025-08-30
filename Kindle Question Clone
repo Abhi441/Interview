@@ -2656,3 +2656,20 @@ Both are same instance (Singleton works!)
 🎯 Interview Answer (Easy Words)
 
 👉 “I will use the Singleton Pattern when I want only one object in the whole system. For example, in a Stock Market application, I can have only one Logger instance to track all buy/sell transactions. This ensures consistency, saves memory, and prevents conflicts.”
+
+
+/////////////////////////////
+What is latest version of c#
+What is Managed and umanged code
+What is use of delegate 
+What is diffrence between early and late binding.
+`What happens if the inherited interfaces have conflicting method names ?
+what is the Constructor Chaining in c#
+what the diffrence between the Arrays.CopyTo() and Array.Clone()?
+what is Indexers in c#
+what is the diffrence between the Is and As operators in c#
+What is an Object Pooling
+what is virtual method in c#
+what are Anonymous type in c#
+what is the file handling in c#
+
