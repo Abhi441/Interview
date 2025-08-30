@@ -1615,7 +1615,53 @@ pattern: "(controller-Home}/{action-Index}/{id?)");
 /////////////////////////////////////////////////////////////////////////////////////////Dependency Injection
 What is Dependency Injection
 
+//////////////////////195
+In-Memory Caching (local to one server)
 
+Cache is stored in the memory (RAM) of the application server.
+
+Very fast, but available only to that server.
+
+Real-world example:
+
+Imagine you run a blog website hosted on a single server.
+
+You want to show the Top 10 Most Read Articles.
+
+These results don't change very often, so instead of hitting the database each time, you store them in the server's memory (cache).
+
+Every time a user requests, you just return the cached result very fast.
+
+Best when:
+
+App runs on a single server.
+
+Data is small, frequent, and not critical to be shared across multiple servers.
+
+//////
+Distributed Caching (shared across servers/nodes)
+
+← Cache is stored in an external system (like Redis, SQL Server, or NCache).
+
+Accessible by multiple servers.
+
+Real-world example:
+
+Imagine you run an E-commerce app like Amazon hosted on multiple servers.
+
+Thousands of users add products to their shopping cart.
+
+If you store the cart in In-Memory cache, and the user's next request goes to a different server X their cart will be empty!
+
+Solution: Use a Distributed Cache (like Redis).
+
+Now all servers share the same cache store no matter which server the user lands on, their cart will be there.
+
+Best when:
+
+App runs on multiple servers (load balanced).
+
+Data is critical & needs to be consistent across servers.
 ///////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////
