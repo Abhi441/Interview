@@ -1025,3 +1025,20 @@ So when I call SaveChanges(), EF knows what to update in the database — withou
 
 
 25. How does EF Core handle connection pooling and resource management?
+
+
+////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////Interview Bit
+//////////////////////////////////////////////////////
+
+1)which according to you is considered the best approach in Entity framework.
+2) Explain the advantages of the Entity Framework.
+3) Describe some of the disadvantages of the entity Framework.
+4) what are the feature of the entity framework ?
+5) what are the main component of Entity Framework
+6) explain diffrent parts of the entity data model.
+7) Explain what the .edmx file contains.
+8) what do you mean by migration ? Write its type ?
+9) what do you mean by Deferred Execution in EF ?
+10) What do you mean by the term navigation property in the entity framework ?
+11) What are diffrent 
