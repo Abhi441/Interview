@@ -1037,7 +1037,15 @@ So when I call SaveChanges(), EF knows what to update in the database — withou
 -> Database schema  is created/updated automatically using migration.
 -> Works well with agile projects where database design keeps migrations.
 -> Easier for version control(Git) since everything is in code.
-2) Explain the advantages of the Entity Framework.
+////////////////////////////////////////////////////////////////////////////2) Explain the advantages of the Entity Framework.
+Advantages
+///////////1) No need to write SQL manually
+-> Normally, we have to write  long SQL quesries to fetch, insert , or update  data.
+-> With EF, we can just write long c# code(dbContext.Products.ToList()) and it will generate the SQL behind the scenes.
+->Save time and reduces human errors in SQL.
+//Faster development (Productivity boost)
+->Developers can focus on business logic instead of spending hours writing and debugging  SQL queries.
+->EF provided LINQ (Language Integrated Query), which makes queries easier and type-safe.
 3) Describe some of the disadvantages of the entity Framework.
 4) what are the feature of the entity framework ?
 5) what are the main component of Entity Framework
