@@ -1064,4 +1064,5 @@ So when I call SaveChanges(), EF knows what to update in the database — withou
 31) What is the best ways to handle SQL injection attacks in Entity Framework.
 32) Explain the OnjectSet in EF.
 33) Whta the namespace that is used to include .NET Data Provider for SQL server in .NET code.
-34) 
+34) Eplain EDM and write the process to create it.
+35) What do you mean by DbEntityEntry Class in EF ?
