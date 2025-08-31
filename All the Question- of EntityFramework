@@ -1041,4 +1041,25 @@ So when I call SaveChanges(), EF knows what to update in the database — withou
 8) what do you mean by migration ? Write its type ?
 9) what do you mean by Deferred Execution in EF ?
 10) What do you mean by the term navigation property in the entity framework ?
-11) What are diffrent 
+11) What are diffrent entity state in EF ?
+12) Write the importance of the t4 entity in Entity Framework.
+13)Explain CSDL, SSDL , MSL selection in an Edmx file
+14) Write some XML generation methods provided b the dataset object.
+15) what do you mean by migration history table in Entity framework.
+16) Explain how EF suppots transactions.
+17) Write the steps to retrive data from database using Entity Framework in MVC.
+18) Explain the role of pluralize and Singularize in  the entity framework.
+19)What is the diffrence between Dapper and Entity Framework.
+20) Explain the POCO Clsses in EF.
+21) In EF , what are the ways to use stored Procedures ?
+22) Explain database concurrency and the ways to handle it.
+23) What are diffrence type of loading available to load related entities in EF.
+24) What do you mean by lazy loading and explicit loading.
+25) What are the pros and cons of different type of loading.
+26) Write diffrent type of inheritane support by entity Framework.
+27) Write Complex Type in Entity Framework.
+28) What do you mean by Micro ORM.
+29) Explain EF Data access Artichecture.
+30)What do you mean by SQL inject attack ?
+31)
+12)
