@@ -1058,8 +1058,29 @@ Advantages
 //Overhead(extra memory and processing).
 //////////////////////////////////////////////////////////////////////////////////////////////////4) what are the feature of the entity framework ?
 
-5) what are the main component of Entity Framework
-6) explain diffrent parts of the entity data model.
+/////////////////////////////////////////////////////////////////////////////////////////5) what are the main component of Entity Framework
+///EDM has tree part
+1)Conceptual Model.
+2) Storage Module.
+3) Mapping Module.
+Conceptual model (c# world)
+Storage Model(DB world)
+Mapping Model(the transator in between).
+//2)Linq to Entities.
+//3)Entity SQL
+//4)Object Service
+//5)ADO.NET Data Provider
+/////////////////////////////////////////////////////////////////////////////////////6) explain diffrent parts of the entity data model.
+1) Conceptual Model(CSDL)
+This is how you see the data in c#(your entity classes).
+public class Student
+{
+ public int Id {get ; set ;}
+ public string Name {get ; set;}
+}
+
+2) Storage Model(SSDL)
+
 7) Explain what the .edmx file contains.
 8) what do you mean by migration ? Write its type ?
 9) what do you mean by Deferred Execution in EF ?
