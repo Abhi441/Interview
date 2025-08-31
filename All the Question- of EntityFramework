@@ -1031,7 +1031,12 @@ So when I call SaveChanges(), EF knows what to update in the database — withou
 ///////////////////////////////////////////////////////Interview Bit
 //////////////////////////////////////////////////////
 
-1)which according to you is considered the best approach in Entity framework.
+/////////////////////////////////////////////////////////////////////////1)which according to you is considered the best approach in Entity framework.
+->In real world , code-First is considered the best approach because 
+-> Developers control the model using c# classes.
+-> Database schema  is created/updated automatically using migration.
+-> Works well with agile projects where database design keeps migrations.
+-> Easier for version control(Git) since everything is in code.
 2) Explain the advantages of the Entity Framework.
 3) Describe some of the disadvantages of the entity Framework.
 4) what are the feature of the entity framework ?
