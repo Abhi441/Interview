@@ -1046,8 +1046,18 @@ Advantages
 //Faster development (Productivity boost)
 ->Developers can focus on business logic instead of spending hours writing and debugging  SQL queries.
 ->EF provided LINQ (Language Integrated Query), which makes queries easier and type-safe.
-3) Describe some of the disadvantages of the entity Framework.
-4) what are the feature of the entity framework ?
+//Database independent (Multiple DB support)
+//Strong Types and IntelliSense support
+//Change Tracking 
+//Better for Complex Apps
+////////////////////////////////////////////////////////////////////////////////////////////////3) Describe some of the disadvantages of the entity Framework.
+//Slower than ADO.net 
+//Less control over SQL.
+//Performance issue in very large apps.
+//Learning curve 
+//Overhead(extra memory and processing).
+//////////////////////////////////////////////////////////////////////////////////////////////////4) what are the feature of the entity framework ?
+
 5) what are the main component of Entity Framework
 6) explain diffrent parts of the entity data model.
 7) Explain what the .edmx file contains.
