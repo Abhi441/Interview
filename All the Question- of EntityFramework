@@ -1061,5 +1061,7 @@ So when I call SaveChanges(), EF knows what to update in the database — withou
 28) What do you mean by Micro ORM.
 29) Explain EF Data access Artichecture.
 30)What do you mean by SQL inject attack ?
-31)
-12)
+31) What is the best ways to handle SQL injection attacks in Entity Framework.
+32) Explain the OnjectSet in EF.
+33) Whta the namespace that is used to include .NET Data Provider for SQL server in .NET code.
+34) 
