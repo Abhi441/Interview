@@ -1080,11 +1080,38 @@ public class Student
 }
 
 2) Storage Model(SSDL)
+This is how the database actually look(tablets, columns , data types)
+ create table Student
+ (StudentId INT )
+3)
+///////////////////////////////////////////////////////////////////////////////////////7) Explain what the .edmx file contains.
+An .edmx file in Entity Framework is an XML-based file that contains three parts :
+CSDL(Conceptual Model : C# classes)
+SSDL(Stored Model : Database  tables)
+MSL(Mapping between them) : It basically acs as a bridge between the database and the application.
+///////////////////////////////////////////////////////////////////////////////////////////////////////8) what do you mean by migration ? Write its type ?
+Migration in Entity Framework is a ways to update and manage database schema changes in sync with your application's data model.
+->Automatic Migration :  Database updates automatically(good for quick dev, not production).
+->Code-Based Migration : Mamnual control using migration files (preferred).
+->Initial Migration : First migration to create DB.
+->Seed Migration : To add initial data.
 
-7) Explain what the .edmx file contains.
-8) what do you mean by migration ? Write its type ?
 9) what do you mean by Deferred Execution in EF ?
-10) What do you mean by the term navigation property in the entity framework ?
+=> EXAMPLE :
+Var query = context.Employees.Where(e => e.Department == "IT");
+At this line -> No SQL query is send to the database yet.
+When you actually do something like :
+foreach(var emp in query)
+{
+Console.WriteLine(emp.Name);
+}
+Only then the query is executes, and EFsends SQL to the database.
+
+//Why Deferred Excution is Useful ?
+Performance Optimization -> Query is executed only when needed.
+Flexibility -> You can build queries step by step before execution.
+Less Load -> Prevents unnessary
+///////////////////////////////////////////////////////////////////////////////////////////10) What do you mean by the term navigation property in the entity framework ?
 11) What are diffrent entity state in EF ?
 12) Write the importance of the t4 entity in Entity Framework.
 13)Explain CSDL, SSDL , MSL selection in an Edmx file
