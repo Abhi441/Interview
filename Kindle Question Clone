@@ -2692,5 +2692,29 @@ Define the referential integration.
 What are TCL Command? and List down the the TCL Command available on SQL Server ?
 Write a SQL Server Query to get the letter 'e' in the name 'Jenna' from  the student table.
 As a SQL developer , how will you ensure that SQL server-based application  and database perform well ?
+when should Server-based cursors be used ?   
+Tell us about the working of the FLOOR function.       
+What do you know about scheduled tasks in SQL Server ?  
+Mention a query that return the list of triggers in a database 
+Diffrence between rollback and commit.                    
+Explain how to create a table in SQL ?
+what is the function of a foreign key in a database
+Tell us the steps to hide SQL Server Instances.
+Explain the DBCC command and its use.
+Describe the SIGN function.
+Define alternate key.
+Define Join. What are the diffrence types of Joins ?
+Tell about the use of UPDATE STATICS.
+Define Full backup.
+In SQL, what is meant by the identity column ?
+Explain the UNIQUE KEY constraint.
+Define the process of de-normalization.
+Show how table type constraint can be applied to a table.
+35. Differentiate between derived persistent attribute and derived attribute.
+
+
+
+
+      
 
 
