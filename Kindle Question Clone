@@ -2678,7 +2678,10 @@ What are the type of classes in c#
 /////////////////////////////////////////////
 ////////////////////////////////////////////SQL
 ///////////////////////////////////////////
-What is the Window Authentication Mode in SQL.
+//////////////////////////////////////////////////What is the Window Authentication Mode in SQL.
+-> It is one of the authentication methods used by SQL Server to control how users connect to the database.
+-> In Windows Authentication Mode, Sql  Server relies on the Windows operating system credential(username & password of the logged-in Windows user).
+That means we 
 Give an example of a function in an SQL server that return the first non-null expression from more than one coloum in argument.
 Explain the one-to-many relationship in the SQL Server database.
 what is the significance of CHECK in SQL Server ?
