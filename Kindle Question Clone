@@ -2657,7 +2657,9 @@ Both are same instance (Singleton works!)
 👉 “I will use the Singleton Pattern when I want only one object in the whole system. For example, in a Stock Market application, I can have only one Logger instance to track all buy/sell transactions. This ensures consistency, saves memory, and prevents conflicts.”
 
 
-/////////////////////////////
+///////////////////////////// 
+///////////////////////////////C#
+////////////////////////////////
 What is latest version of c#
 What is Managed and umanged code
 What is use of delegate 
@@ -2672,4 +2674,23 @@ what is virtual method in c#
 what are Anonymous type in c#
 what is the file handling in c#
 What are the type of classes in c#
+
+/////////////////////////////////////////////
+////////////////////////////////////////////SQL
+///////////////////////////////////////////
+What is the Window Authentication Mode in SQL.
+Give an example of a function in an SQL server that return the first non-null expression from more than one coloum in argument.
+Explain the one-to-many relationship in the SQL Server database.
+what is the significance of CHECK in SQL Server ?
+What is the significance of CHECK in SQL Server ?
+When the records be deleted from a view in SQL Server ?
+List down some of the feature of MS SQL Server ?
+Which command can be used to get the version of SQL Server ?
+In SQL Server, which is a user defined function ?
+Explain the replicated in SQL Server
+Define the referential integration.
+What are TCL Command? and List down the the TCL Command available on SQL Server ?
+Write a SQL Server Query to get the letter 'e' in the name 'Jenna' from  the student table.
+As a SQL developer , how will you ensure that SQL server-based application  and database perform well ?
+
 
