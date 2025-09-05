@@ -165,8 +165,17 @@ HAVING
 ///////////////////////////////////////////////////////////////////Interview Asked Question
 //////////////////////////////////////////////////////////////////
 
+Suppose that you have one table, in that you have a column called name, status and address. So
+in status column is Boolean column. Suppose that in this particular table have six rows,
+three is on and three is off in status coloum . So what I have to update the table to write the SQL queries, to change the on to off and off to on in status coloum .
 
 
+///
+UPDATE YourTable
+SET Status = CASE 
+               WHEN Status = 1 THEN 0 
+               ELSE 1 
+             END;
 
 
 
