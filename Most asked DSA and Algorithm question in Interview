@@ -665,3 +665,43 @@ if (isPalindrome) {
 }
 
 
+///////////////////////////////////////////////////////////////////////////////////
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class ReverseDictionaryValue
+{
+ public static Disctionary<int , string> Process(Dictionary<int,string>  input)
+{
+  Dictionary<int ,string> res = new Dictionary<int , string>();
+  foreach(var k in input)
+   {
+     string rev = new string(k.Value.Reverse().ToArray().ToUpper());
+        result[k.key] = rev
+  }
+return res;
+}
+}
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        var input new Dictionary<int, string>
+        {
+            {5,"five"},
+	        {6,"six"},
+	         {9,"nine"}
+        };
+        var output = ReverseDictionaryValue.Process(input);
+        foreach(var k in output)
+        {
+            Console.WriteLine($({k.Key},{k.Value}));
+        }
+    }
+}
+
+
