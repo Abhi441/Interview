@@ -2675,6 +2675,343 @@ what are Anonymous type in c#
 what is the file handling in c#
 What are the type of classes in c#
 
+
+Great that you asked this, Abhishek 👍 because this is a classic real-world scenario interview question. Let me explain step by step in super easy words how Authorization works in your Buy & Sale Property Application.
+
+1️⃣ First Step – Authentication (Who are you?)
+When the user logs in (Buyer, Seller, or Admin), they enter username + password.
+The backend checks in the database if the credentials are correct.
+If correct, the backend issues a JWT Token that contains user info + role (Buyer, Seller, Admin).
+👉 Example of JWT payload:
+
+{
+  "id": 101,
+  "username": "abhishek",
+  "role": "Admin",
+  "exp": 1736022000
+}
+2️⃣ Second Step – Token Sent with Requests
+Every time the frontend (Angular) calls an API (like /properties, /transactions), it attaches the JWT token in the request header:
+Authorization: Bearer eyJhbGciOiJIUzI1...
+3️⃣ Third Step – Authorization (What can you do?)
+Now the backend checks the role inside the token.
+Based on the role, it allows or denies access.
+👉 Example in .NET Core API:
+
+[Authorize(Roles = "Admin")]
+[HttpPost("approve-property")]
+public IActionResult ApproveProperty(int propertyId)
+{
+    // Only admin can approve properties
+    return Ok("Property approved!");
+}
+
+[Authorize(Roles = "Seller")]
+[HttpPost("add-property")]
+public IActionResult AddProperty(Property property)
+{
+    // Only sellers can add property
+    return Ok("Property added!");
+}
+
+[Authorize(Roles = "Buyer,Seller")]
+[HttpGet("view-properties")]
+public IActionResult GetProperties()
+{
+    // Both buyers and sellers can view properties
+    return Ok();
+}
+4️⃣ Example Flow in Your App
+Buyer logs in → gets token with role = "Buyer".
+They can search, view properties, chat with sellers, but cannot approve or reject listings.
+Seller logs in → gets token with role = "Seller".
+They can add new property, update price, but cannot view payment reports.
+Admin logs in → gets token with role = "Admin".
+They can approve/reject properties, manage users, view reports.
+🎯 Interview-Friendly Short Answer
+👉 “In my property buy/sell app, we use JWT Authentication to identify the user. The JWT contains the role (Buyer, Seller, Admin). On each API call, the backend checks this role and applies [Authorize(Roles="...")].
+This way, the application knows who the user is and what they are allowed to do. For example, only admins can approve listings, only sellers can add properties, and buyers can only view and purchase properties.”
+
+Would you like me to also show you step-by-step Angular code (like how you store the JWT in localStorage and check role in guards for routing)? That’s another interview follow-up they usually ask.
+
+Great question, Abhishek 👍 because state management comes up a lot in interviews when they want to test whether you understand how web applications keep track of user data between requests.
+
+
+---
+
+🌍 First, Why State Management?
+
+HTTP is stateless → every request from the client to the server is independent.
+
+That means, by default, the server doesn’t remember who you are between two requests.
+
+
+👉 Example: You log in → request is done → on the next request, server doesn’t know you’re logged in unless you manage state.
+
+So, State Management = techniques to store and retrieve user/session data across requests.
+
+
+---
+
+🏗️ State Management in ASP.NET Core
+
+1. Client-Side State Management
+
+Data is stored on the client (browser).
+
+Examples:
+
+Cookies – small data stored in browser, can persist even after closing the browser.
+
+Response.Cookies.Append("UserRole", "Admin");
+
+Local Storage / Session Storage (Angular/JS) – used to store JWT tokens, user info.
+
+Hidden Fields in forms.
+
+
+
+✅ Advantage: reduces server load.
+❌ Disadvantage: can be tampered if not encrypted.
+
+
+---
+
+2. Server-Side State Management
+
+Data is stored on the server.
+
+Examples:
+
+Session State
+
+Stores data per user session on the server.
+
+Works using a cookie (Session ID) to identify the session.
+
+
+HttpContext.Session.SetString("UserRole", "Admin");
+var role = HttpContext.Session.GetString("UserRole");
+
+Cache / MemoryCache / Distributed Cache
+
+Store frequently used data to improve performance.
+
+Distributed cache (like Redis, SQL Server) is used in load-balanced apps.
+
+
+services.AddDistributedMemoryCache();
+services.AddSession();
+
+
+
+✅ Advantage: safer, more control.
+❌ Disadvantage: consumes server memory.
+
+
+---
+
+3. Token-Based State (Modern Approach)
+
+Instead of session storage, in modern apps we often use JWT tokens.
+
+The token contains the state (user id, roles, expiry) and is stored client-side.
+
+Server doesn’t store session data, just validates the token with a secret key.
+
+
+✅ Advantage: scalable, no server memory usage.
+❌ Disadvantage: Token size can grow, needs refresh token strategy.
+
+
+---
+
+🎯 Interview-Friendly Answer
+
+👉 “State management in .NET Core means maintaining user data across multiple requests because HTTP is stateless.
+We can manage state client-side using cookies, local storage, or hidden fields, and server-side using session state, cache, or distributed cache.
+In modern apps, I mostly use JWT token-based state management, where the token carries user info like ID and roles, and the server validates it on each request.
+For example, in my property app, once a user logs in, we issue a JWT token stored in localStorage. The backend extracts the user’s role from the token to handle authorization.”
+
+
+---
+
+⚡Abhishek, do you want me to also prepare scenario-based cross-questions that interviewers might ask on state management (like Session vs JWT, when to use Cache, etc.)?
+
+
+Show quoted text
+What is latest version of c#
+
+The latest stable version of C# is C# 13.0, released with .NET 9. 
+
+If you need, I can also mention what new features came with C# 13 so it sounds strong in an interview.
+
+Perfect 👍 Let’s make this interview-ready and easy to remember.
+
+
+---
+
+🔥 New Features in C# 13 (with .NET 9)
+
+Here are the highlight updates:
+
+1. Field keyword in Primary Constructors
+
+You can directly create a field inside a primary constructor parameter.
+
+
+class Student(string name, int age)
+{
+    private field int age = age; // new keyword 'field'
+}
+
+
+2. Partial Properties
+
+Just like partial classes, now properties can be declared as partial and implemented in another part of the class.
+
+
+partial class Person
+{
+    public partial string Name { get; }
+}
+
+
+3. Lock Object Simplification
+
+You can now lock on a value directly without creating a separate object.
+
+
+lock (someLock)
+{
+    // thread-safe code
+}
+
+
+4. ref readonly Parameters
+
+Allows passing parameters by reference without allowing modification.
+
+
+void Print(ref readonly int number)
+{
+    Console.WriteLine(number);
+}
+
+
+5. Method Group Natural Type Improvements
+
+Better support for method group conversions when passing methods as delegates.
+
+
+
+6. Improved Interpolated Strings
+
+More performance improvements when using $"..." interpolations.
+
+
+
+
+
+---
+
+🎯 Interview-Friendly Answer
+
+> “The latest version of C# is 13, released with .NET 9. It introduced useful features like the field keyword in primary constructors, partial properties, ref readonly parameters, and better support for locks and interpolated strings. These updates make code more concise, safe, and developer-friendly.”
+
+
+
+
+---
+
+👉 Do you want me to also make a simple diagram or table comparing C# 12 vs C# 13 so you can quickly revise before interviews?
+
+
+/////////////////////////////////////////
+What is Managed and umanged code interview questions
+
+
+Great one 👍 This is a very common C# interview question. Let’s break it down in simple words + interview style.
+
+
+---
+
+⚡ Managed Code vs Unmanaged Code
+
+🔹 Managed Code
+
+Code that runs under the control of the .NET runtime (CLR).
+
+CLR takes care of memory management, garbage collection, type safety, and security.
+
+Example: Any C# or VB.NET code.
+
+
+// Example of Managed Code
+public class Test
+{
+    public void SayHello()
+    {
+        Console.WriteLine("Hello, Managed World!");
+    }
+}
+
+
+---
+
+🔹 Unmanaged Code
+
+Code that runs directly on the operating system (outside CLR).
+
+You need to manually handle memory allocation and cleanup.
+
+Example: C, C++, COM components, Win32 APIs.
+
+
+// Example of Unmanaged Code (C++)
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "Hello, Unmanaged World!";
+    return 0;
+}
+
+
+---
+
+🎯 Interview-Friendly Answer
+
+> “Managed code is the code that runs under the control of CLR in .NET, where memory management and garbage collection are automatic. Unmanaged code runs directly on the OS, like C or C++ code, where the developer must manually manage memory and resources.”
+
+
+
+
+---
+
+🤔 Possible Cross Questions
+
+1. Can .NET work with unmanaged code?
+✔ Yes, using P/Invoke (Platform Invocation Services) and COM Interop.
+
+
+2. Why is managed code safer?
+✔ Because CLR ensures type safety, garbage collection, and prevents memory leaks.
+
+
+3. Can you give an example where you need unmanaged code in a .NET project?
+✔ For performance-critical operations or using existing C/C++ libraries (like image processing, hardware drivers).
+
+
+
+
+---
+
+👉 Do you want me to also prepare a short diagram showing CLR in between managed and unmanaged code for quick revision?
+
+
+Show quoted text
+
 /////////////////////////////////////////////
 ////////////////////////////////////////////SQL
 ///////////////////////////////////////////
