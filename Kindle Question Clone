@@ -1324,7 +1324,7 @@ WHAT IS THE DIFFERENCE BETWEEN CLUSTERED AND NON-CLUSTERED INDEX? 1. A clustered
 
 
 //////////////////////////////84)
-HOW TO CREATE CLUSTERED AND NON-CLUSTERED INDEX IN A TABLE? CLUSTERED INDEX When you create a PRIMARY KEY constraint, a clustered index on the column or columns is automatically created. NON-CLUSTERED INDEX
+HOW TO CREATE CLUSTERED AND NON-CLUSTERED INDEX IN A TABLE? CLUSTERED INDEX When you create a PRIMARY KEY constraint, a clustered  index on the column or columns is automatically created. NON-CLUSTERED INDEX
 
 
 //////////////////////////85)
@@ -1336,8 +1336,56 @@ WHAT IS THE DIFFERENCE BETWEEN STORED PROCEDURE AND FUNCTIONS?
 
 /////////////////////87)
 HOW TO OPTIMIZE A STORED PROCEDURE OR SQL QUERY? Below are some techniques to optimize a stored procedure: Use SET NOCOUNT ON Specify column names instead of using * in SELECT statement. Use schema name before objects or table names. Example: SELECT EmpID, Name FROM dbo.Employee Do not use DYNAMIC QUERIES. They are vulnerable to SQL Injections. Use EXISTS () instead of COUNT (). Example: IF( EXISTS (SELECT 1 FROM db.Employees)) is better than SELECT Count(1) FROM dbo. Employee Use TRANSACTION when required only
+//Got it Abhishek 👍 Let’s make your answer interview-ready with Definition + Project Use + Trade-offs + Business Impact in very simple words.
 
+❓ Interview Question: “How do you optimize a Stored Procedure or SQL Query?”
+1. Definition (Easy Words)
+👉 Query optimization means: “Making your SQL run faster and use fewer resources (CPU, memory, disk).”
+It’s like cooking food quickly without wasting gas or ingredients.
 
+2. Project Use (Buy & Sell Properties App Example)
+💡 In our Buy & Sell Property app, we had:
+
+A Property Search Query → Users search by price, city, status (active/sold).
+If query is slow → users wait longer, bad experience.
+So, we optimized queries to make property search faster.
+3. Techniques + Easy Human Explanation
+Use SET NOCOUNT ON
+👉 Stops sending “rows affected” messages.
+Example: 5 rows affected → we don’t need this in API, it just wastes network.
+
+Specify column names instead of SELECT *
+👉 Instead of bringing all columns, bring only what you need.
+Example: SELECT EmpID, Name FROM dbo.Employee
+(In property app: SELECT PropertyName, Price not SELECT *).
+
+Use schema name before table
+👉 Example: dbo.Employee
+It makes SQL Server find the table faster (like giving full address, not just name).
+
+Avoid Dynamic Queries
+👉 Example: Don’t build query with string concat → risk of SQL Injection.
+Use parameters instead.
+
+Use EXISTS() instead of COUNT()
+👉 If you just want to check if record exists, use EXISTS (stops after first match) → faster.
+
+Use Transactions only when needed
+👉 Transactions lock tables. If you don’t need them, avoid them → less blocking.
+
+4. Trade-offs (Things to Consider)
+Optimization makes query faster, but sometimes requires more developer effort.
+Example: Instead of SELECT *, we write 5–6 column names → a bit longer code, but worth it.
+Using indexes helps speed, but takes extra space in database.
+5. Business Impact (Easy Words)
+Faster query = Faster property search.
+Faster = Happy users → More sales.
+Less CPU/Memory = Lower server cost for company.
+Secure queries = No data leaks / hacking risk.
+✅ Final Interview Line:
+“In our Buy & Sell Property project, we optimized queries by avoiding SELECT *, using schema names, replacing COUNT with EXISTS, and using transactions carefully. This improved property search speed, reduced server cost, and made the system more secure for customers.”
+
+👉 Do you want me to also add Indexes optimization (clustered vs non-clustered) into this answer? That often comes as a cross-question in SQL interviews.
 /////////////////////////////88)
 WHAT IS A CURSOR? WHY TO AVOID THEM? A database Cursor is a control which enables traversal/ iteration over the rows or records in the table. It’s a 5-step process: 1. Declare 2. Open 3. Fetch using while loop 4. Close 5. Deallocate
 
