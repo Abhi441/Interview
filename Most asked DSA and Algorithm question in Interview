@@ -704,4 +704,37 @@ public class HelloWorld
     }
 }
 
+//////////////////////////Move the zeros to end
+using System;
 
+class Program
+{
+    static void Main()
+    {
+        int[] arr = { 0, 1, -1, 0, 2 };
+
+        MoveZerosToEnd(arr);
+
+        Console.WriteLine(string.Join(", ", arr));
+    }
+
+    static void MoveZerosToEnd(int[] arr)
+    {
+        int index = 0; // position to place next non-zero
+
+        // Step 1: Move all non-zeros to the front
+        for (int i = 0; i < arr.Length; i++)
+        {
+            if (arr[i] != 0)
+            {
+                arr[index++] = arr[i];
+            }
+        }
+
+        // Step 2: Fill the rest with zeros
+        while (index < arr.Length)
+        {
+            arr[index++] = 0;
+        }
+    }
+}
