@@ -48,7 +48,7 @@ Class B   Class C
 In this scenario, if Class B and Class C both inherit a method from Class A, then Class D could inherit two conflicting versions of that method. C# avoids this ambiguity by allowing only single inheritance,
 ensuring that each class has a clear and singular parent class.
 
-//////////////////////////////////////
+//////////////////////////////////////what is diffrence between DbContext and DbSet
 DbContext : Manages the connection to the database.
 DbSet : Represent a table in the database and provide methods to interact with data in the table
 what is DBcontext and DBset.
