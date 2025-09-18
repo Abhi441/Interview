@@ -36,3 +36,25 @@ FUNCTION
 ->we can can not write try , catch , block in function.
 -> you can not write the ddl operation for function.
 
+/////////////////////////////////////////////////////////////////////////////Performance Tuning we are doing
+we are doing for store Procedure
+Supose we want to increse the performance of store Procedure then
+->we can do set No count 
+->instead of calling table name I will dbo.TableName.
+->Instaed of * we can use selected coloum.
+->we avoid aggregate functon in where clouse.
+->we need to do proper indexing on table
+->we should avoid ddl operation on store Procedure.
+->we will use table varible instead of temp table.
+
+////////////////////////////////////////////////////////////////////////////what is diffrence between var and dynamic keyword
+->at the time declaration , we need to assign the value of var keyword,we can step we can assign the same datatype value .
+->In dynamic we can assign the any time of data value .
+/////////////////////////////////////////////////////////////performance tuning in web api
+faster json serializer.
+ansyn ways of creating web api
+output chaches
+we collect multiple result set in single web api,we will get the response in one api
+
+
+
