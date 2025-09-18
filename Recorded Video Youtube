@@ -19,3 +19,20 @@ Monolithical : We had a single IIS-hosting.NET MVC app with one SQL Server datab
 
 Microservices : We build .NET Core Web APIs deployement on Docker + Kubernetes , each with its own database , integrated via API Gateways with RabbitMQ for async events and Serilog + ELK for logging.
 
+////////////////////////////////////////////////////Function and Store Procedure
+Store Procedure
+-> Store Procedure may or may not return value.
+->Insert and update function in Store Procedure.
+->we can write Transaction in Store Procedure.
+->we can call the function in stored procedure
+->we can use try catch block for runtime exception.
+-> we can write ddl operation for Store Procedure.
+
+FUNCTION
+-> It will return value.
+->Function we can only use select because it retriving the data.
+->we can not write Transaction in function.
+->we can not call store Procedure inside the function.
+->we can can not write try , catch , block in function.
+-> you can not write the ddl operation for function.
+
