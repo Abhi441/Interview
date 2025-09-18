@@ -1,0 +1,21 @@
+//////////////////////////////////////Dependency Injection
+-->create Runtime instance for that Service.
+--> It provide loosely coupled behaviours.
+///////////////////////////////////////How to enable Session in .netCore
+///
+Add service in DI container
+builder.Services.AddSession();
+//
+Enable middleware
+app.UseSession();
+///////////////////////////////////////
+2 method
+developer exception page will be their
+with the help of use exception handle we can write run time exception
+we can use try , catch , block to handle the method in exceeption level.
+
+/////////////////////////////////////////////////////////Monolothical and Microservices
+Monolithical : We had a single IIS-hosting.NET MVC app with one SQL Server database, using Entity Framework, and develoyment was tightly coupled.
+
+Microservices : We build .NET Core Web APIs deployement on Docker + Kubernetes , each with its own database , integrated via API Gateways with RabbitMQ for async events and Serilog + ELK for logging.
+
