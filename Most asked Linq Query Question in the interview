@@ -1,3 +1,56 @@
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////🔹 4. How do you find the second highest salary using LINQ?
+
+var secondHighest = employees
+    .Select(e => e.Salary)
+    .Distinct()
+    .OrderByDescending(s => s)
+    .Skip(1)
+    .FirstOrDefault();
+
+
+---
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////🔹 7. How do you perform Left Join in LINQ?
+
+var leftJoin = employees
+    .GroupJoin(
+        departments,                     // right table
+        e => e.DeptId,                   // key from employees
+        d => d.DeptId,                   // key from departments
+        (emp, dept) => new { emp, dept } // result selector
+    )
+    .SelectMany(
+        x => x.dept.DefaultIfEmpty(),    // ensures left join (include even if no dept match)
+        (x, d) => new
+        {
+            EmployeeName = x.emp.Name,
+            DepartmentName = d?.DeptName ?? "No Department"
+        }
+    );
+
+/////////////////////////////////////Select the first row from a table
+//Using LINQ Method Syntax(Most common)
+var firstRow = table.FirstOrDefault();
+
+This will return the first row of the table.
+
+//apply condition
+var firstRow = table.FirstOrDefault(x => x.Age > 25);
+
+/////////////////////////////////////////////////////////////////////////////////////🔹 9. Can you write a LINQ query to count how many employees per department?
+
+var countByDept = employees
+    .GroupBy(e => e.Department)
+    .Select(g => new { Dept = g.Key, Count = g.Count() });
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////
+
+
 /////////////////////////////////////////////////////////Interview Asked Question
 ///////////////////////////////////////////////////////What is the stateof EntityFramework.
 ✅ What are Entity States in EF?
