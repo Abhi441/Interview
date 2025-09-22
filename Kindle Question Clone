@@ -6776,6 +6776,10 @@ export class PropertyListComponent {
 👉 Used for UI components like Property List, Property Detail, User Profile.
 
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+app
+
+
 
 
 
@@ -7676,6 +7680,8 @@ Const
 ❌ If value changes later (like tax rate), you must recompile and redeploy.
 Static
 
+
+
 ✅ Saves memory (only one copy).
 ✅ Good for global utilities (logger, cache).
 ❌ If misused, can cause state issues (shared data overwritten by multiple users).
@@ -8110,17 +8116,13 @@ Downtime is reduced → better customer trust.
 //////////////////////
 
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////new feature in latest technology
-c# => we can now write arrays/lists in ashorter, nice syntax
-int[] a = [1 ,2 , 3];
-List<string> b = [..a , ..new int[] {4,5,6}];
-
-Angular => Unified Control State Change Event
-what this means : Form controls(FormControl, FormGroup ,etc).
-=>Angular 18 gives finer control of form state via new events property so I can react to changes like touched or dirty more precisely.
-
-
-
+//////////////////////////////////////
+/////////////////////////////////////neoSoft
+////////////////////////////////////
+//what the pakage use for creating new JWT Token.
+//find the second highest salary in linq query.
+//Angular Fock
+//How you are implement the lazy loading in the Angular.
 
 
 
