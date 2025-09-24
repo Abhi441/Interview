@@ -734,6 +734,30 @@ Provider	How Angular knows to create the service
 
 Want a quick real-world example of a Weather API service or Login Auth service to master this?
 
+//////////////////////////////////////////////////// 51) What is Observable ? How to implement Observable ?
+=>Observable are used to sream data to multile components.
+=>Basically, to received the data from Api's and continuously stream it to the multiple components.
+=> It's a 3 step process
+1) Import Observable from RxjS Library.
+2) Create Observable & Emit data.
+3) Finally subscribe the data.
+
+=>When a user opens the property listing page, Angular uses Observable  to fetch property data from Api.
+=>If API sends new updates, UI will update automatically.
+
+//Trade Off
+Pros : Real-time, async, powerful for stream(chat, live property updates).
+Cons : If you don't unscribe(in long-living components), it may cause memory leaks.
+
+///////////////////////////////////////////////////////////////////////////52) What is the role of HTTPClient in Angular ?
+=> HttpClient is a build-in service class provided by Angular, which  is used to perform HTTP requests(GET/POST/PUT/DELETE) to send and receive data from Api or Service.
+=> Pakege name is - @angular/common/http packages
+
+//Project Use
+=> When a buyer opens the app,HttpClient fetches property listings from backend API.
+=> When a seller adda a property, HttpClient sends the property data to the backend using POST.
+=> It's like the bridge between Angular frontend and .NET backend.
+
 
 ////////////////////////
 Absolutely, Abhishek! Let’s break this down in the most simple, interview-friendly way, with a real working code example to show Parent-Child Components in Angular.
