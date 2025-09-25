@@ -1110,6 +1110,7 @@ Creates Non-Clustered Index
 More than One Unique Key in a Table.
 ///////////////////////////////////////////////////////71
 
+
 What is a Trigger in SQL Server?
 
 Triggers are stored programs, which are AUTOMATIC-ALLY executed or fired when some events (insert, delete and update) occur.
