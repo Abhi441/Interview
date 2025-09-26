@@ -1602,6 +1602,11 @@ TRY-CATCH / Transactions	✅ Yes	❌ No
 ///////////////////////////////////////////////////////////////////164
 //what is .Net Core
 => .Net Core is completely a New framework , which is a Free and Open-Source platorm developed and maintained by Microsoft.
+=> Cross Plateform(Windows , Linux , MacOS) 
+=> Open Source(Free to use , Modify , Distribute)
+=> Hosting(Kestral ,IIS , Nagix)
+=> Build-In Dependency Injection(Loosely Coupled Design , Reusability , Testability)
+=> Support Multiple IDE(Visual Studio, Visual Studio for Mac , Visual Studio Code).
 
 //////////////////////////////////////////////////////////////165
 What is .Net STANDARN ?
