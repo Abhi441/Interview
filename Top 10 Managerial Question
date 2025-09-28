@@ -62,6 +62,34 @@ the company’s reputation, culture, and values,"
 One of the main things that motivate me is the challenge of solving complex problems with code. I enjoy learning new technologies, frameworks, and languages, and applying them to create innovative solutions. 
 like to think creatively and logically, and to test and debug my code until it works as expected.
 
-////////////////////////////////////////////////////////How you handle the work pressure
 
 
+
+
+//////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////Managerial Round
+//////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Tell me about your self
+"My name is Abhishek, and I have 4 years of experience as a Full Stack .NET Developer, working on end-to-end development of web applications using .NET Core, C#, Web API, Angular, SQL Server, and Azure.
+On the backend, I work with .NET Core, EF Core, and Microservices, while on the frontend, I develop using Angular (latest versions), Bootstrap, and TypeScript. I also focus on SQL performance tuning, caching 
+strategies, and secure authentication using JWT & OpenID Connect.
+In my current project, a Buy & Sell Property Platform, I played a key role in building a real-time chat system with SignalR, a secure payments & transactions module, and admin dashboards with analytics. 
+These features increased customer engagement by 30% and reduced manual efforts by 40%, making a direct business impact.
+I actively participate in Agile ceremonies like scrum, sprint planning, and retrospectives, and collaborate closely with QA, testers, and DevOps. I also provide inputs on how technical choices
+affect business outcomes such as performance, scalability, and customer satisfaction.
+Along with development, I continuously upskill myself in system design, cloud (Azure), and performance tuning, and I mentor junior developers on best coding practices, debugging, and testing.
+In short, I see myself not just as a developer who writes code, but as a problem-solver who aligns technology with business outcomes. That’s the mindset I bring to my work every day."
+
+
+////////////////////////////////////////////////////////What is your roles and responsibility
+
+👉 “In my current project, my roles and responsibilities include:
+1. Requirement Understanding – Participating in Agile ceremonies like sprint planning, stand-ups, and retrospectives to understand business needs clearly.
+2. Backend Development – Designing and developing APIs in .NET Core, implementing authentication (JWT/Identity), database interactions (EF Core / ADO.NET), and writing optimized stored procedures.
+3. Frontend Development – Building responsive UI in Angular, managing state, routing, and implementing reusable components.
+4. Code Quality & Reviews – Writing clean, maintainable, and testable code, doing peer code reviews, and following best practices (SOLID principles, design patterns).
+5. Testing & Debugging – Writing unit tests, debugging production issues, and ensuring smooth delivery without defects.
+6. Collaboration – Working closely with testers, business analysts, and DevOps team to ensure smooth deployment and delivery.
+7. Production Support – Monitoring logs, fixing issues (like null reference or 500 errors), and ensuring uptime for critical modules.
+8. Continuous Learning & Improvement – Exploring new tools (Azure DevOps, caching, microservices, etc.) to improve system performance and scalability.
