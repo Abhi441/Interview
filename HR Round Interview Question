@@ -67,9 +67,29 @@ A – Action
 
 R – Result
 “As a result, I feel more confident and ready to take on challenging roles where I can deliver end-to-end solutions, contribute to innovation, and help the business grow faster. This is why I am looking for a change — to grow technically and add more value to the organization.”
-05:00​ - 6. Why should we hire you?
 
-05:42​ - 7. Can you tell me about a time when you worked in a team?
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////05:00​ - 6. Why should we hire you?
+S (Situation):
+In my previous role as a full stack .NET developer, we had a project where performance issues and bugs were delaying releases, and the client was unhappy.
+
+T (Task):
+I was responsible for fixing those performance problems, improving code quality, and making sure the product delivered business value on time.
+
+A (Action):
+
+I optimized stored procedures and queries, reducing database response time by 40%.
+
+I used caching and state management in .NET Core and Angular to speed up the application.
+
+I applied clean coding principles (like SOLID, design patterns) so the code became easier for my team to maintain.
+
+I collaborated with testers, used tools like Azure DevOps/Jira for task tracking, and actively participated in Agile ceremonies (scrum, sprint planning, retrospectives).
+
+
+R (Result):
+Because of this, the application performance improved a lot, client satisfaction increased, and we were able to deliver features 2 weeks ahead of schedule.
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////05:42​ - 7. Can you tell me about a time when you worked in a team?
 
 06:31​ - 8. How do you handle criticism?
 
