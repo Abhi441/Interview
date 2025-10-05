@@ -152,13 +152,110 @@ My approach helped reduce repeated review comments in our team and made delivery
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////07:16​ - 9. How do you handle tight deadlines?
+🧠 S – Situation
+In my previous project (Buy & Sell Property Application), we had to deliver a major feature — the Payment Gateway Integration — within just 3 days because the client had an urgent demo scheduled.
+---
+🎯 T – Task
+My responsibility was to complete the backend API and integrate it with the Angular frontend for real-time payment status updates — all within this short timeline.
+---
+
+⚙️ A – Action
+
+Here’s how I handled it:
+
+1. Prioritized the tasks — I first listed what was “must-have” vs “nice-to-have”.
 
 
-08:04​ - 10. Can you tell me about a challenge you faced and how you overcame it?
+2. Worked in focused sprints — I divided the 3 days into small goals (API first, UI next, testing last).
 
-08:47​ - 11. How do you prioritize your work?
 
-09:39​ - 12. What motivates you?
+3. Collaborated closely — I stayed in touch with the frontend developer and QA team every few hours to fix issues quickly.
+
+
+4. Avoided distractions — I turned off notifications and focused fully for 2-hour deep work sessions.
+
+
+5. Used reusable code — leveraged existing modules and helper classes to save time.
+
+
+
+
+---
+
+🏆 R – Result
+
+We successfully completed the integration within the deadline, and the client demo went smoothly.
+Later, my manager appreciated my structured approach and teamwork under pressure.
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 10. Can you tell me about a challenge you faced and how you overcame it?
+⭐ S – Situation (What was happening)
+
+In my previous project (Buy & Sell Property App), we faced a serious performance issue — the property listing page was taking 10–12 seconds to load because we were fetching too much data from the database at once.
+---
+
+🎯 T – Task (Your responsibility)
+
+My task was to analyze and fix the performance problem so that the page would load faster, ideally in under 2 seconds, without breaking any existing functionality.
+---
+⚙️ A – Action (What you did)
+
+1. I started by checking the SQL queries using SQL Profiler and found multiple joins and unnecessary columns being fetched.
+
+
+2. I implemented pagination and filtering using LINQ and Stored Procedures — so only the required records were fetched.
+
+
+3. I also added In-Memory Caching for repeated data like property categories and cities.
+4. Finally, I worked with the frontend Angular team to implement a loading spinner and async data binding to make the experience smoother.
+---
+🏁 R – Result (What happened)
+
+✅ The page load time dropped from 12 seconds to 1.8 seconds.
+✅ API response improved by 80%.
+✅ The business team appreciated that more users stayed on the page, which directly increased property view counts and user engagement.
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////11. How do you prioritize your work?
+🧩 S — Situation
+
+In my previous project (Buy & Sell Property App), I had multiple tasks — fixing backend API bugs, adding a new payment feature, and helping the frontend team with integration — all with tight deadlines.
+
+
+---
+
+🎯 T — Task
+
+My goal was to complete all these tasks efficiently without missing deadlines and without affecting code quality.
+
+
+---
+
+🛠️ A — Action
+
+So, I did these things:
+
+1. Listed all tasks and identified which ones had the highest business impact — for example, the payment feature was critical for release.
+
+
+2. Discussed priorities with my project manager to confirm what should go first.
+
+
+3. Used Azure Boards to plan my daily sprint tasks — breaking them into small steps.
+
+
+4. Handled small, quick fixes (like minor UI bugs) during the gaps between major work.
+5. If any blockers came, I immediately communicated to the team so that work didn’t get stuck.
+---
+✅ R — Result
+
+Because of this structured approach:
+
+The payment module was completed on time and successfully deployed.
+
+The bug count dropped by 30%, and
+
+My manager appreciated the way I handled priorities clearly and calmly.
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 12. What motivates you?
 
 10:25​ - 13. How do you handle stress or pressure?
 
