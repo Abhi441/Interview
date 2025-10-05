@@ -256,8 +256,49 @@ The bug count dropped by 30%, and
 My manager appreciated the way I handled priorities clearly and calmly.
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 12. What motivates you?
+S – Situation:
+When I work on a project where I can solve real problems using technology — like in my Buy and Sell Property application, I had to improve how fast property data loads for users.
+T – Task:
+My goal was to make the system faster and smoother for buyers and sellers so that their experience feels professional — like a real enterprise app.
+A – Action:
+I optimized API calls, used caching, and debugged performance issues deeply.
+I also learned new techniques (like asynchronous programming and caching) to make things efficient.
 
-10:25​ - 13. How do you handle stress or pressure?
+R – Result:
+The result was that the page load time improved by more than 50%, and users started spending more time on the platform.
+My manager appreciated my effort — and that feeling of creating real value really motivates me.
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////13. How do you handle stress or pressure?
+🧩 S — Situation (What was happening?)
+
+In my previous project, we were developing a Buy and Sell Property Application using .NET Core and Angular.
+Our team had 5 members — 2 backend developers, 2 frontend developers, and 1 tester.
+We had a tight deadline to deliver the property listing and booking module in 2 weeks.
+
+
+---
+
+🎯 T — Task (What was your role?)
+
+My role was to integrate the frontend (Angular) with the backend APIs (.NET Core),
+and make sure data like property details, prices, and owner info displayed correctly and updated in real time.
+
+
+---
+
+⚙️ A — Action (What did you do?)
+
+I started by:
+
+Coordinating daily with the backend team to finalize the API contracts.
+
+Using Postman to test the APIs before integration.
+
+Setting up Angular Interceptors for authentication.
+
+Working closely with the tester to fix data binding and validation issues quickly.
+
+Also helped another developer set up state management using a shared service.
 
 11:15​ - 14. Do you prefer working alone or in a team?
 
