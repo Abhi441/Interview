@@ -68,7 +68,7 @@ A – Action
 R – Result
 “As a result, I feel more confident and ready to take on challenging roles where I can deliver end-to-end solutions, contribute to innovation, and help the business grow faster. This is why I am looking for a change — to grow technically and add more value to the organization.”
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////05:00​ - 6. Why should we hire you?
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////6. Why should we hire you?
 S (Situation):
 In my previous role as a full stack .NET developer, we had a project where performance issues and bugs were delaying releases, and the client was unhappy.
 
@@ -90,6 +90,53 @@ R (Result):
 Because of this, the application performance improved a lot, client satisfaction increased, and we were able to deliver features 2 weeks ahead of schedule.
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////05:42​ - 7. Can you tell me about a time when you worked in a team?
+🧩 S — Situation (What was happening?)
+
+In my previous project, we were developing a Buy and Sell Property Application using .NET Core and Angular.
+Our team had 5 members — 2 backend developers, 2 frontend developers, and 1 tester.
+We had a tight deadline to deliver the property listing and booking module in 2 weeks.
+
+
+---
+
+🎯 T — Task (What was your role?)
+
+My role was to integrate the frontend (Angular) with the backend APIs (.NET Core),
+and make sure data like property details, prices, and owner info displayed correctly and updated in real time.
+
+
+---
+
+⚙️ A — Action (What did you do?)
+
+I started by:
+
+Coordinating daily with the backend team to finalize the API contracts.
+
+Using Postman to test the APIs before integration.
+
+Setting up Angular Interceptors for authentication.
+
+Working closely with the tester to fix data binding and validation issues quickly.
+
+Also helped another developer set up state management using a shared service.
+---
+
+🏁 R — Result (What happened finally?)
+
+✅ We delivered the module 2 days before the deadline.
+✅ There were zero major bugs during testing.
+✅ The manager appreciated our team coordination and clear communication.
+✅ This experience taught me how teamwork and open communication speed up delivery.
+
+
+
+
+
+
+
+
+
 
 06:31​ - 8. How do you handle criticism?
 
