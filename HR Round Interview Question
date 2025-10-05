@@ -131,8 +131,28 @@ Also helped another developer set up state management using a shared service.
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////8. How do you handle criticism?
+🧩 S – Situation
+In one of my previous projects, during a code review, my senior pointed out that my API naming and exception handling could be more consistent with team standards.
+---
+🎯 T – Task
+My task was to take that feedback positively, improve my code quality, and ensure the same mistake didn’t repeat in future development.
+---
 
-07:16​ - 9. How do you handle tight deadlines?
+⚙️ A – Action
+
+I didn’t take it personally — instead, I thanked him for the feedback.
+Then I rechecked the project guidelines, updated my APIs as per standards, and added exception middleware for consistent error handling.
+Later, I even created a small internal checklist so the team could review their own code before submitting.
+---
+
+🏆 R – Result
+
+As a result, not only did my code quality improve, but my senior appreciated my attitude towards learning.
+My approach helped reduce repeated review comments in our team and made delivery faster.
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////07:16​ - 9. How do you handle tight deadlines?
+
 
 08:04​ - 10. Can you tell me about a challenge you faced and how you overcame it?
 
