@@ -1053,7 +1053,7 @@ It provides all the tools — like a big toolbox — to write, compile, and run 
 
 1️⃣ CLR (Common Language Runtime)
 
-CLR - Common Language Runtime(CLR) manages the excution of programs written in any language that uses the .Net Framework, for example c# ,VB.Net , F# and so on .
+CLR - Common Language Runtime(CLR) manages the excution of programs written in any language that  uses the .Net Framework, for example c# ,VB.Net , F# and so on .
 
 Memory (Garbage Collection)
 
@@ -1072,7 +1072,7 @@ In your Buy & Sell Property Application, CLR helps execute all your backend C# l
 
 ---
 
-2️⃣ CLS (Common Language Specification)
+3️⃣ CTS (Common Type System) :
 
 CTS - CTS stands for Common Type System. It has a set of rules  which state how a data type should be declared, defined  and used in the program.
 
@@ -1082,7 +1082,7 @@ If another team writes a module in VB.NET (say reporting) and you use C#, CLS en
 
 ---
 
-3️⃣ CTS (Common Type System)
+ 2️⃣ CLS (Common Language Specification) :
 
 CLS - CLS stands for Common Language Specification and it is a subset of CTS. It defines a set of rules and restriction that every language must follow which runs under .net 
 framework.
