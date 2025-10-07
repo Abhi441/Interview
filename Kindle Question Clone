@@ -8491,3 +8491,99 @@ Your .NET application becomes cross-platform, reducing development cost.
 The runtime automatically optimizes your code for the machine it runs on, giving better performance.
 
 Developers don’t need to rewrite code for different operating systems — saving time and money.
+
+
+//////////////////////////////////////////////////////////////////////////////////I want to update the data by put request but that data is not available , what will happen ?
+
+Scenario
+
+You are sending a PUT request to update a record in the database —
+but the record (data) you are trying to update doesn’t exist.
+
+Example:
+
+PUT /api/users/10
+{
+  "name": "Abhishek",
+  "email": "abhi@test.com"
+}
+
+But there is no user with ID = 10 in the database.
+
+
+---
+
+🧠 What Happens
+
+By default, a PUT request is expected to update an existing resource.
+
+If the resource doesn’t exist, then there are two possible behaviors depending on your API design:
+
+
+
+---
+
+🅰️ Case 1: Most Common (Safe) Behavior
+
+✅ The server will return an error — usually HTTP 404 Not Found.
+This means:
+
+> “The data you want to update doesn’t exist in the system.”
+
+
+
+Example response:
+
+{
+  "status": 404,
+  "message": "User not found."
+}
+
+
+---
+
+🅱️ Case 2: Alternative Behavior (Upsert)
+
+Some APIs are designed to create the record if it doesn’t exist —
+this is called “Upsert” (Update + Insert).
+
+In that case:
+
+The same PUT request will create a new record with ID = 10.
+
+It will return 201 Created or 200 OK.
+
+
+Example response:
+
+{
+  "status": 201,
+  "message": "User created successfully."
+}
+
+
+---
+
+🧩 Summary (Easy to Remember)
+
+Situation Result Status Code
+
+Data exists Updated successfully 200 (OK)
+Data doesn’t exist Usually error 404 (Not Found)
+API supports Upsert Creates new data 201 (Created)
+
+
+
+---
+
+🏗️ Project Example (Buy & Sell Properties App)
+
+In your app —
+If you send a PUT request to update a property that doesn’t exist:
+
+PUT /api/properties/99
+
+→ Your API should return 404 Not Found,
+so that the frontend can show:
+
+> “Property not found. Please check the ID or create a new one.”
