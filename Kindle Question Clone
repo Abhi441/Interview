@@ -8406,3 +8406,88 @@ css
 Standlone component
 Monolotics and Microservices
 How the 2 services communicate with each other(if you are bringing data from one services and sending back to another services , How to get this is done from response).
+
+
+////////////////////////////////////////////////////////////////////////////////MSIL
+🧠 Definition (In Easiest Words)
+
+MSIL stands for Microsoft Intermediate Language.
+When you write C# code, it is not directly converted into machine code.
+Instead, the C# compiler first converts your code into MSIL — a middle language that any .NET platform can understand.
+
+At runtime, the CLR (Common Language Runtime) converts MSIL into machine code (specific to your computer’s processor).
+
+---
+
+🔍 Example
+
+Suppose you wrote this code in C#:
+
+int a = 10;
+int b = 20;
+int c = a + b;
+Console.WriteLine(c);
+
+When you compile this code:
+
+1. It gets converted to MSIL instructions like:
+
+ldloc.0
+ldloc.1
+add
+call WriteLine
+
+These are CPU-independent instructions.
+
+
+2. Then CLR takes this MSIL and converts it into machine code that your PC understands.
+
+
+
+
+---
+
+🏗️ Project Use (Buy & Sell Properties App)
+
+In your Buy & Sell Property Application, every time you build your project:
+
+Your C# controllers, services, and models are compiled into MSIL.
+
+When a user requests data (like viewing a property), CLR reads the MSIL, converts it to machine code, and executes it efficiently on the server.
+
+
+So basically, MSIL makes your .NET app portable and fast — it can run on any system where .NET runtime is available (Windows, Linux, macOS).
+
+
+---
+
+⚖️ Trade-offs
+
+✅ Advantages
+
+Platform independent (runs anywhere with .NET Runtime)
+
+Improves performance through JIT (Just-In-Time) Compilation
+
+Enables cross-language support (C#, VB.NET, F# etc. can work together)
+
+
+❌ Disadvantages
+
+Adds one extra compilation step (C# → MSIL → Machine Code)
+
+First-time execution may be slightly slower due to JIT compilation
+
+
+
+---
+
+💼 Business Impact
+
+Because of MSIL:
+
+Your .NET application becomes cross-platform, reducing development cost.
+
+The runtime automatically optimizes your code for the machine it runs on, giving better performance.
+
+Developers don’t need to rewrite code for different operating systems — saving time and money.
