@@ -8685,3 +8685,189 @@ Improves app reliability → fewer crashes due to bad input.
 > “Data Annotations in .NET Core are attributes we apply on model properties to perform validation automatically.
 In my Buy & Sell Property App, I used them to validate property details like price, name, and owner email before saving.
 It reduced code, improved data quality, and made the app more user-friendly.”
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Condition Data Annotation
+🧠 Definition (Simple words like for a 5-year-old):
+Conditional Data Annotation means —
+👉 "You apply validation only when a specific condition is true."
+
+For example:
+💬 “If IsMarried is true, then SpouseName should not be empty.”
+Otherwise, no need to check it.
+
+💻 Example (with explanation):
+✅ Step 1: Model class
+using System.ComponentModel.DataAnnotations;
+
+public class Person
+{
+    public bool IsMarried { get; set; }
+
+    [RequiredIf("IsMarried", true, ErrorMessage = "Spouse Name is required when married.")]
+    public string? SpouseName { get; set; }
+}
+✅ Step 2: Create custom attribute
+using System;
+using System.ComponentModel.DataAnnotations;
+using System.Reflection;
+
+public class RequiredIfAttribute : ValidationAttribute
+{
+    private readonly string _conditionProperty;
+    private readonly object _expectedValue;
+
+    public RequiredIfAttribute(string conditionProperty, object expectedValue)
+    {
+        _conditionProperty = conditionProperty;
+        _expectedValue = expectedValue;
+    }
+
+    protected override ValidationResult IsValid(object value, ValidationContext context)
+    {
+        var property = context.ObjectType.GetProperty(_conditionProperty);
+        if (property == null)
+            return new ValidationResult($"Unknown property: {_conditionProperty}");
+
+        var conditionValue = property.GetValue(context.ObjectInstance);
+
+        if (conditionValue?.ToString() == _expectedValue.ToString())
+        {
+            if (value == null || string.IsNullOrWhiteSpace(value.ToString()))
+            {
+                return new ValidationResult(ErrorMessage);
+            }
+        }
+
+        return ValidationResult.Success!;
+    }
+}
+💼 Project Use (Buy & Sell Property App)
+In your Buy & Sell Property application,
+you can use Conditional Data Annotation like this:
+
+If IsForRent = true, then RentAmount must be required.
+If IsForSale = true, then SellingPrice must be required.
+Example:
+
+public class Property
+{
+    public bool IsForRent { get; set; }
+
+    [RequiredIf("IsForRent", true, ErrorMessage = "Rent amount is required when property is for rent.")]
+    public decimal? RentAmount { get; set; }
+
+    public bool IsForSale { get; set; }
+
+    [RequiredIf("IsForSale", true, ErrorMessage = "Selling price is required when property is for sale.")]
+    public decimal? SellingPrice { get; set; }
+}
+⚖️ Trade-Off
+✅ Advantages	⚠️ Disadvantages
+Keeps model clean and readable	Needs custom attribute logic
+Automatically validates based on conditions	Might be harder to test if too many conditions
+No extra code in controller	Performance overhead if used heavily
+💡 Business Impact (Easy words):
+Using conditional data annotations ensures users don’t miss required fields based on their selections.
+👉 This improves data accuracy, reduces form errors, and saves developer time in writing manual checks.
+
+Would you like me to show the same validation working with Reactive Forms in Angular (frontend) for your Buy & Sell Property app?
+
+
+On Wed, 8 Oct, 2025, 4:45 pm abhishek singh, <abhisheksinghchauhan442@gmail.com> wrote:
+Here’s a very easy-to-understand explanation of “Data Annotation in .NET Core” — made for interview and real project answers 👇
+
+
+---
+
+🧠 Definition (5-year-old can understand):
+
+> “Data Annotations” are small labels (attributes) we put on our model properties to give extra meaning — like saying “this field is required,” “this should look like an email,” or “this number can’t be more than 100.”
+
+
+
+In short, they help validate data automatically before saving it to the database or processing it.
+
+
+---
+
+🧩 Example (with simple explanation):
+
+Let’s say we have a Property model in our Buy & Sell Property Application:
+
+using System.ComponentModel.DataAnnotations;
+
+public class Property
+{
+    [Key]
+    public int Id { get; set; }
+
+    [Required(ErrorMessage = "Property Name is required")]
+    [StringLength(100, ErrorMessage = "Property Name can't be longer than 100 characters")]
+    public string Name { get; set; }
+
+    [Range(100000, 100000000, ErrorMessage = "Price must be between 1 lakh and 10 crore")]
+    public decimal Price { get; set; }
+
+    [EmailAddress(ErrorMessage = "Please enter a valid email address")]
+    public string OwnerEmail { get; set; }
+}
+
+🔍 Explanation:
+
+[Key] → Marks Id as the Primary Key.
+
+[Required] → Makes sure Name cannot be empty.
+
+[StringLength(100)] → Limits the text length.
+
+[Range()] → Sets a price range.
+
+[EmailAddress] → Ensures a valid email format.
+
+
+
+---
+
+🧰 How it works in the project (Project Use):
+
+In the Buy & Sell Property App,
+
+When a user adds a property through a form, these annotations automatically check if the entered data is valid.
+
+If the name or price is missing, the API will return an error message before saving it to the database.
+
+This helps maintain clean and reliable data.
+
+
+
+---
+
+⚖️ Trade-Off:
+
+Advantage Disadvantage
+
+✅ Less manual code — validation happens automatically ❌ Only works for simple validation; for complex logic, you need custom validation attributes
+✅ Improves data consistency and security ❌ May not cover complex business rules directly
+
+
+
+---
+
+💼 Business Impact:
+
+Fewer bugs and cleaner data → users can’t submit wrong info.
+
+Faster development → less manual validation code.
+
+Improves app reliability → fewer crashes due to bad input.
+
+
+
+---
+
+🎯 **Interview Answer (Short & Impressive):
+
+> “Data Annotations in .NET Core are attributes we apply on model properties to perform validation automatically.
+In my Buy & Sell Property App, I used them to validate property details like price, name, and owner email before saving.
+It reduced code, improved data quality, and made the app more user-friendly.”
