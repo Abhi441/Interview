@@ -2907,6 +2907,9 @@ This way, the application knows who the user is and what they are allowed to do.
 
 Would you like me to also show you step-by-step Angular code (like how you store the JWT in localStorage and check role in guards for routing)? That’s another interview follow-up they usually ask.
 
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////State Management
+
 Great question, Abhishek 👍 because state management comes up a lot in interviews when they want to test whether you understand how web applications keep track of user data between requests.
 
 
