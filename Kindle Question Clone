@@ -8871,3 +8871,12 @@ Improves app reliability → fewer crashes due to bad input.
 > “Data Annotations in .NET Core are attributes we apply on model properties to perform validation automatically.
 In my Buy & Sell Property App, I used them to validate property details like price, name, and owner email before saving.
 It reduced code, improved data quality, and made the app more user-friendly.”
+
+
+
+//////////////////////////////////////
+//////////////////////////////////////citiesTech
+//////////////////////////////////////
+How many type of state management will be their in Angular ?
+How to improve the perform of entity framework?
+What is no tracking in Ef ?
