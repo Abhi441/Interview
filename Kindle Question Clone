@@ -8590,3 +8590,98 @@ PUT /api/properties/99
 so that the frontend can show:
 
 > “Property not found. Please check the ID or create a new one.”
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Data Anotation in .net
+
+
+> “Data Annotations” are small labels (attributes) we put on our model properties to give extra meaning — like saying “this field is required,” “this should look like an email,” or “this number can’t be more than 100.”
+
+
+
+In short, they help validate data automatically before saving it to the database or processing it.
+
+
+---
+
+🧩 Example (with simple explanation):
+
+Let’s say we have a Property model in our Buy & Sell Property Application:
+
+using System.ComponentModel.DataAnnotations;
+
+public class Property
+{
+    [Key]
+    public int Id { get; set; }
+
+    [Required(ErrorMessage = "Property Name is required")]
+    [StringLength(100, ErrorMessage = "Property Name can't be longer than 100 characters")]
+    public string Name { get; set; }
+
+    [Range(100000, 100000000, ErrorMessage = "Price must be between 1 lakh and 10 crore")]
+    public decimal Price { get; set; }
+
+    [EmailAddress(ErrorMessage = "Please enter a valid email address")]
+    public string OwnerEmail { get; set; }
+}
+
+🔍 Explanation:
+
+[Key] → Marks Id as the Primary Key.
+
+[Required] → Makes sure Name cannot be empty.
+
+[StringLength(100)] → Limits the text length.
+
+[Range()] → Sets a price range.
+
+[EmailAddress] → Ensures a valid email format.
+
+
+
+---
+
+🧰 How it works in the project (Project Use):
+
+In the Buy & Sell Property App,
+
+When a user adds a property through a form, these annotations automatically check if the entered data is valid.
+
+If the name or price is missing, the API will return an error message before saving it to the database.
+
+This helps maintain clean and reliable data.
+
+
+
+---
+
+⚖️ Trade-Off:
+
+Advantage Disadvantage
+
+✅ Less manual code — validation happens automatically ❌ Only works for simple validation; for complex logic, you need custom validation attributes
+✅ Improves data consistency and security ❌ May not cover complex business rules directly
+
+
+
+---
+
+💼 Business Impact:
+
+Fewer bugs and cleaner data → users can’t submit wrong info.
+
+Faster development → less manual validation code.
+
+Improves app reliability → fewer crashes due to bad input.
+
+
+
+---
+
+🎯 **Interview Answer (Short & Impressive):
+
+> “Data Annotations in .NET Core are attributes we apply on model properties to perform validation automatically.
+In my Buy & Sell Property App, I used them to validate property details like price, name, and owner email before saving.
+It reduced code, improved data quality, and made the app more user-friendly.”
