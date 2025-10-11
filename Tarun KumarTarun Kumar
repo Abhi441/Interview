@@ -6,7 +6,7 @@ Most Frequently Asked .NET Full Stack Interview Questions(covering .NET MVC, .NE
 2. Explain CLR, CTS, CLS.
 3. Difference between Value Types vs Reference Types.
 4. Boxing and Unboxing in C#.
-5. Explain async/await and Task vs ValueTask vs IAsyncEnumerable.
+5. Explain async/await and Task vs ValueTask vs IAsyncEnumerable
 6. What are Delegates, Func, Action, Predicate?
 7. Difference between abstract class vs interface.
 8. Explain Dependency Injection (DI) in .NET Core.
@@ -582,7 +582,113 @@ If you're preparing for a .NET Full Stack Developer role or mentoring someone wh
 3. What is Middleware in .NET Core?
 4. What is the role of Startup.cs file in ASP.NET Core?
 5. What is the use of appsettings.json? How do you read values from it?
-6. What is the difference between IActionResult and ActionResult<T>?
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////6. What is the difference between IActionResult and ActionResult<T>?
+ 1️⃣ Definition (in easiest words)
+
+IActionResult → It is an interface that represents the result of an action method (like Ok(), NotFound(), BadRequest() etc.).
+✅ You use it when your action can return multiple result types.
+
+ActionResult<T> → It is a generic version of ActionResult that can return both a specific data type (T) and HTTP status results like Ok() or NotFound().
+✅ You use it when your action returns data (like a model or DTO) and also status codes.
+
+
+
+---
+
+🧠 2️⃣ Example
+
+Using IActionResult
+
+[HttpGet("{id}")]
+public IActionResult GetProperty(int id)
+{
+    var property = _propertyService.GetPropertyById(id);
+    
+    if (property == null)
+        return NotFound(); // 404
+
+    return Ok(property); // 200 with data
+}
+
+Here, you return Ok() or NotFound(), both are different IActionResults.
+
+
+---
+
+Using ActionResult<T>
+
+[HttpGet("{id}")]
+public ActionResult<PropertyDto> GetProperty(int id)
+{
+    var property = _propertyService.GetPropertyById(id);
+
+    if (property == null)
+        return NotFound(); // 404
+
+    return property; // automatically wraps in Ok()
+}
+
+Here, ActionResult<PropertyDto> can return either:
+
+PropertyDto → data with 200 status, or
+
+NotFound() → 404 status.
+
+
+So, it’s type-safe and cleaner.
+
+
+---
+
+💼 3️⃣ Project Use (Buy & Sell Property App)
+
+In your Buy & Sell Property Application,
+you can use:
+
+IActionResult when you want to just return status — for example:
+
+[HttpPost]
+public IActionResult DeleteProperty(int id)
+{
+    bool deleted = _propertyService.Delete(id);
+    if (!deleted)
+        return NotFound();
+    return NoContent();
+}
+
+ActionResult<PropertyDto> when you want to return property details or error:
+
+[HttpGet("{id}")]
+public ActionResult<PropertyDto> GetProperty(int id)
+{
+    var property = _propertyService.GetById(id);
+    if (property == null)
+        return NotFound("Property not found");
+    return property;
+}
+
+
+
+---
+
+⚖️ 4️⃣ Trade-offs
+
+Feature IActionResult ActionResult<T>
+
+Return data with type safety ❌ No ✅ Yes
+Return multiple types (OK, NotFound) ✅ Yes ✅ Yes
+Easy unit testing ❌ Less easy ✅ Easier (strongly typed)
+Modern ASP.NET Core practice ⚠️ Legacy style ✅ Recommended
+
+
+
+---
+
+💡 5️⃣ Business Impact
+
+✅ Makes API responses consistent and predictable
+✅ Improves client integration (Angular or React apps get clear data types)
+✅ Reduces runtime errors, increasing stability and maintainability
 7. Explain the MVC architecture and how it works in ASP.NET Core.
 8. What is Dependency Injection in ASP.NET Core?
 9. What are the different types of dependency injection lifetimes?
