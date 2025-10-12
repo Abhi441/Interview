@@ -604,36 +604,109 @@ In your property app → it makes navigation smooth, professional, and user-frie
 its a process of matching incoming http requests to a corresponding endpoint where it will execute functions or necessary middlewares.
 
 //Type of Routing
-1> Conventional Routing
-Definition : Routing is defined in a central place (usually Program.cs) and follows a URL
-pattern convention like {controller}/{action}/{id}.
---> Used when your application follow a consistence structure or naming convention.
-//code
-app.MapControllerRoute(
-name : "defalut",
-pattern : "{controller = Home}/{action = Index}/{id?}");
+In ASP.NET Core, routing determines how HTTP requests are mapped to controller actions. There are two main types of routing:
 
-//Attribute Routing :
-Defination : Route are defined directly on controller or action using {Route} or [HttpGet("route")]
-or [HttpGet("route")] attributes.
-//Use cases:
-Used when you want custom URLs or more control over routing.
-// ProductController.cs
-[Route("products")]
-public class ProductController : Controller
+1. Conventional Routing (centralized in Program.cs)
+
+
+2. Attribute Routing (defined directly in controllers)
+
+
+
+
+---
+
+1️⃣ Conventional Routing
+
+👉 Defined centrally in Program.cs, applied to all controllers.
+👉 Uses URL patterns to match requests to actions.
+👉 Recommended for large applications with a standard URL structure.
+
+Example
+
+✅ Program.cs (Defining Conventional Routes)
+
+var builder = WebApplication.CreateBuilder(args);
+var app = builder.Build();
+
+// Define a default route
+app.UseRouting();
+app.UseEndpoints(endpoints =>
 {
-    [HttpGet("list")]
-    public IActionResult List()
-    {
-        return View();
-    }
+    endpoints.MapControllerRoute(
+        name: "default",
+        pattern: "{controller=Home}/{action=Index}/{id?}"); // Default route
+});
 
-    [HttpGet("details/{id}")]
+app.Run();
+
+✅ Controller with Conventional Routing
+
+public class ProductsController : Controller
+{
     public IActionResult Details(int id)
     {
-        return View();
+        return Content($"Product Details for ID: {id}");
     }
 }
+
+✅ URL Example
+
+GET /Products/Details/5
+
+The request will match {controller=Products}/{action=Details}/{id=5}.
+
+
+
+---
+
+2️⃣ Attribute Routing
+
+👉 Defined directly on controllers or actions using [Route] attributes.
+👉 Provides more control and flexibility for complex routes.
+👉 Useful when URLs don’t follow a standard structure.
+
+Example
+
+✅ Controller with Attribute Routing
+
+[Route("api/products")] // Base route for this controller
+public class ProductsController : Controller
+{
+    [HttpGet("details/{id}")] // Custom route for this action
+    public IActionResult GetProductDetails(int id)
+    {
+        return Content($"Product Details for ID: {id}");
+    }
+
+    [HttpGet("category/{categoryName}")] // Another custom route
+    public IActionResult GetProductsByCategory(string categoryName)
+    {
+        return Content($"Products in category: {categoryName}");
+    }
+}
+
+✅ URL Examples
+
+GET /api/products/details/5
+GET /api/products/category/electronics
+
+These routes do not depend on a global routing pattern.
+
+
+
+---
+
+Key Differences
+
+
+---
+
+When to Use Which?
+
+Use Conventional Routing when you have a standard structure for URLs.
+
+Use Attribute Routing for RESTful APIs or when URLs need flexibility.
 ///////////////////////////////////////////////////////////////////direct and indirect in Ado.net
 It can be direct or indirect. In other words "connected" or "disconnected".
 //////////////////////////////cluster and non cluster in sql
