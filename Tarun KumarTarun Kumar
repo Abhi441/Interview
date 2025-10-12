@@ -818,9 +818,122 @@ Promotes clean architecture Requires understanding of request flow
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////9. What are the different types of dependency injection lifetimes?
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////10. What is the use of ConfigureServices and Configure methods?
+Definition (Simple + Technical)
 
-✅ 11–20: Routing and Controllers
-11. How is routing handled in ASP.NET Core?
+In ASP.NET Core, the Startup class (or in .NET 6/7/8 the Program.cs file) has two main methods:
+
+🔹 ConfigureServices(IServiceCollection services)
+
+Used to register services that your app will use (like dependency injection setup).
+
+Example: adding database contexts, authentication, logging, caching, etc.
+
+Basically, you tell .NET what you’ll need in your app.
+
+
+🔹 Configure(IApplicationBuilder app, IWebHostEnvironment env)
+
+Used to configure the HTTP request pipeline.
+
+This defines how a request travels through middleware (e.g., logging → authentication → routing → controller).
+
+Basically, you tell .NET how to handle every request.
+
+
+
+---
+
+💻 2️⃣ Example Code (.NET 8 minimal setup)
+
+var builder = WebApplication.CreateBuilder(args);
+
+// ConfigureServices equivalent
+builder.Services.AddControllers();
+builder.Services.AddDbContext<AppDbContext>();
+builder.Services.AddAuthentication();
+builder.Services.AddMemoryCache();
+
+var app = builder.Build();
+
+// Configure equivalent
+if (app.Environment.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage();
+}
+
+app.UseHttpsRedirection();
+app.UseAuthentication();
+app.UseAuthorization();
+app.MapControllers();
+
+app.Run();
+
+In older versions (.NET 5 or lower), this same logic was split into the Startup.cs file with both ConfigureServices and Configure methods.
+
+
+---
+
+🏢 3️⃣ Project Use — Buy & Sell Properties App
+
+In your Buy & Sell Properties Application:
+
+In ConfigureServices, you can register:
+
+services.AddDbContext<PropertyDbContext>();
+services.AddScoped<IPropertyService, PropertyService>();
+services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+        .AddJwtBearer(...);
+services.AddCors(options => { ... });
+
+In Configure, you can define:
+
+app.UseCors("AllowSpecificOrigin");
+app.UseAuthentication();
+app.UseAuthorization();
+app.MapControllers();
+
+
+✅ So, when a user sends a request (like /api/properties), it passes through: CORS → Authentication → Authorization → Controller → Response.
+
+
+---
+
+⚖️ 4️⃣ Trade-offs
+
+Pros Cons
+
+Clean separation of service setup and pipeline Must understand middleware order carefully
+Highly testable and maintainable Mistakes in configuration can break authentication/routing
+Easy dependency injection Complex in large apps if not organized
+
+
+
+---
+
+💼 5️⃣ Business Impact
+
+Makes your app scalable and configurable without rewriting code.
+
+Helps manage features like authentication, logging, and CORS easily.
+
+In large apps (like your Buy/Sell platform), it ensures smooth communication between frontend (Angular) and backend (.NET) via consistent middleware setup.
+
+
+
+---
+
+✅ Interview Short Answer:
+
+> "ConfigureServices is used to register dependencies and app services like DB, caching, and authentication.
+Configure is used to define how requests are handled through middleware like routing, authentication, and exception handling.
+Together, they define the setup and execution flow of a .NET Core app."
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////✅ 11–20: Routing and Controllers
+
+
 12. Difference between Conventional Routing and Attribute Routing.
 13. How do you define custom routes in ASP.NET Core MVC?
 14. What are filters in ASP.NET Core? Types of filters?
