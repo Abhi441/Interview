@@ -689,10 +689,135 @@ Modern ASP.NET Core practice ⚠️ Legacy style ✅ Recommended
 ✅ Makes API responses consistent and predictable
 ✅ Improves client integration (Angular or React apps get clear data types)
 ✅ Reduces runtime errors, increasing stability and maintainability
-7. Explain the MVC architecture and how it works in ASP.NET Core.
-8. What is Dependency Injection in ASP.NET Core?
-9. What are the different types of dependency injection lifetimes?
-10. What is the use of ConfigureServices and Configure methods?
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////7. Explain the MVC architecture and how it works in ASP.NET Core.
+
+Perfect, Abhishek 👏
+
+Here’s how you can explain MVC architecture in ASP.NET Core confidently in an interview for a 7 years experienced .NET full stack developer — with clear technical points + real-world explanation 👇
+
+
+---
+
+🧩 Definition (Simple + Professional)
+
+MVC stands for Model–View–Controller — it’s an architectural design pattern used to separate an application into 3 main parts:
+
+1. Model → Handles the data and business logic.
+
+
+2. View → Handles the UI (what user sees).
+
+
+3. Controller → Handles user input and connects Model and View.
+
+
+
+It helps in separation of concerns, easy testing, and better maintainability.
+
+
+---
+
+⚙️ How It Works (Flow)
+
+Let’s see how MVC works step-by-step in ASP.NET Core:
+
+1. User Request → Controller
+
+A user types a URL or clicks a button.
+
+The request first goes to the Controller.
+
+Example: PropertyController.
+
+
+
+2. Controller → Model
+
+The controller asks the Model (C# classes) to get or update data from the database via Entity Framework / ADO.NET.
+
+Example: PropertyService.GetAllProperties().
+
+
+
+3. Model → Database → Model
+
+The model fetches data (like property listings or user details) and returns it to the controller.
+
+
+
+4. Controller → View
+
+The controller passes this data to the View (a .cshtml page).
+
+Example: return View(propertyList);
+
+
+
+5. View → User
+
+The view displays the data in a user-friendly format — HTML + Razor syntax.
+
+
+
+
+
+---
+
+🏠 Project Use (Buy & Sell Properties App)
+
+In your Property Buy & Sell Application:
+
+Model: Property, User, Transaction classes — these represent tables in the database.
+
+View: Razor pages showing property listings, details, and dashboards.
+
+Controller: PropertyController, AccountController, etc., handle user actions (buy, sell, search).
+
+
+📘 Example:
+
+public class PropertyController : Controller
+{
+    private readonly IPropertyService _service;
+
+    public PropertyController(IPropertyService service)
+    {
+        _service = service;
+    }
+
+    public IActionResult Index()
+    {
+        var properties = _service.GetAllProperties();
+        return View(properties);
+    }
+}
+
+
+---
+
+⚖️ Trade-offs
+
+Advantage Disadvantage
+
+Easy to maintain and test due to separation of concerns Can be overkill for very small apps
+Multiple developers can work in parallel (UI, Business, DB) More files and structure to manage
+Promotes clean architecture Requires understanding of request flow
+
+
+
+---
+
+💼 Business Impact
+
+✅ Faster development in large teams
+✅ Better code organization → fewer bugs
+✅ Easy to extend — e.g., adding new modules like Payments or Notifications without breaking old ones
+✅ Improves scalability and maintainability
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8. What is Dependency Injection in ASP.NET Core?
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////9. What are the different types of dependency injection lifetimes?
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////10. What is the use of ConfigureServices and Configure methods?
 
 ✅ 11–20: Routing and Controllers
 11. How is routing handled in ASP.NET Core?
