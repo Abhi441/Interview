@@ -463,7 +463,143 @@ We can include the next parameter into it, which calls the next request delegate
 ///app.Map() Method
 The map branches the request pipeline based on matches of the given request path.
 
-///////////////////////////////////////////////////////////////////////type of routing in sql
+///////////////////////////////////////////////////////////////////////Routing
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+How is routing handled in ASP.NET Core ?
+
+Routing,(Defination, Project use ,Trade-off + Business Impact ) with so easy word for human being.
+
+
+
+
+
+Let’s break Routing into very easy words with Definition, Project Use, Trade-off, and Business Impact 👇
+
+
+
+
+
+---
+
+
+
+Definition (Simple Words)
+
+
+
+Routing is like a GPS for your application.
+
+
+
+It decides where a request should go when a user clicks something or types a URL.
+
+
+
+In Backend (.NET) → Routing decides which controller and action method should handle a request.
+
+
+
+In Frontend (Angular) → Routing decides which component/page to show to the user.
+
+
+
+
+
+
+
+---
+
+
+
+Project Use (Buy & Sell Properties App)
+
+
+
+In your Buy & Sell Properties Application:
+
+
+
+If a user goes to /properties, routing shows the Property Listing Page.
+
+
+
+If a user clicks on a property → /properties/101, routing opens the Property Details Page.
+
+
+
+If a user goes to /admin/dashboard, routing shows the Admin Dashboard.
+
+
+
+
+
+👉 Without routing, everything would load on one page, and users wouldn’t know where they are.
+
+
+
+
+
+---
+
+
+
+Trade-offs (Pros & Cons)
+
+
+
+✅ Pros:
+
+
+
+Makes app organized (clear paths for each feature).
+
+
+
+Better user experience (like moving between pages on a website).
+
+
+
+Easy to maintain → if you add a new page, just add a new route.
+
+
+
+
+
+⚠️ Cons:
+
+
+
+More routes → more complexity in big applications.
+
+
+
+Wrongly configured routes → users may land on wrong or broken pages.
+
+
+
+Extra work to handle security (e.g., blocking normal users from /admin).
+
+
+
+
+
+
+
+---
+
+
+
+Business Impact (Simple Words)
+Good Routing → Users can easily search, view, and buy properties.
+Bad Routing → Users get frustrated (e.g., clicking on “Property Details” but landing on “Login Page”), and may leave your app.
+Routing also helps in SEO (Search Engine Optimization) → clear URLs like /buy-property/delhi improve chances of your app showing up in Google search.
+---
+✅ In short:
+
+Routing = traffic police of your app → decides where each user should go.
+
+In your property app → it makes navigation smooth, professional, and user-friendly, which directly increases trust and sales.
+
 //What is routing
 its a process of matching incoming http requests to a corresponding endpoint where it will execute functions or necessary middlewares.
 
