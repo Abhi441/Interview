@@ -933,10 +933,126 @@ Together, they define the setup and execution flow of a .NET Core app."
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////✅ 11–20: Routing and Controllers
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////13. How do you define custom routes in ASP.NET Core MVC?
+Definition (In Easy Words)
 
-12. Difference between Conventional Routing and Attribute Routing.
-13. How do you define custom routes in ASP.NET Core MVC?
-14. What are filters in ASP.NET Core? Types of filters?
+Custom routing in ASP.NET Core MVC means defining your own URL patterns instead of using the default ones.
+
+By default, ASP.NET Core uses this route pattern:
+
+/{controller=Home}/{action=Index}/{id?}
+
+But in custom routing, we can create meaningful URLs like:
+
+/buy/property/101  
+/sell/property/new
+
+This helps in SEO, user readability, and better organization.
+
+
+---
+
+⚙️ Code Example – Custom Route Definition
+
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+
+public class Startup
+{
+    public void ConfigureServices(IServiceCollection services)
+    {
+        services.AddControllersWithViews();
+    }
+
+    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+    {
+        if (env.IsDevelopment())
+            app.UseDeveloperExceptionPage();
+
+        app.UseRouting();
+
+        app.UseEndpoints(endpoints =>
+        {
+            // ✅ Custom Route 1: For Property Details
+            endpoints.MapControllerRoute(
+                name: "propertyDetails",
+                pattern: "property/details/{id:int}",
+                defaults: new { controller = "Property", action = "Details" });
+
+            // ✅ Custom Route 2: For Admin Dashboard
+            endpoints.MapControllerRoute(
+                name: "adminRoute",
+                pattern: "admin/dashboard",
+                defaults: new { controller = "Admin", action = "Dashboard" });
+
+            // ✅ Default Route
+            endpoints.MapControllerRoute(
+                name: "default",
+                pattern: "{controller=Home}/{action=Index}/{id?}");
+        });
+    }
+}
+
+
+---
+
+🏗 Project Use — Buy & Sell Property Application
+
+In your Buy & Sell Property App,
+you can use custom routing for:
+
+/buy/property/{id} → For buyer property details
+
+/admin/manage/users → For admin panel management
+
+/seller/dashboard → For seller login area
+
+
+Example:
+
+endpoints.MapControllerRoute(
+    name: "buyerProperty",
+    pattern: "buy/property/{id:int}",
+    defaults: new { controller = "Property", action = "Details" });
+
+✅ It makes URLs clean, SEO-friendly, and easier for users to remember.
+
+
+---
+
+⚖️ Trade-offs
+
+Advantage Disadvantage
+
+Custom URLs improve SEO and readability You must maintain consistency for all custom routes
+Helps in organizing complex modules Complex apps need route versioning/testing
+Improves security by hiding real controller/action names Slightly more configuration overhead
+
+
+
+---
+
+💼 Business Impact
+
+Clean URLs improve user experience and search engine ranking.
+
+Helps customers find properties faster via shareable links.
+
+Reduces confusion for marketing and analytics tracking.
+
+
+
+---
+
+🎯 Interview-Ready Summary
+
+> “In my project, we define custom routes in Startup.cs using MapControllerRoute.
+For example, in our Buy & Sell Property app, we have routes like /buy/property/{id} for buyers and /admin/dashboard for admins.
+It improves SEO, gives clean URLs, and helps in modular structure of the app.”
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////14. What are filters in ASP.NET Core? Types of filters?
 15. What is the difference between TempData, ViewData, and ViewBag?
 16. What is Model Binding in ASP.NET Core MVC?
 17. How does model validation work in ASP.NET Core?
