@@ -1122,7 +1122,6 @@ Top 50 Full Stack Developer Interview Questions**, Mostly asked in MNCs like Del
 23. Logging in ASP.NET Core.
 24. `appsettings.json` configuration.
 25. API security in Core.
-26. Filters in ASP.NET Core.
 27. Dependency Injection in Core.
 28. Model Binding vs Validation.
 29. Endpoint Routing.
@@ -1275,7 +1274,6 @@ Angular
 
 7. Explain MVC architecture with a real-time project example.
 8. Difference between TempData, ViewData, and ViewBag.
-9. What are different types of Filters in MVC?
 10. How does routing work in MVC? Explain attribute routing.
 
 ---
@@ -1312,7 +1310,6 @@ Angular
 3.What are Middleware components in ASP.NET Core?
 4.Difference between AddScoped, AddSingleton, and AddTransient?
 5.How does routing work in ASP.NET Core?
-6.What are Filters in MVC/Core and their types?
 7.Explain MVC architecture with a real-time example.
 8.Difference between TempData, ViewData, and ViewBag?
 9.What is the use of Partial Views in MVC?
