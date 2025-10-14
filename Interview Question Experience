@@ -237,8 +237,121 @@ It follows disconnected architecture.
 
 dataadaptet - A DataAdapter bridges the gap between the disconnected DataSet/ DataTable objects and the physical database. 
 
-/////////////////////////////////////////////////////What is filter.
-see in the Keendal.
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////What is filter and types.
+Definition (In very simple words):
+
+> Filters in ASP.NET Core are like "hooks" or "checkpoints" that run before or after certain stages in the request pipeline — for example, before your controller runs, after it executes, when results are sent, or when exceptions occur.
+
+
+
+Think of them like security guards or quality checkers standing at different doors of your MVC pipeline.
+
+
+---
+
+⚙️ Why we use Filters:
+
+✅ To perform common logic across multiple controllers/actions (without repeating code).
+✅ To apply cross-cutting concerns such as:
+
+Authentication & Authorization
+
+Logging
+
+Exception handling
+
+Caching
+
+Validation
+
+
+
+---
+
+🧩 Types of Filters in ASP.NET Core
+
+Filter Type When It Runs Common Use Example
+
+1️⃣ Authorization Filter Before anything else (first checkpoint) Checks if user is authorized [Authorize]
+2️⃣ Resource Filter Before & after model binding Handle caching, performance optimization Custom caching filter
+3️⃣ Action Filter Before & after controller action executes Logging, validation, modify input/output [ActionFilter]
+4️⃣ Exception Filter When an exception occurs Handle exceptions globally [CustomExceptionFilter]
+5️⃣ Result Filter Before & after result (like View or JSON) executes Modify or format result [ResultFilter]
+
+
+
+---
+
+💻 Example (Custom Action Filter)
+
+using Microsoft.AspNetCore.Mvc.Filters;
+using System.Diagnostics;
+
+public class LogActionFilter : ActionFilterAttribute
+{
+    private Stopwatch stopwatch;
+
+    public override void OnActionExecuting(ActionExecutingContext context)
+    {
+        stopwatch = Stopwatch.StartNew();
+        Console.WriteLine($"Action {context.ActionDescriptor.DisplayName} started at {DateTime.Now}");
+    }
+
+    public override void OnActionExecuted(ActionExecutedContext context)
+    {
+        stopwatch.Stop();
+        Console.WriteLine($"Action {context.ActionDescriptor.DisplayName} finished in {stopwatch.ElapsedMilliseconds} ms");
+    }
+}
+
+Usage:
+
+[LogActionFilter]
+public class PropertyController : ControllerBase
+{
+    [HttpGet("get-properties")]
+    public IActionResult GetProperties()
+    {
+        return Ok(new { message = "Property list fetched successfully!" });
+    }
+}
+
+
+---
+
+🏠 Project Example (Buy & Sell Properties App):
+
+Scenario:
+In your property application, you need to log each API call made by users to track performance and detect issues.
+
+✅ You can use an Action Filter to log every request.
+✅ You can use an Exception Filter to log and return friendly messages when something crashes.
+✅ You can use a Result Filter to format all responses in a standard JSON format.
+
+
+---
+
+⚖️ Trade-Off:
+
+✅ Pros: Clean, reusable, centralized logic (no code duplication).
+
+⚠️ Cons: Too many filters can make debugging hard — because code runs before/after controller automatically.
+
+
+
+---
+
+💼 Business Impact:
+
+Using filters helps your project:
+
+Improve security (Authorization filters)
+
+Improve user experience (Exception filters for friendly errors)
+
+Improve maintainability (Centralized logic)
+
+Improve performance tracking (Action filters)
 ///////////////////////////////////What is Inheritance and Type of Inheritance
 The following are some key points about inheritance:
 
