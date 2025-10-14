@@ -1,0 +1,148 @@
+https://download.packt.com/free-ebook/9781805129936
+https://github.com/PacktPublishing/ASP.NET-Core-8-and-Angular?tab=readme-ov-file
+The book "ASP.NET Core 8 and Angular" by Valerio De Sanctis is a comprehensive guide aimed at developers who wish to build modern, full-stack web applications using ASP.NET Core 8 and Angular 17. It provides practical insights into integrating these technologies to create scalable and maintainable applications.
+
+
+---
+
+📚 Key Concepts and Topics Covered
+
+1. Introduction to ASP.NET and Angular
+
+Overview of ASP.NET Core 8 and Angular 17.
+
+Setting up the development environment.
+
+Understanding the integration between frontend and backend.
+
+
+2. Getting Ready
+
+Installing necessary tools and dependencies.
+
+Configuring Visual Studio 2022 for full-stack development.
+
+
+3. Looking Around
+
+Exploring the project structure and understanding the flow between Angular and ASP.NET Core.
+
+
+4. Front-End and Back-End Interactions
+
+Establishing communication between Angular frontend and ASP.NET Core backend.
+
+Handling HTTP requests and responses.
+
+
+5. Data Model with Entity Framework Core
+
+Designing data models using Entity Framework Core.
+
+Setting up SQL Server 2022 and building a data model.
+
+Implementing CRUD operations.
+
+
+6. Fetching and Displaying Data
+
+Retrieving data from the backend using Angular services.
+
+Displaying data in Angular components.
+
+
+7. Forms and Data Validation
+
+Creating reactive forms in Angular.
+
+Implementing front-end and back-end validation techniques.
+
+
+8. Code Tweaks and Data Services
+
+Optimizing code for better performance.
+
+Creating reusable data services in Angular.
+
+
+9. Back-End and Front-End Debugging
+
+Debugging techniques for both ASP.NET Core and Angular applications.
+
+Using browser developer tools and Visual Studio debugging features.
+
+
+10. ASP.NET Core and Angular Unit Testing
+
+Writing unit tests for ASP.NET Core APIs using xUnit.
+
+Testing Angular components and services using Jasmine and Karma.
+
+
+11. Authentication and Authorization
+
+Implementing authentication and authorization using JWTs.
+
+Securing APIs and frontend routes.
+
+
+12. Progressive Web Apps (PWAs)
+
+Converting a standard web application into a Progressive Web Application.
+
+Enhancing user experience with offline capabilities and push notifications.
+
+
+13. Beyond REST – Web API with GraphQL
+
+Implementing GraphQL APIs using HotChocolate in ASP.NET Core.
+
+Consuming GraphQL APIs in Angular using Apollo Angular.
+
+
+14. Real-Time Updates with SignalR
+
+Adding real-time functionality to Angular apps using SignalR.
+
+Implementing live notifications and chat features.
+
+
+15. Windows, Linux, and Azure Deployment
+
+Deploying applications to Windows Server with IIS.
+
+Setting up deployments on Linux servers.
+
+Publishing applications to Azure Static Web Apps and Azure App Services.
+
+
+
+---
+
+🧠 Learning Outcomes
+
+By the end of this book, you will:
+
+Understand the interplay between front-end Angular apps and ASP.NET Core back-end services.
+
+Implement secure authentication and authorization mechanisms with JWTs and Angular route guards.
+
+Convert conventional web apps into Progressive Web Applications (PWAs) with modern tools.
+
+Add real-time capabilities to your applications using SignalR and gRPC integration.
+
+Deploy robust ASP.NET and Angular applications across Windows, Linux, and Azure environments.
+
+
+
+---
+
+👥 Target Audience
+
+This book is ideal for developers who have some familiarity with ASP.NET Core and Angular and want to learn how to use them effectively together. Whether you're aiming to upscale your current projects or dive into professional web development, this book empowers you to achieve these objectives.
+
+
+---
+
+If you're interested in a specific chapter or concept from the book, feel free to ask, and I can provide more detailed information or examples!
+
