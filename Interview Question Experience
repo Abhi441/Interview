@@ -240,8 +240,7 @@ dataadaptet - A DataAdapter bridges the gap between the disconnected DataSet/ D
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////What is filter and types.
 Definition (In very simple words):
 
-> Filters in ASP.NET Core are like "hooks" or "checkpoints" that run before or after certain stages in the request pipeline — for example, before your controller runs, after it executes, when results are sent, or when exceptions occur.
-
+> ASP.NET MVC Filter is a custom class where you can write custom logic to excute before an after an action method executes.
 
 
 Think of them like security guards or quality checkers standing at different doors of your MVC pipeline.
