@@ -2,7 +2,6 @@
 Most Frequently Asked .NET Full Stack Interview Questions(covering .NET MVC, .NET Core, Web API, EF Core, SQL Server, Angular)
 
 🔹 .NET / C# Core Concepts
-2. Explain CLR, CTS, CLS.
 3. Difference between Value Types vs Reference Types.
 4. Boxing and Unboxing in C#.
 5. Explain async/await and Task vs ValueTask vs IAsyncEnumerable
