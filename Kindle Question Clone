@@ -483,6 +483,90 @@ Console.WriteLine("childrenllall Print");
 }
 }
 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////Q) 18 Boxing and UnBoxing
+🧠 Definition (Easy Words)
+
+👉 Boxing is the process of converting from value type to refrence type.
+👉 Unboxing is the process of converting refrence type to value type.
+
+
+---
+
+🧩 Example (With Explanation)
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int num = 10; // ✅ Value type
+        object obj = num; // ✅ Boxing — num is boxed into object
+        int newNum = (int)obj; // ✅ Unboxing — object is converted back to int
+
+        Console.WriteLine($"Original: {num}, After Unboxing: {newNum}");
+    }
+}
+
+💬 Step-by-Step Explanation:
+
+1. int num = 10; → This is a value type (stored in stack memory).
+
+
+2. object obj = num; → Boxing happens — it puts num into an object box (stored in heap).
+
+
+3. int newNum = (int)obj; → Unboxing happens — the value is taken out of the box and converted back to int.
+
+
+
+
+---
+
+🏗️ Project Use (Buy & Sell Properties App)
+
+In your Buy & Sell Property Application, boxing/unboxing can happen:
+
+When you store values (like PropertyID, Price, etc.) in a collection like ArrayList or object type, because those store objects, not value types.
+
+When you log numeric data or send it as an object to some generic function.
+
+
+Example:
+
+ArrayList propertyData = new ArrayList();
+propertyData.Add(1001); // Boxing: int → object
+int id = (int)propertyData[0]; // Unboxing: object → int
+
+
+---
+
+⚖️ Trade-offs
+
+👍 Advantage 👎 Disadvantage
+
+Allows value types to be used where objects are required Slower performance (extra memory + CPU overhead)
+Useful for generic or flexible data storage Too much boxing/unboxing can hurt app speed
+
+
+
+---
+
+💼 Business Impact
+
+In enterprise apps, boxing/unboxing should be avoided in performance-critical code (like APIs that fetch thousands of records).
+
+Instead, use Generics (List<T>, Dictionary<TKey, TValue>) to prevent unnecessary boxing and make code faster.
+
+
+
+---
+
+🎯 Interview-Ready Summary
+
+> “Boxing is when a value type is wrapped inside an object, and unboxing is when we extract it back.
+In my project, I faced this while using non-generic collections like ArrayList, so I moved to generic List<int> to improve performance and avoid unnecessary boxing and unboxing.”
 ////////////////////////////////Q> 32
 
 Difference between ArrayList and Hashtable in C#
