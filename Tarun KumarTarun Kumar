@@ -1,8 +1,7 @@
 ////////////////////////////////////////////////////////////////////////https://www.linkedin.com/in/tarun-kumar-480601184/recent-activity/all/
 Most Frequently Asked .NET Full Stack Interview Questions(covering .NET MVC, .NET Core, Web API, EF Core, SQL Server, Angular)
 
-🔹 .NET / C# Core Concepts
-3. Difference between Value Types vs Reference Types.
+🔹 .NET / C# Core Concept
 4. Boxing and Unboxing in C#.
 5. Explain async/await and Task vs ValueTask vs IAsyncEnumerable
 6. What are Delegates, Func, Action, Predicate?
