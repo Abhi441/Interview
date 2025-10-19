@@ -9054,3 +9054,356 @@ Resource Usage Server uses fewer threads
 Cost Saves hosting cost due to better scalability
 
 
+///////////////////////////////////////////////////////////////////////////////////////
+What are Delegates, Func, Action, Predicate?
+
+////////////////////////////////////////////////////Func
+How to Explain Func in C# (L2 Interview Level) Easily:
+
+
+---
+
+Definition:
+
+A Func is a built-in delegate in C# that represents a method that returns a value. It can accept up to 16 input parameters and one return type.
+
+
+---
+
+Real-World Analogy:
+
+Think of a Func as a calculator—you give it some numbers (inputs), it processes them, and gives you the result (output).
+
+
+---
+
+Syntax:
+
+Func<input1, input2, ..., inputN, returnType>
+
+The last type is always the return type.
+
+All types before that are input parameters.
+
+
+
+---
+
+Code Example 1: Basic Func with One Parameter
+
+using System;
+
+namespace FuncExample
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Step 1: Define a Func that takes one integer and returns its square
+            Func<int, int> square = x => x * x;
+
+            // Step 2: Call the Func
+            int result = square(5);
+
+            // Step 3: Display the result
+            Console.WriteLine("Square of 5 is: " + result);
+        }
+    }
+}
+
+Output:
+
+Square of 5 is: 25
+
+
+-- -
+
+Code Example 2: Func with Multiple Parameters
+
+using System;
+
+namespace FuncExample
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Step 1: Define a Func that takes two integers and returns their sum
+            Func<int, int, int> add = (x, y) => x + y;
+
+            // Step 2: Call the Func
+            int sum = add(10, 20);
+
+            // Step 3: Display the result
+            Console.WriteLine("Sum of 10 and 20 is: " + sum);
+        }
+    }
+}
+
+Output:
+
+Sum of 10 and 20 is: 30
+
+
+-- -
+
+Explanation:
+
+1.Delegate Declaration:
+
+Func<int, int> means it takes one integer and returns an integer.
+
+Func<int, int, int> means it takes two integers and returns an integer.
+
+
+
+2. Lambda Expression:
+
+x => x * x is the logic written in short form.
+
+(x, y) => x + y for addition.
+
+
+
+3. Inline and Easy:
+
+You don't need to write a separate method—just define and use.
+
+
+
+
+
+---
+
+Key Points to Mention in the Interview:
+
+1.Predefined Delegate: No need to create custom delegates.
+
+
+2. Supports Multiple Parameters: Can handle up to 16 inputs.
+
+
+3. Always Returns a Value: Unlike Action, Func always returns something.
+
+
+4. Perfect for LINQ and Functional Programming: Works well with Select(), Where(), and other LINQ methods.
+
+
+
+
+---
+
+Would you like me to explain the difference between Func, Action, and Predicate next? This is a common follow-up in L2 interviews.
+
+
+///////////////////////////////////////////////////////////////Action
+How to Explain Action in C# in the Interview (L2 Round) with Simple Code?
+
+
+---
+
+What is Action in C#?
+
+Action is a built-in delegate in C# that points to a method that does not return a value (void) but can take 0 to 16 parameters.
+
+Think of it as a way to pass a method as a parameter.
+
+
+
+---
+
+Real-World Analogy
+
+If you want someone to execute a task like "Send an Email" or "Print a Document," you give them the action to perform.In C#, you give it as an Action.
+
+
+---
+
+Example 1: Action with No Parameters
+
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Step 1: Define an Action that points to a method with no parameters
+        Action sayHello = () => Console.WriteLine("Hello, World!");
+
+        // Step 2: Invoke the Action
+        sayHello();
+    }
+}
+
+Output:
+
+Hello, World!
+
+
+-- -
+
+Explanation
+
+1.Action sayHello: This is an Action delegate with no parameters.
+
+
+2. () => Console.WriteLine("Hello, World!");: This is a lambda expression that gets called.
+
+
+3. sayHello();: We call the Action like a method.
+
+
+
+
+---
+
+Example 2: Action with Parameters
+
+If you want the Action to take parameters, just specify the types:
+
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Step 1: Define an Action that accepts two parameters
+        Action<string, int> displayInfo = (name, age) =>
+        {
+            Console.WriteLine($"Name: {name}, Age: {age}");
+        };
+
+        // Step 2: Invoke the Action with parameters
+        displayInfo("Abhishek", 28);
+    }
+}
+
+Output:
+Name: Abhishek, Age: 28
+-- -
+
+Key Points to Mention in Interview:
+
+1.Action is a Delegate: It is a predefined delegate for methods with void return type.
+
+
+2. Supports Multiple Parameters: It can take up to 16 parameters.
+
+
+3. No Return Value: Unlike Func, it does not return any value.
+
+
+4. Used for Callbacks: Often used for event handling, callbacks, and invoking methods.
+
+
+
+
+---
+
+Would you like me to explain the difference between Action, Func, and Predicate next?
+
+
+/////////////////////////////////////////////////////////////////Predicates
+How to Explain Predicate in C# in the Interview (L2 Round) with Simple Code?
+
+
+---
+
+What is Predicate in C#?
+
+A Predicate is a built-in delegate in C# that represents a method that takes one input parameter and returns a boolean value (true or false).
+
+It is generally used to filter or search for items in collections like lists or arrays.
+
+
+
+---
+
+Real-World Analogy
+
+Imagine you have a list of students and you want to find out who is above 18 years old. You can use a Predicate to define this condition.
+
+
+---
+
+Example 1: Basic Predicate Usage
+
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Step 1: Define a Predicate to check if a number is even
+        Predicate<int> isEven = number => number % 2 == 0;
+
+        // Step 2: Test the Predicate
+        Console.WriteLine(isEven(10)); // Output: True
+        Console.WriteLine(isEven(15)); // Output: False
+    }
+}
+
+Output:
+
+True
+False
+
+
+---
+
+Explanation
+
+1.Predicate<int> isEven: Defines a Predicate that accepts an int and returns a bool.
+
+
+2. number => number % 2 == 0: This lambda expression checks if the number is even.
+
+
+3. isEven(10): Invokes the Predicate with the value 10, and it returns true.
+
+
+
+
+---
+
+Example 2: Predicate with List Filtering
+
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        List<int> numbers = new List<int> { 5, 10, 15, 20, 25, 30 };
+
+        // Step 1: Define a Predicate to find numbers greater than 15
+        Predicate<int> isGreaterThan15 = num => num > 15;
+
+        // Step 2: Find all numbers that match the condition
+        List<int> filteredNumbers = numbers.FindAll(isGreaterThan15);
+
+        // Step 3: Display the result
+        Console.WriteLine("Numbers greater than 15:");
+        filteredNumbers.ForEach(Console.WriteLine);
+    }
+}
+
+Output:
+
+Numbers greater than 15:
+20
+25
+30
+
+
+-- -
+
+Explanation
+
+1.FindAll(isGreaterThan15): Uses the Predicate to find all numbers greater than 15.
+
+
+2. ForEach(Console.WriteLine): Prints each number that matches the condition.
+
+
