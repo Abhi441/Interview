@@ -482,8 +482,40 @@ public now void Print()
 Console.WriteLine("childrenllall Print");
 }
 }
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////What is the diffrence between An Abstract class and An Interface ?
+1) 1. Abstract class contains both DECLAR-ATION & DEFINITION of methods.
+1) Interface contains ONLY DECLARATION of methods.
+
+public abstarct class Employee
+{
+public Employee()
+{
+}
+private string Name;
+public abstract void Project(); // Method Declare
+
+public void Role()    // Method Define
+{
+Console.WriteLine(""Software Engineer);
+}
+}
 
 
+//
+interface IEployee
+{
+public void Project();
+public void Manager();
+}
+2. Abstract class keyword: ABSTRACT, Inter-face keyword: INTERFACE
+
+3. Abstract class can contain methods, fields, constants, constructor.
+
+Interface can contain undefined methods only nothing else.
+
+4. Abstract class does not Support MULTIPLE INHERITANCE
+
+Interface supports multiple inheritance
 ////////////////////////////////////////////////////////////////////////////////////////////////////Q) 18 Boxing and UnBoxing
 🧠 Definition (Easy Words)
 
