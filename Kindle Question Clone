@@ -759,6 +759,9 @@ class Program
 => Delegate is a variable that holds the refrences to a methods.Or you can say it's a pointer to a function.
 => A delegate can  refre to more  than one methods  of same return  type and parameters.
 
+Think of it like :
+"You give someone your contact number(delegate), they can call you(method) when needed".
+
 //
 👨‍💻 Code Example (Super Easy):
 
