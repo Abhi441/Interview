@@ -1026,6 +1026,160 @@ public class Program
 PaymentService doesn’t care how the notification is shown — it's decoupled.
 
 We just inject the logic using a delegate
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Explain Generics in C# ? When And why to use Them ?
+Definition (In Easy Words)
+
+Generics in C# means — writing code once that can work with any data type.
+
+💬 Like saying:
+
+> “I don’t care whether it’s int, string, or Customer — I’ll handle it in a type-safe way.”
+
+
+
+So instead of creating multiple methods or classes for different data types, you can write one generic method or class that works for all types.
+
+
+---
+
+🧩 Example
+
+❌ Without Generics (Old Way)
+
+public class DataStore
+{
+    public object Data { get; set; }
+}
+
+You can store anything, but you lose type safety and need to do casting:
+
+DataStore store = new DataStore();
+store.Data = "Hello";
+string value = (string)store.Data; // Need casting — risky
+
+
+---
+
+✅ With Generics (Modern Way)
+
+public class DataStore<T>
+{
+    public T Data { get; set; }
+}
+
+Now you can do this:
+
+DataStore<string> nameStore = new DataStore<string>();
+nameStore.Data = "Abhishek"; // Type-safe — only string allowed
+
+DataStore<int> ageStore = new DataStore<int>();
+ageStore.Data = 25; // Type-safe — only int allowed
+
+✅ No casting
+✅ Type safety
+✅ Reusable code
+
+
+---
+
+🧱 Types of Generics
+
+1. Generic Classes
+
+Example: List<T>, Dictionary<TKey, TValue>, DataStore<T>
+
+
+
+2. Generic Methods
+
+public void Print<T>(T value)
+{
+    Console.WriteLine(value);
+}
+
+
+3. Generic Interfaces
+
+Example: IRepository<T> for data access.
+
+
+
+4. Generic Delegates
+
+Example: Func<T>, Action<T>, Predicate<T>
+
+
+
+
+
+---
+
+💼 Project Use (Buy & Sell Property Application)
+
+In your Buy & Sell Property App, you might use Generics in:
+
+1. Repository Pattern
+
+public interface IRepository<T>
+{
+    IEnumerable<T> GetAll();
+    T GetById(int id);
+    void Add(T entity);
+}
+
+public class Repository<T> : IRepository<T>
+{
+    // Common DB logic for Property, User, Payment, etc.
+}
+
+✅ You write database logic once and reuse it for all entities.
+
+
+2. Response Wrappers
+
+public class ApiResponse<T>
+{
+    public bool Success { get; set; }
+    public string Message { get; set; }
+    public T Data { get; set; }
+}
+
+✅ You can return ApiResponse<Property> or ApiResponse<User> easily.
+
+
+
+
+---
+
+⚖️ Trade-offs
+
+Pros Cons
+
+Type-safe and reusable Can get complex to read for beginners
+No boxing/unboxing overhead Harder debugging in advanced nested types
+Cleaner and DRY code Reflection and serialization sometimes tricky
+
+
+
+---
+
+💡 Business Impact
+
+✅ Less Code, Fewer Bugs: Reduces duplication in large-scale apps.
+✅ Better Performance: Type safety and no boxing/unboxing.
+✅ Easier Maintenance: One fix updates all types.
+
+
+---
+
+🎯 Interview-Ready Short Answer
+
+> “Generics in C# let us create classes, methods, and interfaces that can work with any data type in a type-safe way.
+In my Buy & Sell Property app, I used Generics in Repository and API Response classes to make my data layer reusable and maintainable.
+It reduced code duplication and improved performance.”
+
+
 ////////////////////////////////////////////////////////////////Q 42
 //What is Multiple delegate 
 =>A multiple Delegate is a delegate that holds the refrences of more than one function.
