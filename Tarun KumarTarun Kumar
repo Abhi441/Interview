@@ -2,9 +2,6 @@
 Most Frequently Asked .NET Full Stack Interview Questions(covering .NET MVC, .NET Core, Web API, EF Core, SQL Server, Angular)
 
 🔹 .NET / C# Core Concept
-4. Boxing and Unboxing in C#.
-5. Explain async/await and Task vs ValueTask vs IAsyncEnumerable
-6. What are Delegates, Func, Action, Predicate?
 7. Difference between abstract class vs interface.
 8. Explain Dependency Injection (DI) in .NET Core.
 9. What are Generics in C# and their benefits?
