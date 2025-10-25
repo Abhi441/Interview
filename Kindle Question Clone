@@ -9705,3 +9705,796 @@ Object vs Dynamic
 Task.Sleep
 
 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////Most asked Question refine answer
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////Reflection
+-->Reflection means loocking inside your code(like classes, methods , properties) at runtime.
+It allows your program to know about itself and work types and members dynamically - even if you  didn't hardcode them.
+
+It's like your code holding a miror and saying,
+"Hey, what classes, methods , or proprties do I have? Let me check and use them!"
+
+//when to use
+Used when your code needs to work with unknown types or flexible data.
+
+code
+class program
+{
+public string Name;
+public string Age;
+}
+
+class Program
+{
+static void Main()
+{
+Type type = typeof(Person);
+
+foreach(var prop in type.GetProperties())
+{
+ Console.WriteLine(prop.Name);
+}
+}
+}
+
+//
+Great 👍 let’s break Reflection in C# into definition, project use, trade-offs, and business impact with very easy words 👇
+
+📝 Definition
+Reflection in C# is a feature that lets your program inspect itself at runtime.
+Using Reflection, you can look at a class’s properties, methods, constructors, attributes even if you don’t know them at compile time.
+You can also create objects, call methods, or access fields dynamically.
+👉 Think of it like a mirror 🪞 → your program looks at itself and decides what to do.
+
+💻 Project Use (Buy & Sell Properties App)
+In your property application, Reflection can be useful in:
+
+Dynamic Mapping – Suppose you are importing property data from Excel/CSV where column names may change. Using Reflection, you can dynamically map columns to model properties.
+
+Serialization/Deserialization – When converting Property objects into JSON or XML, Reflection is used internally to inspect object properties.
+
+Validation & Custom Attributes – If you create a custom attribute [OwnerOnlyAccess], Reflection helps the system check at runtime whether a user has permission.
+
+✅ Example Code:
+
+public class Property
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+}
+
+var property = new Property { Id = 101, Name = "Luxury Villa" };
+
+// Reflection Example: Get all properties
+Type type = property.GetType();
+foreach (var prop in type.GetProperties())
+{
+    Console.WriteLine($"{prop.Name} = {prop.GetValue(property)}");
+}
+👉 Output:
+
+Id = 101
+Name = Luxury Villa
+⚖️ Trade-offs
+✅ Pros:
+
+Very powerful → dynamic behavior without knowing everything at compile time.
+Used in frameworks like ASP.NET Core, Entity Framework, JSON.NET (they all rely on Reflection).
+Great for generic solutions (serialization, mapping, dependency injection).
+❌ Cons:
+
+Performance overhead → slower than normal method calls.
+Harder to debug → since things happen at runtime.
+Security risk → can expose private methods/fields if not restricted.
+💼 Business Impact
+🚀 Flexibility → Your property application can easily handle dynamic data structures without rewriting code.
+📉 Risk of slowness → If overused (for every request), it can make the app slower, which may hurt user experience.
+🔒 Security concerns → Needs careful handling so attackers can’t misuse Reflection to access private data.
+💰 Cost-effective → Reduces development effort because you can build generic reusable logic (e.g., automatic mapping/serialization).
+👉 In short:
+Reflection = Mirror for your code.
+It gives flexibility to inspect and modify objects dynamically, but must be used wisely to avoid performance and security issues.
+
+
+
+///////////////////////////
+why c# doesnot uses multiple inheritance
+
+-->C# does not support multiple class inheritance to avoid ambiguity(Diamond Problem).
+-->But you can use multiple interfaces, which gives flexibility without confusion.
+--> Because it can create confusion and conflicts especially when two parent classes have the same method or property name.
+--> This is called the diamond Problem - and c# avoids it by not allowing a class to inherit from more than one class.
+
+Real life example
+Two bosses -->  diffrent instructions -->  same task --> now you are confuse.
+
+Class A
+   /      \
+Class B   Class C
+   \      /
+    Class D
+
+In this scenario, if Class B and Class C both inherit a method from Class A, then Class D could inherit two conflicting versions of that method. C# avoids this ambiguity by allowing only single inheritance,
+ensuring that each class has a clear and singular parent class.
+
+//////////////////////////////////////what is diffrence between DbContext and DbSet
+DbContext : Manages the connection to the database.
+DbSet : Represent a table in the database and provide methods to interact with data in the table
+what is DBcontext and DBset.
+DbContext :
+Think of DbContext as a bridge between your c# code and your database. It is like a manager rthat handles the interaction with database, like retrieving, updating ,and saving data.
+
+what id does : It connects to the database and helps you work the data.
+Where it is used : In Entity Framework Core to represent your database connection.
+
+DbSet:
+DbSet is like a collection of a special type of data from the database(like a table).It allows yoiu to perform operations(add, delete,update etc.)
+on the table.
+
+What it does : Represent a table in your database and gives you access to the rows(records) of the table.
+Where it is used : Inside the DbContest to interract with specific table.
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////C# bit confusing Concept
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////
+Method Hinding
+
+public class Parent
+{
+    public void Display()
+    {
+        Console.WriteLine("Parent Display");
+    }
+}
+
+public class Child : Parent
+{
+    public new void Display()
+    {
+        Console.WriteLine("Child Display");
+    }
+}
+
+Parent p = new Parent();
+p.Display(); // Parent Display
+
+Child c = new Child();
+c.Display(); // Child Display
+
+Parent pc = new Child();
+pc.Display(); // Parent Display
+
+////////////////////////////////////////////
+Method Overring
+
+public class Animal
+{
+    public virtual void Eat()
+    {
+        Console.WriteLine("This animal eats food.");
+    }
+}
+
+public class Dog : Animal
+{
+    public override void Eat()
+    {
+        Console.WriteLine("Dog barks.");
+    }
+}
+
+public class Program
+{
+    public static void Main()
+    {
+        Animal myDog = new Dog();
+        myDog.Eat(); //Output : Dog barks
+    }
+}
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Concept Practical Ans Cenario
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////Dependency Injection
+////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////Conceptual
+/////////////////////////////////////////What is dependency Injection and Why is it important ?
+Dependency Injection(DI) is a design patter used in Software developemnt to manage dependencies 
+between object and promote loose coupling.
+
+////////////////////////////////////////////////////////////////////Explain the diffrence between Dependency Injection and Inversion of control.
+Ioc is a principle that says "a class  should not control its dependencies".
+//Imagine you go to a restaturent .Instead of cooking food yourself, the resturent provdes food to you .You  don't contol cooking , you only eat. 
+DI ia a ways to implement IOC by injecting dependencies (via constructor , property or method) instead of creating them inside.
+
+////////////////////////////////////////////////////////////////What are the type of Dependency Injection , And When you would each ?
+1) Constructor Injection(Most common) : 
+1) Most common type.
+2) When the dependency is required always.
+
+Example :
+public class OrderService
+{
+private readonly IPaymentService _paymentService;
+
+//Constructor Injection
+public OrderService(IPaymentService paymentService)
+{
+_paymentService = paymentService;
+}
+
+public void Placement()
+{
+ _paymentService.ProcessPayment();
+}
+}
+
+//Property Injection:
+1) When dependency is optional.
+2)Example : Logging -> a service can work without logging, but if available, it will use it.
+
+
+//Method Services :
+1) Used when dependency is needed only in one method.
+
+/////////////////////////////////////////////////////What are the some challenges using dependencies Injection ?
+Dependency Injection is powerful but has some challenges. It can make code harder for beginners, add some extra complexity in samll apps , 
+dedugging issue like missing registrations can be tricky and there's a little performance overhead.Also , if overused , ot can lead to too many hidden dependencies .
+
+//////////////////////////////////////////////////////////////Practicle Question
+//////////////////////////////How do you implement DI in .NetCore ?
+/////With Dependency Injection
+public interface IPaymentService
+{
+ void ProcessPayment();
+}
+
+public void ProcessPayment : IPaymentService
+{
+Console.WriteLine("Payment process.");
+}
+//
+public class OrderService
+{
+Private readonly IPaymentService _paymentService;
+//Dependency Injection via Constructor.
+public OrderService(IPaymentService paymentService)
+{
+_paymentService = paymentService ;
+}
+}
+
+--> OrderService depends on the IPaymentService interfaces, not the console process payment class.
+--> Easily replaced with a mock implementation during testing.
+
+
+//////////////////////////////////////////What is diffrence between AddTransient , AddScoped , And AddSingleton.
+
+//Singleton
+A single instance is shared across the application life cycle.
+Service instances are disposed at application shutdown.
+
+builder.Services.AddSingleton<IService, Service>(); //Singleton Service
+
+Example : Application-wise configuration settings , shared caches,Logger service(N LOG , Serilog)
+
+//Scoped
+A Single instance is created of the service is created per Scope(e.g , per HTTP Service in a web application).
+
+builder.Services.AddScoped<IService, Service>(); //Scoped Service
+
+Example : User-specific data , transaction, Database Context
+//Transient
+A new instance of the service is created every time , it is requested.
+builder.Services.AddTransient<IService, Service>(); //Transient Service
+Example : helper classes , New GUI Number
+/////////////////////////////////////////////////////////////////////////////How would you handle circular dependencies in DI ?
+🔄 What is Circular Dependency in DI?
+
+It happens when two or more classes depend on each other directly or indirectly, so DI container gets stuck trying to build them.
+
+Example:
+
+public class ServiceA
+{
+    private readonly ServiceB _serviceB;
+    public ServiceA(ServiceB serviceB) { _serviceB = serviceB; }
+}
+
+public class ServiceB
+{
+    private readonly ServiceA _serviceA;
+    public ServiceB(ServiceA serviceA) { _serviceA = serviceA; }
+}
+
+Here:
+
+ServiceA needs ServiceB
+
+ServiceB needs ServiceA
+➡️ Infinite loop 🔁
+
+
+
+---
+
+✅ How to Handle Circular Dependencies in DI?
+
+1. Re-design the classes (Best Solution)
+
+Usually, circular dependencies are a design smell 🚨.
+
+Try to split responsibilities or introduce a third class (mediator).
+
+Example:
+
+Instead of ServiceA ↔ ServiceB, make ServiceC handle coordination.
+
+
+
+
+
+
+---
+
+2. Use Interfaces instead of concrete classes
+
+Break direct dependency.
+
+
+public interface IServiceA { }
+public class ServiceA : IServiceA { }
+public class ServiceB 
+{
+    private readonly IServiceA _serviceA;
+    public ServiceB(IServiceA serviceA) { _serviceA = serviceA; }
+}
+
+
+
+
+---
+
+3. Use Lazy Injection (Lazy<T> or Func<T>)
+
+Load dependency only when it’s really needed, avoiding the infinite loop.
+
+
+public class ServiceA
+{
+    private readonly Lazy<ServiceB> _serviceB;
+    public ServiceA(Lazy<ServiceB> serviceB) { _serviceB = serviceB; }
+}
+
+
+
+
+---
+
+4. Property Injection (rare)
+
+Instead of constructor injection, let DI set the property later.
+
+
+public class ServiceA
+{
+    public ServiceB ServiceB { get; set; }
+}
+
+
+
+
+---
+
+🏢 Real-World Example
+
+Database + Logging:
+
+If Repository depends on Logger, and Logger depends on Repository for saving logs → circular dependency ❌.
+
+Fix: Let Logger log independently, don’t make it depend on Repository.
+
+
+🔄 What is Circular Dependency in DI?
+
+It happens when two or more classes depend on each other directly or indirectly, so DI container gets stuck trying to build them.
+
+Example:
+
+public class ServiceA
+{
+    private readonly ServiceB _serviceB;
+    public ServiceA(ServiceB serviceB) { _serviceB = serviceB; }
+}
+
+public class ServiceB
+{
+    private readonly ServiceA _serviceA;
+    public ServiceB(ServiceA serviceA) { _serviceA = serviceA; }
+}
+
+Here:
+
+ServiceA needs ServiceB
+
+ServiceB needs ServiceA
+➡️ Infinite loop 🔁
+
+
+
+---
+
+✅ How to Handle Circular Dependencies in DI?
+
+1. Re-design the classes (Best Solution)
+
+Usually, circular dependencies are a design smell 🚨.
+
+Try to split responsibilities or introduce a third class (mediator).
+
+Example:
+
+Instead of ServiceA ↔ ServiceB, make ServiceC handle coordination.
+
+
+
+
+
+
+---
+
+2. Use Interfaces instead of concrete classes
+
+Break direct dependency.
+
+
+public interface IServiceA { }
+public class ServiceA : IServiceA { }
+public class ServiceB 
+{
+    private readonly IServiceA _serviceA;
+    public ServiceB(IServiceA serviceA) { _serviceA = serviceA; }
+}
+
+
+
+
+---
+
+3. Use Lazy Injection (Lazy<T> or Func<T>)
+
+Load dependency only when it’s really needed, avoiding the infinite loop.
+
+
+public class ServiceA
+{
+    private readonly Lazy<ServiceB> _serviceB;
+    public ServiceA(Lazy<ServiceB> serviceB) { _serviceB = serviceB; }
+}
+
+
+
+
+---
+
+4. Property Injection (rare)
+
+Instead of constructor injection, let DI set the property later.
+
+
+public class ServiceA
+{
+    public ServiceB ServiceB { get; set; }
+}
+
+
+
+
+---
+
+🏢 Real-World Example
+
+Database + Logging:
+
+If Repository depends on Logger, and Logger depends on Repository for saving logs → circular dependency ❌.
+
+Fix: Let Logger log independently, don’t make it depend on Repository.
+///////////////////////////////////////////////////////////////////////////What happen if a required denpendencies is not registored in the DI Container.
+
+
+
+What happens if a required dependency is NOT registered in the DI container?
+
+👉 If you try to use (resolve) a dependency that is not registered in the DI container, the application will throw an error at runtime.
+
+In .NET, this error usually looks like:
+
+InvalidOperationException: Unable to resolve service for type 'MyApp.Services.IMyService' 
+while attempting to activate 'MyApp.Controllers.HomeController'.
+
+
+---
+
+🧠 Example:
+
+public interface IMyService
+{
+    string GetData();
+}
+
+public class MyService : IMyService
+{
+    public string GetData() => "Hello from Service!";
+}
+
+public class HomeController : ControllerBase
+{
+    private readonly IMyService _service;
+
+    public HomeController(IMyService service) // dependency needed here
+    {
+        _service = service;
+    }
+
+    [HttpGet]
+    public string Get() => _service.GetData();
+}
+
+If you forget to register it in Program.cs / Startup.cs like this:
+
+builder.Services.AddScoped<IMyService, MyService>();
+
+When you run the app, it crashes with an exception, because DI container doesn’t know how to create IMyService.
+
+
+---
+
+🔑 Real-World Impact
+
+If dependency is not registered → App won’t even start properly or API request will fail immediately.
+
+This is why proper DI registration is critical in enterprise apps.
+
+
+
+---
+
+✅ Interview-Smart Answer:
+"If a required dependency is not registered in the DI container, .NET will throw an InvalidOperationException at runtime because it cannot resolve the service. To avoid this, we must ensure all required dependencies are properly registered in Program.cs or Startup.cs. Tools like unit tests and build-time checks can also help catch missing registrations early."
+
+
+////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////Middleware
+///////////////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////Conceptual Middleware Question
+///////////////////////////////////////////////////////////////////////////////////What is Middleware in ASP.NetCore
+
+Middleware is software that sits in the request-response pipeline and process HTTP request and response in an application.
+
+///////////////////////////////////////////////////////Why is Middleware importantant ?
+It provide a modular approaches to add cross-cutting  concerns like logging , authentication and error handling.
+
+////////////////////////////////////////////////////How does Middleware differ from HttpModules in .Net framework.
+Middleware is lightweight , modular and uses an explicit pipeline , unlike the eveny- driven approaches of httpModule.
+
+/////////////////////////////////////////////////////////////////////////////////////////PracticleModule
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////Exception HANDLING
+///////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////
+ Scenario-Based Questions on try-catch in C#
+
+/////////////////////////////////////////////////////////////////////////1. What happens if an exception occurs and there is no catch block?
+
+👉 Interviewer wants to check if you know about unhandled exceptions.
+Answer: The application will crash if the exception is not handled.
+
+
+---
+
+////////////////////////////////////////////////////////////////////////2. Can we have multiple catch blocks?
+
+👉 Scenario: You’re connecting to a database, and you want to handle SqlException differently from a general Exception.
+Answer: Yes, multiple catch blocks are allowed, and they run top-to-bottom, so the most specific exception type should come first.
+
+
+---
+
+///////////////////////////////////////////////////////////////////////////////3. What if exception occurs inside catch block?
+
+👉 Example: You log the error in a file, but logging itself throws an exception.
+Answer: If another exception happens inside catch, and it’s not handled, the program will still crash. That’s why logging frameworks are often used (to minimize this risk).
+
+
+---
+
+///////////////////////////////////////////////////////////////////////////////////4. Can finally block be skipped?
+
+👉 Scenario: You’re closing a database connection in finally. Will it always run?
+Answer: finally always runs except in two cases:
+
+If the program crashes due to Environment.FailFast() or system crash
+
+If the process is terminated (e.g., kill command).
+
+
+
+---
+
+///////////////////////////////////////////////////////////////////////////////5. What happens if both catch and finally have return statements?
+
+👉 Example:
+
+try { return 1; }
+catch { return 2; }
+finally { return 3; }
+
+Answer: The finally return will override everything. Output will be 3.
+
+
+---
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////6. Can we use try without catch?
+
+👉 Scenario: You only want to clean up resources.
+Answer: Yes, try can be used with finally only, no catch is required.
+
+
+---
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////7. What’s the difference between throw ex; and throw;?
+
+👉 Scenario: You caught an exception, logged it, and want to re-throw.
+Answer:
+
+With throw ex;
+The stack trace shows the exception originating in MethodA (re-throw line).
+With throw;
+The stack trace shows the exception originating in MethodB (actual divide by zero line).
+
+///////Example throw ex
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        try
+        {
+            MethodA();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Caught in Main:");
+            Console.WriteLine(ex);
+        }
+    }
+
+    static void MethodA()
+    {
+        try
+        {
+            MethodB();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Logging in MethodA: " + ex.Message);
+
+            // Try switching between "throw ex;" and "throw;"
+            throw ex; // or just throw;
+        }
+    }
+
+    static void MethodB()
+    {
+        int x = 0;
+        int y = 5 / x; // Exception originates here
+    }
+}
+
+////////Example throw
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        try
+        {
+            MethodA();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Caught in Main:");
+            Console.WriteLine(ex);
+        }
+    }
+
+    static void MethodA()
+    {
+        try
+        {
+            MethodB();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Logging in MethodA: " + ex.Message);
+
+            // Try switching between "throw ex;" and "throw;"
+            throw ex; // or just throw;
+        }
+    }
+
+    static void MethodB()
+    {
+        int x = 0;
+        int y = 5 / x; // Exception originates here
+    }
+}
+
+---
+
+8. Nested try-catch blocks: which one handles exception?
+
+👉 Scenario: You have a try-catch inside another try-catch.
+Answer: The nearest catch block that matches the exception type will handle it.
+
+
+---
+
+9. Can a finally block throw an exception? What happens then?
+
+👉 Scenario: You’re closing a file in finally and that itself throws.
+Answer: Yes, it can throw, and if it does, the new exception hides the original one. This can make debugging harder.
+
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////CLASS And OBJECT
+///////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////Basic Question
+//What is the diffrence between a class and an Object ?
+class :-> Blueprint , doesn't occupy memory.
+Object :-> Instance of a class. Occupies memory and represent real-world entity.
+
+//////////////////////////////////////////////////////////Can you create an object without a class ?
+No, in oops  object are instance f classes . you need a class to create an object.
+
+///////////////////////////////////////////////////////////Can you have multiple Onject
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
