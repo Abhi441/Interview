@@ -10573,6 +10573,2350 @@ Conclusion
 By following these steps, you can easily add new columns to an existing table using Entity Framework Core in .NET Core. The process involves modifying the model, creating a migration, and applying the migration to update the database schema.
 
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////Interview Question Experience
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+to///////////////////////////////////////////////////OOPs
+
+/////////////////////////////////////////Inheritance
+//namespace Pro
+//{ 
+
+//class Employee
+//{
+//    int a = 10;
+//    public  void CalculateSalary()
+//    {
+//        Console.WriteLine("CalculateSalary");
+//    }
+//}
+
+//class Department : Employee
+//{
+//    int b = 20;
+//    public  void Depart()
+//    {
+//        Console.WriteLine("This  is DepartMent");
+//    }
+//}
+
+//class Program
+//{
+//    public static void Main()
+//    {
+//        Department Dm = new Department();
+
+//           Dm.CalculateSalary(); // CalculateSalary method is not present Department class but we can call the CalculateSalary() by refrences of Department class.
+
+//    }
+// }
+//}
+
+///////////////////PolyMorphism
+///Overloading (compile time check)
+//class Employee
+//{
+//    public void ClaculateSalary(int a, int b)
+//    {
+//        Console.WriteLine(a * b);
+//    }
+//    public void ClaculateSalary(int a, int b, int c) // changing the number of parameter
+//    {
+//        Console.WriteLine(a * b * c);
+//    }
+//    public void ClaculateSalary(long a, int b, int c)
+//    {
+//        Console.WriteLine(a * b * c);
+//    }
+
+//}
+
+//class Program
+//{
+// public static void Main(string[] args)
+//   {
+//        Employee Em = new Employee();
+
+//        Em.ClaculateSalary(3, 4);
+//        Em.ClaculateSalary(3, 4 , 5);
+//        Em.ClaculateSalary(300000000000, 4, 5);
+
+//    }
+//}
+
+//Overrding
+//Overriding in c# allows a subclass(derived class) to provide a specific implementation of a method that is already defind in its base class.
+//It is achieved using the virtual keyword in the base class and the override keyword in the derived class.
+
+////Example:
+//using System ;
+
+//public class Animal
+//{
+//   public virtual void MakeSound()
+//    {
+//        Console.WriteLine("Animal makes the sound");
+//    }
+//}
+
+//public class Dog : Animal
+//{
+//    public override void MakeSound()
+//    {
+//        Console.WriteLine("Dog barks");
+//    }
+//}
+
+//public class Cat : Animal
+//{
+//    public override void MakeSound()
+//    {
+//        Console.WriteLine("Cat meows");
+//    }
+//}
+
+//public class Program
+//{
+//    public static void Main(string[] args)
+//    {
+//        Animal myDog = new Dog();
+//        Animal myCat = new Cat();
+//        // Polymorphic behavior - the method called is determined at runtime
+//        myDog.MakeSound(); //Dog bargs  // Method selection is based on object type not refrence type.
+//        myCat.MakeSound(); //Cat meows  // Even when refrence as Animal , the overriden method in Dog or cat is called.
+//        // when overriden is not used the base class method is called.
+//    }
+//}
+
+///////////////////////////////////////////////////////Abstraction
+//It is the process of hinding implementation details and showing only the essential features of an object .
+// In C# , abstraction is achived using Abstarct Classes and Interfaces.
+
+//1> Abstract Class
+//    -> An abstract class is declared with the abstract keyword.
+//    -> It cannot be instantiated directly.
+//    -> It can contain abstract methods (no implementation) and concrete methods (with Implementation).
+//    -> Abstract methods must be overriden in derived classes.
+//    
+
+//Interfaces
+//An interfaces is a constract that define the signatures of methods , properties , events , or indexers.
+//It only contains method declarations, not  implementations.
+// Classes that implement the interface must provide implementations for all its methods.
+
+//using System;
+//public abstract class Vehicle
+//{
+//    public abstract void StartEngine();// only the declaration is provided; the implementation 
+
+//    public void DisplayInfo()
+//    {
+//        Console.WriteLine("This is a vehicle");
+//    }
+//}
+
+//public class Car : Vehicle
+//{
+//    public override void StartEngine()
+//    {
+//        Console.WriteLine("Car engion started");
+//    }
+//}
+
+//public interface IRefuelable
+//{
+//    void Refuel();
+//}
+
+//public class Bike : Vehicle , IRefuelable
+//{
+//    public override void StartEngine()
+//    {
+//        Console.WriteLine("Bikes engion started");
+//    }
+
+//    public void Refuel()
+//    {
+//        Console.WriteLine("Bike refueled.");
+//    }
+//}
+
+//public class Program
+//{
+//   public static void Main(string[] args)
+//    {
+//        Vehicle car = new Car();
+//        car.StartEngine(); // Car engine started.
+//        car.DisplayInfo(); // This is a vehicle.
+
+//        Bike bike = new Bike();
+//        bike.StartEngine();  //Bike engion started.
+//        bike.Refuel();       //Bike refueled
+//    }
+//}
+
+//    ///////////////////////////////Encapsulation
+//    //
+// class Employee
+//{
+//    private int experience; //This feild can not be excess without Property.
+//    public int Experience
+//    {
+//        get
+//        {
+//            return experience;
+//        }
+//        set
+//        {
+//            experience = value;
+//        }
+//    }
+//}
+
+//class Program
+//{
+//    public static void Main(string[] args)
+//    {
+//        Employee em = new Employee();
+//        em.Experience = 10;
+//    }
+
+//}
+
+//////////////////////////Reflection
+/////////what is reflection in c#
+reflection in C# is a way for your program to look at itself. It lets you inspect the structure of types (like classes, methods, properties) at runtime
+//////////Why we use reflection in c#
+We use reflection in C# to dynamically inspect, invoke, and manipulate assemblies, types, methods, and properties at runtime, allowing for more flexible and adaptable code, such as for creating plug-in architectures, dynamic object creation, 
+or accessing metadata and invoking methods without knowing the specifics at compile-time.
+
+/////////////////////////////////////////codeforce,Dataforce
+////////////////////////which kind of Jwt that you are using.
+Explain in JWT.
+//////////////////////////////////////////why c# doesnot uses multiple inheritance
+/////////////1>Avoiding the Diamond Problem
+    Class A
+   /      \
+Class B   Class C
+   \      /
+    Class D
+
+The diamond problem occurs when a class inherits from two classes that both inherit from a common base class.
+This can cause ambiguity in determining which version of a method or property should be inherited from the base class.
+In this scenario, if Class B and Class C both inherit a method from Class A, then Class D could inherit two conflicting versions of that method. C# avoids this ambiguity by allowing only single inheritance,
+ensuring that each class has a clear and singular parent class.
+2>Simplicity and Maintainability
+////////////////////////////////////////////what is DBcontext and DBset.
+DBcontest - An instance of DbContext is responsible to hold a set of DbSets' and represent a connection with database.
+DBset - Represents a single database table; each column is represented as a model property.
+/////////////////////////////////////what is dataset and dataadaptet
+DataSet class - A DataSet is basically a container which gets the data from one or more then one tables from the database.
+It follows disconnected architecture.
+
+dataadaptet - A DataAdapter bridges the gap between the disconnected DataSet/ DataTable objects and the physical database. 
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////What is filter and types.
+Definition (In very simple words):
+
+> ASP.NET MVC Filter is a custom class where you can write custom logic to excute before an after an action method executes.
+
+
+Think of them like security guards or quality checkers standing at different doors of your MVC pipeline.
+
+
+---
+
+⚙️ Why we use Filters:
+
+✅ To perform common logic across multiple controllers/actions (without repeating code).
+✅ To apply cross-cutting concerns such as:
+
+Authentication & Authorization
+
+Logging
+
+Exception handling
+
+Caching
+
+Validation
+
+
+
+---
+
+🧩 Types of Filters in ASP.NET Core
+
+Filter Type When It Runs Common Use Example
+
+1️⃣ Authorization Filter Before anything else (first checkpoint) Checks if user is authorized [Authorize]
+2️⃣ Resource Filter Before & after model binding Handle caching, performance optimization Custom caching filter
+3️⃣ Action Filter Before & after controller action executes Logging, validation, modify input/output [ActionFilter]
+4️⃣ Exception Filter When an exception occurs Handle exceptions globally [CustomExceptionFilter]
+5️⃣ Result Filter Before & after result (like View or JSON) executes Modify or format result [ResultFilter]
+
+
+
+---
+
+💻 Example (Custom Action Filter)
+
+using Microsoft.AspNetCore.Mvc.Filters;
+using System.Diagnostics;
+
+public class LogActionFilter : ActionFilterAttribute
+{
+    private Stopwatch stopwatch;
+
+    public override void OnActionExecuting(ActionExecutingContext context)
+    {
+        stopwatch = Stopwatch.StartNew();
+        Console.WriteLine($"Action {context.ActionDescriptor.DisplayName} started at {DateTime.Now}");
+    }
+
+    public override void OnActionExecuted(ActionExecutedContext context)
+    {
+        stopwatch.Stop();
+        Console.WriteLine($"Action {context.ActionDescriptor.DisplayName} finished in {stopwatch.ElapsedMilliseconds} ms");
+    }
+}
+
+Usage:
+
+[LogActionFilter]
+public class PropertyController : ControllerBase
+{
+    [HttpGet("get-properties")]
+    public IActionResult GetProperties()
+    {
+        return Ok(new { message = "Property list fetched successfully!" });
+    }
+}
+
+
+---
+
+🏠 Project Example (Buy & Sell Properties App):
+
+Scenario:
+In your property application, you need to log each API call made by users to track performance and detect issues.
+
+✅ You can use an Action Filter to log every request.
+✅ You can use an Exception Filter to log and return friendly messages when something crashes.
+✅ You can use a Result Filter to format all responses in a standard JSON format.
+
+
+---
+
+⚖️ Trade-Off:
+
+✅ Pros: Clean, reusable, centralized logic (no code duplication).
+
+⚠️ Cons: Too many filters can make debugging hard — because code runs before/after controller automatically.
+
+
+
+---
+
+💼 Business Impact:
+
+Using filters helps your project:
+
+Improve security (Authorization filters)
+
+Improve user experience (Exception filters for friendly errors)
+
+Improve maintainability (Centralized logic)
+
+Improve performance tracking (Action filters)
+///////////////////////////////////What is Inheritance and Type of Inheritance
+The following are some key points about inheritance:
+
+C# does not support multiple inheritances of classes, the same thing can be done using interfaces.
+Private members are not accessed in a derived class when one class is derived from another.
+
+//////////////////////////////////////////////What are the differences between method hiding and overriding in C#?
+////////////method hiding
+the implementation to call is based on the compile-time type
+New is reference-type specific
+///////////////overriding
+the implementation to be called is based on the run-time
+, overriding is object-type specific
+
+//////////////////////////////////////////////////////////////What is Boxing and UnBoxing.
+value type - int, char, double, and bool are built-in value types in C#.
+refrence type - string and object are built-in reference types in C#.
+
+//////////////////////Difference between ArrayList and Hashtable in C#
+//////ArrayList
+The arraylist is useful to store the collection of elements of different types.
+The arraylist elements can be accessed either by using loops or index values.
+The performance of the arraylist is less because it will iterate through the collection of items.
+In arraylist you are allowed to add duplicate values.
+////////HashTable
+The hashtable is useful to store the collection of key/value pairs of different types.
+The hashtable elements can be accessed by using a key or DictionaryEntry object.
+The hashtable uses a hash function to find the elements with a key so it will return the data faster.
+In hashtable, the value can be duplicated but the key shouldn't be duplicated.
+
+///////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////Deloide
+1>Middleware
+
+/////////////////////////Hyland Interview Question
+///////coding interview
+Arrays and string and linkedlist(stack and ques only linear).
+Serching and Sorting
+/////////c#
+Basic
+OOp
+Inheritance
+/////////Solid Priciple:
+/////////////////////////////////////////sigalton
+we do not use Singalton code Manually , we use built-in Dependency Injection framework BECAUSE Thread-Safety , Simplicity ,Lifetime Management.
+All 5 also 
+////////////////Sql
+sql querying
+
+///////////////////////Simens Technology
+Q>Artichecture of Project : https://www.youtube.com/watch?v=X7CGyBZrEh8
+Q>Framework that is using in  EntityFramework
+//////////////////Q>How you can add two coloum in table by Entityframework.
+I have created new file one you can see
+Q>What is function.
+A function in C# is a group of statements that perform a specific task and return a value
+Q>what are the various ways to communicate between the components.
+1>@Input @Output
+2>Ng - content
+3>@ViewChild   @ViewChildren
+4>@ContentChild @ContentChilren
+///////////////////////////////
+Authentiation,authorisation
+How can I consume Api
+////////////////Swagger(starting point of swagger)
+https://validator.swagger.io/
+
+//Interview Mistake
+Be Prepared for Team Or zoom.
+Plan to revisition once all the question(mindset).
+
+////////////
+N - tier Artitecture
+Repository Pattern
+OOps 
+Solid Pattern
+
+///////////////////////////////Gagan
+Q> What is Threading in C# ?
+
+Multithreading in C# is a process in which multiple threads work simultaneously. 
+It is a process to achieve multitasking. It saves time because multiple tasks are being executed at a time.
+To create multithreaded application in C#, we need to use System.Threding namespace.
+
+Q> What is diffence between PUT And Patch 
+
+
+User
+What is the diffence between Put And Patch 
+ChatGPT
+PUT and PATCH are two HTTP methods used in RESTful API design, and they serve different purposes.
+
+PUT:
+
+The PUT method is used to update or create a resource at a specific URI (Uniform Resource Identifier).
+When a client sends a PUT request, it typically includes the full representation of the resource in the request body.
+If the resource exists at the specified URI, the PUT request will update it with the new representation provided in the request body.
+If the resource does not exist, a new resource will be created at the specified URI with the provided representation.
+Example:
+
+http
+Copy code
+PUT /users/123
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "age": 30
+}
+In this example, the resource representing user with ID 123 is either updated with the new data or created if it doesn't exist.
+
+PATCH:
+
+The PATCH method is used to apply partial modifications to a resource.
+When a client sends a PATCH request, it includes only the changes to the resource, not the full representation.
+PATCH is useful when you want to update specific fields of a resource without sending the entire representation.
+Example:
+
+http
+Copy code
+PATCH /users/123
+Content-Type: application/json
+
+{
+  "age": 31
+}
+In this example, the resource representing user with ID 123 is updated by changing the value of the "age" field to 31. Other fields, if they exist, are not affected unless explicitly specified.
+
+In summary, PUT is used for updating or creating a resource with a full representation, while PATCH is used for applying partial modifications to a resource. The choice between them depends on the specific requirements of the API and the desired behavior for updating resources.
+
+User
+can you explain this once again
+ChatGPT
+Certainly! Let's break down the differences between PUT and PATCH in a simpler way:
+
+PUT:
+
+Purpose: Updating or creating a resource at a specific location (URI).
+
+Request Body: The client sends the complete representation of the resource in the request body.
+
+Effect: If the resource exists at the specified URI, it's updated with the full data provided in the request body. If it doesn't exist, a new resource is created.
+
+Example:
+
+http
+Copy code
+PUT /users/123
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "age": 30
+}
+This updates or creates a user with ID 123, setting their name to "John Doe" and age to 30.
+
+PATCH:
+
+Purpose: Applying partial modifications to a resource.
+
+Request Body: The client sends only the changes to the resource, not the complete representation.
+
+Effect: The resource is updated with the specific changes provided in the request body. Other fields are unaffected unless explicitly mentioned.
+
+Example:
+
+http
+Copy code
+PATCH /users/123
+Content-Type: application/json
+
+{
+  "age": 31
+}
+This updates the user with ID 123, changing only the age to 31. Other fields remain unchanged unless included in the request.
+
+In short, PUT is for complete updates or creation with full data, while PATCH is for partial updates where only specific changes are applied to the resource.
+The choice between them depends on whether you want to send the entire data or just the changes when modifying a resource.
+
+////////////////////////
+/////////////////////////////////////////////////////////cts in sql
+//What is Cts
+A Common Table Expression,is a TEMPORARY named result set, that you can reference within a Select, INSERT,UPDATE,DELETE statement.
+
+Example : Book.
+//Why I using cts :
+Code Reusability
+Readability:
+Query Optimization:
+//When to CTS
+Recursive Queries
+Complex Queries
+
+////////////////////////////////////////////////////////temp table in sql
+////What is temp
+Temporary tables provide temporary data storage in exact form of original tables for quick access of data.
+Two type of Temporary table
+1>Local Temporary Tables
+2>Global Temporary Tables
+
+//where stored
+Temporary tables are stored inside the Temporary Folder of TempDB.
+
+//A Temporary table differs in the following two ways from regular tables:
+Each temporary table is implicitly dropped by the system.
+Each temporary table is stored in the tempdb system database. The table variable doesn't.
+
+//where to use
+Complex Data Manipulation
+Temporary Storage in Stored Procedures
+////////////////////////////////////////////////////////////middleware
+////What is middlewa
+Middleware is a piece of code in an application pipeline used to handle requests and responses.
+/////Why is Middleware ordering important ?
+Middleware components are executed in the order they are added to the pipeline, and care should be taken to add the middleware in the right order; 
+otherwise, the application may not function as expected. This ordering is critical for security, performance, and functionality.
+///app.Run() Method
+this acts as a terminal middleware and is added at the end of the request pipeline, as it cannot call the next middleware.
+/////app.Use() Method
+We can include the next parameter into it, which calls the next request delegate in the pipeline.
+///app.Map() Method
+The map branches the request pipeline based on matches of the given request path.
+
+///////////////////////////////////////////////////////////////////////Routing
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+How is routing handled in ASP.NET Core ?
+
+Routing,(Defination, Project use ,Trade-off + Business Impact ) with so easy word for human being.
+
+
+
+
+
+Let’s break Routing into very easy words with Definition, Project Use, Trade-off, and Business Impact 👇
+
+
+
+
+
+---
+
+
+
+Definition (Simple Words)
+
+
+
+Routing is like a GPS for your application.
+
+
+
+It decides where a request should go when a user clicks something or types a URL.
+
+
+
+In Backend (.NET) → Routing decides which controller and action method should handle a request.
+
+
+
+In Frontend (Angular) → Routing decides which component/page to show to the user.
+
+
+
+
+
+
+
+---
+
+
+
+Project Use (Buy & Sell Properties App)
+
+
+
+In your Buy & Sell Properties Application:
+
+
+
+If a user goes to /properties, routing shows the Property Listing Page.
+
+
+
+If a user clicks on a property → /properties/101, routing opens the Property Details Page.
+
+
+
+If a user goes to /admin/dashboard, routing shows the Admin Dashboard.
+
+
+
+
+
+👉 Without routing, everything would load on one page, and users wouldn’t know where they are.
+
+
+
+
+
+---
+
+
+
+Trade-offs (Pros & Cons)
+
+
+
+✅ Pros:
+
+
+
+Makes app organized (clear paths for each feature).
+
+
+
+Better user experience (like moving between pages on a website).
+
+
+
+Easy to maintain → if you add a new page, just add a new route.
+
+
+
+
+
+⚠️ Cons:
+
+
+
+More routes → more complexity in big applications.
+
+
+
+Wrongly configured routes → users may land on wrong or broken pages.
+
+
+
+Extra work to handle security (e.g., blocking normal users from /admin).
+
+
+
+
+
+
+
+---
+
+
+
+Business Impact (Simple Words)
+Good Routing → Users can easily search, view, and buy properties.
+Bad Routing → Users get frustrated (e.g., clicking on “Property Details” but landing on “Login Page”), and may leave your app.
+Routing also helps in SEO (Search Engine Optimization) → clear URLs like /buy-property/delhi improve chances of your app showing up in Google search.
+---
+✅ In short:
+
+Routing = traffic police of your app → decides where each user should go.
+
+In your property app → it makes navigation smooth, professional, and user-friendly, which directly increases trust and sales.
+
+//What is routing
+its a process of matching incoming http requests to a corresponding endpoint where it will execute functions or necessary middlewares.
+
+//Type of Routing
+In ASP.NET Core, routing determines how HTTP requests are mapped to controller actions. There are two main types of routing:
+
+1. Conventional Routing (centralized in Program.cs)
+
+
+2. Attribute Routing (defined directly in controllers)
+
+
+
+
+---
+
+1️⃣ Conventional Routing
+
+👉 Defined centrally in Program.cs, applied to all controllers.
+👉 Uses URL patterns to match requests to actions.
+👉 Recommended for large applications with a standard URL structure.
+
+Example
+
+✅ Program.cs (Defining Conventional Routes)
+
+var builder = WebApplication.CreateBuilder(args);
+var app = builder.Build();
+
+// Define a default route
+app.UseRouting();
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllerRoute(
+        name: "default",
+        pattern: "{controller=Home}/{action=Index}/{id?}"); // Default route
+});
+
+app.Run();
+
+✅ Controller with Conventional Routing
+
+public class ProductsController : Controller
+{
+    public IActionResult Details(int id)
+    {
+        return Content($"Product Details for ID: {id}");
+    }
+}
+
+✅ URL Example
+
+GET /Products/Details/5
+
+The request will match {controller=Products}/{action=Details}/{id=5}.
+
+
+
+---
+
+2️⃣ Attribute Routing
+
+👉 Defined directly on controllers or actions using [Route] attributes.
+👉 Provides more control and flexibility for complex routes.
+👉 Useful when URLs don’t follow a standard structure.
+
+Example
+
+✅ Controller with Attribute Routing
+
+[Route("api/products")] // Base route for this controller
+public class ProductsController : Controller
+{
+    [HttpGet("details/{id}")] // Custom route for this action
+    public IActionResult GetProductDetails(int id)
+    {
+        return Content($"Product Details for ID: {id}");
+    }
+
+    [HttpGet("category/{categoryName}")] // Another custom route
+    public IActionResult GetProductsByCategory(string categoryName)
+    {
+        return Content($"Products in category: {categoryName}");
+    }
+}
+
+✅ URL Examples
+
+GET /api/products/details/5
+GET /api/products/category/electronics
+
+These routes do not depend on a global routing pattern.
+
+
+
+---
+
+Key Differences
+
+
+---
+
+When to Use Which?
+
+Use Conventional Routing when you have a standard structure for URLs.
+
+Use Attribute Routing for RESTful APIs or when URLs need flexibility.
+///////////////////////////////////////////////////////////////////direct and indirect in Ado.net
+It can be direct or indirect. In other words "connected" or "disconnected".
+//////////////////////////////cluster and non cluster in sql
+Adapter
+directive 
+pipe
+where is root component is available 
+Lasy Loading in Angular
+Observable and observer 
+
+
+///////////////////////////////////////////////////////////////////////////////////////Interview Question From Google
+What is Partial class in C#?
+
+Once we create a class we can not create a second one with the same name, unless they are in different namespaces. So, Microsoft decided to change this, with the introduction of something called partial classes.
+
+This means that by using the partial classes we can create 2 classes with the same name within the same namespace.
+
+With Partial Classes multiple developers can work simultaneously with a single class in separate files
+
+Q> What is Model Binding ?
+The Model binding will take the data as input it will find the exact name of properties that using in asp.netcore and it will bind the data
+The process of binding the HTTP Request data to the parameters of application Controllers or Properties is know as Model Binding.
+There are lots of built-in methods and atttributes for model binder.
+
+//////////////////////////////////////////////
+1>DeadLock
+2>Why Donet Project are used.
+3>repository
+4>logging
+5>ddl and dml
+6>window functions
+7> Explain how logging works in Asp.Net Core?
+Logging is a way of recording what happens in your application, such as errors, warnings, or information. Logging can help you debug and troubleshoot problems, as well as monitor the performance and behavior of your application.
+
+In ASP.NET Core, logging is done by using an ILogger<TCategoryName> object, where TCategoryName is the name of the class or component that is logging. You can get an ILogger<TCategoryName> object from dependency injection (DI), which is a technique for creating and managing objects in your application.
+
+To log something, you call one of the methods of the ILogger<TCategoryName> object, such as LogInformation, LogWarning, or LogError. These methods take a message and optionally some parameters, and write them to one or more logging providers. Logging providers are components that store or display the logs, such as the console, a file, or a database.
+
+You can configure logging by using the Logging section of the appsettings.json file, or by using code in the Program.cs file. You can specify which logging providers to use, what level of logging to use for each provider, and what categories of logs to include or exclude.
+
+For more information on logging in ASP.NET Core, you can check out these resources:
+
+/////////////////////////////////////////////////8>What is diffrence between layer artitecture and 3 tire artitecture , what is advantages.Which one is using in your project.
+
+N-Tier Architecture vs. 3-Tier Architecture
+N-Tier Architecture:
+
+Definition: An N-tier architecture divides an application into logical layers, where "N" can be any number. Typically, these layers include the presentation layer, business logic layer, data access layer, and sometimes more specific layers depending on the complexity of the application.
+Scalability: Highly scalable as different layers can be distributed across multiple servers.
+Flexibility: Allows for adding or modifying layers without affecting others.
+Maintenance: Easier to manage changes in complex systems since each layer can be updated independently.
+3-Tier Architecture:
+
+Definition: A specific type of N-tier architecture with exactly three layers: presentation, business logic, and data access.
+Presentation Layer: User interface (UI) components.
+Business Logic Layer: Core functionality and business rules.
+Data Access Layer: Communication with the database.
+Simplicity: Simpler compared to N-tier since it has a fixed number of layers.
+Common Use Case: Suitable for many enterprise applications due to its balanced approach to complexity and manageability.
+Advantages and Disadvantages
+Advantages of N-Tier Architecture:
+
+Scalability: Can handle increased load by distributing different layers across multiple servers.
+Maintainability: Easier to update or replace individual layers without impacting the entire system.
+Flexibility: Allows for a high degree of customization and the ability to add more layers if needed.
+Security: Improved security as different layers can be isolated and secured independently.
+Disadvantages of N-Tier Architecture:
+
+Complexity: Can become very complex, making it harder to understand and manage.
+Performance: More layers can introduce latency, as each layer adds an additional processing step.
+Development Time: Increased complexity can lead to longer development times.
+Advantages of 3-Tier Architecture:
+
+Simplicity: Easier to design, develop, and manage due to its straightforward structure.
+Separation of Concerns: Clear separation between UI, business logic, and data access makes the application more modular.
+Scalability: Adequately scalable for many applications, though not as much as N-tier.
+Maintenance: Relatively easy to maintain and update.
+Disadvantages of 3-Tier Architecture:
+
+Limited Scalability: May not scale as well as N-tier for very large or complex applications.
+Flexibility: Less flexible in terms of adding new layers or components.
+
+
+/////////////////////////////////////////////////////////////////9>Singalton design patter.
+//////////////////What  is Singalton design patter.
+The Singleton design pattern ensures that a class has only one instance and provides a global point of access to that instance.
+/////////////////////Why Singalton design patter
+1>Ensure Single Instance
+2>Global Access
+3>Resource Sharing
+////////////////////////When to Use the Singleton Design Pattern
+1>There must be exactly one instance of a class, and it must be accessible globally.
+/////////////Why Even Use the Singleton Design Pattern
+1>Managing database connections: A Singleton class can be used to manage database connections, ensuring that only one connection
+is created and shared across multiple parts of the application.
+2>Logging: A Singleton logger class can be used to centralize logging functionality, allowing different components of the system to log 
+messages to the same log file or stream.
+3>Configuration settings: A Singleton configuration manager class can be used to load and cache application configuration settings, 
+ensuring that the settings are loaded once and accessed globally throughout the application.
+
+
+//why we are creating singlaton design pattern,instead of object.
+The Singleton design pattern is used to ensure that a class has only one instance and provides a global point of access to that instance. There are several reasons why you might choose to use the Singleton pattern instead of creating multiple instances of a class:
+
+Global Access Point:
+
+A Singleton provides a centralized point of access to its instance. This is useful when exactly one object is needed to coordinate actions across the system.
+Resource Sharing:
+
+If multiple instances of a class would share and modify the same resource, a Singleton pattern ensures that all modifications are done through the same instance, preventing conflicts and ensuring consistency.
+Resource Management:
+
+In some cases, creating multiple instances of a class might be resource-intensive or inefficient. Using a Singleton ensures that there is only one instance, saving resources.
+Configuration Management:
+
+Singletons are often used for managing configuration settings or global application state. Having a single instance makes it easy to maintain and manage these settings.
+Lazy Initialization:
+
+With a Singleton, you can implement lazy initialization, meaning the instance is created only when it is first requested. This can be beneficial for performance, especially if the initialization process is resource-intensive.
+Prevention of Multiple Instances:
+
+Some classes are designed to have only one instance due to their nature or purpose. The Singleton pattern enforces this constraint and ensures that there is only one instance of the class.
+Managing Shared Resources:
+
+In scenarios where multiple parts of the application need to share the same resource, a Singleton provides a way to centralize access and modifications to that resource.
+Maintaining State:
+
+Singletons are often used to maintain a consistent state across the application. Any changes made to the state are reflected in a single instance.
+However, it's important to note that the Singleton pattern also has its drawbacks, such as potential for global state, difficulty in testing, and limited flexibility in certain scenarios. Therefore, it's essential to carefully consider whether the Singleton pattern is appropriate for a particular use case.
+10>Diffrence between Scoped and transient.
+In ASP.NET Core, services (like classes or components that provide certain functionality) can be registered with different lifetimes, and two common lifetimes are "Scoped" and "Transient." Let's break down the difference between them in simpler terms:
+
+Transient:
+What it means:
+
+A service with a transient lifetime is created every time it is requested or injected.
+It is short-lived and a new instance is provided whenever someone needs it.
+Example:
+
+Think of it like ordering a cup of coffee. Each time you ask for coffee, you get a new cup. The cups are not shared; they are independent.
+Scoped:
+What it means:
+
+A service with a scoped lifetime is created once per request.
+It lives throughout the duration of a single HTTP request. If something requests the service multiple times during the same request, it gets the same instance.
+Example:
+
+Imagine you are at a restaurant, and the waiter gives you a menu when you sit down. Throughout your meal, you use the same menu. The menu is specific to your "scope" (your table and your dining experience).
+Summary:
+Transient:
+
+Created every time requested.
+Short-lived, not shared.
+New instance for each request.
+Scoped:
+
+Created once per request.
+Lives throughout a single request.
+Shared within the same request scope.
+In practical terms, if a service doesn't need to maintain state or share information across different parts of the application, and it's okay to create a new instance each time it's requested, then you might use a transient lifetime.
+
+If a service needs to maintain state or share information within the same request (for example, across different components processing the same HTTP request), you might use a scoped lifetime.
+11>Two Method name is used in Startup.cs file.
+In a typical ASP.NET Core application, the Startup.cs file is used to configure various aspects of your web application, such as setting up services and defining how the application should respond to HTTP requests. In the Startup.cs file, there are two important methods: ConfigureServices and Configure.
+
+ConfigureServices:
+What it does:
+
+This method is responsible for configuring the services that your application will use.
+Services can be things like database connections, authentication mechanisms, or other components that your application needs to function.
+Why it's important:
+
+It's where you "register" or "configure" the services that your application will use.
+This method is called by the framework during application startup.
+Example:
+
+If your application needs to connect to a database, you might configure a database service here.
+Configure:
+What it does:
+
+This method is responsible for setting up how your application responds to HTTP requests.
+It defines the middleware pipeline, which are components that process requests and responses as they flow through the application.
+Why it's important:
+
+It's where you define how the application handles requests, what kind of responses it sends, and what processing happens in between.
+Example:
+
+You might use this method to set up authentication, define routes, or add other middleware components.
+Summary:
+ConfigureServices:
+
+Configures services that your application will use.
+Called at application startup.
+Configure:
+
+Configures how your application responds to HTTP requests.
+Defines the middleware pipeline.
+Also called at application startup.
+In simpler terms, ConfigureServices is where you say, "Hey, application, these are the services we're going to need," and Configure is where you say, "Alright, application, this is how we're going to handle requests and responses." Both methods play a crucial role in setting up and configuring your ASP.NET Core application.
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////12>How does you right Authentication in Program.cs file
+/////////////////////////////////////////////////////////////////////////13>How does partial class compiles if same name with two class .
+What it is:
+
+A partial class in C# is a way to split the definition of a class into multiple files.
+Why it's useful:
+
+It allows developers to organize and manage large classes by dividing them into smaller, more manageable parts.
+How it works:
+
+When you define a class as partial (partial class MyClass), you can spread the class definition across multiple files.
+Each file contains a part of the class. All parts together make up the complete class.
+During compilation, the C# compiler combines all the parts into a single class.
+Example:
+csharp
+Copy code
+// File1.cs
+partial class MyClass
+{
+    public void Method1()
+    {
+        // Code for Method1
+    }
+}
+
+// File2.cs
+partial class MyClass
+{
+    public void Method2()
+    {
+        // Code for Method2
+    }
+}
+
+// Main.cs
+class Program
+{
+    static void Main()
+    {
+        MyClass myObject = new MyClass();
+        myObject.Method1();
+        myObject.Method2();
+    }
+}
+In this example, MyClass is split into two files (File1.cs and File2.cs). Each file has a part of the class. When the program is compiled, the compiler combines both parts into a single MyClass definition.
+
+Benefits:
+Organization:
+
+Helps keep large classes organized by spreading their code across multiple files.
+Separation of Concerns:
+
+Each file can focus on a specific aspect or functionality of the class.
+Collaboration:
+
+Useful in scenarios where different developers work on different parts of the same class.
+Summary:
+Partial classes in C# allow you to split the definition of a class into multiple files for better organization and management.
+During compilation, the parts of the class from different files are combined to create the complete class.
+
+////////////////////////////////////////////////////////////////////////////////////////////////13>What is global exceptional handling.
+
+Sure, let's break down the concept of global exception handling in simple terms:
+
+Global Exception Handling:
+What it is:
+
+Global exception handling is a way to deal with unexpected errors or issues that may occur in your entire application.
+Why it's useful:
+
+It provides a centralized mechanism to handle errors, making it easier to manage and log unexpected situations.
+How it works:
+
+When an error occurs anywhere in your application (during the execution of code), the global exception handling mechanism captures it before it crashes the program.
+Instead of letting the error propagate and potentially cause the application to stop, you can define a set of actions to take when an error occurs.
+Example:
+csharp
+Copy code
+class Program
+{
+    static void Main()
+    {
+        try
+        {
+            // Code that might throw an exception
+            int result = Divide(10, 0);
+            Console.WriteLine("Result: " + result);
+        }
+        catch (Exception ex)
+        {
+            // Global exception handling
+            Console.WriteLine("An error occurred: " + ex.Message);
+        }
+    }
+
+    static int Divide(int a, int b)
+    {
+        // Division operation that might throw an exception
+        return a / b;
+    }
+}
+In this example, the Divide method attempts to perform a division operation, which could lead to an exception if b is zero. The try-catch block in the Main method captures any exception that occurs during the execution of the code.
+
+Benefits:
+Centralized Handling:
+
+All exceptions can be handled in one central place in your application.
+Prevent Crashes:
+
+Helps prevent the entire application from crashing due to unhandled exceptions.
+Logging and Reporting:
+
+Allows you to log error details, report issues, or take other actions when an unexpected situation occurs.
+Summary:
+Global exception handling is like having a safety net for your application. It catches unexpected errors, preventing them from causing the entire application to crash. This mechanism provides a way to gracefully handle errors, log relevant information, and potentially recover from certain issues.
+
+/////////////////////////////////////////////////////////////////////////////////////////13>Excecution of catch block.
+
+In most programming languages, including C# (which is commonly used in ASP.NET Core), the catch blocks are evaluated in the order in which they appear. The first catch block that matches the type of the thrown exception is executed, and subsequent catch blocks are ignored.
+
+Here is an example in C#:
+
+csharp
+Copy code
+try
+{
+    // Code that might throw an exception
+    int result = Divide(10, 0);
+    Console.WriteLine("Result: " + result);
+}
+catch (DivideByZeroException ex)
+{
+    Console.WriteLine("Caught DivideByZeroException: " + ex.Message);
+}
+catch (ArithmeticException ex)
+{
+    Console.WriteLine("Caught ArithmeticException: " + ex.Message);
+}
+catch (Exception ex)
+{
+    Console.WriteLine("Caught general Exception: " + ex.Message);
+}
+In this example, if the Divide method throws a DivideByZeroException, the first catch block will be executed, and the subsequent catch blocks will be skipped.
+
+It's important to order your catch blocks from the most specific exception type to the more general ones. If you have a catch block for a more general exception type before a more specific one, the more general block will catch the exception, and subsequent blocks will be ignored.
+
+csharp
+Copy code
+try
+{
+    // Code that might throw an exception
+    int result = Divide(10, 0);
+    Console.WriteLine("Result: " + result);
+}
+catch (Exception ex)
+{
+    Console.WriteLine("Caught general Exception: " + ex.Message);
+}
+catch (DivideByZeroException ex)
+{
+    Console.WriteLine("Caught DivideByZeroException: " + ex.Message);  // This block will never be reached
+}
+In this case, the catch block for Exception will catch the exception, and the more specific DivideByZeroException block will be ignored. Therefore, it's crucial to order catch blocks appropriately based on the exception hierarchy.
+
+///////////////////////////////////////////////////////////////////////13>What is use of cts.
+
+
+13>What is datatime table, where does it store.
+/////////////////////////////////////////////////////////////////////15>Write the basic syntax of store procedure.
+CREATE PROCEDURE procedure_name
+    @parameter1 datatype,
+    @parameter2 datatype,
+    ...
+AS
+    -- SQL statements to define the stored procedure logic
+    -- This can include SELECT, INSERT, UPDATE, DELETE, and more
+
+GO
+
+///////////////////////////////////////////////////16>excution flow of sql.
+FROM>WHERE>GROUP BY >HAVING > SELECT > ORDER BY > LIMIT.
+
+///////////////////////////////////////////////////////14>What is interceptor.
+An interceptor is a service that can modify or handle the HTTP requests and responses that are sent or received by your Angular application.
+//////////////////////////////15>Cogfiguration.Json file.
+1>Configures TypeScript Compilation: 
+It defines various options that affect how the TypeScript code is compiled, such as the target JavaScript version, module system, source maps, and more.
+2>Defines File Inclusion/Exclusion:It specifies which files to include or exclude during the compilation process. This ensures that only the necessary files are processed by the compiler.
+
+
+
+16>What is last life cycle in Angular.
+17>Where does we configure any thing.
+/////////////////
+Graph
+DP
+Pririty Ques
+Array 
+HashMap
+String
+////////////////////////////
+//////////////////////////////////////////////////////////////////////////Associate in Sql
+aggregate functions include: AVG, COUNT, SUM, MIN, MAX. 
+////////////////////////////////////////////////////Serialisation and deserialisation
+Json
+Groupby stntax
+post,put ,delect.
+/////////////////////////Advantage of Enum
+1>readability
+2>Maintainability
+3>
+////////////////////Difference between var and dynamic in C#
+////////////Var
+--->If the variable does not initialized it throw an error.
+---->returning values from the function. It can only used as a local variable in function.
+/////Dynamic
+----->If the variable does not initialized it will not throw an error.
+----->It can be used for properties or returning values from the function.
+//////////////////////////////////What is LINQ , Diffrent type of LINQ.
+LINQ allow you to query and manipulate data using a SQL-like syntax directly within your c# or VB.NET code making
+data access and manipulation more intuitive and efficient.
+
+Example : Suppose you have a list of numbers and you want to filter out only the even numbers from it. 
+
+1> Create a List of Numbers: First, let's create a list of numbers in C#:
+
+List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+2> Write a LINQ Query: Next, you write a LINQ query to filter out the even numbers:
+
+var evenNumbers = from num in numbers
+                  where num % 2 == 0
+                  select num;
+
+In this query:
+
+from num in numbers specifies the data source (the list of numbers).
+where num % 2 == 0 filters out only the even numbers.
+select num selects the even numbers from the list.
+
+3> Iterate Over the Result: Finally, you can iterate over the result and perform further operations if needed:
+foreach (var num in evenNumbers)
+{
+    Console.WriteLine(num);
+}
+
+///////////////////////////////////////////////////Diffrent type of LINQ
+1> LINQ to Objects: allows you to query in-memory collections, such as arrays, lists, dictionaries, and other 
+IEnumerable<T> implementations
+
+2>LINQ to Entities (Entity Framework Core): Allow data in relational databases using Entity Framework Core.
+Allow conceptual model mapped to database tables.
+
+3>LINQ to SQL:
+4>LINQ to XML:
+5>LINQ to DataSet:
+
+/////////////////////////////////////////////////////////////////////Authentication and Autherization in your Project
+Authentication:
+
+User Sign-In: When users visit your website, they are prompted to sign in with their username and password. This process verifies their identity.
+Remembering Users: After users sign in, your website remembers them using a special token (e.g., a cookie). This way, they don't have to sign in every time they visit a new page.
+Authorization:
+
+Determining Access Rights: Once users are signed in, your website checks what they're allowed to do based on their role or permissions. For example, regular users might only be able to view recipes, while administrators can add or edit recipes.
+Restricting Access: If a user tries to perform an action they're not allowed to do (like adding a recipe without being an administrator), your website denies the request and shows an error message.
+Real-World Example:
+
+Let's say a user named "Alice" wants to add her special cookie recipe to your website:
+
+Authentication:
+Alice visits your website and clicks "Sign In".
+She enters her username and password.
+Your website verifies her credentials and issues a token to remember her.
+Authorization:
+Alice navigates to the "Add Recipe" page.
+Your website checks her role or permissions and sees that she's just a regular user, not an administrator.
+Since Alice doesn't have permission to add recipes, your website denies her request and displays a message saying she needs to be an administrator to do that.
+In summary, authentication verifies users' identities, while authorization determines what actions they're allowed to perform based on their roles or permissions. This ensures that only authorized users can access certain features of your website, helping to protect sensitive information and maintain control over who can do what.
+
+
+
+Step 1: Setting up ASP.NET Core Identity
+
+First, let's set up ASP.NET Core Identity to handle user authentication and authorization.
+
+csharp
+Copy code
+// Startup.cs
+
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddDbContext<ApplicationDbContext>(options =>
+        options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+    services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+        .AddEntityFrameworkStores<ApplicationDbContext>();
+
+    services.AddControllersWithViews();
+    services.AddRazorPages();
+}
+
+public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+{
+    // Middleware configurations...
+    app.UseAuthentication();
+    app.UseAuthorization();
+
+    // Other middleware configurations...
+}
+Step 2: Creating Controllers and Views
+
+Next, let's create controllers and views for our recipe sharing website. We'll add authorization attributes to restrict access to certain actions.
+
+csharp
+Copy code
+// RecipesController.cs
+
+[Authorize] // Only authenticated users can access these actions
+public class RecipesController : Controller
+{
+    private readonly ApplicationDbContext _context;
+
+    public RecipesController(ApplicationDbContext context)
+    {
+        _context = context;
+    }
+
+    // GET: Recipes
+    public async Task<IActionResult> Index()
+    {
+        var recipes = await _context.Recipes.ToListAsync();
+        return View(recipes);
+    }
+
+    // Other actions...
+}
+csharp
+Copy code
+// AccountController.cs
+
+[AllowAnonymous] // Allow anonymous access to these actions
+public class AccountController : Controller
+{
+    private readonly SignInManager<IdentityUser> _signInManager;
+    private readonly UserManager<IdentityUser> _userManager;
+
+    public AccountController(
+        SignInManager<IdentityUser> signInManager,
+        UserManager<IdentityUser> userManager)
+    {
+        _signInManager = signInManager;
+        _userManager = userManager;
+    }
+
+    // Login action
+    [HttpGet]
+    public IActionResult Login(string returnUrl = null)
+    {
+        ViewData["ReturnUrl"] = returnUrl;
+        return View();
+    }
+
+    [HttpPost]
+    [AllowAnonymous]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Login(LoginViewModel model, string returnUrl = null)
+    {
+        // Logic for user login...
+    }
+
+    // Other actions...
+}
+Step 3: Displaying Views
+
+Finally, let's create views to display our website's pages.
+
+html
+Copy code
+<!-- Index.cshtml (Recipes/Index) -->
+
+@model IEnumerable<Recipe>
+
+<h1>Recipes</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <!-- More columns... -->
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var recipe in Model)
+        {
+            <tr>
+                <td>@recipe.Name</td>
+                <td>@recipe.Description</td>
+                <!-- More columns... -->
+            </tr>
+        }
+    </tbody>
+</table>
+html
+Copy code
+<!-- Login.cshtml (Account/Login) -->
+
+<h1>Login</h1>
+
+<form asp-controller="Account" asp-action="Login" method="post">
+    <!-- Login form fields... -->
+</form>
+In this example:
+
+We set up ASP.NET Core Identity to handle user authentication and authorization.
+Controllers and views are created for displaying recipes and handling user login.
+Authorization attributes like [Authorize] and [AllowAnonymous] are used to restrict access to certain actions.
+Views are created to display website pages, such as the recipe index and login page.
+
+////////////////////////////////////////////////////////////////////////What is Diffrence between Struct and Class
+Definition:
+Class: A class is a reference type.
+Struct: A struct is a value type.
+Inheritance:
+Class: Classes support inheritance.
+Struct: Structs do not support inheritance.
+Performance:
+Class: Because classes are reference types, they are allocated on the heap.accessing them involves an extra level
+Struct: Structs are value types, and they are typically allocated on the stack.Accessing struct members is generally faster than accessing class members.
+Uses:
+Class: Classes are commonly used to model complex entities with behavior and state.
+Struct: Structs are often used for lightweight objects that represent simple data structures
+
+////////////////////////////////////////////////////What is the Diffrence Between Generic Vs Non Generic
+Collection are categorized into two parts Generic and Non Generics
+Generic Collection :
+Type Safety : Generic collections provide strong type safety.
+Usability : Generic collections are more user-friendly because they eliminate the need for explicit casting.
+Performance : Generic collections are generally more efficient in terms of both execution speed and memory
+because they avoid the overhead of boxing and unboxing.
+
+Non-Generic Collection:
+Type Safety : Non-generic collections are not type-safe because they store elements as object types.
+Usability : Non-generic collections are less user-friendly because they involve casting and boxing/unboxing.
+Performance : Non-generic collections may have performance overhead due to the need for boxing (converting value types to reference types) and unboxing
+(converting reference types back to value types).
+
+////////////////////////////////////////////////What is diffrence between ArrayLIst and List
+//ArraList :
+Type Safety : ArrayList is not type-safe as it can store any type of object.
+Performance: ArrayList may be slower due to boxing/unboxing.
+Code Readability : ArrayList may require explicit type casting.
+.NET Version : ArrayList was introduced in earlier versions of .NET framework (2.0)
+Flexibility : List can only store elements of the specified type.
+//List
+Type Safety : List is Type-safe as it can store elements of a specific type only.
+Performance : List performs better as it avoids boxing/unboxing.
+.NET Version : List was introduced in .NET 3.0
+Flexibility : ArrayList can store elements of any type.
+
+Code Readability : List provides clear type specification to improved readability.
+
+Performance : List performs better as it avoids boxing/unboxing.
+
+/////////////////////////////Principle of Rest API
+1> Client-Server Architecture : In our example, the client will be a web browser or a mobile application, while the server will be
+an ASP.NET Core web application hosting the RESTful API.
+
+Statelessness:
+Each HTTP request from the client to the server will contain all the information needed for the server to process the request. For example, when creating a new blog post, the request will 
+include the post data (title, content, etc.), and the server will process the request based on this information.
+2> Uniform Interface:
+We'll use standard HTTP methods to perform CRUD operations on resources. For example:
+GET /api/posts to retrieve all blog posts.
+POST /api/posts to create a new blog post.
+PUT /api/posts/{id} to update an existing blog post.
+DELETE /api/posts/{id} to delete a blog post.
+
+///////////////////////////////////////////What is Collection in C#
+
+C# collection types are designed to store, manage and manipulate similar data more efficiently. Data manipulation includes adding, removing, finding, and inserting data in the collection. Collection types implement the following common functionality: 
+
+Adding and inserting items to a collection
+Removing items from a collection
+Finding, sorting, and searching items
+Replacing items
+Copy and clone collections and items
+Capacity and Count properties to find the capacity of the collection and the number of items in the collection
+.NET supports two types of collections, generic collections, and non-generic collections. Before NET 2.0, it was just collections, and when generics were added to .NET, generics collections were added as well.
+
+The following table lists and matches these classes.
+
+Non-generic                          Generic
+
+ArrayList     ------------->          List
+
+HashTable  ------------->          Dictionary
+
+SortedList   ------------->          SortedList  
+
+Stack           ------------->          Stack
+
+Queue         ------------->          Queue
+
+1. Non-Generic
+In non-generic collections, each element can represent a value of a different type. The collection size is not fixed. Items from the collection can be added or removed at runtime. 
+
+
+Generic Collections
+Generic Collections work on the specific type specified in the program, whereas non-generic collections work on the object type. 
+
+Specific type
+Array Size is not fixed
+Elements can be added/removed at runtime.
+
+////////////////////////////////What is Jagged Array
+A jagged array in C# is an array whose elements are arrays. The elements of a jagged array can be of different dimensions and sizes.
+A jagged array is sometimes called an "array of arrays." A special type of array is introduced in C#.
+A Jagged Array is an array of an array in which the length of each array index can differ.
+
+Example: Movies Counter
+
+Uses : you have a data structure where the size of each "inner" array varies.
+
+
+/////////////////////////////////reflection
+///////////////////////////////////////////////////////////////////////////////////Oracle Interview Question
+Q> What is diffrence between Extensition Methed and Overloading
+Q> Can we inject the class Those who inheriting the implemented class of dependenncies injection.
+////////////////////////////////////Q>Lasy Loading
+///////What is LazyLoading
+Lazy loading is a technique where an object or resource is not loaded until it is specifically requested. Instead of loading all dependencies or resources upfront,
+lazy loading defers the loading process until the moment they are needed. 
+This can help improve performance and resource utilization by only loading what is necessary at the time.
+
+/////////////Why we use Lasy Loading
+Lazy loading is used to improve performance and optimize resource consumption. By delaying the loading of certain objects or data until they are needed, 
+lazy loading reduces the initial load time and conserves memory.
+
+//////////////When to Use Lazy Loading
+Not all resources are needed immediately upon application startup.
+There is a need to optimize memory usage and reduce memory footprint.
+
+//////////Why Use Lazy Loading in .NET Core?
+In .NET Core applications, lazy loading is often used to delay the loading of related entities in Entity Framework Core, 
+an Object-Relational Mapping (ORM) framework used for database access. By default, Entity Framework Core uses lazy loading for navigation properties,
+allowing related entities to be loaded only when accessed, rather than loading all related entities eagerly.
+
+Q>What is Web Development and Web Api.
+Q>One api is their Huge amount of data is their , that api is not giving data(should I have to compress to give the data)
+Q>Weak refreshes.
+////////////////////////////////////////////////////////////////////Q>How can I know this class is generic.
+To determine if a class is generic in C#, you can inspect the class definition, use reflection, or utilize the typeof operator with generic type parameters.
+Reflection is particularly useful for runtime checks, while inspecting the class definition is straightforward for compile-time checks.
+//////////////////////////////Q>What file will made after compiler c# code. And What file will make after compiling .net Code
+C# Compilation:
+
+Executable: .exe
+Library: .dll
+
+Q>What is the Scope of  Object.
+Q>When Does refrence object deleted.
+Q>Crossed question for Injection.
+Q>What is diffrence between ADO.net and Entity framework ,(which part of code that I have to write so that we do not have to write much code in Entityframework).
+////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////Kindle Question Simplyfied
+WHAT ARE SOLID PRINCIPLES? WHAT IS THE DIFFERENCE BETWEEN SOLID PRINCIPLES AND DESIGN PATTERNS?
+/////////What is SOLID PRINCIPLES
+SOLID is an acronym for a set of design principles in object-oriented programming (OOP) that aim to make software designs more understandable,
+flexible, and maintainable. 
+Each letter in SOLID stands for a different principle.
+
+///////////Why Use SOLID Principles
+Maintainable:
+Testable:
+Flexible:
+Scalable:
+
+///////////When to Use SOLID Principles?
+Designing complex systems that require flexibility and maintainability.
+Working on long-term projects where codebase evolution and maintenance are expected.
+
+///////////////Why Even Use SOLID Principles?
+Improved Code Quality:
+Easier Maintenance:
+Enhanced Testability:
+Increased Reusability:
+Better Collaboration:
+
+//////////////////////Diffrence 
+SOLID principles aren't concrete - rather abstract. Meaning there can be multiple ways to implement the SOLID principles. 
+Design patterns are concrete and solve a particular kind of problem in a particular way.
+
+////////////////////WHAT IS SINGLE RESPONSIBILITY PRINCIPLE?
+///////////////What
+The Single Responsibility Principle (SRP) is one of the SOLID principles of object-oriented programming. 
+It states that a class should have only one reason to change, meaning that a class should have only one responsibility or job. In other words, 
+a class should have only one primary purpose or concern.
+
+///////////Why Use the Single Responsibility Principle?
+The Single Responsibility Principle is used to:
+
+Improve Maintainability: By ensuring that each class has a single responsibility, code becomes easier to understand, modify, and maintain. This leads to better code quality and reduces the risk of introducing bugs during maintenance.
+
+Enhance Testability: Classes with a single responsibility are easier to test because they have a clear and focused purpose. This makes it easier to write unit tests and verify the correctness of the class's behavior.
+
+Promote Reusability: Classes that adhere to the Single Responsibility Principle are more reusable because they are focused on a specific task or responsibility. This encourages code reuse and helps avoid code duplication.
+
+When to Use the Single Responsibility Principle?
+The Single Responsibility Principle should be applied when:
+
+Designing or refactoring classes and components in software systems.
+Collaborating on team-based projects where code maintainability and understandability are important.
+Developing long-term projects where code evolution and maintenance are expected.
+Real-World Example and Code:
+Let's consider a real-world example of a NotificationService class responsible for sending notifications via email and SMS. However, following the Single Responsibility Principle, we split the class into two separate classes: EmailNotificationService and SMSNotificationService, each responsible for handling a specific type of notification.
+
+csharp
+Copy code
+// Before applying SRP
+
+public class NotificationService
+{
+    public void SendNotification(string recipient, string message)
+    {
+        // Send notification via email
+        EmailService.SendEmail(recipient, message);
+
+        // Send notification via SMS
+        SMSService.SendSMS(recipient, message);
+    }
+}
+
+// After applying SRP
+
+public class EmailNotificationService
+{
+    public void SendNotification(string recipient, string message)
+    {
+        // Send notification via email
+        EmailService.SendEmail(recipient, message);
+    }
+}
+
+public class SMSNotificationService
+{
+    public void SendNotification(string recipient, string message)
+    {
+        // Send notification via SMS
+        SMSService.SendSMS(recipient, message);
+    }
+}
+In the above example, we have split the NotificationService class into two separate classes: 
+EmailNotificationService and SMSNotificationService, each with a single responsibility. The EmailNotificationService class is responsible 
+for sending email notifications, while the SMSNotificationService class is responsible for sending SMS notifications. This adheres to the Single Responsibility
+Principle and makes the code easier to maintain and understand.
+
+/////////////////////////////////////////////////////////////////////////////WHAT IS OPEN-CLOSED PRINCIPLE?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////Angular
+/////What is a Selector and Template ?
+
+/////////////////////////////////////Diffrence between api , Restapi, Restfulapi
+In .NET Core, an API is a general interface for communication between systems, while a REST API specifically follows REST
+principles and uses HTTP for resource-based communication.
+
+////////////////////////////////////////Rest Api
+REST API: Refers to any API that adheres to the principles of REST (Representational State Transfer). 
+It might not fully implement all the constraints of REST architecture.
+
+//////////////////////////////////////RESTful API:
+RESTful API: Specifically refers to APIs that strictly adhere to REST principles, including statelessness, 
+client-server architecture, cacheability, a uniform interface, and a layered system.
+
+//////////////////////////////////////////////////////////////////////////////////Solid Principle
+The SOLID principles are a set of design principles in object-oriented programming to ensure that software is modular, scalable, and maintainable. Here’s a mnemonic to help remember them:
+
+S: Single Responsibility Principle (SRP)
+O: Open/Closed Principle (OCP)
+L: Liskov Substitution Principle (LSP)
+I: Interface Segregation Principle (ISP)
+D: Dependency Inversion Principle (DIP)
+Mnemonic for SOLID
+Smart Objects Love Intelligent Design
+
+This mnemonic encapsulates the idea that well-designed objects (Smart Objects) follow these principles, leading to Intelligent Design.
+
+Explanation
+Single Responsibility Principle: A class should have only one reason to change.
+Open/Closed Principle: Software entities should be open for extension but closed for modification.
+Liskov Substitution Principle: Objects of a superclass should be replaceable with objects of a subclass without affecting the correctness of the program.
+Interface Segregation Principle: A client should not be forced to depend on interfaces it does not use.
+Dependency Inversion Principle: High-level modules should not depend on low-level modules. Both should depend on abstractions.
+By associating each principle with a key concept, you can more easily recall what each letter stands for and what it entails.
+
+///////////////////////////////////////////////////////////////////////diffrence between  Database First, Code First , Model first in Entity framework in one line
+
+Sure! Here are the differences in one line each:
+
+Database First: The database schema is created first, and the code models are generated from the existing database.
+Code First: The code models are created first, and the database schema is generated from the code models.
+Model First: The conceptual model is designed first using a designer, and both the code models and database schema are generated from the model.
+
+
+
+ 
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////FULLSTACKCAFE Question 
+////////////////////////1> What is Property Accessor ?
+The get and set portions or blocks of a property are called accessors.
+class Person
+{
+  private string name; // field
+
+  public string Name   // property
+  {
+    get { return name; }   // get method
+    set { name = value; }  // set method
+  }
+}
+
+//////////////////////////2>
+
+///////////////////////////Microservices
+Microservices is a software development architecture that breaks large applications into smaller, independent parts, or services
+//////////////////////
+Artitecture of Project. // check later
+Interface//testing multiple method
+///////////////////////How you give Security to Api.
+See in the copy.
+if you want security of multiple api , but not one.
+Logout Session
+Emitter, Interpolation.
+
+///////////
+HR Sound issue
+Some time good and Some time low.
+JWT
+/////////////////////////////////Benifit of polymorphism
+Polymorphism is a powerful concept in C# that allows you to write flexible, reusable, and extensible code.
+
+
+Can you write the program that take n number of input as give the output sum, even , count.
+Callback, map, filter, Session, Storage.
+Http filter, Component of .net, dynamic polymorphis,
+Q> What is == , and === in Variable.
+
+Q> What is the early binding and late binding.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////////////////////////////////
+Q)Explain how dependency injection works in ASP.NET Core?
+ It involves supplying dependencies to a class from outside the class itself. The most common way to do this in ASP.NET Core
+is through constructor injection, but there are also other techniques like property injection and method injection.
+
+Q>“ASP.NET Core has dependency injection to manage services; are you aware of the different lifetimes? What are they, and what does each mean?”
+Transient:
+
+Creation: A new instance is created each time the service is requested (injected).
+Lifetime: The instance lives only as long as it's needed to fulfill the current request.
+Example: Database context, logger, helper classes.
+Q> Varchar and Nvarchar
+Q> diffrence between Dictionary vs List
+Q>What is magic table in Sql.
+
+Q>What is the diffrence between equal(), and ==.
+"==" Operator:
+--> Checks if two object references point to the same memory location (reference equality). 
+"Equals()" Method:
+A virtual method that can be overridden in derived classes to define how equality should be checked for that specific type. 
+Q>trigger
+
+last 2question of interview I have solve.
+
+///////////////////////////////////////////////////////////////
+Function 1(){
+	Statement 1;
+	SetTimeout(()=>{
+		Statement 2;		
+	},0);
+	Statement 3;
+}
+Function 2(){
+	Statement 4;
+}
+Function 1();
+Function 2();
+Expected output
+?
+output:
+Statement 1 (from Function 1)
+Statement 3 (from Function 1)
+Statement 4 (from Function 2)
+Statement 2 (from the setTimeout callback)
+
+output : statement 1 , Statement 2;Statemen... by Abhishek Singh (Guest)
+11:48 AM
+Abhishek Singh (Guest)
+output : statement 1 , Statement 2;Statement 3 ,Statement 4
+////////////////////////////////
+Code sample Service  	a=0;     API 1: ... by Unknown User
+Unknown User
+11:50 AM
+Code sample
+Service 
+	a=0;
+ 
+ 
+API 1:
+	a++;
+ 
+API 2:
+	Read a;
+ 
+Expected output
+?
+has context menu
+
+////////////////////////////////////////////
+Write code for Service.
+
+///////////////////////////Write the code for getting 5 hightly salary.(use function that is best approach).
+Salary Distict Salary
+from Employee
+where Salary Desc
+Offset 4 rows Next 1 rows Only;
+////////////////////////////////////
+What is the yeild classes in c#.
+The yield keyword in C# helps to create a sequence of values one at a time, instead of returning them all at once.
+It makes the code simpler and more memory-efficient when working with large collections or sequences.
+
+Example:
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static IEnumerable<int> GetNumbers()
+    {
+        yield return 1;  // First number
+        yield return 2;  // Second number
+        yield return 3;  // Third number
+    }
+
+    static void Main()
+    {
+        foreach (int number in GetNumbers())
+        {
+            Console.WriteLine(number);
+        }
+    }
+}
+
+Summary of Real-World Use Cases for yield:
+Lazy Loading: Fetch or process data one element at a time, saving memory and improving performance.
+Infinite Sequences: Useful for generating sequences like Fibonacci that can go on indefinitely.
+Filtering Data: Apply filters on data without holding everything in memory.
+Efficient File/Log Processing: Process large files line by line, without loading them entirely into memory.
+Paged API Requests: Fetch and process data from APIs page by page, one item at a time.
+
+///////////////////////////////
+Dirt.
+
+
+q>Normally what happen if we do not put the Await keyword in Asny method.
+Q>How many type of json file will be their.
+Q>Base class of controller , How does you make controller.
+Q>If condition and iteration in Sql 
+Q)How you debugging the store procedure in Sql server 
+Q) How you give the security to backend.
+Q) Hiw you can optimise the SQl query
+Q)be all the code of in your brain
+Q) logging ke bare me pich hai
+Q)How can you take the back up your data base
+Q)How can you communicate components with service.
+Q) question will not asked directly.
+Q> What Proxy Design Patter
+Q> What is the latest feature addes in Entyty framework after .Net 6 , 7;
+Q>TempData
+Q>Minification and Bundling.
+Q>Render page Vs Render body.
+Q>CTE vs Temp Table
+Q> Unique Key Vs Foreign Key
+Q>Why ViewData require typeCasting
+Q> What is the diffrence between viewdata and View Bags
+Q> What id diffrence between viewdata and viewbags.
+Q> What are the diffrent http word.
+Q>What are the architecture in dot.net core.
+Q> minimum parameter for Ajax
+
+//////////////////////////////////////////////OOPS
+Q> Create a class hierarchy for different types of fights (e.g., Domestic Flights, International Flights, Charter Flights). Each flight should have common properties (e.g., flight number, departure time, arrival time) and specific properties (e.g., flight duration, layovers, charter company).
+
+Implement methods for booking flights, cancelling flights, and displaying flight details
+
+
+Q> 1️⃣ Library Management System
+Problem:
+Design a class hierarchy for a Library Management System. Implement the following:
+
+A base class Book with common properties: Title, Author, ISBN, PublicationYear.
+Derived classes:
+EBook (additional properties: DownloadLink, FileSize).
+PrintedBook (additional properties: ShelfLocation, CopiesAvailable).
+Implement methods for:
+Issuing and returning books.
+Displaying book details.
+
+2️⃣ Vehicle Rental System
+Problem:
+Create a Vehicle Rental System using OOP principles.
+
+Define a base class Vehicle with properties like VehicleID, Model, Year, RentalPrice.
+Create derived classes:
+Car (additional property: SeatingCapacity).
+Bike (additional property: HasHelmet).
+Implement methods for:
+Renting a vehicle.
+Returning a vehicle.
+Displaying rental details.
+
+3️⃣ Employee Management System
+Problem:
+Design a class hierarchy for an Employee Management System.
+
+Define a base class Employee with properties: EmployeeID, Name, Salary, Department.
+Create derived classes:
+Manager (additional properties: Bonus, TeamSize).
+Developer (additional properties: ProgrammingLanguage, ExperienceLevel).
+Implement methods for:
+Calculating salary (including bonuses for managers).
+Promoting employees.
+Displaying employee details.
+
+4️⃣ Online Shopping System
+Problem:
+Develop an Online Shopping System using OOP.
+
+Create a base class Product with properties: ProductID, Name, Price, StockQuantity.
+Derive classes:
+Electronics (additional properties: WarrantyPeriod).
+Clothing (additional properties: Size, Material).
+Implement methods for:
+Adding products to the cart.
+Calculating the total bill.
+Displaying product details.
+
+5️⃣ Hospital Management System
+Problem:
+Design a Hospital Management System with OOP.
+
+Define a base class Person with properties: Name, Age, Gender.
+Create derived classes:
+Doctor (additional properties: Specialization, Experience).
+Patient (additional properties: Disease, AdmissionDate).
+Implement methods for:
+Scheduling appointments.
+Admitting a patient.
+Displaying patient/doctor details.
+///////////////////////What is the Cross join 
+Key Differences
+Feature	                                CROSS JOIN	                         FULL JOIN (FULL OUTER JOIN)
+Condition	                         No condition needed	                  Needs ON condition
+Result	                                 Cartesian product (A × B)	       Matching + unmatched records from both tables
+NULL values	                         No NULLs	                   NULLs appear for unmatched records
+Use case	                          Generate all combinations	Get complete dataset from both tables
+
+
+
+//////////////////////////////////Q> Method Ovrriding ka code likh wadiya.
+//////////////////////////////////Q> Write the sql query find max salary from whose age is greater than 52.
+Select Max(Salary) as MaxSalary from Employee table
+where age > 55.
+
+///////////////////////////////////////////////////////
+input : "R@*IG#H@T"
+output : "T@*HG#I@R"
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        string str = "R@*IG#H@T";
+        string str1 = ReverseString(str);
+        Console.WriteLine(str1);
+    }
+    
+    public static string ReverseString(string str)
+  {
+    char[] ch = str.ToCharArray();
+    int left = 0;
+    int right = str.Length - 1 ;
+  while(right > left)
+  {
+      if(!Char.IsLetter(ch[left]))
+      {
+          left++;
+      }
+     else if(!Char.IsLetter(ch[right]))
+      {
+          right--;
+      }
+      else
+      {
+      char temp = ch[left];
+      ch[left] = ch[right];
+      ch[right] = temp;
+      left++;
+      right--;
+  }
+  }
+  return new string(ch);
+}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Interview Question Experience Part 2
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Q> What is the diffrence between Class and Struct
+
+🔹 Example of a Class (Reference Type)
+
+class Car
+{
+    public string Brand;
+}
+
+class Program
+{
+    static void Main()
+    {
+        Car car1 = new Car();
+        car1.Brand = "Tesla";
+
+        Car car2 = car1;  // Reference is copied (not a new object)
+        car2.Brand = "BMW";
+
+        Console.WriteLine(car1.Brand);  // Output: BMW (same reference)
+    }
+}
+
+✅ Key Takeaway:
+
+car1 and car2 point to the same object in memory.
+
+Changing car2.Brand also changes car1.Brand.
+
+
+---
+
+🔹 Example of a Struct (Value Type)
+
+struct Car
+{
+    public string Brand;
+}
+
+class Program
+{
+    static void Main()
+    {
+        Car car1 = new Car();
+        car1.Brand = "Tesla";
+
+        Car car2 = car1;  // Copy is created (separate memory)
+        car2.Brand = "BMW";
+
+        Console.WriteLine(car1.Brand);  // Output: Tesla (original unchanged)
+    }
+}
+
+✅ Key Takeaway:
+
+car1 and car2 are separate copies in memory.
+
+Changing car2.Brand does NOT affect car1.Brand.
+
+
+---
+
+🔹 Interview-Friendly Answer
+
+1. Class is a reference type (stored in Heap), Struct is a value type (stored in Stack).
+
+2. Class supports inheritance, Struct does not.
+
+3. Class objects are passed by reference, Structs are copied.
+
+4. Use Struct for small, lightweight objects (like Point), and Class for large, complex objects (like Car).
+
+
+
+/////////////////////////////Access Modifier
+revision from udemy courses.
+
+//////////////////////////////Diffrence between Unique key and Foreign key.
+Difference Between Unique Key and Foreign Key in SQL
+
+---
+
+🔹 Example of Unique Key
+
+CREATE TABLE Employees (
+    EmployeeID INT PRIMARY KEY,
+    Email VARCHAR(100) UNIQUE,  -- Ensures all emails are unique
+    Name VARCHAR(50)
+);
+
+✅ Key Takeaway:
+
+Email column cannot have duplicate values but can have one NULL.
+
+
+---
+
+🔹 Example of Foreign Key
+
+CREATE TABLE Departments (
+    DepartmentID INT PRIMARY KEY,
+    DepartmentName VARCHAR(50)
+);
+
+CREATE TABLE Employees (
+    EmployeeID INT PRIMARY KEY,
+    Name VARCHAR(50),
+    DepartmentID INT,
+    FOREIGN KEY (DepartmentID) REFERENCES Departments(DepartmentID)  -- Foreign Key linking to Departments
+);
+
+✅ Key Takeaway:
+
+DepartmentID in Employees refers to DepartmentID in Departments table.
+
+Ensures an employee must belong to a valid department.
+
+
+---
+
+🔹 Interview-Friendly Answer
+
+1. Unique Key ensures uniqueness in a column, Foreign Key links two tables.
+
+2. Unique Key allows one NULL, Foreign Key allows multiple matching values.
+
+3. Unique Key prevents duplicates, Foreign Key ensures referential integrity.
+
+4. Unique Key is used for unique constraints (like emails), Foreign Key is used for table relationships (like Employee-Department).
+
+
+////////////////////////////////IEnumerable and IQuerable.
+Difference Between IEnumerable and IQueryable in C# (Easy Explanation for Interviews)
+🔹 Example of IEnumerable (Client-Side Execution, Inefficient for Databases)
+List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+IEnumerable<int> evenNumbers = numbers.Where(n => n % 2 == 0); // Filters in memory
+✅ Key Takeaway:
+
+Loads all data into memory, then filters it.
+Bad for large data (wastes memory and performance).
+🔹 Example of IQueryable (Database Execution, Efficient for SQL Queries)
+using (var context = new MyDbContext())
+{
+    IQueryable<Employee> employees = context.Employees.Where(e => e.Salary > 50000);
+}
+✅ Key Takeaway:
+
+Query executes in SQL Server, filtering before data is loaded.
+Much faster for large databases.
+🔹 Why Use IQueryable for SQL Queries?
+Reduces Load on Database: Only fetches required data.
+Optimized Queries: Generates efficient SQL (SELECT statements).
+Supports Deferred Execution: Query runs only when needed, improving performance.
+Scales Better: Ideal for handling large datasets in real applications.
+🔹 Interview-Friendly Answer
+IEnumerable processes data in memory, IQueryable runs the query on the database.
+IEnumerable is better for in-memory collections, IQueryable is best for SQL queries.
+IQueryable improves performance by filtering at the database level.
+Use IQueryable in Entity Framework to generate efficient SQL queries automatically.
+
+/////////////difference between JIT and AOt
+"JIT compiles the code while the app is running, which makes it slower. AOT compiles the code before running the app, making it faster and better for production."
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////L2 Coding Question
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+1. Find the Maximum Subarray Sum (Kadane's Algorithm)
+
+Input: [-2,1,-3,4,-1,2,1,-5,4] → Output: 6 (subarray: [4,-1,2,1])
+
+Complexity: O(n)
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 
 
