@@ -12914,8 +12914,1567 @@ Complexity: O(n)
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Linq mosted asked question
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+You are given a list of Order objects. Each order has a CustomerName, OrderId, and OrderDate. Write a method that:
+Groups orders by customer name.
+Sorts each customer’s orders by OrderDate descending.
+Returns a dictionary: Dictionary<string, List<Order>> where the key is the customer name and the value is the list of sorted orders.
+
+public class Order
+{
+public string CustomerName{get ; set;};
+public int OrderId {get ; set ;}
+public DataTime OrderDate {get ; set ;}
+}
+
+public class orderGrouper
+{
+ public static Dictionary<string , List<order>> GASO(List<Order> orders)
+{
+  var groupedOrders = orders.GroupBY(o=> o.customername);
+
+ var result = new Disctionary<string,List<List<Order>>();
+ foreach(var group in groupedOrders)
+ {
+   var sorttedOrder = group.OrderByDescending(o => o.OrderDate).ToList();
+   
+   result[group.Key] = sortedOrders;
+ }
+ return result;
+} 
+
+}
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Linq mosted asked question
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+You are given a list of Order objects. Each order has a CustomerName, OrderId, and OrderDate. Write a method that:
+Groups orders by customer name.
+Sorts each customer’s orders by OrderDate descending.
+Returns a dictionary: Dictionary<string, List<Order>> where the key is the customer name and the value is the list of sorted orders.
+
+public class Order
+{
+public string CustomerName{get ; set;};
+public int OrderId {get ; set ;}
+public DataTime OrderDate {get ; set ;}
+}
+
+public class orderGrouper
+{
+ public static Dictionary<string , List<order>> GASO(List<Order> orders)
+{
+  var groupedOrders = orders.GroupBY(o=> o.customername);
+
+ var result = new Disctionary<string,List<List<Order>>();
+ foreach(var group in groupedOrders)
+ {
+   var sorttedOrder = group.OrderByDescending(o => o.OrderDate).ToList();
+   
+   result[group.Key] = sortedOrders;
+ }
+ return result;
+} 
+
+}
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Tarun Kumar 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////https://www.linkedin.com/in/tarun-kumar-480601184/recent-activity/all/
+Most Frequently Asked .NET Full Stack Interview Questions(covering .NET MVC, .NET Core, Web API, EF Core, SQL Server, Angular)
+
+🔹 .NET / C# Core Concept
+7. Difference between abstract class vs interface.
+8. Explain Dependency Injection (DI) in .NET Core.
+9. What are Generics in C# and their benefits?
+10. Difference between IEnumerable, IQueryable, ICollection, List.
+---
+🔹 ASP.NET MVC / Web API
+1. Difference between Controller vs ControllerBase.
+2. Explain Action Filters, Result Filters, Exception Filters.
+3. Difference between TempData, ViewData, ViewBag.
+4. What is Routing in MVC vs .NET Core?
+5. Explain Model Binding and Validation.
+6. What is Middleware in ASP.NET Core?
+7. Difference between Authentication vs Authorization.
+8. Explain JWT Authentication & Authorization flow.
+9. How to implement Caching (In-Memory, Distributed, Redis).
+10. What are API Versioning strategies?
+---
+🔹 Entity Framework Core
+1. What is DbContext?
+2. Explain Code-First vs Database-First.
+3. What are Migrations in EF Core?
+4. Difference between Eager Loading vs Lazy Loading vs Explicit Loading.
+5. Explain Change Tracking in EF Core.
+6. What is the difference between AsNoTracking() vs Tracking queries?
+7. How to implement Transactions in EF Core?
+8. What is Concurrency Handling in EF Core?
+---
+🔹 SQL Server
+1. What are ACID properties of a transaction?
+2. Difference between Clustered vs Non-Clustered Index.
+3. Explain Stored Procedure vs Function.
+4. Difference between Inner Join, Left Join, Right Join, Cross Join.
+5. What is a CTE (Common Table Expression)?
+6. How do Indexes improve performance?
+7. Difference between Normalization vs Denormalization.
+8. What are Transactions and Isolation Levels?
+9. How to optimize SQL queries?
+10. Explain Deadlock and how to handle it.
+---
+🔹 Angular
+1. Difference between AngularJS vs Angular.
+2. What are Components, Directives, Modules, Services?
+3. Explain Data Binding types (Interpolation, Property Binding, Event Binding, Two-way Binding).
+4. Difference between ngIf vs hidden.
+5. What is Dependency Injection in Angular?
+6. What is RxJS (Observables, Subject, BehaviorSubject)?
+7. Explain Routing & Route Guards (AuthGuard, CanActivate, CanDeactivate).
+8. What are Pipes? Difference between Pure vs Impure pipes.
+9. What is Change Detection in Angular?
+10. Difference between Template-driven forms vs Reactive forms.
+---
+These are the most commonly repeated questions.
+
+
+/////////////////////////////////////////////////////////////////////
+Ultimate .NET Interview Questions – Freshers to Seniors 🚀
+Preparing for a .NET Developer Interview?
+
+ Here’s your complete .NET Roadmap with questions covering C#, ASP.NET Core, MVC, Web API, and SQL Server — from Freshers → Intermediate → Senior 👇
+
+🔹 1️⃣ Entry / Freshers
+
+📌 C# / .NET Basics
+ ✅ .NET Framework vs .NET Core / .NET 5+
+ ✅ OOP concepts with real C# examples
+ ✅ Garbage Collection in .NET
+ ✅ Exception handling in C#
+ ✅ == vs .Equals(), ref vs out parameters
+ ✅ Boxing & Unboxing
+ ✅ Value type vs Reference type
+
+📌 MVC / Web Basics
+ ✅ MVC pattern – Controller, Action, View
+ ✅ Razor View vs ASPX
+ ✅ ViewBag vs ViewData vs TempData
+
+📌 SQL Server
+ ✅ Primary Key vs Foreign Key
+ ✅ INNER JOIN vs LEFT JOIN vs RIGHT JOIN
+ ✅ Stored Procedure basics
+ ✅ Clustered vs Non-Clustered Index
+
+🔹 2️⃣ Intermediate
+
+📌 C# / .NET Core
+ ⚡ Dependency Injection & why it matters
+ ⚡ IEnumerable vs IQueryable
+ ⚡ Async / Await implementation
+ ⚡ Task vs Thread
+
+📌 MVC / Web API
+ ⚡ Routing in MVC & Web API
+ ⚡ RESTful API in .NET Core
+ ⚡ IActionResult vs ActionResult
+ ⚡ Model Binding & Validation
+
+📌 SQL Server
+ ⚡ Stored Procedure vs Function vs Trigger
+ ⚡ Transactions & ACID properties
+ ⚡ Query Optimization with Indexes & Execution Plans
+ ⚡ Entity Framework vs ADO.NET
+
+🔹 3️⃣ Advanced / Senior
+
+📌 Architecture / .NET Advanced
+ 🔥 Designing scalable & fault-tolerant applications
+ 🔥 Middleware Pipeline in ASP.NET Core
+ 🔥 Caching strategies (MemoryCache, Redis)
+ 🔥 Logging, Monitoring & Exception Handling in Production
+
+📌 Web API / MVC
+ 🛡 Securing APIs with JWT, OAuth, Claims-based Auth
+ 🛡 API Versioning best practices
+ 🛡 Async Endpoints for high performance
+ 🛡 Microservices architecture in .NET
+
+📌 SQL Server / DB Design
+ 🗄 Normalized DB design for large applications
+ 🗄 SQL Server vs NoSQL in enterprise solutions
+ 🗄 Handling Concurrency & Deadlocks
+ 🗄 Business logic with Stored Procedures, Triggers & Views
+
+💡 Pro Tips:
+ ✨ Freshers → OOP, MVC basics, SQL queries
+ ✨ Intermediate → EF Core, async programming, DB optimization
+ ✨ Senior → Architecture, CI/CD, Performance tuning, Secure APIs
+🔗 Over to you:
+ 👉 Which .NET interview question challenged you the most?
+ 💬 Drop it in the comments — let’s learn together!
+
+///////////////////////////////////////////////////////////////////////////////////
+op 10 Most Asked .NET / Web API Interview Questions
+
+Preparing for your next ASP.NET Core / Web API interview?
+Here are some of the most frequently asked questions that can help you brush up your concepts 👇
+
+⸻
+
+🔟 Top 10 Questions
+
+1️⃣ What is the difference between IActionResult and ActionResult in ASP.NET Core?
+
+2️⃣ How does Dependency Injection (DI) work in .NET Core?
+
+3️⃣ Explain the difference between HttpGet, HttpPost, HttpPut, and HttpDelete in Web API.
+
+4️⃣ What is Middleware in ASP.NET Core? Can you create a custom middleware?
+
+5️⃣ How does Routing work in Web API? What’s the role of [Route] and [Http…] attributes?
+
+6️⃣ What are Filters in ASP.NET Core? Explain the types (Authorization, Action, Exception, etc.).
+
+7️⃣ How do you implement Token-based authentication using JWT in Web API?
+
+8️⃣ Difference between Synchronous vs Asynchronous methods in .NET API? Why prefer async?
+
+9️⃣ What is Model Binding and Model Validation in ASP.NET Core?
+
+🔟 How do you secure your Web API? Mention best practices.
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+My Friend: DSA is tough.
+Me: Not for me. I follow the 3-7-15 Rule. 
+But let me be honest —
+It wasn’t always this way.
+I used to forget what I solved just a week ago.
+The problem wasn’t practice.
+It was retention.
+That’s when I created the 3-7-15 Rule 👇
+
+Solve a question 4 times:
+✅ First time — Understand and solve it
+✅ After 3 days — Solve it again to remember
+✅ After 7 days — Solve it once more to get better
+✅ After 15 days — Solve it one last time to make it stick in your mind
+By the 4th time, your brain stops panicking.
+You recognize patterns instantly.
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Dot .NET C# Developer Interview Coding Questions
+
+In recent interviews at companies like TCS, Infosys, Wipro, Accenture, Capgemini, Cognizant, and HCL, I noticed that many coding questions repeat — especially for .NET Developer roles using C#.
+
+These questions focus on logic building, DSA basics, and problem-solving — perfect for freshers and early-career professionals.
+
+Top 20 C# Coding Questions Asked in Interviews:
+
+ 1. Write a program to reverse a string without using in-built functions.
+ 2. Check if a number is Prime.
+ 3. Find the factorial of a number using recursion.
+ 4. Count the number of vowels and consonants in a string.
+ 5. Find the second largest element in an array.
+ 6. Write a program to check for Palindrome (number or string).
+ 7. Print Fibonacci series up to N terms (recursive and iterative).
+ 8. Sort an array using Bubble Sort.
+ 9. Find duplicate elements in an array.
+10. Write a program to find the GCD of two numbers.
+11. Swap two numbers without using a temporary variable.
+12. Check if two strings are anagrams.
+13. Write a program to find the missing number in an array of 1 to N.
+14. Find the frequency of characters in a string.
+15. Check if a number is Armstrong.
+16. Merge two sorted arrays.
+17. Left rotate an array by D positions.
+18. Find the first non-repeating character in a string.
+19. Write a program to implement Linear Search and Binary Search.
+20. Convert binary number to decimal and vice versa.
+21. Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements. 
+
+Practice each question in C#
+
+Comment ,Like Share
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////
+🧠 Understanding .NET Memory Management – A Must-Have Skill for Every Developer
+
+Memory management in .NET is one of those behind-the-scenes topics that often gets overlooked—until it starts causing real problems in production.
+
+Whether you're just starting out or have years of experience, knowing how .NET handles memory can help you write cleaner, more efficient, and more reliable code.
+
+🔹 So, what exactly happens under the hood?
+
+.NET uses a Garbage Collector (GC) to manage memory automatically. It allocates memory for your objects on the managed heap and periodically clears up unused ones. But it’s not magic—GC only collects objects that are no longer referenced.
+
+🔹 The heap is divided into three generations:
+Gen 0: Short-lived objects (like local variables)
+Gen 1: Medium lifespan
+Gen 2: Long-lived objects (like app-wide caches)
+
+
+💡 Real-scenario:
+
+In one of our enterprise applications, we noticed performance degradation after each deployment. Initially, the app was responsive, but over time, it slowed down significantly—even without any increase in load.
+
+After some profiling, we found the culprit: unsubscribed event handlers.
+
+A background service was subscribing to an event but never unsubscribing, keeping large objects alive in memory even though they were no longer needed.
+
+ The Garbage Collector couldn’t clean them up because references still existed.
+
+✅ The fix? We implemented proper event unsubscription and moved to WeakReference where appropriate. Memory usage stabilized, and performance improved noticeably.
+
+
+🔍 Key Takeaways:
+
+Always dispose unmanaged resources (IDisposable, using)
+Unsubscribe from events when no longer needed
+Avoid static references to large objects
+Use memory profiling tools like dotMemory, Visual Studio Diagnostics, or JetBrains Rider
+
+
+📣 To freshers: Start developing good habits early. Learn about GC, and avoid memory leaks before they happen.
+
+📣 To experienced devs: Don’t assume GC will solve everything. Real-time monitoring and profiling are your best friends.
+
+Let’s build .NET apps that are not just functional—but also smart and sustainable. 🔧
+
+What memory management challenges have you faced in .NET?
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+📌 Top 20 SQL Interview Questions:
+👉 What’s the difference between WHERE and HAVING clause?
+👉 Explain different types of JOINs with examples.
+👉 Difference: Primary Key vs Unique Key vs Foreign Key.
+👉 INNER JOIN vs LEFT/RIGHT/FULL OUTER JOIN.
+👉 DELETE vs TRUNCATE vs DROP.
+👉 What is a View? Can we update it?
+👉 Clustered vs Non-Clustered Index.
+👉 What is a CTE? How does it differ from subqueries?
+👉 Use of ROW_NUMBER(), RANK(), DENSE_RANK().
+👉 What is Normalization? Different Normal Forms?
+👉 What’s a Stored Procedure? How is it different from a Function?
+👉 How to find the second highest salary in SQL?
+👉 What is a Transaction? What are ACID properties?
+👉 Common aggregate functions: SUM(), AVG(), etc.
+👉 Difference between IN, EXISTS, and ANY.
+👉 ISNULL() vs COALESCE() — which to use when?
+👉 What are Subqueries? When to use them vs JOINs?
+👉 Temporary Table vs Table Variable.
+👉 What is an Index? When and why to create one?
+👉 How to optimize a slow-running SQL query?
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ 🔹 1. .NET Core vs .NET Framework
+ 🔹 2. Explain MVC Architecture
+ 🔹 3. What is Dependency Injection?
+ 🔹 4. What is Middleware?
+ 🔹 5. How does Routing work?
+ 🔹 6. AddSingleton vs AddScoped vs AddTransient
+ 🔹 7. Role of Startup.cs
+ 🔹 8. What is Entity Framework Core?
+ 🔹 9. Model Binding explained
+ 🔹 10. Tag Helpers vs HTML Helpers
+ 🔹 11. What is a ViewModel?
+ 🔹 12. Types of Filters in MVC Core
+ 🔹 13. ViewData vs ViewBag vs TempData
+ 🔹 14. What is Kestrel Web Server?
+ 🔹 15. IActionResult vs ActionResult
+ 🔹 16. Exception Handling approaches
+ 🔹 17. Razor Pages vs MVC
+ 🔹 18. Authentication & Authorization
+ 🔹 19. Consuming Web APIs via HttpClient
+ 🔹 20. Configuration using appsettings.json & IConfiguration
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+𝐀𝐝𝐝𝐒𝐢𝐧𝐠𝐥𝐞𝐭𝐨𝐧 vs 𝐀𝐝𝐝𝐒𝐜𝐨𝐩𝐞𝐝 vs 𝐀𝐝𝐝𝐓𝐫𝐚𝐧𝐬𝐢𝐞𝐧𝐭 in C# Dependency Injection
+Do you really know the difference? 
+
+Whenever a service is requested, the DI Container must decide:
+ ➡️ Create a new instance?
+ ➡️ Or reuse an existing one?
+
+That decision depends on the lifetime defined when you register the service.
+Here’s a quick refresher:
+𝐀𝐝𝐝𝐒𝐢𝐧𝐠𝐥𝐞𝐭𝐨𝐧
+• A single instance is created the first time it's requested (or during ConfigureServices if specified).
+• The same instance is used throughout the application's lifetime.
+
+𝐀𝐝𝐝𝐒𝐜𝐨𝐩𝐞𝐝
+• A new instance is created once per request.
+• Ideal for web apps where services share state per HTTP request.
+
+𝐀𝐝𝐝𝐓𝐫𝐚𝐧𝐬𝐢𝐞𝐧𝐭
+• A new instance every time the service is requested.
+• Best for lightweight, stateless operations.
+
+When to Use What?
+✔️ Use Transient for short-lived, stateless services.
+ ✔️ Use Scoped when you want to maintain state within a request.
+ ✔️ Use Singleton for app-wide services like logging, caching, and configuration.
+
+Making the right choice can improve performance and prevent memory issues.
+
+ What’s your default choice and why? Let’s discuss!
+hashtag
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+✅ Top 50 Angular Interview Questions (2024-2025)
+
+🚀 Asked in MNCs like TCS, Infosys, Accenture, Capgemini, Wipro & more!
+
+📌 Whether you're a beginner or experienced dev preparing for Angular interviews, these 50 most frequently asked questions will help you crack real-world rounds with confidence! 💯
+
+🟢 Basics & Fundamentals
+What is Angular and how is it different from AngularJS?
+Key features of Angular?
+What are Components in Angular?
+What is a Module in Angular?
+What is Data Binding and its types?
+Interpolation vs Property Binding
+What is Event Binding?
+How is Two-Way Binding implemented?
+Role of ngModel
+What is Angular CLI?
+
+🟡 Directives
+What are Directives in Angular?
+Structural vs Attribute Directives
+*ngIf vs *ngFor vs *ngSwitch
+How to create a custom directive?
+Use of ngClass and ngStyle
+
+🟣 Services & Dependency Injection
+What are Services in Angular?
+What is Dependency Injection?
+How to create & inject a service?
+Use of @Injectable() & providedIn: 'root'
+
+🔵 Routing & Navigation
+What is Angular Routing?
+How to configure routes?
+Use of routerLink & router-outlet
+What are route guards (CanActivate, CanDeactivate)?
+Route parameters & navigation
+Lazy loading modules
+
+🟠 Forms in Angular
+Template-Driven vs Reactive Forms
+Creating a form using FormBuilder
+Form validation (default & custom)
+What is FormGroup, FormControl, FormArray?
+Dynamic form controls (add/remove)
+
+🔴 HTTP & APIs
+Making HTTP requests
+Use of HttpClientModule
+Error handling via HttpInterceptor
+Observables vs Promises
+Cancelling HTTP requests
+
+🟤 Advanced Concepts
+What is Change Detection in Angular?
+Lifecycle hooks: ngOnInit, ngOnChanges, ngAfterViewInit
+Difference between ViewChild & ContentChild
+Subject vs BehaviorSubject vs ReplaySubject
+Performance optimization techniques
+
+⚫ Real-Time Use Cases
+Search with debounce time
+Dynamic forms from API data
+Sharing data between unrelated components
+State management (without NgRx)
+Role-Based Access Control (RBAC)
+
+⚪ Testing & Best Practices
+Testing components/services with Jasmine/Karma
+What is TestBed?
+Angular performance best practices
+AOT (Ahead-of-Time) compilation
+Securing Angular apps
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+🔥 **Top 50 Web API Interview Questions**
+
+for .NET Developers 👨‍💻👩‍💻
+
+Are you preparing for interviews in **.NET / ASP.NET Core Web API**?
+These **frequently asked questions** will help you **crack your next tech round** confidently! 💥
+
+📌 **Basics of Web API**
+
+▪️ What is Web API?
+▪️ Difference between Web API and WCF?
+▪️ Difference between Web API and REST API?
+▪️ What are the HTTP methods supported in Web API?
+▪️ What is REST? Key principles?
+▪️ PUT vs PATCH – what's the difference?
+▪️ Common HTTP status codes?
+▪️ 200 OK vs 201 Created vs 204 No Content
+▪️ 400 Bad Request vs 404 Not Found
+▪️ What is Media Type Formatter?
+
+🧭 **Routing & Versioning**
+
+▪️ What is attribute routing in Web API?
+▪️ What is convention-based routing?
+▪️ How to implement API versioning in ASP.NET Core?
+▪️ URL vs Header versioning – what’s better?
+▪️ How to restrict routes to specific HTTP methods?
+
+🔐 **Authentication & Authorization**
+
+▪️ How to implement token-based authentication in Web API?
+▪️ What is OAuth2 and how is it implemented?
+▪️ How is JWT used in Web API authentication?
+▪️ Authentication vs Authorization?
+▪️ Best practices to secure Web API endpoints?
+
+⚙️ **Dependency Injection & Middleware**
+
+▪️ How does Dependency Injection (DI) work in Web API?
+▪️ AddTransient vs AddScoped vs AddSingleton
+▪️ How to inject services into controllers?
+▪️ What is middleware in ASP.NET Core?
+
+
+🗃️ **Data Handling & Model Binding**
+
+▪️ What is Model Binding?
+▪️ What is Model Validation?
+▪️ Use of `[FromBody]`, `[FromQuery]`, `[FromRoute]`
+▪️ `IHttpActionResult` vs `HttpResponseMessage`
+▪️ How to return custom error responses?
+▪️ How to handle exceptions globally?
+
+🧩 **Filters & Action Results**
+
+▪️ What are Action Filters in Web API?
+▪️ Types of Filters in ASP.NET Core
+▪️ How to create custom Action Filters?
+▪️ Using middleware for exception handling?
+
+🔄 **Serialization & Formatting**
+
+▪️ How is serialization handled in Web API?
+▪️ How to return JSON or XML?
+▪️ How to customize JSON formatting?
+
+📁 **File Upload / Download**
+
+▪️ How to upload files via Web API?
+▪️ How to return a file for download?
+
+🧪 **Testing & Debugging**
+
+▪️ How to test Web API using Postman?
+▪️ How to write unit tests for controllers?
+▪️ What is Swagger / OpenAPI?
+▪️ How to enable CORS in Web API?
+▪️ What is the purpose of `[ApiController]` attribute?
+
+🔍 **Advanced Topics**
+
+▪️ What is throttling in Web API?
+▪️ How to implement rate limiting?
+▪️ What is HATEOAS?
+▪️ What is the Repository Pattern?
+▪️ Synchronous vs Asynchronous in Web API
+▪️ How to improve performance & scalability?
+
+🔖 **Follow me for more tech content** on
+.NET | Angular | C# | SQL | Web API
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+🔹 .NET Full Stack Developer Interview Questions (With Core Topics Across Backend, Database, and Frontend)
+hashtag#FullStackDeveloper hashtag#DotNetCore hashtag#Angular hashtag#SQLServer hashtag#InterviewPrep hashtag#LinkedInTech
+
+If you're preparing for a .NET Full Stack Developer role or mentoring someone who is, here’s a solid list of interview-ready questions across the stack:
+
+
+---
+
+✅ .NET Framework / .NET Core / ASP.NET Core
+
+1️⃣ What is the difference between a value type and a reference type in .NET?
+2️⃣ Explain the role of the Garbage Collector in .NET Framework.
+3️⃣ What are the different types of assemblies in .NET?
+4️⃣ How does the AppDomain work and when is it used?
+5️⃣ Key differences between .NET Framework and .NET Core.
+6️⃣ What is Middleware in ASP.NET Core and how does it work?
+7️⃣ How is Dependency Injection implemented in ASP.NET Core?
+8️⃣ What is the purpose of appsettings.json in configuration?
+9️⃣ What is the life cycle of an ASP.NET MVC request?
+🔟 Difference between TempData, ViewData, and ViewBag?
+1️⃣1️⃣ How do you implement security in an MVC application (Authentication/Authorization)?
+1️⃣2️⃣ What is a partial view and when should you use one?
+
+
+---
+
+✅ SQL Server (Backend DB Layer)
+
+1️⃣3️⃣ Write a SQL query to find the second highest salary from an Employee table.
+1️⃣4️⃣ Difference between INNER JOIN, LEFT JOIN, and FULL JOIN.
+1️⃣5️⃣ What are indexes and how do they improve query performance?
+1️⃣6️⃣ How to optimize a slow-performing stored procedure?
+
+
+---
+
+✅ Angular (Frontend)
+
+1️⃣7️⃣ Difference between ngOnInit() and constructor() in Angular components.
+1️⃣8️⃣ Explain types of data binding in Angular (One-way, Two-way, Event, Property).
+1️⃣9️⃣ What are services in Angular and how do you inject them?
+2️⃣0️⃣ What is lazy loading in Angular and what are its performance benefits?
+
+
+---
+
+💡 These questions are often asked in technical rounds and help assess both conceptual depth and real-world application. If you’re a job seeker or mentor, this list is your quick-glance revision and discussion starter.
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////Revisition
+///////////////////////////////////////////////////////////////
+🎯 Top .NET Core MVC Interview Questions Asked by TCS, Infosys, Accenture, Capgemini, LTI, Cognizant, Deloitte & More!
+
+
+✅ 1–10: Basics of .NET Core MVC
+1. What is .NET Core and how is it different from .NET Framework?
+2. What is ASP.NET Core MVC?
+3. What is Middleware in .NET Core?
+4. What is the role of Startup.cs file in ASP.NET Core?
+5. What is the use of appsettings.json? How do you read values from it?
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////6. What is the difference between IActionResult and ActionResult<T>?
+ 1️⃣ Definition (in easiest words)
+
+IActionResult → It is an interface that represents the result of an action method (like Ok(), NotFound(), BadRequest() etc.).
+✅ You use it when your action can return multiple result types.
+
+ActionResult<T> → It is a generic version of ActionResult that can return both a specific data type (T) and HTTP status results like Ok() or NotFound().
+✅ You use it when your action returns data (like a model or DTO) and also status codes.
+
+
+
+---
+
+🧠 2️⃣ Example
+
+Using IActionResult
+
+[HttpGet("{id}")]
+public IActionResult GetProperty(int id)
+{
+    var property = _propertyService.GetPropertyById(id);
+    
+    if (property == null)
+        return NotFound(); // 404
+
+    return Ok(property); // 200 with data
+}
+
+Here, you return Ok() or NotFound(), both are different IActionResults.
+
+
+---
+
+Using ActionResult<T>
+
+[HttpGet("{id}")]
+public ActionResult<PropertyDto> GetProperty(int id)
+{
+    var property = _propertyService.GetPropertyById(id);
+
+    if (property == null)
+        return NotFound(); // 404
+
+    return property; // automatically wraps in Ok()
+}
+
+Here, ActionResult<PropertyDto> can return either:
+
+PropertyDto → data with 200 status, or
+
+NotFound() → 404 status.
+
+
+So, it’s type-safe and cleaner.
+
+
+---
+
+💼 3️⃣ Project Use (Buy & Sell Property App)
+
+In your Buy & Sell Property Application,
+you can use:
+
+IActionResult when you want to just return status — for example:
+
+[HttpPost]
+public IActionResult DeleteProperty(int id)
+{
+    bool deleted = _propertyService.Delete(id);
+    if (!deleted)
+        return NotFound();
+    return NoContent();
+}
+
+ActionResult<PropertyDto> when you want to return property details or error:
+
+[HttpGet("{id}")]
+public ActionResult<PropertyDto> GetProperty(int id)
+{
+    var property = _propertyService.GetById(id);
+    if (property == null)
+        return NotFound("Property not found");
+    return property;
+}
+
+
+
+---
+
+⚖️ 4️⃣ Trade-offs
+
+Feature IActionResult ActionResult<T>
+
+Return data with type safety ❌ No ✅ Yes
+Return multiple types (OK, NotFound) ✅ Yes ✅ Yes
+Easy unit testing ❌ Less easy ✅ Easier (strongly typed)
+Modern ASP.NET Core practice ⚠️ Legacy style ✅ Recommended
+
+
+
+---
+
+💡 5️⃣ Business Impact
+
+✅ Makes API responses consistent and predictable
+✅ Improves client integration (Angular or React apps get clear data types)
+✅ Reduces runtime errors, increasing stability and maintainability
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////7. Explain the MVC architecture and how it works in ASP.NET Core.
+
+Perfect, Abhishek 👏
+
+Here’s how you can explain MVC architecture in ASP.NET Core confidently in an interview for a 7 years experienced .NET full stack developer — with clear technical points + real-world explanation 👇
+
+
+---
+
+🧩 Definition (Simple + Professional)
+
+MVC stands for Model–View–Controller — it’s an architectural design pattern used to separate an application into 3 main parts:
+
+1. Model → Handles the data and business logic.
+
+
+2. View → Handles the UI (what user sees).
+
+
+3. Controller → Handles user input and connects Model and View.
+
+
+
+It helps in separation of concerns, easy testing, and better maintainability.
+
+
+---
+
+⚙️ How It Works (Flow)
+
+Let’s see how MVC works step-by-step in ASP.NET Core:
+
+1. User Request → Controller
+
+A user types a URL or clicks a button.
+
+The request first goes to the Controller.
+
+Example: PropertyController.
+
+
+
+2. Controller → Model
+
+The controller asks the Model (C# classes) to get or update data from the database via Entity Framework / ADO.NET.
+
+Example: PropertyService.GetAllProperties().
+
+
+
+3. Model → Database → Model
+
+The model fetches data (like property listings or user details) and returns it to the controller.
+
+
+
+4. Controller → View
+
+The controller passes this data to the View (a .cshtml page).
+
+Example: return View(propertyList);
+
+
+
+5. View → User
+
+The view displays the data in a user-friendly format — HTML + Razor syntax.
+
+
+
+
+
+---
+
+🏠 Project Use (Buy & Sell Properties App)
+
+In your Property Buy & Sell Application:
+
+Model: Property, User, Transaction classes — these represent tables in the database.
+
+View: Razor pages showing property listings, details, and dashboards.
+
+Controller: PropertyController, AccountController, etc., handle user actions (buy, sell, search).
+
+
+📘 Example:
+
+public class PropertyController : Controller
+{
+    private readonly IPropertyService _service;
+
+    public PropertyController(IPropertyService service)
+    {
+        _service = service;
+    }
+
+    public IActionResult Index()
+    {
+        var properties = _service.GetAllProperties();
+        return View(properties);
+    }
+}
+
+
+---
+
+⚖️ Trade-offs
+
+Advantage Disadvantage
+
+Easy to maintain and test due to separation of concerns Can be overkill for very small apps
+Multiple developers can work in parallel (UI, Business, DB) More files and structure to manage
+Promotes clean architecture Requires understanding of request flow
+
+
+
+---
+
+💼 Business Impact
+
+✅ Faster development in large teams
+✅ Better code organization → fewer bugs
+✅ Easy to extend — e.g., adding new modules like Payments or Notifications without breaking old ones
+✅ Improves scalability and maintainability
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8. What is Dependency Injection in ASP.NET Core?
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////9. What are the different types of dependency injection lifetimes?
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////10. What is the use of ConfigureServices and Configure methods?
+Definition (Simple + Technical)
+
+In ASP.NET Core, the Startup class (or in .NET 6/7/8 the Program.cs file) has two main methods:
+
+🔹 ConfigureServices(IServiceCollection services)
+
+Used to register services that your app will use (like dependency injection setup).
+
+Example: adding database contexts, authentication, logging, caching, etc.
+
+Basically, you tell .NET what you’ll need in your app.
+
+
+🔹 Configure(IApplicationBuilder app, IWebHostEnvironment env)
+
+Used to configure the HTTP request pipeline.
+
+This defines how a request travels through middleware (e.g., logging → authentication → routing → controller).
+
+Basically, you tell .NET how to handle every request.
+
+
+
+---
+
+💻 2️⃣ Example Code (.NET 8 minimal setup)
+
+var builder = WebApplication.CreateBuilder(args);
+
+// ConfigureServices equivalent
+builder.Services.AddControllers();
+builder.Services.AddDbContext<AppDbContext>();
+builder.Services.AddAuthentication();
+builder.Services.AddMemoryCache();
+
+var app = builder.Build();
+
+// Configure equivalent
+if (app.Environment.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage();
+}
+
+app.UseHttpsRedirection();
+app.UseAuthentication();
+app.UseAuthorization();
+app.MapControllers();
+
+app.Run();
+
+In older versions (.NET 5 or lower), this same logic was split into the Startup.cs file with both ConfigureServices and Configure methods.
+
+
+---
+
+🏢 3️⃣ Project Use — Buy & Sell Properties App
+
+In your Buy & Sell Properties Application:
+
+In ConfigureServices, you can register:
+
+services.AddDbContext<PropertyDbContext>();
+services.AddScoped<IPropertyService, PropertyService>();
+services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+        .AddJwtBearer(...);
+services.AddCors(options => { ... });
+
+In Configure, you can define:
+
+app.UseCors("AllowSpecificOrigin");
+app.UseAuthentication();
+app.UseAuthorization();
+app.MapControllers();
+
+
+✅ So, when a user sends a request (like /api/properties), it passes through: CORS → Authentication → Authorization → Controller → Response.
+
+
+---
+
+⚖️ 4️⃣ Trade-offs
+
+Pros Cons
+
+Clean separation of service setup and pipeline Must understand middleware order carefully
+Highly testable and maintainable Mistakes in configuration can break authentication/routing
+Easy dependency injection Complex in large apps if not organized
+
+
+
+---
+
+💼 5️⃣ Business Impact
+
+Makes your app scalable and configurable without rewriting code.
+
+Helps manage features like authentication, logging, and CORS easily.
+
+In large apps (like your Buy/Sell platform), it ensures smooth communication between frontend (Angular) and backend (.NET) via consistent middleware setup.
+
+
+
+---
+
+✅ Interview Short Answer:
+
+> "ConfigureServices is used to register dependencies and app services like DB, caching, and authentication.
+Configure is used to define how requests are handled through middleware like routing, authentication, and exception handling.
+Together, they define the setup and execution flow of a .NET Core app."
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////✅ 11–20: Routing and Controllers
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////13. How do you define custom routes in ASP.NET Core MVC?
+Definition (In Easy Words)
+
+Custom routing in ASP.NET Core MVC means defining your own URL patterns instead of using the default ones.
+
+By default, ASP.NET Core uses this route pattern:
+
+/{controller=Home}/{action=Index}/{id?}
+
+But in custom routing, we can create meaningful URLs like:
+
+/buy/property/101  
+/sell/property/new
+
+This helps in SEO, user readability, and better organization.
+
+
+---
+
+⚙️ Code Example – Custom Route Definition
+
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+
+public class Startup
+{
+    public void ConfigureServices(IServiceCollection services)
+    {
+        services.AddControllersWithViews();
+    }
+
+    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+    {
+        if (env.IsDevelopment())
+            app.UseDeveloperExceptionPage();
+
+        app.UseRouting();
+
+        app.UseEndpoints(endpoints =>
+        {
+            // ✅ Custom Route 1: For Property Details
+            endpoints.MapControllerRoute(
+                name: "propertyDetails",
+                pattern: "property/details/{id:int}",
+                defaults: new { controller = "Property", action = "Details" });
+
+            // ✅ Custom Route 2: For Admin Dashboard
+            endpoints.MapControllerRoute(
+                name: "adminRoute",
+                pattern: "admin/dashboard",
+                defaults: new { controller = "Admin", action = "Dashboard" });
+
+            // ✅ Default Route
+            endpoints.MapControllerRoute(
+                name: "default",
+                pattern: "{controller=Home}/{action=Index}/{id?}");
+        });
+    }
+}
+
+
+---
+
+🏗 Project Use — Buy & Sell Property Application
+
+In your Buy & Sell Property App,
+you can use custom routing for:
+
+/buy/property/{id} → For buyer property details
+
+/admin/manage/users → For admin panel management
+
+/seller/dashboard → For seller login area
+
+
+Example:
+
+endpoints.MapControllerRoute(
+    name: "buyerProperty",
+    pattern: "buy/property/{id:int}",
+    defaults: new { controller = "Property", action = "Details" });
+
+✅ It makes URLs clean, SEO-friendly, and easier for users to remember.
+
+
+---
+
+⚖️ Trade-offs
+
+Advantage Disadvantage
+
+Custom URLs improve SEO and readability You must maintain consistency for all custom routes
+Helps in organizing complex modules Complex apps need route versioning/testing
+Improves security by hiding real controller/action names Slightly more configuration overhead
+
+
+
+---
+
+💼 Business Impact
+
+Clean URLs improve user experience and search engine ranking.
+
+Helps customers find properties faster via shareable links.
+
+Reduces confusion for marketing and analytics tracking.
+
+
+
+---
+
+🎯 Interview-Ready Summary
+
+> “In my project, we define custom routes in Startup.cs using MapControllerRoute.
+For example, in our Buy & Sell Property app, we have routes like /buy/property/{id} for buyers and /admin/dashboard for admins.
+It improves SEO, gives clean URLs, and helps in modular structure of the app.”
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////14. What are filters in ASP.NET Core? Types of filters?
+15. What is the difference between TempData, ViewData, and ViewBag?
+16. What is Model Binding in ASP.NET Core MVC?
+17. How does model validation work in ASP.NET Core?
+18. Explain how to use DataAnnotations for validation.
+19. What is ModelState.IsValid?
+20. What is the use of BindProperty attribute?
+
+✅ 21–30: Views, Razor and Tag Helpers
+21. What is Razor view engine?
+22. What are Tag Helpers? How are they different from HTML Helpers?
+23. How do you create a strongly-typed view in ASP.NET Core?
+24. How do you use layout pages in Razor Views?
+25. What are Partial Views and how to use them?
+26. How to pass data from controller to view?
+27. What is \_ViewStart.cshtml and \_ViewImports.cshtml?
+28. How do you implement custom tag helpers?
+29. What is the difference between synchronous and asynchronous actions in controllers?
+30. How do you handle form submission in Razor Pages?
+
+✅ 31–40: Advanced Topics
+31. What is Middleware Pipeline in ASP.NET Core?
+32. Explain Exception Handling in ASP.NET Core MVC.
+33. What are custom middleware and how to create one?
+34. What is the use of IApplicationBuilder and IServiceCollection?
+35. How to implement Authentication and Authorization in ASP.NET Core?
+36. What are Claims and Policies in Authorization?
+37. What is Identity in ASP.NET Core?
+38. How do you secure sensitive data in your appsettings.json file?
+39. What is the User.Identity.Name used for?
+40. What is CORS and how to enable it in .NET Core?
+
+Follow for more such content on .NET Core, Angular, and Full Stack interview prep!
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Top 50 Full Stack Developer Interview Questions**, Mostly asked in MNCs like Deloitte, Accenture, Capgemini, LTI Mindtree, Cognizant, Infosys, Wipro, TCS, and HCL
+
+#### 💾 **SQL (10 Questions)**
+
+1. Difference between `INNER JOIN`, `LEFT JOIN`, and `RIGHT JOIN`?
+2. Explain normalization – 1NF, 2NF, 3NF.
+3. `WHERE` vs `HAVING` clause.
+4. What is a `CTE`?
+5. Find the second highest salary.
+6. `DELETE` vs `TRUNCATE` vs `DROP`.
+7. What are indexes?
+8. Stored procedures & use-cases.
+9. Transactions in SQL.
+10. Optimizing slow queries.
+
+#### 🎯 **ASP.NET MVC (10 Questions)**
+
+11. MVC architecture fundamentals.
+12. `ActionResult` vs `ViewResult`.
+13. Routing in MVC.
+14. Razor View Engine.
+15. `TempData`, `ViewData`, `ViewBag`.
+16. What is a Partial View?
+17. Implementing validation in MVC.
+18. `Html.Partial` vs `Html.RenderPartial`.
+19. Dependency Injection in MVC.
+20. MVC vs WebForms.
+
+#### 🔧 **ASP.NET Core MVC (10 Questions)**
+
+21. Middleware in Core.
+22. Purpose of `Startup.cs`.
+23. Logging in ASP.NET Core.
+24. `appsettings.json` configuration.
+25. API security in Core.
+27. Dependency Injection in Core.
+28. Model Binding vs Validation.
+29. Endpoint Routing.
+30. Global Exception Handling.
+
+#### 🌐 **Web API / .NET Core Web API (10 Questions)**
+
+31. What is REST API?
+32. HTTP Status Codes meaning.
+33. API versioning methods.
+34. Attribute Routing.
+35. Returning JSON from APIs.
+36. API testing in Angular/Postman.
+37. Swagger integration.
+38. What is CORS?
+39. Web API Exception Handling.
+40. API security best practices.
+
+#### ⚡ **Angular (10 Questions)**
+
+41. What is Angular?
+42. Components in Angular.
+43. Data Binding types.
+44. Structural vs Attribute Directives.
+45. Services in Angular.
+46. HTTPClient in Angular.
+47. Angular Dependency Injection.
+48. Observables & RxJS.
+49. Angular Routing.
+50. Angular Lifecycle Hooks.
+
+////////////////////////////////////////////////////////////////////////////////////
+#LTIMindtree .NET Angular Full Stack Developer Interview
+
+Asp .Net
+
+1. What is the difference between .NET Core and .NET Framework?
+2. How does dependency injection work in ASP.NET Core?
+3. What is the difference between IActionResult and ActionResult<T>?
+4. How do you implement Web API versioning in .NET Core?
+5. Explain the middleware pipeline order in .NET Core.
+6. What’s the use of AsNoTracking in Entity Framework Core?
+7. How would you implement soft delete in EF Core?
+8. Write a LINQ query to replace all negative values in a column with the column’s max value.
+9. How do you optimize a slow SQL stored procedure?
+10. Explain different SQL isolation levels.
+
+Angular
+
+11. What are Angular lifecycle hooks?
+12. Difference between reactive forms and template-driven forms?
+13. How do route guards work in Angular?
+14. Observables vs Promises – key differences?
+15. How do you handle global API errors in Angular using interceptors?
+
+
+15. Describe a major production issue you handled.
+16. Have you worked in Agile? What was your team structure?
+17. Why LTIMindtree?
+18. Any experience in cloud/DevOps pipelines?
+
+✅ Save this for your next interview prep!
+💬 Share your experience in the comments!
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#Infosys .NET Full Stack Developer role
+
+🔹 .NET Framework / .NET Core / ASP.NET Core
+
+1. What is the difference between a value type and a reference type in .NET?
+
+
+2. Explain the role of the Garbage Collector in .NET Framework.
+
+
+3. What are the different types of assemblies in .NET?
+
+
+4. How does the AppDomain work in .NET and when is it used?
+
+
+5. What are the key differences between .NET Framework and .NET Core?
+
+
+6. What is Middleware in ASP.NET Core and how does it work?
+
+
+7. How is Dependency Injection implemented in ASP.NET Core?
+
+
+8. What is the purpose of the appsettings.json file?
+
+
+9. What is the life cycle of an ASP.NET MVC request?
+
+
+10. What is the difference between TempData, ViewData, and ViewBag?
+
+
+11. How do you implement security in an MVC application?
+
+
+12. What is a partial view and when should it be used?
+
+
+
+🔹 SQL Server
+
+13. Write a SQL query to find the second highest salary from an Employee table.
+
+
+14. What is the difference between INNER JOIN, LEFT JOIN, and FULL JOIN?
+
+
+15. What are indexes and how do they impact performance?
+
+
+16. How do you optimize a slow-performing stored procedure?
+
+
+
+🔹 Angular
+
+17. What is the difference between ngOnInit() and constructor() in Angular?
+
+
+18. Explain the different types of data binding in Angular.
+
+
+19. What are Angular services and how are they injected into components?
+
+
+20. What is lazy loading in Angular and what are its benefits?
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#Deloitte .NET Full Stack Developer Interview Questions** 
+
+### ✅ **.NET / .NET Core**
+
+1. What is the difference between .NET Framework and .NET Core?
+2. What is Dependency Injection in .NET Core?
+3. Explain the concept of Middleware in ASP.NET Core.
+4. What is the difference between AddScoped, AddSingleton, and AddTransient?
+5. What is the role of Program.cs and Startup.cs in .NET 6/7?
+6. How do you handle configuration and logging in .NET Core?
+
+---
+
+### ✅ **ASP.NET MVC**
+
+7. Explain MVC architecture with a real-time project example.
+8. Difference between TempData, ViewData, and ViewBag.
+10. How does routing work in MVC? Explain attribute routing.
+
+---
+
+### ✅ **SQL Server**
+
+11. Write a SQL query to find the second highest salary.
+12. Difference between Clustered and Non-Clustered Index.
+13. What is a CTE (Common Table Expression) and its use case?
+14. How to delete duplicate records from a table but keep one?
+15. Difference between DELETE, TRUNCATE, and DROP in SQL Server.
+
+---
+
+### ✅ **Angular**
+
+16. Difference between Observable and Promise in Angular.
+17. Template-driven vs Reactive Forms in Angular.
+18. What is an HTTP Interceptor in Angular?
+19. What is Change Detection and how does it work in Angular?
+20. How do you call and bind REST API data in Angular component?
+
+---
+
+💼 **candidates, save and share this for your interview prep!
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+#Wipro .NET Full Stack Developer Interview Questions
+-------------------
+ .NET
+------------------
+1.What is the difference between .NET Framework and .NET Core?
+2.What is Dependency Injection? How is it implemented in .NET Core?
+3.What are Middleware components in ASP.NET Core?
+4.Difference between AddScoped, AddSingleton, and AddTransient?
+5.How does routing work in ASP.NET Core?
+7.Explain MVC architecture with a real-time example.
+8.Difference between TempData, ViewData, and ViewBag?
+9.What is the use of Partial Views in MVC?
+10.What is Model Binding in MVC?
+-----------------
+ SQL Server
+-----------------
+1.SQL query to get the second highest salary from a table.
+2.Clustered vs Non-Clustered Index in SQL Server?
+3.Explain CTE (Common Table Expression) with example.
+4.Difference between DELETE, TRUNCATE, and DROP.
+5.Methods to remove duplicates from a SQL table.
+------------------
+ Angular
+-----------------
+1.Observable vs Promise in Angular – key differences?
+2.Reactive vs Template-Driven Forms in Angular?
+3.How to implement HTTP Interceptor in Angular?
+4.What is Change Detection in Angular and how does it work?
+5.How to call a REST API and display data in Angular component?
+
+ Save & Share for revision!
+ Comment if you know the answers too.
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+#Deloitte interview questions for both .NET Core Full Stack Developer Posistion.
+
+1. What is Async programming and why is it used?
+
+2. What is the difference between IEnumerable and IQueryable?
+
+3. What is Serialization and why is it used in C#?
+
+4. Explain middleware and how can we create custom middleware in .NET Core?
+
+5. What is the difference between throw and throw ex?
+
+6. What is an extension method in C#?
+
+7. What design patterns are you using in your current project?
+
+8. I have the following API function, what error will it throw?
+
+[HttpGet]
+[HttpPut]
+public void GetAllUsers() {}
+
+9. What is the difference between PUT and POST?
+
+---------------Angular Questions ----------------
+
+1. What is the use of ngOnInit()?
+
+2. Explain FormBuilder and FormGroup in Angular.
+
+3. How can you show/hide a column in a grid layout based on employee role (admin, manager, candidate)?
+
+4. What are the directives in Angular and how do we use them?
+
+5. Explain pipes in Angular.
+
+--------------------Database Questions:--------------
+
+1. What is the use of temp tables and table variables?
+
+2. If both foreign key and unique key columns are NOT NULL, which is better to use for uniqueness?
+
+3. Write a SQL query to select all users created in the last year and order them by creation date.
+
+
+🔔 Join me to improve your skills to clean code.
+
+👩‍💻 Please share and repost and help others to code better and clean code.
+Follow me 
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+#Accenture Interview questions .Net Full Stack Developer Position.
+
+C# – Foundational Concepts
+
+1. Explain the OOP's in C#.
+
+2. Differentiate between string and StringBuilder in C#, providing a real-time example of when to use each.
+
+
+3. Compare and contrast Array and ArrayList in C#.
+
+
+4. Elaborate on the significance and usage of common C# keywords (e.g., var, static, this, base, async, etc.).
+
+
+5. What is the difference between the const and readonly keywords in C#?
+
+
+6. Explain the SOLID principles of object-oriented design.
+
+
+7. Differentiate between the .NET Framework and .NET Core.
+
+
+8. What is the default access modifier when defining a function within an interface in C#?
+
+
+9. Explain the differences between an interface and an abstract class in C#.
+
+
+ASP.NET Core – Architecture and Development
+
+1. What is ASP.NET Core, and what are its primary advantages?
+
+
+2. How are static files served in an ASP.NET Core application, and where are they typically located in the project structure?
+
+
+3. Explain the concept of middleware in ASP.NET Core, and provide an example of implementing custom middleware.
+
+
+4. Why is Cross-Origin Resource Sharing (CORS) used in ASP.NET Core applications?
+
+
+5. Describe the exception handling mechanisms in ASP.NET Core.
+
+
+6. Explain the difference between throw and throw ex in C# exception handling.
+
+
+7. What is a RESTful API, and why is it a popular choice for web service development?
+
+
+8. Discuss the common return types used in ASP.NET Core Web API actions.
+
+
+9. Describe how JSON serialization and deserialization work in .NET Core, and list common .NET types mapped to JSON.
+
+
+10. Between a GET and a POST request, which is generally considered more secure, and why?
+
+
+11. What is the purpose of the appsettings.json file in a .NET Core application (formerly web.config in older ASP.NET versions)?
+
+
+12. Why is DbContext used in Entity Framework Core for data access?
+
+
+13. What is an Object-Relational Mapper (ORM), and why is it beneficial in .NET development?
+
+
+14. Explain the differences and appropriate use cases for IEnumerable and IQueryable in C#.
+
+Angular – Front-End Development
+
+1. What is a component in Angular, and what is the purpose of each file typically associated with it?
+
+
+2. Explain the concept of decorators in Angular.
+
+
+3. Describe the different types of directives in Angular.
+
+
+4. Explain @Input() and @Output() bindings in Angular.
+
+
+5. What is the purpose and usage of [(ngModel)] in Angular?
+
+
+6. What is the role of a service class in Angular applications?
+
+
+7. Describe the typical data flow from a Web API to an Angular service class. Provide an example of how to inject APIs into a service.
+
+
+8. Explain Angular component lifecycle hooks, and specifically elaborate on the purpose of ngOnInit().
+
+
+9. When changing the selected value of a dropdown, which Angular lifecycle hook(s) would typically be executed?.
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 
 
