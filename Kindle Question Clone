@@ -13252,6 +13252,132 @@ You can answer:
 Controller inherits from ControllerBase and adds features for MVC applications like View(), TempData, and ViewBag.
 So, for APIs, we prefer ControllerBase, and for MVC views, we use Controller.”
 
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////2. Explain Action Filters, Result Filters, Exception Filters
+🧩 Definition (in super easy words)
+
+Think of filters like security guards or helpers that stand at the door of your controller actions in ASP.NET Core MVC.
+They help you run some extra logic before or after a controller action executes — like logging, validation, exception handling, etc.
+
+There are different types based on when they run.
+
+
+---
+
+⚙️ Types of Filters
+
+1. 🎯 Action Filter
+
+Runs before and after a controller action executes.
+
+Use it when you want to do something like logging, validating input, or checking user permissions.
+
+
+public class LogActionFilter : IActionFilter
+{
+    public void OnActionExecuting(ActionExecutingContext context)
+    {
+        Console.WriteLine("Action is about to start!");
+    }
+
+    public void OnActionExecuted(ActionExecutedContext context)
+    {
+        Console.WriteLine("Action has finished!");
+    }
+}
+
+✅ Example in simple words:
+When a user requests to buy a property, this filter can log the request details before the controller action runs and log the response after it completes.
+
+
+
+
+---
+
+2. 📄 Result Filter
+
+Runs before and after the action result (like ViewResult, JsonResult) executes.
+
+Use it if you want to modify or log the response before it is sent to the client.
+
+
+public class LogResultFilter : IResultFilter
+{
+    public void OnResultExecuting(ResultExecutingContext context)
+    {
+        Console.WriteLine("Before sending the result to the user.");
+    }
+
+    public void OnResultExecuted(ResultExecutedContext context)
+    {
+        Console.WriteLine("After sending the result to the user.");
+    }
+}
+
+✅ Example in your Buy & Sell Property App:
+When a property list page is being returned, you can log how long it took to render the response before sending it to the browser.
+
+
+
+
+---
+
+3. 💥 Exception Filter
+
+Runs when an exception occurs in your controller or action method.
+
+Use it to handle errors globally and return a custom response.
+
+
+public class GlobalExceptionFilter : IExceptionFilter
+{
+    public void OnException(ExceptionContext context)
+    {
+        Console.WriteLine("Error occurred: " + context.Exception.Message);
+        context.Result = new ObjectResult("Something went wrong!") { StatusCode = 500 };
+    }
+}
+
+✅ Example in your project:
+If a database error happens while saving a property or payment, this filter catches it and shows a friendly message like “Something went wrong, please try again.”
+
+
+
+
+---
+
+🏗️ Project Use (Buy & Sell Properties App)
+
+Action Filter: Used for logging API requests (like when a buyer searches properties).
+
+Result Filter: Used for monitoring response times and performance.
+
+Exception Filter: Used for handling all unexpected errors and showing user-friendly messages instead of crash errors.
+
+
+
+---
+
+⚖️ Trade-offs
+
+Pros Cons
+
+Keeps your controller code clean Adds small performance overhead
+Centralizes logic like logging and error handling Needs careful design to avoid conflicts between filters
+Reusable across multiple controllers Too many filters can make debugging tricky
+
+
+
+---
+
+💼 Business Impact
+
+✅ Improves application stability by handling exceptions globally.
+
+✅ Makes logging & security checks consistent across all APIs.
+
+✅ Increases maintainability — one filter, reusable in multiple modules.
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Tarun Kumar 
@@ -13261,7 +13387,6 @@ So, for APIs, we prefer ControllerBase, and for MVC views, we use Controller.”
 Most Frequently Asked .NET Full Stack Interview Questions(covering .NET MVC, .NET Core, Web API, EF Core, SQL Server, Angular)
 
 
-2. Explain Action Filters, Result Filters, Exception Filters.
 3. Difference between TempData, ViewData, ViewBag.
 4. What is Routing in MVC vs .NET Core?
 5. Explain Model Binding and Validation.
