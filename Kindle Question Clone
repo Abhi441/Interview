@@ -14867,13 +14867,6300 @@ Angular – Front-End Development
 9. When changing the selected value of a dropdown, which Angular lifecycle hook(s) would typically be executed?.
 
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Advanced SQL Syntax
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Sure! A Stored Procedure in SQL is a precompiled collection of SQL statements that can be executed as a single unit. Stored procedures help improve performance, security, and reusability.
+
+
+---
+
+1. Basic Syntax of a Stored Procedure
+
+CREATE PROCEDURE ProcedureName
+AS
+BEGIN
+    -- SQL Statements
+    SELECT * FROM Employees;
+END;
+
+Executing the Procedure:
+
+EXEC ProcedureName;
+
+
+---
+
+2. Stored Procedure with Input Parameter
+
+CREATE PROCEDURE GetEmployeesByDepartment
+    @DeptID INT
+AS
+BEGIN
+    SELECT EmployeeID, FirstName, LastName
+    FROM Employees
+    WHERE DepartmentID = @DeptID;
+END;
+
+Executing the Procedure with a Parameter:
+
+EXEC GetEmployeesByDepartment @DeptID = 3;
+
+
+---
+
+3. Stored Procedure with Output Parameter
+
+CREATE PROCEDURE GetEmployeeCountByDepartment
+    @DeptID INT,
+    @EmployeeCount INT OUTPUT
+AS
+BEGIN
+    SELECT @EmployeeCount = COUNT(*) FROM Employees WHERE DepartmentID = @DeptID;
+END;
+
+Executing the Procedure with an Output Parameter:
+
+DECLARE @Count INT;
+EXEC GetEmployeeCountByDepartment @DeptID = 3, @EmployeeCount = @Count OUTPUT;
+PRINT @Count;
+
+
+---
+
+4. Stored Procedure with Multiple Parameters
+
+CREATE PROCEDURE UpdateEmployeeSalary
+    @EmpID INT,
+    @NewSalary DECIMAL(10,2)
+AS
+BEGIN
+    UPDATE Employees
+    SET Salary = @NewSalary
+    WHERE EmployeeID = @EmpID;
+END;
+
+Executing the Procedure with Multiple Parameters:
+
+EXEC UpdateEmployeeSalary @EmpID = 101, @NewSalary = 75000.00;
+
+
+---
+
+5. Stored Procedure with Transactions & Error Handling
+
+CREATE PROCEDURE TransferSalary
+    @FromEmpID INT,
+    @ToEmpID INT,
+    @Amount DECIMAL(10,2)
+AS
+BEGIN
+    BEGIN TRANSACTION;
+
+    BEGIN TRY
+        UPDATE Employees SET Salary = Salary - @Amount WHERE EmployeeID = @FromEmpID;
+        UPDATE Employees SET Salary = Salary + @Amount WHERE EmployeeID = @ToEmpID;
+
+        COMMIT TRANSACTION;
+    END TRY
+    BEGIN CATCH
+        ROLLBACK TRANSACTION;
+        PRINT 'Error occurred during transaction.';
+    END CATCH;
+END;
+
+Executing the Procedure:
+
+EXEC TransferSalary @FromEmpID = 101, @ToEmpID = 102, @Amount = 5000.00;
+
+
+---
+
+Key Benefits of Stored Procedures:
+
+✔ Performance Improvement – Precompiled SQL code runs faster
+✔ Security – Reduces SQL injection risks by parameterized execution
+✔ Reusability – Can be used multiple times with different parameters
+✔ Transaction Management – Ensures data consistency with COMMIT/ROLLBACK
+
+Would you like an example for dynamic SQL stored procedures as well?
+
+
+
+
+//////////////////////////////////////////////////////////////////
+Creating a Custom Trigger in SQL Server
+
+A custom trigger in SQL Server is a database object that automatically executes a predefined action when a specific event (INSERT, UPDATE, DELETE) occurs on a table.
+
+
+---
+
+Steps to Create a Custom Trigger in SQL Server:
+
+1. Define the event that triggers it (AFTER INSERT, AFTER UPDATE, AFTER DELETE, or INSTEAD OF).
+
+
+2. Use the INSERTED and DELETED tables to track changes.
+
+
+3. Implement custom logic inside the trigger.
+
+
+
+
+---
+
+Example 1: Custom Audit Logging Trigger (AFTER INSERT)
+
+This trigger logs every new employee added into an AuditLog table.
+
+Step 1: Create an Audit Log Table
+
+CREATE TABLE AuditLog (
+    AuditID INT IDENTITY(1,1) PRIMARY KEY,
+    EmployeeID INT,
+    ActionType VARCHAR(50),
+    ActionDate DATETIME DEFAULT GETDATE()
+);
+
+Step 2: Create the Custom Trigger
+
+CREATE TRIGGER trg_AfterInsert_Employees
+ON Employees
+AFTER INSERT
+AS
+BEGIN
+    INSERT INTO AuditLog (EmployeeID, ActionType)
+    SELECT EmployeeID, 'INSERT' FROM INSERTED;
+END;
+
+
+---
+
+Example 2: Prevent Deletion (INSTEAD OF DELETE)
+
+This trigger prevents employees from being deleted but marks them as inactive instead.
+
+CREATE TRIGGER trg_PreventDelete_Employees
+ON Employees
+INSTEAD OF DELETE
+AS
+BEGIN
+    UPDATE Employees
+    SET IsActive = 0
+    WHERE EmployeeID IN (SELECT EmployeeID FROM DELETED);
+    
+    PRINT 'Employees cannot be deleted. They are marked as inactive instead.';
+END;
+
+
+---
+
+Example 3: Track Salary Changes (AFTER UPDATE)
+
+This trigger logs salary changes when an employee's salary is updated.
+
+CREATE TRIGGER trg_TrackSalaryChange
+ON Employees
+AFTER UPDATE
+AS
+BEGIN
+    INSERT INTO AuditLog (EmployeeID, ActionType)
+    SELECT d.EmployeeID, 'SALARY UPDATE'
+    FROM DELETED d
+    JOIN INSERTED i ON d.EmployeeID = i.EmployeeID
+    WHERE d.Salary <> i.Salary;
+END;
+
+
+---
+
+How to Test Your Custom Trigger
+
+Run the following SQL commands to check if your triggers work:
+
+INSERT INTO Employees (EmployeeID, Name, Salary, IsActive) VALUES (1, 'John Doe', 50000, 1);
+UPDATE Employees SET Salary = 60000 WHERE EmployeeID = 1;
+DELETE FROM Employees WHERE EmployeeID = 1;
+SELECT * FROM AuditLog; -- View logged actions
+
+
+---
+
+How to View Existing Triggers
+
+To see all triggers in your database:
+
+SELECT name, object_id, type_desc 
+FROM sys.triggers;
+
+
+---
+
+Would you like a custom trigger for a specific use case in your project?
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////All the question Entity Framework
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////Previous Interview Question
+It is their in diffrence sheet.
+
+/////////////////////////////////////////////////Interview Previous
+//Introduction
+Entity Framework(EF) is an open source object-Relational Mapper(ORM)for .net application.
+
+//Key Feature of Entity Framework
+=> Code-First Approach : Define your database structure using c# or VB.Net classes and EF will generate the database schema.
+
+=>Database-First Approaches : Reverse-engine an existing database into a .Net model.
+=>Query Support : use LINQ for database operation.
+
+//Why we use Entity Framework
+1) Productivity : Eliminate the need to write repetitive SQL Code.
+
+//How does EntityFramework work High Level understanding
+
+Context class : Acts as session to connect with database(e.g DbContext)
+Entity Classes:  Represent the table in the coloum.
+Linq Query : Translate LInq state into Sql Command.
+Database Provider : Hnadle the connection and interaction  with the actual database.
+
+//////////////////////////////Use and Limitations
+//Use
+-> Rapid application development.
+//Limitation
+->May not perform as well as raw SQL for highly Complex queries.
+
+//How does EntityFramework work Low Level understanding
+1) Model Creation :-> The developer creates entity classes(code-First) or generative Classes from an existing 
+database Schema(Database - First).
+
+2) Query Execution : LINQ query or method calls are processed by the Query processor.
+The Query processor Convert this into SQL.
+
+////////////////////////////////Implementation (I have already tested)
+
+//Model
+ public class Property
+ {
+     [Key]
+     public int Id { get; set; }
+     
+     public string Title { get; set; }
+     
+     public string Description { get; set; }
+     
+     public string Location { get; set; }
+    
+    
+     public int Price { get; set; }
+
+     public DateTime CreateAt { get; set; } = DateTime.Now;
+
+ }
+
+//ApplicationDbContest
+
+   public class ApplicationDbContext : DbContext
+   {
+       public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
+       public DbSet<Property> Property { get; set; }
+   }
+
+//Reposetory
+ public class PropertyRepository : IProperty
+ {
+     private readonly ApplicationDbContext _context;
+
+     public PropertyRepository(ApplicationDbContext context)
+     {
+         _context = context;
+     }
+
+     public async Task<IEnumerable<Property>> GetAllPropertyAsync()
+     {
+         return await _context.Property.ToListAsync();
+     }
+
+     public async Task Create(Property property)
+     {
+         _context.Property.Add(property);
+         await _context.SaveChangesAsync();
+     }
+
+     public async Task<Property> Edit(int? id)
+     {
+         return await _context.Property.Where(p => p.Id == id).FirstOrDefaultAsync();
+     }
+
+     public async Task Update(Property property)
+     {
+         var existingProperty = await _context.Property.Where(p => p.Id == property.Id).FirstOrDefaultAsync();
+         if (existingProperty != null)
+         {
+             existingProperty.Title = property.Title;
+             existingProperty.Description = property.Description;
+             existingProperty.Location = property.Location;
+             existingProperty.Price = property.Price;
+             await _context.SaveChangesAsync();
+         }
+     }
+
+     public async Task<Property> GetPropertyById(int? id)
+     {
+         return await _context.Property.Where(p => p.Id == id).FirstOrDefaultAsync();
+     }
+
+     public async Task Delete(int id)
+     {
+         var property = await _context.Property.Where(p => p.Id == id).FirstOrDefaultAsync();
+         if (property != null)
+         {
+             _context.Property.Remove(property);
+             await _context.SaveChangesAsync();
+         }
+     }
+
+     
+ }
+
+
+
+////////////////////////////////////////////////////////ChatGpt Question
+Beginner-Level Questions
+
+////////////////////////////////////////////////////////1. What is Entity Framework?
+
+Entity Framework(EF) is an open source object-Relational Mapper(ORM)for .net application.
+
+
+2. What are the different approaches in EF?
+
+=> Code-First Approach : Define your database structure using c# or VB.Net classes and EF will generate the database schema.
+
+=>Database-First Approaches : Reverse-engine an existing database into a .Net model.
+
+Model First
+
+
+
+3. What is DbContext and DbSet?
+
+DbContect : Thinks of DbContext as your main connection between your c# code and database.
+DbSet<T> represents a table in the database where T is the model/class.
+
+4. What is the difference between Code First and Database First approach?
+
+
+5. How do you perform CRUD operations in Entity Framework?
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////6. What is Lazy Loading, Eager Loading, and Explicit Loading?
+Simple Definition for Interview
+
+🔸 Lazy Loading:
+Related data is loaded automatically when accessed.
+
+🔸 Eager Loading:
+Related data is loaded immediately when the main data is fetched using .Include().
+
+🔸 Explicit Loading:
+You manually load related data after the main object is loaded.
+
+
+---
+
+✅ Real-life Analogy (interview-friendly)
+
+Think of Student and Courses:
+
+Lazy Loading: You visit the student, and only when you ask about their courses, they go fetch it.
+
+Eager Loading: You tell them to bring their course list at the time you meet them.
+
+Explicit Loading: You visit the student, and later say, “Hey, now show me your courses.”
+
+
+Lazy LOADING :
+
+EXAMPLE :
+---
+
+public class Author
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+
+    // Lazy loading: virtual navigation property
+    public virtual ICollection<Book> Books { get; set; }
+}
+
+public class Book
+{
+    public int Id { get; set; }
+    public string Title { get; set; }
+    
+    public int AuthorId { get; set; }
+    public virtual Author Author { get; set; }
+}
+🔑 Important for Lazy Loading: Navigation properties must be virtual and EF proxies must be enabled.
+
+Step 3: Setup DbContext
+using Microsoft.EntityFrameworkCore;
+
+public class AppDbContext : DbContext
+{
+    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
+
+    public DbSet<Author> Authors { get; set; }
+    public DbSet<Book> Books { get; set; }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        optionsBuilder.UseLazyLoadingProxies()
+                      .UseSqlServer("Server=.;Database=LazyLoadingDemoDb;Trusted_Connection=True;");
+    }
+}
+UseLazyLoadingProxies() is required for lazy loading to work.
+
+Step 4: Add Controller with GET Method
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+
+[Route("api/[controller]")]
+[ApiController]
+public class AuthorsController : ControllerBase
+{
+    private readonly AppDbContext _context;
+
+    public AuthorsController(AppDbContext context)
+    {
+        _context = context;
+    }
+
+    [HttpGet]
+    public IActionResult GetAuthors()
+    {
+        // Lazy loading: Books will be loaded only when accessed
+        var authors = _context.Authors.ToList();
+
+        // Example access to trigger lazy loading
+        foreach (var author in authors)
+        {
+            var bookCount = author.Books.Count; // EF will load books here
+        }
+
+        return Ok(authors);
+    }
+}
+Step 5: Explanation of Lazy Loading
+Lazy Loading in EF Core:
+
+Data is not loaded automatically when querying the parent.
+Only when you access a navigation property, EF will query the database for that data.
+In our example:
+_context.Authors.ToList() → loads only authors
+author.Books.Count → triggers EF to load books for that author on demand
+Pros:
+
+Reduces initial query load.
+Loads related data only when needed.
+Cons:
+
+Can cause N+1 query problem if not careful.
+---
+///
+✅ 2. Eager Loading (load early with Include)
+
+Code:
+
+var student = await context.Students
+    .Include(s => s.Courses)
+    .FirstOrDefaultAsync(s => s.Id == 1);
+
+🧠 Best for performance when you know you’ll need related data.
+
+
+---
+Step 2: Create Models
+
+We don’t make navigation properties virtual, because we won’t use lazy loading:
+
+public class Author
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+
+    // Eager loading: no virtual keyword needed
+    public ICollection<Book> Books { get; set; }
+}
+
+public class Book
+{
+    public int Id { get; set; }
+    public string Title { get; set; }
+    
+    public int AuthorId { get; set; }
+    public Author Author { get; set; }
+}
+
+
+---
+
+Step 3: Setup DbContext
+
+using Microsoft.EntityFrameworkCore;
+
+public class AppDbContext : DbContext
+{
+    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
+
+    public DbSet<Author> Authors { get; set; }
+    public DbSet<Book> Books { get; set; }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        optionsBuilder.UseSqlServer("Server=.;Database=EagerLoadingDemoDb;Trusted_Connection=True;");
+    }
+}
+
+> No UseLazyLoadingProxies() needed.
+
+
+
+
+---
+
+Step 4: Add Controller with GET Method
+
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+
+[Route("api/[controller]")]
+[ApiController]
+public class AuthorsController : ControllerBase
+{
+    private readonly AppDbContext _context;
+
+    public AuthorsController(AppDbContext context)
+    {
+        _context = context;
+    }
+
+    [HttpGet]
+    public IActionResult GetAuthors()
+    {
+        // Eager loading: load authors and their books together
+        var authors = _context.Authors
+                              .Include(a => a.Books) // Eagerly load books
+                              .ToList();
+
+        return Ok(authors);
+    }
+}
+
+> Include(a => a.Books) tells EF to load related books immediately with authors.
+
+
+
+
+---
+
+Step 5: Explanation of Eager Loading
+
+Eager Loading in EF Core:
+
+1. Data is loaded together with the parent in a single query.
+
+
+2. In our example:
+
+_context.Authors.Include(a => a.Books).ToList() → loads authors and their books in one query.
+
+
+
+3. Pros:
+
+Avoids multiple queries (no N+1 problem).
+
+Better for small-to-medium datasets where you know related data is needed.
+
+
+
+4. Cons:
+
+Loads all related data even if you don’t need it → more memory.
+
+//
+Step 1: Models (same as eager example, no virtual keyword)
+
+public class Author
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public ICollection<Book> Books { get; set; }
+}
+
+public class Book
+{
+    public int Id { get; set; }
+    public string Title { get; set; }
+
+    public int AuthorId { get; set; }
+    public Author Author { get; set; }
+}
+
+
+---
+
+Step 2: DbContext (same as eager example)
+
+using Microsoft.EntityFrameworkCore;
+
+public class AppDbContext : DbContext
+{
+    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
+
+    public DbSet<Author> Authors { get; set; }
+    public DbSet<Book> Books { get; set; }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        optionsBuilder.UseSqlServer("Server=.;Database=ExplicitLoadingDemoDb;Trusted_Connection=True;");
+    }
+}
+
+
+---
+
+Step 3: Controller with GET Method (Explicit Loading)
+
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+
+[Route("api/[controller]")]
+[ApiController]
+public class AuthorsController : ControllerBase
+{
+    private readonly AppDbContext _context;
+
+    public AuthorsController(AppDbContext context)
+    {
+        _context = context;
+    }
+
+    [HttpGet]
+    public IActionResult GetAuthors()
+    {
+        // Step 1: Load only authors (Books are not loaded yet)
+        var authors = _context.Authors.ToList();
+
+        // Step 2: Explicitly load Books for each author
+        foreach (var author in authors)
+        {
+            _context.Entry(author)
+                    .Collection(a => a.Books) // navigation collection
+                    .Load(); // manually load
+        }
+
+        return Ok(authors);
+    }
+}
+
+
+---
+
+Step 4: Explanation of Explicit Loading
+
+How it works:
+
+1. First query → loads only authors.
+
+
+2. For each author, when we call .Collection(a => a.Books).Load(), EF makes another query to load that author’s books.
+
+
+
+
+
+
+---
+
+✅ Interview Summary (One-liner ready):
+
+Loading Type Loads When? How?
+
+Lazy Loading When navigation accessed virtual + proxy
+Eager Loading With main query .Include()
+Explicit Loading Manually later .Entry().LoadAsync()
+
+
+
+---
+
+Would you like a diagram or real-world scenario to help remember this even better?
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////7. What is a navigation property in EF?
+Here’s how you can explain Navigation Property in Entity Framework in the most interview-friendly and simple way, with easy words and code examples:
+
+
+---
+
+✅ What is a Navigation Property? (Simple Answer)
+
+> A navigation property is like a link between two tables in your database.
+It helps you move from one entity to another related entity (like from Student to their Courses).
+
+
+
+It is used to access related data using foreign key relationships.
+
+
+---
+
+✅ Real-life Example (for Interview)
+
+Imagine a Student is enrolled in many Courses.
+
+In code, you want to get a student and see their courses.
+
+Navigation property lets you do this easily using object relationships — not raw SQL joins.
+
+
+
+---
+
+✅ Code Example
+
+👉 Student Entity
+
+public class Student
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+
+    // Navigation Property (1 student -> many courses)
+    public ICollection<Course> Courses { get; set; }
+}
+
+👉 Course Entity
+
+public class Course
+{
+    public int Id { get; set; }
+    public string Title { get; set; }
+
+    // Foreign Key
+    public int StudentId { get; set; }
+
+    // Navigation Property (each course belongs to one student)
+    public Student Student { get; set; }
+}
+
+
+---
+
+✅ Why is it useful?
+
+Using navigation properties, you can do this:
+
+var student = await context.Students
+    .Include(s => s.Courses)
+    .FirstOrDefaultAsync(s => s.Id == 1);
+
+Console.WriteLine("Courses:");
+foreach (var course in student.Courses)
+{
+    Console.WriteLine(course.Title);
+}
+
+✔ No need to write complex joins. ✔ Easy to read and maintain.
+
+
+---
+
+✅ Interview Summary:
+
+> Navigation properties connect related tables (entities) in your code.
+They help you easily fetch and work with related data, just like objects in C#.
+
+
+
+
+---
+
+Would you like me to also explain the difference between navigation property and foreign key, or how to define one-to-many / one-to-one relationships in real project scenarios?
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8. How do you configure relationships (One-to-Many, Many-to-Many) in EF?
+Here’s the most human-friendly and interview-ready answer to:
+
+
+---
+
+✅ How to Configure Relationships in Entity Framework?
+
+(With simple code and words for One-to-Many and Many-to-Many)
+
+
+---
+
+🔹 One-to-Many Relationship
+
+Example:
+One Department has many Employees.
+
+✅ Code:
+
+public class Department
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+
+    // One Department → Many Employees
+    public ICollection<Employee> Employees { get; set; }
+}
+
+public class Employee
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+
+    // Foreign Key
+    public int DepartmentId { get; set; }
+
+    // Navigation property
+    public Department Department { get; set; }
+}
+
+🎯 EF Core will automatically understand this relationship by convention (because of the FK and navigation property).
+
+
+---
+
+🔹 Many-to-Many Relationship (EF Core 5+ makes this easy)
+
+Example:
+One Student can join many Courses,
+One Course can have many Students.
+
+✅ Code:
+
+public class Student
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+
+    // Many-to-Many
+    public ICollection<Course> Courses { get; set; }
+}
+
+public class Course
+{
+    public int Id { get; set; }
+    public string Title { get; set; }
+
+    // Many-to-Many
+    public ICollection<Student> Students { get; set; }
+}
+
+🎯 EF Core will auto-create a junction table (like StudentCourse) behind the scenes!
+
+
+---
+
+✅ How to Explain in Interview (Simple Way):
+
+> 🔹 One-to-Many is like: A manager can have many employees.
+🔹 Many-to-Many is like: A student can take many courses, and a course can have many students.
+
+
+
+EF Core lets you define relationships using navigation properties and foreign keys — and builds SQL joins for you automatically.
+
+
+---
+
+✅ Want Bonus Tip?
+
+You can also configure relationships using Fluent API:
+
+modelBuilder.Entity<Employee>()
+    .HasOne(e => e.Department)
+    .WithMany(d => d.Employees)
+    .HasForeignKey(e => e.DepartmentId);
+
+
+---
+
+Would you like examples for One-to-One relationship and how to handle it with code + Fluent API too?
+
+
+
+
+
+---
+
+⚙️ Intermediate-Level Questions
+
+9. What is the difference between EF Core and EF6?
+
+
+10. What are Migrations in EF Core?
+
+How to create and apply migrations?
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////11. How does EF handle concurrency?
+Great question! Here's a very simple and interview-friendly explanation of how Entity Framework (EF Core) handles concurrency, with a real-world code example.
+
+
+---
+
+✅ What is Concurrency?
+
+> Concurrency happens when two users try to update the same data at the same time.
+
+
+
+🧠 Example:
+Imagine two users are updating the same "Property Price" at once.
+We must avoid one user's update overwriting another's by mistake.
+
+
+---
+
+✅ How EF Core Handles Concurrency?
+
+EF Core helps by using a special column like a timestamp or version.
+This way, it checks:
+
+"Is this row still the same version as when you read it?"
+
+If yes, update is safe.
+
+If no, throw an error (so you can handle it).
+
+
+
+---
+
+✅ Code Example
+
+1. Add a concurrency token to your model:
+
+public class Property
+{
+    public int Id { get; set; }
+    public string Title { get; set; }
+    public double Price { get; set; }
+
+    [Timestamp] // EF will track this column to handle concurrency
+    public byte[] RowVersion { get; set; }
+}
+
+
+---
+
+2. Add to your DB context:
+
+public DbSet<Property> Properties { get; set; }
+
+protected override void OnModelCreating(ModelBuilder modelBuilder)
+{
+    modelBuilder.Entity<Property>()
+        .Property(p => p.RowVersion)
+        .IsRowVersion();
+}
+
+
+---
+
+3. Handling the error:
+
+try
+{
+    _context.Update(property);
+    await _context.SaveChangesAsync();
+}
+catch (DbUpdateConcurrencyException ex)
+{
+    Console.WriteLine("⚠️ Someone else already updated this record.");
+    // You can choose to reload, retry, or show message to user
+}
+
+
+---
+
+✅ How to Say in Interview (Simple Answer)
+
+> "EF Core supports concurrency by using a special column called RowVersion or Timestamp.
+When two users try to update the same data, EF compares the row version.
+If someone else has already changed the data, EF throws a DbUpdateConcurrencyException — so we don’t accidentally overwrite someone’s changes."
+
+
+
+
+---
+
+✅ Real-Life Analogy
+
+🧠 "It's like two people editing a Google Doc — if the document has changed since you last saw it, Google warns you before saving. EF does the same with concurrency checks."
+
+
+---
+
+Let me know if you want me to show this using SQL Server + .NET Core sample CRUD project.
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////12. What are shadow properties?
+Great question! Let me explain Shadow Properties in Entity Framework (EF Core) in very simple, human-friendly words — with code examples.
+
+
+---
+
+✅ What is a Shadow Property in EF Core?
+
+A shadow property is a column in the database that:
+
+Exists in the EF model,
+
+But does NOT exist in your C# class.
+
+
+In short:
+
+> "EF tracks and stores the property in the database, but you don’t see it in your class."
+
+
+
+
+---
+
+✅ Why Use Shadow Properties?
+
+1. To store metadata like CreatedDate, ModifiedBy, etc.
+
+
+2. To keep your C# class clean from internal or system-related fields.
+
+
+3. To track things without exposing them in your code.
+
+
+
+
+---
+
+✅ How to Define a Shadow Property
+
+You define it in the OnModelCreating() method in DbContext.
+
+protected override void OnModelCreating(ModelBuilder modelBuilder)
+{
+    modelBuilder.Entity<Property>()
+        .Property<DateTime>("LastUpdated"); // 👈 Shadow Property
+}
+
+Here, LastUpdated does not exist in the Property class, but EF will still treat it like a normal column.
+
+
+---
+
+✅ How to Set or Use a Shadow Property in Code
+
+You can access or set it using EF's Entry() API:
+
+var property = await _context.Properties.FindAsync(1);
+
+// Set the shadow property
+_context.Entry(property).Property("LastUpdated").CurrentValue = DateTime.UtcNow;
+
+await _context.SaveChangesAsync();
+
+
+---
+
+✅ Example: Clean Model with Shadow Property
+
+// No LastUpdated here
+public class Property
+{
+    public int Id { get; set; }
+    public string Title { get; set; }
+    public double Price { get; set; }
+}
+
+But this will still save LastUpdated in the DB!
+
+
+---
+
+✅ How to Say in the Interview (Simple Words)
+
+> “Shadow properties are extra columns that EF tracks and stores in the database, but they are not declared in your C# class.
+They're useful for things like timestamps or audit info, when you want to keep your models clean.”
+
+
+
+
+---
+
+✅ Real-Life Analogy
+
+🧠 "It’s like adding an invisible tracking chip to a package — the customer doesn’t see it, but the system tracks it in the background."
+
+
+---
+
+Would you like me to extend this into a full CRUD example with CreatedBy, LastUpdated, etc., using shadow properties and EF Core 8?
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////13. What is change tracking in EF?
+Great question! Let's break down Change Tracking in Entity Framework (EF) using simple human-friendly words and real code examples — so you can explain it confidently in an interview.
+
+
+---
+
+✅ What is Change Tracking in EF?
+
+Change Tracking means:
+
+> EF keeps track of the changes you make to your objects (entities) after retrieving them from the database, so that it knows what to update when you call SaveChanges().
+
+
+
+
+---
+
+✅ How It Works (Simple Steps)
+
+1. EF loads an object from the database.
+
+
+2. You change a property (like name or price).
+
+
+3. EF tracks the change in memory.
+
+
+4. When you call SaveChanges(), EF automatically generates SQL UPDATE for the changed fields.
+
+
+
+
+---
+
+✅ Code Example
+
+var property = await _context.Properties.FindAsync(1); // Step 1: EF tracks this entity
+
+property.Price = 500000; // Step 2: You make a change
+
+await _context.SaveChangesAsync(); // Step 3 & 4: EF detects change & updates DB
+
+Behind the scenes, EF tracks the Price change and creates this SQL:
+
+UPDATE Properties SET Price = 500000 WHERE Id = 1;
+
+
+---
+
+✅ Interview-Friendly Explanation
+
+> “EF uses Change Tracking to monitor changes I make to my entities in memory.
+So when I call SaveChanges(), EF knows what to update in the database — without me writing SQL manually.”
+
+
+
+
+---
+
+✅ Real-Life Analogy
+
+🧠 *“It’s like a teacher watching students write their answers
+
+
+
+
+14. What is the difference between Add(), Attach(), and Update() methods?
+
+
+15. How do you configure Fluent API vs Data Annotations?
+
+
+16. How can you execute raw SQL queries in EF Core?
+
+
+17. What is the use of AsNoTracking()?
+
+
+
+
+---
+
+🚀 Advanced/Real-World Development Questions
+
+18. How do you optimize performance in Entity Framework Core?
+
+
+19. How to handle transactions in EF?
+
+
+20. How do you seed initial data in EF Core?
+
+
+21. How do you implement Unit of Work and Repository Pattern with EF?
+
+
+22. How do you test Entity Framework code (Mocking DbContext)?
+
+
+23. What are global query filters in EF Core?
+
+
+24. What is Query Splitting in EF Core?
+
+
+25. How does EF Core handle connection pooling and resource management?
+
+
+////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////Interview Bit
+//////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////////1)which according to you is considered the best approach in Entity framework.
+->In real world , code-First is considered the best approach because 
+-> Developers control the model using c# classes.
+-> Database schema  is created/updated automatically using migration.
+-> Works well with agile projects where database design keeps migrations.
+-> Easier for version control(Git) since everything is in code.
+////////////////////////////////////////////////////////////////////////////2) Explain the advantages of the Entity Framework.
+Advantages
+///////////1) No need to write SQL manually
+-> Normally, we have to write  long SQL quesries to fetch, insert , or update  data.
+-> With EF, we can just write long c# code(dbContext.Products.ToList()) and it will generate the SQL behind the scenes.
+->Save time and reduces human errors in SQL.
+//Faster development (Productivity boost)
+->Developers can focus on business logic instead of spending hours writing and debugging  SQL queries.
+->EF provided LINQ (Language Integrated Query), which makes queries easier and type-safe.
+//Database independent (Multiple DB support)
+//Strong Types and IntelliSense support
+//Change Tracking 
+//Better for Complex Apps
+////////////////////////////////////////////////////////////////////////////////////////////////3) Describe some of the disadvantages of the entity Framework.
+//Slower than ADO.net 
+//Less control over SQL.
+//Performance issue in very large apps.
+//Learning curve 
+//Overhead(extra memory and processing).
+//////////////////////////////////////////////////////////////////////////////////////////////////4) what are the feature of the entity framework ?
+
+/////////////////////////////////////////////////////////////////////////////////////////5) what are the main component of Entity Framework
+///EDM has tree part
+1)Conceptual Model.
+2) Storage Module.
+3) Mapping Module.
+Conceptual model (c# world)
+Storage Model(DB world)
+Mapping Model(the transator in between).
+//2)Linq to Entities.
+//3)Entity SQL
+//4)Object Service
+//5)ADO.NET Data Provider
+/////////////////////////////////////////////////////////////////////////////////////6) explain diffrent parts of the entity data model.
+1) Conceptual Model(CSDL)
+This is how you see the data in c#(your entity classes).
+public class Student
+{
+ public int Id {get ; set ;}
+ public string Name {get ; set;}
+}
+
+2) Storage Model(SSDL)
+This is how the database actually look(tablets, columns , data types)
+ create table Student
+ (StudentId INT )
+3)
+///////////////////////////////////////////////////////////////////////////////////////7) Explain what the .edmx file contains.
+An .edmx file in Entity Framework is an XML-based file that contains three parts :
+CSDL(Conceptual Model : C# classes)
+SSDL(Stored Model : Database  tables)
+MSL(Mapping between them) : It basically acs as a bridge between the database and the application.
+///////////////////////////////////////////////////////////////////////////////////////////////////////8) what do you mean by migration ? Write its type ?
+Migration in Entity Framework is a ways to update and manage database schema changes in sync with your application's data model.
+->Automatic Migration :  Database updates automatically(good for quick dev, not production).
+->Code-Based Migration : Mamnual control using migration files (preferred).
+->Initial Migration : First migration to create DB.
+->Seed Migration : To add initial data.
+
+9) what do you mean by Deferred Execution in EF ?
+=> EXAMPLE :
+Var query = context.Employees.Where(e => e.Department == "IT");
+At this line -> No SQL query is send to the database yet.
+When you actually do something like :
+foreach(var emp in query)
+{
+Console.WriteLine(emp.Name);
+}
+Only then the query is executes, and EFsends SQL to the database.
+
+//Why Deferred Excution is Useful ?
+Performance Optimization -> Query is executed only when needed.
+Flexibility -> You can build queries step by step before execution.
+Less Load -> Prevents unnessary
+///////////////////////////////////////////////////////////////////////////////////////////10) What do you mean by the term navigation property in the entity framework ?
+11) What are diffrent entity state in EF ?
+12) Write the importance of the t4 entity in Entity Framework.
+13)Explain CSDL, SSDL , MSL selection in an Edmx file
+14) Write some XML generation methods provided b the dataset object.
+15) what do you mean by migration history table in Entity framework.
+16) Explain how EF suppots transactions.
+17) Write the steps to retrive data from database using Entity Framework in MVC.
+18) Explain the role of pluralize and Singularize in  the entity framework.
+19)What is the diffrence between Dapper and Entity Framework.
+20) Explain the POCO Clsses in EF.
+21) In EF , what are the ways to use stored Procedures ?
+22) Explain database concurrency and the ways to handle it.
+23) What are diffrence type of loading available to load related entities in EF.
+24) What do you mean by lazy loading and explicit loading.
+25) What are the pros and cons of different type of loading.
+26) Write diffrent type of inheritane support by entity Framework.
+27) Write Complex Type in Entity Framework.
+28) What do you mean by Micro ORM.
+29) Explain EF Data access Artichecture.
+30)What do you mean by SQL inject attack ?
+31) What is the best ways to handle SQL injection attacks in Entity Framework.
+32) Explain the OnjectSet in EF.
+33) Whta the namespace that is used to include .NET Data Provider for SQL server in .NET code.
+34) Eplain EDM and write the process to create it.
+35) What do you mean by DbEntityEntry Class in EF ?
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Api with EF
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////Get
+// End-to-End Fullstack Example: Property Listing API with POST (Create) Feature
+// Stack: Angular 18 (Frontend) + .NET 8 (Backend) + EF Core + Clean Architecture + async/await
+
+/*
+  Backend (.NET 8)
+  Layers:
+    - Controller (API layer)
+    - Service (Business logic)
+    - Repository (Database interaction using EF Core)
+    - DbContext & Models
+*/
+
+// --- Models/Property.cs ---
+public class Property
+{
+    public int Id { get; set; }
+    public string Title { get; set; } = string.Empty;
+    public double Price { get; set; }
+    public string Location { get; set; } = string.Empty;
+}
+
+// --- Data/PropertyDbContext.cs ---
+public class PropertyDbContext : DbContext
+{
+    public PropertyDbContext(DbContextOptions<PropertyDbContext> options) : base(options) {}
+    public DbSet<Property> Properties => Set<Property>();
+}
+
+// --- Repository/IPropertyRepository.cs ---
+public interface IPropertyRepository
+{
+    Task<List<Property>> GetAllPropertiesAsync();
+    Task<Property> AddPropertyAsync(Property property);
+}
+
+// --- Repository/PropertyRepository.cs ---
+public class PropertyRepository : IPropertyRepository
+{
+    private readonly PropertyDbContext _context;
+    public PropertyRepository(PropertyDbContext context)
+    {
+        _context = context;
+    }
+
+    public async Task<List<Property>> GetAllPropertiesAsync()
+    {
+        return await _context.Properties.ToListAsync();
+    }
+
+    public async Task<Property> AddPropertyAsync(Property property)
+    {
+        _context.Properties.Add(property);
+        await _context.SaveChangesAsync();
+        return property;
+    }
+}
+
+// --- Services/IPropertyService.cs ---
+public interface IPropertyService
+{
+    Task<List<Property>> GetAllPropertiesAsync();
+    Task<Property> AddPropertyAsync(Property property);
+}
+
+// --- Services/PropertyService.cs ---
+public class PropertyService : IPropertyService
+{
+    private readonly IPropertyRepository _repository;
+    public PropertyService(IPropertyRepository repository)
+    {
+        _repository = repository;
+    }
+
+    public async Task<List<Property>> GetAllPropertiesAsync()
+    {
+        return await _repository.GetAllPropertiesAsync();
+    }
+
+    public async Task<Property> AddPropertyAsync(Property property)
+    {
+        return await _repository.AddPropertyAsync(property);
+    }
+}
+
+// --- Controllers/PropertyController.cs ---
+[ApiController]
+[Route("api/[controller]")]
+public class PropertyController : ControllerBase
+{
+    private readonly IPropertyService _service;
+    public PropertyController(IPropertyService service)
+    {
+        _service = service;
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> Get()
+    {
+        var data = await _service.GetAllPropertiesAsync();
+        return Ok(data);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Post([FromBody] Property property)
+    {
+        if (!ModelState.IsValid) return BadRequest(ModelState);
+        var result = await _service.AddPropertyAsync(property);
+        return CreatedAtAction(nameof(Get), new { id = result.Id }, result);
+    }
+}
+
+// --- Program.cs ---
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<PropertyDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<IPropertyRepository, PropertyRepository>();
+builder.Services.AddScoped<IPropertyService, PropertyService>();
+builder.Services.AddControllers();
+
+var app = builder.Build();
+app.UseHttpsRedirection();
+app.MapControllers();
+app.Run();
+
+// --- appsettings.json ---
+/*
+"ConnectionStrings": {
+  "DefaultConnection": "Server=.;Database=PropertyDb;Trusted_Connection=True;TrustServerCertificate=True"
+}
+*/
+
+/*
+  Frontend (Angular 18)
+*/
+
+// --- property.model.ts ---
+export interface Property {
+  id?: number;
+  title: string;
+  price: number;
+  location: string;
+}
+
+// --- property.service.ts ---
+@Injectable({ providedIn: 'root' })
+export class PropertyService {
+  private baseUrl = 'https://localhost:5001/api/property';
+
+  constructor(private http: HttpClient) {}
+
+  getAll(): Observable<Property[]> {
+    return this.http.get<Property[]>(this.baseUrl);
+  }
+
+  add(property: Property): Observable<Property> {
+    return this.http.post<Property>(this.baseUrl, property);
+  }
+}
+
+// --- property-form.component.ts ---
+@Component({ selector: 'app-property-form', templateUrl: './property-form.component.html' })
+export class PropertyFormComponent {
+  property: Property = { title: '', price: 0, location: '' };
+
+  constructor(private propertyService: PropertyService) {}
+
+  onSubmit(): void {
+    this.propertyService.add(this.property).subscribe(result => {
+      alert('Property added successfully!');
+      this.property = { title: '', price: 0, location: '' };
+    });
+  }
+}
+
+// --- property-form.component.html ---
+<form (ngSubmit)="onSubmit()">
+  <input type="text" placeholder="Title" [(ngModel)]="property.title" name="title">
+  <input type="number" placeholder="Price" [(ngModel)]="property.price" name="price">
+  <input type="text" placeholder="Location" [(ngModel)]="property.location" name="location">
+  <button type="submit">Add Property</button>
+</form>
+
+/*
+✅ You now have:
+- Fully working Create (POST) operation using .NET 8, EF Core, async/await
+- Clean layered architecture with real enterprise interview structure
+- Angular 18 form to submit data
+*/
+
+/////////////////////////////////Post
+// End-to-End Fullstack Example: Property Listing API with POST (Create) Feature
+// Stack: Angular 18 (Frontend) + .NET 8 (Backend) + EF Core + Clean Architecture + async/await
+
+/*
+  Backend (.NET 8)
+  Layers:
+    - Controller (API layer)
+    - Service (Business logic)
+    - Repository (Database interaction using EF Core)
+    - DbContext & Models
+*/
+
+// --- Models/Property.cs ---
+public class Property
+{
+    public int Id { get; set; }
+    public string Title { get; set; } = string.Empty;
+    public double Price { get; set; }
+    public string Location { get; set; } = string.Empty;
+}
+
+// --- Data/PropertyDbContext.cs ---
+public class PropertyDbContext : DbContext
+{
+    public PropertyDbContext(DbContextOptions<PropertyDbContext> options) : base(options) {}
+    public DbSet<Property> Properties => Set<Property>();
+}
+
+// --- Repository/IPropertyRepository.cs ---
+public interface IPropertyRepository
+{
+    Task<List<Property>> GetAllPropertiesAsync();
+    Task<Property> AddPropertyAsync(Property property);
+}
+
+// --- Repository/PropertyRepository.cs ---
+public class PropertyRepository : IPropertyRepository
+{
+    private readonly PropertyDbContext _context;
+    public PropertyRepository(PropertyDbContext context)
+    {
+        _context = context;
+    }
+
+    public async Task<List<Property>> GetAllPropertiesAsync()
+    {
+        return await _context.Properties.ToListAsync();
+    }
+
+    public async Task<Property> AddPropertyAsync(Property property)
+    {
+        _context.Properties.Add(property);
+        await _context.SaveChangesAsync();
+        return property;
+    }
+}
+
+// --- Services/IPropertyService.cs ---
+public interface IPropertyService
+{
+    Task<List<Property>> GetAllPropertiesAsync();
+    Task<Property> AddPropertyAsync(Property property);
+}
+
+// --- Services/PropertyService.cs ---
+public class PropertyService : IPropertyService
+{
+    private readonly IPropertyRepository _repository;
+    public PropertyService(IPropertyRepository repository)
+    {
+        _repository = repository;
+    }
+
+    public async Task<List<Property>> GetAllPropertiesAsync()
+    {
+        return await _repository.GetAllPropertiesAsync();
+    }
+
+    public async Task<Property> AddPropertyAsync(Property property)
+    {
+        return await _repository.AddPropertyAsync(property);
+    }
+}
+
+// --- Controllers/PropertyController.cs ---
+[ApiController]
+[Route("api/[controller]")]
+public class PropertyController : ControllerBase
+{
+    private readonly IPropertyService _service;
+    public PropertyController(IPropertyService service)
+    {
+        _service = service;
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> Get()
+    {
+        var data = await _service.GetAllPropertiesAsync();
+        return Ok(data);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Post([FromBody] Property property)
+    {
+        if (!ModelState.IsValid) return BadRequest(ModelState);
+        var result = await _service.AddPropertyAsync(property);
+        return CreatedAtAction(nameof(Get), new { id = result.Id }, result);
+    }
+}
+
+// --- Program.cs ---
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<PropertyDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<IPropertyRepository, PropertyRepository>();
+builder.Services.AddScoped<IPropertyService, PropertyService>();
+builder.Services.AddControllers();
+
+var app = builder.Build();
+app.UseHttpsRedirection();
+app.MapControllers();
+app.Run();
+
+// --- appsettings.json ---
+/*
+"ConnectionStrings": {
+  "DefaultConnection": "Server=.;Database=PropertyDb;Trusted_Connection=True;TrustServerCertificate=True"
+}
+*/
+
+/*
+  Frontend (Angular 18)
+*/
+
+// --- property.model.ts ---
+export interface Property {
+  id?: number;
+  title: string;
+  price: number;
+  location: string;
+}
+
+// --- property.service.ts ---
+@Injectable({ providedIn: 'root' })
+export class PropertyService {
+  private baseUrl = 'https://localhost:5001/api/property';
+
+  constructor(private http: HttpClient) {}
+
+  getAll(): Observable<Property[]> {
+    return this.http.get<Property[]>(this.baseUrl);
+  }
+
+  add(property: Property): Observable<Property> {
+    return this.http.post<Property>(this.baseUrl, property);
+  }
+}
+
+// --- property-form.component.ts ---
+@Component({ selector: 'app-property-form', templateUrl: './property-form.component.html' })
+export class PropertyFormComponent {
+  property: Property = { title: '', price: 0, location: '' };
+
+  constructor(private propertyService: PropertyService) {}
+
+  onSubmit(): void {
+    this.propertyService.add(this.property).subscribe(result => {
+      alert('Property added successfully!');
+      this.property = { title: '', price: 0, location: '' };
+    });
+  }
+}
+
+// --- property-form.component.html ---
+<form (ngSubmit)="onSubmit()">
+  <input type="text" placeholder="Title" [(ngModel)]="property.title" name="title">
+  <input type="number" placeholder="Price" [(ngModel)]="property.price" name="price">
+  <input type="text" placeholder="Location" [(ngModel)]="property.location" name="location">
+  <button type="submit">Add Property</button>
+</form>
+
+/*
+✅ You now have:
+- Fully working Create (POST) operation using .NET 8, EF Core, async/await
+- Clean layered architecture with real enterprise interview structure
+- Angular 18 form to submit data
+*/
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////C# Notes Those bit confusing
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+///////////////
+Method Hinding
+
+public class Parent
+{
+    public void Display()
+    {
+        Console.WriteLine("Parent Display");
+    }
+}
+
+public class Child : Parent
+{
+    public new void Display()
+    {
+        Console.WriteLine("Child Display");
+    }
+}
+
+Parent p = new Parent();
+p.Display(); // Parent Display
+
+Child c = new Child();
+c.Display(); // Child Display
+
+Parent pc = new Child();
+pc.Display(); // Parent Display
+
+////////////////////////////////////////////
+Method Overring
+
+public class Animal
+{
+    public virtual void Eat()
+    {
+        Console.WriteLine("This animal eats food.");
+    }
+}
+
+public class Dog : Animal
+{
+    public override void Eat()
+    {
+        Console.WriteLine("Dog barks.");
+    }
+}
+
+public class Program
+{
+    public static void Main()
+    {
+        Animal myDog = new Dog();
+        myDog.Eat(); //Output : Dog barks
+    }
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Conceptual, Practical, Scenario
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////Dependency Injection
+////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////Conceptual
+/////////////////////////////////////////What is dependency Injection and Why is it important ?
+Dependency Injection(DI) is a design patter used in Software developemnt to manage dependencies 
+between object and promote loose coupling.
+
+////////////////////////////////////////////////////////////////////Explain the diffrence between Dependency Injection and Inversion of control.
+Ioc is a principle that says "a class  should not control its dependencies".
+//Imagine you go to a restaturent .Instead of cooking food yourself, the resturent provdes food to you .You  don't contol cooking , you only eat. 
+DI ia a ways to implement IOC by injecting dependencies (via constructor , property or method) instead of creating them inside.
+
+////////////////////////////////////////////////////////////////What are the type of Dependency Injection , And When you would each ?
+1) Constructor Injection(Most common) : 
+1) Most common type.
+2) When the dependency is required always.
+
+Example :
+public class OrderService
+{
+private readonly IPaymentService _paymentService;
+
+//Constructor Injection
+public OrderService(IPaymentService paymentService)
+{
+_paymentService = paymentService;
+}
+
+public void Placement()
+{
+ _paymentService.ProcessPayment();
+}
+}
+
+//Property Injection:
+1) When dependency is optional.
+2)Example : Logging -> a service can work without logging, but if available, it will use it.
+
+
+//Method Services :
+1) Used when dependency is needed only in one method.
+
+/////////////////////////////////////////////////////What are the some challenges using dependencies Injection ?
+Dependency Injection is powerful but has some challenges. It can make code harder for beginners, add some extra complexity in samll apps , 
+dedugging issue like missing registrations can be tricky and there's a little performance overhead.Also , if overused , ot can lead to too many hidden dependencies .
+
+//////////////////////////////////////////////////////////////Practicle Question
+//////////////////////////////How do you implement DI in .NetCore ?
+/////With Dependency Injection
+public interface IPaymentService
+{
+ void ProcessPayment();
+}
+
+public void ProcessPayment : IPaymentService
+{
+Console.WriteLine("Payment process.");
+}
+//
+public class OrderService
+{
+Private readonly IPaymentService _paymentService;
+//Dependency Injection via Constructor.
+public OrderService(IPaymentService paymentService)
+{
+_paymentService = paymentService ;
+}
+}
+
+--> OrderService depends on the IPaymentService interfaces, not the console process payment class.
+--> Easily replaced with a mock implementation during testing.
+
+
+//////////////////////////////////////////What is diffrence between AddTransient , AddScoped , And AddSingleton.
+
+//Singleton
+A single instance is shared across the application life cycle.
+Service instances are disposed at application shutdown.
+
+builder.Services.AddSingleton<IService, Service>(); //Singleton Service
+
+Example : Application-wise configuration settings , shared caches,Logger service(N LOG , Serilog)
+
+//Scoped
+A Single instance is created of the service is created per Scope(e.g , per HTTP Service in a web application).
+
+builder.Services.AddScoped<IService, Service>(); //Scoped Service
+
+Example : User-specific data , transaction, Database Context
+//Transient
+A new instance of the service is created every time , it is requested.
+builder.Services.AddTransient<IService, Service>(); //Transient Service
+Example : helper classes , New GUI Number
+/////////////////////////////////////////////////////////////////////////////How would you handle circular dependencies in DI ?
+🔄 What is Circular Dependency in DI?
+
+It happens when two or more classes depend on each other directly or indirectly, so DI container gets stuck trying to build them.
+
+Example:
+
+public class ServiceA
+{
+    private readonly ServiceB _serviceB;
+    public ServiceA(ServiceB serviceB) { _serviceB = serviceB; }
+}
+
+public class ServiceB
+{
+    private readonly ServiceA _serviceA;
+    public ServiceB(ServiceA serviceA) { _serviceA = serviceA; }
+}
+
+Here:
+
+ServiceA needs ServiceB
+
+ServiceB needs ServiceA
+➡️ Infinite loop 🔁
+
+
+
+---
+
+✅ How to Handle Circular Dependencies in DI?
+
+1. Re-design the classes (Best Solution)
+
+Usually, circular dependencies are a design smell 🚨.
+
+Try to split responsibilities or introduce a third class (mediator).
+
+Example:
+
+Instead of ServiceA ↔ ServiceB, make ServiceC handle coordination.
+
+
+
+
+
+
+---
+
+2. Use Interfaces instead of concrete classes
+
+Break direct dependency.
+
+
+public interface IServiceA { }
+public class ServiceA : IServiceA { }
+public class ServiceB 
+{
+    private readonly IServiceA _serviceA;
+    public ServiceB(IServiceA serviceA) { _serviceA = serviceA; }
+}
+
+
+
+
+---
+
+3. Use Lazy Injection (Lazy<T> or Func<T>)
+
+Load dependency only when it’s really needed, avoiding the infinite loop.
+
+
+public class ServiceA
+{
+    private readonly Lazy<ServiceB> _serviceB;
+    public ServiceA(Lazy<ServiceB> serviceB) { _serviceB = serviceB; }
+}
+
+
+
+
+---
+
+4. Property Injection (rare)
+
+Instead of constructor injection, let DI set the property later.
+
+
+public class ServiceA
+{
+    public ServiceB ServiceB { get; set; }
+}
+
+
+
+
+---
+
+🏢 Real-World Example
+
+Database + Logging:
+
+If Repository depends on Logger, and Logger depends on Repository for saving logs → circular dependency ❌.
+
+Fix: Let Logger log independently, don’t make it depend on Repository.
+
+
+🔄 What is Circular Dependency in DI?
+
+It happens when two or more classes depend on each other directly or indirectly, so DI container gets stuck trying to build them.
+
+Example:
+
+public class ServiceA
+{
+    private readonly ServiceB _serviceB;
+    public ServiceA(ServiceB serviceB) { _serviceB = serviceB; }
+}
+
+public class ServiceB
+{
+    private readonly ServiceA _serviceA;
+    public ServiceB(ServiceA serviceA) { _serviceA = serviceA; }
+}
+
+Here:
+
+ServiceA needs ServiceB
+
+ServiceB needs ServiceA
+➡️ Infinite loop 🔁
+
+
+
+---
+
+✅ How to Handle Circular Dependencies in DI?
+
+1. Re-design the classes (Best Solution)
+
+Usually, circular dependencies are a design smell 🚨.
+
+Try to split responsibilities or introduce a third class (mediator).
+
+Example:
+
+Instead of ServiceA ↔ ServiceB, make ServiceC handle coordination.
+
+
+
+
+
+
+---
+
+2. Use Interfaces instead of concrete classes
+
+Break direct dependency.
+
+
+public interface IServiceA { }
+public class ServiceA : IServiceA { }
+public class ServiceB 
+{
+    private readonly IServiceA _serviceA;
+    public ServiceB(IServiceA serviceA) { _serviceA = serviceA; }
+}
+
+
+
+
+---
+
+3. Use Lazy Injection (Lazy<T> or Func<T>)
+
+Load dependency only when it’s really needed, avoiding the infinite loop.
+
+
+public class ServiceA
+{
+    private readonly Lazy<ServiceB> _serviceB;
+    public ServiceA(Lazy<ServiceB> serviceB) { _serviceB = serviceB; }
+}
+
+
+
+
+---
+
+4. Property Injection (rare)
+
+Instead of constructor injection, let DI set the property later.
+
+
+public class ServiceA
+{
+    public ServiceB ServiceB { get; set; }
+}
+
+
+
+
+---
+
+🏢 Real-World Example
+
+Database + Logging:
+
+If Repository depends on Logger, and Logger depends on Repository for saving logs → circular dependency ❌.
+
+Fix: Let Logger log independently, don’t make it depend on Repository.
+///////////////////////////////////////////////////////////////////////////What happen if a required denpendencies is not registored in the DI Container.
+
+
+
+What happens if a required dependency is NOT registered in the DI container?
+
+👉 If you try to use (resolve) a dependency that is not registered in the DI container, the application will throw an error at runtime.
+
+In .NET, this error usually looks like:
+
+InvalidOperationException: Unable to resolve service for type 'MyApp.Services.IMyService' 
+while attempting to activate 'MyApp.Controllers.HomeController'.
+
+
+---
+
+🧠 Example:
+
+public interface IMyService
+{
+    string GetData();
+}
+
+public class MyService : IMyService
+{
+    public string GetData() => "Hello from Service!";
+}
+
+public class HomeController : ControllerBase
+{
+    private readonly IMyService _service;
+
+    public HomeController(IMyService service) // dependency needed here
+    {
+        _service = service;
+    }
+
+    [HttpGet]
+    public string Get() => _service.GetData();
+}
+
+If you forget to register it in Program.cs / Startup.cs like this:
+
+builder.Services.AddScoped<IMyService, MyService>();
+
+When you run the app, it crashes with an exception, because DI container doesn’t know how to create IMyService.
+
+
+---
+
+🔑 Real-World Impact
+
+If dependency is not registered → App won’t even start properly or API request will fail immediately.
+
+This is why proper DI registration is critical in enterprise apps.
+
+
+
+---
+
+✅ Interview-Smart Answer:
+"If a required dependency is not registered in the DI container, .NET will throw an InvalidOperationException at runtime because it cannot resolve the service. To avoid this, we must ensure all required dependencies are properly registered in Program.cs or Startup.cs. Tools like unit tests and build-time checks can also help catch missing registrations early."
+
+
+////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////Middleware
+///////////////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////Conceptual Middleware Question
+///////////////////////////////////////////////////////////////////////////////////What is Middleware in ASP.NetCore
+
+Middleware is software that sits in the request-response pipeline and process HTTP request and response in an application.
+
+///////////////////////////////////////////////////////Why is Middleware importantant ?
+It provide a modular approaches to add cross-cutting  concerns like logging , authentication and error handling.
+
+////////////////////////////////////////////////////How does Middleware differ from HttpModules in .Net framework.
+Middleware is lightweight , modular and uses an explicit pipeline , unlike the eveny- driven approaches of httpModule.
+
+/////////////////////////////////////////////////////////////////////////////////////////PracticleModule
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////Exception HANDLING
+///////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////
+ Scenario-Based Questions on try-catch in C#
+
+/////////////////////////////////////////////////////////////////////////1. What happens if an exception occurs and there is no catch block?
+
+👉 Interviewer wants to check if you know about unhandled exceptions.
+Answer: The application will crash if the exception is not handled.
+
+
+---
+
+////////////////////////////////////////////////////////////////////////2. Can we have multiple catch blocks?
+
+👉 Scenario: You’re connecting to a database, and you want to handle SqlException differently from a general Exception.
+Answer: Yes, multiple catch blocks are allowed, and they run top-to-bottom, so the most specific exception type should come first.
+
+
+---
+
+///////////////////////////////////////////////////////////////////////////////3. What if exception occurs inside catch block?
+
+👉 Example: You log the error in a file, but logging itself throws an exception.
+Answer: If another exception happens inside catch, and it’s not handled, the program will still crash. That’s why logging frameworks are often used (to minimize this risk).
+
+
+---
+
+///////////////////////////////////////////////////////////////////////////////////4. Can finally block be skipped?
+
+👉 Scenario: You’re closing a database connection in finally. Will it always run?
+Answer: finally always runs except in two cases:
+
+If the program crashes due to Environment.FailFast() or system crash
+
+If the process is terminated (e.g., kill command).
+
+
+
+---
+
+///////////////////////////////////////////////////////////////////////////////5. What happens if both catch and finally have return statements?
+
+👉 Example:
+
+try { return 1; }
+catch { return 2; }
+finally { return 3; }
+
+Answer: The finally return will override everything. Output will be 3.
+
+
+---
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////6. Can we use try without catch?
+
+👉 Scenario: You only want to clean up resources.
+Answer: Yes, try can be used with finally only, no catch is required.
+
+
+---
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////7. What’s the difference between throw ex; and throw;?
+
+👉 Scenario: You caught an exception, logged it, and want to re-throw.
+Answer:
+
+With throw ex;
+The stack trace shows the exception originating in MethodA (re-throw line).
+With throw;
+The stack trace shows the exception originating in MethodB (actual divide by zero line).
+
+///////Example throw ex
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        try
+        {
+            MethodA();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Caught in Main:");
+            Console.WriteLine(ex);
+        }
+    }
+
+    static void MethodA()
+    {
+        try
+        {
+            MethodB();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Logging in MethodA: " + ex.Message);
+
+            // Try switching between "throw ex;" and "throw;"
+            throw ex; // or just throw;
+        }
+    }
+
+    static void MethodB()
+    {
+        int x = 0;
+        int y = 5 / x; // Exception originates here
+    }
+}
+
+////////Example throw
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        try
+        {
+            MethodA();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Caught in Main:");
+            Console.WriteLine(ex);
+        }
+    }
+
+    static void MethodA()
+    {
+        try
+        {
+            MethodB();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Logging in MethodA: " + ex.Message);
+
+            // Try switching between "throw ex;" and "throw;"
+            throw ex; // or just throw;
+        }
+    }
+
+    static void MethodB()
+    {
+        int x = 0;
+        int y = 5 / x; // Exception originates here
+    }
+}
+
+---
+
+8. Nested try-catch blocks: which one handles exception?
+
+👉 Scenario: You have a try-catch inside another try-catch.
+Answer: The nearest catch block that matches the exception type will handle it.
+
+
+---
+
+9. Can a finally block throw an exception? What happens then?
+
+👉 Scenario: You’re closing a file in finally and that itself throws.
+Answer: Yes, it can throw, and if it does, the new exception hides the original one. This can make debugging harder.
+
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////CLASS And OBJECT
+///////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////Basic Question
+//What is the diffrence between a class and an Object ?
+class :-> Blueprint , doesn't occupy memory.
+Object :-> Instance of a class. Occupies memory and represent real-world entity.
+
+//////////////////////////////////////////////////////////Can you create an object without a class ?
+No, in oops  object are instance f classes . you need a class to create an object.
+
+///////////////////////////////////////////////////////////Can you have multiple Onject
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////JWT EXPLANATION
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Sure! Let's go through an example to explain JWT (JSON Web Token) in a practical way, step by step.
+
+JWT Structure Overview
+A JWT consists of three parts:
+
+Header: Contains metadata about the token, typically the type of token (JWT) and the signing algorithm used (e.g., HS256).
+Payload: Contains the claims (data), such as user information, roles, and expiration times.
+Signature: Ensures the token wasn't altered. It is created by combining the encoded header, encoded payload, and a secret key, all signed using the specified algorithm.
+These parts are encoded into Base64URL format and concatenated with periods (e.g., header.payload.signature).
+
+Example of a JWT
+Let's say we want to create a JWT for a user after they successfully log in to an application.
+
+Header (Base64 encoded):
+json
+Copy code
+{
+  "alg": "HS256",
+  "typ": "JWT"
+}
+Base64URL encoded: eyJhbGciOiAiSFMyNTYiLCAidHlwIjogIkpXVCJ9
+
+Payload (Base64 encoded):
+json
+Copy code
+{
+  "sub": "1234567890",
+  "name": "John Doe",
+  "admin": true,
+  "exp": 1717171717
+}
+Base64URL encoded: eyJzdWIiOiAiMTIzNDU2Nzg5MCIsICJuYW1lIjogIkpvaG4gRG9lIiwgImFkbWluIjogdHJ1ZSwgImV4cCI6IDE3MTcxNzE3MTd9
+
+Signature:
+The signature is created using the header, payload, and a secret key (e.g., my_secret_key). The signing algorithm (HS256) is used to create the signature.
+
+bash
+Copy code
+HMACSHA256(
+  base64UrlEncode(header) + "." + base64UrlEncode(payload),
+  your-256-bit-secret
+)
+Example signature (Base64URL encoded): SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+
+Final JWT:
+The final token is a concatenation of the header, payload, and signature:
+
+Copy code
+eyJhbGciOiAiSFMyNTYiLCAidHlwIjogIkpXVCJ9.eyJzdWIiOiAiMTIzNDU2Nzg5MCIsICJuYW1lIjogIkpvaG4gRG9lIiwgImFkbWluIjogdHJ1ZSwgImV4cCI6IDE3MTcxNzE3MTd9.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+How JWT Works (Example Flow)
+User Login:
+The user logs in to your application by submitting their credentials (username and password) via a login form.
+
+Server Validates Credentials:
+The server validates the user credentials against the database. If valid, the server generates a JWT.
+
+Example in C# (.NET Core):
+
+csharp
+Copy code
+using System;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
+using Microsoft.IdentityModel.Tokens;
+
+public class JwtService
+{
+    public string GenerateToken(string username)
+    {
+        var claims = new[]
+        {
+            new Claim(JwtRegisteredClaimNames.Sub, username),
+            new Claim("admin", "true"),
+            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+        };
+
+        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("my_secret_key"));
+        var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+        var token = new JwtSecurityToken(
+            issuer: "yourIssuer",
+            audience: "yourAudience",
+            claims: claims,
+            expires: DateTime.Now.AddMinutes(30),
+            signingCredentials: creds);
+
+        return new JwtSecurityTokenHandler().WriteToken(token);
+    }
+}
+This generates a JWT that includes claims such as the user's name, whether they're an admin, and an expiration time.
+
+Client Receives JWT:
+The server sends the generated JWT back to the client. This token is typically sent in the response body or a header.
+
+Example Response:
+
+json
+Copy code
+{
+  "token": "eyJhbGciOiAiSFMyNTYiLCAidHlwIjogIkpXVCJ9.eyJzdWIiOiAiMTIzNDU2Nzg5MCIsICJuYW1lIjogIkpvaG4gRG9lIiwgImFkbWluIjogdHJ1ZSwgImV4cCI6IDE3MTcxNzE3MTd9.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
+}
+Client Stores the JWT:
+The client (typically a frontend application) stores the JWT, either in localStorage, sessionStorage, or cookies, for later use.
+
+Client Makes Authenticated Requests:
+For each subsequent request that requires authentication, the client sends the JWT in the HTTP Authorization header.
+
+Example request header:
+
+makefile
+Copy code
+Authorization: Bearer eyJhbGciOiAiSFMyNTYiLCAidHlwIjogIkpXVCJ9.eyJzdWIiOiAiMTIzNDU2Nzg5MCIsICJuYW1lIjogIkpvaG4gRG9lIiwgImFkbWluIjogdHJ1ZSwgImV4cCI6IDE3MTcxNzE3MTd9.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+Server Validates the JWT:
+Each time the server receives a request with a JWT, it validates the token’s signature using the same secret key. It also checks the expiration date and any claims (such as roles) that the token contains.
+
+Example in .NET Core:
+
+csharp
+Copy code
+services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = "yourIssuer",
+            ValidAudience = "yourAudience",
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("my_secret_key"))
+        };
+    });
+Server Authorizes the Request:
+If the token is valid, the server authorizes the request and provides access to the requested resource. Otherwise, it denies access and responds with an unauthorized status code.
+
+Real-World Scenario
+Let's say you're building an online banking application.
+
+The user logs in with their credentials, and the server generates a JWT containing the user's ID and roles (like admin, customer).
+The JWT is returned to the client, which stores it in localStorage.
+Each time the client makes a request to check account balances or transfer money, it includes the JWT in the request header.
+The server validates the JWT to ensure the user is authenticated and authorized to perform the requested action.
+Benefits of JWT
+Stateless: No need for server-side sessions; the token contains all necessary information.
+Scalable: JWTs are self-contained, reducing server load.
+Portable: JWTs are easy to transmit via URL, POST body, or HTTP header.
+Conclusion
+JWT is a powerful way to secure APIs, ensuring that user data and access controls are handled in a stateless and portable manner. By including claims in the payload, you can control access to different parts of your application while keeping the communication secure using cryptographic signatures.
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////L2 Round Coding Question DSA
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+1. Find the Maximum Subarray Sum (Kadane's Algorithm)
+
+Input: [-2,1,-3,4,-1,2,1,-5,4] → Output: 6 (subarray: [4,-1,2,1])
+
+Complexity: O(n)
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////Most Asked Azure interview Question
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////What is Azure App Services
+PaaS for Hosting Services.
+link : https://www.youtube.com/watch?v=pL2alDLo_no
+/////////////////////////////////////ARM
+Central to how you manage Azure resourses.
+link : https://www.youtube.com/watch?v=D0_jF3LpEfQ
+//////////////////////////////////////////////////////////Azure Function
+Serverless event-driven logic.
+link : https://www.youtube.com/watch?v=uJyoMEjlahM
+/////////////////////////////////////////////////////////Azure SQL Database vs Azure Cosmos DB
+Relational vs global No SQL
+////////////////////////////////////////////////////Diffrence between Blob Storages and Files.
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////Most asked DSA and Algorithm question in Interview
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+  ///////////////////////////////////////////////////////Reverse String the string
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        string str = "hello world";
+        Console.WriteLine("Original: " + str);
+        Console.WriteLine("Reversed: " + Reverse(str));
+    }
+
+    public static string Reverse(string str)
+    {
+        if (string.IsNullOrEmpty(str)) return str;
+
+        char[] ch = str.ToCharArray();
+        int i = 0;
+        int j = ch.Length - 1;
+
+        while (i < j)
+        {
+            // swap characters
+            char temp = ch[i];
+            ch[i] = ch[j];
+            ch[j] = temp;
+            i++;
+            j--;
+        }
+
+        return new string(ch);
+    }
+}
+
+
+
+//////////////////////////////////////input : Abhishek kumar singh , output : singh kumar Abhishek
+
+using System;
+using System.Text;
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        string str = "Abhishek kumar singh jhbg bnhju nhbgfy bhgytu";
+        String[] ch = str.Split(' ');
+        StringBuilder sb = new StringBuilder();
+        
+        for(int i = ch.Length - 1 ; i >=  0 ;  i--)
+        {
+            sb.Append(ch[i]);
+            sb.Append(" ");
+        }
+        Console.WriteLine (sb.ToString());
+    }
+}
+///////////////////////////////////////
+Find the First Non-Repeating Character in a String
+Problem Statement:
+
+> Given a string, find and return the first non-repeating character.
+If there is no such character, return -1.
+
+Example 1:
+
+Input:  "aabbcddbe"
+Output: 'c'
+
+Example 2:
+
+Input:  "aabbcc"
+Output: -1
+
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+        String str = "aaabbbcccddfggghhrrr";
+        char result = FindNonRepeatingCharacters(str);  
+        if(result != '0')
+        {
+            Console.WriteLine("The first non-repeating character is: " + result);
+        }
+        else
+        {
+            Console.WriteLine("No non-repeating character found.");
+        }
+
+    }
+    public static char FindNonRepeatingCharacters(String str)
+    {
+        Dictionary<char, int> keyValuePairs = new Dictionary<char, int>();
+
+        foreach (char c in str)
+        {
+            if (keyValuePairs.ContainsKey(c))
+            {
+                keyValuePairs[c]++;
+            }
+            else
+            {
+                keyValuePairs.Add(c, 1);
+            }
+        }
+            foreach (char ch in str)
+            {
+                if (keyValuePairs[ch] == 1)
+                {
+                    return ch;
+                }
+            }
+        
+            return '0';
+
+        
+    }
+}
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+Q.2: How to find if the given string is a palindrome or not?
+
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        String str = "MadaM";
+        CheckPalidrom(str);
+        
+    }
+    public static void CheckPalidrom(String str)
+     {
+         int i = 0;
+         int j = str.Length - 1 ;
+         bool IsPalidrop = true;
+          while(i < j)
+           {
+               if(str[i] != str[j])
+               {
+                   IsPalidrop = false;
+                   break;
+               }
+               i++;
+               j--;
+           }
+           if(IsPalidrop == true)
+           {
+               Console.WriteLine("Paidrom");
+           }
+           else
+           {
+               Console.WriteLine(" Not Paidrom");
+           }
+     }
+}
+ /////////////////////////////////////////////////////Q.4: How to reverse each word in a given string?
+Ans.: The user will input a sentence and we need to reverse each word individually without changing its position in the sentence.
+input: Welcome to Csharp corner, output: emocleW ot prahsC renroc
+
+using System.Text;
+using System.Collections.Generic;
+using System;
+class Program
+{
+    
+    public static void Main(string[] args)
+    {
+        string str = "Abhishek is Intelligent boys";
+        RSEW(str);
+    }
+    public static void RSEW(string str)
+    {
+        StringBuilder sb = new StringBuilder();
+        List<char> ls = new List<char>();
+        for(int i = 0 ; i < str.Length ; i++)
+        {
+            if(str[i] == ' ' || i == str.Length - 1 )
+            {
+                if(i == str.Length - 1)
+                {
+                    ls.Add(str[i]);
+                }
+                
+                    for(int j = ls.Count - 1 ; j >= 0 ; j--)
+                    {
+                        sb.Append(ls[j]);
+                    }
+                    sb.Append(' ');
+                    ls = new List<char>();
+                
+            }
+            else
+            {
+                ls.Add(str[i]);
+            }
+        }
+        Console.WriteLine(sb.ToString());
+    }
+}
+//////////////////////////////////////Q.5: How to count the occurrence of each character in a string?
+
+using System;
+using System.Collections.Generic;
+
+public class HelloWorld
+{
+public static void Main(string[] args)
+ {
+ string str = "Hello   world";
+ FindCount(str);
+     
+ }
+
+  public static void FindCount(string str)
+  {
+   Dictionary<char, int> dis = new Dictionary<char, int>();
+     foreach (char ch in str)
+       {
+           if(ch != ' ')
+           {
+           if (dis.ContainsKey(ch))
+          {
+          dis[ch]++;
+             }
+             else
+                {
+               dis.Add(ch, 1);
+                }
+           }
+       }
+            foreach (var item in dis)
+           {
+       //  Console.WriteLine($"{item.Key}: {item.Value}");
+         Console.WriteLine($"{item.Key} : {item.Value}");
+          }
+    }
+}
+
+////////////////////////////////////////////////////////////////
+
+
+//input :1,2,3,1,2,3,4
+//o/p - 4
+using System;
+using System.Collections.Generic;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        int[] arr = new int[] {1, 2, 3, 1, 2, 3, 4};
+        Occurence(arr);
+    }
+
+    public static void Occurence(int[] arr)
+    {
+        Dictionary<int, int> dis = new Dictionary<int, int>();
+        foreach (var a in arr)
+        {
+            if (dis.ContainsKey(a))
+            {
+                dis[a]++;
+            }
+            else
+            {
+                dis.Add(a, 1);
+            }
+        }
+
+        foreach (var d in dis)
+        {
+            if (d.Value == 1)
+            {
+                Console.WriteLine($"{d.Key}");
+            }
+        }
+    }
+}
+///////////////////////////////////////////////Q.6: How to remove duplicate characters from a string?
+The user will input a string and the method should remove multiple occurrences of characters in the string
+input: csharpcorner, output: csharpone
+
+
+using System;
+using System.Text;
+class Program
+{
+    public static void Main(string[] args)
+    {
+        string str = "abhishekkumarsingh" ;
+        DCR(str);
+    }
+    public static void DCR(string str)
+    {
+        string sb = string.Empty;
+        {
+        for(int i = 0 ; i < str.Length ; i++)
+        if(!sb.Contains(str[i]))
+        {
+            sb = sb + str[i];
+        }
+        }
+        Console.WriteLine(sb.ToString());
+    }
+}
+///////////////////////////////////////////Q.7: How to find all possible substring of a given string?
+//input: abcd , output : a ab abc abcd b bc bcd c cd d
+
+using System;
+using System.Text;
+class Program
+{
+    public static void Main(string[] args)
+    {
+        string str = "abcd";
+        PosSub(str);
+    }
+    public static void PosSub(string str)
+    {
+        for(int i = 0 ; i < str.Length ; i++)
+        {
+        StringBuilder sb = new StringBuilder(str.Length - 1);
+            for(int j = i ; j < str.Length ; j++)
+             {
+                sb.Append(str[j]);
+                Console.Write(sb + " ");
+             }
+             
+        }
+    }
+}
+Q.8: How to perform Left circular rotation of an array?
+ How to perform Left circular rotation of an array?
+Ans.: The user will input an integer array and the method should shift each element of input array to its Left by one position in circular fashion. The logic is to iterate loop from Length-1 to 0 and swap each element with last element.
+
+input: 1 2 3 4 5, output: 2 3 4 5 1
+using System;
+
+
+class Program
+{
+    public static void Main(String[] args)
+    {
+       int[] arr = {8,6,5,8,3,6,8,9,2,3,6,7,8};
+       CrA(arr);
+    }
+     public static void CrA(int[] arr)
+     {
+         int a = arr[0];
+         for(int i = 0 ; i < arr.Length - 1 ; i++)
+          {
+              arr[i] = arr[i + 1];
+          }
+          arr[arr.Length - 1] = a;
+          foreach(var d in arr)
+          {
+              Console.Write(d + " ");
+          }
+     }
+}
+///////////////////////////////////Q.9: How to perform Right circular rotation of an array?
+input: 1 2 3 4 5, output: 5,1,2,3,4
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        int[] arr = { 5, 1, 2, 3, 4 };
+        RotateRight(arr);
+    }
+    public static void RotateRight(int[] arr)
+    {
+        int last = arr[arr.Length - 1];
+        for (int i = arr.Length - 1 ; i > 0 ; i--)
+        {
+            arr[i] = arr[i - 1];
+        }
+        arr[0] = last;
+        for (int j = 0; j < arr.Length; j++)
+        {
+            Console.WriteLine(arr[j]);
+        }
+    }
+}
+Q.10: How to find if a positive integer is a prime number or not?
+using System;
+class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+    bool res = CheckPrime(25);
+    Console.WriteLine(res);
+}
+public static bool CheckPrime(int n)
+{
+    if(n == 0 || n == 1)
+    {
+        return false;
+    }
+    if(n == 2 || n == 3)
+    {
+        return true;
+    }
+    if(n % 2 == 0 || n % 3 == 0)
+    {
+        return false;
+    }
+    for(int i = 5 ; i * i <= n ; i = i +  6)
+    {
+        if(n % i == 0 || n % (i + 2) == 0 )
+        {
+            return false;
+        }
+    }
+    return true;
+}
+}
+///////////////////////////////Q.11: How to find the sum of digits of a positive integer?
+input: 168, output: 15
+using System;
+class Program
+{
+    public static void Main(string[] args)
+    {
+      int input = 0;
+     Console.WriteLine(NumberSum(input));   
+    }
+    public static int NumberSum(int input)
+    {
+        int sum = 0;
+        while(input != 0)
+        {
+            int rem = input % 10 ;
+            sum = sum + rem ;
+            input = input / 10 ;
+        }
+        return sum ;
+    }
+}
+
+Find the second largest element in array.
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+        int[] arr = { 4, 6, 7, 5, 6, 8, 9, 4, 5, 7, };
+        Console.WriteLine(FindSecondLargestNumber(arr));
+    }
+    public static int FindSecondLargestNumber(int[] arr)
+    {
+        if (arr.Length < 2)
+        {
+            throw new ArgumentException("their is no second largest ");
+        }
+        int firstLargest = int.MinValue;
+        int secondLargest = int.MinValue;
+
+        foreach(int num in arr)
+        {
+            if (num > firstLargest)
+            {
+                secondLargest = firstLargest;
+                firstLargest = num;
+            }
+
+            else if (num > secondLargest && num != firstLargest)
+            {
+                secondLargest = num;
+            }
+        }
+        if(secondLargest == int.MinValue)
+        {
+           throw new InvalidOperationException("their is no largest number exits");
+        }
+          
+
+        return secondLargest;
+    }
+}
+
+Q.13: How to find third largest integer in an array using only one loop?
+input: 3 2 1 5 4, output: 3
+
+using System;
+class Program
+{
+    public static void Main(string[] args)
+    {
+        int[] arr = { 3, 2 ,5,7,8,3,6,9};
+        Console.WriteLine(TLE(arr));
+    }
+    public static int TLE(int[] arr)
+    {
+        if (arr.Length < 3)
+        {
+            throw new ArgumentException("Array must have at least 3 elements");
+        }
+        int firstLg = int.MinValue;
+        int secondLg =  int.MinValue;
+        int thirdLg =  int.MinValue;
+        for (int i = 0; i < arr.Length; i++)
+        {
+            if (arr[i] > firstLg )
+            {
+                thirdLg = secondLg;
+                secondLg = firstLg;
+                firstLg = arr[i];
+            }
+            else if (secondLg < arr[i] & arr[i] != firstLg)
+            {
+                
+                thirdLg = secondLg;
+                secondLg = arr[i];
+            }
+            else if (thirdLg < arr[i] & arr[i] != firstLg & arr[i] !=  secondLg)
+            {
+                thirdLg = arr[i];
+            }
+        }
+        return thirdLg;
+
+    }
+}
+/////////////////////////////////////////Q.14: How to convert a two-dimensional array to a one-dimensional array?
+
+//input: { { 1, 2, 3 }, { 4, 5, 6 } }, output: 1 4 2 5 3 6
+using System;
+class Program
+{
+    public static void Main(string[] args)
+    {
+        int[,] arr1 = {{1,2,3},{4,5,6}};
+        ConvertAndPrintArray(arr1);
+    }
+    public static void ConvertAndPrintArray(int[,] arr1)
+    {
+        int rows = arr1.GetLength(0);
+        int cols = arr1.GetLength(1);
+        int[] result = new int[rows * cols];
+       
+        int index = 0 ;
+        
+        for(int col = 0 ; col < cols ; col++)
+        {
+            for(int row = 0; row < rows ; row++)
+            {
+                result[index] = arr1[row, col];
+                Console.Write(result[index] + " ");
+                index++;
+            }
+        }
+    }
+}
+Q.15: How to convert a one-dimensional array to a two-dimensional array?
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+ //input: {1, 2, 3, 4, 5, 6} ,2 ,3
+//output:
+//1 2 3
+//4 5 6
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        int[] arr = new int[] {1, 2, 3, 4, 5, 6};
+        OneDToTwoD(arr, 2, 3);
+    }
+
+    public static void OneDToTwoD(int[] arr, int row, int col)
+    {
+        int index = 0;
+        int[,] arr1 = new int[row, col];
+        for (int i = 0; i < row; i++)
+        {
+            for (int j = 0; j < col; j++)
+            {
+                arr1[i, j] = arr[index];
+                index++;
+                Console.Write(arr1[i, j] + " ");
+            }
+            Console.WriteLine();
+        }
+    }
+}
+
+Q.16: How to find the angle between hour and minute hands of a clock at any given time?
+Q.17: Explain Bubble Sort Algorithm In C#
+Q.18: Explain Quick Sort Algorithm In C#
+Q.19: Explain Merge Sort Algorithm In C#
+Q. 20: Explain Insertion Sort Algorithm In C#
+Q. 21: Explain Selection Sort Algorithm In C#
+Q. 22: Explain Binary Search In C#
+
+
+////////////////////////////////////////////////////////
+//input : "Hello World"
+//output : "Hello dlroW"
+using System;
+using System.Text;
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        string s = "Hello World";
+        String[] arr = s.Split(' ');
+        StringBuilder sb = new StringBuilder();
+        sb.Append(arr[0]);
+        sb.Append(' ');
+        string str = arr[1];
+        int i = 0 ;
+        int j = str.Length -  1 ;
+        char[] ch = str.ToCharArray();
+        while(i < j)
+        {
+            char cha = ch[i];
+            ch[i] = ch[j];
+            ch[j] = cha ;
+            i++;
+            j--;
+        }
+       sb.Append(ch);
+        Console.WriteLine (sb.ToString());
+    }
+}
+
+Q>////////////////////////////////////////////////////////
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////UI
+////////////////////////////////////////////////////////////////////////////////
+Find Palidrom
+
+let str = "SAMPLE";
+str = str.toLowerCase(); // Convert to lowercase for case-insensitive comparison
+
+let i = 0;
+let j = str.length - 1;
+let isPalindrome = true;
+
+while (i < j) {
+    if (str[i] !== str[j]) {
+        isPalindrome = false;
+        break;
+    }
+    i++;
+    j--;
+}
+
+if (isPalindrome) {
+    console.log(`${str} is a palindrome.`);
+} else {
+    console.log(`${str} is not a palindrome.`);
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class ReverseDictionaryValue
+{
+ public static Disctionary<int , string> Process(Dictionary<int,string>  input)
+{
+  Dictionary<int ,string> res = new Dictionary<int , string>();
+  foreach(var k in input)
+   {
+     string rev = new string(k.Value.Reverse().ToArray().ToUpper());
+        result[k.key] = rev
+  }
+return res;
+}
+}
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        var input new Dictionary<int, string>
+        {
+            {5,"five"},
+	        {6,"six"},
+	         {9,"nine"}
+        };
+        var output = ReverseDictionaryValue.Process(input);
+        foreach(var k in output)
+        {
+            Console.WriteLine($({k.Key},{k.Value}));
+        }
+    }
+}
+
+//////////////////////////Move the zeros to end
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int[] arr = { 0, 1, -1, 0, 2 };
+
+        MoveZerosToEnd(arr);
+
+        Console.WriteLine(string.Join(", ", arr));
+    }
+
+    static void MoveZerosToEnd(int[] arr)
+    {
+        int index = 0; // position to place next non-zero
+
+        // Step 1: Move all non-zeros to the front
+        for (int i = 0; i < arr.Length; i++)
+        {
+            if (arr[i] != 0)
+            {
+                arr[index++] = arr[i];
+            }
+        }
+
+        // Step 2: Fill the rest with zeros
+        while (index < arr.Length)
+        {
+            arr[index++] = 0;
+        }
+    }
+}
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////Most asked Linq Query Question in the interview
+/////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////🔹 4. How do you find the second highest salary using LINQ?
+
+var secondHighest = employees
+    .Select(e => e.Salary)
+    .Distinct()
+    .OrderByDescending(s => s)
+    .Skip(1)
+    .FirstOrDefault();
+
+
+---
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////🔹 7. How do you perform Left Join in LINQ?
+
+var leftJoin = employees
+    .GroupJoin(
+        departments,                     // right table
+        e => e.DeptId,                   // key from employees
+        d => d.DeptId,                   // key from departments
+        (emp, dept) => new { emp, dept } // result selector
+    )
+    .SelectMany(
+        x => x.dept.DefaultIfEmpty(),    // ensures left join (include even if no dept match)
+        (x, d) => new
+        {
+            EmployeeName = x.emp.Name,
+            DepartmentName = d?.DeptName ?? "No Department"
+        }
+    );
+
+/////////////////////////////////////Select the first row from a table
+//Using LINQ Method Syntax(Most common)
+var firstRow = table.FirstOrDefault();
+
+This will return the first row of the table.
+
+//apply condition
+var firstRow = table.FirstOrDefault(x => x.Age > 25);
+
+/////////////////////////////////////////////////////////////////////////////////////🔹 9. Can you write a LINQ query to count how many employees per department?
+
+var countByDept = employees
+    .GroupBy(e => e.Department)
+    .Select(g => new { Dept = g.Key, Count = g.Count() });
+
+
+////////////////////////////////////////////////////////////////////////////Max Salary from Employee
+var maxSalary = employee.Max(e => e.Salary);
+
+
+/////////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////Interview Asked Question
+///////////////////////////////////////////////////////What is the stateof EntityFramework.
+✅ What are Entity States in EF?
+When you work with EF (like EF Core), every object (entity) you load or create is tracked by the DbContext.
+EF marks each object with a state – which tells EF what action it should take when you call SaveChanges().
+
+🔑 The 5 Entity States in EF
+Detached 🟡
+
+Entity is not tracked by the DbContext.
+Example: You just created new Student() but haven’t added it to context yet.
+Usage: When you don’t want EF to keep track (for performance reasons).
+var student = new Student(); // Detached by default
+Unchanged 🟢
+
+Entity is tracked by the DbContext, and no changes have been made since it was fetched from DB.
+Example: You just queried a record but didn’t modify it.
+Usage: EF won’t send any SQL for this entity on SaveChanges().
+var student = context.Students.FirstOrDefault(s => s.Id == 1);
+// State is Unchanged
+Added 🔵
+
+Entity is new and should be INSERTED into DB when SaveChanges() is called.
+Example: You call context.Add(student).
+var student = new Student { Name = "Abhishek" };
+context.Students.Add(student);  // State = Added
+context.SaveChanges(); // INSERT executed
+Modified 🟠
+
+Entity exists in DB but some property value has been changed.
+Example: You update student.Name and EF will generate UPDATE.
+var student = context.Students.FirstOrDefault(s => s.Id == 1);
+student.Name = "Updated Name"; // State = Modified
+context.SaveChanges(); // UPDATE executed
+Deleted 🔴
+
+Entity is marked for deletion from DB.
+Example: You call context.Remove(student).
+var student = context.Students.FirstOrDefault(s => s.Id == 1);
+context.Students.Remove(student); // State = Deleted
+context.SaveChanges(); // DELETE executed
+🚀 Quick Way to Remember in Interview
+Detached = Not tracked
+Unchanged = No changes
+Added = INSERT
+Modified = UPDATE
+Deleted = DELETE
+
+//////////////////////////////////////////Linq Theoratic questions
+Here are the most frequently asked LINQ questions in C# interviews for 3–5 years of experience, especially useful for .NET full-stack or backend developer roles:
+
+
+---
+
+🔹 1. What is LINQ in C#?
+
+→ LINQ stands for Language Integrated Query.
+→ It lets you write queries directly in C# to filter, sort, group, or transform data from collections (like arrays, lists, DB sets).
+
+
+---
+
+🔹 2. Difference between Method Syntax and Query Syntax in LINQ?
+
+Great question — and it's a very common interview topic!
+
+Here’s how you can explain the difference between Method Syntax and Query Syntax in LINQ using simple language + code examples, so that it's easy to remember and explain in interviews:
+
+
+---
+
+✅ Simple Interview Answer:
+
+In LINQ (Language Integrated Query), we write queries in two ways:
+
+1. Query Syntax — Looks like SQL
+
+2. Method Syntax — Uses C# methods like .Where(), .Select()
+
+Both give the same result. The difference is in style only.
+
+
+---
+
+🔹 Query Syntax (SQL-like style)
+
+var result = from s in students
+             where s.Age > 20
+             select s;
+
+Easy to read
+
+Looks like SQL
+
+Good for beginners or simple queries
+
+
+
+---
+
+🔹 Method Syntax (Fluent method style)
+
+var result = students.Where(s => s.Age > 20);
+
+More powerful
+
+Required for advanced operations (e.g., joins, grouping with conditions)
+
+
+
+---
+
+✅ Sample Data for both examples:
+
+public class Student
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+}
+
+List<Student> students = new List<Student>
+{
+    new Student { Name = "Abhi", Age = 22 },
+    new Student { Name = "Ravi", Age = 19 },
+    new Student { Name = "Mona", Age = 25 }
+};
+
+
+---
+
+🧠 Real-world analogy:
+
+Query Syntax = Easy spoken English:
+“Give me all students where age > 20.”
+
+Method Syntax = Precise code-like language:
+“students.Where(...).Select(...)”
+
+
+
+---
+
+💡 Interview Summary:
+
+> LINQ gives two ways to write queries:
+
+Query Syntax: looks like SQL, good for basic queries.
+
+Method Syntax: uses C# methods, more flexible and powerful.
+
+
+✅ Both are correct — you can choose based on your comfort or the query complexity.
+
+
+
+
+---
+
+Would you like me to give a practice question to test your understanding of both styles?
+
+
+
+
+---
+
+🔹 3. What is the difference between Select and SelectMany()?
+
+Excellent question! This is one of the most commonly asked LINQ questions in C# interviews.
+
+
+---
+
+✅ Simple Interview Answer (Human-Friendly)
+
+Select() : Keep the nested structure.
+SelectMany() : Flattens everything into a single unit.
+
+Example : 
+  // GET: api/authors/names
+    [HttpGet("names")]
+    public IActionResult GetAuthorNames()
+    {
+        // ✅ Using Select()
+        // Returns list of author names only
+        var authors = _context.Authors
+                              .Select(a => a.Name)
+                              .ToList();
+
+        return Ok(authors);
+    }
+
+    // GET: api/authors/books
+    [HttpGet("books")]
+    public IActionResult GetAllBooks()
+    {
+        // ✅ Using SelectMany()
+        // Flattens authors -> books into one collection
+        var books = _context.Authors
+                            .SelectMany(a => a.Books)
+                            .Select(b => b.Title)
+                            .ToList();
+
+        return Ok(books);
+    }
+}
+
+//
+In Sort : 
+select() -> One-to-One projection.
+SelectMany() -> One-to-Many flattening.
+
+//Example Model
+
+public class Student
+{
+    public int Id { get; set; }
+    public string Name { get; set; } = string.Empty;
+
+    public List<Course> Courses { get; set; } = new();
+}
+
+public class Course
+{
+    public int Id { get; set; }
+    public string Title { get; set; } = string.Empty;
+}
+
+👉 A Student can have many Courses.
+
+
+---
+
+Sample Data in Database
+
+[
+  {
+    "Id": 1,
+    "Name": "Abhishek",
+    "Courses": [
+      { "Id": 101, "Title": "Math" },
+      { "Id": 102, "Title": "Science" }
+    ]
+  },
+  {
+    "Id": 2,
+    "Name": "John",
+    "Courses": [
+      { "Id": 103, "Title": "English" },
+      { "Id": 104, "Title": "History" }
+    ]
+  }
+]
+
+
+---
+
+Select() Example
+
+[HttpGet("students-courses")]
+public IActionResult GetStudentsWithCourses()
+{
+    var result = _context.Students
+        .Select(s => new
+        {
+            s.Name,
+            Courses = s.Courses.Select(c => c.Title).ToList()
+        })
+        .ToList();
+
+    return Ok(result);
+}
+
+Output (JSON):
+
+[
+  {
+    "Name": "Abhishek",
+    "Courses": ["Math", "Science"]
+  },
+  {
+    "Name": "John",
+    "Courses": ["English", "History"]
+  }
+]
+
+👉 Select() keeps the hierarchy (student → list of courses).
+
+
+---
+
+SelectMany() Example
+
+[HttpGet("all-courses")]
+public IActionResult GetAllCourses()
+{
+    var result = _context.Students
+        .SelectMany(s => s.Courses.Select(c => new
+        {
+            StudentName = s.Name,
+            CourseName = c.Title
+        }))
+        .ToList();
+
+    return Ok(result);
+}
+
+Output (JSON):
+
+[
+  { "StudentName": "Abhishek", "CourseName": "Math" },
+  { "StudentName": "Abhishek", "CourseName": "Science" },
+  { "StudentName": "John", "CourseName": "English" },
+  { "StudentName": "John", "CourseName": "History" }
+]
+
+👉 SelectMany() flattens the hierarchy → you directly get rows of student-course pairs.
+
+
+---
+
+✅ In short:
+
+Select() → Keeps nested structure (Student → Courses).
+
+SelectMany() → Flattens everything into a single list (no nesting).
+
+
+
+SelectMany() flattens everything into a single list.
+
+
+Use SelectMany() when you want to work with all nested elements together.
+
+
+
+
+---
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////🔹 4. How do you find the second highest salary using LINQ?
+
+var secondHighest = employees
+    .Select(e => e.Salary)
+    .Distinct()
+    .OrderByDescending(s => s)
+    .Skip(1)
+    .FirstOrDefault();
+
+
+---
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////🔹 5. What is the difference between First(), FirstOrDefault(), Single(), and SingleOrDefault()?
+
+Great question! These four LINQ methods are very commonly asked in interviews — and they confuse many developers. Let's explain them in the easiest, human-friendly way — with examples and a real-world analogy.
+
+
+---
+
+✅ Simple Definitions:
+
+Method	What it does
+
+First()	Returns the first item in the list. Throws error if list is empty.
+FirstOrDefault()	Returns the first item, or default (null) if list is empty.
+Single()	Returns the only item in the list. Throws error if there’s 0 or >1.
+SingleOrDefault()	Returns the only item, or null if list is empty. Throws if >1 found.
+
+
+
+---
+
+🔹 Real-Life Analogy:
+
+Imagine you're searching for your favorite book on a shelf:
+
+First() → “Give me the first book I see.” (But crash if no book found!)
+
+FirstOrDefault() → “Give me the first book, or null if nothing is there.”
+
+Single() → “There must be only one copy of this book. If more, throw error.”
+
+SingleOrDefault() → “I expect at most one, if none, return null, if more, error.”
+
+
+
+---
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace LinqExamples
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Example lists
+            List<int> numbers = new List<int> { 10, 20, 30 };
+            List<int> emptyList = new List<int>();
+            List<int> singleItem = new List<int> { 99 };
+            List<int> duplicates = new List<int> { 5, 5 };
+
+            Console.WriteLine("==== First() ====");
+            try
+            {
+                var first = numbers.First();
+                Console.WriteLine($"First from numbers: {first}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error in First(numbers): {ex.Message}");
+            }
+
+            try
+            {
+                var firstEmpty = emptyList.First();
+                Console.WriteLine($"First from emptyList: {firstEmpty}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error in First(emptyList): {ex.Message}");
+            }
+
+            Console.WriteLine("\n==== FirstOrDefault() ====");
+            var firstOrDefault = numbers.FirstOrDefault();
+            Console.WriteLine($"FirstOrDefault from numbers: {firstOrDefault}");
+
+            var firstOrDefaultEmpty = emptyList.FirstOrDefault();
+            Console.WriteLine($"FirstOrDefault from emptyList: {firstOrDefaultEmpty}");
+
+            Console.WriteLine("\n==== Single() ====");
+            try
+            {
+                var single = singleItem.Single();
+                Console.WriteLine($"Single from singleItem: {single}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error in Single(singleItem): {ex.Message}");
+            }
+
+            try
+            {
+                var singleError = numbers.Single();
+                Console.WriteLine($"Single from numbers: {singleError}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error in Single(numbers): {ex.Message}");
+            }
+
+            Console.WriteLine("\n==== SingleOrDefault() ====");
+            try
+            {
+                var singleOrDefault = singleItem.SingleOrDefault();
+                Console.WriteLine($"SingleOrDefault from singleItem: {singleOrDefault}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error in SingleOrDefault(singleItem): {ex.Message}");
+            }
+
+            var singleOrDefaultEmpty = emptyList.SingleOrDefault();
+            Console.WriteLine($"SingleOrDefault from emptyList: {singleOrDefaultEmpty}");
+
+            try
+            {
+                var singleOrDefaultDup = duplicates.SingleOrDefault();
+                Console.WriteLine($"SingleOrDefault from duplicates: {singleOrDefaultDup}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error in SingleOrDefault(duplicates): {ex.Message}");
+            }
+
+            Console.WriteLine("\n=== Program Finished ===");
+        }
+    }
+}
+
+
+
+
+
+---
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////🔹 6. What is GroupBy in LINQ?
+
+Used to group elements by a key (like SQL GROUP BY).
+
+var grouped = employees
+    .GroupBy(e => e.Department)
+    .Select(g => new { Department = g.Key, Count = g.Count() });
+
+
+---
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////🔹 7. How do you perform Left Join in LINQ?
+
+var leftJoin = employees
+    .GroupJoin(
+        departments,                     // right table
+        e => e.DeptId,                   // key from employees
+        d => d.DeptId,                   // key from departments
+        (emp, dept) => new { emp, dept } // result selector
+    )
+    .SelectMany(
+        x => x.dept.DefaultIfEmpty(),    // ensures left join (include even if no dept match)
+        (x, d) => new
+        {
+            EmployeeName = x.emp.Name,
+            DepartmentName = d?.DeptName ?? "No Department"
+        }
+    );
+
+foreach (var item in leftJoin)
+{
+    Console.WriteLine($"{item.EmployeeName} - {item.DepartmentName}");
+}
+
+
+---
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////🔹 8. What is the difference between IEnumerable and IQueryable in LINQ?
+
+IEnumerable → used for in-memory data.
+
+IQueryable → used for remote data (like Entity Framework queries to SQL DB).
+
+
+
+---
+
+/////////////////////////////////////////////////////////////////////////////////////🔹 9. Can you write a LINQ query to count how many employees per department?
+
+var countByDept = employees
+    .GroupBy(e => e.Department)
+    .Select(g => new { Dept = g.Key, Count = g.Count() });
+
+
+---
+
+////////////////////////////////////////////////////////////////////////////////////////////////🔹 10. What is Deferred Execution in LINQ?
+
+LINQ queries are not executed until you iterate over them (like in a foreach or .ToList()).
+
+
+---
+
+Would you like me to start a practice session with these topics — one-by-one with real coding and answer review like a mock interview?
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////Resource
+////////////////////////////////////////////////////////////////////
+https://medium.com/@mmmsonu/linq-c-interviewer-questions-chatgpt-answers-cdbd08848cb6
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+///How i can find top 1000 salary with pagination using linq ordered by employee name 
+var pageSize = 100; // Number of records per page
+var pageNumber = 1; // Current page number
+var query = employees
+    .OrderBy(e => e.Name) // Order the employees by name
+    .OrderByDescending(e => e.Salary) // Then by salary in descending order
+    .Skip((pageNumber - 1) * pageSize) // Skip the records for the previous pages
+    .Take(pageSize * pageNumber); // Take the records for the current page
+var top1000Salaries = query.Take(1000).ToList(); // Get the top 1000 salaries for the current page
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+What are the different ways to do lazy loading in linq ?
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+How to join 2 list using linq ?
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+How to do left/right join in linq ?
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
+How to do union in linq ? How many types of union linq support ?
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+Is it possible to do crud using linq ?
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+Can we able to do CRUD in a single linq statement ?
+/////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
 
 
 
+
+
+///////////////////////////// Do the left join in Linq
+var result = students.GroupJoin(departments,
+                               s => s.DepartmentId , 
+                               d=> DepartmentId
+                               (s, dGroup) => new {s, dGroup })
+                .SelectMany(
+                 x => x.dGroup.DefaultIfEmpty(),
+                 (x,d) => new 
+                  {
+                  x.s.StudentId,
+                  x.s.StudentName,
+                  x.s.Departmet,
+                  DepartmentName = d?.DepartmentName
+                  });
+
+/////////////////////////////////////Select the first row from a table
+//Using LINQ Method Syntax(Most common)
+var firstRow = table.FirstOrDefault();
+
+This will return the first row of the table.
+
+//apply condition
+var firstRow = table.FirstOrDefault(x => x.Age > 25);
+
+//
+Using LINQ Query Syntax:
+var firstRow = (from t in table select t).FirstOrDefault();
+
+
+//////////////////////////////////You're doing great!
+
+🔹 Q5:
+
+You have two collections:
+
+List<int> list1 = new List<int> { 1, 2, 3, 4, 5 };
+List<int> list2 = new List<int> { 4, 5, 6, 7, 8 };
+
+👉 Question:
+Using LINQ, find the common elements between list1 and list2.
+
+Solution: 
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class Program
+{
+    public static void Main()
+    {
+        List<int> list1 = new List<int> { 1, 2, 3, 4, 5 };
+        List<int> list2 = new List<int> { 4, 5, 6, 7, 8 };
+
+        var common = list1
+                     .Where(x => list2.Contains(x))
+                     .ToList();
+
+        Console.WriteLine("Common elements: " + string.Join(", ", common));
+    }
+}
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////Most asked Sql Question in the interview
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////file:///C:/Users/Abhishek/Desktop/Interview%20Folder/SQL.pdf    (pls copy paste complete in the laptop)
+///////////////////////////////////////////https://www.linkedin.com/posts/ankit7rma_sql-activity-7348232666191650816-1FPj/
+////////////////1. Find the second highest salary
+Table: employees(id, name, salary)
+Values:
+1, Shubham, 5000
+2, Debug, 6000
+3, WIth, 7000
+Expected Output:6000
+//
+SELECT MAX(salary)
+FROM employees
+WHERE salary < (SELECT MAX(salary) FROM employees);
+////////////////////////////////////////////////////////
+2. Find employees with duplicate salaries
+Table: employees(id, name, salary)
+Values:
+1, Shubham, 5000
+2, Debug, 6000
+3, Maurya, 7000
+Expected Output:5000, 2
+
+//
+SELECT salary, COUNT(*)
+FROM employees
+GROUP BY salary
+HAVING COUNT(*) > 1;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////Chat GPT
+//////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+////////////////////Write a Sql query to fetch the second highest salary from the employee table.(You can try by rank() and dence rank() )
+SELECT DISTINCT salary 
+FROM EMPLOYEE 
+ORDER BY salary DESC 
+OFFSET 1 ROW 
+FETCH NEXT 1 ROW ONLY;
+
+/////////////////////////if I have to find 10 th highest salary 
+SELECT DISTINCT salary 
+FROM EMPLOYEE 
+ORDER BY salary DESC 
+OFFSET 9 ROW 
+FETCH NEXT 1 ROW ONLY;
+
+//////////////////////need to review.
+//////////////////////Write the SQL query to find the second highest salary along with the empId from the Employee table.
+with SalaryRank As (Select salary, empId, ROW_Number()
+over(Order by salary desc) AS Rank from EMPLOYEE)
+
+Select salary , empId from SalaryRank where Rank = 2 ;
+
+////////////////////////////////////////////////////
+Write a Sql query to find duplicate records from a table called Employees based on the EmployeeNmae coloum.
+Employee(EmployeeId, EmployeeName , Salary)
+
+Select EmployeeName , Count(*) As NameCount
+from Employee group by EmployeeName Having Count(*) > 1 ;
+
+/////////////////////////////////////////////To remove duplicate records while keeping only one entry per EmployeeName, you can use a DELETE with a CTE and ROW_NUMBER():
+WITH CTE AS (
+    SELECT *,
+           ROW_NUMBER() OVER (PARTITION BY EmployeeName ORDER BY EmployeeId) AS rn
+    FROM Employee
+)
+DELETE FROM Employee
+WHERE EmployeeId IN (
+    SELECT EmployeeId FROM CTE WHERE rn > 1
+);
+
+////////////////////////////////////////////
+Write a Sql query to retrive the top 3 highest  salaries from the Employee table
+Employee(EmployeeId, EmployeeName , Salary)
+
+Select Distinct Salary
+From Employee ORDER BY Salary DESC Offset 0 Rows Fetch Next 3 rows only;
+
+/////////////////////////////////////////////////////////////////////////////////////////
+Write a Sql query to find all employee who have the same salary in the Employee table.
+Employee(EmployeeId, EmployeeName , Salary)
+//
+Select Employee,EmployeeName,Salary from Employee where Salary In  (
+Select Salary from Employee  group by Salary Having Count(*) > 1 );
+
+////////////////////////////////////////////////////////////////////////
+Write a SQL query to retrieve the list of employees who have the highest salary in each department.
+Employee(EmployeeId, EmployeeName , Salary,DepartmentId)
+
+SELECT E.EmployeeId, E.EmployeeName, E.Salary, E.DepartmentId
+FROM Employee E
+INNER JOIN
+(
+    SELECT DepartmentId, MAX(Salary) AS MaxSalary
+    FROM Employee
+    GROUP BY DepartmentId
+) DeptMax
+ON E.DepartmentId = DeptMax.DepartmentId AND E.Salary = DeptMax.MaxSalary;
+
+
+//////////////////////////////////////////////////////////////////////////////////
+Write an SQL query to get the list of employees who do not have any manager.
+Employee
+---------
+EmployeeId
+EmployeeName
+ManagerId
+
+SELECT EmployeeName
+FROM Employee
+WHERE ManagerId IS NULL;
+
+//////////////////////////////////
+Write a Sql query to retrive the names of employees who earn than the average salary in the Employee table.
+Table structure:
+Employee(EmployeeId, EmployeeName , Salary)
+
+Select EmployeeId , EmployeeName from Employee where Salary > (Select AVG(Salary) from 
+Employee ) ; 
+
+////////////////////////////////
+Write a SQL query to fetch the department names along with the total number of employees in each department.
+(Assume there are two tables: Employee(EmployeeId , EmployeeName , DepartmentId) and  Department(DepartmentId , DepartmentName)
+
+Select  D.DepartmentName , Count(E.EmployeeId) , from Employee E Left Join Department D On D.DepartmentId  = E.DepartmentId 
+group by  D.DepartmentName ;
+ 
+/////////////////////////////////////////////////////////
+Write a SQl Query to display departments that have more than 5 employees.
+
+SELECT
+    D.DepartmentName,
+    COUNT(E.EmployeeId) AS TotalEmployees
+FROM
+    Employee E
+LEFT JOIN
+    Department D ON D.DepartmentId = E.DepartmentId
+GROUP BY
+    D.DepartmentName
+HAVING
+    COUNT(E.EmployeeId) > 5;
+
+
+///////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////Interview Asked Question
+//////////////////////////////////////////////////////////////////
+
+Suppose that you have one table, in that you have a column called name, status and address. So
+in status column is Boolean column. Suppose that in this particular table have six rows,
+three is on and three is off in status coloum . So what I have to update the table to write the SQL queries, to change the on to off and off to on in status coloum .
+
+
+///
+UPDATE YourTable
+SET Status = CASE 
+               WHEN Status = 1 THEN 0 
+               ELSE 1 
+             END;
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////Most asked questions from Ado.net
+///////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////Chatgpt 
+Here’s a curated list of the most frequently asked ADO.NET interview questions for a .NET developer (especially with 3–5 years of experience). These are often asked by technical panelists to test your hands-on knowledge, connection handling, and real-world implementation.
+
+
+---
+
+✅ Top ADO.NET Interview Questions
+
+//////////////////////////////////////////////////////////////////////////////////////////////🔹 1. What is ADO.NET?
+
+> ADO.NET is a part of the .NET Framework used to interact with databases like SQL Server. It provides classes to connect, retrieve, insert, update, and delete data.
+
+
+
+
+---
+
+/////////////////////////////////////////////////////////////////////////////////////////////////🔹 2. What are the core components of ADO.NET?
+
+> SqlConnection
+
+SqlCommand
+
+SqlDataReader
+
+SqlDataAdapter
+
+DataSet
+
+DataTable
+
+
+
+
+
+---
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////🔹 3. What is the difference between ExecuteReader(), ExecuteScalar(), and ExecuteNonQuery()?
+
+Method	Use For	Returns
+
+What is the difference between ExecuteReader(), ExecuteScalar(), and ExecuteNonQuery()?
+Here’s the easiest way to remember and explain:
+
+1. ExecuteReader():
+✅ Use when you want to read rows from the database (like SELECT).
+❓ Returns: Multiple rows (a reader object like SqlDataReader).
+💡 Think of it as: "I want to fetch a table of data (rows and columns)."
+Example:
+
+SqlCommand cmd = new SqlCommand("SELECT * FROM Employees", con);
+SqlDataReader reader = cmd.ExecuteReader();
+2. ExecuteScalar():
+✅ Use when you need a single value from the database.
+❓ Returns: First column of the first row.
+💡 Think of it as: "I just want one small value like count, name, or price."
+Example:
+
+SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Employees", con);
+int count = (int)cmd.ExecuteScalar();  // returns just one value
+3. ExecuteNonQuery():
+✅ Use when you're changing data (like INSERT, UPDATE, DELETE).
+❓ Returns: Number of rows affected.
+💡 Think of it as: "I’m not reading data, I’m writing or updating it."
+Example:
+
+SqlCommand cmd = new SqlCommand("DELETE FROM Employees WHERE Id = 1", con);
+int rowsAffected = cmd.ExecuteNonQuery();  // returns number of rows deleted
+🔁 Summary Table:
+Method	Use Case	Returns
+ExecuteReader()	SELECT (read rows)	Multiple rows (SqlDataReader)
+ExecuteScalar()	SELECT (1 value)	Single value (first row/col)
+ExecuteNonQuery()	INSERT/UPDATE/DELETE	Number of rows affected
+🔊 Human-friendly memory tip:
+Think like this:
+
+Reader → I want to read data
+Scalar → I want just one small value
+NonQuery → I’m not reading, just modifying something
+Let me know when you're ready and I’ll give you the polished answer for:
+
+
+
+---
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////🔹 4. How do you use SqlConnection in ADO.NET?
+
+using(SqlConnection conn = new SqlConnection("Your_Connection_String"))
+{
+    conn.Open();
+    // Execute commands
+}
+
+
+---
+
+////////////////////////////////////////////////////////////////////////////////////////🔹 5. What is SqlDataReader and how does it work?
+->Read() -> Moves to the next record(returns false when nomore rows).
+> Forward-only, read-only way of reading rows.
+
+Very fast and memory efficient.
+
+Used with ExecuteReader().
+
+
+
+
+SqlCommand cmd = new SqlCommand("SELECT * FROM Employees", conn);
+SqlDataReader reader = cmd.ExecuteReader();
+while(reader.Read())
+{
+    var name = reader["Name"].ToString();
+}
+
+
+---
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////🔹 6. What is the difference between DataReader and DataAdapter?
+
+Feature	DataReader	DataAdapter
+
+Mode	Connected	Disconnected
+Usage	Read-only	Fill/update DataSet
+Forward only	Yes	No
+Best for	Fast reads	Multiple-table datasets
+
+
+
+---
+
+//////////////////////////////////////////////////////////////////////////////////////////////🔹 7. What is a DataSet and DataTable?
+
+DataSet: In-memory collection of data tables.
+
+DataTable: Represents one in-memory table.
+
+
+DataSet ds = new DataSet();
+adapter.Fill(ds, "Employees");
+DataTable dt = ds.Tables["Employees"];
+
+
+---
+
+////////////////////////////////////////////////////////////////////////////////🔹 8. What are Parameterized Queries in ADO.NET? Why are they important?
+
+> Used to prevent SQL Injection and to pass parameters safely.
+
+
+
+SqlCommand cmd = new SqlCommand("SELECT * FROM Users WHERE Id = @Id", conn);
+cmd.Parameters.AddWithValue("@Id", userId);
+
+
+---
+
+//////////////////////////////////////////////////////////////////////////////////////////🔹 9. What are connection pooling and its benefits?
+
+> ADO.NET maintains a pool of connections to reuse for better performance. It avoids opening/closing DB connections repeatedly.
+
+
+
+
+---
+
+////////////////////////////////////////////////////////////////////////////////////////🔹 10. How to handle transactions in ADO.NET?
+
+SqlTransaction transaction = conn.BeginTransaction();
+SqlCommand cmd = conn.CreateCommand();
+cmd.Transaction = transaction;
+
+try
+{
+    cmd.CommandText = "INSERT INTO Orders VALUES (...)";
+    cmd.ExecuteNonQuery();
+
+    transaction.Commit();
+}
+catch
+{
+    transaction.Rollback();
+}
+
+
+---
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////🔹 11. What is the difference between Fill() and Update() in SqlDataAdapter?
+
+Fill() → Populates a DataSet with data.
+
+Update() → Pushes changes made in DataSet back to the database.
+
+
+
+---
+
+///////////////////////////////////////////////////////////////////////////////////////////////🔹 12. How can you call a stored procedure using ADO.NET?
+
+SqlCommand cmd = new SqlCommand("sp_GetUser", conn);
+cmd.CommandType = CommandType.StoredProcedure;
+cmd.Parameters.AddWithValue("@UserId", 1);
+
+
+---
+
+///////////////////////////////////////////////////////////////////////////////////////////////////🔹 13. What are the different CommandType values in ADO.NET?
+
+Text → SQL query
+
+StoredProcedure → Procedure call
+
+TableDirect → Select all from table (rarely used)
+
+
+
+---
+
+////////////////////////////////////////////////////////////////////////////////////////////🔹 14. What are some best practices when using ADO.NET?
+
+Always use using() blocks.
+
+Use parameterized queries.
+
+Close connections in finally block.
+
+Handle exceptions properly.
+
+Avoid unnecessary DataSet use if only one table is needed.
+
+
+
+---
+
+✅ Would you like:
+
+A full CRUD example using ADO.NET in .NET 8?
+
+Practice questions?
+
+Mock interview Q&A from ADO.NET?
+
+
+Let me know!
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////ProductBasedCompany DSA
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  Q> Can you find logest substring without Duplicate character.
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////Recorded Video Youtube
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////Dependency Injection
+-->create Runtime instance for that Service.
+--> It provide loosely coupled behaviours.
+///////////////////////////////////////How to enable Session in .netCore
+///
+Add service in DI container
+builder.Services.AddSession();
+//
+Enable middleware
+app.UseSession();
+///////////////////////////////////////
+2 method
+developer exception page will be their
+with the help of use exception handle we can write run time exception
+we can use try , catch , block to handle the method in exceeption level.
+
+/////////////////////////////////////////////////////////Monolothical and Microservices
+Monolithical : We had a single IIS-hosting.NET MVC app with one SQL Server database, using Entity Framework, and develoyment was tightly coupled.
+
+Microservices : We build .NET Core Web APIs deployement on Docker + Kubernetes , each with its own database , integrated via API Gateways with RabbitMQ for async events and Serilog + ELK for logging.
+
+////////////////////////////////////////////////////Function and Store Procedure
+Store Procedure
+-> Store Procedure may or may not return value.
+->Insert and update function in Store Procedure.
+->we can write Transaction in Store Procedure.
+->we can call the function in stored procedure
+->we can use try catch block for runtime exception.
+-> we can write ddl operation for Store Procedure.
+
+FUNCTION
+-> It will return value.
+->Function we can only use select because it retriving the data.
+->we can not write Transaction in function.
+->we can not call store Procedure inside the function.
+->we can can not write try , catch , block in function.
+-> you can not write the ddl operation for function.
+
+/////////////////////////////////////////////////////////////////////////////Performance Tuning we are doing
+we are doing for store Procedure
+Supose we want to increse the performance of store Procedure then
+->we can do set No count 
+->instead of calling table name I will dbo.TableName.
+->Instaed of * we can use selected coloum.
+->we avoid aggregate functon in where clouse.
+->we need to do proper indexing on table
+->we should avoid ddl operation on store Procedure.
+->we will use table varible instead of temp table.
+
+////////////////////////////////////////////////////////////////////////////what is diffrence between var and dynamic keyword
+->at the time declaration , we need to assign the value of var keyword,we can step we can assign the same datatype value .
+->In dynamic we can assign the any time of data value .
+/////////////////////////////////////////////////////////////performance tuning in web api
+faster json serializer.
+ansyn ways of creating web api
+output chaches
+we collect multiple result set in single web api,we will get the response in one api
+/////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////Managerial Round
+//////////////////////////////////////////Tell me about previous Project
+
+Thanks for giving me change to work on my project.
+Here we are following agail methodology,Here 
+and for the defect tracking we use jira tools and for writing test cases.
+We are involved in all the agile ceremonies that is scrum , sprint planning meeting retrospective that all my project are ,
+
+
+/////////////////////////////////////////////////////////////////////Daily working Task
+=>Once I login first I will check the mail,then I will part of scrum meating that is part of daily stand up meating, I will change to clearify my dout , what the blocker I faced and what the , before sprint start their will sprint palnning task,user stories product owner assign to ous 
+then estimation will going to happencapicity and velocity of team , assigning the story point o the task and after 
+
+
+///////////////////////////////////////////////////////////////////////////Why you loocking for change in career
+Situation:
+I worked in my last company for about 5 years. I learned many things there — how to code, how to work with teams, and how to handle tasks.
+
+Task:
+But I saw that new tools and new technologies are coming in the market. If I stay with only old knowledge, I will not grow.
+
+Action:
+So, I started learning new skills and new technologies in my free time. I also improved how I talk with people and share ideas. Then I decided to look for a new role where I can use these new skills.
+
+Result:
+Now, I am ready to bring both my past 5 years of experience and my new skills to the next company, so I can do better work and also keep growing.
+
+
+/////////////////////////////////////////////////////open Id Implementation
+
+////////////////////////////////////////////////////////////////
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////Redefine the Answer
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+//////////////////////L1 round topis
+//C#
+1. OOP Concepts (Inheritance, Polymorphism, Encapsulation, Abstraction)
+1.1 extension method - 18 june.
+2. Exception Handling (try-catch-finally, custom exceptions)
+3. Collections (List, Dictionary, HashSet, Queue, Stack)
+4. LINQ (Filtering, Projections, Joins, Aggregations)
+5. Delegates and Events (Multicast Delegates, Event Handlers)
+6. Async and Await (Task, Task.Run, Parallel Programming)
+7. SOLID Principles and Design Patterns (Singleton, Factory, Repository)
+8. File I/O Operations (StreamReader, StreamWriter, FileInfo) // Less Important
+9. Memory Management (Garbage Collection, IDisposable, using statement)
+10. Reflection and Attributes //Not Yet Revision
+11. Performance and Security.
+
+//.Net Core
+1. Middleware and Request Pipeline
+2. Dependency Injection (Transient, Scoped, Singleton)
+3. Configuration Management (appsettings.json, Environment Variables)
+4. Logging (Serilog, NLog, Microsoft Extensions Logging)
+5. Entity Framework Core (Migrations, LINQ Queries, Relationships)
+6. Web API Development (GET, POST, PUT, DELETE, Versioning)
+7. Authentication and Authorization (JWT, Identity, Roles)
+8. Caching (In-Memory, Distributed)
+9. Global Exception Handling
+10. API Documentation (Swagger)
+11. Performance and Security.
+
+//Angular
+1. Components and Modules (Lifecycle Hooks, Communication)
+2. Services and Dependency Injection
+3. Routing and Navigation (Lazy Loading, Guards)
+4. Forms (Template-driven, Reactive Forms, Validation)
+5. HTTP Client (GET, POST, PUT, DELETE, Interceptors)
+6. Observables and RxJS (map, filter, switchMap, debounceTime)
+7. Component Communication (Input, Output, EventEmitter)
+8. State Management (ngRx basics)
+9. Error Handling and Global Interceptors
+10. Angular Material for UI Components
+11.  Performance and Security.
+
+//Ms Sql Server
+MS SQL Server
+
+1. Joins (Inner, Left, Right, Full Outer)
+2. CRUD Operations (Insert, Update, Delete, Select)
+3. Stored Procedures and Functions
+4. Indexing (Clustered, Non-clustered)
+5. Transactions and Locking Mechanisms
+6. Views and Triggers
+7. Query Optimization and Execution Plans
+8. CTE (Common Table Expressions) and Window Function
+9. Data Types and Constraints
+10. Backup and Restore.
+11. Performance and Security.
+
+
+///Soft Skills & Concepts:
+1. Agile Methodologies (Scrum, Sprint Planning, Retrospectives)
+2. Code Review Practices and Best Coding Standards
+3. Debugging Techniques and Troubleshooting
+4. Communication Skills for Team Collaboration
+5. Time Management for Delivering Features on Time
+
+//////////////////////L2 round topics
+
+//What is Angular ?
+Angular is a component-based framework for building structured, scalable and single page application.
+//What is the Angular Advantages ?
+1> it is relatively simple to build a single page application.
+2> Flexible and structural client application.
+3>Angular is cross Plateform and opensourse.
+4>Writing Reusable code is easy.
+5> Testing is easy.
+
+//What is the diffrence between Angular and Angular JS ? or What are the advantages of Angularover AngularJS ?
+ ///Angular js
+1> It is only supports javaScript.
+2> This framework has a model-view-controller(MVC) architecture.
+3>It does have CLI tool.
+4>It does not use Dependency Injection.
+5> It is not a so fast.
+
+/////Angular
+1>It support both JavaScript and TypeScript.
+2> This framework has a component archotecture.
+3> It has CLI
+4> It uses Dependency Injection.
+5> It also support moble browser.
+6> It is very fast.
+
+//////////////
+Study from File.
+
+What is NPM?
+--> NPM(Node Pakage Manager ) is an online repository from where you get thousands of free libraries which can be used in your angular application 
+
+//What is the cli
+--> The Angular Cli(command-line interface) is a tool that you use to initialise and deplop Angular applications directly from Terminal.
+Asynchrouns operstion :- Task running in the background without stopping the application.
+
+/////////////////////
+What is the diffrence between JIO and AOT in Angular ?
+
+-->Both JIT and Aot are used to compile Angular Typescript component to Javascript , because browser understands Javascript not Typescript.
+
+Just-In-Time(JIT)   Compiles your application in the browser at runtime.
+
+Ahead-of-Time(AOT)  Compile your application and libraries at build time.
+
+
+-->All the latest Angulae versions use AOT to compile Typescript to Javascript.
+////////////////////////
+What is a Selector and Template
+Selector :- A selector is used to identify each component uniquely into the component tree.
+--> Where to show.
+
+Templete --> A Templete is a HTML View of an Angular component.
+Templete --> What to show
+
+->
+->
+->
+->
+->
+->
+
+Synchrouns operation :- Task excute one after another and app waits for each task to complete 
+moving to the next one.
+
+->
+  ->
+    ->
+      ->
+        ->
+          ->
+
+
+
+Observables                                 Promises
+
+-> Emit multiple value over a          Emit single value over the time
+   period of time.
+
+
+->Are lazy. they're not excuted until          -> excute Immediate after creation
+  we subscribe to they  using the subscriptiom
+
+-> have cancell by using unsubcribe.            -> Are not cancelled.
+
+
+/////////////////////////
+RxJx
+Rxjs is library of javaScript used in angular for handling asynchrouns data such as Api calls. It provide observables.
+
+////////////////////////
+What is observable? How to implement it.
+An Observable in RxJx helps us handle data strems like Api response or user input , in a smooth and flexible way.
+
+1> Import Observable from Rxjx.
+2> Create the Observable that emits data.
+3> Subscribe to the component.
+
+/////////////////////
+What is the role of HttpClient in Angular ?
+ 
+Httpclient is build in service provided by angular to http requests(Get , post , put , delect 
+to send and receive the data from api or server.
+
+///////////////////////////
+What are Angualr Forms ? What are the type of Angualar Forms  ?
+
+->What forms are used to handle user's input and manage form data in an application.
+->Two type of Angular form.
+
+Template Driven Forms             
+-> Most of the code Written in Html.
+
+-> Add FormModule in AddModule to Activate It.
+
+-> best for simple form and have less control.
+
+
+  Reactive Forms
+
+-> Most of the code Written in TypeScript file.
+
+-> Add ReactiveModule in AppModule to Activate it.
+-> Best for large App Application and have more control.
+
+
+/////////////////////////////
+What is Authentication and Authorization in Angular
+
+Authentication : - Confirms who the user is(valid login or not)
+Autherisation :- Check what the user is allowed to do(access control for resourse)
+
+//////////////////////////////////////
+Can I give the answer for interview, What is the role of HttpClinet in Angular : HttpClient is built in service provided by 
+angular for Http request (Get, post, patch , delete) to send and receive the request , if wrong pls correct with most easiest word for human being
+
+//////////////////////////////////// C#
+///////////////////////////////////  C#
+//////////////////////////////////   C#
+
+///////////////////////////////////////////////
+What is Inheritance and why is it Important
+
+
+->Inheritance is a OOPs concept , child class gets the properties from and behaviors(methods) of a parent class. 
+
+-> Inheritance is used to reusibility and abtraction of code.
+
+Example :
+public class Employee
+{
+public Employee()
+{
+  //
+}
+ private int salary;
+ 
+ public class Salary
+{
+  get
+ {
+   return experience;
+ }
+ set
+  {
+  experience = value ;
+ }
+}
+}
+
+
+class ContractEmplyee : Employee
+  public void CalculateSalary()
+ {
+  int salary = Experience * 300000 ;
+  }
+
+  Console.WriteLine(salary);
+  
+}
+
+
+///////////////////////////////////////////
+What are type of Inheritance
+
+//////////////////////////////////////
+What are the Diffrent type of Inheritance.
+
+1>Single Inheritance
+one child class inheritance from one parent class
+
+class Parent
+{
+public void Show()
+{
+ Console.WriteLine("This is Parent class");
+}
+
+}
+
+class Child : Parent
+{
+ // child inheritance from parent
+}
+
+class Program
+{
+ static void Main()
+ {
+  Child obj = new Child();
+  obj.Show();
+}
+}
+
+2> Multilevel Inheritance
+
+A Child class inherits from Parent, and Parent inherits from GrandParent
+
+class GrandParent
+{
+ public void ShowGrandParent()
+{
+  Console.WriteLine("GrandParent class");
+}
+
+class Parent : GrandParent
+{
+ public void ShowParent()
+{
+ Console.WriteLine("Parent class";)
+}
+}
+
+
+class Child : Parent
+{
+ public void ShowParent()
+ {
+  Console.WriteLine("");
+ }
+}
+class Program
+{
+ static void Main()
+{
+ Child obj = new Child();
+ obj.ShowGrandParent();
+obj.ShowParent();
+obj.ShowChild();
+}
+}
+
+3>One Parent class is get inherited by multiple Child classes
+
+class Employee
+{
+  public void Work()
+ {
+   Console.WriteLine("Employee working");
+ }
+}
+
+class ContractEmplyee : Employee
+{
+  public void ContractType()
+ {
+  Console.WriteLine("Contract Employee")
+ }
+}
+
+class ParmanentEmployee : Employee
+{
+  public void PermanentType()
+  {
+   Console.WriteLine("Permanent Employee");
+  } 
+}
+
+class Program
+{
+ static void main()
+ {
+  ContractEmplyee cEmp = new ContractEmplyee();
+   cEmp.Work();
+   cEmp.ContractType();
+
+  PermanemtEmplyee pEmp = new PermanentEmplyee();
+   pEmp.Work();
+   pEmp.PermanentType();
+ }
+}
+
+
+///////////////////////////////////////////////////
+What is Abtraction
+Abraction is oops concept , it will show the important part and hide the implementation part ,
+    let take the example when we  give exlerate of bike speed to bike will increase but we do
+    not know how the speed of bike is increasing
+
+class Employee
+{
+    public void Main(string[] args)
+    {
+
+        Salary();
+    }
+
+    public  void Salary()
+    {
+        ContactEmployeeSalary();
+        ParmantEmplyeeSalary();
+    }
+
+    public  void ContactEmployeeSalary()
+    {
+        
+    }
+    public  void ParmantEmplyeeSalary()
+    {
+        
+    }
+}
+
+/////////////////////////////////////
+What is Encapsulation
+Encapsulation is oops concept , it is used to wrap the data method and property into single units.
+
+example
+
+public class Employee
+{
+public class EmExperience;
+
+public int Employee
+{
+ get
+{
+ return emExperience;
+}
+ get
+{
+ emExperience = value;
+}
+}
+
+public void Main(string[] args)
+{
+ Employee obj = new Employee();
+ 
+ obj.EmExperience = 3;
+ 
+}
+
+
+/////////////////////////////////////////////////////////////////
+what is Abstraction.
+
+👉 Abstraction is an OOP concept that hides unnecessary details and only shows important parts to the user.
+
+Example:
+When you accelerate a bike, the speed increases, but you don’t see how the engine works internally.
+The complexity is hidden, and only the important part (speed control) is visible.
+
+How do we achieve Abstraction in C#?
+✔ Using abstract classes (with abstract methods).
+✔ Using interface (where methods are declared but not defined).
+
+Example Code in C#:
+csharp
+Copy
+Edit
+// Abstract class: Defines common structure but hides implementation
+abstract class Employee  
+{  
+    public abstract void CalculateSalary();  // Only method definition (no implementation)  
+
+    public void ShowDetails()  
+    {  
+        Console.WriteLine("Showing Employee Details");  
+    }  
+}  
+
+// Permanent Employee class implements its own salary calculation
+class PermanentEmployee : Employee  
+{  
+    public override void CalculateSalary()  
+    {  
+        Console.WriteLine("Salary = HoursWorked * HourlyRate");  
+    }  
+}
+
+// Contract Employee class implements a different salary calculation
+class ContractEmployee : Employee  
+{  
+    public override void CalculateSalary()  
+    {  
+        Console.WriteLine("Salary = (HoursWorked * HourlyRate) - 4000");  
+    }  
+}
+
+// Main Program
+class Program  
+{  
+    static void Main()  
+    {  
+        Employee emp1 = new PermanentEmployee();  
+        emp1.CalculateSalary();  // Output: Salary = HoursWorked * HourlyRate  
+        emp1.ShowDetails();  
+
+        Employee emp2 = new ContractEmployee();  
+        emp2.CalculateSalary();  // Output: Salary = (HoursWorked * HourlyRate) - 4000  
+    }  
+}
+
+
+//////////////////////////////////////////////////////////
+What is Encapsulation
+
+Q: What is Encapsulation?
+👉 Encapsulation is an OOP concept that wraps data (variables) and methods (functions) inside a single unit (class).
+👉 It hides the data from direct access and provides controlled access using getter and setter methods.
+
+✅ Corrected Example in C#:
+csharp
+Copy
+Edit
+public class Employee
+{
+    private int empExperience;  // Private variable (cannot be accessed directly)
+
+    // Public property with getter and setter
+    public int EmpExperience
+    {
+        get 
+        { 
+            return empExperience;  
+        }
+        set 
+        { 
+            if (value > 0) // Prevents negative experience
+                empExperience = value;  
+            else
+                Console.WriteLine("Experience cannot be negative");  
+        }
+    }
+}
+
+// Main Program
+class Department
+{
+    static void Main(string[] args)  // Fixed the typo in Main()
+    {
+        Employee emp = new Employee();  
+        emp.EmpExperience = 3;  // Setting the experience
+        Console.WriteLine("Employee Experience: " + emp.EmpExperience);  // Getting the experience
+    }
+}
+
+/////////////////////////////////////////////////////////////////////Polymorphism
+
+
+
+Polymorphism is oops concept , poly means many and form means form , it will behave diffrent in diffrent place .
+
+The word "Run" can be used in different contexts:
+1️⃣ "Running a business"(managing it)
+2️⃣ "Running a bike"(riding it)
+
+     -> we have two type of polymorphism 
+    1> overloading : In overloading method have the same name in the same class and all the method work diffrently ways. It will happen at compiletime.
+    2> overriding  : In overriding  method have the same name and signature but in the diffrent class . it will happen at Runtime.
+
+    or
+     Types of Polymorphism in C#:
+1️⃣ Method Overloading (Compile-Time Polymorphism)
+
+The same method name is used with different parameters in the same class.
+
+This is resolved at compile time.
+
+2️⃣ Method Overriding(Runtime Polymorphism)
+
+A child class provides a new implementation of a method already present in the parent class.
+
+This happens at runtime.
+
+
+// Overloading
+    class Calculator
+{
+    // Same method name but different parameters
+    public int Add(int a, int b)
+    {
+        return a + b;
+    }
+
+    public int Add(int a, int b, int c)
+    {
+        return a + b + c;
+    }
+
+    public double Add(double a, double b)
+    {
+        return a + b;
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Calculator calc = new Calculator();
+        Console.WriteLine(calc.Add(5, 10));      // Calls method with 2 parameters
+        Console.WriteLine(calc.Add(5, 10, 15));  // Calls method with 3 parameters
+        Console.WriteLine(calc.Add(5.5, 10.5));  // Calls method with double parameters
+    }
+}
+
+// Overrinding
+class BaseClass
+{
+    public virtual void Greet()
+    {
+        Console.WriteLine("Welcome from Base Class!");
+    }
+}
+
+class SubClass : BaseClass
+{
+    public override void Greet()
+    {
+        Console.WriteLine("Welcome from Sub Class!");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        BaseClass obj = new SubClass();
+        obj.Greet();  // Calls the overridden method from SubClass
+    }
+}
+
+/////////////////////////////////////////////////////
+
+WHEN TO USE INTERFACE AND WHEN ABSTRACT CLASS? :::
+
+
+
+Abstarction: -
+--> common Property / behavior to all the derived class.
+--> when we need property, feild, method, contructor.
+--> when we want that implementation of method in the same way then go for abstraction.
+
+abstract public Employee
+{
+    public abstract void CalculateSalary(); 
+    
+   public void CalculateSalary()
+   {
+    Console.WriteLine("Tax calculation");
+   }
+}
+Interface: -
+
+--> when you want multiple inheritance achieve then go for Intrface,
+--> when you go for contract.
+--> when we want loosely coupled thing.
+--> 
+interface emEmployee
+{ 
+  void play();
+}
+
+
+
+
+///////////////////////////////////////////////
+What is Nullable type Nullable type is used to store null values;
+this is useful when you want to represent a value that may or may not be present.
+
+using System;
+class Program
+{
+    static void Main(string[] args)
+    {
+        int? a = null;
+        Console.WriteLine(a);
+    }
+}
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////What is the Constructor and type.
+--> A Constructor is a special method in a class that is automatically called when we create an object.
+
+--> It is mainly used to initialize the object.
+
+--> The constructor name is same as the class name and it has no return type.
+
+--> Application
+1> Initializing the objects with default or required data.
+2>Dependency Injection
+
+
+1> Default Constructor
+-->No parameters.
+-->Automatically initizes object when no value is passes.
+
+Application
+Frameworks like Entity Framework require a parameterless constructor for mapping.
+
+example
+
+public class Product
+{
+public int Id {get; set ;}
+public string Name {get ; set ;}
+
+// Default construction for EF or serialization
+public Product()
+{
+}
+}
+
+2> Parameterized Constructor
+-> Takes parameter to set values when object is created.
+
+Application 
+Dependency Injection., Injecting services in ASP.Net Core
+Example
+public class OrderServices
+{
+ private readonly IOrderRepository _repository;
+
+ public OrderService(IOrderRepository repository)
+{
+ _repository = repository;
+}
+}
+
+3> Static Constructor
+-> Used to initialize static member of the class.
+-> Called only once, automatically, when the class is first used.
+
+use : When you want to initialize static data, like connection strings, only once before the class is used. ex : Loading configuration.
+
+Example
+public class ConfigManager
+{
+pulic static string ConnectionString;
+static ConfigManager()
+{
+  ConnectionString = "Server=MyServer";
+}
+}
+
+4> Private Constructor
+   -> Used when we want to restrict the object creation fro  outside.
+   -> Mostly used in Singleton Desigb Pattern.
+   -> Cannot be inherited.
+
+example:
+public class Logger
+{
+ private static Logger _instance;
+ private Logger() {} // Private constructor
+
+ public static Logger GetInstance()
+{
+   if(_instance == null)
+{
+  _instance = new Logger();
+}
+return _instance;
+}
+}
+
+///////////////////////////////////////////////////////////////////////////What is Method Hinding
+--> We use Method Hinding when a child class define a method with the same name as a method in the parent class - but we don't want to override it , just hide or replace it in the child class. 
+
+In Method Hinding , you can hide the implementation of the methods of a base class from the derived class using the new keyword.
+
+
+When to use it.
+--> When the parent class method is not virtual or can't be overridden.
+--> When you want the child method to behave diffrently - but only when acccessed throught the child refrence.
+
+
+example
+
+public class Parent
+{
+ public void Show()
+{
+  Console.WriteLine("Parent Show Method");
+}
+}
+
+public class Child : Parent
+{
+ public new void Show()
+{
+ Console.WriteLine("Child Show Method");
+}
+}
+
+
+Parent p = new Parent();
+p.Show() // output : Parent Show Method
+
+Child c = new Child();
+c.Show(); // Child Show Method
+
+Parent pc  = new Child();
+pc.Child(); // Parent show Method(hidding , not overring)
+///////////////////////Generic
+What are Generics in C#?
+
+Generics allow us to create classes, methods, and interfaces that work with any data type in a type-safe way.
+
+Instead of writing the same code for different types (like int, string, etc.), we write it once using generics — and it will work for any type.
+
+Why and When to Use Generics?
+Type safety – No need for casting.
+
+Code reusability – Write one method for all data types.
+
+Performance – Avoids boxing/unboxing (in value types).
+
+Clean and maintainable code.
+
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        bool isEqual = Calculator.AreEqual<int>(10, 10);
+        bool isStrEqual = Calculator.AreEqual<string>("Hello", "Hello");
+
+        Console.WriteLine("Int equal: " + isEqual);
+        Console.WriteLine("String equal: " + isStrEqual);
+    }
+}
+
+public class Calculator
+{
+    public static bool AreEqual<T>(T a, T b)
+    {
+        return a.Equals(b);
+    }
+}
+
+///////////////////////////////////////////////////////////
+using System.Security.AccessControl;
+
+What is the diffrence between arr and arralist :::
+
+Array
+
+-->Arrays is fixed in size.
+-->Arrays are strongly typed.
+-->better in performance because typed is Known at compile time.
+
+EXample Array
+class Program
+{
+    public static void Main(string[] args)
+    {
+        int[] array = new int[10];
+        array[0] = 1;
+        array[1] = 2;
+    }
+}
+
+ArrayList
+
+-->Arraylist is not in fixed size.
+-->Arraylist is not strongly typed.
+--> Arraylist is not better in performance because it is not strongly typed.
+
+EXample Arratlist
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+        ArrayList ar = new ArrayList();
+        ar.Add(1);
+        ar.Add(2);
+    }
+}
+
+///////////////////////////////////////
+using System;
+
+What is the Imumerable in c# :::
+--> IEnumerable is an interface in C# that allows us to loop through a collection using a foreach loop.
+--> It works internally with IEnumerator, which moves one item at a time.
+--> When we use IEnumerable, it pulls data one by one — not all at once in memory.
+--> It is useful for read-only access to a collection.
+
+
+when to use:
+
+--> When you just want to iterate (loop) through a collection like List, Array, Dictionary, etc.
+--> Ideal when you don’t need to modify the collection.
+--> You can use LINQ with it (Where, Select, etc.).
+
+example
+class Program
+{
+    public static void Main(string[] agts)
+    {
+        var employee = new List<Employee>()
+        {
+            new Employee() { ID = 1, Name = "John", Salary = 1000 },
+            new Employee() { ID = 2, Name = "Jane", Salary = 2000 }
+        };
+        foreach(var emp in employee)
+        {
+            Console.WriteLine($"ID: {emp.ID}, Name: {emp.Name}, Salary: {emp.Salary}");
+        }
+    }
+}
+
+public class Employee
+{
+    public int ID { get; set; }
+    public string Name { get; set; }
+    public double Salary { get; set; }
+}
+
+--> IEnumerable is lazy - loaded — it fetches data only when you access it. This is great for performance 
+    when dealing with large datasets.
+
+///////////////////////////////////////////////////////////////
+
+
+What is the diffrence betwenn Inumerator and Inumerable :::
+
+    IEnumerable
+    -- > It represents a collection that can be iterated (looped) using foreach.
+    -- > It has one method: GetEnumerator(), which returns an IEnumerator
+
+    IEnumerable<string> fruits = new List<string> { "Apple", "Banana" };
+
+IEnumerator
+
+    It is used to loop through each item one by one in a collection
+    It has two main methods:
+
+MoveNext() → moves to next item
+
+Current → gives the current item
+
+    Real-Life Analogy:
+IEnumerable = TV Remote(it lets you go through channels)
+
+IEnumerator = Finger that presses Next button (moves from one channel to another)
+
+    using System;
+using System.Collections;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        List<string> colors = new List<string> { "Red", "Green", "Blue" };
+
+        IEnumerable<string> enumerable = colors;
+        IEnumerator<string> enumerator = enumerable.GetEnumerator();
+
+        while (enumerator.MoveNext())
+        {
+            Console.WriteLine(enumerator.Current);
+        }
+    }
+}
+
+Final One-Liner (For Interview):
+"IEnumerable represents the whole collection, and IEnumerator is the tool that moves through each item in that collection."
+//////////////////////////////////////////////////
+//Diffrence between Method Overriding and Method hinding
+overrding
+Say all the point from kindle
+public class Parent
+{
+    public virtual void Show() => Console.WriteLine("Parent");
+}
+
+public class Child : Parent
+{
+    public override void Show() => Console.WriteLine("Child");
+}
+
+Parent obj = new Child();
+obj.Show();  // Output: Child  (object type decides)
+
+
+Method Overriding:
+→ Child class changes the parent’s method.
+→ Uses override keyword.
+→ Runs based on object type.
+→ Decided at runtime.
+
+
+//Hiding
+Hiding
+
+public class Parent
+{
+    public void Show() => Console.WriteLine("Parent");
+}
+
+public class Child : Parent
+{
+    public new void Show() => Console.WriteLine("Child");
+}
+
+Parent obj = new Child();
+obj.Show();  // Output: Parent  (reference type decides)
+
+
+Method Hiding:
+→ Child class hides the parent’s method.
+→ Uses new keyword.
+→ Runs based on reference type.
+→ Decided at compile time.
+
+ 
+
+/////////////////////////////////////////////
+what is Extensition Methods :::
+Extension method is a method injected (added) into an existing class
+(or struct or interfaces), without modifying the sourse code of that 
+class(or struct or interface).
+
+--> Create the class without extensions method.
+--> Create the static class with static method.
+-->static class that uses the this keyword before the first parameter 
+--> to extend the functionality of an existing type without modifying the original type
+
+
+///As developer
+//
+namespace Products
+{
+    public class Product
+    {
+        public int WorkingHours ;
+        public int WorkingPerWages;
+    }
+}
+//
+
+using Products;
+
+namespace ProductExtensions
+{
+
+    public static class ProductExtension
+    {
+        public static int CalculateSalary(this Product product)
+        {
+           return  product.WorkingHours * product.WorkingPerWages;
+        }
+    }
+}
+//
+using Products;
+
+using ProductExtensions;
+
+namespace Programs
+{
+  class program
+  {
+        public static void Main(string[] args)
+        {
+            Product p = new Product() { WorkingHours = 100 ,
+         WorkingPerWages = 500 };
+            Console.WriteLine(p.CalculateSalary());
+        }
+  }
+}
+
+//As the base library
+public static class IntExtensition
+{
+    public static int DoubleIt(this int number)
+    {
+        return number * 2;
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        int x = 5;
+        int result = x.DoubleIt();// Calls the extensitiom method
+        Console.WriteLine(result); // Output: 10
+    }
+}
+
+///////////////////////////////////////
+//What are the important components of .Net Framework ? What are their roles?
+//-->CLR : It's the engion of .Net that runs your code, manages memory,and handle security.
+//-->cts : It ensure all .net languages use the same data types so they can work together.
+//-->FCL or BCL :It's a big collection of ready-made classes and functions you can use to build your apps faster.
+//-->CLS :It's a set of rules that .Net languages follow so they can talk to each other easily.
+
+
+//////////////////////////////////////////////////
+////////////////////////////////////////////////SQL
+////////////////////////////////////////////////
+///////////////////////////////////////////////
+What is the diffrence between where and having in sql?
+//where
+-->Where is used to filter the rows before grouping.
+-->you cannot .
+Having
+-->Having is used to filter groups after using the Group By.
+--> You can use aggregate functions in HAVING.
+
+Example:
+Select Department , Avg(salary) AS
+AverageSalary from Employee
+where status = 'Active'
+group by Department
+Having AVG(Salary) > 50000;
+//////////////////////////////What is Diffrence bewteen Delete,Truncate , Drop in Sql
+
+////Delect 
+1> Used to remove the specific rows from a table.
+2>you can use where to delete the 
+3>can be rolled back(if inside a transaction)
+4>It is a DML(Data Manipulation Language) command.
+5>Table structure does not changes.
+
+Example:
+Delect from Employee Where Employee = 5 ;
+
+//////Truncate
+1>Remove all rows from table(empties the table).
+2>Cannot be rolled back in many 
+databases(in SQL Server, rollback is possible if used a transaction).
+3>It is a DDL(Data Defination Language) command.
+4> Table structure does not changes.
+
+Example
+TRUNCATE Table Employee;
+
+//Drop
+-->Delete the entire table from database(structure + data);
+--> Cannot be rolled back.
+--> It is DDL(Data Defination Language) command
+
+Example
+Drop Table Employee;
+
+-->In short Where filters individual recoreds, Having filters grouped results.
+
+///////////////////////////////////////////////////////What is the diffrence between Union And Union All.
+//Union
+--> Combines the result of two or more Select statements.
+--> Remove duplicate rows(show only unique data).
+--> All SELECT statements must have the same number of columns and the same data type.
+
+Example
+Select Name from TableA
+Union 
+Select Name from TablesB
+
+UNION All
+--> Combines the result of two or more SELECT statements.
+--> Keeps all the rows, including duplicates.
+--> All SELECT statement must have the same number of coloums and the same data type
+
+
+Example
+SELECT Name from TableA.
+Union All
+Select Name from TablesB.
+
+Final
+Union --> remove duplicate row
+UnionALL --> Keep all the rows.
+
+/////////////////////////////////////////
+How to optimise the SQL Query 
+1. Use Proper Indexing
+
+You have a Customers table and want to find a customer by their email.
+
+---
+
+Step 1: Create a Table
+
+CREATE TABLE Customers (
+    CustomerID INT PRIMARY KEY,
+    Name NVARCHAR(100),
+    Email NVARCHAR(100),
+    Phone NVARCHAR(20)
+);
+
+Step 2: Insert Sample Data
+
+INSERT INTO Customers (CustomerID, Name, Email, Phone)
+VALUES
+(1, 'Alice', 'alice@example.com', '12345'),
+(2, 'Bob', 'bob@example.com', '67890'),
+(3, 'Charlie', 'charlie@example.com', '24680');
+
+---
+
+Step 3: Query Without Index
+
+SELECT * FROM Customers WHERE Email = 'bob@example.com';
+
+This will scan the whole table (called Table Scan) because no index exists on Email.
+
+
+---
+
+Step 4: Add an Index
+
+CREATE NONCLUSTERED INDEX IX_Customers_Email ON Customers(Email);
+
+---
+
+Step 5: Run the Same Query Again
+
+SELECT * FROM Customers WHERE Email = 'bob@example.com';
+
+Now SQL Server will use the index on Email to quickly find the row, instead of scanning the whole table.
+
+2. Avoid SELECT *
+
+Fetch only needed columns.
+
+-- Bad
+SELECT * FROM Orders;
+
+-- Good
+SELECT OrderID, OrderDate, CustomerID FROM Orders;
+
+
+---
+
+3. Use EXISTS Instead of IN for Subqueries
+
+EXISTS is faster when checking existence.
+
+-- Slower
+SELECT Name FROM Employees
+WHERE DepartmentID IN (SELECT DepartmentID FROM Departments WHERE Location = 'NY');
+
+-- Faster
+SELECT Name FROM Employees e
+WHERE EXISTS (
+  SELECT 1 FROM Departments d
+  WHERE d.Location = 'NY' AND e.DepartmentID = d.DepartmentID
+);
+
+
+---
+
+4. Avoid Functions on Indexed Columns in WHERE
+
+Functions prevent index use.
+
+-- Bad: can't use index
+SELECT * FROM Users WHERE YEAR(DateOfBirth) = 1990;
+
+-- Good
+SELECT * FROM Users WHERE DateOfBirth >= '1990-01-01' AND DateOfBirth < '1991-01-01';
+
+
+---
+
+5. Use Joins Instead of Subqueries Where Appropriate
+
+-- Subquery (can be slower)
+SELECT Name FROM Students
+WHERE StudentID IN (SELECT StudentID FROM Results WHERE Score > 90);
+
+-- Better
+SELECT DISTINCT s.Name
+FROM Students s
+JOIN Results r ON s.StudentID = r.StudentID
+WHERE r.Score > 90;
+
+
+---
+
+6. Use Table Variables or Temporary Tables for Large Intermediate Data
+
+-- Using temp table for heavy processing
+SELECT * INTO #TempLargeData FROM LargeTable WHERE Status = 'Active';
+
+-- Then work with #TempLargeData
+SELECT COUNT(*) FROM #TempLargeData;
+
+
+---
+
+7. Update Statistics and Use Query Plans
+
+-- Update statistics
+UPDATE STATISTICS Products;
+
+-- View execution plan in SSMS (Ctrl + M before running query)
+
+
+---
+
+8. Use WITH (NOLOCK) Carefully for Read-Only Queries
+
+-- Avoids locking (but allows dirty reads)
+SELECT * FROM Orders WITH (NOLOCK);
+
+
+
+
+
+//////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////.NetCore
+///////////////////////////////////////////////////////
+////////What is .NetCore
+--> .Net Core is a free, open-sourse,and cross-plateform framework for building diffrent types of applications like web apps, Apis and cloud services
+--> it runs on windowns , Linux and Mac.
+
+//////////Key Point
+Open-Sourse
+Cross-plateform
+Used for building modern web apps,APIs,cloud services, console apps and more. 
+/////////////////////////////////////////////////////How to handle the error in Asp.netcore.
+
+Global- Error Handling - so the whole app doesn't crash:
+
+if(app.Enviroment.IsDevelopment())
+{
+app.UseDeveloperExceptionPage();//Show detailed error in development;
+}
+else
+{
+ app.UseExceptionHandler("/Home/Error");//Show friendly erro page in Production.
+}
+
+Try-catch Block -for specific code
+try
+{
+
+}
+catch(Exception ex)
+{
+_logger.LogError(ex,"Something went wrong.");
+return StatusCode(500, "An error occured.");
+}
+
+-> Global error handling saves the full app.
+-> Try-Catch handles errors in specific code blocks.
+-> Logging helps us track the issue.
+
+////////////////////////////////////
+///////////////////////////////////Some of important question
+///////////////////////////////////
+What is diffrence between rest api and Soap api.
+
+//Rest Api
+--> Works over HTTP protocol.
+--> Sends data in JSON format(easy to read/write).
+--> It's lightweight and faster.
+--> Used in modern web and mobile apps.
+
+
+//Soap API
+-->Used only XML format.
+-->Has strict rules and security.
+-->More heavyweigth and slower than REST.
+--> Often used in bancking, finance, enterprise systems.
+--> Example: XML request with a predefined structure.
+
+Simple Analogy:
+REST is like a WhatsApp message - quick and simple.
+SOAP is like a legal document - formal, secure and structure.
+
+Summary(one-liner for interview)
+REST is faster and simple; Soap is strict and more secure.
+
+//////////////////////////////////////
+First() and FirstOrDefault() are used to get the first matching element from a list or collection.
+
+
+///First()
+--> Meaning : Return the first element that matches your condition.
+-->If no match is found : It will throw an exception.
+-->When to use : When you are sure the collection will have at lease one matching item.
+ 
+example :
+var number = new List<int>{1,2,3,4,5};
+var firstEven = numbers.First(n => n % == 0);
+
+2) FirstOrfault()
+ --> Meaning : Return the first element that matches your condition.
+ --> If no match is found : It will return the default value(like null for classes, 0 for numbers).
+ When to use --> When you're not sure if the list contains a match, and you want to avoid errors.
+
+example :
+ var number = new List<int> {1,3,5};
+ var firstEven = number.FirstOrDefault(n => n % 2 == 0);
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////Performance and Security Question for L2 Round
+Q> How do you improve the performance of .net Core application?
+-> Caching strategies(In-Memory, Distribution Cache).
+-> Async programming and Task Parallel Library.
+->Reducing database calls and optimizing LINQ queries.
+->Using IQueryable vs IEnumerable.
+
+Q>What are the best practices for optimizing SQL queries ?
+->Proper indexing(Clustered , Non-Clustered).
+->Avoiding SELECT *; using only required coloums.
+->Using Stored Procedure instead of raw queries.
+->Optimizing joins and subqueries.
+
+Q>How can you improve the startup time of an ASP.NET Core application?
+->Minimize middleware components.
+->Use AddRazorRuntimeCompilation() only in development.
+->Eager loading vs Lazy loading optimization.
+
+Q>What is lazy loading and eager loading in Entity Framework, and which one is better for performance?
+-> Explanation of both approaches.
+->Scenarios where each is optimal for performance.
+
+Q> How do you handle large data loads efficiently in .NET Core and SQL Server?
+Using pagination with Skip and Take.
+-> Using pagination with Skip and Take.
+-> Implementing bulk inserts with sqlBulkCopy.
+->Leveraging Asynchronous data`base operations.
+
+
+////////////////////Security Best Practises
+1.> How do you secure WEB APIs in .NET Core ?
+-> Authentication(JWT,OAuth2 , OpenID Connect).
+->Authorization with poicies and roles.
+->Preventing over-posting with DTOs.
+
+2>What is CORS AND WHY is it important in Angular applications ?
+Explanation of Corss-Origin Resourse Sharing.
+How to Configure CORS in .NET Core.
+
+3>What is CORS and why is it important in Angular applications?
+Explanation of Cross-Origin Resource Sharing.
+How to configure CORS in .NET Core.
+
+4>What are the common vulnerabilities in web applications and how do you prevent them?
+
+SQL Injection → Parameterized Queries.
+Cross-Site Scripting (XSS) → Proper Encoding and Validation.
+Cross-Site Request Forgery (CSRF) → Anti-Forgery Tokens.
+5>How do you handle data encryption in .NET Core applications?
+
+Usage of AES, RSA for data encryption.
+Hashing passwords with Identity or BCrypt.
+
+6>What is the difference between Authentication and Authorization?
+
+Explanation with real-world examples.
+Role-based vs Policy-based authorization in .NET Core.
+
+///////////////////////////////////////////////////Angular Specific (Performance + Security):
+1>How do you optimize Angular applications for better performance?
+
+Lazy Loading of modules.
+Ahead-of-Time (AOT) Compilation.
+Change detection strategy (OnPush).
+
+2>How do you prevent XSS attacks in Angular?
+Angular's DOM sanitization.
+Safe navigation ([innerHTML] with caution).
+
+3>How do you handle large list rendering in Angular?
+Using ngFor with trackBy.
+Virtual scrolling for large lists.
+
+//////////////////////////////////////////
+
+Great question! Here's a super simple and interview-ready explanation of the difference between throw ex; and throw; in C# — in the most human-friendly way:
+
+---
+
+✅ Q: What is the difference between throw ex; and throw; in C#?
+
+🔸 throw ex;
+
+> Resets the original error location.
+
+
+
+It throws the exception again but overwrites the stack trace.
+
+So you lose the original line where the error actually happened.
+
+
+try
+{
+    // Error happens here
+}
+catch (Exception ex)
+{
+    throw ex;  // ❌ Loses original stack trace
+}
+
+🧠 Why it’s bad?
+
+In real applications, you won't know where the error really happened — only where it was re-thrown.
+
+
+
+---
+
+🔹 throw;
+
+> Keeps the original error location.
+
+
+
+It rethrows the same exception without resetting the stack trace.
+
+
+try
+{
+    // Error happens here
+}
+catch (Exception ex)
+{
+    throw;  // ✅ Preserves original error line
+}
+
+🧠 Why it's better?
+
+Developers can debug exactly where the error occurred.
+
+
+
+---
+
+✅ Summary for Interview:
+
+throw ex;	throw;
+
+Resets the stack trace	Keeps original stack trace
+Harder to debug	Easier to debug
+Avoid in production	Recommended way
+
+
+
+---
+
+✅ Real-life analogy:
+
+> throw ex; is like taking a photo of the accident after cleaning the scene — you lose real info.
+throw; is like showing the actual place and time the accident happened.
+
+
+
+
+---
+
+Would you like a short .NET Core example showing how this impacts logging or debugging in a real application?
+
+
+/////////////////////////////////////////////////////////////
+break Statement in C#"
+
+break is used when you want to say:
+
+"I'm done with this loop or switch - exit immediately."
+
+Let's learn how, why, where, and when to use it with real-life examples, flow control visuals, and top-level coding practices.
+
+What is break?
+
+The break statement immediately stops the current loop (for, while, do-while) or switch-case.
+
+It tells the compiler:
+
+Stop looping right now, and jump out!
+
+Example 1: Exit a for loop early
+
+Csharp
+
+Copy code
+
+for (int i = 1 i <= 10 i++)
+
+{
+
+if (i == 5)
+
+break;
+
+Console.WriteLine("i = " + i);
+
+}
+
+Output:
+
+Copy code
+
+i = 1
+
+i = 2
+
+i = 4
+
+When i == 5, it hits break, exits the loop immediately.
+
+///
+continue Statement in
+
+continue tells your loop:
+
+"Skip the current round move to the next one immediately."
+
+It's very powerful when you want to:
+
+Ignore invalid data
+
+Skip even/odd numbers
+
+Avoid unnecessary processing
+
+Let's master this now in human language, code, real-world examples, and expert developer style.
+
+What is continue?
+
+The continue statement skips the rest of the current iteration, and moves the loop directly to the next round.
+
+
+
+
+
+
+
+
+
+///////////////////////////////pls check this solution
+// Problem:
+
+// Design a basic task scheduler where tasks can be added with a scheduled time, and the scheduler will return tasks in execution order.
+
+// Requirements:
+
+// void AddTask(string taskName, DateTime executeAt)
+// string? GetNextTask() — returns the next task to execute based on time
+
+// Expectation:
+
+// Candidate should use a priority queue or sorted data structure, and follow good OO design.
+// Promises , emitter, even emitter, canActivate, 
+
+Syntax
+
+for (int i = 1; i <= 5; i++)
+{
+    if (i == 3)
+        continue;
+
+    Console.WriteLine(i);
+}
+Output :
+1  
+2  
+4  
+5
 
 
 
