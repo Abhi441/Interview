@@ -21165,10 +21165,880 @@ Output :
 
 
 
+/////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////SQL Interview Qestion
+//////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+
+Sorce : https://www.interviewbit.com/sql-interview-questions/
+What is Database?
+What is DBMS?
+3. What is RDBMS? How is it different from DBMS?
+What is SQL?
+5. What is the difference between SQL and MySQL?
+
+
+/////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////Sample code Creating Api With ADo.net
+//////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////Get
+// End-to-End Fullstack Example: Property Listing API with POST (Create) Feature
+// Stack: Angular 18 (Frontend) + .NET 8 (Backend) + EF Core + Clean Architecture + async/await
+
+/*
+  Backend (.NET 8)
+  Layers:
+    - Controller (API layer)
+    - Service (Business logic)
+    - Repository (Database interaction using EF Core)
+    - DbContext & Models
+*/
+
+// --- Models/Property.cs ---
+public class Property
+{
+    public int Id { get; set; }
+    public string Title { get; set; } = string.Empty;
+    public double Price { get; set; }
+    public string Location { get; set; } = string.Empty;
+}
+
+// --- Data/PropertyDbContext.cs ---
+public class PropertyDbContext : DbContext
+{
+    public PropertyDbContext(DbContextOptions<PropertyDbContext> options) : base(options) {}
+    public DbSet<Property> Properties => Set<Property>();
+}
+
+// --- Repository/IPropertyRepository.cs ---
+public interface IPropertyRepository
+{
+    Task<List<Property>> GetAllPropertiesAsync();
+    Task<Property> AddPropertyAsync(Property property);
+}
+
+// --- Repository/PropertyRepository.cs ---
+public class PropertyRepository : IPropertyRepository
+{
+    private readonly PropertyDbContext _context;
+    public PropertyRepository(PropertyDbContext context)
+    {
+        _context = context;
+    }
+
+    public async Task<List<Property>> GetAllPropertiesAsync()
+    {
+        return await _context.Properties.ToListAsync();
+    }
+
+    public async Task<Property> AddPropertyAsync(Property property)
+    {
+        _context.Properties.Add(property);
+        await _context.SaveChangesAsync();
+        return property;
+    }
+}
+
+// --- Services/IPropertyService.cs ---
+public interface IPropertyService
+{
+    Task<List<Property>> GetAllPropertiesAsync();
+    Task<Property> AddPropertyAsync(Property property);
+}
+
+// --- Services/PropertyService.cs ---
+public class PropertyService : IPropertyService
+{
+    private readonly IPropertyRepository _repository;
+    public PropertyService(IPropertyRepository repository)
+    {
+        _repository = repository;
+    }
+
+    public async Task<List<Property>> GetAllPropertiesAsync()
+    {
+        return await _repository.GetAllPropertiesAsync();
+    }
+
+    public async Task<Property> AddPropertyAsync(Property property)
+    {
+        return await _repository.AddPropertyAsync(property);
+    }
+}
+
+// --- Controllers/PropertyController.cs ---
+[ApiController]
+[Route("api/[controller]")]
+public class PropertyController : ControllerBase
+{
+    private readonly IPropertyService _service;
+    public PropertyController(IPropertyService service)
+    {
+        _service = service;
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> Get()
+    {
+        var data = await _service.GetAllPropertiesAsync();
+        return Ok(data);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Post([FromBody] Property property)
+    {
+        if (!ModelState.IsValid) return BadRequest(ModelState);
+        var result = await _service.AddPropertyAsync(property);
+        return CreatedAtAction(nameof(Get), new { id = result.Id }, result);
+    }
+}
+
+// --- Program.cs ---
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<PropertyDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<IPropertyRepository, PropertyRepository>();
+builder.Services.AddScoped<IPropertyService, PropertyService>();
+builder.Services.AddControllers();
+
+var app = builder.Build();
+app.UseHttpsRedirection();
+app.MapControllers();
+app.Run();
+
+// --- appsettings.json ---
+/*
+"ConnectionStrings": {
+  "DefaultConnection": "Server=.;Database=PropertyDb;Trusted_Connection=True;TrustServerCertificate=True"
+}
+*/
+
+/*
+  Frontend (Angular 18)
+*/
+
+// --- property.model.ts ---
+export interface Property {
+  id?: number;
+  title: string;
+  price: number;
+  location: string;
+}
+
+// --- property.service.ts ---
+@Injectable({ providedIn: 'root' })
+export class PropertyService {
+  private baseUrl = 'https://localhost:5001/api/property';
+
+  constructor(private http: HttpClient) {}
+
+  getAll(): Observable<Property[]> {
+    return this.http.get<Property[]>(this.baseUrl);
+  }
+
+  add(property: Property): Observable<Property> {
+    return this.http.post<Property>(this.baseUrl, property);
+  }
+}
+
+// --- property-form.component.ts ---
+@Component({ selector: 'app-property-form', templateUrl: './property-form.component.html' })
+export class PropertyFormComponent {
+  property: Property = { title: '', price: 0, location: '' };
+
+  constructor(private propertyService: PropertyService) {}
+
+  onSubmit(): void {
+    this.propertyService.add(this.property).subscribe(result => {
+      alert('Property added successfully!');
+      this.property = { title: '', price: 0, location: '' };
+    });
+  }
+}
+
+// --- property-form.component.html ---
+<form (ngSubmit)="onSubmit()">
+  <input type="text" placeholder="Title" [(ngModel)]="property.title" name="title">
+  <input type="number" placeholder="Price" [(ngModel)]="property.price" name="price">
+  <input type="text" placeholder="Location" [(ngModel)]="property.location" name="location">
+  <button type="submit">Add Property</button>
+</form>
+
+/*
+✅ You now have:
+- Fully working Create (POST) operation using .NET 8, EF Core, async/await
+- Clean layered architecture with real enterprise interview structure
+- Angular 18 form to submit data
+*/
+
+
+
+//////////////////////////////////////Post
+
+// End-to-End Fullstack Example: Property Listing API with POST (Create) Feature
+// Stack: Angular 18 (Frontend) + .NET 8 (Backend) + EF Core + Clean Architecture + async/await
+
+/*
+  Backend (.NET 8)
+  Layers:
+    - Controller (API layer)
+    - Service (Business logic)
+    - Repository (Database interaction using EF Core)
+    - DbContext & Models
+*/
+
+// --- Models/Property.cs ---
+public class Property
+{
+    public int Id { get; set; }
+    public string Title { get; set; } = string.Empty;
+    public double Price { get; set; }
+    public string Location { get; set; } = string.Empty;
+}
+
+// --- Data/PropertyDbContext.cs ---
+public class PropertyDbContext : DbContext
+{
+    public PropertyDbContext(DbContextOptions<PropertyDbContext> options) : base(options) {}
+    public DbSet<Property> Properties => Set<Property>();
+}
+
+// --- Repository/IPropertyRepository.cs ---
+public interface IPropertyRepository
+{
+    Task<List<Property>> GetAllPropertiesAsync();
+    Task<Property> AddPropertyAsync(Property property);
+}
+
+// --- Repository/PropertyRepository.cs ---
+public class PropertyRepository : IPropertyRepository
+{
+    private readonly PropertyDbContext _context;
+    public PropertyRepository(PropertyDbContext context)
+    {
+        _context = context;
+    }
+
+    public async Task<List<Property>> GetAllPropertiesAsync()
+    {
+        return await _context.Properties.ToListAsync();
+    }
+
+    public async Task<Property> AddPropertyAsync(Property property)
+    {
+        _context.Properties.Add(property);
+        await _context.SaveChangesAsync();
+        return property;
+    }
+}
+
+// --- Services/IPropertyService.cs ---
+public interface IPropertyService
+{
+    Task<List<Property>> GetAllPropertiesAsync();
+    Task<Property> AddPropertyAsync(Property property);
+}
+
+// --- Services/PropertyService.cs ---
+public class PropertyService : IPropertyService
+{
+    private readonly IPropertyRepository _repository;
+    public PropertyService(IPropertyRepository repository)
+    {
+        _repository = repository;
+    }
+
+    public async Task<List<Property>> GetAllPropertiesAsync()
+    {
+        return await _repository.GetAllPropertiesAsync();
+    }
+
+    public async Task<Property> AddPropertyAsync(Property property)
+    {
+        return await _repository.AddPropertyAsync(property);
+    }
+}
+
+// --- Controllers/PropertyController.cs ---
+[ApiController]
+[Route("api/[controller]")]
+public class PropertyController : ControllerBase
+{
+    private readonly IPropertyService _service;
+    public PropertyController(IPropertyService service)
+    {
+        _service = service;
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> Get()
+    {
+        var data = await _service.GetAllPropertiesAsync();
+        return Ok(data);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Post([FromBody] Property property)
+    {
+        if (!ModelState.IsValid) return BadRequest(ModelState);
+        var result = await _service.AddPropertyAsync(property);
+        return CreatedAtAction(nameof(Get), new { id = result.Id }, result);
+    }
+}
+
+// --- Program.cs ---
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<PropertyDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<IPropertyRepository, PropertyRepository>();
+builder.Services.AddScoped<IPropertyService, PropertyService>();
+builder.Services.AddControllers();
+
+var app = builder.Build();
+app.UseHttpsRedirection();
+app.MapControllers();
+app.Run();
+
+// --- appsettings.json ---
+/*
+"ConnectionStrings": {
+  "DefaultConnection": "Server=.;Database=PropertyDb;Trusted_Connection=True;TrustServerCertificate=True"
+}
+*/
+
+/*
+  Frontend (Angular 18)
+*/
+
+// --- property.model.ts ---
+export interface Property {
+  id?: number;
+  title: string;
+  price: number;
+  location: string;
+}
+
+// --- property.service.ts ---
+@Injectable({ providedIn: 'root' })
+export class PropertyService {
+  private baseUrl = 'https://localhost:5001/api/property';
+
+  constructor(private http: HttpClient) {}
+
+  getAll(): Observable<Property[]> {
+    return this.http.get<Property[]>(this.baseUrl);
+  }
+
+  add(property: Property): Observable<Property> {
+    return this.http.post<Property>(this.baseUrl, property);
+  }
+}
+
+// --- property-form.component.ts ---
+@Component({ selector: 'app-property-form', templateUrl: './property-form.component.html' })
+export class PropertyFormComponent {
+  property: Property = { title: '', price: 0, location: '' };
+
+  constructor(private propertyService: PropertyService) {}
+
+  onSubmit(): void {
+    this.propertyService.add(this.property).subscribe(result => {
+      alert('Property added successfully!');
+      this.property = { title: '', price: 0, location: '' };
+    });
+  }
+}
+
+// --- property-form.component.html ---
+<form (ngSubmit)="onSubmit()">
+  <input type="text" placeholder="Title" [(ngModel)]="property.title" name="title">
+  <input type="number" placeholder="Price" [(ngModel)]="property.price" name="price">
+  <input type="text" placeholder="Location" [(ngModel)]="property.location" name="location">
+  <button type="submit">Add Property</button>
+</form>
+
+/*
+✅ You now have:
+- Fully working Create (POST) operation using .NET 8, EF Core, async/await
+- Clean layered architecture with real enterprise interview structure
+- Angular 18 form to submit data
+*/
+
+
+
+////////////////////////////////////////////////////////////////Update 
+// End-to-End Fullstack Example: Property Listing API with POST (Create) Feature
+// Stack: Angular 18 (Frontend) + .NET 8 (Backend) + EF Core + Clean Architecture + async/await
+
+/*
+  Backend (.NET 8)
+  Layers:
+    - Controller (API layer)
+    - Service (Business logic)
+    - Repository (Database interaction using EF Core)
+    - DbContext & Models
+*/
+
+// --- Models/Property.cs ---
+public class Property
+{
+    public int Id { get; set; }
+    public string Title { get; set; } = string.Empty;
+    public double Price { get; set; }
+    public string Location { get; set; } = string.Empty;
+}
+
+// --- Data/PropertyDbContext.cs ---
+public class PropertyDbContext : DbContext
+{
+    public PropertyDbContext(DbContextOptions<PropertyDbContext> options) : base(options) {}
+    public DbSet<Property> Properties => Set<Property>();
+}
+
+// --- Repository/IPropertyRepository.cs ---
+public interface IPropertyRepository
+{
+    Task<List<Property>> GetAllPropertiesAsync();
+    Task<Property> AddPropertyAsync(Property property);
+}
+
+// --- Repository/PropertyRepository.cs ---
+public class PropertyRepository : IPropertyRepository
+{
+    private readonly PropertyDbContext _context;
+    public PropertyRepository(PropertyDbContext context)
+    {
+        _context = context;
+    }
+
+    public async Task<List<Property>> GetAllPropertiesAsync()
+    {
+        return await _context.Properties.ToListAsync();
+    }
+
+    public async Task<Property> AddPropertyAsync(Property property)
+    {
+        _context.Properties.Add(property);
+        await _context.SaveChangesAsync();
+        return property;
+    }
+}
+
+// --- Services/IPropertyService.cs ---
+public interface IPropertyService
+{
+    Task<List<Property>> GetAllPropertiesAsync();
+    Task<Property> AddPropertyAsync(Property property);
+}
+
+// --- Services/PropertyService.cs ---
+public class PropertyService : IPropertyService
+{
+    private readonly IPropertyRepository _repository;
+    public PropertyService(IPropertyRepository repository)
+    {
+        _repository = repository;
+    }
+
+    public async Task<List<Property>> GetAllPropertiesAsync()
+    {
+        return await _repository.GetAllPropertiesAsync();
+    }
+
+    public async Task<Property> AddPropertyAsync(Property property)
+    {
+        return await _repository.AddPropertyAsync(property);
+    }
+}
+
+// --- Controllers/PropertyController.cs ---
+[ApiController]
+[Route("api/[controller]")]
+public class PropertyController : ControllerBase
+{
+    private readonly IPropertyService _service;
+    public PropertyController(IPropertyService service)
+    {
+        _service = service;
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> Get()
+    {
+        var data = await _service.GetAllPropertiesAsync();
+        return Ok(data);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Post([FromBody] Property property)
+    {
+        if (!ModelState.IsValid) return BadRequest(ModelState);
+        var result = await _service.AddPropertyAsync(property);
+        return CreatedAtAction(nameof(Get), new { id = result.Id }, result);
+    }
+}
+
+// --- Program.cs ---
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<PropertyDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<IPropertyRepository, PropertyRepository>();
+builder.Services.AddScoped<IPropertyService, PropertyService>();
+builder.Services.AddControllers();
+
+var app = builder.Build();
+app.UseHttpsRedirection();
+app.MapControllers();
+app.Run();
+
+// --- appsettings.json ---
+/*
+"ConnectionStrings": {
+  "DefaultConnection": "Server=.;Database=PropertyDb;Trusted_Connection=True;TrustServerCertificate=True"
+}
+*/
+
+/*
+  Frontend (Angular 18)
+*/
+
+// --- property.model.ts ---
+export interface Property {
+  id?: number;
+  title: string;
+  price: number;
+  location: string;
+}
+
+// --- property.service.ts ---
+@Injectable({ providedIn: 'root' })
+export class PropertyService {
+  private baseUrl = 'https://localhost:5001/api/property';
+
+  constructor(private http: HttpClient) {}
+
+  getAll(): Observable<Property[]> {
+    return this.http.get<Property[]>(this.baseUrl);
+  }
+
+  add(property: Property): Observable<Property> {
+    return this.http.post<Property>(this.baseUrl, property);
+  }
+}
+
+// --- property-form.component.ts ---
+@Component({ selector: 'app-property-form', templateUrl: './property-form.component.html' })
+export class PropertyFormComponent {
+  property: Property = { title: '', price: 0, location: '' };
+
+  constructor(private propertyService: PropertyService) {}
+
+  onSubmit(): void {
+    this.propertyService.add(this.property).subscribe(result => {
+      alert('Property added successfully!');
+      this.property = { title: '', price: 0, location: '' };
+    });
+  }
+}
+
+// --- property-form.component.html ---
+<form (ngSubmit)="onSubmit()">
+  <input type="text" placeholder="Title" [(ngModel)]="property.title" name="title">
+  <input type="number" placeholder="Price" [(ngModel)]="property.price" name="price">
+  <input type="text" placeholder="Location" [(ngModel)]="property.location" name="location">
+  <button type="submit">Add Property</button>
+</form>
+
+/*
+✅ You now have:
+- Fully working Create (POST) operation using .NET 8, EF Core, async/await
+- Clean layered architecture with real enterprise interview structure
+- Angular 18 form to submit data
+*/
+
+
+//////////////////////////////////////////Selete
+// End-to-End Fullstack Example: Property Listing API with POST (Create) Feature
+// Stack: Angular 18 (Frontend) + .NET 8 (Backend) + EF Core + Clean Architecture + async/await
+
+/*
+  Backend (.NET 8)
+  Layers:
+    - Controller (API layer)
+    - Service (Business logic)
+    - Repository (Database interaction using EF Core)
+    - DbContext & Models
+*/
+
+// --- Models/Property.cs ---
+public class Property
+{
+    public int Id { get; set; }
+    public string Title { get; set; } = string.Empty;
+    public double Price { get; set; }
+    public string Location { get; set; } = string.Empty;
+}
+
+// --- Data/PropertyDbContext.cs ---
+public class PropertyDbContext : DbContext
+{
+    public PropertyDbContext(DbContextOptions<PropertyDbContext> options) : base(options) {}
+    public DbSet<Property> Properties => Set<Property>();
+}
+
+// --- Repository/IPropertyRepository.cs ---
+public interface IPropertyRepository
+{
+    Task<List<Property>> GetAllPropertiesAsync();
+    Task<Property> AddPropertyAsync(Property property);
+}
+
+// --- Repository/PropertyRepository.cs ---
+public class PropertyRepository : IPropertyRepository
+{
+    private readonly PropertyDbContext _context;
+    public PropertyRepository(PropertyDbContext context)
+    {
+        _context = context;
+    }
+
+    public async Task<List<Property>> GetAllPropertiesAsync()
+    {
+        return await _context.Properties.ToListAsync();
+    }
+
+    public async Task<Property> AddPropertyAsync(Property property)
+    {
+        _context.Properties.Add(property);
+        await _context.SaveChangesAsync();
+        return property;
+    }
+}
+
+// --- Services/IPropertyService.cs ---
+public interface IPropertyService
+{
+    Task<List<Property>> GetAllPropertiesAsync();
+    Task<Property> AddPropertyAsync(Property property);
+}
+
+// --- Services/PropertyService.cs ---
+public class PropertyService : IPropertyService
+{
+    private readonly IPropertyRepository _repository;
+    public PropertyService(IPropertyRepository repository)
+    {
+        _repository = repository;
+    }
+
+    public async Task<List<Property>> GetAllPropertiesAsync()
+    {
+        return await _repository.GetAllPropertiesAsync();
+    }
+
+    public async Task<Property> AddPropertyAsync(Property property)
+    {
+        return await _repository.AddPropertyAsync(property);
+    }
+}
+
+// --- Controllers/PropertyController.cs ---
+[ApiController]
+[Route("api/[controller]")]
+public class PropertyController : ControllerBase
+{
+    private readonly IPropertyService _service;
+    public PropertyController(IPropertyService service)
+    {
+        _service = service;
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> Get()
+    {
+        var data = await _service.GetAllPropertiesAsync();
+        return Ok(data);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Post([FromBody] Property property)
+    {
+        if (!ModelState.IsValid) return BadRequest(ModelState);
+        var result = await _service.AddPropertyAsync(property);
+        return CreatedAtAction(nameof(Get), new { id = result.Id }, result);
+    }
+}
+
+// --- Program.cs ---
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<PropertyDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<IPropertyRepository, PropertyRepository>();
+builder.Services.AddScoped<IPropertyService, PropertyService>();
+builder.Services.AddControllers();
+
+var app = builder.Build();
+app.UseHttpsRedirection();
+app.MapControllers();
+app.Run();
+
+// --- appsettings.json ---
+/*
+"ConnectionStrings": {
+  "DefaultConnection": "Server=.;Database=PropertyDb;Trusted_Connection=True;TrustServerCertificate=True"
+}
+*/
+
+/*
+  Frontend (Angular 18)
+*/
+
+// --- property.model.ts ---
+export interface Property {
+  id?: number;
+  title: string;
+  price: number;
+  location: string;
+}
+
+// --- property.service.ts ---
+@Injectable({ providedIn: 'root' })
+export class PropertyService {
+  private baseUrl = 'https://localhost:5001/api/property';
+
+  constructor(private http: HttpClient) {}
+
+  getAll(): Observable<Property[]> {
+    return this.http.get<Property[]>(this.baseUrl);
+  }
+
+  add(property: Property): Observable<Property> {
+    return this.http.post<Property>(this.baseUrl, property);
+  }
+}
+
+// --- property-form.component.ts ---
+@Component({ selector: 'app-property-form', templateUrl: './property-form.component.html' })
+export class PropertyFormComponent {
+  property: Property = { title: '', price: 0, location: '' };
+
+  constructor(private propertyService: PropertyService) {}
+
+  onSubmit(): void {
+    this.propertyService.add(this.property).subscribe(result => {
+      alert('Property added successfully!');
+      this.property = { title: '', price: 0, location: '' };
+    });
+  }
+}
+
+// --- property-form.component.html ---
+<form (ngSubmit)="onSubmit()">
+  <input type="text" placeholder="Title" [(ngModel)]="property.title" name="title">
+  <input type="number" placeholder="Price" [(ngModel)]="property.price" name="price">
+  <input type="text" placeholder="Location" [(ngModel)]="property.location" name="location">
+  <button type="submit">Add Property</button>
+</form>
+
+/*
+✅ You now have:
+- Fully working Create (POST) operation using .NET 8, EF Core, async/await
+- Clean layered architecture with real enterprise interview structure
+- Angular 18 form to submit data
+*/
 
 
 
 
+
+/////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////Solid Priciple
+//////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+
+// Original class violating SRP
+public class User
+{
+    public string Name { get; set; }
+    public string Email { get; set; }
+
+    // Methods for managing user data
+    public void SaveUserToDatabase()
+    {
+        // Code to save user to the database
+    }
+
+    // Methods for sending email notifications
+    public void SendEmailNotification(string message)
+    {
+        // Code to send email
+    }
+}
+
+// Refactored classes following SRP
+public class User
+{
+    public string Name { get; set; }
+    public string Email { get; set; }
+}
+
+public class UserManager
+{
+    // Methods for managing user data
+    public void SaveUserToDatabase(User user)
+    {
+        // Code to save user to the database
+    }
+}
+
+public class EmailService
+{
+    // Methods for sending email notifications
+    public void SendEmailNotification(User user, string message)
+    {
+        // Code to send email
+    }
+}
+
+
+/////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////Testack Related Question
+//////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+
+Q> Why we arenot using file Like XML.
+Q> What is Concurrency.
+Q> What is Diffrence between Union and Join.
+https://www.youtube.com/watch?v=8nb_CVmjBrI.
+-> UNOIN : - 1> Number of Column must be same for both select statement.
+2>The colomn must be same datatype.
+
+
+//////////////////////////////////Deloild
+1> which company are currently working, what is the role , which project you have worked, which technology are you worked.
+OOP Concept : Four piller of oops , Incapsulation , Overloading , Ovverriding, static , Access Modifier,
+.NETCore : How .netCore Benificial, diffrence between .netCore and MVC Struture , What is middleware , what is startup class,what are configure and configure services method,What are exception in .net
+await and asyc,Services ,what are use of services. Why Angular Not react , where did you declare the component.We declare the component in Module,why you need to declare the componet in Angular,What is data binding, What are two type of form reactive form, Form group , when to use which one , what is the difffrence between them.What are pipes in Angular(diffrent pipes in Anular like dates pipes ect thatis used).
+
+DSA : reverse the string , fibonacci series.
 
 
 
