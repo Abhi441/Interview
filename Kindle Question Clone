@@ -13716,6 +13716,52 @@ Reusable across multiple controllers Too many filters can make debugging tricky
 
 ✅ Increases maintainability — one filter, reusable in multiple modules.
 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// What are API Versioning strategies?
+Definition (Simple Words)
+API Versioning means creating different versions of your API (like v1, v2, etc.) so that:
+
+Old users can continue using old APIs, and
+New users can enjoy updated or improved APIs.
+Think of it like a mobile app update — your old version still works, but the new one has more features.
+
+📘 Example
+Let’s say you have a Property Buy & Sell App, and your backend API exposes this endpoint:
+
+GET /api/properties
+Now, in the next update, you added a new feature (extra filter for location and price).
+So you can version your API like this:
+
+GET /api/v1/properties     → old version (basic list)
+GET /api/v2/properties     → new version (advanced filter support)
+This helps you avoid breaking old apps that are still using v1.
+
+⚙️ Main API Versioning Strategies
+There are 4 common ways to do versioning:
+
+Strategy	Example	Description
+1️⃣ URL Path Versioning	/api/v1/properties	Easiest and most common — version is part of the URL.
+2️⃣ Query String Versioning	/api/properties?version=1.0	Version is passed as a query parameter.
+3️⃣ Header Versioning	Add header: api-version: 1.0	Version info is passed inside HTTP header. Cleaner URL.
+4️⃣ Media Type Versioning	Accept: application/json; version=1.0	Advanced method; version embedded in request type.
+🏗️ Project Use (Buy & Sell Properties App)
+In your Buy & Sell Properties App, you can use versioning like this:
+
+v1 → Used by mobile app for listing basic property details.
+v2 → Used by admin panel to get property + seller + price filters.
+v3 → Used by new mobile version that supports map-based search.
+This ensures smooth upgrades without breaking the existing app users.
+
+⚖️ Trade-offs
+Advantage	Disadvantage
+✅ Old clients keep working	❌ Need to maintain multiple versions
+✅ Easy to roll out new features	❌ More testing required per version
+✅ Clean migration path	❌ Slightly more API code to manage
+💼 Business Impact
+📈 User Experience: No downtime for old users when new APIs are launched.
+🔄 Smooth Upgrades: Developers can safely deploy new features.
+🔒 Backward Compatibility: Enterprise clients don’t lose functionality suddenly.
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Tarun Kumar 
