@@ -13770,19 +13770,6 @@ Advantage	Disadvantage
 ////////////////////////////////////////////////////////////////////////https://www.linkedin.com/in/tarun-kumar-480601184/recent-activity/all/
 Most Frequently Asked .NET Full Stack Interview Questions(covering .NET MVC, .NET Core, Web API, EF Core, SQL Server, Angular)
 
-
-3. Difference between TempData, ViewData, ViewBag.
-4. What is Routing in MVC vs .NET Core?
-5. Explain Model Binding and Validation.
-6. What is Middleware in ASP.NET Core?
-7. Difference between Authentication vs Authorization.
-8. Explain JWT Authentication & Authorization flow.
-9. How to implement Caching (In-Memory, Distributed, Redis).
-10. What are API Versioning strategies?
----
-🔹 Entity Framework Core
-1. What is DbContext?
-2. Explain Code-First vs Database-First.
 3. What are Migrations in EF Core?
 4. Difference between Eager Loading vs Lazy Loading vs Explicit Loading.
 5. Explain Change Tracking in EF Core.
