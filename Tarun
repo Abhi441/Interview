@@ -13762,6 +13762,86 @@ Advantage	Disadvantage
 🔄 Smooth Upgrades: Developers can safely deploy new features.
 🔒 Backward Compatibility: Enterprise clients don’t lose functionality suddenly.
 
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////6. What is the difference between AsNoTracking() vs Tracking queries?
+ Definition (Simple Words)
+
+1️⃣ Tracking Query
+
+When you fetch data from the database using EF Core (without AsNoTracking),
+EF keeps track of every object it brings — so if you change it later,
+EF will automatically know what was changed and can update it back to the DB when you call SaveChanges().
+
+✅ EF tracks the entity → detects changes → updates automatically.
+
+
+---
+
+2️⃣ AsNoTracking Query
+
+When you use .AsNoTracking(), EF just reads the data —
+it doesn’t track changes, meaning you cannot update that data automatically later.
+
+✅ Faster performance (no tracking overhead)
+❌ No automatic updates
+
+
+---
+
+⚙️ Example Code
+
+// Tracking query (Default)
+var property = _context.Properties.FirstOrDefault(p => p.Id == 1);
+property.Price = 500000;
+_context.SaveChanges(); // ✅ EF knows what changed and updates it
+
+// No tracking query
+var property = _context.Properties
+                       .AsNoTracking()
+                       .FirstOrDefault(p => p.Id == 1);
+
+property.Price = 500000;
+_context.SaveChanges(); // ❌ EF does NOT update because it’s not being tracked
+
+
+---
+
+🏠 Project Use (Buy & Sell Properties App)
+
+In your Buy & Sell Properties application:
+
+When Admin edits property details → use Tracking Query
+(because you’ll modify and save data back).
+
+When User just views property listings or search results → use AsNoTracking()
+(because you’re only reading — no updates needed, so faster performance).
+
+
+
+---
+
+⚖️ Trade-offs
+
+Feature Tracking AsNoTracking
+
+Speed Slower ✅ Faster
+Memory Usage More ✅ Less
+Change Detection ✅ Yes ❌ No
+Ideal For CRUD (Update/Delete) Read-only views / Lists
+
+
+
+---
+
+💼 Business Impact
+
+Using AsNoTracking() for read-only pages improves application speed and reduces server load.
+
+Using Tracking where updates are needed ensures data consistency.
+
+Combining both smartly gives high performance + data accuracy in enterprise apps.
+
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Tarun Kumar 
