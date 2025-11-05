@@ -13841,6 +13841,96 @@ Using Tracking where updates are needed ensures data consistency.
 
 Combining both smartly gives high performance + data accuracy in enterprise apps.
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8. What is Concurrency Handling in EF Core?
+ Definition (Very Easy Explanation)
+
+Imagine two people (say you and your friend) trying to edit the same house record at the same time in your Buy & Sell Property App.
+
+You change the price to ₹50,00,000
+
+Your friend changes it to ₹55,00,000 at the same time
+
+
+Now… who should win? 🤔
+That’s where Concurrency Handling comes in — it helps detect and manage conflicts when multiple users update the same data at once.
+
+
+---
+
+⚙️ How EF Core Handles It (Simple Technical View)
+
+EF Core uses a Concurrency Token (like a timestamp or version number) to detect if a record was changed after you loaded it.
+
+Example:
+
+When EF Core loads a record, it remembers the original version.
+
+When you update, EF checks:
+
+> “Is this record still the same as when I read it?”
+
+
+
+If someone else has modified it, EF will throw a DbUpdateConcurrencyException.
+
+
+
+---
+
+💻 Example Code
+
+public class Property
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public decimal Price { get; set; }
+
+    [Timestamp] // 👈 This helps EF detect concurrency conflicts
+    public byte[] RowVersion { get; set; }
+}
+
+// When updating:
+try
+{
+    _context.Update(property);
+    await _context.SaveChangesAsync();
+}
+catch (DbUpdateConcurrencyException)
+{
+    Console.WriteLine("Someone else already updated this property. Please refresh and try again.");
+}
+
+
+---
+
+🏠 Project Use (Buy & Sell Property App)
+
+In your Buy & Sell Property App, concurrency handling is useful when:
+
+Two sellers try to update the same property listing at the same time.
+
+You need to prevent overwriting each other’s changes.
+
+It ensures data accuracy (like correct price or address).
+
+
+Example:
+
+> If a user tries to edit an outdated property detail, EF Core warns the user to reload the latest data before saving.
+
+
+
+
+---
+
+⚖️ Trade-offs
+
+✅ Pros ⚠️ Cons
+
+Prevents data conflicts Adds extra database check
+Ensures data integrity Slightly slower for bulk updates
+Increases reliability Needs exception handling code
+
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -13850,10 +13940,7 @@ Combining both smartly gives high performance + data accuracy in enterprise apps
 ////////////////////////////////////////////////////////////////////////https://www.linkedin.com/in/tarun-kumar-480601184/recent-activity/all/
 Most Frequently Asked .NET Full Stack Interview Questions(covering .NET MVC, .NET Core, Web API, EF Core, SQL Server, Angular)
 
-3. What are Migrations in EF Core?
-4. Difference between Eager Loading vs Lazy Loading vs Explicit Loading.
-5. Explain Change Tracking in EF Core.
-6. What is the difference between AsNoTracking() vs Tracking queries?
+
 7. How to implement Transactions in EF Core?
 8. What is Concurrency Handling in EF Core?
 ---
