@@ -14097,17 +14097,6 @@ Improves trust — users won’t lose or overwrite each other’s updates.
 ////////////////////////////////////////////////////////////////////////https://www.linkedin.com/in/tarun-kumar-480601184/recent-activity/all/
 Most Frequently Asked .NET Full Stack Interview Questions(covering .NET MVC, .NET Core, Web API, EF Core, SQL Server, Angular)
 
-
-7. How to implement Transactions in EF Core?
-8. What is Concurrency Handling in EF Core?
----
-🔹 SQL Server
-1. What are ACID properties of a transaction?
-2. Difference between Clustered vs Non-Clustered Index.
-3. Explain Stored Procedure vs Function.
-4. Difference between Inner Join, Left Join, Right Join, Cross Join.
-5. What is a CTE (Common Table Expression)?
-6. How do Indexes improve performance?
 7. Difference between Normalization vs Denormalization.
 8. What are Transactions and Isolation Levels?
 9. How to optimize SQL queries?
