@@ -1833,7 +1833,13 @@ IN WHICH COLUMN YOU WILL APPLY THE INDEXING TO OPTIMIZE THIS QUERY. “select id
 WHAT IS THE DIFFERENCE BETWEEN STORED PROCEDURE AND FUNCTIONS?
 
 /////////////////////87)
-HOW TO OPTIMIZE A STORED PROCEDURE OR SQL QUERY? Below are some techniques to optimize a stored procedure: Use SET NOCOUNT ON Specify column names instead of using * in SELECT statement. Use schema name before objects or table names. Example: SELECT EmpID, Name FROM dbo.Employee Do not use DYNAMIC QUERIES. They are vulnerable to SQL Injections. Use EXISTS () instead of COUNT (). Example: IF( EXISTS (SELECT 1 FROM db.Employees)) is better than SELECT Count(1) FROM dbo. Employee Use TRANSACTION when required only
+HOW TO OPTIMIZE A STORED PROCEDURE OR SQL QUERY? 
+Below are some techniques to optimize a stored procedure: 
+->Use SET NOCOUNT ON Specify column names
+->instead of using * in SELECT statement.
+->Use schema name before objects or table names. Example: SELECT EmpID, Name FROM dbo.Employee
+->Do not use DYNAMIC QUERIES. They are vulnerable to SQL Injections. 
+->Use EXISTS () instead of COUNT (). Example: IF( EXISTS (SELECT 1 FROM db.Employees)) is better than SELECT Count(1) FROM dbo. Employee Use TRANSACTION when required only
 //Got it Abhishek 👍 Let’s make your answer interview-ready with Definition + Project Use + Trade-offs + Business Impact in very simple words.
 
 ❓ Interview Question: “How do you optimize a Stored Procedure or SQL Query?”
