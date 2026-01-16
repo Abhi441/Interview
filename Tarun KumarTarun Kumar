@@ -1494,3 +1494,91 @@ what is diffrence between kanban and sprint model ?
 what is task and sprint
 //////////////////////////////////////////////////////////////
 Hook
+////////////////////////////////////////////////////////// Can we put two directive in one Html element (Angular interview questions)
+✅ Angular Interview Question: Can we put two directives on one HTML element?
+🧒 1. Easiest Answer (5-year-old level)
+👉 Yes, we can put more than one directive on the same HTML element.
+Like wearing shirt + jacket + cap at the same time 👕🧥🧢.
+👶 2. Simple Human Definition
+In Angular, multiple directives can be applied to a single HTML element as long as they don’t conflict with each other.
+✅ 3. Simple Example (Very Common)
+Copy code
+Html
+<input type="text" *ngIf="isVisible" [(ngModel)]="name">
+Here:
+*ngIf → Structural directive
+ngModel → Attribute directive
+✔ Both work together.
+⚠️ Important Interview Rule (VERY IMPORTANT)
+❌ Two Structural Directives are NOT allowed on one element
+Copy code
+Html
+<div *ngIf="isVisible" *ngFor="let item of items"></div> ❌
+Why?
+Angular doesn’t know which one should run first.
+✅ Correct Way to Use Two Structural Directives
+Use <ng-container> 👇
+Copy code
+Html
+<ng-container *ngIf="isVisible">
+  <div *ngFor="let item of items">
+    {{ item }}
+  </div>
+</ng-container>
+✔ Now both work properly
+✔ No extra HTML added
+✅ Types of Directives (Quick Recall)
+Directive Type
+Example
+Multiple Allowed?
+Structural
+*ngIf, *ngFor
+❌ One per element
+Attribute
+ngClass, ngStyle
+✅ Many allowed
+Component
+<app-header>
+❌ Only one component
+✅ Real Project Example (Buy & Sell Property App)
+✔ Valid Example
+Copy code
+Html
+<div *ngIf="property.isAvailable"
+     [ngClass]="{'sold': !property.isAvailable}"
+     appHighlight>
+</div>
+Here:
+*ngIf → shows/hides property
+ngClass → applies style
+appHighlight → custom directive
+✔ Works perfectly.
+❌ Invalid Example
+Copy code
+Html
+<div *ngIf="isLoggedIn" *ngFor="let p of properties"></div> ❌
+✅ Trade-Off / Things to Remember
+👍 Advantages
+Clean HTML
+Powerful UI behavior
+Reusable logic
+👎 Disadvantages
+Structural directive limitation
+Can confuse beginners
+Wrong usage causes runtime errors
+✅ Business Impact (Simple Words)
+✔ Correct directive usage → smooth UI
+❌ Wrong usage → broken UI → user leaves app → business loss 💸
+In real estate apps:
+Property list not loading = lost customer
+UI glitch = no trust
+🎯 Interview One-Line Answer (BEST)
+Yes, Angular allows multiple directives on the same HTML element, but only one structural directive can be used per element. To use multiple structural directives, we wrap them using ng-container.
+🧠 Final Memory Trick
+👉 One structural + many attribute = OK
+👉 Two structural = NOT OK
+If you want:
+Custom directive example
+Deep internal working of structural directives
+Angular compiler explanation
+Just tell me 👍
