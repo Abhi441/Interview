@@ -1963,6 +1963,173 @@ Committed data would not be lost, even after power failure.
 WHAT ARE MAGIC TABLES IN SQL SERVER? Magic tables are the temporary logical tables that are created by the SQL server whenever there are insertion or deletion or update( D.M.L) operations. Types of magic tables: INSERTED – The recently inserted row gets added to the
 INSERTED magic table. DELETED – The recently deleted row gets added to the DELETED magic table. The use of magic tables are TRIGGERS.
 
+//
+Magic Tables in SQL Server (Interview Question Explained Simply)
+🧒 1. Easiest Definition (5-year-old level)
+👉 Magic tables are like CCTV cameras for a table.
+They secretly watch what data was added or removed.
+When something changes in a table, SQL Server says:
+“Let me keep a copy of old data and new data.”
+Those copies are called Magic Tables ✨
+👶 2. Simple Human Definition
+Magic tables are special temporary tables automatically created by SQL Server inside triggers to hold old and new data.
+They help SQL Server know:
+What was inserted
+What was deleted
+What was updated
+✅ What Are the Magic Tables?
+There are ONLY TWO magic tables:
+Magic Table
+What it Contains
+inserted
+New data
+deleted
+Old data
+⚠️ They exist ONLY inside triggers
+✅ When Do They Get Created?
+Automatically created when you use:
+INSERT
+UPDATE
+DELETE
+inside a trigger
+✅ Easy Visual Understanding
+UPDATE Example
+Copy code
+
+Old Data → deleted table
+New Data → inserted table
+SQL Server keeps both so you can compare.
+✅ Simple Example (Very Important)
+Table
+Copy code
+Sql
+Employee
+---------
+Id | Name | Salary
+Trigger Example
+Copy code
+Sql
+CREATE TRIGGER trg_Employee_Update
+ON Employee
+AFTER UPDATE
+AS
+BEGIN
+    SELECT * FROM inserted;
+    SELECT * FROM deleted;
+END;
+If You Run:
+Copy code
+Sql
+UPDATE Employee
+SET Salary = 60000
+WHERE Id = 1;
+Magic Table
+Contains
+deleted
+Salary = 50000
+inserted
+Salary = 60000
+👉 SQL Server magically stores both ✨
+✅ INSERT Scenario
+Copy code
+Sql
+INSERT INTO Employee VALUES (2, 'Amit', 40000);
+Magic Table
+Data
+inserted
+New row
+deleted
+Empty
+✅ DELETE Scenario
+Copy code
+Sql
+DELETE FROM Employee WHERE Id = 2;
+Magic Table
+Data
+deleted
+Removed row
+inserted
+Empty
+✅ Real Project Use Case (Buy & Sell Property App)
+🔹 Audit Log (VERY COMMON)
+When property price changes:
+Copy code
+Sql
+INSERT INTO PropertyPriceHistory
+SELECT Id, Price, GETDATE()
+FROM deleted;
+👉 Stores old price before update
+👉 Helps in price history tracking
+🔹 Security / Validation
+Copy code
+Sql
+IF EXISTS (
+    SELECT 1 FROM inserted
+    WHERE Price < 0
+)
+BEGIN
+    RAISERROR('Invalid Price', 16, 1);
+    ROLLBACK;
+END
+👉 Prevents wrong data
+🔹 Synchronization
+Sync updated property data
+Trigger notifications
+Maintain logs
+✅ Interview Trick Question ⚠️
+❓ Are magic tables real physical tables?
+❌ NO
+✔ They are virtual / temporary logical tables
+✅ Important Rules (Interview Gold)
+✔ Available only inside triggers
+✔ Can contain multiple rows (VERY IMPORTANT)
+✔ Must handle set-based operations
+✔ Automatically managed by SQL Server
+❌ Cannot be accessed outside trigger
+✅ Common Mistake (Interviewers Love This)
+❌ Wrong assumption:
+Copy code
+Sql
+SELECT * FROM inserted WHERE Id = 1;
+✔ Correct approach:
+Copy code
+Sql
+SELECT * FROM inserted;
+Because multiple rows can be affected.
+✅ Trade-Offs
+👍 Advantages
+Easy change tracking
+Built-in mechanism
+No manual temp tables
+Great for auditing
+👎 Disadvantages
+Trigger overhead
+Performance impact
+Can complicate debugging
+Poorly written triggers slow system
+✅ Business Impact (Simple Words)
+✔ Correct usage:
+Accurate audit logs
+Data security
+Compliance
+Trust in system
+❌ Wrong usage:
+Slow database
+Deadlocks
+High maintenance
+Business downtime 💸
+🎯 One-Line Interview Answer (BEST)
+Magic tables in SQL Server are the inserted and deleted virtual tables automatically created inside triggers to hold new and old data during insert, update, or delete operations.
+🧠 Memory Shortcut
+👉 INSERT → inserted
+👉 DELETE → deleted
+👉 UPDATE → both
+If you want next: ✅ Difference between Trigger vs Stored Procedure
+✅ Real audit log design
+✅ Performance-safe trigger patterns
+✅ Common interview traps
+Just say 👍
+
 ////////////////////////////////////////////82>
 What is NON-CLUSTERED INDEX ?
 A non -clustred index is stored at one place and table is stored in another place.So this is not physically stored.
