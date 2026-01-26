@@ -2915,6 +2915,13 @@ Angular app stores token (in memory/local storage).
 For every API call → Angular sends token in Authorization header.
 .NET API middleware validates token → allows or denies request.
 
+
+//
+////////////////////Security Best Practises
+1.> How do you secure WEB APIs in .NET Core ?
+-> Authentication(JWT,OAuth2 , OpenID Connect).
+->Authorization with poicies and roles.
+->Preventing over-posting with DTOs.
 ////////////////////////////////////////////////////////////////////////////////////////Performance
 1. Use Asynchronous Code (async/await) –
 
@@ -22042,12 +22049,6 @@ Using pagination with Skip and Take.
 -> Implementing bulk inserts with sqlBulkCopy.
 ->Leveraging Asynchronous data`base operations.
 
-
-////////////////////Security Best Practises
-1.> How do you secure WEB APIs in .NET Core ?
--> Authentication(JWT,OAuth2 , OpenID Connect).
-->Authorization with poicies and roles.
-->Preventing over-posting with DTOs.
 
 2>What is CORS AND WHY is it important in Angular applications ?
 Explanation of Corss-Origin Resourse Sharing.
