@@ -3036,7 +3036,30 @@ SUM() , Count() , AVG() .
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////Single IR 
-Single IR in live data processing means using a single integration Runtime(the engine of ADF / Synapse) to fetch transform ,and load live seaming data with low latency and less overhead , instead of manahging multiple IRs. 
+Single IR in Live Data Processing
+🧒 Easiest Definition (5-year-old level)
+👉 Only one live data message is handled at a time.
+Like:
+Teacher asks one question
+You answer that one question fully
+Then teacher asks next
+Not many questions together.
+👶 Simple Human Definition
+Single IR means the system processes one incoming data record (or event) at a time, independently.
+Here:
+IR = Input Record / Input Request / Input Row
+Single IR = one record per processing cycle
+🧠 Slightly Technical (Still Easy)
+In live data processing, Single IR means the system processes each incoming event/message one by one, instead of processing them in batches.
+✅ Example (Very Clear)
+Live Payment System 💳
+User A makes a payment
+System processes that one payment
+Updates balance
+Sends confirmation
+Moves to next payment
+This is Single IR processing.
+
 ///////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////What are design patter used in making Stock market application.
 1. Observer Pattern (very important in stock market apps)
