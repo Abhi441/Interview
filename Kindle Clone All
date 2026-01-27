@@ -3627,6 +3627,7 @@ Both are same instance (Singleton works!)
 What is latest version of c#
 What is Managed and umanged code
 What is use of delegate 
+-) Delegates enable loose coupling, callbacks, and event-driven programming in C#.
 What is diffrence between early and late binding.
 `What happens if the inherited interfaces have conflicting method names ?
 what is the Constructor Chaining in c#
