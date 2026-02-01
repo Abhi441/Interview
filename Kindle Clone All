@@ -24343,7 +24343,7 @@ throwError(() => 'Something went wrong')
 
 ////////////////////////
 What is observable? How to implement it.
-An Observable in RxJx helps us handle data strems like Api response or user input , in a smooth and flexible way.
+An Observable in Angular is a  stream od data that can emit multiple values over time, and consumers can subscribe to receive those values.
 
 1> Import Observable from Rxjx.
 2> Create the Observable that emits data.
@@ -24527,8 +24527,8 @@ Would you like to also learn how to handle errors with Interceptor or practice a
 
 
 /////////////////////////////////////////////////////////////////////////////////85
-1)Ceate a reactive loginform, setup email and password.
-2)Create one SubmitLogin method and check whether form is valid or not.
+///////////////////////////////////////33333333333///////////////////////////////////////////////////////////////////1)Ceate a reactive loginform, setup email and password.
+2Create one SubmitLogin method and check whether form is valid or not.
 3)if valid, call service(authservice) method(proceedLogin) and send the loginform value and use 
 subscribe method to get result from the observable.
 4)Store the token in  local storage of browser, so that for next subsequence request, only token is send , not the credentials again.
@@ -24828,6 +24828,1591 @@ If you want next:
 //////////////////////////////////////////////////////////////////////////////////////Write the linq query to filter age. is grater than 25.
 People.Where(p => p.Age > 25).ToList();
       
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+What is Angular ?
+Angular is a component-based framework for building structured, scalable and single page application.
+//What is the Angular Advantages ?
+1> it is relatively simple to build a single page application.
+2> Flexible and structural client application.
+3>Angular is cross Plateform and opensourse.
+4>Writing Reusable code is easy.
+5> Testing is easy.
+
+//What is the diffrence between Angular and Angular JS ? or What are the advantages of Angularover AngularJS ?
+ ///Angular js
+1> It is only supports javaScript.
+2> This framework has a model-view-controller(MVC) architecture.
+3>It does have CLI tool.
+4>It does not use Dependency Injection.
+5> It is not a so fast.
+
+/////Angular
+1>It support both JavaScript and TypeScript.
+2> This framework has a component archotecture.
+3> It has CLI
+4> It uses Dependency Injection.
+5> It also support moble browser.
+6> It is very fast.
+
+//////////////
+Study from File.
+
+What is NPM?
+--> NPM(Node Pakage Manager ) is an online repository from where you get thousands of free libraries which can be used in your angular application 
+
+//What is the cli
+--> The Angular Cli(command-line interface) is a tool that you use to initialise and deplop Angular applications directly from Terminal.
+Asynchrouns operstion :- Task running in the background without stopping the application.
+
+////////////////////////////////Q8)
+=) what is the role of Angular.json file in Angular
+=The angular.json file is the primary configuration file 
+for an Angular project.
+
+///////////////////////////Q9)
+What is the difference between JIT and AOT in Angular? V. IMP.
+
+
+Both JIT and AOT are used to compile Angular Typescript components to Javascript, because browser understands Javascript not Typescript.
+
+ANGULAR COMPILE
+
+DETAILS
+
+Just-in-Time (JIT)
+
+Compiles your application in the browser at runtime.
+
+ng serve --configuration development   # Uses JIT
+
+Ahead-of-Time (AOT)
+
+
+This was the default until Angular 8.
+
+Compiles your application and libraries at build time.
+
+This is the default starting in Angular 9.
+
+All the latest Angular versions use AOT to compile Typescript to Javascript.
+
+Advantage of AOT-Loading in AOT is much quicker than the JIT, because it already has compiled your code at build time.
+
+ng build --configuration production    # Uses AOT
+
+Interview Analogy:
+
+JIT is like cooking food when the guest arrives flexible, but makes them wait.
+
+AOT is like cooking in advance - ready to serve fast.
+/////////////////////
+What is the diffrence between JIO and AOT in Angular ?
+
+-->Both JIT and Aot are used to compile Angular Typescript component to Javascript , because browser understands Javascript not Typescript.
+
+Just-In-Time(JIT)   Compiles your application in the browser at runtime.
+
+Ahead-of-Time(AOT)  Compile your application and libraries at build time.
+
+
+-->All the latest Angulae versions use AOT to compile Typescript to Javascript.
+////////////////////////
+What is a Selector and Template
+Selector :- A selector is used to identify each component uniquely into the component tree.
+
+///////////////////////////////15
+What is Data Binding in Angular?V. IMP.
+
+
+Data binding is the way to communicate between your typescript
+code of your component and html view of component.
+
+
+
+
+Think of it like a two-way road between logic and UI.
+
+
+---
+
+🔄 Types of Data Binding (with simple explanation + example)
+
+
+---
+
+🔹 1.String Interpolation (One-Way Binding: Component → View)
+String Interpolation is a one-way data-binding technique that is
+used to transfer the data from a TypeScript code(component)
+to an HTML template (view).
+
+
+2. It is represented inside ({data); double curly braces.
+
+➡️ Show data from TypeScript in HTML using {{ }}.
+
+// app.component.ts
+export class AppComponent {
+  title = 'Hello Abhishek!';
+}
+
+<!-- app.component.html -->
+<h1>{{ title }}</h1>
+
+🧠 Interview line:
+
+> "Interpolation displays data from the component in the view using double curly braces."
+
+
+
+
+---
+
+🔹 2. Property Binding (One-Way Binding: Component → View)
+
+➡️ Property binding is a superset of interpolation.
+It can do whatever interpolation can do. In addition, it can set an
+element property to a non-string data value like Boolean.
+
+<input [value]="title" />
+
+🧠 Interview line:
+
+> "Property binding sets element properties using square brackets []."
+
+
+
+
+---
+
+🔹 3. Event Binding (One-Way: View → Component)
+Event binding is used to handle the events raised by the user actions like button click.
+
+➡️ When something happens in the UI (like button click), call a method in TypeScript.
+
+<button (click)="showMessage()">Click Me</button>
+
+showMessage() {
+  alert("Hello from Angular!");
+}
+
+🧠 Interview line:
+
+> "Event binding listens to user actions like clicks and calls a method using ()."
+
+
+
+
+---
+
+🔹 4. Two-Way Binding (Component ⇄ View)
+Two-way data binding in Angular will help users to
+exchange data from the view to component and
+then from component to the view at the same time.
+➡️ Sync data in both directions using [(ngModel)].
+
+// app.component.ts
+export class AppComponent {
+  name = '';
+}
+
+<input [(ngModel)]="name" />
+<p>Hello {{ name }}</p>
+
+🧠 Interview line:
+
+> "Two-way binding uses [(ngModel)] to sync data between the UI and the component."
+
+
+
+✔️ Don't forget to import FormsModule in app.module.ts to use ngModel.
+
+
+---
+
+✅ Final Summary (for interview):
+
+> "Data Binding in Angular connects HTML and TypeScript.
+It lets data flow one-way (from component to UI or UI to component), or two-way using ngModel.
+Angular supports 4 types: Interpolation, Property Binding, Event Binding, and Two-Way Binding."
+
+
+/////////////////////////////////////
+Absolutely, Abhishek! Here's a clean, human-friendly and interview-ready answer for Q20 to Q26 — with examples and simple words so even a non-tech person can understand.
+
+
+---
+
+✅ Q20. What are Directives in Angular? What are the types?
+
+Answer:
+
+> Directives are instructions in the HTML that tell Angular to do something.
+
+
+
+They are used to change the appearance, behavior, or layout of elements in the DOM.
+
+
+---
+
+✅ Three Types of Directives:
+
+Type	What It Does	Example
+
+1. Component Directive	Custom HTML element (comes with template + logic)	<app-header></app-header>
+2. Structural Directive	Changes structure/layout of DOM (adds/removes HTML)	*ngIf, *ngFor, *ngSwitch
+3. Attribute Directive	Changes the look or behavior of an element	[ngStyle], [ngClass]
+
+
+
+---
+
+✅ Q21. What is *ngIf Structural Directive?
+
+Answer:
+
+> *ngIf is used to show or hide elements based on a condition.
+
+
+
+📦 Think of it like: "If this is true, show it. If false, hide it."
+
+✅ Example:
+
+<p *ngIf="isLoggedIn">Welcome, Abhishek!</p>
+
+In TypeScript:
+
+isLoggedIn = true;
+
+If isLoggedIn is false, the <p> will not be in the HTML at all.
+
+
+---
+
+✅ Q22. What is *ngFor Structural Directive?
+
+Answer:
+
+> *ngFor is used to loop through a list and show multiple elements.
+
+
+
+📦 Think of it like: "For each item in the list, show this block."
+
+✅ Example:
+
+<ul>
+  <li *ngFor="let user of users">{{ user }}</li>
+</ul>
+
+users = ['Abhishek', 'Raj', 'Kiran'];
+
+This will create 3 <li> items.
+
+
+---
+
+✅ Q23. What is *ngSwitch Structural Directive?
+
+Answer:
+
+> *ngSwitch is used to switch between views based on a value — like a switch-case.
+
+
+
+✅ Example:
+
+<div [ngSwitch]="role">
+  <p *ngSwitchCase="'admin'">Admin Panel</p>
+  <p *ngSwitchCase="'user'">User Dashboard</p>
+  <p *ngSwitchDefault>Guest View</p>
+</div>
+
+role = 'admin';
+
+It will show "Admin Panel".
+
+
+---
+
+✅ Q24. What is [ngStyle] Attribute Directive?
+
+Answer:
+
+> ngStyle is used to apply CSS styles dynamically.
+
+
+
+✅ Example:
+
+<p [ngStyle]="{ color: isActive ? 'green' : 'red' }">
+  Status: {{ isActive ? 'Active' : 'Inactive' }}
+</p>
+
+isActive = true;
+
+The <p> text will be green if isActive is true.
+
+
+---
+
+✅ Q25. What is [ngClass] Attribute Directive?
+
+Answer:
+
+> ngClass is used to add or remove CSS classes dynamically.
+
+
+
+✅ Example:
+
+<p [ngClass]="{ 'online': isOnline, 'offline': !isOnline }">
+  Connection Status
+</p>
+
+.online { color: green; }
+.offline { color: red; }
+
+isOnline = true;
+
+The <p> will get class="online" when online.
+
+
+---
+
+✅ Q26. What is the difference between Component, Structural, and Attribute Directives?
+
+Feature	Component	Structural Directive	Attribute Directive
+
+What it does	Creates a custom UI element	Adds/removes elements	Modifies existing element
+Example	<app-user>	*ngIf, *ngFor	[ngStyle], [ngClass]
+Template required?	✅ Yes	❌ No	❌ No
+Use case	UI & logic container	Show/hide or repeat HTML	Change CSS, behavior
+
+
+🧠 Analogy:
+
+Component = Your own full widget
+
+Structural = Decides what HTML appears
+
+Attribute = Styles or behaviors applied to HTML
+
+
+
+---
+
+Let me know if you'd like a quiz or real project task using these!
+
+/////////////////////////////////////
+
+Absolutely, Abhishek! Here's a very easy-to-remember, interview-friendly, and code-based explanation for each Angular question (Q27 to Q30 + repeated Q20). Think of these as smart short answers with real understanding.
+
+
+---
+
+✅ Q27. What is a Decorator in Angular?
+
+> Decorator is a special function in Angular that adds extra features to classes, properties, methods, or parameters.
+
+
+
+You’ll see them starting with @ symbol like @Component, @Input, @Injectable.
+
+
+---
+
+✅ Example:
+
+@Component({
+  selector: 'app-user',
+  templateUrl: './user.component.html'
+})
+export class UserComponent {}
+
+🧠 This tells Angular:
+“Hey, this class is a component and it has a selector + template.”
+
+
+---
+
+✅ Q28. What are the types of Decorators in Angular?
+
+There are 4 main types:
+
+Decorator	Use Case	Example
+
+@Component()	Declares a class as a component	@Component({...})
+@Directive()	Declares a custom directive	@Directive({...})
+@Injectable()	Marks a class for Dependency Injection	@Injectable()
+@Input() / @Output()	For component communication (parent-child)	@Input() name: string;
+
+
+
+---
+
+✅ Q29. What are Pipes in Angular?
+
+> Pipes are used to transform data in the template.
+
+
+
+🧠 Example: Format dates, currency, uppercase/lowercase.
+
+
+---
+
+✅ Built-in Pipe Example:
+
+<p>{{ today | date:'fullDate' }}</p>
+
+today = new Date();
+
+Output: Wednesday, May 29, 2025
+
+
+---
+
+✅ Types of Pipes:
+
+Type	Example	Description
+
+Built-in	date, uppercase, currency, json, percent	Already provided by Angular
+Custom	You create your own	@Pipe({ name: 'myPipe' })
+
+
+
+---
+
+✅ Parameterized Pipe:
+
+> You pass a parameter to the pipe for customization.
+
+
+
+✅ Example:
+
+<p>{{ price | currency:'INR':'symbol' }}</p>
+
+Converts number to: ₹1,000.00
+
+
+---
+
+✅ Q30. What is Chaining Pipes?
+
+> You can apply multiple pipes together, one after the other.
+
+
+
+✅ Example:
+
+<p>{{ name | uppercase | slice:0:4 }}</p>
+
+If name = "abhishek", output = ABHI
+(First uppercase, then slice first 4 letters)
+
+
+---
+
+✅ Q20 (Repeated). What are Directives? Types?
+
+Already answered above, but in short:
+
+> Directives are instructions in the HTML to tell Angular how to behave.
+
+
+
+
+---
+
+Type	Example	Use
+
+Structural	*ngIf, *ngFor	Add/remove elements
+Attribute	[ngStyle], [ngClass]	Change look/behavior
+Component	@Component()	Custom element
+
+
+
+---
+
+🔚 Summary Table (Quick Glance)
+
+Feature	Purpose	Example
+
+Decorator	Add metadata to class/property	@Component, @Input
+Pipe	Transform data in template	`{{ name
+Directive	Control HTML layout/behavior	*ngIf, [ngClass]
+
+
+
+---
+
+Let me know if you'd like mock interview questions or project-based tasks using these!
+
+
+
+
+--> Where to show.
+
+Absolutely, Abhishek! Here's the interview-ready, simple explanation, and code examples for each question from Q31 to Q36 — one by one. You’ll be able to explain these like a top 1% developer in the most human-friendly way!
+
+
+---
+
+✅ Q31. What is a Service in Angular?
+
+> A Service is a reusable TypeScript class in Angular used to share logic, fetch data, or hold values across components.
+
+
+
+🧠 Think of a service like a helper file.
+
+
+---
+
+✅ Q32. How to create a Service in Angular?
+
+Use Angular CLI:
+
+ng generate service my-data
+
+This creates:
+
+my-data.service.ts
+
+
+
+---
+
+✅ Example:
+
+// my-data.service.ts
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class MyDataService {
+  getUserName() {
+    return "Abhishek Singh";
+  }
+}
+
+
+---
+
+//////////////////////////////////////////////////////////////////////✅ Q33. How to use Dependency Injection with a Service in Angular?
+
+Defination : -> Dependency Injection(DI) is a design patter used in Software developement to provide an 
+object's dependencies from outside rather than creating them inside, which makes the code loosely coupled and easier to maintain.
+
+//4 Steps to inject service dependency in the component :
+ 1) First step is create the service - (LoggingService).
+//1. Create the Service
+@Injectable()
+export class LoggingService
+{
+logToConsole()
+{
+console.Log("clicked logged");
+}
+}
+
+2. Second step is, set the providers as the service name(LoggingService) , inside the any component decorator as shown below.
+We inject the service in a component’s constructor.
+@Component(
+{
+selector : 'app-login',
+templateUrl: './login.component.html';
+providers : [LoggingService]
+})
+
+3) Third step is, inside the constructor parameter create a new property(loggingService) and then assign the Service type(LoggingService) hee.
+@Component(
+{
+selector : 'app-login',
+templateUrl: './login.component.html';
+providers : [LoggingService]
+})
+
+export class LoginComponent
+{
+ constructor(private loggingService : LoggingService)
+{
+
+}
+}
+
+4.Finally use the property(loogingService), to call the method(logToConsole) of the LoggingService.
+
+export class LoginComponent
+{
+ constructor(private loggingService : LoggingService)
+{
+  this.loggingService.LogToConsole();
+}
+}
+✅ Example:
+
+// app.component.ts
+import { Component } from '@angular/core';
+import { MyDataService } from './my-data.service';
+
+@Component({
+  selector: 'app-root',
+  template: `<p>{{ name }}</p>`
+})
+export class AppComponent {
+  name: string = '';
+
+  constructor(private myService: MyDataService) {
+    this.name = myService.getUserName(); // using the service
+  }
+}
+
+🧠 This is called Constructor Injection.
+
+
+---
+
+✅ Q34. What is Hierarchical Dependency Injection?
+
+> Angular creates a tree of injectors. Each component can have its own service instance or share a global one.
+
+
+
+🧠 Example:
+
+Service in @Injectable({ providedIn: 'root' }) → global singleton.
+
+Service provided in component.ts → new instance only for that component.
+
+
+✅ Example:
+
+@Component({
+  selector: 'child-component',
+  providers: [MyDataService]  // new instance just for this component
+})
+
+This is useful when:
+
+You want separate copies of a service (e.g., counters, temporary storage).
+
+
+
+---
+
+✅ Q35. What is a Provider in Angular?
+
+> A provider tells Angular how to create and inject a service.
+
+
+
+You define it in:
+
+@Injectable({ providedIn: 'root' }) → auto global provider.
+
+OR inside providers: [] in module/component.
+
+
+✅ Example:
+
+@NgModule({
+  providers: [MyDataService]  // this is a provider
+})
+
+
+---
+
+✅ Q36. What is the role of @Injectable in a Service?
+
+> @Injectable() tells Angular that this class can be injected using Dependency Injection.
+
+
+
+✅ Example:
+
+@Injectable({
+  providedIn: 'root'
+})
+export class MyDataService {
+  // Angular knows this is injectable now
+}
+
+Without @Injectable, Angular will throw an error if the service has dependencies.
+
+
+---
+
+🔚 Summary Table (Quick Recap):
+
+Topic	In Simple Words
+
+Service	Reusable class for logic or data
+Create Service	ng generate service name
+DI with Service	Inject in constructor
+Hierarchical DI	Separate or shared instance depending on scope
+Provider	How Angular knows to create the service
+@Injectable	Marks service as injectable
+
+
+
+---
+
+Want a quick real-world example of a Weather API service or Login Auth service to master this?
+
+///////////////////////////////////////////////////////////////////////////////////////37) What are parent - child Component ?
+Absolutely, Abhishek! Let’s break this down in the most simple, interview-friendly way, with a real working code example to show Parent-Child Components in Angular.
+
+
+---
+
+✅ What are Parent-Child Components in Angular?
+
+> In Angular, Parent-Child Components are two components where:
+
+
+
+The Parent component holds the data.
+
+The Child component receives that data and may also send something back.
+
+
+🧠 You can think of it like a father passing a message to his son, or a son informing his father.
+
+
+---
+
+✅ How Does Communication Happen?
+
+@Input() → Used to send data from Parent to Child
+
+@Output() → Used to send data from Child to Parent
+
+
+
+---
+
+🔷 1. Parent to Child (using @Input())
+
+✅ Step 1: Child Component Code
+
+// child.component.ts
+import { Component, Input } from '@angular/core';
+
+@Component({
+  selector: 'app-child',
+  template: `<h3>Hello {{ userName }}</h3>`
+})
+export class ChildComponent {
+  @Input() userName: string = '';  // receiving data
+}
+
+
+---
+
+✅ Step 2: Parent Component Code
+
+// parent.component.ts
+@Component({
+  selector: 'app-parent',
+  template: `<app-child [userName]="parentName"></app-child>`
+})
+export class ParentComponent {
+  parentName = 'Abhishek';  // sending data
+}
+
+
+---
+
+🔷 2. Child to Parent (using @Output())
+
+✅ Step 1: Child Component Code
+
+// child.component.ts
+import { Component, Output, EventEmitter } from '@angular/core';
+
+@Component({
+  selector: 'app-child',
+  template: `<button (click)="sendMessage()">Send</button>`
+})
+export class ChildComponent {
+  @Output() messageEvent = new EventEmitter<string>();
+
+  sendMessage() {
+    this.messageEvent.emit('Hello from child!');
+  }
+}
+
+
+---
+
+✅ Step 2: Parent Component Code
+
+// parent.component.ts
+@Component({
+  selector: 'app-parent',
+  template: `
+    <app-child (messageEvent)="receiveMessage($event)"></app-child>
+    <p>{{ message }}</p>
+  `
+})
+export class ParentComponent {
+  message: string = '';
+
+  receiveMessage(msg: string) {
+    this.message = msg;
+  }
+}
+
+
+---
+
+💡 Interview Summary Answer:
+
+> Parent-Child communication in Angular is when one component (Parent) shares or receives data with another component (Child).
+We use:
+
+
+
+@Input() → to send data from parent to child.
+
+@Output() with EventEmitter → to send data back from child to parent.
+
+
+
+---
+
+Would you like to also practice Sibling to Sibling communication (using a shared service)? Let me know!
+
+/////////////////////////////////////////////////////////////////////////////////////What is @Input() Decorator in Angular ?
+Absolutely, Abhishek! Let's break this down into super simple terms with interview-ready answers and code so that you never have to memorize — just understand clearly.
+
+
+---
+
+✅ Q: What is @Input() Decorator in Angular?
+
+🎯 Interview-Friendly Answer:
+
+> @Input() is a built-in Angular decorator that allows a child component to receive data from its parent component.
+
+
+
+Think of it like: 📤 Parent sends data → 📥 Child receives it using @Input().
+
+
+---
+
+✅ Real-life Analogy:
+
+🧠 Like a parent writing their child’s name on a lunchbox → the child reads it and knows it's theirs.
+
+
+---
+
+✅ How to Transfer Data from Parent to Child using @Input()?
+
+
+---
+
+🔹 1. Create Child Component
+
+✅ child.component.ts
+
+import { Component, Input } from '@angular/core';
+
+@Component({
+  selector: 'app-child',
+  template: `<h3>Welcome, {{ name }}!</h3>`
+})
+export class ChildComponent {
+  @Input() name: string = '';  // receives data from parent
+}
+
+
+---
+
+🔹 2. Use Child Component inside Parent Template
+
+✅ parent.component.ts
+
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-parent',
+  template: `<app-child [name]="parentName"></app-child>`
+})
+export class ParentComponent {
+  parentName = 'Abhishek';  // sending this to child
+}
+
+
+---
+
+🔹 Output on Browser:
+
+<h3>Welcome, Abhishek!</h3>
+
+
+---
+
+✅ Summary for Interview:
+
+> In Angular, @Input() is used when you want to send data from a parent to a child component.
+You declare a property in the child with @Input() and bind data to it using square brackets [property] in the parent.
+
+
+
+
+---
+
+💡 Bonus Tip:
+
+You can also rename the property using an alias:
+
+@Input('customName') name: string;
+
+And use it like:
+
+<app-child [customName]="parentName"></app-child>
+
+
+---
+
+Would you like the next one: @Output() – Child to Parent communication?
+
+////////////////////////////////////////////////////////////45) What is Routing ? How to setup Routing ?
+=> Routing helps in navigating from one view to another view with the help of URL.
+=> Router-outlet in Angular works as a placeholder, which is used to load the diffrent component dynamically based on the activated component via Routing.
+
+////////////////////////////////////////////////////////////47)What is Router Links ?
+RouterLink is used to navigate to a diffrent route.
+//////////////////////////////////////////////////// 51) What is Observable ? How to implement Observable ?
+=>Observable are used to sream data to multile components.
+=>Basically, to received the data from Api's and continuously stream it to the multiple components.
+=> It's a 3 step process
+1) Import Observable from RxjS Library.
+2) Create Observable & Emit data.
+3) Finally subscribe the data.
+
+=>When a user opens the property listing page, Angular uses Observable  to fetch property data from Api.
+=>If API sends new updates, UI will update automatically.
+
+//Trade Off
+Pros : Real-time, async, powerful for stream(chat, live property updates).
+Cons : If you don't unscribe(in long-living components), it may cause memory leaks.
+
+///////////////////////////////////////////////////////////////////////////52) What is the role of HTTPClient in Angular ?
+=> HttpClient is a build-in service class provided by Angular, which  is used to perform HTTP requests(GET/POST/PUT/DELETE) to send and receive data from Api or Service.
+=> Pakege name is - @angular/common/http packages
+
+//Project Use
+=> When a buyer opens the app,HttpClient fetches property listings from backend API.
+=> When a seller adda a property, HttpClient sends the property data to the backend using POST.
+=> It's like the bridge between Angular frontend and .NET backend.
+
+
+
+
+
+Templete --> A Templete is a HTML View of an Angular component.
+Templete --> What to show
+
+->
+->
+->
+->
+->
+->
+
+Synchrouns operation :- Task excute one after another and app waits for each task to complete 
+moving to the next one.
+
+->
+  ->
+    ->
+      ->
+        ->
+          ->
+
+
+
+Observables                                 Promises
+
+-> Emit multiple value over a          Emit single value over the time
+   period of time.
+
+
+->Are lazy. they're not excuted until          -> excute Immediate after creation
+  we subscribe to they  using the subscriptiom
+
+-> have cancell by  unsubcribe.            -> Are not cancelled.
+
+
+/////////////////////////
+RxJx
+Rxjs is library of javaScript used in angular for handling asynchrouns data such as Api calls. It provide observables.
+RxJS (Reactive Extensions for JavaScript) is a library for handling data streams (like events, API calls, user clicks, typing, etc.) in a powerful way.
+In Angular, RxJS is mainly used with Observables to handle async operations (like API calls, user input, timers, WebSocket messages).
+
+//What are RxJS Operators?
+
+👉 In RxJS (used in Angular), operators are like tools you use to work with data streams (Observables).
+They help you transform, filter, combine, or handle errors in async data (like API calls, events, etc.).
+
+Think of them like different filters in Instagram 📸 → you apply a filter to modify the picture.
+Similarly, RxJS operators modify data streams.
+
+Types of RxJS Operators (with Easy Example)
+
+//1. Creation Operators – Create Observables
+
+of() → creates observable from values.
+
+from() → creates observable from array/promise.
+
+
+import { of, from } from 'rxjs';
+
+of(1, 2, 3).subscribe(x => console.log(x)); // 1,2,3
+from([10, 20, 30]).subscribe(x => console.log(x)); // 10,20,30
+//
+2. Transformation Operators – Change the data
+
+map() → transform data.
+
+mergeMap(), switchMap(), concatMap() → handle async API calls.
+
+
+import { of } from 'rxjs';
+import { map } from 'rxjs/operators';
+
+of(2, 4, 6).pipe(map(x => x * 10)).subscribe(console.log); // 20, 40, 60
+
+
+---
+
+3. Filtering Operators – Pick only what you need
+
+filter() → only values that match condition.
+
+take() → take first N values.
+
+first() / last() → pick first or last.
+
+
+import { of } from 'rxjs';
+import { filter } from 'rxjs/operators';
+
+of(1, 2, 3, 4, 5).pipe(filter(x => x % 2 === 0)).subscribe(console.log); // 2, 4
+
+
+---
+
+4. Combination Operators – Combine streams
+
+merge() → merge multiple observables.
+
+concat() → run one after another.
+
+forkJoin() → wait for all observables to complete.
+
+combineLatest() → combine latest values from multiple streams.
+
+
+
+---
+
+5. Utility Operators – Helpers
+
+tap() → debug/log values.
+
+delay() → delay emission.
+
+timeout() → throw error if not completed in time.
+---
+
+6. Error Handling Operators
+
+catchError() → handle errors gracefully.
+
+retry() → retry observable if failed.
+
+
+import { throwError, of } from 'rxjs';
+import { catchError } from 'rxjs/operators';
+
+throwError(() => 'Something went wrong')
+  .pipe(catchError(err => of('Default Value')))
+  .subscribe(console.log); // Output: "Default Value"
+
+////////////////////////
+What is observable? How to implement it.
+An Observable in RxJx helps us handle data strems like Api response or user input , in a smooth and flexible way.
+
+1> Import Observable from Rxjx.
+2> Create the Observable that emits data.
+3> Subscribe to the component.
+
+/////////////////////
+What is the role of HttpClient in Angular ?
+ 
+Httpclient is build in service provided by angular to http requests(Get , post , put , delect 
+to send and receive the data from api or server.
+
+///////////////////////////
+What are Angualr Forms ? What are the type of Angualar Forms  ?
+
+->What forms are used to handle user's input and manage form data in an application.
+->Two type of Angular form.
+
+Template Driven Forms             
+-> Most of the code Written in Html.
+
+-> Add FormModule in AddModule to Activate It.
+
+-> best for simple form and have less control.
+
+
+  Reactive Forms
+
+-> Most of the code Written in TypeScript file.
+
+-> Add ReactiveModule in AppModule to Activate it.
+-> Best for large App Application and have more control.
+
+
+/////////////////////////////
+What is Authentication and Authorization in Angular
+
+Authentication : - Confirms who the user is(valid login or not)
+Autherisation :- Check what the user is allowed to do(access control for resourse)
+
+//////////////////////////////////////
+Can I give the answer for interview, What is the role of HttpClinet in Angular : HttpClient is built in service provided by 
+angular for Http request (Get, post, patch , delete) to send and receive the request , if wrong pls correct with most easiest word for human being
+
+///////////////////////////////////////87
+what is the interceptor,When and why we should use 
+Great question, Abhishek! Let’s break down HTTP Interceptor in Angular with the most human-friendly explanation, real-world analogy, and simple code — so it’s interview-perfect and you don’t need to memorize anything.
+
+
+---
+
+✅ Q: What is an HTTP Interceptor in Angular?
+
+🧠 Easy Answer (Human Words):
+
+> An HTTP Interceptor is like a security checkpoint.
+It sits in the middle of every API request or response and lets you:
+
+
+
+Add something (like a token),
+
+Change something (like a header),
+
+Or handle errors (like unauthorized access).
+
+
+It runs before the request goes out and after the response comes in.
+
+
+---
+
+🔐 Real-World Analogy:
+
+Think of it like a security guard at a gate:
+
+Before you go out: the guard adds your ID badge (token).
+
+After you come back: the guard checks your package (response).
+
+
+
+---
+
+✅ Why & When to Use Interceptor?
+
+📌 Use it when you want to:
+
+Automatically attach JWT tokens to every request.
+
+Log every request or response.
+
+Catch errors globally in one place (like 401 Unauthorized).
+
+Add custom headers, loading spinners, etc.
+
+
+
+---
+
+✅ Code Example: Add Token to All Requests
+
+
+---
+
+🔹 Step 1: Create the Interceptor
+
+import { Injectable } from '@angular/core';
+import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+@Injectable()
+export class AuthInterceptor implements HttpInterceptor {
+  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    const token = 'sample-jwt-token'; // In real life, get it from localStorage or AuthService
+
+    const clonedRequest = req.clone({
+      setHeaders: {
+        Authorization: `Bearer ${token}`
+      }
+    });
+
+    return next.handle(clonedRequest);
+  }
+}
+
+
+---
+
+🔹 Step 2: Register Interceptor in App Module
+
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './auth.interceptor';
+
+@NgModule({
+  // ...
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ]
+})
+export class AppModule { }
+
+
+---
+
+🔍 What Happens Now:
+
+✅ Every time your Angular app sends an HTTP request, the interceptor automatically adds the token.
+
+
+---
+
+📝 Summary for Interview (One-liners):
+
+Interceptor is a middleman for HTTP requests/responses.
+
+Used to add token, handle errors, log data, etc.
+
+Helps avoid repeating code in every service or request.
+
+Think of it like a security filter for your API calls.
+
+
+
+---
+
+Would you like to also learn how to handle errors with Interceptor or practice a mock interview-style question?
+
+////////////////////////////////////////////////////////////////////////////83
+1)POST(USERNAME, Password).
+2)Authenticate and Create JET Token.
+3)Return Reponse(JWT Tokens)
+4)Soted the JWT TOKEN at stored storage.
+5)Send Back Requested data(JWT token : Header)
+6)Validate token signature
+7)Send Data.
+
+
+
+/////////////////////////////////////////////////////////////////////////////////85
+1)Ceate a reactive loginform, setup email and password.
+2)Create one SubmitLogin method and check whether form is valid or not.
+3)if valid, call service(authservice) method(proceedLogin) and send the loginform value and use 
+subscribe method to get result from the observable.
+4)Store the token in  local storage of browser, so that for next subsequence request, only token is send , not the credentials again.
+5) create Service(AuthService).
+6) Inside service set API url()apiurl.
+7) Setup HTTPCLIENT to send the request using API url.
+8)Use Observable to received the data or token from the request and return it to the component. 
+//////////////////////////////////Q92
+//What are various ways to communicate between the component.
+Q>what are the various ways to communicate between the components.
+1>@Input @Output
+2>Ng - content
+3>@ViewChild   @ViewChildren
+4>@ContentChild @ContentChilren
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////Interciew Question
+//////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+Create a custom Angular directive to convert color of highlighted text to green?
+<div>Hello</div>, on hoving hello it will change the colour in Angular 18
+
+
+//
+Here’s how you can create a custom Angular 18 directive that changes the color of the text to green when you hover over it:
+
+
+---
+
+1️⃣ Create the Directive
+
+ng generate directive highlight-green
+
+
+---
+
+2️⃣ highlight-green.directive.ts
+
+import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
+
+@Directive({
+  selector: '[appHighlightGreen]'
+})
+export class HighlightGreenDirective {
+
+  constructor(private el: ElementRef, private renderer: Renderer2) { }
+
+  @HostListener('mouseenter') onMouseEnter() {
+    this.renderer.setStyle(this.el.nativeElement, 'color', 'green');
+  }
+
+  @HostListener('mouseleave') onMouseLeave() {
+    this.renderer.removeStyle(this.el.nativeElement, 'color');
+  }
+
+}
+
+
+---
+
+3️⃣ Use It in HTML
+
+<div appHighlightGreen>Hello</div>
+
+Explanation:
+
+@HostListener('mouseenter') → triggers when you hover over the element.
+
+@HostListener('mouseleave') → resets when you move the mouse away.
+
+Renderer2 → safely updates DOM styles.
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////Angular Performance
+/////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////
+1. LozyLoading :- Load only the parts of the app when they are needed.
+2. OnPuch Change Detection :- Update only what changes instead of checking everything.
+3. TrackBy in ngFor :- Reuse existing list items  instead of rebuilding them.
+4. ///////////////////////////////////////////Optiming Imaze And Assets :- Call only when required ,and cache results if posssible.
+Exalanation
+Great question 👍. Optimizing images and assets in Angular is an important part of making your app fast, especially when it runs in browsers with slow internet or on mobile. Let me break it down simply and practically (and how you can say in an interview):
+
+
+---
+
+🔹 1. Use Optimized Image Formats
+
+Instead of heavy .png or .jpeg, use modern formats like WebP or AVIF (much smaller size, better quality).
+
+Example:
+
+<img src="assets/images/property.webp" alt="Property" />
+
+This reduces image size by 30–50%, making the app load faster.
+
+
+
+---
+
+🔹 2. Responsive Images
+
+Use different image sizes for desktop and mobile.
+
+Example:
+
+<img 
+  src="assets/images/property-small.webp"
+  srcset="assets/images/property-large.webp 1024w, 
+          assets/images/property-medium.webp 768w"
+  sizes="(max-width: 768px) 100vw, 50vw"
+  alt="Property"
+/>
+
+This ensures users don’t download a large image on small screens.
+
+
+
+---
+
+🔹 3. Lazy Loading Images
+
+Load images only when they come into view (instead of all at once).
+
+In Angular, you can simply add:
+
+<img src="assets/images/property.webp" loading="lazy" alt="Property">
+
+Or use a third-party directive (like ng-lazyload-image).
+
+
+
+---
+
+🔹 4. Compress & Optimize Assets
+
+Before deploying, compress images using tools like:
+
+ImageOptim / TinyPNG / Squoosh.
+
+
+For assets (JS, CSS, JSON), Angular CLI automatically does minification & compression in production build:
+
+ng build --configuration production
+
+This reduces file size, improves load speed.
+
+
+
+---
+
+🔹 5. Use CDN for Heavy Assets
+
+Instead of serving large images (like property photos) from your Angular app, serve them via CDN (CloudFront, Cloudflare, etc.).
+
+Example:
+
+<img src="https://cdn.myapp.com/property1.webp" alt="Property">
+
+
+
+---
+
+✅ In Interview Answer (Simple):
+"In our Angular project, we optimize images and assets by using modern formats like WebP, responsive images for mobile/desktop, lazy loading images so they load only when visible, and compressing images before deployment. We also rely on Angular production build for minification and sometimes use a CDN for faster delivery of large assets like property photos."
+
+
+---
+
+👉 Do you want me to also cover Angular-specific asset optimizations (like preloading, caching, and service workers for PWA)? That’s usually asked in interviews as a follow-up.
+
+5. Use Async Pipes :- Helps Angular handle data without extra manual subscription.
+2.//////////////////////////////////////////////////////////////////////////////////////////////Custum pipes   
+/////////////////////////////////////////////////////////////////////////////////////////////////Async Pipes 
+/////////////////////////////////////////////////////////////////////////////////////////////////state management      
+/////////////////////////////////////////////////////////////////////////////////////////////////Redix 
+/////////////////////////////////////////////////////////////////////////////////////////////////Subjective Observable
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////Parent child communication
+////////////////////////////Parent -> Child
+parent send the data down to child
+
+<h2>Parent Component</h2>
+<app-child [message] = "parentMessage"></app-child>
+
+imports : [ChildComponent],
+export class ParentComponent
+{
+ parentMessage = "Hello from Parent";
+}
+
+export class ChildChildren
+{
+  @Input() message!: string ;
+  // data comes from parent. 
+}
+///////////////////////////////////////////////////////////////////////////////////////////////////Scope of Heirarchy
+
+5. Use Async Pipes :- Helps Angular handle data without extra manual subscription.
+2.//////////////////////////////////////////////////////////////////////////////////////////////Custum pipes   
+/////////////////////////////////////////////////////////////////////////////////////////////////Async Pipes 
+/////////////////////////////////////////////////////////////////////////////////////////////////state management      
+/////////////////////////////////////////////////////////////////////////////////////////////////Redix 
+/////////////////////////////////////////////////////////////////////////////////////////////////Subjective Observable
+/////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////Angular Performance
+/////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////
+1. LozyLoading :- Load only the parts of the app when they are needed.
+2. OnPuch Change Detection :- Update only what changes instead of checking everything.
+3. TrackBy in ngFor :- Reuse existing list items  instead of rebuilding them.
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+Create a custom Angular directive to convert color of highlighted text to green?
+<div>Hello</div>, on hoving hello it will change the colour in Angular 18
+
+
+//
+Here’s how you can create a custom Angular 18 directive that changes the color of the text to green when you hover over it:
+
+
+---
+
+1️⃣ Create the Directive
+
+ng generate directive highlight-green
+
+
+---
+
+2️⃣ highlight-green.directive.ts
+
+import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
+
+@Directive({
+  selector: '[appHighlightGreen]'
+})
+export class HighlightGreenDirective {
+
+  constructor(private el: ElementRef, private renderer: Renderer2) { }
+
+  @HostListener('mouseenter') onMouseEnter() {
+    this.renderer.setStyle(this.el.nativeElement, 'color', 'green');
+  }
+
+  @HostListener('mouseleave') onMouseLeave() {
+    this.renderer.removeStyle(this.el.nativeElement, 'color');
+  }
+
+}
+
+
+---
+
+3️⃣ Use It in HTML
+
+<div appHighlightGreen>Hello</div>
+
+Explanation:
+
+@HostListener('mouseenter') → triggers when you hover over the element.
+
+@HostListener('mouseleave') → resets when you move the mouse away.
+
+Renderer2 → safely updates DOM styles.
 
 
 
