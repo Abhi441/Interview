@@ -1898,7 +1898,7 @@ WHAT IS THE DIFFERENCE BETWEEN SCOPE_IDENTITY AND @@IDENTITY? scope_identity and
 
 
 //////////////////////////90)
-WHAT IS CTE IN SQL SERVER? A Common Table Expression, is a TEMPORARY named result set, that you can reference within a SELECT, INSERT, UPDATE, or DELETE statement.
+WHAT IS CTE IN SQL SERVER? A Common Table Expression, is a TEMPORARY named result set, that you can used within a SELECT, INSERT, UPDATE, or DELETE statement.
 
 //////////////////////91)
 WHAT IS THE DIFFERENCE BETWEEN DELETE, TRUNCATE AND DROP COMMANDS? 
