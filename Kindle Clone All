@@ -24609,12 +24609,7 @@ Explanation:
 Renderer2 → safely updates DOM styles.
 
 
-/////////////////////////////////////////////////////////////////////////////////////////////////Angular Performance
-/////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////
-1. LozyLoading :- Load only the parts of the app when they are needed.
-2. OnPuch Change Detection :- Update only what changes instead of checking everything.
-3. TrackBy in ngFor :- Reuse existing list items  instead of rebuilding them.
+
 4. ///////////////////////////////////////////Optiming Imaze And Assets :- Call only when required ,and cache results if posssible.
 Exalanation
 Great question 👍. Optimizing images and assets in Angular is an important part of making your app fast, especially when it runs in browsers with slow internet or on mobile. Let me break it down simply and practically (and how you can say in an interview):
