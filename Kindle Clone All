@@ -26420,6 +26420,7 @@ Renderer2 → safely updates DOM styles.
 //////////////////////////////////////////////
 how to add 2 number without using the + operatir
 /////////////////////////////Signal
+=> A Signal is a reactive variable that automatically notifies Angular when its value changes.
 
 
 
