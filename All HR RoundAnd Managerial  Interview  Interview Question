@@ -1,4 +1,4 @@
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Why are looking for a job changes
+we//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Why are looking for a job changes
 
 S – Situation
 “In my current company, I have been working on full-stack .NET projects, and I have gained very good experience in technologies like .NET Core, Angular, SQL, and Azure.”
@@ -322,34 +322,28 @@ The result was that the page load time improved by more than 50%, and users star
 My manager appreciated my effort — and that feeling of creating real value really motivates me.
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////13. How do you handle stress or pressure?
-🧩 S — Situation (What was happening?)
+🧩S – Situation
+In software projects, sometimes deadlines are tight or production issues happen suddenly, which creates pressure for the team.
+T – Task
+In such situations, my responsibility is to stay calm, understand the problem clearly, and deliver the fix quickly without creating new issues.
+A – Action
+To handle pressure, I:
+First stay calm and avoid panic
+Break the problem into small steps
+Identify the root cause instead of guessing
+Communicate clearly with the team about progress
+Focus on one task at a time to avoid mistakes
+R – Result
+Because of this approach:
+Issues get resolved faster
+Fewer new bugs are introduced
+Team confidence remains high
+Deadlines are managed more smoothly
+Strong One-Line Closing
+I handle stress by staying calm, breaking the problem into small steps, and focusing on finding the correct solution quickly while maintaining code quality.
 
-In my previous project, we were developing a Buy and Sell Property Application using .NET Core and Angular.
-Our team had 5 members — 2 backend developers, 2 frontend developers, and 1 tester.
-We had a tight deadline to deliver the property listing and booking module in 2 weeks.
 
 
----
-
-🎯 T — Task (What was your role?)
-
-My role was to integrate the frontend (Angular) with the backend APIs (.NET Core),
-and make sure data like property details, prices, and owner info displayed correctly and updated in real time.
-
-
----
-
-⚙️ A — Action (What did you do?)
-
-I started by:
-
-Coordinating daily with the backend team to finalize the API contracts.
-
-Using Postman to test the APIs before integration.
-
-Setting up Angular Interceptors for authentication.
-
-Working closely with the tester to fix data binding and validation issues quickly.
 
 Also helped another developer set up state management using a shared service.
 
