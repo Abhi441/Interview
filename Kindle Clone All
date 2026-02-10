@@ -26419,6 +26419,16 @@ Renderer2 → safely updates DOM styles.
 
 //////////////////////////////////////////////
 how to add 2 number without using the + operatir
+static int Add(int a , int b)
+{
+ while(b != 0)
+ {
+   int carry = a & b;
+   a = a ^ b ;
+   b = carry << 1 
+ }
+return a ;
+}
 /////////////////////////////Signal
 => A Signal is a reactive variable that automatically notifies Angular when its value changes.
 
