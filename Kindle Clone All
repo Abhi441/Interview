@@ -299,6 +299,66 @@ Example :
 //    }
 //}
 
+/////////////////////////////////////////////////////////////////
+what is Abstraction.
+
+👉 Abstraction is an OOP concept that hides unnecessary details and only shows important parts to the user.
+
+Example:
+When you accelerate a bike, the speed increases, but you don’t see how the engine works internally.
+The complexity is hidden, and only the important part (speed control) is visible.
+
+How do we achieve Abstraction in C#?
+✔ Using abstract classes (with abstract methods).
+✔ Using interface (where methods are declared but not defined).
+
+Example Code in C#:
+csharp
+Copy
+Edit
+// Abstract class: Defines common structure but hides implementation
+abstract class Employee  
+{  
+    public abstract void CalculateSalary();  // Only method definition (no implementation)  
+
+    public void ShowDetails()  
+    {  
+        Console.WriteLine("Showing Employee Details");  
+    }  
+}  
+
+// Permanent Employee class implements its own salary calculation
+class PermanentEmployee : Employee  
+{  
+    public override void CalculateSalary()  
+    {  
+        Console.WriteLine("Salary = HoursWorked * HourlyRate");  
+    }  
+}
+
+// Contract Employee class implements a different salary calculation
+class ContractEmployee : Employee  
+{  
+    public override void CalculateSalary()  
+    {  
+        Console.WriteLine("Salary = (HoursWorked * HourlyRate) - 4000");  
+    }  
+}
+
+// Main Program
+class Program  
+{  
+    static void Main()  
+    {  
+        Employee emp1 = new PermanentEmployee();  
+        emp1.CalculateSalary();  // Output: Salary = HoursWorked * HourlyRate  
+        emp1.ShowDetails();  
+
+        Employee emp2 = new ContractEmployee();  
+        emp2.CalculateSalary();  // Output: Salary = (HoursWorked * HourlyRate) - 4000  
+    }  
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////Q6)
 Encapsulation means WRAPPING of data and methods/properties into a single unit. Why I included properties 
 here because properties are nothing else but special methods only. Why they special methods, 
@@ -331,6 +391,107 @@ Example :
 //    }
 
 //}
+///////////////////////////////Encapsulation
+//    //
+// class Employee
+//{
+//    private int experience; //This feild can not be excess without Property.
+//    public int Experience
+//    {
+//        get
+//        {
+//            return experience;
+//        }
+//        set
+//        {
+//            experience = value;
+//        }
+//    }
+//}
+
+//class Program
+//{
+//    public static void Main(string[] args)
+//    {
+//        Employee em = new Employee();
+//        em.Experience = 10;
+//    }
+
+//}
+/////////////////////////////////////
+What is Encapsulation
+Encapsulation is oops concept , it is used to wrap the data method and property into single units.
+
+example
+
+public class Employee
+{
+public class EmExperience;
+
+public int Employee
+{
+ get
+{
+ return emExperience;
+}
+ get
+{
+ emExperience = value;
+}
+}
+
+public void Main(string[] args)
+{
+ Employee obj = new Employee();
+ 
+ obj.EmExperience = 3;
+ 
+}
+
+
+//////////////////////////////////////////////////////////
+What is Encapsulation
+
+Q: What is Encapsulation?
+👉 Encapsulation is an OOP concept that wraps data (variables) and methods (functions) inside a single unit (class).
+👉 It hides the data from direct access and provides controlled access using getter and setter methods.
+
+✅ Corrected Example in C#:
+csharp
+Copy
+Edit
+public class Employee
+{
+    private int empExperience;  // Private variable (cannot be accessed directly)
+
+    // Public property with getter and setter
+    public int EmpExperience
+    {
+        get 
+        { 
+            return empExperience;  
+        }
+        set 
+        { 
+            if (value > 0) // Prevents negative experience
+                empExperience = value;  
+            else
+                Console.WriteLine("Experience cannot be negative");  
+        }
+    }
+}
+
+// Main Program
+class Department
+{
+    static void Main(string[] args)  // Fixed the typo in Main()
+    {
+        Employee emp = new Employee();  
+        emp.EmpExperience = 3;  // Setting the experience
+        Console.WriteLine("Employee Experience: " + emp.EmpExperience);  // Getting the experience
+    }
+}
+
 
 ///////////////////////////////////////////////////////////////////////////////////Q7)
 //WHAT IS POLYMORPHISM AND WHAT ARE ITS TYPES? ❖      
@@ -11280,7 +11441,7 @@ to///////////////////////////////////////////////////OOPs
 //    }
 //}
 
-///////////////////////////////////////////////////////Abstraction
+///////////////////////////////////////////////////////Diffrence beetween Abstraction and interface
 //It is the process of hinding implementation details and showing only the essential features of an object .
 // In C# , abstraction is achived using Abstarct Classes and Interfaces.
 
@@ -11347,34 +11508,7 @@ to///////////////////////////////////////////////////OOPs
 //    }
 //}
 
-//    ///////////////////////////////Encapsulation
-//    //
-// class Employee
-//{
-//    private int experience; //This feild can not be excess without Property.
-//    public int Experience
-//    {
-//        get
-//        {
-//            return experience;
-//        }
-//        set
-//        {
-//            experience = value;
-//        }
-//    }
-//}
-
-//class Program
-//{
-//    public static void Main(string[] args)
-//    {
-//        Employee em = new Employee();
-//        em.Experience = 10;
-//    }
-
-//}
-
+//    
 //////////////////////////Reflection
 /////////what is reflection in c#
 reflection in C# is a way for your program to look at itself. It lets you inspect the structure of types (like classes, methods, properties) at runtime
@@ -20693,7 +20827,7 @@ Now, I am ready to bring both my past 5 years of experience and my new skills to
 
 //////////////////////L1 round topis
 //C#
-1. OOP Concepts ( Polymorphism, Encapsulation, Abstraction)
+1. OOP Concepts (Polymorphism)
 1.1 extension method - 18 june.
 2. Exception Handling (try-catch-finally, custom exceptions)
 3. Collections (List, Dictionary, HashSet, Queue, Stack)
@@ -20927,140 +21061,6 @@ class Employee
     }
 }
 
-/////////////////////////////////////
-What is Encapsulation
-Encapsulation is oops concept , it is used to wrap the data method and property into single units.
-
-example
-
-public class Employee
-{
-public class EmExperience;
-
-public int Employee
-{
- get
-{
- return emExperience;
-}
- get
-{
- emExperience = value;
-}
-}
-
-public void Main(string[] args)
-{
- Employee obj = new Employee();
- 
- obj.EmExperience = 3;
- 
-}
-
-
-/////////////////////////////////////////////////////////////////
-what is Abstraction.
-
-👉 Abstraction is an OOP concept that hides unnecessary details and only shows important parts to the user.
-
-Example:
-When you accelerate a bike, the speed increases, but you don’t see how the engine works internally.
-The complexity is hidden, and only the important part (speed control) is visible.
-
-How do we achieve Abstraction in C#?
-✔ Using abstract classes (with abstract methods).
-✔ Using interface (where methods are declared but not defined).
-
-Example Code in C#:
-csharp
-Copy
-Edit
-// Abstract class: Defines common structure but hides implementation
-abstract class Employee  
-{  
-    public abstract void CalculateSalary();  // Only method definition (no implementation)  
-
-    public void ShowDetails()  
-    {  
-        Console.WriteLine("Showing Employee Details");  
-    }  
-}  
-
-// Permanent Employee class implements its own salary calculation
-class PermanentEmployee : Employee  
-{  
-    public override void CalculateSalary()  
-    {  
-        Console.WriteLine("Salary = HoursWorked * HourlyRate");  
-    }  
-}
-
-// Contract Employee class implements a different salary calculation
-class ContractEmployee : Employee  
-{  
-    public override void CalculateSalary()  
-    {  
-        Console.WriteLine("Salary = (HoursWorked * HourlyRate) - 4000");  
-    }  
-}
-
-// Main Program
-class Program  
-{  
-    static void Main()  
-    {  
-        Employee emp1 = new PermanentEmployee();  
-        emp1.CalculateSalary();  // Output: Salary = HoursWorked * HourlyRate  
-        emp1.ShowDetails();  
-
-        Employee emp2 = new ContractEmployee();  
-        emp2.CalculateSalary();  // Output: Salary = (HoursWorked * HourlyRate) - 4000  
-    }  
-}
-
-
-//////////////////////////////////////////////////////////
-What is Encapsulation
-
-Q: What is Encapsulation?
-👉 Encapsulation is an OOP concept that wraps data (variables) and methods (functions) inside a single unit (class).
-👉 It hides the data from direct access and provides controlled access using getter and setter methods.
-
-✅ Corrected Example in C#:
-csharp
-Copy
-Edit
-public class Employee
-{
-    private int empExperience;  // Private variable (cannot be accessed directly)
-
-    // Public property with getter and setter
-    public int EmpExperience
-    {
-        get 
-        { 
-            return empExperience;  
-        }
-        set 
-        { 
-            if (value > 0) // Prevents negative experience
-                empExperience = value;  
-            else
-                Console.WriteLine("Experience cannot be negative");  
-        }
-    }
-}
-
-// Main Program
-class Department
-{
-    static void Main(string[] args)  // Fixed the typo in Main()
-    {
-        Employee emp = new Employee();  
-        emp.EmpExperience = 3;  // Setting the experience
-        Console.WriteLine("Employee Experience: " + emp.EmpExperience);  // Getting the experience
-    }
-}
 
 /////////////////////////////////////////////////////////////////////Polymorphism
 
