@@ -189,6 +189,39 @@ Console.WriteLine("Dog");
 }
 }
 
+//////////////////////////////////////////why c# doesnot uses multiple inheritance
+/////////////1>Avoiding the Diamond Problem
+    Class A
+   /      \
+Class B   Class C
+   \      /
+    Class D
+
+The diamond problem occurs when a class inherits from two classes that both inherit from a common base class.
+This can cause ambiguity in determining which version of a method or property should be inherited from the base class.
+In this scenario, if Class B and Class C both inherit a method from Class A, then Class D could inherit two conflicting versions of that method. C# avoids this ambiguity by allowing only single inheritance,
+ensuring that each class has a clear and singular parent class.
+
+///////////////////////////
+why c# doesnot uses multiple inheritance
+
+-->C# does not support multiple class inheritance to avoid ambiguity(Diamond Problem).
+-->But you can use multiple interfaces, which gives flexibility without confusion.
+--> Because it can create confusion and conflicts especially when two parent classes have the same method or property name.
+--> This is called the diamond Problem - and c# avoids it by not allowing a class to inherit from more than one class.
+
+Real life example
+Two bosses -->  diffrent instructions -->  same task --> now you are confuse.
+
+Class A
+   /      \
+Class B   Class C
+   \      /
+    Class D
+
+In this scenario, if Class B and Class C both inherit a method from Class A, then Class D could inherit two conflicting versions of that method. C# avoids this ambiguity by allowing only single inheritance,
+ensuring that each class has a clear and singular parent class.
+
 ///////////////////////////////////////////////////////////////////////////////////////Q4)
 //HOW TO PREVENT A CLASS FROM BEING INHERITED?
 
@@ -4310,7 +4343,6 @@ Explain Database first approach
 
  
 Opps concept
-Abstraction nd inheritance
 Routing
 Diff btw Prinary key unique
 Diff btw stored procedure and functions
@@ -4350,7 +4382,6 @@ exception handling, middlewares,
 oops, 
 solid principles, 
 sprin boot and functions
-some coding questions based on abstraction and inheritance
 
 What is IConfiguration in .net core.
 How to implement Caching.
@@ -10379,28 +10410,6 @@ Security risk → can expose private methods/fields if not restricted.
 Reflection = Mirror for your code.
 It gives flexibility to inspect and modify objects dynamically, but must be used wisely to avoid performance and security issues.
 
-
-
-///////////////////////////
-why c# doesnot uses multiple inheritance
-
--->C# does not support multiple class inheritance to avoid ambiguity(Diamond Problem).
--->But you can use multiple interfaces, which gives flexibility without confusion.
---> Because it can create confusion and conflicts especially when two parent classes have the same method or property name.
---> This is called the diamond Problem - and c# avoids it by not allowing a class to inherit from more than one class.
-
-Real life example
-Two bosses -->  diffrent instructions -->  same task --> now you are confuse.
-
-Class A
-   /      \
-Class B   Class C
-   \      /
-    Class D
-
-In this scenario, if Class B and Class C both inherit a method from Class A, then Class D could inherit two conflicting versions of that method. C# avoids this ambiguity by allowing only single inheritance,
-ensuring that each class has a clear and singular parent class.
-
 //////////////////////////////////////what is diffrence between DbContext and DbSet
 DbContext : Manages the connection to the database.
 DbSet : Represent a table in the database and provide methods to interact with data in the table
@@ -11376,18 +11385,7 @@ or accessing metadata and invoking methods without knowing the specifics at comp
 /////////////////////////////////////////codeforce,Dataforce
 ////////////////////////which kind of Jwt that you are using.
 Explain in JWT.
-//////////////////////////////////////////why c# doesnot uses multiple inheritance
-/////////////1>Avoiding the Diamond Problem
-    Class A
-   /      \
-Class B   Class C
-   \      /
-    Class D
 
-The diamond problem occurs when a class inherits from two classes that both inherit from a common base class.
-This can cause ambiguity in determining which version of a method or property should be inherited from the base class.
-In this scenario, if Class B and Class C both inherit a method from Class A, then Class D could inherit two conflicting versions of that method. C# avoids this ambiguity by allowing only single inheritance,
-ensuring that each class has a clear and singular parent class.
 2>Simplicity and Maintainability
 ////////////////////////////////////////////what is DBcontext and DBset.
 DBcontest - An instance of DbContext is responsible to hold a set of DbSets' and represent a connection with database.
@@ -11512,12 +11510,6 @@ Improve user experience (Exception filters for friendly errors)
 Improve maintainability (Centralized logic)
 
 Improve performance tracking (Action filters)
-///////////////////////////////////What is Inheritance and Type of Inheritance
-The following are some key points about inheritance:
-
-C# does not support multiple inheritances of classes, the same thing can be done using interfaces.
-Private members are not accessed in a derived class when one class is derived from another.
-
 //////////////////////////////////////////////What are the differences between method hiding and overriding in C#?
 ////////////method hiding
 the implementation to call is based on the compile-time type
@@ -11554,7 +11546,6 @@ Serching and Sorting
 /////////c#
 Basic
 OOp
-Inheritance
 /////////Solid Priciple:
 /////////////////////////////////////////sigalton
 we do not use Singalton code Manually , we use built-in Dependency Injection framework BECAUSE Thread-Safety , Simplicity ,Lifetime Management.
@@ -20702,7 +20693,7 @@ Now, I am ready to bring both my past 5 years of experience and my new skills to
 
 //////////////////////L1 round topis
 //C#
-1. OOP Concepts (Inheritance, Polymorphism, Encapsulation, Abstraction)
+1. OOP Concepts ( Polymorphism, Encapsulation, Abstraction)
 1.1 extension method - 18 june.
 2. Exception Handling (try-catch-finally, custom exceptions)
 3. Collections (List, Dictionary, HashSet, Queue, Stack)
@@ -20906,158 +20897,6 @@ angular for Http request (Get, post, patch , delete) to send and receive the req
 //////////////////////////////////   C#
 
 ///////////////////////////////////////////////
-What is Inheritance and why is it Important
-
-
-->Inheritance is a OOPs concept , child class gets the properties from and behaviors(methods) of a parent class. 
-
--> Inheritance is used to reusibility and abtraction of code.
-
-Example :
-public class Employee
-{
-public Employee()
-{
-  //
-}
- private int salary;
- 
- public class Salary
-{
-  get
- {
-   return experience;
- }
- set
-  {
-  experience = value ;
- }
-}
-}
-
-
-class ContractEmplyee : Employee
-  public void CalculateSalary()
- {
-  int salary = Experience * 300000 ;
-  }
-
-  Console.WriteLine(salary);
-  
-}
-
-
-///////////////////////////////////////////
-What are type of Inheritance
-
-//////////////////////////////////////
-What are the Diffrent type of Inheritance.
-
-1>Single Inheritance
-one child class inheritance from one parent class
-
-class Parent
-{
-public void Show()
-{
- Console.WriteLine("This is Parent class");
-}
-
-}
-
-class Child : Parent
-{
- // child inheritance from parent
-}
-
-class Program
-{
- static void Main()
- {
-  Child obj = new Child();
-  obj.Show();
-}
-}
-
-2> Multilevel Inheritance
-
-A Child class inherits from Parent, and Parent inherits from GrandParent
-
-class GrandParent
-{
- public void ShowGrandParent()
-{
-  Console.WriteLine("GrandParent class");
-}
-
-class Parent : GrandParent
-{
- public void ShowParent()
-{
- Console.WriteLine("Parent class";)
-}
-}
-
-
-class Child : Parent
-{
- public void ShowParent()
- {
-  Console.WriteLine("");
- }
-}
-class Program
-{
- static void Main()
-{
- Child obj = new Child();
- obj.ShowGrandParent();
-obj.ShowParent();
-obj.ShowChild();
-}
-}
-
-3>One Parent class is get inherited by multiple Child classes
-
-class Employee
-{
-  public void Work()
- {
-   Console.WriteLine("Employee working");
- }
-}
-
-class ContractEmplyee : Employee
-{
-  public void ContractType()
- {
-  Console.WriteLine("Contract Employee")
- }
-}
-
-class ParmanentEmployee : Employee
-{
-  public void PermanentType()
-  {
-   Console.WriteLine("Permanent Employee");
-  } 
-}
-
-class Program
-{
- static void main()
- {
-  ContractEmplyee cEmp = new ContractEmplyee();
-   cEmp.Work();
-   cEmp.ContractType();
-
-  PermanemtEmplyee pEmp = new PermanentEmplyee();
-   pEmp.Work();
-   pEmp.PermanentType();
- }
-}
-
-
 ///////////////////////////////////////////////////
 What is Abtraction
 Abraction is oops concept , it will show the important part and hide the implementation part ,
