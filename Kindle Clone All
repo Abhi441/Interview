@@ -814,6 +814,106 @@ Use When
 
 Abstract Class When you want shared code + common structure.
 Interface When you want different classes to follow the same rules without sharing code.
+
+//
+///////////////////////////////////////////////////////Diffrence beetween Abstraction and interface
+//It is the process of hinding implementation details and showing only the essential features of an object .
+// In C# , abstraction is achived using Abstarct Classes and Interfaces.
+
+//1> Abstract Class
+//    -> An abstract class is declared with the abstract keyword.
+//    -> It cannot be instantiated directly.
+//    -> It can contain abstract methods (no implementation) and concrete methods (with Implementation).
+//    -> Abstract methods must be overriden in derived classes.
+//    
+
+//Interfaces
+//An interfaces is a constract that define the signatures of methods , properties , events , or indexers.
+//It only contains method declarations, not  implementations.
+// Classes that implement the interface must provide implementations for all its methods.
+
+//using System;
+//public abstract class Vehicle
+//{
+//    public abstract void StartEngine();// only the declaration is provided; the implementation 
+
+//    public void DisplayInfo()
+//    {
+//        Console.WriteLine("This is a vehicle");
+//    }
+//}
+
+//public class Car : Vehicle
+//{
+//    public override void StartEngine()
+//    {
+//        Console.WriteLine("Car engion started");
+//    }
+//}
+
+//public interface IRefuelable
+//{
+//    void Refuel();
+//}
+
+//public class Bike : Vehicle , IRefuelable
+//{
+//    public override void StartEngine()
+//    {
+//        Console.WriteLine("Bikes engion started");
+//    }
+
+//    public void Refuel()
+//    {
+//        Console.WriteLine("Bike refueled.");
+//    }
+//}
+
+//public class Program
+//{
+//   public static void Main(string[] args)
+//    {
+//        Vehicle car = new Car();
+//        car.StartEngine(); // Car engine started.
+//        car.DisplayInfo(); // This is a vehicle.
+
+//        Bike bike = new Bike();
+//        bike.StartEngine();  //Bike engion started.
+//        bike.Refuel();       //Bike refueled
+//    }
+//}
+
+// 
+/////////////////////////////////////////////////////
+
+WHEN TO USE INTERFACE AND WHEN ABSTRACT CLASS? :::
+
+
+
+Abstarction: -
+--> common Property / behavior to all the derived class.
+--> when we need property, feild, method, contructor.
+--> when we want that implementation of method in the same way then go for abstraction.
+
+abstract public Employee
+{
+    public abstract void CalculateSalary(); 
+    
+   public void CalculateSalary()
+   {
+    Console.WriteLine("Tax calculation");
+   }
+}
+Interface: -
+
+--> when you want multiple inheritance achieve then go for Intrface,
+--> when you go for contract.
+--> when we want loosely coupled thing.
+--> 
+interface emEmployee
+{ 
+  void play();
+}
 ////////////////////////////////////////////////////////////////////////////////////////////////////Q) 18 Boxing and UnBoxing
 🧠 Definition (Easy Words)
 
@@ -897,6 +997,10 @@ Instead, use Generics (List<T>, Dictionary<TKey, TValue>) to prevent unnecessary
 
 > “Boxing is when a value type is wrapped inside an object, and unboxing is when we extract it back.
 In my project, I faced this while using non-generic collections like ArrayList, so I moved to generic List<int> to improve performance and avoid unnecessary boxing and unboxing.”
+
+//////////////////////////////////////////////////////////////What is Boxing and UnBoxing.
+value type - int, char, double, and bool are built-in value types in C#.
+refrence type - string and object are built-in reference types in C#.
 ////////////////////////////////Q> 32
 
 Difference between ArrayList and Hashtable in C#
@@ -11441,74 +11545,7 @@ to///////////////////////////////////////////////////OOPs
 //    }
 //}
 
-///////////////////////////////////////////////////////Diffrence beetween Abstraction and interface
-//It is the process of hinding implementation details and showing only the essential features of an object .
-// In C# , abstraction is achived using Abstarct Classes and Interfaces.
-
-//1> Abstract Class
-//    -> An abstract class is declared with the abstract keyword.
-//    -> It cannot be instantiated directly.
-//    -> It can contain abstract methods (no implementation) and concrete methods (with Implementation).
-//    -> Abstract methods must be overriden in derived classes.
-//    
-
-//Interfaces
-//An interfaces is a constract that define the signatures of methods , properties , events , or indexers.
-//It only contains method declarations, not  implementations.
-// Classes that implement the interface must provide implementations for all its methods.
-
-//using System;
-//public abstract class Vehicle
-//{
-//    public abstract void StartEngine();// only the declaration is provided; the implementation 
-
-//    public void DisplayInfo()
-//    {
-//        Console.WriteLine("This is a vehicle");
-//    }
-//}
-
-//public class Car : Vehicle
-//{
-//    public override void StartEngine()
-//    {
-//        Console.WriteLine("Car engion started");
-//    }
-//}
-
-//public interface IRefuelable
-//{
-//    void Refuel();
-//}
-
-//public class Bike : Vehicle , IRefuelable
-//{
-//    public override void StartEngine()
-//    {
-//        Console.WriteLine("Bikes engion started");
-//    }
-
-//    public void Refuel()
-//    {
-//        Console.WriteLine("Bike refueled.");
-//    }
-//}
-
-//public class Program
-//{
-//   public static void Main(string[] args)
-//    {
-//        Vehicle car = new Car();
-//        car.StartEngine(); // Car engine started.
-//        car.DisplayInfo(); // This is a vehicle.
-
-//        Bike bike = new Bike();
-//        bike.StartEngine();  //Bike engion started.
-//        bike.Refuel();       //Bike refueled
-//    }
-//}
-
-//    
+   
 //////////////////////////Reflection
 /////////what is reflection in c#
 reflection in C# is a way for your program to look at itself. It lets you inspect the structure of types (like classes, methods, properties) at runtime
@@ -11652,9 +11689,6 @@ New is reference-type specific
 the implementation to be called is based on the run-time
 , overriding is object-type specific
 
-//////////////////////////////////////////////////////////////What is Boxing and UnBoxing.
-value type - int, char, double, and bool are built-in value types in C#.
-refrence type - string and object are built-in reference types in C#.
 
 //////////////////////Difference between ArrayList and Hashtable in C#
 //////ArrayList
@@ -16105,8 +16139,6 @@ C# – Foundational Concepts
 
 8. What is the default access modifier when defining a function within an interface in C#?
 
-
-9. Explain the differences between an interface and an abstract class in C#.
 
 
 ASP.NET Core – Architecture and Development
@@ -21148,36 +21180,7 @@ class Program
     }
 }
 
-/////////////////////////////////////////////////////
 
-WHEN TO USE INTERFACE AND WHEN ABSTRACT CLASS? :::
-
-
-
-Abstarction: -
---> common Property / behavior to all the derived class.
---> when we need property, feild, method, contructor.
---> when we want that implementation of method in the same way then go for abstraction.
-
-abstract public Employee
-{
-    public abstract void CalculateSalary(); 
-    
-   public void CalculateSalary()
-   {
-    Console.WriteLine("Tax calculation");
-   }
-}
-Interface: -
-
---> when you want multiple inheritance achieve then go for Intrface,
---> when you go for contract.
---> when we want loosely coupled thing.
---> 
-interface emEmployee
-{ 
-  void play();
-}
 
 
 
