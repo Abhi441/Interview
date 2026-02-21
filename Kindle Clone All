@@ -1325,6 +1325,201 @@ PaymentService doesn’t care how the notification is shown — it's decoupled.
 
 We just inject the logic using a delegate
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////What is use of delegate 
+-) Delegates enable loose coupling, callbacks, and event-driven programming in C#.
+////////////////////////////////////
+
+Perfect 👍 Let’s break down Delegates in the same simple structure:
+
+
+
+
+
+---
+
+
+
+Definition (Simple Words)
+
+
+
+A delegate in C# is like a remote control for methods.
+
+
+
+It is a type-safe function pointer → meaning, it can hold a reference to a method and call it when needed.
+
+
+
+With delegates, you can pass methods as parameters just like passing variables.
+
+
+
+
+
+👉 Think of it like: “I don’t know which exact function to call now, but I’ll keep a remote control (delegate) that can call the correct one later.”
+
+
+
+
+
+---
+
+
+
+Project Use (Buy & Sell Properties App)
+
+
+
+In your Property Buy & Sell Application:
+
+
+
+Suppose you have to send a notification when a property is sold. Sometimes it should be an Email, sometimes an SMS, sometimes a Push Notification.
+
+
+
+Instead of writing if/else everywhere, you create a delegate like:
+
+
+
+
+
+public delegate void Notify(string message);
+
+
+
+public class NotificationService
+
+{
+
+    public void SendEmail(string msg) => Console.WriteLine("Email: " + msg);
+
+    public void SendSMS(string msg) => Console.WriteLine("SMS: " + msg);
+
+}
+
+
+
+Usage:
+
+
+
+NotificationService service = new NotificationService();
+
+Notify notifyDelegate = service.SendEmail; // Remote control points to Email
+
+notifyDelegate("Property Sold Successfully!");
+
+
+
+// Later we can switch
+
+notifyDelegate = service.SendSMS; // Remote control points to SMS
+
+notifyDelegate("Property Sold Successfully!");
+
+
+
+🔹 This makes the app flexible and pluggable without rewriting logic everywhere.
+
+
+
+
+
+---
+
+
+
+Trade-offs (Pros & Cons)
+
+
+
+✅ Pros:
+
+
+
+Makes code flexible → easy to plug-in different methods.
+
+
+
+Good for event-driven programming (like button click, payment success, etc.).
+
+
+
+Reduces if/else clutter and improves maintainability.
+
+
+
+
+
+⚠️ Cons:
+
+
+
+Can be confusing for beginners (because methods behave like variables).
+
+
+
+Overuse may reduce code readability.
+
+
+
+If not handled properly, may lead to runtime errors (null delegate).
+
+
+
+
+
+
+
+---
+
+
+
+Business Impact (Simple Words)
+
+
+
+With delegates → Notification system becomes scalable. Business can quickly switch from Email to SMS or add new types (like WhatsApp) without rewriting core logic.
+
+
+
+This saves time & cost, improves user experience (people get timely updates), and builds trust.
+
+
+
+Without delegates → Code becomes hard to manage, making changes costly, which slows down business.
+
+
+
+
+
+
+
+---
+
+
+
+✅ In short:
+
+Delegate = Remote control for methods → gives flexibility.
+
+In your property app → used for notifications, events, or callbacks, making the system easy to extend, maintain, and business-friendly.
+
+
+
+
+
+---
+
+
+
+Do you want me to also cover built-in delegates (Action, Func, P
+
+redicate) with real project examples in the same Buy & Sell Properties context?
+
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 22 )Explain Generics in C# ? When And why to use Them ?
 Definition (In Easy Words)
 
@@ -1611,7 +1806,7 @@ Let’s say you’re writing code to log a message or handle a button click quic
 > Anonymous delegate = a method without a name, written inline where it's used.
 Saves time and makes code shorter and cleaner, especially for small logic blocks.
 
-/////////////////////////////////////////////////////////////////////Q44)
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Q44)
 //What is the diffrence between Events And Delegate.
 ->A Delegate is a variable that hold the refrence to a method or pointer to a function.
 ->The event is a notification mechanism 
@@ -1832,7 +2027,12 @@ Easier debugging and exception handling CLR overhead in high-performance systems
 Multi-language support (C#, VB.NET, etc.) Large framework size
 Secure and stable for enterprise apps Less flexible for non-Windows systems (Framework, not .NET Core)
 
-
+///////////////////////////////////////
+//What are the important components of .Net Framework ? What are their roles?
+//-->CLR : It's the engion of .Net that runs your code, manages memory,and handle security.
+//-->cts : It ensure all .net languages use the same data types so they can work together.
+//-->FCL or BCL :It's a big collection of ready-made classes and functions you can use to build your apps faster.
+//-->CLS :It's a set of rules that .Net languages follow so they can talk to each other easily.
 
 ///////////////////////////////////////////////////////////////////////////////////////////////68>
 what is the diffrence between DBMS And RDBMS.
@@ -3927,8 +4127,6 @@ Both are same instance (Singleton works!)
 ////////////////////////////////
 What is latest version of c#
 What is Managed and umanged code
-What is use of delegate 
--) Delegates enable loose coupling, callbacks, and event-driven programming in C#.
 What is diffrence between early and late binding.
 `What happens if the inherited interfaces have conflicting method names ?
 what is the Constructor Chaining in c#
@@ -6210,201 +6408,6 @@ This improves UI, saves time, and directly impacts business growth.
 Do you want me to also prepare a list of commo
 
 n Angular built-in directives (like ngIf, ngFor, ngClass) with real property app examples for interview answers?
-
-
-
-////////////////////////////////////
-
-Perfect 👍 Let’s break down Delegates in the same simple structure:
-
-
-
-
-
----
-
-
-
-Definition (Simple Words)
-
-
-
-A delegate in C# is like a remote control for methods.
-
-
-
-It is a type-safe function pointer → meaning, it can hold a reference to a method and call it when needed.
-
-
-
-With delegates, you can pass methods as parameters just like passing variables.
-
-
-
-
-
-👉 Think of it like: “I don’t know which exact function to call now, but I’ll keep a remote control (delegate) that can call the correct one later.”
-
-
-
-
-
----
-
-
-
-Project Use (Buy & Sell Properties App)
-
-
-
-In your Property Buy & Sell Application:
-
-
-
-Suppose you have to send a notification when a property is sold. Sometimes it should be an Email, sometimes an SMS, sometimes a Push Notification.
-
-
-
-Instead of writing if/else everywhere, you create a delegate like:
-
-
-
-
-
-public delegate void Notify(string message);
-
-
-
-public class NotificationService
-
-{
-
-    public void SendEmail(string msg) => Console.WriteLine("Email: " + msg);
-
-    public void SendSMS(string msg) => Console.WriteLine("SMS: " + msg);
-
-}
-
-
-
-Usage:
-
-
-
-NotificationService service = new NotificationService();
-
-Notify notifyDelegate = service.SendEmail; // Remote control points to Email
-
-notifyDelegate("Property Sold Successfully!");
-
-
-
-// Later we can switch
-
-notifyDelegate = service.SendSMS; // Remote control points to SMS
-
-notifyDelegate("Property Sold Successfully!");
-
-
-
-🔹 This makes the app flexible and pluggable without rewriting logic everywhere.
-
-
-
-
-
----
-
-
-
-Trade-offs (Pros & Cons)
-
-
-
-✅ Pros:
-
-
-
-Makes code flexible → easy to plug-in different methods.
-
-
-
-Good for event-driven programming (like button click, payment success, etc.).
-
-
-
-Reduces if/else clutter and improves maintainability.
-
-
-
-
-
-⚠️ Cons:
-
-
-
-Can be confusing for beginners (because methods behave like variables).
-
-
-
-Overuse may reduce code readability.
-
-
-
-If not handled properly, may lead to runtime errors (null delegate).
-
-
-
-
-
-
-
----
-
-
-
-Business Impact (Simple Words)
-
-
-
-With delegates → Notification system becomes scalable. Business can quickly switch from Email to SMS or add new types (like WhatsApp) without rewriting core logic.
-
-
-
-This saves time & cost, improves user experience (people get timely updates), and builds trust.
-
-
-
-Without delegates → Code becomes hard to manage, making changes costly, which slows down business.
-
-
-
-
-
-
-
----
-
-
-
-✅ In short:
-
-Delegate = Remote control for methods → gives flexibility.
-
-In your property app → used for notifications, events, or callbacks, making the system easy to extend, maintain, and business-friendly.
-
-
-
-
-
----
-
-
-
-Do you want me to also cover built-in delegates (Action, Func, P
-
-redicate) with real project examples in the same Buy & Sell Properties context?
-
 
 
 /////////////////////////////////
@@ -14811,7 +14814,6 @@ Preparing for a .NET Developer Interview?
  ✅ ViewBag vs ViewData vs TempData
 
 📌 SQL Server
- ✅ Primary Key vs Foreign Key
  ✅ INNER JOIN vs LEFT JOIN vs RIGHT JOIN
  ✅ Stored Procedure basics
  ✅ Clustered vs Non-Clustered Index
@@ -16143,7 +16145,6 @@ C# – Foundational Concepts
 
 ASP.NET Core – Architecture and Development
 
-1. What is ASP.NET Core, and what are its primary advantages?
 
 
 2. How are static files served in an ASP.NET Core application, and where are they typically located in the project structure?
@@ -21618,14 +21619,6 @@ class Program
     }
 }
 
-///////////////////////////////////////
-//What are the important components of .Net Framework ? What are their roles?
-//-->CLR : It's the engion of .Net that runs your code, manages memory,and handle security.
-//-->cts : It ensure all .net languages use the same data types so they can work together.
-//-->FCL or BCL :It's a big collection of ready-made classes and functions you can use to build your apps faster.
-//-->CLS :It's a set of rules that .Net languages follow so they can talk to each other easily.
-
-
 //////////////////////////////////////////////////
 ////////////////////////////////////////////////SQL
 ////////////////////////////////////////////////
@@ -24667,7 +24660,6 @@ If you want next:
 //////////////////////////////////////////////////////////////////////////////////////view in content. xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ///////////////////////////////////////////////////////////////////////////////////////Async pipes xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ////////////////////////////////////////////////////////////////////////////////////////Css. xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-///////////////////////////////////////////////////////////////////////////////////Eveny Delegate in JavaScript. xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ///////////////////////////////////////////////////////////////////////////////////////How does microservices trigger by  Azure. xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ///////////////////////////////////////////////////////////////////////////////////////Does microservices have multiple reposetory. xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 //////////////////////////////////////////////////////////////////////////////////////Write the linq query to filter age. is grater than 25.
