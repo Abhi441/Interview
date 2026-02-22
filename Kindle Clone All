@@ -4852,7 +4852,6 @@ Interceptor
 Delegates
 Garbage collector in .net
 Idisposable interface 
-Directives
 Standalone component and how it improves application 
 Explain Database first approach
 
@@ -12197,7 +12196,6 @@ Use Attribute Routing for RESTful APIs or when URLs need flexibility.
 It can be direct or indirect. In other words "connected" or "disconnected".
 //////////////////////////////cluster and non cluster in sql
 Adapter
-directive 
 pipe
 where is root component is available 
 Lasy Loading in Angular
@@ -14815,7 +14813,6 @@ Most Frequently Asked .NET Full Stack Interview Questions(covering .NET MVC, .NE
 ---
 🔹 Angular
 1. Difference between AngularJS vs Angular.
-2. What are Components, Directives, Modules, Services?
 3. Explain Data Binding types (Interpolation, Property Binding, Event Binding, Two-way Binding).
 4. Difference between ngIf vs hidden.
 5. What is Dependency Injection in Angular?
@@ -15134,11 +15131,9 @@ How is Two-Way Binding implemented?
 Role of ngModel
 What is Angular CLI?
 
-🟡 Directives
-What are Directives in Angular?
+
 Structural vs Attribute Directives
 *ngIf vs *ngFor vs *ngSwitch
-How to create a custom directive?
 Use of ngClass and ngStyle
 
 🟣 Services & Dependency Injection
@@ -15910,7 +15905,6 @@ Top 50 Full Stack Developer Interview Questions**, Mostly asked in MNCs like Del
 41. What is Angular?
 42. Components in Angular.
 43. Data Binding types.
-44. Structural vs Attribute Directives.
 45. Services in Angular.
 46. HTTPClient in Angular.
 47. Angular Dependency Injection.
@@ -16132,8 +16126,6 @@ public void GetAllUsers() {}
 
 3. How can you show/hide a column in a grid layout based on employee role (admin, manager, candidate)?
 
-4. What are the directives in Angular and how do we use them?
-
 5. Explain pipes in Angular.
 
 --------------------Database Questions:--------------
@@ -16228,11 +16220,6 @@ Angular – Front-End Development
 
 
 2. Explain the concept of decorators in Angular.
-
-
-3. Describe the different types of directives in Angular.
-
-
 4. Explain @Input() and @Output() bindings in Angular.
 
 
@@ -23271,169 +23258,6 @@ Angular supports 4 types: Interpolation, Property Binding, Event Binding, and Tw
 Absolutely, Abhishek! Here's a clean, human-friendly and interview-ready answer for Q20 to Q26 — with examples and simple words so even a non-tech person can understand.
 
 
----
-
-✅ Q20. What are Directives in Angular? What are the types?
-
-Answer:
-
-> Directives are instructions in the HTML that tell Angular to do something.
-
-
-
-They are used to change the appearance, behavior, or layout of elements in the DOM.
-
-
----
-
-✅ Three Types of Directives:
-
-Type	What It Does	Example
-
-1. Component Directive	Custom HTML element (comes with template + logic)	<app-header></app-header>
-2. Structural Directive	Changes structure/layout of DOM (adds/removes HTML)	*ngIf, *ngFor, *ngSwitch
-3. Attribute Directive	Changes the look or behavior of an element	[ngStyle], [ngClass]
-
-
-
----
-
-✅ Q21. What is *ngIf Structural Directive?
-
-Answer:
-
-> *ngIf is used to show or hide elements based on a condition.
-
-
-
-📦 Think of it like: "If this is true, show it. If false, hide it."
-
-✅ Example:
-
-<p *ngIf="isLoggedIn">Welcome, Abhishek!</p>
-
-In TypeScript:
-
-isLoggedIn = true;
-
-If isLoggedIn is false, the <p> will not be in the HTML at all.
-
-
----
-
-✅ Q22. What is *ngFor Structural Directive?
-
-Answer:
-
-> *ngFor is used to loop through a list and show multiple elements.
-
-
-
-📦 Think of it like: "For each item in the list, show this block."
-
-✅ Example:
-
-<ul>
-  <li *ngFor="let user of users">{{ user }}</li>
-</ul>
-
-users = ['Abhishek', 'Raj', 'Kiran'];
-
-This will create 3 <li> items.
-
-
----
-
-✅ Q23. What is *ngSwitch Structural Directive?
-
-Answer:
-
-> *ngSwitch is used to switch between views based on a value — like a switch-case.
-
-✅ Example:
-
-<div [ngSwitch]="role">
-  <p *ngSwitchCase="'admin'">Admin Panel</p>
-  <p *ngSwitchCase="'user'">User Dashboard</p>
-  <p *ngSwitchDefault>Guest View</p>
-</div>
-
-role = 'admin';
-
-It will show "Admin Panel".
-
-
----
-
-✅ Q24. What is [ngStyle] Attribute Directive?
-
-Answer:
-
-> ngStyle is used to apply CSS styles dynamically.
-
-
-
-✅ Example:
-
-<p [ngStyle]="{ color: isActive ? 'green' : 'red' }">
-  Status: {{ isActive ? 'Active' : 'Inactive' }}
-</p>
-
-isActive = true;
-
-The <p> text will be green if isActive is true.
-
-
----
-
-✅ Q25. What is [ngClass] Attribute Directive?
-
-Answer:
-
-> ngClass is used to add or remove CSS classes dynamically.
-
-
-
-✅ Example:
-
-<p [ngClass]="{ 'online': isOnline, 'offline': !isOnline }">
-  Connection Status
-</p>
-
-.online { color: green; }
-.offline { color: red; }
-
-isOnline = true;
-
-The <p> will get class="online" when online.
-
-
----
-
-✅ Q26. What is the difference between Component, Structural, and Attribute Directives?
-
-Feature	Component	Structural Directive	Attribute Directive
-
-What it does	Creates a custom UI element	Adds/removes elements	Modifies existing element
-Example	<app-user>	*ngIf, *ngFor	[ngStyle], [ngClass]
-Template required?	✅ Yes	❌ No	❌ No
-Use case	UI & logic container	Show/hide or repeat HTML	Change CSS, behavior
-
-
-🧠 Analogy:
-
-Component = Your own full widget
-
-Structural = Decides what HTML appears
-
-Attribute = Styles or behaviors applied to HTML
-
-
-
----
-
-Let me know if you'd like a quiz or real project task using these!
-
 /////////////////////////////////////
 
 Absolutely, Abhishek! Here's a very easy-to-remember, interview-friendly, and code-based explanation for each Angular question (Q27 to Q30 + repeated Q20). Think of these as smart short answers with real understanding.
@@ -23541,27 +23365,6 @@ Converts number to: ₹1,000.00
 
 If name = "abhishek", output = ABHI
 (First uppercase, then slice first 4 letters)
-
-
----
-
-✅ Q20 (Repeated). What are Directives? Types?
-
-Already answered above, but in short:
-
-> Directives are instructions in the HTML to tell Angular how to behave.
-
-
-
-
----
-
-Type	Example	Use
-
-Structural	*ngIf, *ngFor	Add/remove elements
-Attribute	[ngStyle], [ngClass]	Change look/behavior
-Component	@Component()	Custom element
-
 
 
 ---
@@ -24876,174 +24679,6 @@ It lets data flow one-way (from component to UI or UI to component), or two-way 
 Angular supports 4 types: Interpolation, Property Binding, Event Binding, and Two-Way Binding."
 
 
-/////////////////////////////////////
-Absolutely, Abhishek! Here's a clean, human-friendly and interview-ready answer for Q20 to Q26 — with examples and simple words so even a non-tech person can understand.
-
-
----
-
-✅ Q20. What are Directives in Angular? What are the types?
-
-Answer:
-
-> Directives are instructions in the HTML that tell Angular to do something.
-
-
-
-They are used to change the appearance, behavior, or layout of elements in the DOM.
-
-
----
-
-✅ Three Types of Directives:
-
-Type	What It Does	Example
-
-1. Component Directive	Custom HTML element (comes with template + logic)	<app-header></app-header>
-2. Structural Directive	Changes structure/layout of DOM (adds/removes HTML)	*ngIf, *ngFor, *ngSwitch
-3. Attribute Directive	Changes the look or behavior of an element	[ngStyle], [ngClass]
-
-
-
----
-
-✅ Q21. What is *ngIf Structural Directive?
-
-Answer:
-
-> *ngIf is used to show or hide elements based on a condition.
-
-
-
-📦 Think of it like: "If this is true, show it. If false, hide it."
-
-✅ Example:
-
-<p *ngIf="isLoggedIn">Welcome, Abhishek!</p>
-
-In TypeScript:
-
-isLoggedIn = true;
-
-If isLoggedIn is false, the <p> will not be in the HTML at all.
-
-
----
-
-✅ Q22. What is *ngFor Structural Directive?
-
-Answer:
-
-> *ngFor is used to loop through a list and show multiple elements.
-
-
-
-📦 Think of it like: "For each item in the list, show this block."
-
-✅ Example:
-
-<ul>
-  <li *ngFor="let user of users">{{ user }}</li>
-</ul>
-
-users = ['Abhishek', 'Raj', 'Kiran'];
-
-This will create 3 <li> items.
-
-
----
-
-✅ Q23. What is *ngSwitch Structural Directive?
-
-Answer:
-
-> *ngSwitch is used to switch between views based on a value — like a switch-case.
-
-
-
-✅ Example:
-
-<div [ngSwitch]="role">
-  <p *ngSwitchCase="'admin'">Admin Panel</p>
-  <p *ngSwitchCase="'user'">User Dashboard</p>
-  <p *ngSwitchDefault>Guest View</p>
-</div>
-
-role = 'admin';
-
-It will show "Admin Panel".
-
-
----
-
-✅ Q24. What is [ngStyle] Attribute Directive?
-
-Answer:
-
-> ngStyle is used to apply CSS styles dynamically.
-
-
-
-✅ Example:
-
-<p [ngStyle]="{ color: isActive ? 'green' : 'red' }">
-  Status: {{ isActive ? 'Active' : 'Inactive' }}
-</p>
-
-isActive = true;
-
-The <p> text will be green if isActive is true.
-
-
----
-
-✅ Q25. What is [ngClass] Attribute Directive?
-
-Answer:
-
-> ngClass is used to add or remove CSS classes dynamically.
-
-
-
-✅ Example:
-
-<p [ngClass]="{ 'online': isOnline, 'offline': !isOnline }">
-  Connection Status
-</p>
-
-.online { color: green; }
-.offline { color: red; }
-
-isOnline = true;
-
-The <p> will get class="online" when online.
-
-
----
-
-✅ Q26. What is the difference between Component, Structural, and Attribute Directives?
-
-Feature	Component	Structural Directive	Attribute Directive
-
-What it does	Creates a custom UI element	Adds/removes elements	Modifies existing element
-Example	<app-user>	*ngIf, *ngFor	[ngStyle], [ngClass]
-Template required?	✅ Yes	❌ No	❌ No
-Use case	UI & logic container	Show/hide or repeat HTML	Change CSS, behavior
-
-
-🧠 Analogy:
-
-Component = Your own full widget
-
-Structural = Decides what HTML appears
-
-Attribute = Styles or behaviors applied to HTML
-
-
-
----
-
-Let me know if you'd like a quiz or real project task using these!
 
 /////////////////////////////////////
 
@@ -25151,108 +24786,7 @@ Converts number to: ₹1,000.00
 <p>{{ name | uppercase | slice:0:4 }}</p>
 
 If name = "abhishek", output = ABHI
-(First uppercase, then slice first 4 letters)
-
-
----
-
-✅ Q20 (Repeated). What are Directives? Types?
-
-Already answered above, but in short:
-
-> Directives are instructions in the HTML to tell Angular how to behave.
-
-
-
-
----
-
-Type	Example	Use
-
-Structural	*ngIf, *ngFor	Add/remove elements
-Attribute	[ngStyle], [ngClass]	Change look/behavior
-Component	@Component()	Custom element
-
-
-
----
-
-🔚 Summary Table (Quick Glance)
-
-Feature	Purpose	Example
-
-Decorator	Add metadata to class/property	@Component, @Input
-Pipe	Transform data in template	`{{ name
-Directive	Control HTML layout/behavior	*ngIf, [ngClass]
-
-
-
----
-
-Let me know if you'd like mock interview questions or project-based tasks using these!
-
-
-
-
---> Where to show.
-
-Absolutely, Abhishek! Here's the interview-ready, simple explanation, and code examples for each question from Q31 to Q36 — one by one. You’ll be able to explain these like a top 1% developer in the most human-friendly way!
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-Create a custom Angular directive to convert color of highlighted text to green?
-<div>Hello</div>, on hoving hello it will change the colour in Angular 18
-
-
-//
-Here’s how you can create a custom Angular 18 directive that changes the color of the text to green when you hover over it:
-
-
----
-
-1️⃣ Create the Directive
-
-ng generate directive highlight-green
-
-
----
-
-2️⃣ highlight-green.directive.ts
-
-import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
-
-@Directive({
-  selector: '[appHighlightGreen]'
-})
-export class HighlightGreenDirective {
-
-  constructor(private el: ElementRef, private renderer: Renderer2) { }
-
-  @HostListener('mouseenter') onMouseEnter() {
-    this.renderer.setStyle(this.el.nativeElement, 'color', 'green');
-  }
-
-  @HostListener('mouseleave') onMouseLeave() {
-    this.renderer.removeStyle(this.el.nativeElement, 'color');
-  }
-
-}
-
-
----
-
-3️⃣ Use It in HTML
-
-<div appHighlightGreen>Hello</div>
-
-Explanation:
-
-@HostListener('mouseenter') → triggers when you hover over the element.
-
-@HostListener('mouseleave') → resets when you move the mouse away.
-
-Renderer2 → safely updates DOM styles.
-
----
+(First uppercase, then slice first 4 letters).
 
 ✅ Q31. What is a Service in Angular?
 
@@ -26186,60 +25720,6 @@ export class ChildChildren
 1. LozyLoading :- Load only the parts of the app when they are needed.
 2. OnPuch Change Detection :- Update only what changes instead of checking everything.
 3. TrackBy in ngFor :- Reuse existing list items  instead of rebuilding them.
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-Create a custom Angular directive to convert color of highlighted text to green?
-<div>Hello</div>, on hoving hello it will change the colour in Angular 18
-
-
-//
-Here’s how you can create a custom Angular 18 directive that changes the color of the text to green when you hover over it:
-
-
----
-
-1️⃣ Create the Directive
-
-ng generate directive highlight-green
-
-
----
-
-2️⃣ highlight-green.directive.ts
-
-import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
-
-@Directive({
-  selector: '[appHighlightGreen]'
-})
-export class HighlightGreenDirective {
-
-  constructor(private el: ElementRef, private renderer: Renderer2) { }
-
-  @HostListener('mouseenter') onMouseEnter() {
-    this.renderer.setStyle(this.el.nativeElement, 'color', 'green');
-  }
-
-  @HostListener('mouseleave') onMouseLeave() {
-    this.renderer.removeStyle(this.el.nativeElement, 'color');
-  }
-
-}
-
-
----
-
-3️⃣ Use It in HTML
-
-<div appHighlightGreen>Hello</div>
-
-Explanation:
-
-@HostListener('mouseenter') → triggers when you hover over the element.
-
-@HostListener('mouseleave') → resets when you move the mouse away.
-
-Renderer2 → safely updates DOM styles.
 
 ////////////////////////////////////////////////////////////////////////
 how to add 2 number without using the + operatir
