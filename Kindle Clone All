@@ -1672,6 +1672,58 @@ Cleaner and DRY code Reflection and serialization sometimes tricky
 In my Buy & Sell Property app, I used Generics in Repository and API Response classes to make my data layer reusable and maintainable.
 It reduced code duplication and improved performance.”
 
+////////////////////////////////////////////////////What is the Diffrence Between Generic Vs Non Generic
+Collection are categorized into two parts Generic and Non Generics
+Generic Collection :
+Type Safety : Generic collections provide strong type safety.
+Usability : Generic collections are more user-friendly because they eliminate the need for explicit casting.
+Performance : Generic collections are generally more efficient in terms of both execution speed and memory
+because they avoid the overhead of boxing and unboxing.
+
+Non-Generic Collection:
+Type Safety : Non-generic collections are not type-safe because they store elements as object types.
+Usability : Non-generic collections are less user-friendly because they involve casting and boxing/unboxing.
+Performance : Non-generic collections may have performance overhead due to the need for boxing (converting value types to reference types) and unboxing
+(converting reference types back to value types).
+
+///////////////////////Generic
+What are Generics in C#?
+
+Generics allow us to create classes, methods, and interfaces that work with any data type in a type-safe way.
+
+Instead of writing the same code for different types (like int, string, etc.), we write it once using generics — and it will work for any type.
+
+Why and When to Use Generics?
+Type safety – No need for casting.
+
+Code reusability – Write one method for all data types.
+
+Performance – Avoids boxing/unboxing (in value types).
+
+Clean and maintainable code.
+
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        bool isEqual = Calculator.AreEqual<int>(10, 10);
+        bool isStrEqual = Calculator.AreEqual<string>("Hello", "Hello");
+
+        Console.WriteLine("Int equal: " + isEqual);
+        Console.WriteLine("String equal: " + isStrEqual);
+    }
+}
+
+public class Calculator
+{
+    public static bool AreEqual<T>(T a, T b)
+    {
+        return a.Equals(b);
+    }
+}
+
 
 ////////////////////////////////////////////////////////////////Q 42
 //What is Multiple delegate 
@@ -4823,7 +4875,6 @@ Questions:
 The questions were based on more real time.
 How do you overcome production issues.
 What is diff const read static
-What are the generics and its types
 What is DI and it's types 
 Write code to change color of text red and green if any error occurs 
 What are types of exception handler and what are custom exception handler
@@ -12778,20 +12829,6 @@ Struct: Structs are value types, and they are typically allocated on the stack.A
 Uses:
 Class: Classes are commonly used to model complex entities with behavior and state.
 Struct: Structs are often used for lightweight objects that represent simple data structures
-
-////////////////////////////////////////////////////What is the Diffrence Between Generic Vs Non Generic
-Collection are categorized into two parts Generic and Non Generics
-Generic Collection :
-Type Safety : Generic collections provide strong type safety.
-Usability : Generic collections are more user-friendly because they eliminate the need for explicit casting.
-Performance : Generic collections are generally more efficient in terms of both execution speed and memory
-because they avoid the overhead of boxing and unboxing.
-
-Non-Generic Collection:
-Type Safety : Non-generic collections are not type-safe because they store elements as object types.
-Usability : Non-generic collections are less user-friendly because they involve casting and boxing/unboxing.
-Performance : Non-generic collections may have performance overhead due to the need for boxing (converting value types to reference types) and unboxing
-(converting reference types back to value types).
 
 ////////////////////////////////////////////////What is diffrence between ArrayLIst and List
 //ArraList :
@@ -21327,43 +21364,6 @@ c.Show(); // Child Show Method
 
 Parent pc  = new Child();
 pc.Child(); // Parent show Method(hidding , not overring)
-///////////////////////Generic
-What are Generics in C#?
-
-Generics allow us to create classes, methods, and interfaces that work with any data type in a type-safe way.
-
-Instead of writing the same code for different types (like int, string, etc.), we write it once using generics — and it will work for any type.
-
-Why and When to Use Generics?
-Type safety – No need for casting.
-
-Code reusability – Write one method for all data types.
-
-Performance – Avoids boxing/unboxing (in value types).
-
-Clean and maintainable code.
-
-using System;
-
-class Program
-{
-    static void Main(string[] args)
-    {
-        bool isEqual = Calculator.AreEqual<int>(10, 10);
-        bool isStrEqual = Calculator.AreEqual<string>("Hello", "Hello");
-
-        Console.WriteLine("Int equal: " + isEqual);
-        Console.WriteLine("String equal: " + isStrEqual);
-    }
-}
-
-public class Calculator
-{
-    public static bool AreEqual<T>(T a, T b)
-    {
-        return a.Equals(b);
-    }
-}
 
 ///////////////////////////////////////////////////////////
 using System.Security.AccessControl;
