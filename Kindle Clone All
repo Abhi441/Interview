@@ -23257,7 +23257,271 @@ Angular supports 4 types: Interpolation, Property Binding, Event Binding, and Tw
 /////////////////////////////////////
 Absolutely, Abhishek! Here's a clean, human-friendly and interview-ready answer for Q20 to Q26 — with examples and simple words so even a non-tech person can understand.
 
+✅ Q20. What are Directives in Angular? What are the types?
 
+Answer:
+
+> Directives are instructions in the HTML that tell Angular to do something.
+
+
+
+They are used to change the appearance, behavior, or layout of elements in the DOM.
+
+
+---
+
+✅ Three Types of Directives:
+
+Type	What It Does	Example
+
+1. Component Directive	Custom HTML element (comes with template + logic)	<app-header></app-header>
+2. Structural Directive	Changes structure/layout of DOM (adds/removes HTML)	*ngIf, *ngFor, *ngSwitch
+3. Attribute Directive	Changes the look or behavior of an element	[ngStyle], [ngClass]
+
+Directives,(Defination, Project use ,Trade-off + Business Impact ) with so easy word for human being.
+
+Exmple :
+
+✅ Step 1: Create a Component (example: status-message.component.ts)
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-status-message',
+  templateUrl: './status-message.component.html',
+  styleUrls: ['./status-message.component.css']
+})
+export class StatusMessageComponent {
+  message: string = '';
+  isError: boolean = false;
+
+  showSuccess() {
+    this.message = 'Property saved successfully!';
+    this.isError = false;
+  }
+
+  showError() {
+    this.message = 'Something went wrong while saving property!';
+    this.isError = true;
+  }
+}
+✅ Step 2: Template (HTML) → status-message.component.html
+<div [ngClass]="{ 'error-text': isError, 'success-text': !isError }">
+  {{ message }}
+</div>
+
+<button (click)="showSuccess()">Show Success</button>
+<button (click)="showError()">Show Error</button>
+✅ Step 3: CSS → status-message.component.css
+.error-text {
+  color: red;
+  font-weight: bold;
+}
+
+.success-text {
+  color: green;
+  font-weight: bold;
+}
+🔎 How it Works:
+When you click Show Success, message appears in green.
+When you click Show Error, message appears in red.
+ngClass is used to toggle CSS class based on isError flag.
+💡 Project Example (Buy & Sell Properties App)
+
+When a property is added successfully → show green "Property added successfully".
+When API call fails → show red "Failed to add property".
+///////////////////////////////////////////////////////////////////////////////////////////////////
+Create a custom Angular directive to convert color of highlighted text to green?
+<div>Hello</div>, on hoving hello it will change the colour in Angular 18
+
+
+//
+Here’s how you can create a custom Angular 18 directive that changes the color of the text to green when you hover over it:
+
+
+---
+
+1️⃣ Create the Directive
+
+ng generate directive highlight-green
+
+
+---
+
+2️⃣ highlight-green.directive.ts
+
+import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
+
+@Directive({
+  selector: '[appHighlightGreen]'
+})
+export class HighlightGreenDirective {
+
+  constructor(private el: ElementRef, private renderer: Renderer2) { }
+
+  @HostListener('mouseenter') onMouseEnter() {
+    this.renderer.setStyle(this.el.nativeElement, 'color', 'green');
+  }
+
+  @HostListener('mouseleave') onMouseLeave() {
+    this.renderer.removeStyle(this.el.nativeElement, 'color');
+  }
+
+}
+
+
+---
+
+3️⃣ Use It in HTML
+
+<div appHighlightGreen>Hello</div>
+
+Explanation:
+
+@HostListener('mouseenter') → triggers when you hover over the element.
+
+@HostListener('mouseleave') → resets when you move the mouse away.
+
+Renderer2 → safely updates DOM styles.
+
+---
+
+---
+
+✅ Q21. What is *ngIf Structural Directive?
+
+Answer:
+
+> *ngIf is used to show or hide elements based on a condition.
+
+
+
+📦 Think of it like: "If this is true, show it. If false, hide it."
+
+✅ Example:
+
+<p *ngIf="isLoggedIn">Welcome, Abhishek!</p>
+
+In TypeScript:
+
+isLoggedIn = true;
+
+If isLoggedIn is false, the <p> will not be in the HTML at all.
+
+
+---
+
+✅ Q22. What is *ngFor Structural Directive?
+
+Answer:
+
+> *ngFor is used to loop through a list and show multiple elements.
+
+
+
+📦 Think of it like: "For each item in the list, show this block."
+
+✅ Example:
+
+<ul>
+  <li *ngFor="let user of users">{{ user }}</li>
+</ul>
+
+users = ['Abhishek', 'Raj', 'Kiran'];
+
+This will create 3 <li> items.
+
+
+---
+
+✅ Q23. What is *ngSwitch Structural Directive?
+
+Answer:
+
+> *ngSwitch is used to switch between views based on a value — like a switch-case.
+
+✅ Example:
+
+<div [ngSwitch]="role">
+  <p *ngSwitchCase="'admin'">Admin Panel</p>
+  <p *ngSwitchCase="'user'">User Dashboard</p>
+  <p *ngSwitchDefault>Guest View</p>
+</div>
+
+role = 'admin';
+
+It will show "Admin Panel".
+
+
+---
+
+✅ Q24. What is [ngStyle] Attribute Directive?
+
+Answer:
+
+> ngStyle is used to apply CSS styles dynamically.
+
+
+
+✅ Example:
+
+<p [ngStyle]="{ color: isActive ? 'green' : 'red' }">
+  Status: {{ isActive ? 'Active' : 'Inactive' }}
+</p>
+
+isActive = true;
+
+The <p> text will be green if isActive is true.
+
+
+---
+
+✅ Q25. What is [ngClass] Attribute Directive?
+
+Answer:
+
+> ngClass is used to add or remove CSS classes dynamically.
+
+
+
+✅ Example:
+
+<p [ngClass]="{ 'online': isOnline, 'offline': !isOnline }">
+  Connection Status
+</p>
+
+.online { color: green; }
+.offline { color: red; }
+
+isOnline = true;
+
+The <p> will get class="online" when online.
+
+
+---
+
+✅ Q26. What is the difference between Component, Structural, and Attribute Directives?
+
+Feature	Component	Structural Directive	Attribute Directive
+
+What it does	Creates a custom UI element	Adds/removes elements	Modifies existing element
+Example	<app-user>	*ngIf, *ngFor	[ngStyle], [ngClass]
+Template required?	✅ Yes	❌ No	❌ No
+Use case	UI & logic container	Show/hide or repeat HTML	Change CSS, behavior
+
+
+🧠 Analogy:
+
+Component = Your own full widget
+
+Structural = Decides what HTML appears
+
+Attribute = Styles or behaviors applied to HTML
+
+
+
+---
+
+Let me know if you'd like a quiz or real project task using these!
 /////////////////////////////////////
 
 Absolutely, Abhishek! Here's a very easy-to-remember, interview-friendly, and code-based explanation for each Angular question (Q27 to Q30 + repeated Q20). Think of these as smart short answers with real understanding.
