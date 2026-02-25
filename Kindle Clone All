@@ -13263,7 +13263,7 @@ Q>What is the diffrence between equal(), and ==.
 --> Checks if two object references point to the same memory location (reference equality). 
 "Equals()" Method:
 A virtual method that can be overridden in derived classes to define how equality should be checked for that specific type. 
-Q>trigger
+
 
 last 2question of interview I have solve.
 
@@ -14867,7 +14867,6 @@ Preparing for a .NET Developer Interview?
  ⚡ Model Binding & Validation
 
 📌 SQL Server
- ⚡ Stored Procedure vs Function vs Trigger
  ⚡ Transactions & ACID properties
  ⚡ Query Optimization with Indexes & Execution Plans
  ⚡ Entity Framework vs ADO.NET
@@ -14890,7 +14889,7 @@ Preparing for a .NET Developer Interview?
  🗄 Normalized DB design for large applications
  🗄 SQL Server vs NoSQL in enterprise solutions
  🗄 Handling Concurrency & Deadlocks
- 🗄 Business logic with Stored Procedures, Triggers & Views
+ 
 
 💡 Pro Tips:
  ✨ Freshers → OOP, MVC basics, SQL queries
@@ -16358,120 +16357,6 @@ Key Benefits of Stored Procedures:
 
 Would you like an example for dynamic SQL stored procedures as well?
 
-
-
-
-//////////////////////////////////////////////////////////////////
-Creating a Custom Trigger in SQL Server
-
-A custom trigger in SQL Server is a database object that automatically executes a predefined action when a specific event (INSERT, UPDATE, DELETE) occurs on a table.
-
-
----
-
-Steps to Create a Custom Trigger in SQL Server:
-
-1. Define the event that triggers it (AFTER INSERT, AFTER UPDATE, AFTER DELETE, or INSTEAD OF).
-
-
-2. Use the INSERTED and DELETED tables to track changes.
-
-
-3. Implement custom logic inside the trigger.
-
-
-
-
----
-
-Example 1: Custom Audit Logging Trigger (AFTER INSERT)
-
-This trigger logs every new employee added into an AuditLog table.
-
-Step 1: Create an Audit Log Table
-
-CREATE TABLE AuditLog (
-    AuditID INT IDENTITY(1,1) PRIMARY KEY,
-    EmployeeID INT,
-    ActionType VARCHAR(50),
-    ActionDate DATETIME DEFAULT GETDATE()
-);
-
-Step 2: Create the Custom Trigger
-
-CREATE TRIGGER trg_AfterInsert_Employees
-ON Employees
-AFTER INSERT
-AS
-BEGIN
-    INSERT INTO AuditLog (EmployeeID, ActionType)
-    SELECT EmployeeID, 'INSERT' FROM INSERTED;
-END;
-
-
----
-
-Example 2: Prevent Deletion (INSTEAD OF DELETE)
-
-This trigger prevents employees from being deleted but marks them as inactive instead.
-
-CREATE TRIGGER trg_PreventDelete_Employees
-ON Employees
-INSTEAD OF DELETE
-AS
-BEGIN
-    UPDATE Employees
-    SET IsActive = 0
-    WHERE EmployeeID IN (SELECT EmployeeID FROM DELETED);
-    
-    PRINT 'Employees cannot be deleted. They are marked as inactive instead.';
-END;
-
-
----
-
-Example 3: Track Salary Changes (AFTER UPDATE)
-
-This trigger logs salary changes when an employee's salary is updated.
-
-CREATE TRIGGER trg_TrackSalaryChange
-ON Employees
-AFTER UPDATE
-AS
-BEGIN
-    INSERT INTO AuditLog (EmployeeID, ActionType)
-    SELECT d.EmployeeID, 'SALARY UPDATE'
-    FROM DELETED d
-    JOIN INSERTED i ON d.EmployeeID = i.EmployeeID
-    WHERE d.Salary <> i.Salary;
-END;
-
-
----
-
-How to Test Your Custom Trigger
-
-Run the following SQL commands to check if your triggers work:
-
-INSERT INTO Employees (EmployeeID, Name, Salary, IsActive) VALUES (1, 'John Doe', 50000, 1);
-UPDATE Employees SET Salary = 60000 WHERE EmployeeID = 1;
-DELETE FROM Employees WHERE EmployeeID = 1;
-SELECT * FROM AuditLog; -- View logged actions
-
-
----
-
-How to View Existing Triggers
-
-To see all triggers in your database:
-
-SELECT name, object_id, type_desc 
-FROM sys.triggers;
-
-
----
-
-Would you like a custom trigger for a specific use case in your project?
 
 
 
@@ -20931,7 +20816,6 @@ MS SQL Server
 3. Stored Procedures and Functions
 4. Indexing (Clustered, Non-clustered)
 5. Transactions and Locking Mechanisms
-6. Views and Triggers
 7. Query Optimization and Execution Plans
 8. CTE (Common Table Expressions) and Window Function
 9. Data Types and Constraints
