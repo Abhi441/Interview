@@ -12333,6 +12333,7 @@ The Model binding will take the data as input it will find the exact name of pro
 The process of binding the HTTP Request data to the parameters of application Controllers or Properties is know as Model Binding.
 There are lots of built-in methods and atttributes for model binder.
 
+
 //////////////////////////////////////////////
 1>DeadLock
 2>Why Donet Project are used.
