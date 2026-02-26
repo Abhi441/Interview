@@ -2266,7 +2266,124 @@ INSERTED table Contains new rows being inserted or updated
 DELETED table Contains old rows being deleted or updated
 Can't call triggers manually Triggers are automatic, not manually executable
 Triggers are transactional If a trigger fails, the whole operation rolls back
+///////////////////////
+Mention a query that return the list of triggers in a database
+///////////////////////////////////////////////////
+Stored Procedure vs Function vs Trigger
 
+////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////
+Creating a Custom Trigger in SQL Server
+
+A custom trigger in SQL Server is a database object that automatically executes a predefined action when a specific event (INSERT, UPDATE, DELETE) occurs on a table.
+
+
+---
+
+Steps to Create a Custom Trigger in SQL Server:
+
+1. Define the event that triggers it (AFTER INSERT, AFTER UPDATE, AFTER DELETE, or INSTEAD OF).
+
+
+2. Use the INSERTED and DELETED tables to track changes.
+
+
+3. Implement custom logic inside the trigger.
+
+
+
+
+---
+
+Example 1: Custom Audit Logging Trigger (AFTER INSERT)
+
+This trigger logs every new employee added into an AuditLog table.
+
+Step 1: Create an Audit Log Table
+
+CREATE TABLE AuditLog (
+    AuditID INT IDENTITY(1,1) PRIMARY KEY,
+    EmployeeID INT,
+    ActionType VARCHAR(50),
+    ActionDate DATETIME DEFAULT GETDATE()
+);
+
+Step 2: Create the Custom Trigger
+
+CREATE TRIGGER trg_AfterInsert_Employees
+ON Employees
+AFTER INSERT
+AS
+BEGIN
+    INSERT INTO AuditLog (EmployeeID, ActionType)
+    SELECT EmployeeID, 'INSERT' FROM INSERTED;
+END;
+
+
+---
+
+Example 2: Prevent Deletion (INSTEAD OF DELETE)
+
+This trigger prevents employees from being deleted but marks them as inactive instead.
+
+CREATE TRIGGER trg_PreventDelete_Employees
+ON Employees
+INSTEAD OF DELETE
+AS
+BEGIN
+    UPDATE Employees
+    SET IsActive = 0
+    WHERE EmployeeID IN (SELECT EmployeeID FROM DELETED);
+    
+    PRINT 'Employees cannot be deleted. They are marked as inactive instead.';
+END;
+
+
+---
+
+Example 3: Track Salary Changes (AFTER UPDATE)
+
+This trigger logs salary changes when an employee's salary is updated.
+
+CREATE TRIGGER trg_TrackSalaryChange
+ON Employees
+AFTER UPDATE
+AS
+BEGIN
+    INSERT INTO AuditLog (EmployeeID, ActionType)
+    SELECT d.EmployeeID, 'SALARY UPDATE'
+    FROM DELETED d
+    JOIN INSERTED i ON d.EmployeeID = i.EmployeeID
+    WHERE d.Salary <> i.Salary;
+END;
+
+
+---
+
+How to Test Your Custom Trigger
+
+Run the following SQL commands to check if your triggers work:
+
+INSERT INTO Employees (EmployeeID, Name, Salary, IsActive) VALUES (1, 'John Doe', 50000, 1);
+UPDATE Employees SET Salary = 60000 WHERE EmployeeID = 1;
+DELETE FROM Employees WHERE EmployeeID = 1;
+SELECT * FROM AuditLog; -- View logged actions
+
+
+---
+
+How to View Existing Triggers
+
+To see all triggers in your database:
+
+SELECT name, object_id, type_desc 
+FROM sys.triggers;
+
+
+---
+
+Would you like a custom trigger for a specific use case in your project?
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////72)
 View : view is Virtual table which contains of a subset of data contains in a table of more than one table.
 
