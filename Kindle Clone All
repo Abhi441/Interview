@@ -2566,6 +2566,28 @@ WHAT IS THE DIFFERENCE BETWEEN SCOPE_IDENTITY AND @@IDENTITY? scope_identity and
 
 //////////////////////////90)
 WHAT IS CTE IN SQL SERVER? A Common Table Expression, is a TEMPORARY named result set, that you can used within a SELECT, INSERT, UPDATE, or DELETE statement.
+/////////////////////////////////////////////To remove duplicate records while keeping only one entry per EmployeeName, you can use a DELETE with a CTE and ROW_NUMBER():
+WITH CTE AS (
+    SELECT *,
+           ROW_NUMBER() OVER (PARTITION BY EmployeeName ORDER BY EmployeeId) AS rn
+    FROM Employee
+)
+DELETE FROM Employee
+WHERE EmployeeId IN (
+    SELECT EmployeeId FROM CTE WHERE rn > 1
+);
+
+////////////////////////////
+Q>CTE vs Temp Table.
+////////////////////////
+What is a CTE? How does it differ from subqueries?
+//////////////////////////////////////////////////////
+13. What is a CTE (Common Table Expression) and its use case?
+/////////////////////////////////////////////////////////////
+Q>CTE vs Temp Table
+////////////////////////////////////////////////////////////
+8. CTE (Common Table Expressions) and Window Function
+//////////////////////////////////////////////////////////
 
 //////////////////////91)
 WHAT IS THE DIFFERENCE BETWEEN DELETE, TRUNCATE AND DROP COMMANDS? 
