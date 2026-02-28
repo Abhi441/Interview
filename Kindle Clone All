@@ -2578,7 +2578,35 @@ WHERE EmployeeId IN (
 );
 
 ////////////////////////////
-Q>CTE vs Temp Table.
+////////////////////////////////////////////////////////////////////////////////////Q>CTE vs Temp Table.
+You asked for only two main differences — so here they are clearly.
+✅ 1️⃣ Storage & Lifetime
+CTE (Common Table Expression)
+Exists only during one query execution
+Not stored physically
+Disappears immediately after query finishes
+Temp Table
+Stored physically in tempdb
+Exists for the entire session (or until dropped)
+Can be reused in multiple queries
+👉 Simple line:
+CTE is temporary logic. Temp table is temporary storage.
+✅ 2️⃣ Performance & Indexing
+CTE
+Cannot create indexes
+Re-executes if referenced multiple times
+Better for small or readable queries
+Temp Table
+Can create indexes
+Better for large data processing
+Improves performance in complex multi-step queries
+👉 Simple line:
+CTE is good for readability. Temp table is good for heavy data work.
+🎯 Interview 1-Line Answer
+CTE exists only for a single query and does not store data physically, while a temp table is stored in tempdb, can be indexed, and can be reused within the session.
+
+Simple line :
+CTE is Temporary logic. Temp table is 
 ////////////////////////
 What is a CTE? How does it differ from subqueries?
 //////////////////////////////////////////////////////
