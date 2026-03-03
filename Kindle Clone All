@@ -6,76 +6,6 @@
 6)EF and Ado.net.
 
 
-
-
-
-
-
-
-
-
-
-/////////////////////86)
-WHAT IS THE DIFFERENCE BETWEEN STORED PROCEDURE AND FUNCTIONS?
-
-/////////////////////87)
-HOW TO OPTIMIZE A STORED PROCEDURE OR SQL QUERY? 
-Below are some techniques to optimize a stored procedure: 
-->Use SET NOCOUNT ON Specify column names
-->instead of using * in SELECT statement.
-->Use schema name before objects or table names. Example: SELECT EmpID, Name FROM dbo.Employee
-->Do not use DYNAMIC QUERIES. They are vulnerable to SQL Injections. 
-->Use EXISTS () instead of COUNT (). Example: IF( EXISTS (SELECT 1 FROM db.Employees)) is better than SELECT Count(1) FROM dbo. Employee Use TRANSACTION when required only
-//Got it Abhishek 👍 Let’s make your answer interview-ready with Definition + Project Use + Trade-offs + Business Impact in very simple words.
-
-❓ Interview Question: “How do you optimize a Stored Procedure or SQL Query?”
-1. Definition (Easy Words)
-👉 Query optimization means: “Making your SQL run faster and use fewer resources (CPU, memory, disk).”
-It’s like cooking food quickly without wasting gas or ingredients.
-
-2. Project Use (Buy & Sell Properties App Example)
-💡 In our Buy & Sell Property app, we had:
-
-A Property Search Query → Users search by price, city, status (active/sold).
-If query is slow → users wait longer, bad experience.
-So, we optimized queries to make property search faster.
-3. Techniques + Easy Human Explanation
-Use SET NOCOUNT ON
-👉 Stops sending “rows affected” messages.
-Example: 5 rows affected → we don’t need this in API, it just wastes network.
-
-Specify column names instead of SELECT *
-👉 Instead of bringing all columns, bring only what you need.
-Example: SELECT EmpID, Name FROM dbo.Employee
-(In property app: SELECT PropertyName, Price not SELECT *).
-
-Use schema name before table
-👉 Example: dbo.Employee
-It makes SQL Server find the table faster (like giving full address, not just name).
-
-Avoid Dynamic Queries
-👉 Example: Don’t build query with string concat → risk of SQL Injection.
-Use parameters instead.
-
-Use EXISTS() instead of COUNT()
-👉 If you just want to check if record exists, use EXISTS (stops after first match) → faster.
-
-Use Transactions only when needed
-👉 Transactions lock tables. If you don’t need them, avoid them → less blocking.
-
-4. Trade-offs (Things to Consider)
-Optimization makes query faster, but sometimes requires more developer effort.
-Example: Instead of SELECT *, we write 5–6 column names → a bit longer code, but worth it.
-Using indexes helps speed, but takes extra space in database.
-5. Business Impact (Easy Words)
-Faster query = Faster property search.
-Faster = Happy users → More sales.
-Less CPU/Memory = Lower server cost for company.
-Secure queries = No data leaks / hacking risk.
-✅ Final Interview Line:
-“In our Buy & Sell Property project, we optimized queries by avoiding SELECT *, using schema names, replacing COUNT with EXISTS, and using transactions carefully. This improved property search speed, reduced server cost, and made the system more secure for customers.”
-
-👉 Do you want me to also add Indexes optimization (clustered vs non-clustered) into this answer? That often comes as a cross-question in SQL interviews.
 /////////////////////////////88)
 WHAT IS A CURSOR? WHY TO AVOID THEM? A database Cursor is a control which enables traversal/ iteration over the rows or records in the table. It’s a 5-step process: 1. Declare 2. Open 3. Fetch using while loop 4. Close 5. Deallocate
 
@@ -10206,16 +10136,6 @@ In this case, the catch block for Exception will catch the exception, and the mo
 
 
 13>What is datatime table, where does it store.
-/////////////////////////////////////////////////////////////////////15>Write the basic syntax of store procedure.
-CREATE PROCEDURE procedure_name
-    @parameter1 datatype,
-    @parameter2 datatype,
-    ...
-AS
-    -- SQL statements to define the stored procedure logic
-    -- This can include SELECT, INSERT, UPDATE, DELETE, and more
-
-GO
 
 ///////////////////////////////////////////////////16>excution flow of sql.
 FROM>WHERE>GROUP BY >HAVING > SELECT > ORDER BY > LIMIT.
@@ -11005,7 +10925,6 @@ q>Normally what happen if we do not put the Await keyword in Asny method.
 Q>How many type of json file will be their.
 Q>Base class of controller , How does you make controller.
 Q>If condition and iteration in Sql 
-Q)How you debugging the store procedure in Sql server 
 Q) How you give the security to backend.
 Q) Hiw you can optimise the SQl query
 Q)be all the code of in your brain
@@ -18304,33 +18223,6 @@ Monolithical : We had a single IIS-hosting.NET MVC app with one SQL Server datab
 
 Microservices : We build .NET Core Web APIs deployement on Docker + Kubernetes , each with its own database , integrated via API Gateways with RabbitMQ for async events and Serilog + ELK for logging.
 
-////////////////////////////////////////////////////Function and Store Procedure
-Store Procedure
--> Store Procedure may or may not return value.
-->Insert and update function in Store Procedure.
-->we can write Transaction in Store Procedure.
-->we can call the function in stored procedure
-->we can use try catch block for runtime exception.
--> we can write ddl operation for Store Procedure.
-
-FUNCTION
--> It will return value.
-->Function we can only use select because it retriving the data.
-->we can not write Transaction in function.
-->we can not call store Procedure inside the function.
-->we can can not write try , catch , block in function.
--> you can not write the ddl operation for function.
-
-/////////////////////////////////////////////////////////////////////////////Performance Tuning we are doing
-we are doing for store Procedure
-Supose we want to increse the performance of store Procedure then
-->we can do set No count 
-->instead of calling table name I will dbo.TableName.
-->Instaed of * we can use selected coloum.
-->we avoid aggregate functon in where clouse.
-->we need to do proper indexing on table
-->we should avoid ddl operation on store Procedure.
-->we will use table varible instead of temp table.
 
 ////////////////////////////////////////////////////////////////////////////what is diffrence between var and dynamic keyword
 ->at the time declaration , we need to assign the value of var keyword,we can step we can assign the same datatype value .
@@ -18444,7 +18336,6 @@ MS SQL Server
 
 1. Joins (Inner, Left, Right, Full Outer)
 2. CRUD Operations (Insert, Update, Delete, Select)
-3. Stored Procedures and Functions
 5. Transactions and Locking Mechanisms
 7. Query Optimization and Execution Plans
 8. CTE (Common Table Expressions) and Window Function
