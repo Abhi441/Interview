@@ -14,40 +14,6 @@
 
 
 
-//////////////////////////////////80
-WHAT ARE INDEXES IN SQL SERVER?
-
-SQL Indexes are used in relational databases to retrieve data VERY FAST.
-
-They are like indexes at the start of the BOOKS, which pur-pose is to find a topic quickly.
-
-//////////////////////////////81)
-WHAT IS CLUSTERED INDEX?
-
-CLUSTERED INDEX
-
-A clustered index defines the order in which data is phys-ically stored in a table.
-
-Clustered index are similar to the Dictionary. See how you will find any word.
-
-There is only one way to find a word so similarly there can be only one clustered index per table possible.
-
-In SQL Server, if you set a primary key on a column then it will automatically create a clustered index on that col-umn.
-
-//////////////////////////82)
-WHAT IS NON-CLUSTERED INDEX? NON-CLUSTERED INDEX A non-clustered index is stored at one place and table data is stored in another place. So, this index is not physically stored. It is like the index of a BOOK.
-
-///////////////////////83)
-WHAT IS THE DIFFERENCE BETWEEN CLUSTERED AND NON-CLUSTERED INDEX? 1. A clustered index defines the order in which data is physically stored in a table. For example, Dictionary. A non-clustered index is stored at one place and table data is stored in another place. For example, Book Index. 2. A table can have only one clustered index. A table can have multiple non-clustered index. 3. Clustered index is faster. Non-clustered index is slower.
-
-
-//////////////////////////////84)
-HOW TO CREATE CLUSTERED AND NON-CLUSTERED INDEX IN A TABLE? CLUSTERED INDEX When you create a PRIMARY KEY constraint, a clustered  index on the column or columns is automatically created. NON-CLUSTERED INDEX
-
-
-//////////////////////////85)
-IN WHICH COLUMN YOU WILL APPLY THE INDEXING TO OPTIMIZE THIS QUERY. “select id, class from student where name=”happy””? The column after WHERE condition, which is “name” here.
-
 
 /////////////////////86)
 WHAT IS THE DIFFERENCE BETWEEN STORED PROCEDURE AND FUNCTIONS?
@@ -400,43 +366,6 @@ If you want next: ✅ Difference between Trigger vs Stored Procedure
 ✅ Common interview traps
 Just say 👍
 
-////////////////////////////////////////////82>
-What is NON-CLUSTERED INDEX ?
-A non -clustred index is stored at one place and table is stored in another place.So this is not physically stored.
-
-Example :
-CREATE TABLE EMPLOYEE(
-ID INT PRIMARY KEY , // By default create a clusred indes
-NAME  VARCHAR(100),
-Salary INT
-)
-//Example
-Non-Clustered Index
-
-CREATE NONCLUSTERED INDEX IX_Employee_Name
-ON Employee(name);
-
-Clustered Index = Sorted actual data.
-Non-Clustored Index = Pointer to actial data.
-
-//ADVANTAGES
-Use it
--> You Serch frequently by coloumns other than the primary key.
-Example : SELECT * FROM EMPLOYEE WHERE Name = 'Abhishek';
-
-
-
-////////////////////////////////////////////////////////////////////////////////83>
-What is the diffrence between clustered and non clustored index ?
-=>
-A clustered index defines the order in which data is physically stored in a table. for example Dictionary.
-A non-clustred index is stored at one place and table data is stored in another place. for example , Bookplace
-
-A table can have only one clustred index.
-Atable can have multiple non-clustred index.
-
-Clustered index is faster.
-Non-Clustered index is slower.
 
 ////////////////////////////////////////////////86>
 1. SP may or may not return a value, but Function must return a value
@@ -1903,7 +1832,6 @@ What is diffrence between early and late binding.
 `What happens if the inherited interfaces have conflicting method names ?
 what is the Constructor Chaining in c#
 what the diffrence between the Arrays.CopyTo() and Array.Clone()?
-what is Indexers in c#
 what is the diffrence between the Is and As operators in c#
 What is an Object Pooling
 what is virtual method in c#
@@ -7179,11 +7107,6 @@ Cursor
 How many multiple ways we can get the data from Stored Procedure.
 Rjax
 Rjx(state management)
-
-
-///////////////////////////////////////////////////////////////////////////////////why we are using Non clustered index
-
-
 
 /////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////Persistance
@@ -18522,7 +18445,6 @@ MS SQL Server
 1. Joins (Inner, Left, Right, Full Outer)
 2. CRUD Operations (Insert, Update, Delete, Select)
 3. Stored Procedures and Functions
-4. Indexing (Clustered, Non-clustered)
 5. Transactions and Locking Mechanisms
 7. Query Optimization and Execution Plans
 8. CTE (Common Table Expressions) and Window Function
