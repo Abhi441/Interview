@@ -6,65 +6,10 @@
 6)EF and Ado.net.
 
 
-/////////////////////////////88)
-WHAT IS A CURSOR? WHY TO AVOID THEM? A database Cursor is a control which enables traversal/ iteration over the rows or records in the table. It’s a 5-step process: 1. Declare 2. Open 3. Fetch using while loop 4. Close 5. Deallocate
-
-/////////////////////////////89)
-WHAT IS THE DIFFERENCE BETWEEN SCOPE_IDENTITY AND @@IDENTITY? scope_identity and @@identity, both are used to get the last value entered in the identity column of the table. The @@identity returns the last identity created in the same session. The session is the database connection. The scope_identity() function returns the last identity created in the same session and the same scope. The scope is the current query or the current stored procedure. Normally we have to use scope_identity() function inside stored procedures.
 
 
-//////////////////////////90)
-WHAT IS CTE IN SQL SERVER? A Common Table Expression, is a TEMPORARY named result set, that you can used within a SELECT, INSERT, UPDATE, or DELETE statement.
-/////////////////////////////////////////////To remove duplicate records while keeping only one entry per EmployeeName, you can use a DELETE with a CTE and ROW_NUMBER():
-WITH CTE AS (
-    SELECT *,
-           ROW_NUMBER() OVER (PARTITION BY EmployeeName ORDER BY EmployeeId) AS rn
-    FROM Employee
-)
-DELETE FROM Employee
-WHERE EmployeeId IN (
-    SELECT EmployeeId FROM CTE WHERE rn > 1
-);
 
 ////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////Q>CTE vs Temp Table.
-You asked for only two main differences — so here they are clearly.
-✅ 1️⃣ Storage & Lifetime
-CTE (Common Table Expression)
-Exists only during one query execution
-Not stored physically
-Disappears immediately after query finishes
-Temp Table
-Stored physically in tempdb
-Exists for the entire session (or until dropped)
-Can be reused in multiple queries
-👉 Simple line:
-CTE is temporary logic. Temp table is temporary storage.
-✅ 2️⃣ Performance & Indexing
-CTE
-Cannot create indexes
-Re-executes if referenced multiple times
-Better for small or readable queries
-Temp Table
-Can create indexes
-Better for large data processing
-Improves performance in complex multi-step queries
-👉 Simple line:
-CTE is good for readability. Temp table is good for heavy data work.
-🎯 Interview 1-Line Answer
-CTE exists only for a single query and does not store data physically, while a temp table is stored in tempdb, can be indexed, and can be reused within the session.
-
-Simple line :
-CTE is Temporary logic. Temp table is 
-////////////////////////
-What is a CTE? How does it differ from subqueries?
-//////////////////////////////////////////////////////
-13. What is a CTE (Common Table Expression) and its use case?
-/////////////////////////////////////////////////////////////
-Q>CTE vs Temp Table
-////////////////////////////////////////////////////////////
-8. CTE (Common Table Expressions) and Window Function
-//////////////////////////////////////////////////////////
 
 //////////////////////91)
 WHAT IS THE DIFFERENCE BETWEEN DELETE, TRUNCATE AND DROP COMMANDS? 
@@ -10937,7 +10882,6 @@ Q> What is the latest feature addes in Entyty framework after .Net 6 , 7;
 Q>TempData
 Q>Minification and Bundling.
 Q>Render page Vs Render body.
-Q>CTE vs Temp Table
 Q> Unique Key Vs Foreign Key
 Q>Why ViewData require typeCasting
 Q> What is the diffrence between viewdata and View Bags
@@ -12595,7 +12539,6 @@ What memory management challenges have you faced in .NET?
 👉 DELETE vs TRUNCATE vs DROP.
 👉 What is a View? Can we update it?
 👉 Clustered vs Non-Clustered Index.
-👉 What is a CTE? How does it differ from subqueries?
 👉 Use of ROW_NUMBER(), RANK(), DENSE_RANK().
 👉 What is Normalization? Different Normal Forms?
 👉 What’s a Stored Procedure? How is it different from a Function?
@@ -13404,7 +13347,6 @@ Top 50 Full Stack Developer Interview Questions**, Mostly asked in MNCs like Del
 
 2. Explain normalization – 1NF, 2NF, 3NF.
 3. `WHERE` vs `HAVING` clause.
-4. What is a `CTE`?
 5. Find the second highest salary.
 6. `DELETE` vs `TRUNCATE` vs `DROP`.
 7. What are indexes?
@@ -13590,7 +13532,6 @@ Angular
 
 11. Write a SQL query to find the second highest salary.
 12. Difference between Clustered and Non-Clustered Index.
-13. What is a CTE (Common Table Expression) and its use case?
 14. How to delete duplicate records from a table but keep one?
 15. Difference between DELETE, TRUNCATE, and DROP in SQL Server.
 
@@ -13627,7 +13568,6 @@ Angular
 -----------------
 1.SQL query to get the second highest salary from a table.
 2.Clustered vs Non-Clustered Index in SQL Server?
-3.Explain CTE (Common Table Expression) with example.
 4.Difference between DELETE, TRUNCATE, and DROP.
 5.Methods to remove duplicates from a SQL table.
 ------------------
@@ -18338,7 +18278,6 @@ MS SQL Server
 2. CRUD Operations (Insert, Update, Delete, Select)
 5. Transactions and Locking Mechanisms
 7. Query Optimization and Execution Plans
-8. CTE (Common Table Expressions) and Window Function
 9. Data Types and Constraints
 10. Backup and Restore.
 11. Performance and Security.
