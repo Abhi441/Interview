@@ -6,242 +6,6 @@
 6)EF and Ado.net.
 
 
-
-
-
-////////////////////////////
-
-//////////////////////91)
-WHAT IS THE DIFFERENCE BETWEEN DELETE, TRUNCATE AND DROP COMMANDS? 
-
-DELETE
-
-1. It is a DML.
-
-2. It is used to delete the one or more rows(data) of a table.
-
-3. It can be rollback.
-
-DELETE FROM Employees WHERE Emp_Id = 7;
-
-TRUNCATE
-
-1. It is a DDL.
-
-2. It is used to delete all rows from the table.
-
-3. It can be rollback.
-
-4. Trincate will remove all the records from the table Employees but not the structure/ schema.
-
-TRUNCATE TABLE Employees;
-
-DROP
-
-1. It is a DDL.
-
-2. It is used to drop the whole table with STRUCTURE/SCHEMA.
-
-3. It can not be rollback.
-
-4. It will remove the structure/schema also.
-
-DROP TABLE Employees;
-
-
-/////////////////////////////
-WHAT ARE ACID PROPERTIES?
-
-ACID properties are used when you are handling transac-tions in SQL.
-
-Atomicity
-
-Each transaction is "all or nothing"
-
-Consistency
-
-Data should be valid according to all defined rules
-
-Isolation
-
-Transactions do not affect each other
-
-Durability
-
-Committed data would not be lost, even after power failure.
-
-//////////////////////////////94
-WHAT ARE MAGIC TABLES IN SQL SERVER? Magic tables are the temporary logical tables that are created by the SQL server whenever there are insertion or deletion or update( D.M.L) operations. Types of magic tables: INSERTED – The recently inserted row gets added to the
-INSERTED magic table. DELETED – The recently deleted row gets added to the DELETED magic table. The use of magic tables are TRIGGERS.
-
-//
-Magic Tables in SQL Server (Interview Question Explained Simply)
-🧒 1. Easiest Definition (5-year-old level)
-👉 Magic tables are like CCTV cameras for a table.
-They secretly watch what data was added or removed.
-When something changes in a table, SQL Server says:
-“Let me keep a copy of old data and new data.”
-Those copies are called Magic Tables ✨
-👶 2. Simple Human Definition
-Magic tables are special temporary tables automatically created by SQL Server inside triggers to hold old and new data.
-They help SQL Server know:
-What was inserted
-What was deleted
-What was updated
-✅ What Are the Magic Tables?
-There are ONLY TWO magic tables:
-Magic Table
-What it Contains
-inserted
-New data
-deleted
-Old data
-⚠️ They exist ONLY inside triggers
-✅ When Do They Get Created?
-Automatically created when you use:
-INSERT
-UPDATE
-DELETE
-inside a trigger
-✅ Easy Visual Understanding
-UPDATE Example
-Copy code
-
-Old Data → deleted table
-New Data → inserted table
-SQL Server keeps both so you can compare.
-✅ Simple Example (Very Important)
-Table
-Copy code
-Sql
-Employee
----------
-Id | Name | Salary
-Trigger Example
-Copy code
-Sql
-CREATE TRIGGER trg_Employee_Update
-ON Employee
-AFTER UPDATE
-AS
-BEGIN
-    SELECT * FROM inserted;
-    SELECT * FROM deleted;
-END;
-If You Run:
-Copy code
-Sql
-UPDATE Employee
-SET Salary = 60000
-WHERE Id = 1;
-Magic Table
-Contains
-deleted
-Salary = 50000
-inserted
-Salary = 60000
-👉 SQL Server magically stores both ✨
-✅ INSERT Scenario
-Copy code
-Sql
-INSERT INTO Employee VALUES (2, 'Amit', 40000);
-Magic Table
-Data
-inserted
-New row
-deleted
-Empty
-✅ DELETE Scenario
-Copy code
-Sql
-DELETE FROM Employee WHERE Id = 2;
-Magic Table
-Data
-deleted
-Removed row
-inserted
-Empty
-✅ Real Project Use Case (Buy & Sell Property App)
-🔹 Audit Log (VERY COMMON)
-When property price changes:
-Copy code
-Sql
-INSERT INTO PropertyPriceHistory
-SELECT Id, Price, GETDATE()
-FROM deleted;
-👉 Stores old price before update
-👉 Helps in price history tracking
-🔹 Security / Validation
-Copy code
-Sql
-IF EXISTS (
-    SELECT 1 FROM inserted
-    WHERE Price < 0
-)
-BEGIN
-    RAISERROR('Invalid Price', 16, 1);
-    ROLLBACK;
-END
-👉 Prevents wrong data
-🔹 Synchronization
-Sync updated property data
-Trigger notifications
-Maintain logs
-✅ Interview Trick Question ⚠️
-❓ Are magic tables real physical tables?
-❌ NO
-✔ They are virtual / temporary logical tables
-✅ Important Rules (Interview Gold)
-✔ Available only inside triggers
-✔ Can contain multiple rows (VERY IMPORTANT)
-✔ Must handle set-based operations
-✔ Automatically managed by SQL Server
-❌ Cannot be accessed outside trigger
-✅ Common Mistake (Interviewers Love This)
-❌ Wrong assumption:
-Copy code
-Sql
-SELECT * FROM inserted WHERE Id = 1;
-✔ Correct approach:
-Copy code
-Sql
-SELECT * FROM inserted;
-Because multiple rows can be affected.
-✅ Trade-Offs
-👍 Advantages
-Easy change tracking
-Built-in mechanism
-No manual temp tables
-Great for auditing
-👎 Disadvantages
-Trigger overhead
-Performance impact
-Can complicate debugging
-Poorly written triggers slow system
-✅ Business Impact (Simple Words)
-✔ Correct usage:
-Accurate audit logs
-Data security
-Compliance
-Trust in system
-❌ Wrong usage:
-Slow database
-Deadlocks
-High maintenance
-Business downtime 💸
-🎯 One-Line Interview Answer (BEST)
-Magic tables in SQL Server are the inserted and deleted virtual tables automatically created inside triggers to hold new and old data during insert, update, or delete operations.
-🧠 Memory Shortcut
-👉 INSERT → inserted
-👉 DELETE → deleted
-👉 UPDATE → both
-If you want next: ✅ Difference between Trigger vs Stored Procedure
-✅ Real audit log design
-✅ Performance-safe trigger patterns
-✅ Common interview traps
-Just say 👍
-
-
 ////////////////////////////////////////////////86>
 1. SP may or may not return a value, but Function must return a value
 🔸 Stored Procedure Example:
@@ -10764,7 +10528,6 @@ Lifetime: The instance lives only as long as it's needed to fulfill the current 
 Example: Database context, logger, helper classes.
 Q> Varchar and Nvarchar
 Q> diffrence between Dictionary vs List
-Q>What is magic table in Sql.
 
 Q>What is the diffrence between equal(), and ==.
 "==" Operator:
@@ -12366,7 +12129,6 @@ Preparing for a .NET Developer Interview?
  ⚡ Model Binding & Validation
 
 📌 SQL Server
- ⚡ Transactions & ACID properties
  ⚡ Query Optimization with Indexes & Execution Plans
  ⚡ Entity Framework vs ADO.NET
 
@@ -12541,7 +12303,6 @@ What memory management challenges have you faced in .NET?
 👉 What is Normalization? Different Normal Forms?
 👉 What’s a Stored Procedure? How is it different from a Function?
 👉 How to find the second highest salary in SQL?
-👉 What is a Transaction? What are ACID properties?
 👉 Common aggregate functions: SUM(), AVG(), etc.
 👉 Difference between IN, EXISTS, and ANY.
 👉 ISNULL() vs COALESCE() — which to use when?
@@ -18963,37 +18724,6 @@ AverageSalary from Employee
 where status = 'Active'
 group by Department
 Having AVG(Salary) > 50000;
-//////////////////////////////What is Diffrence bewteen Delete,Truncate , Drop in Sql
-
-////Delect 
-1> Used to remove the specific rows from a table.
-2>you can use where to delete the 
-3>can be rolled back(if inside a transaction)
-4>It is a DML(Data Manipulation Language) command.
-5>Table structure does not changes.
-
-Example:
-Delect from Employee Where Employee = 5 ;
-
-//////Truncate
-1>Remove all rows from table(empties the table).
-2>Cannot be rolled back in many 
-databases(in SQL Server, rollback is possible if used a transaction).
-3>It is a DDL(Data Defination Language) command.
-4> Table structure does not changes.
-
-Example
-TRUNCATE Table Employee;
-
-//Drop
--->Delete the entire table from database(structure + data);
---> Cannot be rolled back.
---> It is DDL(Data Defination Language) command
-
-Example
-Drop Table Employee;
-
--->In short Where filters individual recoreds, Having filters grouped results.
 
 ///////////////////////////////////////////////////////What is the diffrence between Union And Union All.
 //Union
