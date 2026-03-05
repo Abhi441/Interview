@@ -2361,7 +2361,6 @@ export class PropertyService {
 1. Diff of const, static
 2. ⁠Can we create object of it
 3. ⁠What is constructor
-4. ⁠Diff between truncate and delete
 5. ⁠Decorator in angular
 6. ⁠What is middleware 
 7. ⁠What is middlelayer
@@ -12536,7 +12535,6 @@ What memory management challenges have you faced in .NET?
 📌 Top 20 SQL Interview Questions:
 👉 What’s the difference between WHERE and HAVING clause?
 👉 Difference: Primary Key vs Unique Key vs Foreign Key.
-👉 DELETE vs TRUNCATE vs DROP.
 👉 What is a View? Can we update it?
 👉 Clustered vs Non-Clustered Index.
 👉 Use of ROW_NUMBER(), RANK(), DENSE_RANK().
@@ -13348,7 +13346,6 @@ Top 50 Full Stack Developer Interview Questions**, Mostly asked in MNCs like Del
 2. Explain normalization – 1NF, 2NF, 3NF.
 3. `WHERE` vs `HAVING` clause.
 5. Find the second highest salary.
-6. `DELETE` vs `TRUNCATE` vs `DROP`.
 7. What are indexes?
 8. Stored procedures & use-cases.
 9. Transactions in SQL.
@@ -13533,7 +13530,6 @@ Angular
 11. Write a SQL query to find the second highest salary.
 12. Difference between Clustered and Non-Clustered Index.
 14. How to delete duplicate records from a table but keep one?
-15. Difference between DELETE, TRUNCATE, and DROP in SQL Server.
 
 ---
 
@@ -13568,7 +13564,6 @@ Angular
 -----------------
 1.SQL query to get the second highest salary from a table.
 2.Clustered vs Non-Clustered Index in SQL Server?
-4.Difference between DELETE, TRUNCATE, and DROP.
 5.Methods to remove duplicates from a SQL table.
 ------------------
  Angular
