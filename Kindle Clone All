@@ -21732,7 +21732,49 @@ Copy code
 int[] arr2 = (int[])arr1.Clone();
 One-Line Interview Answer
 Array.Clone() creates a shallow copy of the array and returns a new array object with the same elements.
-/////////////////////////////////////////////////////////////////For optimizing sql query are you using any tool (like tool will tell ous that this ways you can optimize the query).
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////For optimizing sql query are you using any tool (like tool will tell ous that this ways you can optimize the query).
+Yes. In Microsoft SQL Server, there are some tools that help identify query performance problems and optimization suggestions.
+Here are the most common ones you can mention in an interview.
+1️⃣ Execution Plan (Most Common Tool)
+Execution Plan shows how SQL Server executes the query.
+It helps identify:
+Table scans
+Missing indexes
+Expensive operations
+You can open it in SQL Server Management Studio.
+Shortcut:
+Copy code
+
+Ctrl + M
+Then run the query to see the Actual Execution Plan.
+Interview line:
+I usually check the Execution Plan in SSMS to see costly operations and missing indexes.
+2️⃣ SQL Server Profiler
+SQL Server Profiler helps track:
+Slow queries
+Long running queries
+Deadlocks
+Performance issues
+It captures queries executed on the server.
+3️⃣ Query Store
+SQL Server Query Store stores history of queries and their performance.
+It helps to:
+Find slow queries
+Compare query plans
+Detect performance regression
+4️⃣ Database Engine Tuning Advisor
+Database Engine Tuning Advisor analyzes queries and suggests:
+Indexes
+Partitioning
+Statistics improvements
+This tool can automatically recommend optimization.
+Example interview line:
+Database Engine Tuning Advisor can analyze a workload and suggest indexes to improve performance.
+Simple Interview Answer (Best)
+In SQL Server I use Execution Plan, SQL Server Profiler, Query Store, and Database Engine Tuning Advisor to identify slow queries and optimize them.
+Short 10-Second Answer (Very Good)
+I usually check the Execution Plan and Query Store in SQL Server Management Studio, and sometimes use Database Engine Tuning Advisor to get index recommendations.
+If you want, I can also show you the 7 most common SQL query optimization techniques interviewers expect developers to know.
 /////////////////////////////////////////////////////////////////What is the constructor chaining.
 /////////////////////////////////////////////////////////////////Versing Api.
 ////////////////////////////////////////////////////////////////////Model
