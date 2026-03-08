@@ -21689,7 +21689,49 @@ return a ;
 ///////////////////////////////////////////////////////////How does api version .(param string in method) , 
 //////////////////////////////////////////////////////////////Array.clone
 
+Array.Clone() creates a copy of an array.
+It returns a new array object with the same elements as the original array.
+Simple Definition (Interview Line)
+Array.Clone() creates a shallow copy of an array.
+Example
+Csharp
+Copy code
+int[] arr1 = { 1, 2, 3, 4 };
 
+int[] arr2 = (int[])arr1.Clone();
+
+arr2[0] = 100;
+
+Console.WriteLine(arr1[0]); // 1
+Console.WriteLine(arr2[0]); // 100
+Explanation
+Copy code
+
+arr1 = [1,2,3,4]
+arr2 = [1,2,3,4] ← copied array
+When we change arr2, arr1 does not change.
+Because Clone() creates a new array object.
+Important Point (Interview)
+Array.Clone() makes a shallow copy.
+Meaning:
+Value types → copied completely
+Reference types → only reference is copied, not the actual object
+Example with Reference Type
+Csharp
+Copy code
+string[] arr1 = { "A", "B" };
+string[] arr2 = (string[])arr1.Clone();
+Both arrays will point to the same string objects.
+Key Points for Interview
+Array.Clone() creates a copy of the array
+It performs a shallow copy
+It returns object type, so casting is required
+Example:
+Csharp
+Copy code
+int[] arr2 = (int[])arr1.Clone();
+One-Line Interview Answer
+Array.Clone() creates a shallow copy of the array and returns a new array object with the same elements.
 /////////////////////////////////////////////////////////////////For optimizing sql query are you using any tool (like tool will tell ous that this ways you can optimize the query).
 /////////////////////////////////////////////////////////////////What is the constructor chaining.
 /////////////////////////////////////////////////////////////////Versing Api.
