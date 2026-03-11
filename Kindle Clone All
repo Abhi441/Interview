@@ -15,9 +15,8 @@
 ///////////////////////////// 
 ///////////////////////////////C#
 ////////////////////////////////
-What is latest version of c#
-What is Managed and umanged code
-What is diffrence between early and late binding.
+
+
 `What happens if the inherited interfaces have conflicting method names ?
 what is the Constructor Chaining in c#
 what the diffrence between the Arrays.CopyTo() and Array.Clone()?
@@ -197,177 +196,8 @@ For example, in my property app, once a user logs in, we issue a JWT token store
 
 
 Show quoted text
-What is latest version of c#
 
-The latest stable version of C# is C# 13.0, released with .NET 9. 
 
-If you need, I can also mention what new features came with C# 13 so it sounds strong in an interview.
-
-Perfect 👍 Let’s make this interview-ready and easy to remember.
-
-
----
-
-🔥 New Features in C# 13 (with .NET 9)
-
-Here are the highlight updates:
-
-1. Field keyword in Primary Constructors
-
-You can directly create a field inside a primary constructor parameter.
-
-
-class Student(string name, int age)
-{
-    private field int age = age; // new keyword 'field'
-}
-
-
-2. Partial Properties
-
-Just like partial classes, now properties can be declared as partial and implemented in another part of the class.
-
-
-partial class Person
-{
-    public partial string Name { get; }
-}
-
-
-3. Lock Object Simplification
-
-You can now lock on a value directly without creating a separate object.
-
-
-lock (someLock)
-{
-    // thread-safe code
-}
-
-
-4. ref readonly Parameters
-
-Allows passing parameters by reference without allowing modification.
-
-
-void Print(ref readonly int number)
-{
-    Console.WriteLine(number);
-}
-
-
-5. Method Group Natural Type Improvements
-
-Better support for method group conversions when passing methods as delegates.
-
-
-
-6. Improved Interpolated Strings
-
-More performance improvements when using $"..." interpolations.
-
-
-
-
-
----
-
-🎯 Interview-Friendly Answer
-
-> “The latest version of C# is 13, released with .NET 9. It introduced useful features like the field keyword in primary constructors, partial properties, ref readonly parameters, and better support for locks and interpolated strings. These updates make code more concise, safe, and developer-friendly.”
-
-
-
-
----
-
-👉 Do you want me to also make a simple diagram or table comparing C# 12 vs C# 13 so you can quickly revise before interviews?
-
-
-/////////////////////////////////////////
-What is Managed and umanged code interview questions
-
-
-Great one 👍 This is a very common C# interview question. Let’s break it down in simple words + interview style.
-
-
----
-
-⚡ Managed Code vs Unmanaged Code
-
-🔹 Managed Code
-
-Code that runs under the control of the .NET runtime (CLR).
-
-CLR takes care of memory management, garbage collection, type safety, and security.
-
-Example: Any C# or VB.NET code.
-
-
-// Example of Managed Code
-public class Test
-{
-    public void SayHello()
-    {
-        Console.WriteLine("Hello, Managed World!");
-    }
-}
-
-
----
-
-🔹 Unmanaged Code
-
-Code that runs directly on the operating system (outside CLR).
-
-You need to manually handle memory allocation and cleanup.
-
-Example: C, C++, COM components, Win32 APIs.
-
-
-// Example of Unmanaged Code (C++)
-#include <iostream>
-using namespace std;
-
-int main() {
-    cout << "Hello, Unmanaged World!";
-    return 0;
-}
-
-
----
-
-🎯 Interview-Friendly Answer
-
-> “Managed code is the code that runs under the control of CLR in .NET, where memory management and garbage collection are automatic. Unmanaged code runs directly on the OS, like C or C++ code, where the developer must manually manage memory and resources.”
-
-
-
-
----
-
-🤔 Possible Cross Questions
-
-1. Can .NET work with unmanaged code?
-✔ Yes, using P/Invoke (Platform Invocation Services) and COM Interop.
-
-
-2. Why is managed code safer?
-✔ Because CLR ensures type safety, garbage collection, and prevents memory leaks.
-
-
-3. Can you give an example where you need unmanaged code in a .NET project?
-✔ For performance-critical operations or using existing C/C++ libraries (like image processing, hardware drivers).
-
-
-
-
----
-
-👉 Do you want me to also prepare a short diagram showing CLR in between managed and unmanaged code for quick revision?
-
-
-Show quoted text
 
 /////////////////////////////////////////////
 ////////////////////////////////////////////SQL
@@ -8762,7 +8592,6 @@ Callback, map, filter, Session, Storage.
 Http filter, Component of .net, dynamic polymorphis,
 Q> What is == , and === in Variable.
 
-Q> What is the early binding and late binding.
 
 
 
