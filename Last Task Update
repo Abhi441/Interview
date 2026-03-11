@@ -1,0 +1,6518 @@
+///////////////////////////////////////////////////////////////////////////////////////////Q)1
+What are the Main Concept of OOPS ? WHAT ARE CLASSES AND OBJECTS ?
+
+//Class : A class is a LOGICAL UNIT OR BLUEPRINT that contains feilds, methods , and Properties
+-> It doesn't occupy memory until an object is crated.
+1) Constructor is a method in the class which gets excuted when a class object is created.
+2) A feilds is avariable of any type. It is basically the data.
+3) A property  is a member that provides helps in read and write of private feilds.
+4) A methods is a code blocks that contains a series of statement.
+//
+OBJECT - An object is an INSTANCE of a class.
+-> It is a real-world entity created based on the class blueprint.
+->It occupies memory and can have unique value for its properties.
+
+
+//Real-World Example
+Example 1 : Car Blueprint
+Class : A blueprint of a Car defines.
+properties : Color , brand , engine type.
+methods : start(), sleep() , accelerator().
+
+Object : A specific car type
+car1 : Red, Tesla, Electric.
+Car2 : Blue , BMW, Diesel.
+
+///
+Code Example
+Public Class Car
+{
+public string Colour {get ; set ;}
+public string Brand  {get ; set; }
+
+public void Start()
+{
+Console.WriteLine("Car Started");
+}
+Car car1 = new Car{colour = "Red" , Brand = "Tesla"};
+Car car2 = new Car{Colour = "Blue" , Brand = "BMW"};
+
+car1.Start();
+
+}
+Output : Car started;
+//
+EXAMPLE 2 : In Book
+
+////////////////////////////////////////////////////////////////////////////////////2)
+What is Inheritance ? Why INHERITANCE IS IMPORTANT ?
+-> Inheritance is creating a PARENT-CHLD relationship between two classes where child automaticallyy get the properties and
+get the properties and methods of the parent.
+
+-> It allows you to reused code and establish a relatiship between classes(e.g., is-a relationship).
+//
+Why is Inheritance Impotant ?
+1) Code Reusability : Avoid duplicating code across related classes.
+2) Abraction of code.
+2) Extensibility : Enables adding new features to existing code without modification it.
+
+Example
+//namespace Pro
+//{ 
+
+//class Employee
+//{
+//    int a = 10;
+//    public  void CalculateSalary()
+//    {
+//        Console.WriteLine("CalculateSalary");
+//    }
+//}
+
+//class Department : Employee
+//{
+//    int b = 20;
+//    public  void Depart()
+//    {
+//        Console.WriteLine("This  is DepartMent");
+//    }
+//}
+
+//class Program
+//{
+//    public static void Main()
+//    {
+//        Department Dm = new Department();
+
+//           Dm.CalculateSalary(); // CalculateSalary method is not present Department class but we can call the CalculateSalary() by refrences of Department class.
+
+//    }
+// }
+//}
+
+/////////////////////////////////////////////////////////////////////////////////3)
+What are the diffrence type of inheritance ?
+-> Single Inheritance : One bae class with one derived class
+Example : 
+class BaseClass1
+{
+public void Animal()
+{
+Console.WriteLine("Animals");
+}
+}
+class DerivedClass1 : BaseClass
+{
+public void Dog()
+{
+Console.WriteLine("Dog");
+}
+}
+
+->Multiple Inheritance :Multiple Inheritance - In this case Multiple Base classes can be there for single derived class. Remember in C#,
+multiple inheritance can only be achieved with the help of interfaces. Which means only one base or
+abstract class is allowed, and rest must be interfaces.
+
+Example:
+class BaseClass2
+{
+public void Animal() {
+Console.WriteLine("Animal");
+}
+}
+interface I2
+{
+public void Fly();
+}
+
+class DerivedClass2: BaseClass2, I2
+{
+public void Eagle() {
+Console.WriteLine("Eagle");
+}
+public void Fly() {
+Console.WriteLine("Fly");
+
+}
+}
+
+->Multilevel inheritance – In this, there is a GrandParent class then there is a Parent class which is derived from GrandParent class and then there is Child class which is derived from Parent class.
+Grandparent class -> Parent class -> Child class Here the Child class will get the properties
+of both Parent class and GrandParent class automatically.
+
+class BaseClass2
+{
+public void Animal() {
+Console.WriteLine("Animal"); }
+}
+class DerivedClass3: BaseClass2
+{
+public void Dog() {
+Console.WriteLine("Dog");
+}
+}
+class DerivedClass4 : DerivedClass3
+{
+public void Labrador() {
+
+ Console.WriteLine("Labrador");
+}
+
+->Hierarchal inheritance - In this One, child class is derived more from than one base class. This is the most used type of inheritance.
+EXAMPLE :
+class BaseClass4
+{
+public void Animal() {
+Console.WriteLine("Animal");
+}
+}
+
+class DerivedClass5: BaseClass4
+{
+public void Dog() 
+{
+Console.WriteLine("Dog");
+}
+}
+class DerivedClass6: BaseClass4
+{
+public void Cat() {
+Console.WriteLine("Dog");
+}
+}
+
+//////////////////////////////////////////why c# doesnot uses multiple inheritance
+/////////////1>Avoiding the Diamond Problem
+    Class A
+   /      \
+Class B   Class C
+   \      /
+    Class D
+
+The diamond problem occurs when a class inherits from two classes that both inherit from a common base class.
+This can cause ambiguity in determining which version of a method or property should be inherited from the base class.
+In this scenario, if Class B and Class C both inherit a method from Class A, then Class D could inherit two conflicting versions of that method. C# avoids this ambiguity by allowing only single inheritance,
+ensuring that each class has a clear and singular parent class.
+
+///////////////////////////
+why c# doesnot uses multiple inheritance
+
+-->C# does not support multiple class inheritance to avoid ambiguity(Diamond Problem).
+-->But you can use multiple interfaces, which gives flexibility without confusion.
+--> Because it can create confusion and conflicts especially when two parent classes have the same method or property name.
+--> This is called the diamond Problem - and c# avoids it by not allowing a class to inherit from more than one class.
+
+Real life example
+Two bosses -->  diffrent instructions -->  same task --> now you are confuse.
+
+Class A
+   /      \
+Class B   Class C
+   \      /
+    Class D
+
+In this scenario, if Class B and Class C both inherit a method from Class A, then Class D could inherit two conflicting versions of that method. C# avoids this ambiguity by allowing only single inheritance,
+ensuring that each class has a clear and singular parent class.
+
+///////////////////////////////////////////////////////////////////////////////////////Q4)
+//HOW TO PREVENT A CLASS FROM BEING INHERITED?
+
+By using SEALED keyword in class.
+
+See the screenshot below, you marked the class ABC as sealed. If you will try to derive this class "ABC" in a child class "XYZ" then
+it will give a compiler error because ABC is marked as Sealed.
+
+EXAMPLE : 
+sealed class ABC {}
+class XYZ: ABC { } //Invalid
+class Sealed ClassEx.ABC
+CS0509: 'XYZ': cannot derive from sealed type 'ABC
+
+////////////////////////////////////////////////////////////////////////////////////2)
+What is Inheritance ? Why INHERITANCE IS IMPORTANT ?
+-> Inheritance is creating a PARENT-CHLD relationship between two classes where child automaticallyy get the properties and
+get the properties and methods of the parent.
+
+-> It allows you to reused code and establish a relatiship between classes(e.g., is-a relationship).
+//
+Why is Inheritance Impotant ?
+1) Code Reusability : Avoid duplicating code across related classes.
+2) Abraction of code.
+2) Extensibility : Enables adding new features to existing code without modification it.
+
+Example
+//namespace Pro
+//{ 
+
+//class Employee
+//{
+//    int a = 10;
+//    public  void CalculateSalary()
+//    {
+//        Console.WriteLine("CalculateSalary");
+//    }
+//}
+
+//class Department : Employee
+//{
+//    int b = 20;
+//    public  void Depart()
+//    {
+//        Console.WriteLine("This  is DepartMent");
+//    }
+//}
+
+//class Program
+//{
+//    public static void Main()
+//    {
+//        Department Dm = new Department();
+
+//           Dm.CalculateSalary(); // CalculateSalary method is not present Department class but we can call the CalculateSalary() by refrences of Department class.
+
+//    }
+// }
+//}
+
+/////////////////////////////////////////////////////////////////////////////////3)
+What are the diffrence type of inheritance ?
+-> Single Inheritance : One bae class with one derived class
+Example : 
+class BaseClass1
+{
+public void Animal()
+{
+Console.WriteLine("Animals");
+}
+}
+class DerivedClass1 : BaseClass
+{
+public void Dog()
+{
+Console.WriteLine("Dog");
+}
+}
+
+->Multiple Inheritance :Multiple Inheritance - In this case Multiple Base classes can be there for single derived class. Remember in C#,
+multiple inheritance can only be achieved with the help of interfaces. Which means only one base or
+abstract class is allowed, and rest must be interfaces.
+
+Example:
+class BaseClass2
+{
+public void Animal() {
+Console.WriteLine("Animal");
+}
+}
+interface I2
+{
+public void Fly();
+}
+
+class DerivedClass2: BaseClass2, I2
+{
+public void Eagle() {
+Console.WriteLine("Eagle");
+}
+public void Fly() {
+Console.WriteLine("Fly");
+
+}
+}
+
+->Multilevel inheritance – In this, there is a GrandParent class then there is a Parent class which is derived from GrandParent class and then there is Child class which is derived from Parent class.
+Grandparent class -> Parent class -> Child class Here the Child class will get the properties
+of both Parent class and GrandParent class automatically.
+
+class BaseClass2
+{
+public void Animal() {
+Console.WriteLine("Animal"); }
+}
+class DerivedClass3: BaseClass2
+{
+public void Dog() {
+Console.WriteLine("Dog");
+}
+}
+class DerivedClass4 : DerivedClass3
+{
+public void Labrador() {
+
+ Console.WriteLine("Labrador");
+}
+
+->Hierarchal inheritance - In this One, child class is derived more from than one base class. This is the most used type of inheritance.
+EXAMPLE :
+class BaseClass4
+{
+public void Animal() {
+Console.WriteLine("Animal");
+}
+}
+
+class DerivedClass5: BaseClass4
+{
+public void Dog() 
+{
+Console.WriteLine("Dog");
+}
+}
+class DerivedClass6: BaseClass4
+{
+public void Cat() {
+Console.WriteLine("Dog");
+}
+}
+
+//////////////////////////////////////////why c# doesnot uses multiple inheritance
+/////////////1>Avoiding the Diamond Problem
+    Class A
+   /      \
+Class B   Class C
+   \      /
+    Class D
+
+The diamond problem occurs when a class inherits from two classes that both inherit from a common base class.
+This can cause ambiguity in determining which version of a method or property should be inherited from the base class.
+In this scenario, if Class B and Class C both inherit a method from Class A, then Class D could inherit two conflicting versions of that method. C# avoids this ambiguity by allowing only single inheritance,
+ensuring that each class has a clear and singular parent class.
+
+///////////////////////////
+why c# doesnot uses multiple inheritance
+
+-->C# does not support multiple class inheritance to avoid ambiguity(Diamond Problem).
+-->But you can use multiple interfaces, which gives flexibility without confusion.
+--> Because it can create confusion and conflicts especially when two parent classes have the same method or property name.
+--> This is called the diamond Problem - and c# avoids it by not allowing a class to inherit from more than one class.
+
+Real life example
+Two bosses -->  diffrent instructions -->  same task --> now you are confuse.
+
+Class A
+   /      \
+Class B   Class C
+   \      /
+    Class D
+
+In this scenario, if Class B and Class C both inherit a method from Class A, then Class D could inherit two conflicting versions of that method. C# avoids this ambiguity by allowing only single inheritance,
+ensuring that each class has a clear and singular parent class.
+
+///////////////////////////////////////////////////////////////////////////////////////Q4)
+//HOW TO PREVENT A CLASS FROM BEING INHERITED?
+
+By using SEALED keyword in class.
+
+See the screenshot below, you marked the class ABC as sealed. If you will try to derive this class "ABC" in a child class "XYZ" then
+it will give a compiler error because ABC is marked as Sealed.
+
+EXAMPLE : 
+sealed class ABC {}
+class XYZ: ABC { } //Invalid
+class Sealed ClassEx.ABC
+CS0509: 'XYZ': cannot derive from sealed type 'ABC
+
+///////////////////////////////////////////////////////////////////////////////////////Q5)
+WHAT IS ABSTRACTION? 
+Defination :-
+Abstraction means showing only required things and hide the BACKGROUND details.
+->It allows you to focus on what an object does, not how it does it.
+
+//Why is Abraction Important
+->Simplifies complex system by breaking them into smaller , more manageable parts.
+-> Hides unnessary implemention details , reducing.
+-> promotes code reusability and maintainbility.
+
+Example :
+//using System;
+//public abstract class Vehicle
+//{
+//    public abstract void StartEngine();// only the declaration is provided; the implementation 
+
+//    public void DisplayInfo()
+//    {
+//        Console.WriteLine("This is a vehicle");
+//    }
+//}
+
+//public class Car : Vehicle
+//{
+//    public override void StartEngine()
+//    {
+//        Console.WriteLine("Car engion started");
+//    }
+//}
+
+//public interface IRefuelable
+//{
+//    void Refuel();
+//}
+
+//public class Bike : Vehicle , IRefuelable
+//{
+//    public override void StartEngine()
+//    {
+//        Console.WriteLine("Bikes engion started");
+//    }
+
+//    public void Refuel()
+//    {
+//        Console.WriteLine("Bike refueled.");
+//    }
+//}
+
+//public class Program
+//{
+//   public static void Main(string[] args)
+//    {
+//        Vehicle car = new Car();
+//        car.StartEngine(); // Car engine started.
+//        car.DisplayInfo(); // This is a vehicle.
+
+//        Bike bike = new Bike();
+//        bike.StartEngine();  //Bike engion started.
+//        bike.Refuel();       //Bike refueled
+//    }
+//}
+
+/////////////////////////////////////////////////////////////////
+what is Abstraction.
+
+👉 Abstraction is an OOP concept that hides unnecessary details and only shows important parts to the user.
+
+Example:
+When you accelerate a bike, the speed increases, but you don’t see how the engine works internally.
+The complexity is hidden, and only the important part (speed control) is visible.
+
+How do we achieve Abstraction in C#?
+✔ Using abstract classes (with abstract methods).
+✔ Using interface (where methods are declared but not defined).
+
+Example Code in C#:
+csharp
+Copy
+Edit
+// Abstract class: Defines common structure but hides implementation
+abstract class Employee  
+{  
+    public abstract void CalculateSalary();  // Only method definition (no implementation)  
+
+    public void ShowDetails()  
+    {  
+        Console.WriteLine("Showing Employee Details");  
+    }  
+}  
+
+// Permanent Employee class implements its own salary calculation
+class PermanentEmployee : Employee  
+{  
+    public override void CalculateSalary()  
+    {  
+        Console.WriteLine("Salary = HoursWorked * HourlyRate");  
+    }  
+}
+
+// Contract Employee class implements a different salary calculation
+class ContractEmployee : Employee  
+{  
+    public override void CalculateSalary()  
+    {  
+        Console.WriteLine("Salary = (HoursWorked * HourlyRate) - 4000");  
+    }  
+}
+
+// Main Program
+class Program  
+{  
+    static void Main()  
+    {  
+        Employee emp1 = new PermanentEmployee();  
+        emp1.CalculateSalary();  // Output: Salary = HoursWorked * HourlyRate  
+        emp1.ShowDetails();  
+
+        Employee emp2 = new ContractEmployee();  
+        emp2.CalculateSalary();  // Output: Salary = (HoursWorked * HourlyRate) - 4000  
+    }  
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////Q6)
+Encapsulation means WRAPPING of data and methods/properties into a single unit. Why I included properties 
+here because properties are nothing else but special methods only. Why they special methods, 
+because they just do one thing and that is getting and setting private fields.
+
+Example : 
+//    //
+// class Employee
+//{
+//    private int experience; //This feild can not be excess without Property.
+//    public int Experience
+//    {
+//        get
+//        {
+//            return experience;
+//        }
+//        set
+//        {
+//            experience = value;
+//        }
+//    }
+//}
+
+//class Program
+//{
+//    public static void Main(string[] args)
+//    {
+//        Employee em = new Employee();
+//        em.Experience = 10;
+//    }
+
+//}
+///////////////////////////////Encapsulation
+//    //
+// class Employee
+//{
+//    private int experience; //This feild can not be excess without Property.
+//    public int Experience
+//    {
+//        get
+//        {
+//            return experience;
+//        }
+//        set
+//        {
+//            experience = value;
+//        }
+//    }
+//}
+
+//class Program
+//{
+//    public static void Main(string[] args)
+//    {
+//        Employee em = new Employee();
+//        em.Experience = 10;
+//    }
+
+//}
+/////////////////////////////////////
+What is Encapsulation
+Encapsulation is oops concept , it is used to wrap the data method and property into single units.
+
+example
+
+public class Employee
+{
+public class EmExperience;
+
+public int Employee
+{
+ get
+{
+ return emExperience;
+}
+ get
+{
+ emExperience = value;
+}
+}
+
+public void Main(string[] args)
+{
+ Employee obj = new Employee();
+ 
+ obj.EmExperience = 3;
+ 
+}
+
+
+//////////////////////////////////////////////////////////
+What is Encapsulation
+
+Q: What is Encapsulation?
+👉 Encapsulation is an OOP concept that wraps data (variables) and methods (functions) inside a single unit (class).
+👉 It hides the data from direct access and provides controlled access using getter and setter methods.
+
+✅ Corrected Example in C#:
+csharp
+Copy
+Edit
+public class Employee
+{
+    private int empExperience;  // Private variable (cannot be accessed directly)
+
+    // Public property with getter and setter
+    public int EmpExperience
+    {
+        get 
+        { 
+            return empExperience;  
+        }
+        set 
+        { 
+            if (value > 0) // Prevents negative experience
+                empExperience = value;  
+            else
+                Console.WriteLine("Experience cannot be negative");  
+        }
+    }
+}
+
+// Main Program
+class Department
+{
+    static void Main(string[] args)  // Fixed the typo in Main()
+    {
+        Employee emp = new Employee();  
+        emp.EmpExperience = 3;  // Setting the experience
+        Console.WriteLine("Employee Experience: " + emp.EmpExperience);  // Getting the experience
+    }
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////Q7)
+//WHAT IS POLYMORPHISM AND WHAT ARE ITS TYPES? ❖      
+Polymorphism is the ability of a variable, object, or function to take on MULTIPLE FORMS. 
+What is multiple forms? For example, in English “RUNNING” word can be used for “running a race” or “running a business”. 
+In both cases the meaning is different but the name “RUNNING” is same.
+
+///Overloading (compile time check)
+//class Employee
+//{
+//    public void ClaculateSalary(int a, int b)
+//    {
+//        Console.WriteLine(a * b);
+//    }
+//    public void ClaculateSalary(int a, int b, int c) // changing the number of parameter
+//    {
+//        Console.WriteLine(a * b * c);
+//    }
+//    public void ClaculateSalary(long a, int b, int c)
+//    {
+//        Console.WriteLine(a * b * c);
+//    }
+
+//}
+
+//class Program
+//{
+// public static void Main(string[] args)
+//   {
+//        Employee Em = new Employee();
+
+//        Em.ClaculateSalary(3, 4);
+//        Em.ClaculateSalary(3, 4 , 5);
+//        Em.ClaculateSalary(300000000000, 4, 5);
+
+//    }
+//}
+
+//Overrding
+//Overriding in c# allows a subclass(derived class) to provide a specific implementation of a method that is already defind in its base class.
+//It is achieved using the virtual keyword in the base class and the override keyword in the derived class.
+
+////Example:
+//using System ;
+
+//public class Animal
+//{
+//   public virtual void MakeSound()
+//    {
+//        Console.WriteLine("Animal makes the sound");
+//    }
+//}
+
+//public class Dog : Animal
+//{
+//    public override void MakeSound()
+//    {
+//        Console.WriteLine("Dog barks");
+//    }
+//}
+
+//public class Cat : Animal
+//{
+//    public override void MakeSound()
+//    {
+//        Console.WriteLine("Cat meows");
+//    }
+//}
+
+//public class Program
+//{
+//    public static void Main(string[] args)
+//    {
+//        Animal myDog = new Dog();
+//        Animal myCat = new Cat();
+//        // Polymorphic behavior - the method called is determined at runtime
+//        myDog.MakeSound(); //Dog bargs  // Method selection is based on object type not refrence type.
+//        myCat.MakeSound(); //Cat meows  // Even when refrence as Animal , the overriden method in Dog or cat is called.
+//        // when overriden is not used the base class method is called.
+//    }
+//}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////8)
+//What is Method Overloading ? In How many ways a methods can be overloaded ?
+-> Method Overloading is a type of polymorphism in which we can create multiple methods of the same name in the same class, 
+and all the methods works diffrent ways.
+->The Compiler determines which method to invoke based on the arguments passed at compile time(hence it's part of Compiler-Time Polymorphism)
+
+//Why is methods Overloading is important ?
+Code Readability :-> use the same methods name for similar operations.
+Flexibility : Allows calling methods with diffrent types or numbers of arguments.
+//How many ways can a Methods Be Overloaded?
+1)By Changing the Number of Parameters.
+Example : Add(int a , int b) and Add(int a , int b , int c).
+2)By changing the Number of Prameters : 
+Example : Add(int a , int b) and Add(double a , double b)
+3)By Changing the Order of Parameters :
+Example : Print(string name , int age) and Print(int age , string name)
+//Example:
+public class MethodOverloading
+{
+public int Add(int a, int b)
+{
+return a + b;
+}
+public int Add(int a, int b, int c)
+{
+return a + b + c;
+}
+public double Add(double a, double b, int c)
+{ return a + b + c;
+}
+
+public double Add(double a, int c, double b)
+{
+return a + b + c;
+}
+}
+
+////////////////////////////////////////////////////////////////////////////////////9)
+//WHAT IS THE DIFFERENCE BETWEEN OVERLOADING AND OVERRIDING?
+
+1. Method overloading is a type polymorphism, in which we can create multiple methods of the same name in the same class, and all methods work in different ways.
+1. Method overriding is having methods with the SAME NAME and SIGNATURE but in different classes.
+
+2.Method Overloading will not use any special keywords.
+2. Overriding uses VIRTUAL keyword for base class method and OVERRIDE keyword for derived class method. 
+
+3. Method overloading doesn’t need inheritance. It is in same class. 
+3. Method overriding NEEDS INHERITANCE (Base class/ Derived class). It is not possible in same class.
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////10)
+//What is the diffrence between method Overriding and Method Hiding.
+//Method Overloading
+What :-> Ref Redefining a method in derived classe that exists in the base class.
+
+When :-> used to change or extend the behavior of a base method.
+
+How  :-> it Achieved resing virtual (in the base clans/ and override (in the derived class),
+
+Binding :-> Resolved at runtime (runtime polymorphism).
+//Method Hiding
+Whet :-> Hiding a method in the base class by a neur method in the derived class with the the same home.
+When :-> used to replace a baser class meshed in the derived class without affecting ther bate class.
+
+How :-> Achieved sesing the now keyword.
+
+Bindings Resolved at compile time.
+
+//Kindle Answer
+Q)An method overriding is having method with the Some Nome and Signature but in different classe
+
+public class Base Class
+{
+public virtual void print ()
+{
+Condole.WriteLine("BaseClass Print");
+}
+}
+Pubile public class Scrived Class: Base class
+{
+public public override void print()
+{
+Console.WriteLine(" Child Clals Print");
+}
+}
+
+-->Method Hiding, you can hide ther & implementation of the method of a base class from the derived class dlong the now keyword.
+
+public class Base Class
+{
+public void Print()
+{
+Condole.WriteLine("Baseclass Print ");
+}
+}
+Public public class Derived Class: BaseClass.
+{
+public now void Print()
+{
+Console.WriteLine("childrenllall Print");
+}
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////What is the diffrence between An Abstract class and An Interface ?
+1) 1. Abstract class contains both DECLAR-ATION & DEFINITION of methods.
+1) Interface contains ONLY DECLARATION of methods.
+
+public abstarct class Employee
+{
+public Employee()
+{
+}
+private string Name;
+public abstract void Project(); // Method Declare
+
+public void Role()    // Method Define
+{
+Console.WriteLine(""Software Engineer);
+}
+}
+
+
+//
+interface IEployee
+{
+public void Project();
+public void Manager();
+}
+2. Abstract class keyword: ABSTRACT, Inter-face keyword: INTERFACE
+
+3. Abstract class can contain methods, fields, constants, constructor.
+
+Interface can contain undefined methods only nothing else.
+
+4. Abstract class does not Support MULTIPLE INHERITANCE
+
+Interface supports multiple inheritance
+
+
+///why
+Perfect 👍 — let’s simplify that with easy language + C# example so even a beginner or interviewer feels your clarity.
+
+
+---
+
+🧠 Simple Explanation
+
+👉 Abstract Class —
+Use it when you have similar classes that share some common code (logic) but also need their own special behaviors.
+You can write shared code once in the abstract class, and force child classes to fill in the details.
+
+👉 Interface —
+Use it when you just want to say:
+
+> “Whoever uses me must promise to do these actions.”
+It’s only a contract — no code inside, just rules.
+
+
+
+
+---
+
+💻 Example in C#
+
+🟢 Abstract Class Example
+
+public abstract class Vehicle
+{
+    public void StartEngine()
+    {
+        Console.WriteLine("Engine started!");
+    }
+
+    public abstract void Drive(); // child class must define this
+}
+
+public class Car : Vehicle
+{
+    public override void Drive()
+    {
+        Console.WriteLine("Car is driving on the road 🚗");
+    }
+}
+
+public class Bike : Vehicle
+{
+    public override void Drive()
+    {
+        Console.WriteLine("Bike is moving on two wheels 🏍️");
+    }
+}
+
+✅ Why Abstract?
+
+Both Car and Bike share common logic (StartEngine()).
+
+Each has its own Drive() logic.
+
+
+
+---
+
+🔵 Interface Example
+
+public interface IPay
+{
+    void PayMoney();
+}
+
+public class CreditCardPayment : IPay
+{
+    public void PayMoney()
+    {
+        Console.WriteLine("Payment done using Credit Card 💳");
+    }
+}
+
+public class UpiPayment : IPay
+{
+    public void PayMoney()
+    {
+        Console.WriteLine("Payment done using UPI 📱");
+    }
+}
+
+✅ Why Interface?
+
+IPay is just a contract — any class (UPI, CreditCard, Wallet) can follow it.
+
+Promotes flexibility — different payment types follow same pattern but no shared code.
+
+
+
+---
+
+🎯 Summary in One Line
+
+Use When
+
+Abstract Class When you want shared code + common structure.
+Interface When you want different classes to follow the same rules without sharing code.
+
+//
+///////////////////////////////////////////////////////Diffrence beetween Abstraction and interface
+//It is the process of hinding implementation details and showing only the essential features of an object .
+// In C# , abstraction is achived using Abstarct Classes and Interfaces.
+
+//1> Abstract Class
+//    -> An abstract class is declared with the abstract keyword.
+//    -> It cannot be instantiated directly.
+//    -> It can contain abstract methods (no implementation) and concrete methods (with Implementation).
+//    -> Abstract methods must be overriden in derived classes.
+//    
+
+//Interfaces
+//An interfaces is a constract that define the signatures of methods , properties , events , or indexers.
+//It only contains method declarations, not  implementations.
+// Classes that implement the interface must provide implementations for all its methods.
+
+//using System;
+//public abstract class Vehicle
+//{
+//    public abstract void StartEngine();// only the declaration is provided; the implementation 
+
+//    public void DisplayInfo()
+//    {
+//        Console.WriteLine("This is a vehicle");
+//    }
+//}
+
+//public class Car : Vehicle
+//{
+//    public override void StartEngine()
+//    {
+//        Console.WriteLine("Car engion started");
+//    }
+//}
+
+//public interface IRefuelable
+//{
+//    void Refuel();
+//}
+
+//public class Bike : Vehicle , IRefuelable
+//{
+//    public override void StartEngine()
+//    {
+//        Console.WriteLine("Bikes engion started");
+//    }
+
+//    public void Refuel()
+//    {
+//        Console.WriteLine("Bike refueled.");
+//    }
+//}
+
+//public class Program
+//{
+//   public static void Main(string[] args)
+//    {
+//        Vehicle car = new Car();
+//        car.StartEngine(); // Car engine started.
+//        car.DisplayInfo(); // This is a vehicle.
+
+//        Bike bike = new Bike();
+//        bike.StartEngine();  //Bike engion started.
+//        bike.Refuel();       //Bike refueled
+//    }
+//}
+
+// 
+/////////////////////////////////////////////////////
+
+WHEN TO USE INTERFACE AND WHEN ABSTRACT CLASS? :::
+
+
+
+Abstarction: -
+--> common Property / behavior to all the derived class.
+--> when we need property, feild, method, contructor.
+--> when we want that implementation of method in the same way then go for abstraction.
+
+abstract public Employee
+{
+    public abstract void CalculateSalary(); 
+    
+   public void CalculateSalary()
+   {
+    Console.WriteLine("Tax calculation");
+   }
+}
+Interface: -
+
+--> when you want multiple inheritance achieve then go for Intrface,
+--> when you go for contract.
+--> when we want loosely coupled thing.
+--> 
+interface emEmployee
+{ 
+  void play();
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////Q) 18 Boxing and UnBoxing
+🧠 Definition (Easy Words)
+
+👉 Boxing is the process of converting from value type to refrence type.
+👉 Unboxing is the process of converting refrence type to value type.
+
+
+---
+
+🧩 Example (With Explanation)
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int num = 10; // ✅ Value type
+        object obj = num; // ✅ Boxing — num is boxed into object
+        int newNum = (int)obj; // ✅ Unboxing — object is converted back to int
+
+        Console.WriteLine($"Original: {num}, After Unboxing: {newNum}");
+    }
+}
+
+💬 Step-by-Step Explanation:
+
+1. int num = 10; → This is a value type (stored in stack memory).
+
+
+2. object obj = num; → Boxing happens — it puts num into an object box (stored in heap).
+
+
+3. int newNum = (int)obj; → Unboxing happens — the value is taken out of the box and converted back to int.
+
+
+
+
+---
+
+🏗️ Project Use (Buy & Sell Properties App)
+
+In your Buy & Sell Property Application, boxing/unboxing can happen:
+
+When you store values (like PropertyID, Price, etc.) in a collection like ArrayList or object type, because those store objects, not value types.
+
+When you log numeric data or send it as an object to some generic function.
+
+
+Example:
+
+ArrayList propertyData = new ArrayList();
+propertyData.Add(1001); // Boxing: int → object
+int id = (int)propertyData[0]; // Unboxing: object → int
+
+
+---
+
+⚖️ Trade-offs
+
+👍 Advantage 👎 Disadvantage
+
+Allows value types to be used where objects are required Slower performance (extra memory + CPU overhead)
+Useful for generic or flexible data storage Too much boxing/unboxing can hurt app speed
+
+
+
+---
+
+💼 Business Impact
+
+In enterprise apps, boxing/unboxing should be avoided in performance-critical code (like APIs that fetch thousands of records).
+
+Instead, use Generics (List<T>, Dictionary<TKey, TValue>) to prevent unnecessary boxing and make code faster.
+
+
+
+---
+
+🎯 Interview-Ready Summary
+
+> “Boxing is when a value type is wrapped inside an object, and unboxing is when we extract it back.
+In my project, I faced this while using non-generic collections like ArrayList, so I moved to generic List<int> to improve performance and avoid unnecessary boxing and unboxing.”
+
+//////////////////////////////////////////////////////////////What is Boxing and UnBoxing.
+value type - int, char, double, and bool are built-in value types in C#.
+refrence type - string and object are built-in reference types in C#.
+////////////////////////////////Q> 32
+
+Difference between ArrayList and Hashtable in C#
+
+🔷 1. ArrayList in C#
+
+✅ Simple Meaning:
+
+-->It stores a list of items, even if they are of different types.
+
+-->You can access items by index (like array).
+
+-->Allows duplicate values.
+
+-->Slower for large data sets (it searches by position, not key).
+
+
+✅ Real-World Analogy:
+
+Imagine a shopping basket — you just throw items in, one after another. You don’t label them, you just remember the position.
+
+
+---
+
+✅ Example Code:
+
+using System;
+using System.Collections;
+
+class Program
+{
+    static void Main()
+    {
+        ArrayList basket = new ArrayList();
+        basket.Add("Apple"); // string
+        basket.Add(3); // int
+        basket.Add(4.5); // double
+        basket.Add("Apple"); // duplicate allowed
+
+        foreach (var item in basket)
+        {
+            Console.WriteLine(item);
+        }
+    }
+}
+
+
+//You can access items by index (like array)
+class Program
+{
+    static void Main()
+    {
+        ArrayList basket = new ArrayList();
+        basket.Add("Apple"); // string
+        basket.Add(3); // int
+        basket.Add(4.5); // double
+        basket.Add("Apple"); // duplicate allowed
+
+        foreach (var item in basket)
+        {
+            Console.WriteLine(item);
+        }
+    }
+}
+---
+
+🔷 2. Hashtable in C#
+
+✅ Simple Meaning:
+
+-->It stores data as Key → Value pairs.
+
+-->Each key must be unique, but values can be repeated.
+
+-->Fast access using the key (uses hash function).
+
+-->Used when you want to look up values based on a name, ID, etc.
+
+
+✅ Real-World Analogy:
+
+Think of a dictionary: You search a word (key) to get its meaning (value). You don’t care where it is physically — it finds it fast.
+
+
+---
+
+✅ Example Code:
+
+using System;
+using System.Collections;
+
+class Program
+{
+    static void Main()
+    {
+        Hashtable phoneBook = new Hashtable();
+        phoneBook.Add("John", "123456");
+        phoneBook.Add("Alice", "789012");
+        phoneBook.Add("Bob", "345678");
+        phoneBook["Alice"] = "999999"; // ✅ updates value
+        // phoneBook.Add("John", "000000"); ❌ Error – duplicate key
+
+        foreach (DictionaryEntry entry in phoneBook)
+        {
+            Console.WriteLine($"{entry.Key}: {entry.Value}");
+        }
+    }
+}
+
+✅ Real-Life Use Cases:
+
+ArrayList → Storing a random collection like UI controls, logs, temporary mixed data.
+
+Hashtable → Storing user settings ("Theme" → "Dark"), phone books, ID → Names.
+
+/////////////////////////////////////////////Q40
+what is Extensition Methods :::
+Extension method is a method injected (added) into an existing class
+(or struct or interfaces), without modifying the sourse code of that 
+class(or struct or interface).
+
+--> Create the class without extensions method.
+--> Create the static class with static method.
+-->static class that uses the this keyword before the first parameter 
+--> to extend the functionality of an existing type without modifying the original type
+
+
+///As developer
+//
+namespace Products
+{
+    public class Product
+    {
+        public int WorkingHours ;
+        public int WorkingPerWages;
+    }
+}
+//
+
+using Products;
+
+namespace ProductExtensions
+{
+
+    public static class ProductExtension
+    {
+        public static int CalculateSalary(this Product product)
+        {
+           return  product.WorkingHours * product.WorkingPerWages;
+        }
+    }
+}
+//
+using Products;
+
+using ProductExtensions;
+
+namespace Programs
+{
+  class program
+  {
+        public static void Main(string[] args)
+        {
+            Product p = new Product() { WorkingHours = 100 ,
+         WorkingPerWages = 500 };
+            Console.WriteLine(p.CalculateSalary());
+        }
+  }
+}
+
+//As the base library
+public static class IntExtensition
+{
+    public static int DoubleIt(this int number)
+    {
+        return number * 2;
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        int x = 5;
+        int result = x.DoubleIt();// Calls the extensitiom method
+        Console.WriteLine(result); // Output: 10
+    }
+}
+//////////////////////////////////////////////////////////Q41
+=> Delegate is a variable that holds the refrences to a methods.Or you can say it's a pointer to a function.
+=> A delegate can  refre to more  than one methods  of same return  type and parameters.
+
+Think of it like :
+"You give someone your contact number(delegate), they can call you(method) when needed".
+
+//
+👨‍💻 Code Example (Super Easy):
+
+using System;
+
+public class Program
+{
+    // Step 1: Declare a delegate
+    public delegate void GreetDelegate(string name);
+
+    // Step 2: Create a method to point to
+    public static void SayHello(string name)
+    {
+        Console.WriteLine("Hello " + name);
+    }
+
+    public static void Main()
+    {
+        // Step 3: Create delegate instance and assign method
+        GreetDelegate greet = SayHello;
+
+        // Step 4: Call method using delegate
+        greet("Abhishek");
+    }
+}
+
+Output:
+
+Hello Abhishek
+
+//
+
+> A delegate is like a function pointer in C#.
+It lets us pass methods as arguments or call them indirectly.
+It's useful when we want to decouple logic or use event-based programming.
+1. Passing methods as arguments using a delegate
+
+
+2. Decoupling logic via event-like behavior
+
+
+
+
+---
+
+✅ 1. Passing Methods as Arguments (Callback-style)
+
+using System;
+
+//////////////////////////////////////////////////////////Q41
+=> Delegate is a variable that holds the refrences to a methods.Or you can say it's a pointer to a function.
+=> A delegate can  refre to more  than one methods  of same return  type and parameters.
+
+Think of it like :
+"You give someone your contact number(delegate), they can call you(method) when needed".
+
+//
+👨‍💻 Code Example (Super Easy):
+
+using System;
+
+public class Program
+{
+    // Step 1: Declare a delegate
+    public delegate void GreetDelegate(string name);
+
+    // Step 2: Create a method to point to
+    public static void SayHello(string name)
+    {
+        Console.WriteLine("Hello " + name);
+    }
+
+    public static void Main()
+    {
+        // Step 3: Create delegate instance and assign method
+        GreetDelegate greet = SayHello;
+
+        // Step 4: Call method using delegate
+        greet("Abhishek");
+    }
+}
+
+Output:
+
+Hello Abhishek
+
+//
+
+> A delegate is like a function pointer in C#.
+It lets us pass methods as arguments or call them indirectly.
+It's useful when we want to decouple logic or use event-based programming.
+1. Passing methods as arguments using a delegate
+
+
+2. Decoupling logic via event-like behavior
+
+
+
+
+---
+
+✅ 1. Passing Methods as Arguments (Callback-style)
+
+using System;
+
+public class Program
+{
+    // Delegate definition
+    public delegate void Operation(int a, int b);
+
+    // Method 1
+    public static void Add(int a, int b)
+    {
+        Console.WriteLine("Add: " + (a + b));
+    }
+
+    // Method 2
+    public static void Multiply(int a, int b)
+    {
+        Console.WriteLine("Multiply: " + (a * b));
+    }
+
+    // A method that takes a delegate (method) as argument
+    public static void Calculate(int x, int y, Operation op)
+    {
+        op(x, y); // Indirectly calling the passed method
+    }
+
+    public static void Main()
+    {
+        Calculate(5, 3, Add); // Output: Add: 8
+        Calculate(5, 3, Multiply); // Output: Multiply: 15
+    }
+}
+
+🎯 What’s Happening:
+
+Calculate method is reusable for different operations.
+
+We are passing Add and Multiply as arguments using delegate Operation.
+
+
+
+---
+
+✅ 2. Decoupling Logic Using Delegates (Real-Life Style)
+
+using System;
+
+public class PaymentService
+{
+    public delegate void PaymentHandler(string message);
+
+    public void ProcessPayment(PaymentHandler notify)
+    {
+        // Business logic
+        Console.WriteLine("Processing payment...");
+
+        // Notify after success
+        notify("Payment successful!");
+    }
+}
+
+public class Program
+{
+    public static void ShowMessage(string msg)
+    {
+        Console.WriteLine("Notification: " + msg);
+    }
+
+    public static void Main()
+    {
+        var service = new PaymentService();
+
+        // Pass ShowMessage as delegate (event-style decoupling)
+        service.ProcessPayment(ShowMessage);
+    }
+}
+
+🎯 What’s Happening:
+
+PaymentService doesn’t care how the notification is shown — it's decoupled.
+
+We just inject the logic using a delegate
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////What is use of delegate 
+-) Delegates enable loose coupling, callbacks, and event-driven programming in C#.
+////////////////////////////////////
+
+Perfect 👍 Let’s break down Delegates in the same simple structure:
+
+
+
+
+
+---
+
+
+
+Definition (Simple Words)
+
+
+
+A delegate in C# is like a remote control for methods.
+
+
+
+It is a type-safe function pointer → meaning, it can hold a reference to a method and call it when needed.
+
+
+
+With delegates, you can pass methods as parameters just like passing variables.
+
+
+
+
+
+👉 Think of it like: “I don’t know which exact function to call now, but I’ll keep a remote control (delegate) that can call the correct one later.”
+
+
+
+
+
+---
+
+
+
+Project Use (Buy & Sell Properties App)
+
+
+
+In your Property Buy & Sell Application:
+
+
+
+Suppose you have to send a notification when a property is sold. Sometimes it should be an Email, sometimes an SMS, sometimes a Push Notification.
+
+
+
+Instead of writing if/else everywhere, you create a delegate like:
+
+
+
+
+
+public delegate void Notify(string message);
+
+
+
+public class NotificationService
+
+{
+
+    public void SendEmail(string msg) => Console.WriteLine("Email: " + msg);
+
+    public void SendSMS(string msg) => Console.WriteLine("SMS: " + msg);
+
+}
+
+
+
+Usage:
+
+
+
+NotificationService service = new NotificationService();
+
+Notify notifyDelegate = service.SendEmail; // Remote control points to Email
+
+notifyDelegate("Property Sold Successfully!");
+
+
+
+// Later we can switch
+
+notifyDelegate = service.SendSMS; // Remote control points to SMS
+
+notifyDelegate("Property Sold Successfully!");
+
+
+
+🔹 This makes the app flexible and pluggable without rewriting logic everywhere.
+
+
+
+
+
+---
+
+
+
+Trade-offs (Pros & Cons)
+
+
+
+✅ Pros:
+
+
+
+Makes code flexible → easy to plug-in different methods.
+
+
+
+Good for event-driven programming (like button click, payment success, etc.).
+
+
+
+Reduces if/else clutter and improves maintainability.
+
+
+
+
+
+⚠️ Cons:
+
+
+
+Can be confusing for beginners (because methods behave like variables).
+
+
+
+Overuse may reduce code readability.
+
+
+
+If not handled properly, may lead to runtime errors (null delegate).
+
+
+
+
+
+
+
+---
+
+
+
+Business Impact (Simple Words)
+
+
+
+With delegates → Notification system becomes scalable. Business can quickly switch from Email to SMS or add new types (like WhatsApp) without rewriting core logic.
+
+
+
+This saves time & cost, improves user experience (people get timely updates), and builds trust.
+
+
+
+Without delegates → Code becomes hard to manage, making changes costly, which slows down business.
+
+
+
+
+
+
+
+---
+
+
+
+✅ In short:
+
+Delegate = Remote control for methods → gives flexibility.
+
+In your property app → used for notifications, events, or callbacks, making the system easy to extend, maintain, and business-friendly.
+
+
+
+
+
+---
+
+
+
+Do you want me to also cover built-in delegates (Action, Func, P
+
+redicate) with real project examples in the same Buy & Sell Properties context?
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 22 )Explain Generics in C# ? When And why to use Them ?
+Definition (In Easy Words)
+
+Generics in C# means — writing code once that can work with any data type.
+
+💬 Like saying:
+
+> “I don’t care whether it’s int, string, or Customer — I’ll handle it in a type-safe way.”
+
+
+
+So instead of creating multiple methods or classes for different data types, you can write one generic method or class that works for all types.
+
+
+---
+
+🧩 Example
+
+❌ Without Generics (Old Way)
+
+public class DataStore
+{
+    public object Data { get; set; }
+}
+
+You can store anything, but you lose type safety and need to do casting:
+
+DataStore store = new DataStore();
+store.Data = "Hello";
+string value = (string)store.Data; // Need casting — risky
+
+
+---
+
+✅ With Generics (Modern Way)
+
+public class DataStore<T>
+{
+    public T Data { get; set; }
+}
+
+Now you can do this:
+
+DataStore<string> nameStore = new DataStore<string>();
+nameStore.Data = "Abhishek"; // Type-safe — only string allowed
+
+DataStore<int> ageStore = new DataStore<int>();
+ageStore.Data = 25; // Type-safe — only int allowed
+
+✅ No casting
+✅ Type safety
+✅ Reusable code
+
+
+---
+
+🧱 Types of Generics
+
+1. Generic Classes
+
+Example: List<T>, Dictionary<TKey, TValue>, DataStore<T>
+
+
+
+2. Generic Methods
+
+public void Print<T>(T value)
+{
+    Console.WriteLine(value);
+}
+
+
+3. Generic Interfaces
+
+Example: IRepository<T> for data access.
+
+
+
+4. Generic Delegates
+
+Example: Func<T>, Action<T>, Predicate<T>
+
+
+
+
+
+---
+
+💼 Project Use (Buy & Sell Property Application)
+
+In your Buy & Sell Property App, you might use Generics in:
+
+1. Repository Pattern
+
+public interface IRepository<T>
+{
+    IEnumerable<T> GetAll();
+    T GetById(int id);
+    void Add(T entity);
+}
+
+public class Repository<T> : IRepository<T>
+{
+    // Common DB logic for Property, User, Payment, etc.
+}
+
+✅ You write database logic once and reuse it for all entities.
+
+
+2. Response Wrappers
+
+public class ApiResponse<T>
+{
+    public bool Success { get; set; }
+    public string Message { get; set; }
+    public T Data { get; set; }
+}
+
+✅ You can return ApiResponse<Property> or ApiResponse<User> easily.
+
+
+
+
+---
+
+⚖️ Trade-offs
+
+Pros Cons
+
+Type-safe and reusable Can get complex to read for beginners
+No boxing/unboxing overhead Harder debugging in advanced nested types
+Cleaner and DRY code Reflection and serialization sometimes tricky
+
+
+
+---
+
+💡 Business Impact
+
+✅ Less Code, Fewer Bugs: Reduces duplication in large-scale apps.
+✅ Better Performance: Type safety and no boxing/unboxing.
+✅ Easier Maintenance: One fix updates all types.
+
+
+---
+
+🎯 Interview-Ready Short Answer
+
+> “Generics in C# let us create classes, methods, and interfaces that can work with any data type in a type-safe way.
+In my Buy & Sell Property app, I used Generics in Repository and API Response classes to make my data layer reusable and maintainable.
+It reduced code duplication and improved performance.”
+
+////////////////////////////////////////////////////What is the Diffrence Between Generic Vs Non Generic
+Collection are categorized into two parts Generic and Non Generics
+Generic Collection :
+Type Safety : Generic collections provide strong type safety.
+Usability : Generic collections are more user-friendly because they eliminate the need for explicit casting.
+Performance : Generic collections are generally more efficient in terms of both execution speed and memory
+because they avoid the overhead of boxing and unboxing.
+
+Non-Generic Collection:
+Type Safety : Non-generic collections are not type-safe because they store elements as object types.
+Usability : Non-generic collections are less user-friendly because they involve casting and boxing/unboxing.
+Performance : Non-generic collections may have performance overhead due to the need for boxing (converting value types to reference types) and unboxing
+(converting reference types back to value types).
+
+///////////////////////Generic
+What are Generics in C#?
+
+Generics allow us to create classes, methods, and interfaces that work with any data type in a type-safe way.
+
+Instead of writing the same code for different types (like int, string, etc.), we write it once using generics — and it will work for any type.
+
+Why and When to Use Generics?
+Type safety – No need for casting.
+
+Code reusability – Write one method for all data types.
+
+Performance – Avoids boxing/unboxing (in value types).
+
+Clean and maintainable code.
+
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        bool isEqual = Calculator.AreEqual<int>(10, 10);
+        bool isStrEqual = Calculator.AreEqual<string>("Hello", "Hello");
+
+        Console.WriteLine("Int equal: " + isEqual);
+        Console.WriteLine("String equal: " + isStrEqual);
+    }
+}
+
+public class Calculator
+{
+    public static bool AreEqual<T>(T a, T b)
+    {
+        return a.Equals(b);
+    }
+}
+
+
+////////////////////////////////////////////////////////////////Q 42
+//What is Multiple delegate 
+=>A multiple Delegate is a delegate that holds the refrences of more than one function.
+✅ Real-Life Analogy
+
+> Imagine one button click is connected to 3 things:
+
+✅ Show message
+✅ Save to database
+✅ Send email
+
+One action → many methods = Multicast Delegate
+
+
+
+
+---
+
+✅ Code Example (C#)
+
+using System;
+
+public class Program
+{
+    // Step 1: Define a delegate type
+    public delegate void Notify();
+
+    // Step 2: Define methods to link
+    public static void Message1()
+    {
+        Console.WriteLine("Message 1: Logging info...");
+    }
+
+    public static void Message2()
+    {
+        Console.WriteLine("Message 2: Sending email...");
+    }
+
+    public static void Main()
+    {
+        // Step 3: Create multicast delegate
+        Notify notify = Message1;
+        notify += Message2; // Add second method
+
+        // Step 4: Invoke delegate → both methods will run
+        notify();
+    }
+}
+
+✅ Output:
+
+Message 1: Logging info...
+Message 2: Sending email...
+
+
+---
+
+✅ Summary for Interview (One-liner):
+
+> A multicast delegate holds multiple methods and calls them in order when the delegate is invoked. Useful when one action should trigger many things.
+
+////////////////////////////////////////////////////////Q43
+//What are ANonymous delegate in C#
+In Anomyous Delegate, you can create a delegate, but there is no  need to declare the method associated with it.
+
+✅ Interview-Ready Definition:
+
+> Anonymous delegates are methods without a name, used directly where they are needed.
+
+
+
+They are useful when:
+
+You want to write a small method on the spot.
+
+You don’t want to define a separate named method.
+
+
+
+---
+
+✅ Super Simple Explanation:
+
+Imagine instead of creating a named function like AddNumbers(), you just write the logic right where it’s needed — that’s an anonymous delegate.
+
+
+---
+
+✅ Code Example:
+
+using System;
+
+public class Program
+{
+    // Step 1: Define a delegate type
+    public delegate void GreetDelegate(string name);
+
+    public static void Main()
+    {
+        // Step 2: Use an anonymous delegate directly
+        GreetDelegate greet = delegate(string name)
+        {
+            Console.WriteLine("Hello " + name);
+        };
+
+        // Step 3: Call the delegate
+        greet("Abhishek");
+    }
+}
+
+
+
+---
+
+✅ Output:
+
+Hello Abhishek
+
+
+---
+
+✅ Real-World Use Case:
+
+Let’s say you’re writing code to log a message or handle a button click quickly — you don’t need a separate method, just use an anonymous delegate right there.
+
+
+---
+
+✅ Summary for Interview:
+
+> Anonymous delegate = a method without a name, written inline where it's used.
+Saves time and makes code shorter and cleaner, especially for small logic blocks.
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Q44)
+//What is the diffrence between Events And Delegate.
+->A Delegate is a variable that hold the refrence to a method or pointer to a function.
+->The event is a notification mechanism 
+
+//yet to fill the kindle answer.
+
+---
+
+✅ Interview-Ready Explanation (in Human Words)
+
+🎯 Delegate is like a reference to a method — it knows how to call a method.
+
+🎯 Event is a wrapper built on top of a delegate, used when something happens (like a button click). It helps restrict who can trigger the action.
+
+
+---
+
+✅ Simple Analogy:
+
+Delegate is like your mobile phone — you can call anyone if you have their number (method).
+
+Event is like a doorbell — others can press it (subscribe), but only the house (class) can decide what happens when it rings (raise the event).
+
+
+
+---
+
+✅ Real-Life Example in Code:
+
+using System;
+
+public delegate void Notify(); // Delegate declaration
+
+public class Process
+{
+    // EVENT based on delegate
+    public event Notify OnCompleted;
+
+    public void StartProcess()
+    {
+        Console.WriteLine("Process Started...");
+        // Do some work here...
+        Console.WriteLine("Process Completed.");
+        
+        // Raise the event
+        OnCompleted?.Invoke(); // Only this class can raise it
+    }
+}
+
+public class Program
+{
+    public static void Main()
+    {
+        Process process = new Process();
+
+        // Subscribe to the event
+        process.OnCompleted += () => Console.WriteLine("Notification: Process finished!");
+
+        process.StartProcess(); // This will trigger the event
+    }
+}
+
+
+---
+
+✅ Output:
+
+Process Started...
+Process Completed.
+Notification: Process finished!
+
+
+---
+
+✅ Summary for Interview:
+
+Feature Delegate Event
+
+What it is A pointer to a method A message broadcaster built on delegates
+Who can call Anyone with reference Only the class that declares it
+Use case When you want to pass a method When you want to notify subscribers
+
+
+
+---
+
+✅ 1-Line Answer:
+
+> Delegates hold a reference to methods; Events use delegates to notify when something happens, and only the class that defines the event can raise it.
+
+
+////////////////////////////////////////////////////81>
+What is CLUSTRED INDEX ?
+--> A clustered indexdefines the order in which  data is physically stored into table.
+--> only one clustered index allowed per table.
+Example :
+CREATE TABLE EMPLOYEE(
+ID INT PRIMARY KEY , // By default create a clusred indes
+NAME  VARCHAR(100),
+Salary INT
+)
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////51)
+🧩 Definition
+
+The .NET Framework is a software platform by Microsoft that helps developers build and run applications easily using languages like C#, VB.NET, etc.
+
+It provides all the tools — like a big toolbox — to write, compile, and run code safely.
+
+
+---
+
+💡 Main Components of .NET Framework & Their Roles
+
+1️⃣ CLR (Common Language Runtime)
+
+CLR - Common Language Runtime(CLR) manages the excution of programs written in any language that  uses the .Net Framework, for example c# ,VB.Net , F# and so on .
+
+Memory (Garbage Collection)
+
+Exception handling
+
+Security
+
+Thread management
+
+
+🧠 In short: You write code → CLR runs it safely.
+
+Project use example:
+In your Buy & Sell Property Application, CLR helps execute all your backend C# logic — like validating property data or saving property details to the database — safely and efficiently.
+
+
+---
+
+3️⃣ CTS (Common Type System) :
+
+CTS - CTS stands for Common Type System. It has a set of rules  which state how a data type should be declared, defined  and used in the program.
+
+In project:
+If another team writes a module in VB.NET (say reporting) and you use C#, CLS ensures both talk properly.
+
+
+---
+
+ 2️⃣ CLS (Common Language Specification) :
+
+CLS - CLS stands for Common Language Specification and it is a subset of CTS. It defines a set of rules and restriction that every language must follow which runs under .net 
+framework.
+
+For example, you write a program in diffrent .Net language c#, VB.Net, J# but if their logic and output is same, then the compiled
+ output is same, then the compiled output assembly wil be same  for all of them.
+
+In project:
+When property data (like price or area) is passed between different services, CTS ensures data types stay consistent.
+
+
+---
+
+4️⃣ BCL (Base Class Library) or FCL :
+
+Framework Class Library is the collection of classes, namesspaces, interfaces  and value types that are used for .NET applications.
+Reading/writing files
+
+Working with strings, collections, dates
+
+Database connectivity (ADO.NET)
+
+
+In project:
+You use List<Property>, File.ReadAllText(), or SqlConnection from BCL to simplify coding.
+
+
+---
+
+5️⃣ FCL (Framework Class Library)
+
+👉 Think of it like: “BCL + Extra features.”
+It’s a bigger library that includes:
+
+ASP.NET
+
+ADO.NET
+
+Windows Forms
+
+WCF, WPF
+
+
+In project:
+You use ASP.NET Core for your web APIs — it’s part of FCL.
+
+
+---
+
+6️⃣ Compiler
+
+👉 Think of it like: “The Translator.”
+It converts your C# code into MSIL (Microsoft Intermediate Language) which CLR can run.
+
+
+---
+
+7️⃣ Assemblies & Metadata
+
+👉 Think of it like: “Your packed code + labels.”
+Assemblies (.dll or .exe) contain your compiled code and metadata (info about your classes, methods).
+
+
+---
+
+⚙️ Trade-off / Business Impact
+
+✅ Advantages ⚠️ Trade-offs
+
+Provides strong memory management (less crashes) Can be slower than native code sometimes
+Easier debugging and exception handling CLR overhead in high-performance systems
+Multi-language support (C#, VB.NET, etc.) Large framework size
+Secure and stable for enterprise apps Less flexible for non-Windows systems (Framework, not .NET Core)
+
+///////////////////////////////////////
+//What are the important components of .Net Framework ? What are their roles?
+//-->CLR : It's the engion of .Net that runs your code, manages memory,and handle security.
+//-->cts : It ensure all .net languages use the same data types so they can work together.
+//-->FCL or BCL :It's a big collection of ready-made classes and functions you can use to build your apps faster.
+//-->CLS :It's a set of rules that .Net languages follow so they can talk to each other easily.
+
+///////////////////////////////////////////////////////////////////////////////////////////////68>
+what is the diffrence between DBMS And RDBMS.
+//DBMS
+1) DBMS stores data as file.
+2) No relationship between data.
+3)Normilation is not present.
+4) It deals with small quantity of data.
+5)Examples : XML.
+
+//RDBMS
+1)RDBMS stores data in Tabular form.
+2)Data is stored in the  form of table which are RELATED to each other. Eg: Foreign key reelationsheep.
+3)Normalization is present.
+4)It deals with LARZE amount of data.
+5)Example : MySql, PostSql, SqlServer, Oracle.
+
+///////////////////////////////////////////////////////////////////////////69)
+//What is a Constrains in SQL? What are its TYPE.
+Sql constrains are used to specify rules for the data in a table.
+Constrains are used to limit the type of data that can go into a table.
+
+Example
+
+LA PRIMARY KEY field which can uniquely identify each tow in a table
+
+LA FOREIGN Plaid which can uniquely idently sad row in in another table,
+
+4. CHECK constraint helps to validate the valves of cuta meet a particular condition.
+
+CREATE TABLE Students(
+
+10 In NOT NULL PRIMARY KEY
+
+Nase varchar(255) NOT NULL,
+
+CoursaID int FOREIGN REFERENCES Courses (CourseID)。
+
+Age Int NOT NULL CHECK (AGE 18),
+
+AdmissionDate date DEFAULT GETDATE().
+
+CONSTRAINT UC Student UNIQUE (ID, Nane)
+
+6.UNIQUE constraint tells that all the values in the column must be unique
+
+2. NOT NULL maint telh that we cannot store a null value in a
+
+DEFAULT specifies a default value for the colume when on value i specified by the e
+
+//////////////////////////////////////////////////////////////////////////////////70)
+//WHAT IS THE DIFFERENCE BETWEEN PRI-MARY KEY AND UNIQUE KEY?
+
+Primary Key
+
+1 Primary Key Can't Accept Null Values.
+
+2 Creates Clustered Index
+
+3
+
+Only One Primary key in a Table
+
+Unique Key
+
+Unique Key Can Accept Only One Null Value
+
+Creates Non-Clustered Index
+
+More than One Unique Key in a Table.
+///////////////////////////////////////////////////////71
+
+
+What is a Trigger in SQL Server?
+
+Triggers are stored programs, which are AUTOMATIC-ALLY executed or fired when some events (insert, delete and update) occur.
+
+
+
+---
+
+✅ Why Do We Use Triggers?
+
+To enforce business rules automatically
+
+To log changes or maintain audit trails
+
+To prevent invalid data from being inserted
+
+To enforce relationships or complex constraints
+
+To automatically update other tables
+
+
+
+---
+
+📚 Types of Triggers in SQL Server
+
+Category Trigger Type When it Fires
+
+🔁 DML Triggers AFTER Triggers After INSERT/UPDATE/DELETE operations
+ INSTEAD OF Triggers Replaces INSERT/UPDATE/DELETE operation
+⏱️ DDL Triggers ON DATABASE / ON ALL SERVER On schema changes like CREATE, ALTER
+💣 Logon Triggers AFTER LOGON Fires when a user logs in to SQL Server
+
+
+
+---
+
+🔁 1. DML Triggers (Data Manipulation Language)
+
+These are most commonly used.
+
+✅ a) AFTER Trigger
+
+Executes after the operation (INSERT, UPDATE, DELETE).
+
+
+CREATE TRIGGER trg_AfterInsert
+ON Employees
+AFTER INSERT
+AS
+BEGIN
+   PRINT 'A row was inserted in Employees table.'
+END
+
+✅ b) INSTEAD OF Trigger
+
+Executes instead of the operation — can be used on views too.
+
+
+CREATE TRIGGER trg_InsteadOfDelete
+ON Employees
+INSTEAD OF DELETE
+AS
+BEGIN
+   PRINT 'Delete operation blocked on Employees table.'
+END
+
+
+---
+
+⏱️ 2. DDL Triggers (Data Definition Language)
+
+Fires when you run commands like CREATE, DROP, or ALTER.
+
+CREATE TRIGGER trg_DDL_Log
+ON DATABASE
+FOR CREATE_TABLE, DROP_TABLE
+AS
+BEGIN
+   PRINT 'DDL Change detected on the database!'
+END
+
+
+---
+
+💣 3. Logon Triggers
+
+Used to control or monitor SQL Server logins.
+
+CREATE TRIGGER trg_LogonCheck
+ON ALL SERVER
+FOR LOGON
+AS
+BEGIN
+   PRINT 'A user just logged in.'
+END
+
+
+---
+
+🔍 Trigger Concepts to Understand Deeply
+
+Concept Explanation
+
+INSERTED table Contains new rows being inserted or updated
+DELETED table Contains old rows being deleted or updated
+Can't call triggers manually Triggers are automatic, not manually executable
+Triggers are transactional If a trigger fails, the whole operation rolls back
+
+//////////////////////////////////////////////////////////////////
+Creating a Custom Trigger in SQL Server
+
+A custom trigger in SQL Server is a database object that automatically executes a predefined action when a specific event (INSERT, UPDATE, DELETE) occurs on a table.
+
+
+---
+
+Steps to Create a Custom Trigger in SQL Server:
+
+1. Define the event that triggers it (AFTER INSERT, AFTER UPDATE, AFTER DELETE, or INSTEAD OF).
+
+
+2. Use the INSERTED and DELETED tables to track changes.
+
+
+3. Implement custom logic inside the trigger.
+
+
+
+
+---
+
+Example 1: Custom Audit Logging Trigger (AFTER INSERT)
+
+This trigger logs every new employee added into an AuditLog table.
+
+Step 1: Create an Audit Log Table
+
+CREATE TABLE AuditLog (
+    AuditID INT IDENTITY(1,1) PRIMARY KEY,
+    EmployeeID INT,
+    ActionType VARCHAR(50),
+    ActionDate DATETIME DEFAULT GETDATE()
+);
+
+Step 2: Create the Custom Trigger
+
+CREATE TRIGGER trg_AfterInsert_Employees
+ON Employees
+AFTER INSERT
+AS
+BEGIN
+    INSERT INTO AuditLog (EmployeeID, ActionType)
+    SELECT EmployeeID, 'INSERT' FROM INSERTED;
+END;
+
+
+---
+
+Example 2: Prevent Deletion (INSTEAD OF DELETE)
+
+This trigger prevents employees from being deleted but marks them as inactive instead.
+
+CREATE TRIGGER trg_PreventDelete_Employees
+ON Employees
+INSTEAD OF DELETE
+AS
+BEGIN
+    UPDATE Employees
+    SET IsActive = 0
+    WHERE EmployeeID IN (SELECT EmployeeID FROM DELETED);
+    
+    PRINT 'Employees cannot be deleted. They are marked as inactive instead.';
+END;
+
+
+---
+
+Example 3: Track Salary Changes (AFTER UPDATE)
+
+This trigger logs salary changes when an employee's salary is updated.
+
+CREATE TRIGGER trg_TrackSalaryChange
+ON Employees
+AFTER UPDATE
+AS
+BEGIN
+    INSERT INTO AuditLog (EmployeeID, ActionType)
+    SELECT d.EmployeeID, 'SALARY UPDATE'
+    FROM DELETED d
+    JOIN INSERTED i ON d.EmployeeID = i.EmployeeID
+    WHERE d.Salary <> i.Salary;
+END;
+
+
+---
+
+How to Test Your Custom Trigger
+
+Run the following SQL commands to check if your triggers work:
+
+INSERT INTO Employees (EmployeeID, Name, Salary, IsActive) VALUES (1, 'John Doe', 50000, 1);
+UPDATE Employees SET Salary = 60000 WHERE EmployeeID = 1;
+DELETE FROM Employees WHERE EmployeeID = 1;
+SELECT * FROM AuditLog; -- View logged actions
+
+
+---
+
+How to View Existing Triggers
+
+To see all triggers in your database:
+
+SELECT name, object_id, type_desc 
+FROM sys.triggers;
+
+
+---
+
+Would you like a custom trigger for a specific use case in your project?
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////72)
+View : view is Virtual table which contains of a subset of data contains in a table of more than one table.
+
+-->View are not stored in memory like table then why to use views :
+1> Views can be easily Indexed to improve the performance.
+2>Extra security - DBA can hide the actual table names and expose views for read only operation 
+3> User don't need to know where data comes from.
+4>Don't repeat the same JOINS or filters in 10 places.
+--> Remember, in a view query is stored but the data is never stored like a table.
+
+
+Example :
+CREATE VIEW vw_ActiveEmployees AS
+SELECT EmpID , FullName ,Department
+from Employees
+WHERE Status = 'Active';
+
+Select * From vw_ActiveEmployees;
+
+//////////////////////////////////////////////////////////////////////////////////////73)
+WHAT IS THE DIFFERENCE BETWEEN HAV-ING CLAUSE AND WHERE CLAUSE?
+
+1. WHERE Clause is used before GROUP BY Clause.
+
+HAVING Clause is used after GROUP BY Clause.
+
+2. WHERE Clause cannot contain AGGREGATE function. HAVING Clause can contain aggregate function.
+
+SELECT COUNT(CustomerID), Country FROM Customers
+
+WHERE Country = "India"
+
+GROUP BY Country
+
+HAVING COUNT (CustomerID) > 5;
+
+////////////////////
+WHAT IS SUB QUERY OR NESTED QUERY OR INNER QUERY IN SQL?
+
+A Subquery or Inner query or a Nested query is a query within another SQL query and embedded within the WHERE clause.
+///////////////////////////75)
+WHAT IS AUTO INCREMENT/ IDENTITY COLUMN IN SQL SERVER?
+
+Auto-increment allows a unique number to be generated automatically when a new record is inserted into a table.
+
+CREATE TABLE Persons (
+
+Personid int IDENTITY(1,1) PRIMARY KEY,
+
+FirstName varchar(255),
+
+Age int
+
+);
+
+///////////////////////////////////////////////////
+Stored Procedure vs Function vs Trigger
+///////////////////////////////////76)
+WHAT ARE JOINS IN SQL?
+
+A join clause is used to COMBINE rows from two or more tables, based on a related column between them.
+
+///////////////////////////////////////////////77)
+What is join and type ?
+LEFT  JOIN: As you can see in the diagram It returns all records from the
+
+left table, and the matched records from the right table.
+
+RIGHT  JOIN: Returns all records from the right table, and the matched rec-ords from the left table.
+
+FULL JOIN: Returns all records when there is a match in either left or right table.
+
+(INNER) JOIN: Returns records that have matching values in both tables. Inner join is the mostly used join in all joins.
+///////////////////////////////////////////////////////////////What is the Cross join 
+Key Differences
+Feature	                                CROSS JOIN	                         FULL JOIN (FULL OUTER JOIN)
+Condition	                         No condition needed	                  Needs ON condition
+Result	                                 Cartesian product (A × B)	       Matching + unmatched records from both tables
+NULL values	                         No NULLs	                   NULLs appear for unmatched records
+Use case	                          Generate all combinations	Get complete dataset from both tables
+
+✅ INNER JOIN vs LEFT JOIN vs RIGHT JOIN
+///////////////////////////////////78
+WHAT IS SELF-JOIN?
+
+A self-join is a join of a table to itself.
+//////////////////////////////////////////////////////////
+👉 What are Subqueries? When to use them vs JOINs?
+=>Subquery
+-> Query inside another quer.
+-> Often used for filtering.
+-> Sometimes easier to wite.
+-> Can be slower if not optimized.
+
+=>JOIN
+->Combines two table together.
+->Used when you need coloumn from multile tables.
+->Usually better performance for relational data.
+
+////////////////////////////////////////////////////////////
+Q> What is Diffrence between Union and Join.
+
+//////////////////////////////////////////////////////////////80
+WHAT ARE INDEXES IN SQL SERVER?
+
+SQL Indexes are used in relational databases to retrieve data VERY FAST.
+
+They are like indexes at the start of the BOOKS, which pur-pose is to find a topic quickly.
+
+//////////////////////////////81)
+WHAT IS CLUSTERED INDEX?
+
+CLUSTERED INDEX
+
+A clustered index defines the order in which data is phys-ically stored in a table.
+
+Clustered index are similar to the Dictionary. See how you will find any word.
+
+There is only one way to find a word so similarly there can be only one clustered index per table possible.
+
+In SQL Server, if you set a primary key on a column then it will automatically create a clustered index on that col-umn.
+
+Example :
+CREATE TABLE EMPLOYEE(
+ID INT PRIMARY KEY , // By default create a clusred indes
+NAME  VARCHAR(100),
+Salary INT
+)
+
+//////////////////////////82)
+WHAT IS NON-CLUSTERED INDEX? NON-CLUSTERED INDEX A non-clustered index is stored at one place and table data is stored in another place. So, this index is not physically stored. It is like the index of a BOOK.
+
+///////////////////////83)
+WHAT IS THE DIFFERENCE BETWEEN CLUSTERED AND NON-CLUSTERED INDEX? 1. A clustered index defines the order in which data is physically stored in a table. For example, Dictionary. A non-clustered index is stored at one place and table data is stored in another place. For example, Book Index. 2. A table can have only one clustered index. A table can have multiple non-clustered index. 3. Clustered index is faster. Non-clustered index is slower.
+
+=>
+A clustered index defines the order in which data is physically stored in a table. for example Dictionary.
+A non-clustred index is stored at one place and table data is stored in another place. for example , Bookplace
+
+A table can have only one clustred index.
+Atable can have multiple non-clustred index.
+
+Clustered index is faster.
+Non-Clustered index is slower.
+
+//////////////////////////////84)
+HOW TO CREATE CLUSTERED AND NON-CLUSTERED INDEX IN A TABLE? CLUSTERED INDEX When you create a PRIMARY KEY constraint, a clustered  index on the column or columns is automatically created. NON-CLUSTERED INDEX
+
+//Example
+Non-Clustered Index
+
+CREATE NONCLUSTERED INDEX IX_Employee_Name
+ON Employee(name);
+
+Clustered Index = Sorted actual data.
+Non-Clustored Index = Pointer to actial data.
+
+//ADVANTAGES
+Use it
+-> You Serch frequently by coloumns other than the primary key.
+Example : SELECT * FROM EMPLOYEE WHERE Name = 'Abhishek';
+
+//////////////////////////85)
+IN WHICH COLUMN YOU WILL APPLY THE INDEXING TO OPTIMIZE THIS QUERY. “select id, class from student where name=”happy””? The column after WHERE condition, which is “name” here.
+/////////////////////86)
+WHAT IS THE DIFFERENCE BETWEEN STORED PROCEDURE AND FUNCTIONS?
+Store Procedure
+-> Store Procedure may or may not return value.
+->Insert and update function used in Store Procedure.
+->we can write Transaction in Store Procedure.
+->we can call the function in stored procedure
+->we can use try catch block for runtime exception.
+-> we can write ddl operation for Store Procedure.
+
+FUNCTION
+-> It will return value.
+->Function we can only use select because it retriving the data.
+->we can not write Transaction in function.
+->we can not call store Procedure inside the function.
+->we can can not write try , catch , block in function.
+-> you can not write the ddl operation for function.
+////////////////////////////////////////////////////////////////////////87)
+HOW TO OPTIMIZE A STORED PROCEDURE OR SQL QUERY? 
+Below are some techniques to optimize a stored procedure: 
+->Use SET NOCOUNT ON Specify column names
+->instead of using * you can use a SELECT statement.
+->Use schema name before objects or table names. Example: SELECT EmpID, Name FROM dbo.Employee
+->Do not use DYNAMIC QUERIES. They are vulnerable to SQL Injections. 
+->Use EXISTS () instead of COUNT (). Example: IF( EXISTS (SELECT 1 FROM db.Employees)) is better than SELECT Count(1) FROM dbo. Employee Use TRANSACTION when required only
+//Got it Abhishek 👍 Let’s make your answer interview-ready with Definition + Project Use + Trade-offs + Business Impact in very simple words.
+
+❓ Interview Question: “How do you optimize a Stored Procedure or SQL Query?”
+1. Definition (Easy Words)
+👉 Query optimization means: “Making your SQL run faster and use fewer resources (CPU, memory, disk).”
+It’s like cooking food quickly without wasting gas or ingredients.
+
+2. Project Use (Buy & Sell Properties App Example)
+💡 In our Buy & Sell Property app, we had:
+
+A Property Search Query → Users search by price, city, status (active/sold).
+If query is slow → users wait longer, bad experience.
+So, we optimized queries to make property search faster.
+3. Techniques + Easy Human Explanation
+Use SET NOCOUNT ON
+👉 Stops sending “rows affected” messages.
+Example: 5 rows affected → we don’t need this in API, it just wastes network.
+
+Specify column names instead of SELECT *
+👉 Instead of bringing all columns, bring only what you need.
+Example: SELECT EmpID, Name FROM dbo.Employee
+(In property app: SELECT PropertyName, Price not SELECT *).
+
+Use schema name before table
+👉 Example: dbo.Employee
+It makes SQL Server find the table faster (like giving full address, not just name).
+
+Avoid Dynamic Queries
+👉 Example: Don’t build query with string concat → risk of SQL Injection.
+Use parameters instead.
+
+Use EXISTS() instead of COUNT()
+👉 If you just want to check if record exists, use EXISTS (stops after first match) → faster.
+
+Use Transactions only when needed
+👉 Transactions lock tables. If you don’t need them, avoid them → less blocking.
+
+4. Trade-offs (Things to Consider)
+Optimization makes query faster, but sometimes requires more developer effort.
+Example: Instead of SELECT *, we write 5–6 column names → a bit longer code, but worth it.
+Using indexes helps speed, but takes extra space in database.
+5. Business Impact (Easy Words)
+Faster query = Faster property search.
+Faster = Happy users → More sales.
+Less CPU/Memory = Lower server cost for company.
+Secure queries = No data leaks / hacking risk.
+✅ Final Interview Line:
+“In our Buy & Sell Property project, we optimized queries by avoiding SELECT *, using schema names, replacing COUNT with EXISTS, and using transactions carefully. This improved property search speed, reduced server cost, and made the system more secure for customers.”
+
+👉 Do you want me to also add Indexes optimization (clustered vs non-clustered) into this answer? That often comes as a cross-question in SQL interviews.
+
+/////////////////////////////////////////////////////////////////////15>Write the basic syntax of store procedure.
+CREATE PROCEDURE procedure_name
+    @parameter1 datatype,
+    @parameter2 datatype,
+    ...
+AS
+    -- SQL statements to define the stored procedure logic
+    -- This can include SELECT, INSERT, UPDATE, DELETE, and more
+
+GO
+
+/////////////////////////////////////////////////////////////////////////////
+Q)How you debugging the store procedure in Sql server
+
+
+/////////////////////////////////////////////////////////////////////////////Performance Tuning for Store Procedure
+we are doing for store Procedure
+Supose we want to increse the performance of store Procedure then
+->we can do set No count 
+->instead of calling table name I will dbo.TableName.
+->Instaed of * we can use selected coloum.
+->we avoid aggregate functon in where clouse.
+->we need to do proper indexing on table
+->we should avoid ddl operation on store Procedure.
+->we will use table varible instead of temp table.
+
+/////////////////////////////88)
+WHAT IS A CURSOR? WHY TO AVOID THEM? A database Cursor is a control which enables traversal/ iteration over the rows or records in the table. 
+It’s a 5-step process: 1. Declare 2. Open 3. Fetch using while loop 4. Close 5. Deallocate
+Example of Cursor
+Suppose we have a table:
+Employees
+Id
+Name
+Salary
+1
+Rahul
+5000
+2
+Amit
+6000
+3
+John
+7000
+We want to increase salary one by one.
+Sql
+Copy code
+DECLARE @Name VARCHAR(50)
+
+DECLARE emp_cursor CURSOR FOR
+SELECT Name FROM Employees
+
+OPEN emp_cursor
+
+FETCH NEXT FROM emp_cursor INTO @Name
+
+WHILE @@FETCH_STATUS = 0
+BEGIN
+    PRINT 'Processing employee: ' + @Name
+    FETCH NEXT FROM emp_cursor INTO @Name
+END
+
+CLOSE emp_cursor
+DEALLOCATE emp_cursor
+👉 This processes employees one row at a time.
+4️⃣ Why Should We Avoid Cursors?
+Because they are slow and heavy.
+SQL Server is designed to process sets of data, not rows one by one.
+Problems with Cursors
+1️⃣ Very slow performance
+2️⃣ High memory usage
+3️⃣ Locks tables for long time
+4️⃣ Bad scalability
+Example:
+Processing 1 million rows
+Using cursor → very slow
+Using set-based query → very fast
+5️⃣ Better Alternative (Set-Based Query)
+Instead of cursor:
+Sql
+Copy code
+UPDATE Employees
+SET Salary = Salary + 1000
+👉 SQL updates all rows together.
+Much faster.
+///////////////////////////////////
+when should Server-based cursors be used ?
+When Should Server-Based Cursors Be Used?
+Cursors should be used only when row-by-row logic is required.
+Example Situations
+✔ Sending email per record
+✔ Calling stored procedure per row
+✔ Processing sequential operations
+Example:
+Send email to each user.
+Sql
+Copy code
+FOR EACH USER
+SEND EMAIL
+This may require cursor.
+
+
+/////////////////////////////89)
+WHAT IS THE DIFFERENCE BETWEEN SCOPE_IDENTITY AND @@IDENTITY? scope_identity and @@identity, 
+
+ll explain these in simple interview-ready language, Abhishek, because these are very common SQL/.NET interview questions.
+1️⃣ Difference between SCOPE_IDENTITY() and @@IDENTITY
+Both are used to get the last inserted identity value after an INSERT.
+But the scope behavior is different.
+SCOPE_IDENTITY()
+Returns the last identity value generated in the same scope and session.
+Scope means:
+Same stored procedure
+Same batch
+Same trigger context
+It ignores identity values generated by triggers.
+✅ Safe to use in applications
+Example:
+Sql
+Copy code
+INSERT INTO Employee(Name)
+VALUES ('Abhishek')
+
+SELECT SCOPE_IDENTITY()
+This returns the Employee table identity value.
+@@IDENTITY
+Returns the last identity value generated in the current session, even if it was generated by a trigger.
+So it may return identity from another table.
+Example:
+Suppose:
+Employee table → INSERT
+Trigger fires → inserts into Audit table
+Now:
+Sql
+Copy code
+SELECT @@IDENTITY
+May return Audit table identity instead of Employee.
+❌ Not safe for applications.
+Interview one-line answer
+SCOPE_IDENTITY returns the last identity value generated in the same scope, while @@IDENTITY returns the last identity value generated in the session including triggers.
+
+//////////////////////////////////////////////////////////////////
+In SQL, what is meant by the identity column ?
+
+’2️⃣ What is an Identity Column in SQL Server
+An identity column is a column that automatically generates a unique number when a new row is inserted.
+It is commonly used as a Primary Key.
+Example:
+Sql
+Copy code
+CREATE TABLE Employee
+(
+   Id INT IDENTITY(1,1),
+   Name VARCHAR(50)
+)
+Here:
+Copy code
+
+IDENTITY(seed, increment)
+Seed = starting value
+Increment = increase value
+So values will be:
+Copy code
+
+1
+2
+3
+4
+5
+Automatically generated.
+Interview one-line answer
+An identity column automatically generates a unique numeric value for each new row inserted in a table.
+3️⃣ What is User.Identity.Name used for?
+This is used in ASP.NET authentication.
+It returns the username of the currently logged-in user.
+Example in ASP.NET:
+Csharp
+Copy code
+string username = User.Identity.Name;
+If the logged-in user is:
+Copy code
+
+abhishek
+Then:
+Copy code
+
+User.Identity.Name → "abhishek"
+It helps to:
+Identify the current user
+Save user actions
+Apply authorization
+Track audit logs
+Example use:
+Csharp
+Copy code
+CreatedBy = User.Identity.Name;
+/////////////////////////////////////////////////////////////////
+39. What is the User.Identity.Name used for?
+
+Interview one-line answer
+User.Identity.Name returns the username of the currently authenticated user in ASP.NET.
+⭐ Quick Interview Summary
+Topic
+Meaning
+SCOPE_IDENTITY()
+Returns last identity value in same scope
+@@IDENTITY
+Returns last identity value in session (including triggers)
+Identity Column
+Auto-generated numeric value for each row
+User.Identity.Name
+Returns logged-in username in ASP.NET
+If you want, I can also give you 15 very common SQL + .NET interview questions asked for 4-5 year experience developers. These are exactly the ones companies ask.
+//////////////////////////90)
+WHAT IS CTE IN SQL SERVER? A Common Table Expression, is a TEMPORARY named result set, that you can used within a SELECT, INSERT, UPDATE, or DELETE statement.
+/////////////////////////////////////////////To remove duplicate records while keeping only one entry per EmployeeName, you can use a DELETE with a CTE and ROW_NUMBER():
+WITH CTE AS (
+    SELECT *,
+           ROW_NUMBER() OVER (PARTITION BY EmployeeName ORDER BY EmployeeId) AS rn
+    FROM Employee
+)
+DELETE FROM Employee
+WHERE EmployeeId IN (
+    SELECT EmployeeId FROM CTE WHERE rn > 1
+);
+
+////////////////////////////////////////////////////////////////////////////////////Q>CTE vs Temp Table.
+You asked for only two main differences — so here they are clearly.
+✅ 1️⃣ Storage & Lifetime
+CTE (Common Table Expression)
+Exists only during one query execution
+Not stored physically
+Disappears immediately after query finishes
+Temp Table
+Stored physically in tempdb
+Exists for the entire session (or until dropped)
+Can be reused in multiple queries
+👉 Simple line:
+CTE is temporary logic. Temp table is temporary storage.
+✅ 2️⃣ Performance & Indexing
+CTE
+Cannot create indexes
+Re-executes if referenced multiple times
+Better for small or readable queries
+Temp Table
+Can create indexes
+Better for large data processing
+Improves performance in complex multi-step queries
+👉 Simple line:
+CTE is good for readability. Temp table is good for heavy data work.
+🎯 Interview 1-Line Answer
+CTE exists only for a single query and does not store data physically, while a temp table is stored in tempdb, can be indexed, and can be reused within the session.
+
+Simple line :
+CTE is Temporary logic. Temp table is 
+////////////////////////
+What is a CTE? How does it differ from subqueries?
+//////////////////////////////////////////////////////
+13. What is a CTE (Common Table Expression) and its use case?
+/////////////////////////////////////////////////////////////
+Q>CTE vs Temp Table
+////////////////////////////////////////////////////////////
+8. CTE (Common Table Expressions) and Window Function
+//////////////////////////////////////////////////////////
+What is uses.
+///////////////////////////////////////////////////////////////////
+//////////////////////91)
+WHAT IS THE DIFFERENCE BETWEEN DELETE, TRUNCATE AND DROP COMMANDS? 
+
+DELETE
+
+1. It is a DML.
+
+2. It is used to delete the one or more rows(data) of a table.
+
+3. It can be rollback.
+
+DELETE FROM Employees WHERE Emp_Id = 7;
+
+TRUNCATE
+
+1. It is a DDL.
+
+2. It is used to delete all rows from the table.
+
+3. It can be rollback.
+
+4. Trincate will remove all the records from the table Employees but not the structure/ schema.
+
+TRUNCATE TABLE Employees;
+
+DROP
+
+1. It is a DDL.
+
+2. It is used to drop the whole table with STRUCTURE/SCHEMA.
+
+3. It can not be rollback.
+
+4. It will remove the structure/schema also.
+
+DROP TABLE Employees;
+
+
+////Delect 
+1> Used to remove the specific rows from a table.
+2>you can use where to delete the 
+3>can be rolled back(if inside a transaction)
+4>It is a DML(Data Manipulation Language) command.
+5>Table structure does not changes.
+
+Example:
+Delect from Employee Where Employee = 5 ;
+
+//////Truncate
+1>Remove all rows from table(empties the table).
+2>Cannot be rolled back in many 
+databases(in SQL Server, rollback is possible if used a transaction).
+3>It is a DDL(Data Defination Language) command.
+4> Table structure does not changes.
+
+Example
+TRUNCATE Table Employee;
+
+//Drop
+-->Delete the entire table from database(structure + data);
+--> Cannot be rolled back.
+--> It is DDL(Data Defination Language) command
+
+Example
+Drop Table Employee;
+
+-->In short Where filters individual recoreds, Having filters grouped results.
+
+//////////////////////////////////////////////////////
+/////////////////////////////
+WHAT ARE ACID PROPERTIES?
+
+ACID properties are used when you are handling transac-tions in SQL.
+
+Atomicity
+
+Each transaction is "all or nothing"
+
+Consistency
+
+Data should be valid according to all defined rules
+
+Isolation
+
+Transactions do not affect each other
+
+Durability
+
+Committed data would not be lost, even after power failure.
+
+//////////////////////////////////////////////////////////////
+
+
+////////////////////////////////////////////////////////////
+👉 What is a Transaction? 
+=> A transaction is a group of database operation that must happen together as one single unit.
+
+If all operation succeed -> transaction is committed
+If any operation fails -> everthing is rolled back.
+
+so the database never stays in half-completed state.
+
+/////////////////////////////
+WHAT ARE ACID PROPERTIES?
+
+ACID properties are used when you are handling transac-tions in SQL.
+
+Atomicity
+
+Each transaction is "all or nothing"
+
+Consistency
+
+Data should be valid according to all defined rules
+
+Isolation
+
+Transactions do not affect each other
+
+Durability
+
+Committed data would not be lost, even after power failure.
+
+
+////////////////////////////////////////////////////////////
+👉 What is a Transaction? 
+=> A transaction is a group of database operation that must happen together as one single unit.
+
+If all operation succeed -> transaction is committed
+If any operation fails -> everthing is rolled back.
+
+so the database never stays in half-completed state.
+
+//////////////////////////////94
+WHAT ARE MAGIC TABLES IN SQL SERVER? Magic tables are the temporary logical tables that are created by the SQL server whenever there are insertion or deletion or update( D.M.L) operations. Types of magic tables: INSERTED – The recently inserted row gets added to the
+INSERTED magic table. DELETED – The recently deleted row gets added to the DELETED magic table. The use of magic tables are TRIGGERS.
+
+//
+Magic Tables in SQL Server (Interview Question Explained Simply)
+🧒 1. Easiest Definition (5-year-old level)
+👉 Magic tables are like CCTV cameras for a table.
+They secretly watch what data was added or removed.
+When something changes in a table, SQL Server says:
+“Let me keep a copy of old data and new data.”
+Those copies are called Magic Tables ✨
+👶 2. Simple Human Definition
+Magic tables are special temporary tables automatically created by SQL Server inside triggers to hold old and new data.
+They help SQL Server know:
+What was inserted
+What was deleted
+What was updated
+✅ What Are the Magic Tables?
+There are ONLY TWO magic tables:
+Magic Table
+What it Contains
+inserted
+New data
+deleted
+Old data
+⚠️ They exist ONLY inside triggers
+✅ When Do They Get Created?
+Automatically created when you use:
+INSERT
+UPDATE
+DELETE
+inside a trigger
+✅ Easy Visual Understanding
+UPDATE Example
+Copy code
+
+Old Data → deleted table
+New Data → inserted table
+SQL Server keeps both so you can compare.
+✅ Simple Example (Very Important)
+Table
+Copy code
+Sql
+Employee
+---------
+Id | Name | Salary
+Trigger Example
+Copy code
+Sql
+CREATE TRIGGER trg_Employee_Update
+ON Employee
+AFTER UPDATE
+AS
+BEGIN
+    SELECT * FROM inserted;
+    SELECT * FROM deleted;
+END;
+If You Run:
+Copy code
+Sql
+UPDATE Employee
+SET Salary = 60000
+WHERE Id = 1;
+Magic Table
+Contains
+deleted
+Salary = 50000
+inserted
+Salary = 60000
+👉 SQL Server magically stores both ✨
+✅ INSERT Scenario
+Copy code
+Sql
+INSERT INTO Employee VALUES (2, 'Amit', 40000);
+Magic Table
+Data
+inserted
+New row
+deleted
+Empty
+✅ DELETE Scenario
+Copy code
+Sql
+DELETE FROM Employee WHERE Id = 2;
+Magic Table
+Data
+deleted
+Removed row
+inserted
+Empty
+✅ Real Project Use Case (Buy & Sell Property App)
+🔹 Audit Log (VERY COMMON)
+When property price changes:
+Copy code
+Sql
+INSERT INTO PropertyPriceHistory
+SELECT Id, Price, GETDATE()
+FROM deleted;
+👉 Stores old price before update
+👉 Helps in price history tracking
+🔹 Security / Validation
+Copy code
+Sql
+IF EXISTS (
+    SELECT 1 FROM inserted
+    WHERE Price < 0
+)
+BEGIN
+    RAISERROR('Invalid Price', 16, 1);
+    ROLLBACK;
+END
+👉 Prevents wrong data
+🔹 Synchronization
+Sync updated property data
+Trigger notifications
+Maintain logs
+✅ Interview Trick Question ⚠️
+❓ Are magic tables real physical tables?
+❌ NO
+✔ They are virtual / temporary logical tables
+✅ Important Rules (Interview Gold)
+✔ Available only inside triggers
+✔ Can contain multiple rows (VERY IMPORTANT)
+✔ Must handle set-based operations
+✔ Automatically managed by SQL Server
+❌ Cannot be accessed outside trigger
+✅ Common Mistake (Interviewers Love This)
+❌ Wrong assumption:
+Copy code
+Sql
+SELECT * FROM inserted WHERE Id = 1;
+✔ Correct approach:
+Copy code
+Sql
+SELECT * FROM inserted;
+Because multiple rows can be affected.
+✅ Trade-Offs
+👍 Advantages
+Easy change tracking
+Built-in mechanism
+No manual temp tables
+Great for auditing
+👎 Disadvantages
+Trigger overhead
+Performance impact
+Can complicate debugging
+Poorly written triggers slow system
+✅ Business Impact (Simple Words)
+✔ Correct usage:
+Accurate audit logs
+Data security
+Compliance
+Trust in system
+❌ Wrong usage:
+Slow database
+Deadlocks
+High maintenance
+Business downtime 💸
+🎯 One-Line Interview Answer (BEST)
+Magic tables in SQL Server are the inserted and deleted virtual tables automatically created inside triggers to hold new and old data during insert, update, or delete operations.
+🧠 Memory Shortcut
+👉 INSERT → inserted
+👉 DELETE → deleted
+👉 UPDATE → both
+If you want next: ✅ Difference between Trigger vs Stored Procedure
+✅ Real audit log design
+✅ Performance-safe trigger patterns
+✅ Common interview traps
+Just say 👍
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////102> What is the diffrence between ViewData,  ViewBAG And TempData
+--> ViewData and ViewBag are used to pass data from CONTROLLER TO VIEW.
+--> TempData is used to pass data from Controller TO Controller.
+
+//ViewData REQUIRES TYPECASTING for comming data types whereas ViewBag Doesn't required typecasting for the complex data type.
+
+//////////////////////////////////////////////////////////////
+Q>Why ViewData require typeCasting
+
+////////////////////////////////////////////////////////////////////////////////////////////.Single() and Include()
+.Include() is used in Entity Framework(EF/EF core) to eager load relatedd entities(like a SQL JOIN) .
+.Include() = eager loading (load related data immediately).
+/////////////////////////////////////////////////////////////////////////
+How to improve the perform of entity framework?
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////How you can add two coloum in table by Entityframework
+In Entity Framework Core, you can add columns to an existing table by creating a migration and applying it to the database. Here’s how you can add two new columns to an existing table using Entity Framework in .NET Core.
+
+Step-by-Step Guide:
+1. Modify the Model
+Assume you have an existing model Employee in your project, and you want to add two new columns MiddleName and DateOfJoining.
+
+Original Model:
+
+csharp
+Copy code
+public class Employee
+{
+    public int EmployeeId { get; set; }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+}
+Modify the model to include the new columns:
+
+csharp
+Copy code
+public class Employee
+{
+    public int EmployeeId { get; set; }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    
+    // New columns
+    public string MiddleName { get; set; }  // New column
+    public DateTime DateOfJoining { get; set; }  // New column
+}
+2. Create a Migration
+After modifying the model, you need to create a migration so that Entity Framework can update the database schema to match the model changes.
+
+Run the following command in the Package Manager Console or Terminal:
+
+bash
+Copy code
+dotnet ef migrations add AddMiddleNameAndDateOfJoiningToEmployee
+This will create a new migration file with the necessary code to add the columns to the Employee table.
+
+3. Inspect the Migration File
+The migration file will be generated in the Migrations folder. It should look something like this:
+
+csharp
+Copy code
+public partial class AddMiddleNameAndDateOfJoiningToEmployee : Migration
+{
+    protected override void Up(MigrationBuilder migrationBuilder)
+    {
+        migrationBuilder.AddColumn<string>(
+            name: "MiddleName",
+            table: "Employees",
+            type: "nvarchar(max)",
+            nullable: true);
+
+        migrationBuilder.AddColumn<DateTime>(
+            name: "DateOfJoining",
+            table: "Employees",
+            type: "datetime2",
+            nullable: false,
+            defaultValue: new DateTime(2024, 1, 1));  // Provide a default value for non-nullable column
+    }
+
+    protected override void Down(MigrationBuilder migrationBuilder)
+    {
+        migrationBuilder.DropColumn(
+            name: "MiddleName",
+            table: "Employees");
+
+        migrationBuilder.DropColumn(
+            name: "DateOfJoining",
+            table: "Employees");
+    }
+}
+The Up method adds the new columns to the table, while the Down method removes them if the migration is rolled back.
+
+4. Apply the Migration
+To apply the migration and update the database schema, run the following command:
+
+bash
+Copy code
+dotnet ef database update
+This will apply the migration, and the Employees table will now have the MiddleName and DateOfJoining columns added.
+
+Conclusion
+By following these steps, you can easily add new columns to an existing table using Entity Framework Core in .NET Core. The process involves modifying the model, creating a migration, and applying the migration to update the database schema.
+
+///////////////////////////////////////////////////////////////////////diffrence between  Database First, Code First , Model first in Entity framework in one line
+
+Sure! Here are the differences in one line each:
+
+Database First: The database schema is created first, and the code models are generated from the existing database.
+Code First: The code models are created first, and the database schema is generated from the code models.
+Model First: The conceptual model is designed first using a designer, and both the code models and database schema are generated from the model.
+
+////////////////////////////////////////////////////////////////////////////
+Entity Framework vs ADO.NET
+////////////////////////////////////////////////////////////////////////////////////
+🔹 8. What is Entity Framework Core?
+//////////////////////////////////////////////////////////////////////////////////////
+12. Why is DbContext used in Entity Framework Core for data access?
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////All the question Entity Framework
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////Previous Interview Question
+It is their in diffrence sheet.
+
+/////////////////////////////////////////////////Interview Previous
+//Introduction
+Entity Framework(EF) is an open source object-Relational Mapper(ORM)for .net application.
+
+//Key Feature of Entity Framework
+=> Code-First Approach : Define your database structure using c# or VB.Net classes and EF will generate the database schema.
+
+=>Database-First Approaches : Reverse-engine an existing database into a .Net model.
+=>Query Support : use LINQ for database operation.
+
+//Why we use Entity Framework
+1) Productivity : Eliminate the need to write repetitive SQL Code.
+
+//How does EntityFramework work High Level understanding
+
+Context class : Acts as session to connect with database(e.g DbContext)
+Entity Classes:  Represent the table in the coloum.
+Linq Query : Translate LInq state into Sql Command.
+Database Provider : Hnadle the connection and interaction  with the actual database.
+
+//////////////////////////////Use and Limitations
+//Use
+-> Rapid application development.
+//Limitation
+->May not perform as well as raw SQL for highly Complex queries.
+
+//How does EntityFramework work Low Level understanding
+1) Model Creation :-> The developer creates entity classes(code-First) or generative Classes from an existing 
+database Schema(Database - First).
+
+2) Query Execution : LINQ query or method calls are processed by the Query processor.
+The Query processor Convert this into SQL.
+
+////////////////////////////////Implementation (I have already tested)
+
+//Model
+ public class Property
+ {
+     [Key]
+     public int Id { get; set; }
+     
+     public string Title { get; set; }
+     
+     public string Description { get; set; }
+     
+     public string Location { get; set; }
+    
+    
+     public int Price { get; set; }
+
+     public DateTime CreateAt { get; set; } = DateTime.Now;
+
+ }
+
+//ApplicationDbContest
+
+   public class ApplicationDbContext : DbContext
+   {
+       public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
+       public DbSet<Property> Property { get; set; }
+   }
+
+//Reposetory
+ public class PropertyRepository : IProperty
+ {
+     private readonly ApplicationDbContext _context;
+
+     public PropertyRepository(ApplicationDbContext context)
+     {
+         _context = context;
+     }
+
+     public async Task<IEnumerable<Property>> GetAllPropertyAsync()
+     {
+         return await _context.Property.ToListAsync();
+     }
+
+     public async Task Create(Property property)
+     {
+         _context.Property.Add(property);
+         await _context.SaveChangesAsync();
+     }
+
+     public async Task<Property> Edit(int? id)
+     {
+         return await _context.Property.Where(p => p.Id == id).FirstOrDefaultAsync();
+     }
+
+     public async Task Update(Property property)
+     {
+         var existingProperty = await _context.Property.Where(p => p.Id == property.Id).FirstOrDefaultAsync();
+         if (existingProperty != null)
+         {
+             existingProperty.Title = property.Title;
+             existingProperty.Description = property.Description;
+             existingProperty.Location = property.Location;
+             existingProperty.Price = property.Price;
+             await _context.SaveChangesAsync();
+         }
+     }
+
+     public async Task<Property> GetPropertyById(int? id)
+     {
+         return await _context.Property.Where(p => p.Id == id).FirstOrDefaultAsync();
+     }
+
+     public async Task Delete(int id)
+     {
+         var property = await _context.Property.Where(p => p.Id == id).FirstOrDefaultAsync();
+         if (property != null)
+         {
+             _context.Property.Remove(property);
+             await _context.SaveChangesAsync();
+         }
+     }
+
+     
+ }
+
+
+
+////////////////////////////////////////////////////////ChatGpt Question
+Beginner-Level Questions
+
+////////////////////////////////////////////////////////1. What is Entity Framework?
+
+Entity Framework(EF) is an open source object-Relational Mapper(ORM)for .net application.
+
+
+2. What are the different approaches in EF?
+
+=> Code-First Approach : Define your database structure using c# or VB.Net classes and EF will generate the database schema.
+
+=>Database-First Approaches : Reverse-engine an existing database into a .Net model.
+
+Model First
+
+
+
+3. What is DbContext and DbSet?
+
+DbContect : Thinks of DbContext as your main connection between your c# code and database.
+DbSet<T> represents a table in the database where T is the model/class.
+
+4. What is the difference between Code First and Database First approach?
+
+
+5. How do you perform CRUD operations in Entity Framework?
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////6. What is Lazy Loading, Eager Loading, and Explicit Loading?
+Simple Definition for Interview
+
+🔸 Lazy Loading:
+Related data is loaded automatically when accessed.
+
+🔸 Eager Loading:
+Related data is loaded immediately when the main data is fetched using .Include().
+
+🔸 Explicit Loading:
+You manually load related data after the main object is loaded.
+
+
+---
+
+✅ Real-life Analogy (interview-friendly)
+
+Think of Student and Courses:
+
+Lazy Loading: You visit the student, and only when you ask about their courses, they go fetch it.
+
+Eager Loading: You tell them to bring their course list at the time you meet them.
+
+Explicit Loading: You visit the student, and later say, “Hey, now show me your courses.”
+
+
+Lazy LOADING :
+
+EXAMPLE :
+---
+
+public class Author
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+
+    // Lazy loading: virtual navigation property
+    public virtual ICollection<Book> Books { get; set; }
+}
+
+public class Book
+{
+    public int Id { get; set; }
+    public string Title { get; set; }
+    
+    public int AuthorId { get; set; }
+    public virtual Author Author { get; set; }
+}
+🔑 Important for Lazy Loading: Navigation properties must be virtual and EF proxies must be enabled.
+
+Step 3: Setup DbContext
+using Microsoft.EntityFrameworkCore;
+
+public class AppDbContext : DbContext
+{
+    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
+
+    public DbSet<Author> Authors { get; set; }
+    public DbSet<Book> Books { get; set; }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        optionsBuilder.UseLazyLoadingProxies()
+                      .UseSqlServer("Server=.;Database=LazyLoadingDemoDb;Trusted_Connection=True;");
+    }
+}
+UseLazyLoadingProxies() is required for lazy loading to work.
+
+Step 4: Add Controller with GET Method
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+
+[Route("api/[controller]")]
+[ApiController]
+public class AuthorsController : ControllerBase
+{
+    private readonly AppDbContext _context;
+
+    public AuthorsController(AppDbContext context)
+    {
+        _context = context;
+    }
+
+    [HttpGet]
+    public IActionResult GetAuthors()
+    {
+        // Lazy loading: Books will be loaded only when accessed
+        var authors = _context.Authors.ToList();
+
+        // Example access to trigger lazy loading
+        foreach (var author in authors)
+        {
+            var bookCount = author.Books.Count; // EF will load books here
+        }
+
+        return Ok(authors);
+    }
+}
+Step 5: Explanation of Lazy Loading
+Lazy Loading in EF Core:
+
+Data is not loaded automatically when querying the parent.
+Only when you access a navigation property, EF will query the database for that data.
+In our example:
+_context.Authors.ToList() → loads only authors
+author.Books.Count → triggers EF to load books for that author on demand
+Pros:
+
+Reduces initial query load.
+Loads related data only when needed.
+Cons:
+
+Can cause N+1 query problem if not careful.
+---
+///
+✅ 2. Eager Loading (load early with Include)
+
+Code:
+
+var student = await context.Students
+    .Include(s => s.Courses)
+    .FirstOrDefaultAsync(s => s.Id == 1);
+
+🧠 Best for performance when you know you’ll need related data.
+
+
+---
+Step 2: Create Models
+
+We don’t make navigation properties virtual, because we won’t use lazy loading:
+
+public class Author
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+
+    // Eager loading: no virtual keyword needed
+    public ICollection<Book> Books { get; set; }
+}
+
+public class Book
+{
+    public int Id { get; set; }
+    public string Title { get; set; }
+    
+    public int AuthorId { get; set; }
+    public Author Author { get; set; }
+}
+
+
+---
+
+Step 3: Setup DbContext
+
+using Microsoft.EntityFrameworkCore;
+
+public class AppDbContext : DbContext
+{
+    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
+
+    public DbSet<Author> Authors { get; set; }
+    public DbSet<Book> Books { get; set; }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        optionsBuilder.UseSqlServer("Server=.;Database=EagerLoadingDemoDb;Trusted_Connection=True;");
+    }
+}
+
+> No UseLazyLoadingProxies() needed.
+
+
+
+
+---
+
+Step 4: Add Controller with GET Method
+
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+
+[Route("api/[controller]")]
+[ApiController]
+public class AuthorsController : ControllerBase
+{
+    private readonly AppDbContext _context;
+
+    public AuthorsController(AppDbContext context)
+    {
+        _context = context;
+    }
+
+    [HttpGet]
+    public IActionResult GetAuthors()
+    {
+        // Eager loading: load authors and their books together
+        var authors = _context.Authors
+                              .Include(a => a.Books) // Eagerly load books
+                              .ToList();
+
+        return Ok(authors);
+    }
+}
+
+> Include(a => a.Books) tells EF to load related books immediately with authors.
+
+
+
+
+---
+
+Step 5: Explanation of Eager Loading
+
+Eager Loading in EF Core:
+
+1. Data is loaded together with the parent in a single query.
+
+
+2. In our example:
+
+_context.Authors.Include(a => a.Books).ToList() → loads authors and their books in one query.
+
+
+
+3. Pros:
+
+Avoids multiple queries (no N+1 problem).
+
+Better for small-to-medium datasets where you know related data is needed.
+
+
+
+4. Cons:
+
+Loads all related data even if you don’t need it → more memory.
+
+//
+Step 1: Models (same as eager example, no virtual keyword)
+
+public class Author
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public ICollection<Book> Books { get; set; }
+}
+
+public class Book
+{
+    public int Id { get; set; }
+    public string Title { get; set; }
+
+    public int AuthorId { get; set; }
+    public Author Author { get; set; }
+}
+
+
+---
+
+Step 2: DbContext (same as eager example)
+
+using Microsoft.EntityFrameworkCore;
+
+public class AppDbContext : DbContext
+{
+    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
+
+    public DbSet<Author> Authors { get; set; }
+    public DbSet<Book> Books { get; set; }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        optionsBuilder.UseSqlServer("Server=.;Database=ExplicitLoadingDemoDb;Trusted_Connection=True;");
+    }
+}
+
+
+---
+
+Step 3: Controller with GET Method (Explicit Loading)
+
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+
+[Route("api/[controller]")]
+[ApiController]
+public class AuthorsController : ControllerBase
+{
+    private readonly AppDbContext _context;
+
+    public AuthorsController(AppDbContext context)
+    {
+        _context = context;
+    }
+
+    [HttpGet]
+    public IActionResult GetAuthors()
+    {
+        // Step 1: Load only authors (Books are not loaded yet)
+        var authors = _context.Authors.ToList();
+
+        // Step 2: Explicitly load Books for each author
+        foreach (var author in authors)
+        {
+            _context.Entry(author)
+                    .Collection(a => a.Books) // navigation collection
+                    .Load(); // manually load
+        }
+
+        return Ok(authors);
+    }
+}
+
+
+---
+
+Step 4: Explanation of Explicit Loading
+
+How it works:
+
+1. First query → loads only authors.
+
+
+2. For each author, when we call .Collection(a => a.Books).Load(), EF makes another query to load that author’s books.
+
+
+
+
+
+
+---
+
+✅ Interview Summary (One-liner ready):
+
+Loading Type Loads When? How?
+
+Lazy Loading When navigation accessed virtual + proxy
+Eager Loading With main query .Include()
+Explicit Loading Manually later .Entry().LoadAsync()
+
+
+
+---
+
+Would you like a diagram or real-world scenario to help remember this even better?
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////7. What is a navigation property in EF?
+Here’s how you can explain Navigation Property in Entity Framework in the most interview-friendly and simple way, with easy words and code examples:
+
+
+---
+
+✅ What is a Navigation Property? (Simple Answer)
+
+> A navigation property is like a link between two tables in your database.
+It helps you move from one entity to another related entity (like from Student to their Courses).
+
+
+
+It is used to access related data using foreign key relationships.
+
+
+---
+
+✅ Real-life Example (for Interview)
+
+Imagine a Student is enrolled in many Courses.
+
+In code, you want to get a student and see their courses.
+
+Navigation property lets you do this easily using object relationships — not raw SQL joins.
+
+
+
+---
+
+✅ Code Example
+
+👉 Student Entity
+
+public class Student
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+
+    // Navigation Property (1 student -> many courses)
+    public ICollection<Course> Courses { get; set; }
+}
+
+👉 Course Entity
+
+public class Course
+{
+    public int Id { get; set; }
+    public string Title { get; set; }
+
+    // Foreign Key
+    public int StudentId { get; set; }
+
+    // Navigation Property (each course belongs to one student)
+    public Student Student { get; set; }
+}
+
+
+---
+
+✅ Why is it useful?
+
+Using navigation properties, you can do this:
+
+var student = await context.Students
+    .Include(s => s.Courses)
+    .FirstOrDefaultAsync(s => s.Id == 1);
+
+Console.WriteLine("Courses:");
+foreach (var course in student.Courses)
+{
+    Console.WriteLine(course.Title);
+}
+
+✔ No need to write complex joins. ✔ Easy to read and maintain.
+
+
+---
+
+✅ Interview Summary:
+
+> Navigation properties connect related tables (entities) in your code.
+They help you easily fetch and work with related data, just like objects in C#.
+
+
+
+
+---
+
+Would you like me to also explain the difference between navigation property and foreign key, or how to define one-to-many / one-to-one relationships in real project scenarios?
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8. How do you configure relationships (One-to-Many, Many-to-Many) in EF?
+Here’s the most human-friendly and interview-ready answer to:
+
+
+---
+
+✅ How to Configure Relationships in Entity Framework?
+
+(With simple code and words for One-to-Many and Many-to-Many)
+
+
+---
+
+🔹 One-to-Many Relationship
+
+Example:
+One Department has many Employees.
+
+✅ Code:
+
+public class Department
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+
+    // One Department → Many Employees
+    public ICollection<Employee> Employees { get; set; }
+}
+
+public class Employee
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+
+    // Foreign Key
+    public int DepartmentId { get; set; }
+
+    // Navigation property
+    public Department Department { get; set; }
+}
+
+🎯 EF Core will automatically understand this relationship by convention (because of the FK and navigation property).
+
+
+---
+
+🔹 Many-to-Many Relationship (EF Core 5+ makes this easy)
+
+Example:
+One Student can join many Courses,
+One Course can have many Students.
+
+✅ Code:
+
+public class Student
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+
+    // Many-to-Many
+    public ICollection<Course> Courses { get; set; }
+}
+
+public class Course
+{
+    public int Id { get; set; }
+    public string Title { get; set; }
+
+    // Many-to-Many
+    public ICollection<Student> Students { get; set; }
+}
+
+🎯 EF Core will auto-create a junction table (like StudentCourse) behind the scenes!
+
+
+---
+
+✅ How to Explain in Interview (Simple Way):
+
+> 🔹 One-to-Many is like: A manager can have many employees.
+🔹 Many-to-Many is like: A student can take many courses, and a course can have many students.
+
+
+
+EF Core lets you define relationships using navigation properties and foreign keys — and builds SQL joins for you automatically.
+
+
+---
+
+✅ Want Bonus Tip?
+
+You can also configure relationships using Fluent API:
+
+modelBuilder.Entity<Employee>()
+    .HasOne(e => e.Department)
+    .WithMany(d => d.Employees)
+    .HasForeignKey(e => e.DepartmentId);
+
+
+---
+
+Would you like examples for One-to-One relationship and how to handle it with code + Fluent API too?
+
+
+
+
+
+---
+
+⚙️ Intermediate-Level Questions
+
+9. What is the difference between EF Core and EF6?
+
+
+10. What are Migrations in EF Core?
+
+How to create and apply migrations?
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////11. How does EF handle concurrency?
+Great question! Here's a very simple and interview-friendly explanation of how Entity Framework (EF Core) handles concurrency, with a real-world code example.
+
+
+---
+
+✅ What is Concurrency?
+
+> Concurrency happens when two users try to update the same data at the same time.
+
+
+
+🧠 Example:
+Imagine two users are updating the same "Property Price" at once.
+We must avoid one user's update overwriting another's by mistake.
+
+
+---
+
+✅ How EF Core Handles Concurrency?
+
+EF Core helps by using a special column like a timestamp or version.
+This way, it checks:
+
+"Is this row still the same version as when you read it?"
+
+If yes, update is safe.
+
+If no, throw an error (so you can handle it).
+
+
+
+---
+
+✅ Code Example
+
+1. Add a concurrency token to your model:
+
+public class Property
+{
+    public int Id { get; set; }
+    public string Title { get; set; }
+    public double Price { get; set; }
+
+    [Timestamp] // EF will track this column to handle concurrency
+    public byte[] RowVersion { get; set; }
+}
+
+
+---
+
+2. Add to your DB context:
+
+public DbSet<Property> Properties { get; set; }
+
+protected override void OnModelCreating(ModelBuilder modelBuilder)
+{
+    modelBuilder.Entity<Property>()
+        .Property(p => p.RowVersion)
+        .IsRowVersion();
+}
+
+
+---
+
+3. Handling the error:
+
+try
+{
+    _context.Update(property);
+    await _context.SaveChangesAsync();
+}
+catch (DbUpdateConcurrencyException ex)
+{
+    Console.WriteLine("⚠️ Someone else already updated this record.");
+    // You can choose to reload, retry, or show message to user
+}
+
+
+---
+
+✅ How to Say in Interview (Simple Answer)
+
+> "EF Core supports concurrency by using a special column called RowVersion or Timestamp.
+When two users try to update the same data, EF compares the row version.
+If someone else has already changed the data, EF throws a DbUpdateConcurrencyException — so we don’t accidentally overwrite someone’s changes."
+
+
+
+
+---
+
+✅ Real-Life Analogy
+
+🧠 "It's like two people editing a Google Doc — if the document has changed since you last saw it, Google warns you before saving. EF does the same with concurrency checks."
+
+
+---
+
+Let me know if you want me to show this using SQL Server + .NET Core sample CRUD project.
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////12. What are shadow properties?
+Great question! Let me explain Shadow Properties in Entity Framework (EF Core) in very simple, human-friendly words — with code examples.
+
+
+---
+
+✅ What is a Shadow Property in EF Core?
+
+A shadow property is a column in the database that:
+
+Exists in the EF model,
+
+But does NOT exist in your C# class.
+
+
+In short:
+
+> "EF tracks and stores the property in the database, but you don’t see it in your class."
+
+
+
+
+---
+
+✅ Why Use Shadow Properties?
+
+1. To store metadata like CreatedDate, ModifiedBy, etc.
+
+
+2. To keep your C# class clean from internal or system-related fields.
+
+
+3. To track things without exposing them in your code.
+
+
+
+
+---
+
+✅ How to Define a Shadow Property
+
+You define it in the OnModelCreating() method in DbContext.
+
+protected override void OnModelCreating(ModelBuilder modelBuilder)
+{
+    modelBuilder.Entity<Property>()
+        .Property<DateTime>("LastUpdated"); // 👈 Shadow Property
+}
+
+Here, LastUpdated does not exist in the Property class, but EF will still treat it like a normal column.
+
+
+---
+
+✅ How to Set or Use a Shadow Property in Code
+
+You can access or set it using EF's Entry() API:
+
+var property = await _context.Properties.FindAsync(1);
+
+// Set the shadow property
+_context.Entry(property).Property("LastUpdated").CurrentValue = DateTime.UtcNow;
+
+await _context.SaveChangesAsync();
+
+
+---
+
+✅ Example: Clean Model with Shadow Property
+
+// No LastUpdated here
+public class Property
+{
+    public int Id { get; set; }
+    public string Title { get; set; }
+    public double Price { get; set; }
+}
+
+But this will still save LastUpdated in the DB!
+
+
+---
+
+✅ How to Say in the Interview (Simple Words)
+
+> “Shadow properties are extra columns that EF tracks and stores in the database, but they are not declared in your C# class.
+They're useful for things like timestamps or audit info, when you want to keep your models clean.”
+
+
+
+
+---
+
+✅ Real-Life Analogy
+
+🧠 "It’s like adding an invisible tracking chip to a package — the customer doesn’t see it, but the system tracks it in the background."
+
+
+---
+
+Would you like me to extend this into a full CRUD example with CreatedBy, LastUpdated, etc., using shadow properties and EF Core 8?
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////13. What is change tracking in EF?
+Great question! Let's break down Change Tracking in Entity Framework (EF) using simple human-friendly words and real code examples — so you can explain it confidently in an interview.
+
+
+---
+
+✅ What is Change Tracking in EF?
+
+Change Tracking means:
+
+> EF keeps track of the changes you make to your objects (entities) after retrieving them from the database, so that it knows what to update when you call SaveChanges().
+
+
+
+
+---
+
+✅ How It Works (Simple Steps)
+
+1. EF loads an object from the database.
+
+
+2. You change a property (like name or price).
+
+
+3. EF tracks the change in memory.
+
+
+4. When you call SaveChanges(), EF automatically generates SQL UPDATE for the changed fields.
+
+
+
+
+---
+
+✅ Code Example
+
+var property = await _context.Properties.FindAsync(1); // Step 1: EF tracks this entity
+
+property.Price = 500000; // Step 2: You make a change
+
+await _context.SaveChangesAsync(); // Step 3 & 4: EF detects change & updates DB
+
+Behind the scenes, EF tracks the Price change and creates this SQL:
+
+UPDATE Properties SET Price = 500000 WHERE Id = 1;
+
+
+---
+
+✅ Interview-Friendly Explanation
+
+> “EF uses Change Tracking to monitor changes I make to my entities in memory.
+So when I call SaveChanges(), EF knows what to update in the database — without me writing SQL manually.”
+
+
+
+
+---
+
+✅ Real-Life Analogy
+
+🧠 *“It’s like a teacher watching students write their answers
+
+
+
+
+14. What is the difference between Add(), Attach(), and Update() methods?
+
+
+15. How do you configure Fluent API vs Data Annotations?
+
+
+16. How can you execute raw SQL queries in EF Core?
+
+
+17. What is the use of AsNoTracking()?
+
+
+
+
+---
+
+🚀 Advanced/Real-World Development Questions
+
+18. How do you optimize performance in Entity Framework Core?
+
+
+19. How to handle transactions in EF?
+
+
+20. How do you seed initial data in EF Core?
+
+
+21. How do you implement Unit of Work and Repository Pattern with EF?
+
+
+22. How do you test Entity Framework code (Mocking DbContext)?
+
+
+23. What are global query filters in EF Core?
+
+
+24. What is Query Splitting in EF Core?
+
+
+25. How does EF Core handle connection pooling and resource management?
+
+
+////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////Interview Bit
+//////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////////1)which according to you is considered the best approach in Entity framework.
+->In real world , code-First is considered the best approach because 
+-> Developers control the model using c# classes.
+-> Database schema  is created/updated automatically using migration.
+-> Works well with agile projects where database design keeps migrations.
+-> Easier for version control(Git) since everything is in code.
+////////////////////////////////////////////////////////////////////////////2) Explain the advantages of the Entity Framework.
+Advantages
+///////////1) No need to write SQL manually
+-> Normally, we have to write  long SQL quesries to fetch, insert , or update  data.
+-> With EF, we can just write long c# code(dbContext.Products.ToList()) and it will generate the SQL behind the scenes.
+->Save time and reduces human errors in SQL.
+//Faster development (Productivity boost)
+->Developers can focus on business logic instead of spending hours writing and debugging  SQL queries.
+->EF provided LINQ (Language Integrated Query), which makes queries easier and type-safe.
+//Database independent (Multiple DB support)
+//Strong Types and IntelliSense support
+//Change Tracking 
+//Better for Complex Apps
+////////////////////////////////////////////////////////////////////////////////////////////////3) Describe some of the disadvantages of the entity Framework.
+//Slower than ADO.net 
+//Less control over SQL.
+//Performance issue in very large apps.
+//Learning curve 
+//Overhead(extra memory and processing).
+//////////////////////////////////////////////////////////////////////////////////////////////////4) what are the feature of the entity framework ?
+
+/////////////////////////////////////////////////////////////////////////////////////////5) what are the main component of Entity Framework
+///EDM has tree part
+1)Conceptual Model.
+2) Storage Module.
+3) Mapping Module.
+Conceptual model (c# world)
+Storage Model(DB world)
+Mapping Model(the transator in between).
+//2)Linq to Entities.
+//3)Entity SQL
+//4)Object Service
+//5)ADO.NET Data Provider
+/////////////////////////////////////////////////////////////////////////////////////6) explain diffrent parts of the entity data model.
+1) Conceptual Model(CSDL)
+This is how you see the data in c#(your entity classes).
+public class Student
+{
+ public int Id {get ; set ;}
+ public string Name {get ; set;}
+}
+
+2) Storage Model(SSDL)
+This is how the database actually look(tablets, columns , data types)
+ create table Student
+ (StudentId INT )
+3)
+///////////////////////////////////////////////////////////////////////////////////////7) Explain what the .edmx file contains.
+An .edmx file in Entity Framework is an XML-based file that contains three parts :
+CSDL(Conceptual Model : C# classes)
+SSDL(Stored Model : Database  tables)
+MSL(Mapping between them) : It basically acs as a bridge between the database and the application.
+///////////////////////////////////////////////////////////////////////////////////////////////////////8) what do you mean by migration ? Write its type ?
+Migration in Entity Framework is a ways to update and manage database schema changes in sync with your application's data model.
+->Automatic Migration :  Database updates automatically(good for quick dev, not production).
+->Code-Based Migration : Mamnual control using migration files (preferred).
+->Initial Migration : First migration to create DB.
+->Seed Migration : To add initial data.
+
+9) what do you mean by Deferred Execution in EF ?
+=> EXAMPLE :
+Var query = context.Employees.Where(e => e.Department == "IT");
+At this line -> No SQL query is send to the database yet.
+When you actually do something like :
+foreach(var emp in query)
+{
+Console.WriteLine(emp.Name);
+}
+Only then the query is executes, and EFsends SQL to the database.
+
+//Why Deferred Excution is Useful ?
+Performance Optimization -> Query is executed only when needed.
+Flexibility -> You can build queries step by step before execution.
+Less Load -> Prevents unnessary
+///////////////////////////////////////////////////////////////////////////////////////////10) What do you mean by the term navigation property in the entity framework ?
+11) What are diffrent entity state in EF ?
+12) Write the importance of the t4 entity in Entity Framework.
+13)Explain CSDL, SSDL , MSL selection in an Edmx file
+14) Write some XML generation methods provided b the dataset object.
+15) what do you mean by migration history table in Entity framework.
+16) Explain how EF suppots transactions.
+17) Write the steps to retrive data from database using Entity Framework in MVC.
+18) Explain the role of pluralize and Singularize in  the entity framework.
+19)What is the diffrence between Dapper and Entity Framework.
+20) Explain the POCO Clsses in EF.
+21) In EF , what are the ways to use stored Procedures ?
+22) Explain database concurrency and the ways to handle it.
+23) What are diffrence type of loading available to load related entities in EF.
+24) What do you mean by lazy loading and explicit loading.
+25) What are the pros and cons of different type of loading.
+26) Write diffrent type of inheritane support by entity Framework.
+27) Write Complex Type in Entity Framework.
+28) What do you mean by Micro ORM.
+29) Explain EF Data access Artichecture.
+30)What do you mean by SQL inject attack ?
+31) What is the best ways to handle SQL injection attacks in Entity Framework.
+32) Explain the OnjectSet in EF.
+33) Whta the namespace that is used to include .NET Data Provider for SQL server in .NET code.
+34) Eplain EDM and write the process to create it.
+35) What do you mean by DbEntityEntry Class in EF ?
+//////////Why Use Lazy Loading in .NET Core?
+In .NET Core applications, lazy loading is often used to delay the loading of related entities in Entity Framework Core, 
+an Object-Relational Mapping (ORM) framework used for database access. By default, Entity Framework Core uses lazy loading for navigation properties,
+allowing related entities to be loaded only when accessed, rather than loading all related entities eagerly.
+Q>What is diffrence between ADO.net and Entity framework ,(which part of code that I have to write so that we do not have to write much code in Entityframework).
+Use IQueryable in Entity Framework to generate efficient SQL queries automatically.
+
+//////////////////////////////////////what is diffrence between DbContext and DbSet
+DbContext : Manages the connection to the database.
+DbSet : Represent a table in the database and provide methods to interact with data in the table
+what is DBcontext and DBset.
+DbContext :
+Think of DbContext as a bridge between your c# code and your database. It is like a manager rthat handles the interaction with database, like retrieving, updating ,and saving data.
+
+what id does : It connects to the database and helps you work the data.
+Where it is used : In Entity Framework Core to represent your database connection.
+
+DbSet:
+DbSet is like a collection of a special type of data from the database(like a table).It allows yoiu to perform operations(add, delete,update etc.)
+on the table.
+
+What it does : Represent a table in your database and gives you access to the rows(records) of the table.
+Where it is used : Inside the DbContest to interract with specific table.
+6. What’s the use of AsNoTracking in Entity Framework Core?
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////.NetCore
+///////////////////////////////////////////////////////////////////164
+//what is .Net Core
+=> .Net Core is completely a New framework , which is a Free and Open-Source platorm developed and maintained by Microsoft.
+=> Cross Plateform(Windows , Linux , MacOS) 
+=> Open Source(Free to use , Modify , Distribute)
+=> Hosting(Kestral ,IIS , Nagix)
+=> Build-In Dependency Inje
+ction(Loosely Coupled Design , Reusability , Testability)
+=> Support Multiple IDE(Visual Studio, Visual Studio for Mac , Visual Studio Code).
+
+//////////////////////////////////////////////////////////////165
+What is .Net STANDARN ?
+=>.Net Standard is not a framework. .Net Standard define a set of API's or you can say libraries or set of rules.
+If any Framework will follow these rules that  means it is compliant with .NET standard Right now .NET Framework, .NET Core
+and Xamarin follow .Net standard.
+/////////////////////////////////////////////////////////////////166
+//What is the Advantages of .NetCore OVER .NET FRAMEWORK
+.Net core
+Cross Plateform => Window ,Linux ,MacOS
+OPEN SOURCE => Free to use , Modify, Distribution
+HOSTING =>Kestrel , IIS, Nginx.
+BUILD-IN DEPENDENCY INJECTION => Loosely Coupled Design, Reusability, Tesability.
+Support Multiple IDE => Visual Studio, Visual Studio for Mac , Visual Studio Code.
+
+
+.NETFRAMEWORK
+.Net Framework only supports Windows.
+.NET Framework is paid.
+.NET Framework only support IIS Hosting.
+.NET framework don't have build in dependency injection.
+.NET framework only support Visual Studio IDE.
+
+//.NET 5 /.NET 6 /.NET 7
+///.                       .NET 5       .Net 6          .Net 7
+Release Year              2020          2021             2022
+Support Type              STS           LTS              STS
+C# Version                 9             10              11
+Minimal Api                no            yes            yes(Improved)
+Hot Reload                 no            yes           yes(Improved)
+Performance                Good          Excellent       Best
+
+/////////////////////////////////////////////////////////////////////////////////////////170
+What is the role of configuration methods ? 
+=>Configuration method specifies how the app responds to Http request and responde .It is used to setup request pipeline. 
+it is not optional
+//Example :
+
+public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+{
+if (env.IsDevelopment())
+{
+app. UseDeveloperExceptionPage();
+}
+else
+{
+}
+
+app.UseExceptionHandler("/Home/Error");
+
+app.UseStaticFiles();
+
+app.UseRouting();
+
+app.UseAuthorization();
+
+app.UseEndpoints (endpoints =>
+
+{
+
+endpoints.MapControllerRoute(
+
+name: "default",
+
+pattern: "(controller-Home}/{action-Index}/{id?)");
+
+});
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////195 In-Memory Caching (local to one server) , Distributed Caching , Redis
+In-Memory Caching (local to one server)
+
+Cache is stored in the memory (RAM) of the application server.
+
+Very fast, but available only to that server.
+
+Real-world example:
+
+Imagine you run a blog website hosted on a single server.
+
+You want to show the Top 10 Most Read Articles.
+
+These results don't change very often, so instead of hitting the database each time, you store them in the server's memory (cache).
+
+Every time a user requests, you just return the cached result very fast.
+
+Best when:
+
+App runs on a single server.
+
+Data is small, frequent, and not critical to be shared across multiple servers.
+
+//////
+Distributed Caching (shared across servers/nodes)
+
+← Cache is stored in an external system (like Redis, SQL Server, or NCache).
+
+Accessible by multiple servers.
+
+Real-world example:
+
+Imagine you run an E-commerce app like Amazon hosted on multiple servers.
+
+Thousands of users add products to their shopping cart.
+
+If you store the cart in In-Memory cache, and the user's next request goes to a different server X their cart will be empty!
+
+Solution: Use a Distributed Cache (like Redis).
+
+Now all servers share the same cache store no matter which server the user lands on, their cart will be there.
+
+Best when:
+
+App runs on multiple servers (load balanced).
+
+Data is critical & needs to be consistent across servers.
+
+
+////Redis
+ Definition (like a 5-year-old can say)
+
+> “Redis is like a super-fast notebook where your computer keeps things it wants to remember for a short time, so it doesn’t have to go find them again and again.”
+
+
+
+
+---
+
+💡 Slightly more technical definition (interview-friendly)
+
+Redis is an in-memory data store used for caching, session storage, and real-time data processing.
+It stores data in RAM (memory), not on disk, which makes it very fast for reading and writing.
+
+Redis = Remote Dictionary Server.
+
+
+---
+
+🧩 Example (with detailed explanation)
+
+Imagine your Buy & Sell Property App where users search for properties.
+If 1000 users search for “2BHK Flats in Mumbai”, your app should not call the database 1000 times — that’s slow.
+
+So what we do:
+
+1. The first time someone searches, we get data from the database and store it in Redis cache.
+
+
+2. Next time, when users search the same thing — we get data from Redis (memory) instantly instead of going to the database again.
+
+
+3. This makes the application faster and more scalable.
+
+
+
+
+---
+
+🧑‍💻 Code Example (C# – Using Redis in .NET)
+
+// Step 1: Install Microsoft.Extensions.Caching.StackExchangeRedis package
+
+public class PropertyService
+{
+    private readonly IDistributedCache _cache;
+
+    public PropertyService(IDistributedCache cache)
+    {
+        _cache = cache;
+    }
+
+    public async Task<string> GetPropertiesAsync()
+    {
+        string cacheKey = "property_list";
+        var cachedData = await _cache.GetStringAsync(cacheKey);
+
+        if (cachedData != null)
+        {
+            // ✅ Return from Redis cache
+            return $"From Redis Cache: {cachedData}";
+        }
+
+        // 🚀 Simulate data from database
+        string dbData = "2BHK Flats, 3BHK Villas, Farmhouses";
+
+        // 🧠 Save to Redis for next time
+        await _cache.SetStringAsync(cacheKey, dbData, new DistributedCacheEntryOptions
+        {
+            AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(10)
+        });
+
+        return $"From Database: {dbData}";
+    }
+}
+
+
+---
+
+🏗️ Project Use (Buy & Sell Properties App)
+
+In your project, Redis can be used for:
+
+Property search caching → to reduce DB load and speed up search results.
+
+User session storage → store user login info temporarily.
+
+Chat messages → for real-time buyer–seller communication.
+
+
+
+---
+
+⚖️ Trade-offs
+
+Advantage Disadvantage
+
+Super fast (in-memory) Data lost if Redis server restarts (unless persisted)
+Reduces database load Requires additional setup & maintenance
+Supports distributed apps easily Slight learning curve for configuration
+
+
+
+---
+
+💼 Business Impact
+
+✅ Faster application performance → Better user experience
+✅ Handles heavy traffic easily → More users can search at once
+✅ Reduces database cost → Fewer calls to SQL Server
+🚀 Direct impact: Your property platform feels instant and professional, like big apps (99acres, MagicBricks).
+///////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////.NetCore
+///////////////////////////////////////////////////////////////////164
+//what is .Net Core
+=> .Net Core is completely a New framework , which is a Free and Open-Source platorm developed and maintained by Microsoft.
+=> Cross Plateform(Windows , Linux , MacOS) 
+=> Open Source(Free to use , Modify , Distribute)
+=> Hosting(Kestral ,IIS , Nagix)
+=> Build-In Dependency Inje
+ction(Loosely Coupled Design , Reusability , Testability)
+=> Support Multiple IDE(Visual Studio, Visual Studio for Mac , Visual Studio Code).
+
+//////////////////////////////////////////////////////////////165
+What is .Net STANDARN ?
+=>.Net Standard is not a framework. .Net Standard define a set of API's or you can say libraries or set of rules.
+If any Framework will follow these rules that  means it is compliant with .NET standard Right now .NET Framework, .NET Core
+and Xamarin follow .Net standard.
+/////////////////////////////////////////////////////////////////166
+//What is the Advantages of .NetCore OVER .NET FRAMEWORK
+.Net core
+Cross Plateform => Window ,Linux ,MacOS
+OPEN SOURCE => Free to use , Modify, Distribution
+HOSTING =>Kestrel , IIS, Nginx.
+BUILD-IN DEPENDENCY INJECTION => Loosely Coupled Design, Reusability, Tesability.
+Support Multiple IDE => Visual Studio, Visual Studio for Mac , Visual Studio Code.
+
+
+.NETFRAMEWORK
+.Net Framework only supports Windows.
+.NET Framework is paid.
+.NET Framework only support IIS Hosting.
+.NET framework don't have build in dependency injection.
+.NET framework only support Visual Studio IDE.
+
+//.NET 5 /.NET 6 /.NET 7
+///.                       .NET 5       .Net 6          .Net 7
+Release Year              2020          2021             2022
+Support Type              STS           LTS              STS
+C# Version                 9             10              11
+Minimal Api                no            yes            yes(Improved)
+Hot Reload                 no            yes           yes(Improved)
+Performance                Good          Excellent       Best
+
+///////////////////////////////////////////////////////////////////////////////////////////Does some rule is thier in .Net standaed that rules also come in .net core
+
+/////////////////////////////////////////////////////////////////////////////////////////170
+What is the role of configuration methods ? 
+=>Configuration method specifies how the app responds to Http request and responde .It is used to setup request pipeline. 
+it is not optional
+//Example :
+
+public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+{
+if (env.IsDevelopment())
+{
+app. UseDeveloperExceptionPage();
+}
+else
+{
+}
+
+app.UseExceptionHandler("/Home/Error");
+
+app.UseStaticFiles();
+
+app.UseRouting();
+
+app.UseAuthorization();
+
+app.UseEndpoints (endpoints =>
+
+{
+
+endpoints.MapControllerRoute(
+
+name: "default",
+
+pattern: "(controller-Home}/{action-Index}/{id?)");
+
+});
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////195 In-Memory Caching (local to one server) , Distributed Caching , Redis
+In-Memory Caching (local to one server)
+
+Cache is stored in the memory (RAM) of the application server.
+
+Very fast, but available only to that server.
+
+Real-world example:
+
+Imagine you run a blog website hosted on a single server.
+
+You want to show the Top 10 Most Read Articles.
+
+These results don't change very often, so instead of hitting the database each time, you store them in the server's memory (cache).
+
+Every time a user requests, you just return the cached result very fast.
+
+Best when:
+
+App runs on a single server.
+
+Data is small, frequent, and not critical to be shared across multiple servers.
+
+//////
+Distributed Caching (shared across servers/nodes)
+
+← Cache is stored in an external system (like Redis, SQL Server, or NCache).
+
+Accessible by multiple servers.
+
+Real-world example:
+
+Imagine you run an E-commerce app like Amazon hosted on multiple servers.
+
+Thousands of users add products to their shopping cart.
+
+If you store the cart in In-Memory cache, and the user's next request goes to a different server X their cart will be empty!
+
+Solution: Use a Distributed Cache (like Redis).
+
+Now all servers share the same cache store no matter which server the user lands on, their cart will be there.
+
+Best when:
+
+App runs on multiple servers (load balanced).
+
+Data is critical & needs to be consistent across servers.
+
+
+////Redis
+ Definition (like a 5-year-old can say)
+
+> “Redis is like a super-fast notebook where your computer keeps things it wants to remember for a short time, so it doesn’t have to go find them again and again.”
+
+
+
+
+---
+
+💡 Slightly more technical definition (interview-friendly)
+
+Redis is an in-memory data store used for caching, session storage, and real-time data processing.
+It stores data in RAM (memory), not on disk, which makes it very fast for reading and writing.
+
+Redis = Remote Dictionary Server.
+
+
+---
+
+🧩 Example (with detailed explanation)
+
+Imagine your Buy & Sell Property App where users search for properties.
+If 1000 users search for “2BHK Flats in Mumbai”, your app should not call the database 1000 times — that’s slow.
+
+So what we do:
+
+1. The first time someone searches, we get data from the database and store it in Redis cache.
+
+
+2. Next time, when users search the same thing — we get data from Redis (memory) instantly instead of going to the database again.
+
+
+3. This makes the application faster and more scalable.
+
+
+
+
+---
+
+🧑‍💻 Code Example (C# – Using Redis in .NET)
+
+// Step 1: Install Microsoft.Extensions.Caching.StackExchangeRedis package
+
+public class PropertyService
+{
+    private readonly IDistributedCache _cache;
+
+    public PropertyService(IDistributedCache cache)
+    {
+        _cache = cache;
+    }
+
+    public async Task<string> GetPropertiesAsync()
+    {
+        string cacheKey = "property_list";
+        var cachedData = await _cache.GetStringAsync(cacheKey);
+
+        if (cachedData != null)
+        {
+            // ✅ Return from Redis cache
+            return $"From Redis Cache: {cachedData}";
+        }
+
+        // 🚀 Simulate data from database
+        string dbData = "2BHK Flats, 3BHK Villas, Farmhouses";
+
+        // 🧠 Save to Redis for next time
+        await _cache.SetStringAsync(cacheKey, dbData, new DistributedCacheEntryOptions
+        {
+            AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(10)
+        });
+
+        return $"From Database: {dbData}";
+    }
+}
+
+
+---
+
+🏗️ Project Use (Buy & Sell Properties App)
+
+In your project, Redis can be used for:
+
+Property search caching → to reduce DB load and speed up search results.
+
+User session storage → store user login info temporarily.
+
+Chat messages → for real-time buyer–seller communication.
+
+
+
+---
+
+⚖️ Trade-offs
+
+Advantage Disadvantage
+
+Super fast (in-memory) Data lost if Redis server restarts (unless persisted)
+Reduces database load Requires additional setup & maintenance
+Supports distributed apps easily Slight learning curve for configuration
+
+
+
+---
+
+💼 Business Impact
+
+✅ Faster application performance → Better user experience
+✅ Handles heavy traffic easily → More users can search at once
+✅ Reduces database cost → Fewer calls to SQL Server
+🚀 Direct impact: Your property platform feels instant and professional, like big apps (99acres, MagicBricks).
+///////////////////////How to use IMemory Caching.(Defination, Project use ,Trade-off + Business Impact ) with so easy word for human being.
+
+
+
+Great question 👍 Let’s break down IMemoryCache in simple words with definition, project use, trade-offs, and business impact 👇
+
+
+---
+
+📝 Definition
+
+IMemoryCache is a feature in .NET that stores data in the server’s memory (RAM).
+
+Instead of going again and again to the database or API, you keep frequently used data in memory and fetch it faster.
+
+
+👉 Think of it like keeping important items on your desk instead of opening the cupboard every time.
+
+
+---
+
+💻 Project Use (Buy & Sell Properties App)
+
+In your property application, imagine:
+
+Every time a user searches for "Flats in Bangalore under 50 Lakhs", if you go to the database again and again, it’s slow and puts load on the DB.
+
+With IMemoryCache, you can store the result of this search in memory for 5–10 minutes.
+
+So, when the next user searches the same thing, the result comes super fast (from memory, not database).
+
+
+✅ Example Code:
+
+using Microsoft.Extensions.Caching.Memory;
+
+public class PropertyService
+{
+    private readonly IMemoryCache _cache;
+    private readonly PropertyRepository _repository;
+
+    public PropertyService(IMemoryCache cache, PropertyRepository repository)
+    {
+        _cache = cache;
+        _repository = repository;
+    }
+
+    public List<Property> GetProperties(string city)
+    {
+        string cacheKey = $"Properties_{city}";
+
+        if (!_cache.TryGetValue(cacheKey, out List<Property> properties))
+        {
+            // Fetch from DB
+            properties = _repository.GetPropertiesByCity(city);
+
+            // Store in cache for 5 minutes
+            _cache.Set(cacheKey, properties, TimeSpan.FromMinutes(5));
+        }
+
+        return properties;
+    }
+}
+
+
+---
+
+⚖️ Trade-offs
+
+✅ Pros:
+
+Faster performance (no repeated DB calls).
+
+Reduces load on database.
+
+Improves user experience (quick results).
+
+
+❌ Cons:
+
+Data in cache may become stale/outdated if property updates happen frequently.
+
+Uses server RAM, so large data in cache may cause memory issues.
+
+Best only for read-heavy, less-changing data.
+
+
+
+
+---
+
+💼 Business Impact
+
+🚀 Speed: Search results load in milliseconds → happier users.
+
+💰 Cost Saving: Less DB hits → reduced infrastructure cost.
+
+📈 Scalability: Can handle more users at once without DB overload.
+
+⚠️ Risk: If property data changes often, users might see old info unless cache is refreshed smartly.
+
+
+
+---
+
+
+👉 In short: IMemoryCache = Super-fast desk drawer for hot data.
+Perfect for frequent, less-changing queries like property search results, dropdown lists (cities, states), featured ads, etc.
+
+
+---
+
+Do you want me to also show you the difference between IMemoryCache vs Distributed Cache (like Redis) so you’ll know when to use which in a real-world project?
+
+///////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////END OF KINDLE
+///////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////Singleton
+✅ Interview-Friendly Answer:
+Q: What is a Singleton Class in C#?
+
+A Singleton is a special class where only one object (instance) can be created during the application's lifetime.
+It's useful when you need just one shared thing, like a single database connection, a logging service, or a settings manager.
+
+💡 Real-World Analogy:
+Think of a TV Remote in a room — you don’t need 10 remotes.
+Everyone uses the same one to control the TV.
+That’s how a Singleton works — one object shared everywhere.
+
+🧠 Why use Singleton?
+To share data across multiple places.
+To save memory and avoid creating duplicate objects.
+To make sure there’s only one access point to something.
+
+Singleton Pattern means → Only one object (instance) of a class exists in the whole application.
+
+It’s like:
+
+A Government → only one Prime Minister exists.
+
+A Logger Service → only one logging instance writing to the file.
+
+A Database Connection Pool → only one shared object controlling all DB connections.
+
+
+
+So, instead of creating multiple objects again and again, we use one shared object everywhere.
+✅ Simple Code Example:
+//Create a sealed class so that no one can inherit from this class.
+public sealed class SingletonLogger
+{
+  // Declare a static instance of this class
+    private static SingletonLogger _instance;
+
+    // Create a private constructor so that no one can create the object of this singleton class.
+    private SingletonLogger() { }
+
+    //Create a method which will check whether the instance is null , if yes then it will create the new instance and if not null
+    then it will return the same instance.
+    public static SingletonLogger GetInstance()
+    {
+        if (_instance == null)
+        {
+            _instance = new SingletonLogger();
+        }
+
+        return _instance;
+    }
+
+    public void Log(string message)
+    {
+        Console.WriteLine("Log: " + message);
+    }
+}
+🔄 How to Use It:
+class Program
+{
+    static void Main()
+    {
+        var logger1 = SingletonLogger.GetInstance();
+        var logger2 = SingletonLogger.GetInstance();
+
+        logger1.Log("App started");
+        logger2.Log("Something happened");
+
+        Console.WriteLine(logger1 == logger2); // true — same object
+    }
+}
+✅ Summary (for Interview):
+Singleton ensures only one instance of a class exists.
+Useful for things like Logger, Config Manager, DB Connection.
+It helps avoid duplication and keeps things centralized.
+Would you like me to show the Thread-safe version or how Singleton is used in ASP.NET Core (like in services)?
+
+
+
+
+
+Great question! Interviewers love asking about Thread-Safe Singleton — especially for multithreaded apps.
+
+
+
+
+
+---
+
+
+
+✅ Interview-Friendly Explanation:
+
+
+
+Q: How to make Singleton thread-safe in C#?
+
+
+
+> In multithreaded apps, multiple threads might try to create the Singleton at the same time — which can break the "only one object" rule.
+
+So, we use locking to make sure only one thread can create the object — this is called thread-safe Singleton.
+
+
+
+
+
+
+
+////////////////////
+//How to make Signaloton Thread Safe
+---
+
+
+
+💡 Think of a Bank ATM
+
+
+
+Only one person can withdraw at a time.
+
+If two people try at once, the system must lock the ATM temporarily — that’s thread safety.
+
+
+
+
+
+---
+
+
+
+✅ Code: Thread-Safe Singleton (with lock)
+
+
+
+public sealed class SingletonLogger
+
+{
+
+    private static SingletonLogger _instance;
+
+    private static readonly object _lock = new object();
+
+
+
+    // Private constructor
+
+    private SingletonLogger() { }
+
+
+
+    public static SingletonLogger GetInstance()
+
+    {
+
+        // Lock to allow only one thread inside this block at a time
+
+        lock (_lock)
+
+        {
+
+            if (_instance == null)
+
+            {
+
+                _instance = new SingletonLogger();
+
+            }
+
+        }
+
+
+
+        return _instance;
+
+    }
+
+
+
+    public void Log(string message)
+
+    {
+
+        Console.WriteLine("Log: " + message);
+
+    }
+
+}
+
+
+
+
+
+---
+
+
+
+🧪 How to Use:
+
+
+
+class Program
+
+{
+
+    static void Main()
+
+    {
+
+        var logger1 = SingletonLogger.GetInstance();
+
+        var logger2 = SingletonLogger.GetInstance();
+
+
+
+        Console.WriteLine(logger1 == logger2); // ✅ true: same object
+
+    }
+
+}
+
+
+
+
+
+---
+
+
+
+✅ Summary (for interview):
+
+
+
+Use lock to make Singleton thread-safe.
+
+
+
+lock ensures only one thread creates the object.
+
+
+
+This avoids race conditions in multithreaded environments.
+
+////////////////////////////////////////////////////////////////////////////////////////////Single IR 
+Single IR in Live Data Processing
+🧒 Easiest Definition (5-year-old level)
+👉 Only one live data message is handled at a time.
+Like:
+Teacher asks one question
+You answer that one question fully
+Then teacher asks next
+Not many questions together.
+👶 Simple Human Definition
+Single IR means the system processes one incoming data record (or event) at a time, independently.
+Here:
+IR = Input Record / Input Request / Input Row
+Single IR = one record per processing cycle
+🧠 Slightly Technical (Still Easy)
+In live data processing, Single IR means the system processes each incoming event/message one by one, instead of processing them in batches.
+✅ Example (Very Clear)
+Live Payment System 💳
+User A makes a payment
+System processes that one payment
+Updates balance
+Sends confirmation
+Moves to next payment
+This is Single IR processing.
+////////////////////////////////////////////////////////////////
+//What is reference type and Value Type
+--> “Value types store actual values in stack memory . Reference types store the memory address and point to shared data in heap. 
+
+-->with value types, changes don’t affect others. But with reference types, changes reflect across all references.”
+
+-->🔍 Common Value Types in C#:
+
+int, float, bool, char, double, struct
+
+
+-->🔍 Common Reference Types in C#:
+
+class, string, array, object, interface.
+
+-->
+EXAMPLE : 
+Code Example (Value Type):
+
+int a = 5;
+int b = a;
+b = 10;
+
+Console.WriteLine(a); // Output: 5
+Console.WriteLine(b); // Output: 10
+
+📌 a and b are separate copies, so changing b does not affect a.
+-->
+ Code Example (Reference Type):
+
+class Person
+{
+    public string Name;
+}
+
+Person p1 = new Person { Name = "Abhishek" };
+Person p2 = p1;
+p2.Name = "Sunil";
+
+Console.WriteLine(p1.Name); // Output: Sunil
+Console.WriteLine(p2.Name); // Output: Sunil
+/////////
+Definition (in simplest words)
+🧱 Value Type
+Think of a Value Type as a real object kept inside your own box.
+When you give it to someone, they get a copy of it — not the same box.
+🧠 Example:
+If you have one toy (like a car) and your friend wants one, you make a copy and give it.
+Both play separately — one breaks, the other is fine.
+
+📘 In C#:
+int, float, bool, struct, enum are Value Types.
+
+🔗 Reference Type
+Think of a Reference Type as a note with directions to where the object is kept.
+When you give that note to someone, you both point to the same object.
+🧠 Example:
+You and your friend both share one remote car — if your friend changes its color, you’ll see the same color change, because it’s the same object.
+
+📘 In C#:
+class, array, string, interface, delegate are Reference Types.
+
+💻 Example in Code
+int a = 10;
+int b = a;
+b = 20;
+Console.WriteLine(a); // Output: 10 — Value Type makes a copy
+
+Person p1 = new Person { Name = "Abhishek" };
+Person p2 = p1;
+p2.Name = "John";
+Console.WriteLine(p1.Name); // Output: John — Reference Type shares the same memory
+🏢 Project Use (Buy & Sell Properties App)
+When storing property details (like Price, Area, Id), you use Value Types because each property has its own independent value.
+When dealing with objects like User, Owner, or PropertyModel, you use Reference Types, since you want to work with shared data objects across layers (Controller → Service → Repository).
+⚖️ Trade-offs (Pros & Cons)
+Type	Pros	Cons
+Value Type	Faster to access (stored in stack), no side effects	Copies use more memory if many duplicates
+Reference Type	Can share data easily	Changes in one place affect all references, needs Garbage Collection
+💼 Business Impact
+✅ Using Value Types for independent data (like property price) keeps performance fast.
+✅ Using Reference Types for shared entities (like user sessions, property models) helps reuse data and avoid duplication.
+⚠️ But mixing them wrongly can lead to bugs or unnecessary memory use.
+
+////////////////////////////////////////////////////////////////////////////All the satus code
+
+//Frequently used
+200 OK. You'll hopefully see this response code in the majority of your API calls. ...
+201 Created. ...
+301 Moved Permanently. ...
+302 Found. ...
+404 Not Found. ...
+429 Too Many Requests. ...
+401 Unauthorized. ...
+500 Internal Server Error.
+
+//All Satus code
+
+
+1xx Informational:
+Indicates that the request was received and understood. These are temporary responses and consist of a Status-Line and optional headers, and are terminated by an empty line.
+100 Continue: The client should continue with its request.
+101 Switching Protocols: The server is switching protocols.
+2xx Success:
+Indicates that the client's request was successfully received, understood, and accepted. 
+200 OK: Standard success response for various requests.
+201 Created: The request has succeeded and a new resource has been created. Commonly used after a POST request. 
+202 Accepted: The request has been accepted for processing, but the processing is not yet complete.
+204 No Content: The server successfully processed the request, but is not returning any content.
+3xx Redirection:
+Indicates that further action needs to be taken by the user agent to fulfill the request.
+301 Moved Permanently: The resource has been permanently moved to a new URI.
+302 Found: The resource is temporarily located at a different URI.
+304 Not Modified: The client's cached version of the resource is still valid.
+4xx Client Error:
+Indicates that the client's request contains bad syntax or cannot be fulfilled. 
+400 Bad Request: The server cannot process the request due to a client error (e.g., malformed syntax).
+401 Unauthorized: The request requires user authentication.
+403 Forbidden: The server understood the request but refuses to authorize it.
+404 Not Found: The server cannot find the requested resource.
+405 Method Not Allowed: The HTTP method used is not supported for the requested resource.
+409 Conflict: The request could not be completed due to a conflict with the current state of the resource.
+429 Too Many Requests: The user has sent too many requests in a given amount of time.
+5xx Server Error:
+Indicates that the server failed to fulfill an apparently valid request. 
+500 Internal Server Error: A generic error message, given when an unexpected condition was encountered by the server.
+501 Not Implemented: The server does not support the functionality required to fulfill the request.
+503 Service Unavailable: The server is currently unable to handle the request due to temporary overloading or maintenance.
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////can you tell me what is 4xx erro, what we call ?
+/////////////////////////////////////////////////////////////////////////Web Api Security
+1. Authentication (Who are you?)
+This step checks who the user is.
+Example: Login with username/password → API gives a token (JWT or OAuth2).
+Every time the user calls API, they must send this token in the request header.
+If token is missing or fake → API rejects.
+👉 This makes sure only real users can call the API.
+
+2. Authorization (What can you do?)
+After knowing the user, we check what permissions they have.
+Example:
+A buyer can view properties but cannot delete.
+An admin can manage users and listings.
+This is usually role-based or policy-based in .NET.
+👉 This makes sure users cannot do operations outside their role.
+
+3. Data Protection (Keep data safe in travel)
+Use HTTPS so data is encrypted while moving between server and client.
+Use password hashing & encryption in database (never store plain text).
+Example: bcrypt, SHA-256.
+👉 This protects from hackers stealing sensitive info.
+
+4. Other API Security Best Practices
+CORS Policy → Only allow trusted websites/apps to use your API.
+Rate Limiting / Throttling → Prevent misuse by limiting requests per user.
+Input Validation → Avoid SQL Injection, XSS by cleaning user input.
+Logging & Monitoring → Keep track of suspicious activities.
+API Gateway / Firewall → Extra shield for enterprise systems.
+🚀 Example (in .NET + Angular project like yours):
+User logs in → API checks credentials → API returns a JWT token.
+Angular app stores token (in memory/local storage).
+For every API call → Angular sends token in Authorization header.
+.NET API middleware validates token → allows or denies request.
+
+
+//
+////////////////////Security Best Practises
+1.> How do you secure WEB APIs in .NET Core ?
+-> Authentication(JWT,OAuth2 , OpenID Connect).
+->Authorization with poicies and roles.
+->Preventing over-posting with DTOs.
+
+////////////////////////////////////////////////////////////////////////////////////////Performance
+1. Use Asynchronous Code (async/await) –
+
+Don’t block the thread. Example: Instead of waiting for a database call to finish, let the app do other work in parallel.
+
+
+
+
+
+2. Caching –
+
+Store frequently used data in memory (like Redis or In-Memory Cache) so we don’t always hit the database.
+
+
+
+
+
+3. Database Optimization –
+
+
+
+Use AsNoTracking() in EF Core for read-only queries (it avoids unnecessary tracking).
+
+
+
+Write efficient SQL queries and indexes.
+
+
+
+
+
+
+
+4. Use Dependency Injection Wisely –
+
+Register services with correct lifetimes (Singleton, Scoped, Transient) so memory is not wasted.
+
+
+
+
+
+5. Reduce Startup Time –
+
+Only load what is needed when the application starts.
+
+
+
+
+
+6. Compression & Minification –
+
+Enable response compression (gzip/brotli) so data transfer is smaller.
+
+
+
+
+
+7. Logging & Monitoring –
+
+Use structured logging (Serilog, Application Insights) to find performance bottlenecks.
+
+
+
+
+
+8. Use Background Services –
+
+Heavy tasks (like sending emails, reports) should run in background jobs (Hangfire, Quartz) instead of blocking user requests.
+
+
+
+/////////////////////////////////////////////////////////////////////How do you implement security in an MVC application (Authentication/Authorization)?
+///////////////////////////////////////////////////Angular Specific (Performance + Security):
+1>How do you optimize Angular applications for better performance?
+
+Lazy Loading of modules.
+Ahead-of-Time (AOT) Compilation.
+Change detection strategy (OnPush).
+
+2>How do you prevent XSS attacks in Angular?
+Angular's DOM sanitization.
+Safe navigation ([innerHTML] with caution).
+
+3>How do you handle large list rendering in Angular?
+Using ngFor with trackBy.
+Virtual scrolling for large lists.
+
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////What are design patter used in making Stock market application.
+1. Observer Pattern (very important in stock market apps)
+Why: Stock prices keep changing in real time. If one price changes, all users looking at that stock should get updated immediately.
+How: Observer pattern allows me to notify all users automatically whenever there is a change.
+Example in app: When the price of TCS shares changes, all traders' dashboards update instantly.
+2. Factory Pattern
+Why: The application might need to create different types of financial instruments (Stocks, Bonds, Mutual Funds, Options). Instead of writing messy new everywhere, a Factory can create objects in a clean way.
+Example in app: If tomorrow a new type of asset is added, we don’t have to change everywhere, just extend the factory.
+3. Singleton Pattern
+Why: Some components like logging service, configuration, cache, or database connection should have only one instance across the whole app.
+Example in app: One global configuration for connecting to stock market APIs.
+4. Strategy Pattern (optional, but good to mention)
+Why: Different users might have different order execution strategies (e.g., Market Order, Limit Order, Stop Loss). Strategy pattern allows plugging in new algorithms without rewriting code.
+Example in app: A trader can switch between "Market order" and "Limit order" easily.
+🎯 Final Easy Answer (interview-ready):
+
+"For a stock market application, I would use the Observer pattern to handle real-time stock price updates to all users, the Factory pattern to create different financial instruments cleanly, and the Singleton pattern for shared resources like logging or database connections. If we need different trading strategies, I can also use the Strategy pattern. These patterns will keep the system scalable, easy to maintain, and ready for future changes."
+
+/////////////////////////////////////////////////////////////////////////////////Observable Patter
+👉 "Observer Pattern is like a WhatsApp group.
+
+When the admin posts a message (event), all group members (subscribers) get notified immediately.
+In stock market applications:
+ 1. Observer
+
+👉 An Observer is like a person waiting for updates.
+It says: “Tell me when something changes.”
+
+Example:
+You (Observer) subscribe to a YouTube channel. You don’t keep checking daily—YouTube tells you when a new video is uploaded.
+
+
+---
+
+🔹 2. Observable
+
+👉 An Observable is the thing that produces updates.
+It’s the source of truth that others can watch.
+
+Example:
+The YouTube channel is the Observable. It produces videos (data/events) and notifies all subscribers (Observers).
+
+
+---
+
+🔹 3. Subscriber
+
+👉 A Subscriber is the one who connects to the Observable to actually receive the updates.
+
+Example:
+When you click “Subscribe” on YouTube, you become a Subscriber. Now whenever a video is uploaded, you’ll get notified.
+
+
+The Stock is the subject (Observable).
+Investors/Traders are observers (Subscribers).
+When a stock price changes, the Stock notifies all Investors instantly.
+This way, we avoid checking prices again and again, and changes are pushed in real-time."
+---
+🏢 Enterprise-Level Example: Stock Market
+We’ll implement a Stock Price Notification System using the Observer Pattern.
+Step 1: Create Observer Interface
+// IObserver.cs
+
+public interface IObserver
+
+{
+
+    void Update(string stockName, decimal price);
+
+}
+
+
+
+Step 2: Create Subject (Observable) Interface
+
+
+
+// IStock.cs
+
+public interface IStock
+
+{
+
+    void Attach(IObserver observer);
+
+    void Detach(IObserver observer);
+
+    void Notify();
+
+}
+
+
+
+Step 3: Concrete Subject (Stock)
+
+
+
+// Stock.cs
+
+using System.Collections.Generic;
+
+
+
+public class Stock : IStock
+
+{
+
+    private List<IObserver> _observers = new();
+
+    private string _stockName;
+
+    private decimal _price;
+
+
+
+    public Stock(string stockName, decimal price)
+
+    {
+
+        _stockName = stockName;
+
+        _price = price;
+
+    }
+
+
+
+    public void Attach(IObserver observer) => _observers.Add(observer);
+
+    public void Detach(IObserver observer) => _observers.Remove(observer);
+
+
+
+    public void SetPrice(decimal price)
+
+    {
+
+        _price = price;
+
+        Notify(); // Notify observers whenever price changes
+
+    }
+
+
+
+    public void Notify()
+
+    {
+
+        foreach (var observer in _observers)
+
+        {
+
+            observer.Update(_stockName, _price);
+
+        }
+
+    }
+
+}
+
+
+
+Step 4: Concrete Observer (Investor)
+
+
+
+// Investor.cs
+
+public class Investor : IObserver
+
+{
+
+    private string _name;
+
+
+
+    public Investor(string name)
+
+    {
+
+        _name = name;
+
+    }
+
+
+
+    public void Update(string stockName, decimal price)
+
+    {
+
+        Console.WriteLine($"Notification for {_name}: {stockName} is now ₹{price}");
+
+    }
+
+}
+
+
+
+Step 5: Test Implementation
+
+
+
+// Program.cs
+
+using System;
+
+
+
+class Program
+
+{
+    static void Main()
+
+    {
+
+        // Create Stock (Observable)
+
+        Stock reliance = new Stock("Reliance", 2500);
+
+
+
+        // Create Investors (Observers)
+
+        Investor abhishek = new Investor("Abhishek");
+
+        Investor rahul = new Investor("Rahul");
+
+
+
+        // Attach observers
+
+        reliance.Attach(abhishek);
+
+        reliance.Attach(rahul);
+
+
+
+        // Price Change -> Notifies Investors
+
+        reliance.SetPrice(2600);
+
+        reliance.SetPrice(2700);
+
+
+
+        // Rahul leaves the subscription
+
+        reliance.Detach(rahul);
+
+
+
+        // Only Abhishek gets notified
+
+        reliance.SetPrice(2800);
+
+    }
+
+}
+
+
+
+
+
+---
+
+
+
+✅ Output
+
+
+
+Notification for Abhishek: Reliance is now ₹2600
+
+Notification for Rahul: Reliance is now ₹2600
+
+Notification for Abhishek: Reliance is now ₹2700
+
+Notification for Rahul: Reliance is now ₹2700
+
+Notification for Abhishek: Reliance is now ₹2800
+
+
+
+
+
+---
+
+
+
+🏆 Where is this used in real enterprise apps?
+
+
+
+Stock Market / Trading Apps (price updates → traders)
+
+
+
+News Feeds (new post → followers)
+
+
+
+E-commerce (stock available → notify users)
+
+
+
+Event-driven Microservices (publish/subscribe model)
+
+////////////////////////////////////////////////////////////////////////////////Factory
+The Factory Pattern is one of the most commonly asked design patterns in interviews, especially for enterprise-level applications.
+
+
+---
+
+🔹 What is Factory Pattern (easy words)
+
+Think of a Factory as a machine that creates objects for you.
+
+Instead of using new everywhere in your code, you tell the factory:
+👉 "Hey, I need an object of type X."
+👉 The factory decides which class to create and gives it to you.
+
+
+This makes your code:
+✅ Clean
+✅ Flexible
+✅ Easy to extend (you just add new products without changing existing code).
+
+
+---
+
+🔹 Real-World Enterprise Example: Payment System
+
+Imagine you’re building an E-commerce application.
+
+Payment can be done via Credit Card, PayPal, or UPI.
+
+Instead of writing new CreditCardPayment() everywhere,
+we create a PaymentFactory that gives the right object.
+
+
+
+---
+
+🔹 Step 1: Define Payment Interface
+
+public interface IPayment
+{
+    void Pay(decimal amount);
+}
+
+
+---
+
+🔹 Step 2: Implement Different Payment Methods
+
+public class CreditCardPayment : IPayment
+{
+    public void Pay(decimal amount)
+    {
+        Console.WriteLine($"Paid {amount} using Credit Card.");
+    }
+}
+
+public class PayPalPayment : IPayment
+{
+    public void Pay(decimal amount)
+    {
+        Console.WriteLine($"Paid {amount} using PayPal.");
+    }
+}
+
+public class UpiPayment : IPayment
+{
+    public void Pay(decimal amount)
+    {
+        Console.WriteLine($"Paid {amount} using UPI.");
+    }
+}
+
+
+---
+🔹 Step 3: Create Factory
+
+public class PaymentFactory
+{
+    public static IPayment GetPayment(string paymentType)
+    {
+        return paymentType.ToLower() switch
+        {
+            "creditcard" => new CreditCardPayment(),
+            "paypal" => new PayPalPayment(),
+            "upi" => new UpiPayment(),
+            _ => throw new ArgumentException("Invalid payment type")
+        };
+    }
+}
+
+
+---
+
+🔹 Step 4: Use Factory in Application
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Enter Payment Method (CreditCard / PayPal / UPI):");
+        string method = Console.ReadLine();
+
+        Console.WriteLine("Enter amount:");
+        decimal amount = Convert.ToDecimal(Console.ReadLine());
+
+        IPayment payment = PaymentFactory.GetPayment(method);
+        payment.Pay(amount);
+
+        Console.ReadKey();
+    }
+}
+
+
+---
+
+🔹 Example Run
+
+Enter Payment Method (CreditCard / PayPal / UPI):
+paypal
+Enter amount:
+1500
+Output → Paid 1500 using PayPal.
+
+
+---
+
+🔹 How This Helps in Enterprise Applications
+
+Suppose tomorrow your company adds Bitcoin Payment 🚀
+👉 You just add a new BitcoinPayment class and extend the factory.
+👉 No need to touch existing code → Open/Closed Principle (SOLID).
+
+
+
+---
+
+✅ Easy answer for manager/interviewer:
+"I’ll use the Factory Pattern whenever I need to create objects of different types, like different payment methods in a stock market or e-commerce application. This way, adding new types is easy, and I don’t repeat object creation logic everywhere."
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////Which Design pattern you word.
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////abstract factory Design patter.
+/////////////////////////////////////////////////////////////////9>Singalton design patter.
+//////////////////What  is Singalton design patter.
+The Singleton design pattern ensures that a class has only one instance and provides a global point of access to that instance.
+/////////////////////Why Singalton design patter
+1>Ensure Single Instance
+2>Global Access
+3>Resource Sharing
+////////////////////////When to Use the Singleton Design Pattern
+1>There must be exactly one instance of a class, and it must be accessible globally.
+/////////////Why Even Use the Singleton Design Pattern
+1>Managing database connections: A Singleton class can be used to manage database connections, ensuring that only one connection
+is created and shared across multiple parts of the application.
+2>Logging: A Singleton logger class can be used to centralize logging functionality, allowing different components of the system to log 
+messages to the same log file or stream.
+3>Configuration settings: A Singleton configuration manager class can be used to load and cache application configuration settings, 
+ensuring that the settings are loaded once and accessed globally throughout the application.
+
+
+//why we are creating singlaton design pattern,instead of object.
+The Singleton design pattern is used to ensure that a class has only one instance and provides a global point of access to that instance. There are several reasons why you might choose to use the Singleton pattern instead of creating multiple instances of a class:
+
+Global Access Point:
+
+A Singleton provides a centralized point of access to its instance. This is useful when exactly one object is needed to coordinate actions across the system.
+Resource Sharing:
+
+If multiple instances of a class would share and modify the same resource, a Singleton pattern ensures that all modifications are done through the same instance, preventing conflicts and ensuring consistency.
+Resource Management:
+
+In some cases, creating multiple instances of a class might be resource-intensive or inefficient. Using a Singleton ensures that there is only one instance, saving resources.
+Configuration Management:
+
+Singletons are often used for managing configuration settings or global application state. Having a single instance makes it easy to maintain and manage these settings.
+Lazy Initialization:
+
+With a Singleton, you can implement lazy initialization, meaning the instance is created only when it is first requested. This can be beneficial for performance, especially if the initialization process is resource-intensive.
+Prevention of Multiple Instances:
+
+Some classes are designed to have only one instance due to their nature or purpose. The Singleton pattern enforces this constraint and ensures that there is only one instance of the class.
+Managing Shared Resources:
+
+In scenarios where multiple parts of the application need to share the same resource, a Singleton provides a way to centralize access and modifications to that resource.
+Maintaining State:
+
+Singletons are often used to maintain a consistent state across the application. Any changes made to the state are reflected in a single instance.
+However, it's important to note that the Singleton pattern also has its drawbacks, such as potential for global state, difficulty in testing, and limited flexibility in certain scenarios. Therefore, it's essential to carefully consider whether the Singleton pattern is appropriate for a particular use case.
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+What is latest version of c#
+
+The latest stable version of C# is C# 13.0, released with .NET 9. 
+
+If you need, I can also mention what new features came with C# 13 so it sounds strong in an interview.
+
+Perfect 👍 Let’s make this interview-ready and easy to remember.
+
+
+---
+
+🔥 New Features in C# 13 (with .NET 9)
+
+Here are the highlight updates:
+
+1. Field keyword in Primary Constructors
+
+You can directly create a field inside a primary constructor parameter.
+
+
+class Student(string name, int age)
+{
+    private field int age = age; // new keyword 'field'
+}
+
+
+2. Partial Properties
+
+Just like partial classes, now properties can be declared as partial and implemented in another part of the class.
+
+
+partial class Person
+{
+    public partial string Name { get; }
+}
+
+
+3. Lock Object Simplification
+
+You can now lock on a value directly without creating a separate object.
+
+
+lock (someLock)
+{
+    // thread-safe code
+}
+
+
+4. ref readonly Parameters
+
+Allows passing parameters by reference without allowing modification.
+
+
+void Print(ref readonly int number)
+{
+    Console.WriteLine(number);
+}
+
+
+5. Method Group Natural Type Improvements
+
+Better support for method group conversions when passing methods as delegates.
+
+
+
+6. Improved Interpolated Strings
+
+More performance improvements when using $"..." interpolations.
+
+
+
+
+
+---
+
+🎯 Interview-Friendly Answer
+
+> “The latest version of C# is 13, released with .NET 9. It introduced useful features like the field keyword in primary constructors, partial properties, ref readonly parameters, and better support for locks and interpolated strings. These updates make code more concise, safe, and developer-friendly.”
+
+
+
+
+---
+
+👉 Do you want me to also make a simple diagram or table comparing C# 12 vs C# 13 so you can quickly revise before interviews?
+/////////////////////////////////////////
+What is Managed and umanged code interview questions
+
+
+Great one 👍 This is a very common C# interview question. Let’s break it down in simple words + interview style.
+
+
+---
+
+⚡ Managed Code vs Unmanaged Code
+
+🔹 Managed Code
+
+Code that runs under the control of the .NET runtime (CLR).
+
+CLR takes care of memory management, garbage collection, type safety, and security.
+
+Example: Any C# or VB.NET code.
+
+
+// Example of Managed Code
+public class Test
+{
+    public void SayHello()
+    {
+        Console.WriteLine("Hello, Managed World!");
+    }
+}
+
+
+---
+
+🔹 Unmanaged Code
+
+Code that runs directly on the operating system (outside CLR).
+
+You need to manually handle memory allocation and cleanup.
+
+Example: C, C++, COM components, Win32 APIs.
+
+
+// Example of Unmanaged Code (C++)
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "Hello, Unmanaged World!";
+    return 0;
+}
+
+
+---
+
+🎯 Interview-Friendly Answer
+
+> “Managed code is the code that runs under the control of CLR in .NET, where memory management and garbage collection are automatic. Unmanaged code runs directly on the OS, like C or C++ code, where the developer must manually manage memory and resources.”
+
+
+
+
+---
+
+🤔 Possible Cross Questions
+
+1. Can .NET work with unmanaged code?
+✔ Yes, using P/Invoke (Platform Invocation Services) and COM Interop.
+
+
+2. Why is managed code safer?
+✔ Because CLR ensures type safety, garbage collection, and prevents memory leaks.
+
+
+3. Can you give an example where you need unmanaged code in a .NET project?
+✔ For performance-critical operations or using existing C/C++ libraries (like image processing, hardware drivers).
+
+
+
+
+---
+
+👉 Do you want me to also prepare a short diagram showing CLR in between managed and unmanaged code for quick revision?
+
+
+Show quoted text
+
+
+
+
+
+
+
+ 
