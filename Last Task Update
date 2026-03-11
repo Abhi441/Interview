@@ -6512,6 +6512,1083 @@ Show quoted text
 
 
 
+//////////////////////////
+/////////////////////////
+////////////////////////Angular
+////////////////////////
+/////////////////////////////////Angular Basic
+////////////////////////////////Component
+////////////////////////////////Directives
+////////////////////////////////pipes
+///////////////////////////////Data Binding
+///////////////////////////////Forms
+//////////////////////////////Routing
+//////////////////////////////RxJx
+//////////////////////////////HTTP/API Integration
+///////////////////////////////State Management
+////////////////////////////////Performance Optimization
+////////////////////////////////Security
+///////////////////////////////Testing
+
+/////////////////////////
+////////////////////////
+/////////////////////////Backend
+//////////////////////////
+
+//////////////////////////////////C#
+////////////////////////////////////////////////////////////////what the diffrence between the Arrays.CopyTo() and Array.Clone()?
+
+Array.Clone() creates a copy of an array.
+It returns a new array object with the same elements as the original array.
+Simple Definition (Interview Line)
+Array.Clone() creates a shallow copy of an array.
+Example
+Csharp
+Copy code
+int[] arr1 = { 1, 2, 3, 4 };
+
+int[] arr2 = (int[])arr1.Clone();
+
+arr2[0] = 100;
+
+Console.WriteLine(arr1[0]); // 1
+Console.WriteLine(arr2[0]); // 100
+Explanation
+Copy code
+
+arr1 = [1,2,3,4]
+arr2 = [1,2,3,4] ← copied array
+When we change arr2, arr1 does not change.
+Because Clone() creates a new array object.
+Important Point (Interview)
+Array.Clone() makes a shallow copy.
+Meaning:
+Value types → copied completely
+Reference types → only reference is copied, not the actual object
+Example with Reference Type
+Csharp
+Copy code
+string[] arr1 = { "A", "B" };
+string[] arr2 = (string[])arr1.Clone();
+Both arrays will point to the same string objects.
+Key Points for Interview
+Array.Clone() creates a copy of the array
+It performs a shallow copy
+It returns object type, so casting is required
+Example:
+Csharp
+Copy code
+int[] arr2 = (int[])arr1.Clone();
+One-Line Interview Answer
+Array.Clone() creates a shallow copy of the array and returns a new array object with the same elements.
+
+//////////////////////////////////////////////////////////////////////////////////////////what are Anonymous type in c#
+//////////////////////////////////////////////////////////////////////////////////////////what is the file handling in c#
+/////////////////////////////////////////////////////////////////////////////////////////What are the type of classes in c#
+
+/////////////////////////////////////////////////////////////////what is the diffrence between the Is and As operators in c#
+/////////////////////////////////
+////////////////////////////////Web API
+////////////////////////////////
+
+/////////////////////////////////
+////////////////////////////////Middleware
+////////////////////////////////
+
+///////////////////////////////Dependency Injection
+///////////////////////////////Authentication and Autherisation
+///////////////////////////////Loging And Monitoring
+///////////////////////////////Exception Handling
+//////////////////////////////////Async Programming
+//////////////////////////////////Entity Framework
+///////////////////////////////////ADO.net 
+////////////////////////////////////API Design /Architecture
+/////////////////////////////////////Performance and Caching
+///////////////////////////////////////////////////////////What is an Object Pooling
+/////////////////////////////////////Security
+
+
+
+
+
+
+/////////////////////////
+/////////////////////////
+////////////////////////Database
+//////////////////////////
+
+////////////////////////////////////SQl Basic
+///////////////////////////////////Joins
+///////////////////////////////////Subquery
+//////////////////////////////////CTE
+//////////////////////////////////Temporary Tables
+//////////////////////////////////Stored Procedures
+//////////////////////////////////Triggers
+//////////////////////////////////Indexes
+//////////////////////////////////Query Optimization
+//////////////////////////////////Transaction
+////////////////////////////////////Database Design
+
+
+/////////////////////////////
+/////////////////////////////
+/////////////////////////////Cloud
+/////////////////////////////
+
+/////////////////////////////////Cloud Fundamentals
+/////////////////////////////////App Services
+//////////////////////////////////Azure Sql
+//////////////////////////////////Storage
+/////////////////////////////////Indentity & Security
+/////////////////////////////////CI/CD Development
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////Most asked DSA and Algorithm question in Interview
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+  ///////////////////////////////////////////////////////Reverse String the string
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        string str = "hello world";
+        Console.WriteLine("Original: " + str);
+        Console.WriteLine("Reversed: " + Reverse(str));
+    }
+
+    public static string Reverse(string str)
+    {
+        if (string.IsNullOrEmpty(str)) return str;
+
+        char[] ch = str.ToCharArray();
+        int i = 0;
+        int j = ch.Length - 1;
+
+        while (i < j)
+        {
+            // swap characters
+            char temp = ch[i];
+            ch[i] = ch[j];
+            ch[j] = temp;
+            i++;
+            j--;
+        }
+
+        return new string(ch);
+    }
+}
+
+
+
+//////////////////////////////////////input : Abhishek kumar singh , output : singh kumar Abhishek
+
+using System;
+using System.Text;
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        string str = "Abhishek kumar singh jhbg bnhju nhbgfy bhgytu";
+        String[] ch = str.Split(' ');
+        StringBuilder sb = new StringBuilder();
+        
+        for(int i = ch.Length - 1 ; i >=  0 ;  i--)
+        {
+            sb.Append(ch[i]);
+            sb.Append(" ");
+        }
+        Console.WriteLine (sb.ToString());
+    }
+}
+///////////////////////////////////////
+Find the First Non-Repeating Character in a String
+Problem Statement:
+
+> Given a string, find and return the first non-repeating character.
+If there is no such character, return -1.
+
+Example 1:
+
+Input:  "aabbcddbe"
+Output: 'c'
+
+Example 2:
+
+Input:  "aabbcc"
+Output: -1
+
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+        String str = "aaabbbcccddfggghhrrr";
+        char result = FindNonRepeatingCharacters(str);  
+        if(result != '0')
+        {
+            Console.WriteLine("The first non-repeating character is: " + result);
+        }
+        else
+        {
+            Console.WriteLine("No non-repeating character found.");
+        }
+
+    }
+    public static char FindNonRepeatingCharacters(String str)
+    {
+        Dictionary<char, int> keyValuePairs = new Dictionary<char, int>();
+
+        foreach (char c in str)
+        {
+            if (keyValuePairs.ContainsKey(c))
+            {
+                keyValuePairs[c]++;
+            }
+            else
+            {
+                keyValuePairs.Add(c, 1);
+            }
+        }
+            foreach (char ch in str)
+            {
+                if (keyValuePairs[ch] == 1)
+                {
+                    return ch;
+                }
+            }
+        
+            return '0';
+
+        
+    }
+}
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+Q.2: How to find if the given string is a palindrome or not?
+
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        String str = "MadaM";
+        CheckPalidrom(str);
+        
+    }
+    public static void CheckPalidrom(String str)
+     {
+         int i = 0;
+         int j = str.Length - 1 ;
+         bool IsPalidrop = true;
+          while(i < j)
+           {
+               if(str[i] != str[j])
+               {
+                   IsPalidrop = false;
+                   break;
+               }
+               i++;
+               j--;
+           }
+           if(IsPalidrop == true)
+           {
+               Console.WriteLine("Paidrom");
+           }
+           else
+           {
+               Console.WriteLine(" Not Paidrom");
+           }
+     }
+}
+ /////////////////////////////////////////////////////Q.4: How to reverse each word in a given string?
+Ans.: The user will input a sentence and we need to reverse each word individually without changing its position in the sentence.
+input: Welcome to Csharp corner, output: emocleW ot prahsC renroc
+
+using System.Text;
+using System.Collections.Generic;
+using System;
+class Program
+{
+    
+    public static void Main(string[] args)
+    {
+        string str = "Abhishek is Intelligent boys";
+        RSEW(str);
+    }
+    public static void RSEW(string str)
+    {
+        StringBuilder sb = new StringBuilder();
+        List<char> ls = new List<char>();
+        for(int i = 0 ; i < str.Length ; i++)
+        {
+            if(str[i] == ' ' || i == str.Length - 1 )
+            {
+                if(i == str.Length - 1)
+                {
+                    ls.Add(str[i]);
+                }
+                
+                    for(int j = ls.Count - 1 ; j >= 0 ; j--)
+                    {
+                        sb.Append(ls[j]);
+                    }
+                    sb.Append(' ');
+                    ls = new List<char>();
+                
+            }
+            else
+            {
+                ls.Add(str[i]);
+            }
+        }
+        Console.WriteLine(sb.ToString());
+    }
+}
+//////////////////////////////////////Q.5: How to count the occurrence of each character in a string?
+
+using System;
+using System.Collections.Generic;
+
+public class HelloWorld
+{
+public static void Main(string[] args)
+ {
+ string str = "Hello   world";
+ FindCount(str);
+     
+ }
+
+  public static void FindCount(string str)
+  {
+   Dictionary<char, int> dis = new Dictionary<char, int>();
+     foreach (char ch in str)
+       {
+           if(ch != ' ')
+           {
+           if (dis.ContainsKey(ch))
+          {
+          dis[ch]++;
+             }
+             else
+                {
+               dis.Add(ch, 1);
+                }
+           }
+       }
+            foreach (var item in dis)
+           {
+       //  Console.WriteLine($"{item.Key}: {item.Value}");
+         Console.WriteLine($"{item.Key} : {item.Value}");
+          }
+    }
+}
+
+////////////////////////////////////////////////////////////////
+
+
+//input :1,2,3,1,2,3,4
+//o/p - 4
+using System;
+using System.Collections.Generic;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        int[] arr = new int[] {1, 2, 3, 1, 2, 3, 4};
+        Occurence(arr);
+    }
+
+    public static void Occurence(int[] arr)
+    {
+        Dictionary<int, int> dis = new Dictionary<int, int>();
+        foreach (var a in arr)
+        {
+            if (dis.ContainsKey(a))
+            {
+                dis[a]++;
+            }
+            else
+            {
+                dis.Add(a, 1);
+            }
+        }
+
+        foreach (var d in dis)
+        {
+            if (d.Value == 1)
+            {
+                Console.WriteLine($"{d.Key}");
+            }
+        }
+    }
+}
+///////////////////////////////////////////////Q.6: How to remove duplicate characters from a string?
+The user will input a string and the method should remove multiple occurrences of characters in the string
+input: csharpcorner, output: csharpone
+
+
+using System;
+using System.Text;
+class Program
+{
+    public static void Main(string[] args)
+    {
+        string str = "abhishekkumarsingh" ;
+        DCR(str);
+    }
+    public static void DCR(string str)
+    {
+        string sb = string.Empty;
+        {
+        for(int i = 0 ; i < str.Length ; i++)
+        if(!sb.Contains(str[i]))
+        {
+            sb = sb + str[i];
+        }
+        }
+        Console.WriteLine(sb.ToString());
+    }
+}
+///////////////////////////////////////////Q.7: How to find all possible substring of a given string?
+//input: abcd , output : a ab abc abcd b bc bcd c cd d
+
+using System;
+using System.Text;
+class Program
+{
+    public static void Main(string[] args)
+    {
+        string str = "abcd";
+        PosSub(str);
+    }
+    public static void PosSub(string str)
+    {
+        for(int i = 0 ; i < str.Length ; i++)
+        {
+        StringBuilder sb = new StringBuilder(str.Length - 1);
+            for(int j = i ; j < str.Length ; j++)
+             {
+                sb.Append(str[j]);
+                Console.Write(sb + " ");
+             }
+             
+        }
+    }
+}
+Q.8: How to perform Left circular rotation of an array?
+ How to perform Left circular rotation of an array?
+Ans.: The user will input an integer array and the method should shift each element of input array to its Left by one position in circular fashion. The logic is to iterate loop from Length-1 to 0 and swap each element with last element.
+
+input: 1 2 3 4 5, output: 2 3 4 5 1
+using System;
+
+
+class Program
+{
+    public static void Main(String[] args)
+    {
+       int[] arr = {8,6,5,8,3,6,8,9,2,3,6,7,8};
+       CrA(arr);
+    }
+     public static void CrA(int[] arr)
+     {
+         int a = arr[0];
+         for(int i = 0 ; i < arr.Length - 1 ; i++)
+          {
+              arr[i] = arr[i + 1];
+          }
+          arr[arr.Length - 1] = a;
+          foreach(var d in arr)
+          {
+              Console.Write(d + " ");
+          }
+     }
+}
+///////////////////////////////////Q.9: How to perform Right circular rotation of an array?
+input: 1 2 3 4 5, output: 5,1,2,3,4
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        int[] arr = { 5, 1, 2, 3, 4 };
+        RotateRight(arr);
+    }
+    public static void RotateRight(int[] arr)
+    {
+        int last = arr[arr.Length - 1];
+        for (int i = arr.Length - 1 ; i > 0 ; i--)
+        {
+            arr[i] = arr[i - 1];
+        }
+        arr[0] = last;
+        for (int j = 0; j < arr.Length; j++)
+        {
+            Console.WriteLine(arr[j]);
+        }
+    }
+}
+Q.10: How to find if a positive integer is a prime number or not?
+using System;
+class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+    bool res = CheckPrime(25);
+    Console.WriteLine(res);
+}
+public static bool CheckPrime(int n)
+{
+    if(n == 0 || n == 1)
+    {
+        return false;
+    }
+    if(n == 2 || n == 3)
+    {
+        return true;
+    }
+    if(n % 2 == 0 || n % 3 == 0)
+    {
+        return false;
+    }
+    for(int i = 5 ; i * i <= n ; i = i +  6)
+    {
+        if(n % i == 0 || n % (i + 2) == 0 )
+        {
+            return false;
+        }
+    }
+    return true;
+}
+}
+///////////////////////////////Q.11: How to find the sum of digits of a positive integer?
+input: 168, output: 15
+using System;
+class Program
+{
+    public static void Main(string[] args)
+    {
+      int input = 0;
+     Console.WriteLine(NumberSum(input));   
+    }
+    public static int NumberSum(int input)
+    {
+        int sum = 0;
+        while(input != 0)
+        {
+            int rem = input % 10 ;
+            sum = sum + rem ;
+            input = input / 10 ;
+        }
+        return sum ;
+    }
+}
+
+Find the second largest element in array.
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+        int[] arr = { 4, 6, 7, 5, 6, 8, 9, 4, 5, 7, };
+        Console.WriteLine(FindSecondLargestNumber(arr));
+    }
+    public static int FindSecondLargestNumber(int[] arr)
+    {
+        if (arr.Length < 2)
+        {
+            throw new ArgumentException("their is no second largest ");
+        }
+        int firstLargest = int.MinValue;
+        int secondLargest = int.MinValue;
+
+        foreach(int num in arr)
+        {
+            if (num > firstLargest)
+            {
+                secondLargest = firstLargest;
+                firstLargest = num;
+            }
+
+            else if (num > secondLargest && num != firstLargest)
+            {
+                secondLargest = num;
+            }
+        }
+        if(secondLargest == int.MinValue)
+        {
+           throw new InvalidOperationException("their is no largest number exits");
+        }
+          
+
+        return secondLargest;
+    }
+}
+
+Q.13: How to find third largest integer in an array using only one loop?
+input: 3 2 1 5 4, output: 3
+
+using System;
+class Program
+{
+    public static void Main(string[] args)
+    {
+        int[] arr = { 3, 2 ,5,7,8,3,6,9};
+        Console.WriteLine(TLE(arr));
+    }
+    public static int TLE(int[] arr)
+    {
+        if (arr.Length < 3)
+        {
+            throw new ArgumentException("Array must have at least 3 elements");
+        }
+        int firstLg = int.MinValue;
+        int secondLg =  int.MinValue;
+        int thirdLg =  int.MinValue;
+        for (int i = 0; i < arr.Length; i++)
+        {
+            if (arr[i] > firstLg )
+            {
+                thirdLg = secondLg;
+                secondLg = firstLg;
+                firstLg = arr[i];
+            }
+            else if (secondLg < arr[i] & arr[i] != firstLg)
+            {
+                
+                thirdLg = secondLg;
+                secondLg = arr[i];
+            }
+            else if (thirdLg < arr[i] & arr[i] != firstLg & arr[i] !=  secondLg)
+            {
+                thirdLg = arr[i];
+            }
+        }
+        return thirdLg;
+
+    }
+}
+/////////////////////////////////////////Q.14: How to convert a two-dimensional array to a one-dimensional array?
+
+//input: { { 1, 2, 3 }, { 4, 5, 6 } }, output: 1 4 2 5 3 6
+using System;
+class Program
+{
+    public static void Main(string[] args)
+    {
+        int[,] arr1 = {{1,2,3},{4,5,6}};
+        ConvertAndPrintArray(arr1);
+    }
+    public static void ConvertAndPrintArray(int[,] arr1)
+    {
+        int rows = arr1.GetLength(0);
+        int cols = arr1.GetLength(1);
+        int[] result = new int[rows * cols];
+       
+        int index = 0 ;
+        
+        for(int col = 0 ; col < cols ; col++)
+        {
+            for(int row = 0; row < rows ; row++)
+            {
+                result[index] = arr1[row, col];
+                Console.Write(result[index] + " ");
+                index++;
+            }
+        }
+    }
+}
+Q.15: How to convert a one-dimensional array to a two-dimensional array?
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+ //input: {1, 2, 3, 4, 5, 6} ,2 ,3
+//output:
+//1 2 3
+//4 5 6
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        int[] arr = new int[] {1, 2, 3, 4, 5, 6};
+        OneDToTwoD(arr, 2, 3);
+    }
+
+    public static void OneDToTwoD(int[] arr, int row, int col)
+    {
+        int index = 0;
+        int[,] arr1 = new int[row, col];
+        for (int i = 0; i < row; i++)
+        {
+            for (int j = 0; j < col; j++)
+            {
+                arr1[i, j] = arr[index];
+                index++;
+                Console.Write(arr1[i, j] + " ");
+            }
+            Console.WriteLine();
+        }
+    }
+}
+
+Q.16: How to find the angle between hour and minute hands of a clock at any given time?
+Q.17: Explain Bubble Sort Algorithm In C#
+Q.18: Explain Quick Sort Algorithm In C#
+Q.19: Explain Merge Sort Algorithm In C#
+Q. 20: Explain Insertion Sort Algorithm In C#
+Q. 21: Explain Selection Sort Algorithm In C#
+Q. 22: Explain Binary Search In C#
+
+
+////////////////////////////////////////////////////////
+//input : "Hello World"
+//output : "Hello dlroW"
+using System;
+using System.Text;
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        string s = "Hello World";
+        String[] arr = s.Split(' ');
+        StringBuilder sb = new StringBuilder();
+        sb.Append(arr[0]);
+        sb.Append(' ');
+        string str = arr[1];
+        int i = 0 ;
+        int j = str.Length -  1 ;
+        char[] ch = str.ToCharArray();
+        while(i < j)
+        {
+            char cha = ch[i];
+            ch[i] = ch[j];
+            ch[j] = cha ;
+            i++;
+            j--;
+        }
+       sb.Append(ch);
+        Console.WriteLine (sb.ToString());
+    }
+}
+
+Q>////////////////////////////////////////////////////////
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////UI
+////////////////////////////////////////////////////////////////////////////////
+Find Palidrom
+
+let str = "SAMPLE";
+str = str.toLowerCase(); // Convert to lowercase for case-insensitive comparison
+
+let i = 0;
+let j = str.length - 1;
+let isPalindrome = true;
+
+while (i < j) {
+    if (str[i] !== str[j]) {
+        isPalindrome = false;
+        break;
+    }
+    i++;
+    j--;
+}
+
+if (isPalindrome) {
+    console.log(`${str} is a palindrome.`);
+} else {
+    console.log(`${str} is not a palindrome.`);
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class ReverseDictionaryValue
+{
+ public static Disctionary<int , string> Process(Dictionary<int,string>  input)
+{
+  Dictionary<int ,string> res = new Dictionary<int , string>();
+  foreach(var k in input)
+   {
+     string rev = new string(k.Value.Reverse().ToArray().ToUpper());
+        result[k.key] = rev
+  }
+return res;
+}
+}
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        var input new Dictionary<int, string>
+        {
+            {5,"five"},
+	        {6,"six"},
+	         {9,"nine"}
+        };
+        var output = ReverseDictionaryValue.Process(input);
+        foreach(var k in output)
+        {
+            Console.WriteLine($({k.Key},{k.Value}));
+        }
+    }
+}
+
+//////////////////////////Move the zeros to end
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int[] arr = { 0, 1, -1, 0, 2 };
+
+        MoveZerosToEnd(arr);
+
+        Console.WriteLine(string.Join(", ", arr));
+    }
+
+    static void MoveZerosToEnd(int[] arr)
+    {
+        int index = 0; // position to place next non-zero
+
+        // Step 1: Move all non-zeros to the front
+        for (int i = 0; i < arr.Length; i++)
+        {
+            if (arr[i] != 0)
+            {
+                arr[index++] = arr[i];
+            }
+        }
+
+        // Step 2: Fill the rest with zeros
+        while (index < arr.Length)
+        {
+            arr[index++] = 0;
+        }
+    }
+}
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////Most asked Sql Question in the interview
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////file:///C:/Users/Abhishek/Desktop/Interview%20Folder/SQL.pdf    (pls copy paste complete in the laptop)
+///////////////////////////////////////////https://www.linkedin.com/posts/ankit7rma_sql-activity-7348232666191650816-1FPj/
+////////////////1. Find the second highest salary
+Table: employees(id, name, salary)
+Values:
+1, Shubham, 5000
+2, Debug, 6000
+3, WIth, 7000
+Expected Output:6000
+//
+SELECT MAX(salary)
+FROM employees
+WHERE salary < (SELECT MAX(salary) FROM employees);
+////////////////////////////////////////////////////////
+2. Find employees with duplicate salaries
+Table: employees(id, name, salary)
+Values:
+1, Shubham, 5000
+2, Debug, 6000
+3, Maurya, 7000
+Expected Output:5000, 2
+
+//
+SELECT salary, COUNT(*)
+FROM employees
+GROUP BY salary
+HAVING COUNT(*) > 1;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////Chat GPT
+//////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+////////////////////Write a Sql query to fetch the second highest salary from the employee table.(You can try by rank() and dence rank() )
+SELECT DISTINCT salary 
+FROM EMPLOYEE 
+ORDER BY salary DESC 
+OFFSET 1 ROW 
+FETCH NEXT 1 ROW ONLY;
+
+/////////////////////////if I have to find 10 th highest salary 
+SELECT DISTINCT salary 
+FROM EMPLOYEE 
+ORDER BY salary DESC 
+OFFSET 9 ROW 
+FETCH NEXT 1 ROW ONLY;
+
+//////////////////////need to review.
+//////////////////////Write the SQL query to find the second highest salary along with the empId from the Employee table.
+with SalaryRank As (Select salary, empId, ROW_Number()
+over(Order by salary desc) AS Rank from EMPLOYEE)
+
+Select salary , empId from SalaryRank where Rank = 2 ;
+
+////////////////////////////////////////////////////
+Write a Sql query to find duplicate records from a table called Employees based on the EmployeeNmae coloum.
+Employee(EmployeeId, EmployeeName , Salary)
+
+Select EmployeeName , Count(*) As NameCount
+from Employee group by EmployeeName Having Count(*) > 1 ;
+
+/////////////////////////////////////////////To remove duplicate records while keeping only one entry per EmployeeName, you can use a DELETE with a CTE and ROW_NUMBER():
+WITH CTE AS (
+    SELECT *,
+           ROW_NUMBER() OVER (PARTITION BY EmployeeName ORDER BY EmployeeId) AS rn
+    FROM Employee
+)
+DELETE FROM Employee
+WHERE EmployeeId IN (
+    SELECT EmployeeId FROM CTE WHERE rn > 1
+);
+
+////////////////////////////////////////////
+Write a Sql query to retrive the top 3 highest  salaries from the Employee table
+Employee(EmployeeId, EmployeeName , Salary)
+
+Select Distinct Salary
+From Employee ORDER BY Salary DESC Offset 0 Rows Fetch Next 3 rows only;
+
+/////////////////////////////////////////////////////////////////////////////////////////
+Write a Sql query to find all employee who have the same salary in the Employee table.
+Employee(EmployeeId, EmployeeName , Salary)
+//
+Select Employee,EmployeeName,Salary from Employee where Salary In  (
+Select Salary from Employee  group by Salary Having Count(*) > 1 );
+
+////////////////////////////////////////////////////////////////////////
+Write a SQL query to retrieve the list of employees who have the highest salary in each department.
+Employee(EmployeeId, EmployeeName , Salary,DepartmentId)
+
+SELECT E.EmployeeId, E.EmployeeName, E.Salary, E.DepartmentId
+FROM Employee E
+INNER JOIN
+(
+    SELECT DepartmentId, MAX(Salary) AS MaxSalary
+    FROM Employee
+    GROUP BY DepartmentId
+) DeptMax
+ON E.DepartmentId = DeptMax.DepartmentId AND E.Salary = DeptMax.MaxSalary;
+
+
+//////////////////////////////////////////////////////////////////////////////////
+Write an SQL query to get the list of employees who do not have any manager.
+Employee
+---------
+EmployeeId
+EmployeeName
+ManagerId
+
+SELECT EmployeeName
+FROM Employee
+WHERE ManagerId IS NULL;
+
+//////////////////////////////////
+Write a Sql query to retrive the names of employees who earn than the average salary in the Employee table.
+Table structure:
+Employee(EmployeeId, EmployeeName , Salary)
+
+Select EmployeeId , EmployeeName from Employee where Salary > (Select AVG(Salary) from 
+Employee ) ; 
+
+////////////////////////////////
+Write a SQL query to fetch the department names along with the total number of employees in each department.
+(Assume there are two tables: Employee(EmployeeId , EmployeeName , DepartmentId) and  Department(DepartmentId , DepartmentName)
+
+Select  D.DepartmentName , Count(E.EmployeeId) , from Employee E Left Join Department D On D.DepartmentId  = E.DepartmentId 
+group by  D.DepartmentName ;
+ 
+/////////////////////////////////////////////////////////
+Write a SQl Query to display departments that have more than 5 employees.
+
+SELECT
+    D.DepartmentName,
+    COUNT(E.EmployeeId) AS TotalEmployees
+FROM
+    Employee E
+LEFT JOIN
+    Department D ON D.DepartmentId = E.DepartmentId
+GROUP BY
+    D.DepartmentName
+HAVING
+    COUNT(E.EmployeeId) > 5;
+
+
+///////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////Interview Asked Question
+//////////////////////////////////////////////////////////////////
+
+Suppose that you have one table, in that you have a column called name, status and address. So
+in status column is Boolean column. Suppose that in this particular table have six rows,
+three is on and three is off in status coloum . So what I have to update the table to write the SQL queries, to change the on to off and off to on in status coloum .
+
+
+///
+UPDATE YourTable
+SET Status = CASE 
+               WHEN Status = 1 THEN 0 
+               ELSE 1 
+             END;
+
+
+
+
+
+
+
+
 
 
 
