@@ -28,116 +28,6 @@
 
 
 
-/////////////////////////////////////////////////////////////////////////Web Api Security
-1. Authentication (Who are you?)
-This step checks who the user is.
-Example: Login with username/password → API gives a token (JWT or OAuth2).
-Every time the user calls API, they must send this token in the request header.
-If token is missing or fake → API rejects.
-👉 This makes sure only real users can call the API.
-
-2. Authorization (What can you do?)
-After knowing the user, we check what permissions they have.
-Example:
-A buyer can view properties but cannot delete.
-An admin can manage users and listings.
-This is usually role-based or policy-based in .NET.
-👉 This makes sure users cannot do operations outside their role.
-
-3. Data Protection (Keep data safe in travel)
-Use HTTPS so data is encrypted while moving between server and client.
-Use password hashing & encryption in database (never store plain text).
-Example: bcrypt, SHA-256.
-👉 This protects from hackers stealing sensitive info.
-
-4. Other API Security Best Practices
-CORS Policy → Only allow trusted websites/apps to use your API.
-Rate Limiting / Throttling → Prevent misuse by limiting requests per user.
-Input Validation → Avoid SQL Injection, XSS by cleaning user input.
-Logging & Monitoring → Keep track of suspicious activities.
-API Gateway / Firewall → Extra shield for enterprise systems.
-🚀 Example (in .NET + Angular project like yours):
-User logs in → API checks credentials → API returns a JWT token.
-Angular app stores token (in memory/local storage).
-For every API call → Angular sends token in Authorization header.
-.NET API middleware validates token → allows or denies request.
-
-
-//
-////////////////////Security Best Practises
-1.> How do you secure WEB APIs in .NET Core ?
--> Authentication(JWT,OAuth2 , OpenID Connect).
-->Authorization with poicies and roles.
-->Preventing over-posting with DTOs.
-////////////////////////////////////////////////////////////////////////////////////////Performance
-1. Use Asynchronous Code (async/await) –
-
-Don’t block the thread. Example: Instead of waiting for a database call to finish, let the app do other work in parallel.
-
-
-
-
-
-2. Caching –
-
-Store frequently used data in memory (like Redis or In-Memory Cache) so we don’t always hit the database.
-
-
-
-
-
-3. Database Optimization –
-
-
-
-Use AsNoTracking() in EF Core for read-only queries (it avoids unnecessary tracking).
-
-
-
-Write efficient SQL queries and indexes.
-
-
-
-
-
-
-
-4. Use Dependency Injection Wisely –
-
-Register services with correct lifetimes (Singleton, Scoped, Transient) so memory is not wasted.
-
-
-
-
-
-5. Reduce Startup Time –
-
-Only load what is needed when the application starts.
-
-
-
-
-
-6. Compression & Minification –
-
-Enable response compression (gzip/brotli) so data transfer is smaller.
-
-
-
-
-
-7. Logging & Monitoring –
-
-Use structured logging (Serilog, Application Insights) to find performance bottlenecks.
-
-
-
-
-
-8. Use Background Services –
-
-Heavy tasks (like sending emails, reports) should run in background jobs (Hangfire, Quartz) instead of blocking user requests.
-
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////Thread and vax thread.
@@ -9562,7 +9452,6 @@ q>Normally what happen if we do not put the Await keyword in Asny method.
 Q>How many type of json file will be their.
 Q>Base class of controller , How does you make controller.
 Q>If condition and iteration in Sql 
-Q) How you give the security to backend.
 Q) Hiw you can optimise the SQl query
 Q)be all the code of in your brain
 Q) logging ke bare me pich hai
@@ -11475,7 +11364,6 @@ If you're preparing for a .NET Full Stack Developer role or mentoring someone wh
 7️⃣ How is Dependency Injection implemented in ASP.NET Core?
 8️⃣ What is the purpose of appsettings.json in configuration?
 9️⃣ What is the life cycle of an ASP.NET MVC request?
-1️⃣1️⃣ How do you implement security in an MVC application (Authentication/Authorization)?
 1️⃣2️⃣ What is a partial view and when should you use one?
 
 
@@ -12050,7 +11938,6 @@ Top 50 Full Stack Developer Interview Questions**, Mostly asked in MNCs like Del
 22. Purpose of `Startup.cs`.
 23. Logging in ASP.NET Core.
 24. `appsettings.json` configuration.
-25. API security in Core.
 27. Dependency Injection in Core.
 28. Model Binding vs Validation.
 29. Endpoint Routing.
@@ -12067,7 +11954,6 @@ Top 50 Full Stack Developer Interview Questions**, Mostly asked in MNCs like Del
 37. Swagger integration.
 38. What is CORS?
 39. Web API Exception Handling.
-40. API security best practices.
 
 #### ⚡ **Angular (10 Questions)**
 
@@ -15769,7 +15655,6 @@ Now, I am ready to bring both my past 5 years of experience and my new skills to
 8. File I/O Operations (StreamReader, StreamWriter, FileInfo) // Less Important
 9. Memory Management (Garbage Collection, IDisposable, using statement)
 10. Reflection and Attributes //Not Yet Revision
-11. Performance and Security.
 
 //.Net Core
 1. Middleware and Request Pipeline
@@ -15781,7 +15666,6 @@ Now, I am ready to bring both my past 5 years of experience and my new skills to
 7. Authentication and Authorization (JWT, Identity, Roles)
 9. Global Exception Handling
 10. API Documentation (Swagger)
-11. Performance and Security.
 
 //Angular
 1. Components and Modules (Lifecycle Hooks, Communication)
@@ -15794,7 +15678,6 @@ Now, I am ready to bring both my past 5 years of experience and my new skills to
 8. State Management (ngRx basics)
 9. Error Handling and Global Interceptors
 10. Angular Material for UI Components
-11.  Performance and Security.
 
 //Ms Sql Server
 MS SQL Server
@@ -15805,7 +15688,6 @@ MS SQL Server
 7. Query Optimization and Execution Plans
 9. Data Types and Constraints
 10. Backup and Restore.
-11. Performance and Security.
 
 
 ///Soft Skills & Concepts:
@@ -16795,20 +16677,6 @@ Hashing passwords with Identity or BCrypt.
 Explanation with real-world examples.
 Role-based vs Policy-based authorization in .NET Core.
 
-///////////////////////////////////////////////////Angular Specific (Performance + Security):
-1>How do you optimize Angular applications for better performance?
-
-Lazy Loading of modules.
-Ahead-of-Time (AOT) Compilation.
-Change detection strategy (OnPush).
-
-2>How do you prevent XSS attacks in Angular?
-Angular's DOM sanitization.
-Safe navigation ([innerHTML] with caution).
-
-3>How do you handle large list rendering in Angular?
-Using ngFor with trackBy.
-Virtual scrolling for large lists.
 
 //////////////////////////////////////////
 
