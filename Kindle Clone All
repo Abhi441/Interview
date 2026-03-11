@@ -20,70 +20,11 @@
 
 
 
-what is virtual method in c#
-what are Anonymous type in c#
-what is the file handling in c#
-What are the type of classes in c#
 
 
-Great that you asked this, Abhishek 👍 because this is a classic real-world scenario interview question. Let me explain step by step in super easy words how Authorization works in your Buy & Sale Property Application.
 
-1️⃣ First Step – Authentication (Who are you?)
-When the user logs in (Buyer, Seller, or Admin), they enter username + password.
-The backend checks in the database if the credentials are correct.
-If correct, the backend issues a JWT Token that contains user info + role (Buyer, Seller, Admin).
-👉 Example of JWT payload:
 
-{
-  "id": 101,
-  "username": "abhishek",
-  "role": "Admin",
-  "exp": 1736022000
-}
-2️⃣ Second Step – Token Sent with Requests
-Every time the frontend (Angular) calls an API (like /properties, /transactions), it attaches the JWT token in the request header:
-Authorization: Bearer eyJhbGciOiJIUzI1...
-3️⃣ Third Step – Authorization (What can you do?)
-Now the backend checks the role inside the token.
-Based on the role, it allows or denies access.
-👉 Example in .
-NET Core API:
 
-[Authorize(Roles = "Admin")]
-[HttpPost("approve-property")]
-public IActionResult ApproveProperty(int propertyId)
-{
-    // Only admin can approve properties
-    return Ok("Property approved!");
-}
-
-[Authorize(Roles = "Seller")]
-[HttpPost("add-property")]
-public IActionResult AddProperty(Property property)
-{
-    // Only sellers can add property
-    return Ok("Property added!");
-}
-
-[Authorize(Roles = "Buyer,Seller")]
-[HttpGet("view-properties")]
-public IActionResult GetProperties()
-{
-    // Both buyers and sellers can view properties
-    return Ok();
-}
-4️⃣ Example Flow in Your App
-Buyer logs in → gets token with role = "Buyer".
-They can search, view properties, chat with sellers, but cannot approve or reject listings.
-Seller logs in → gets token with role = "Seller".
-They can add new property, update price, but cannot view payment reports.
-Admin logs in → gets token with role = "Admin".
-They can approve/reject properties, manage users, view reports.
-🎯 Interview-Friendly Short Answer
-👉 “In my property buy/sell app, we use JWT Authentication to identify the user. The JWT contains the role (Buyer, Seller, Admin). On each API call, the backend checks this role and applies [Authorize(Roles="...")].
-This way, the application knows who the user is and what they are allowed to do. For example, only admins can approve listings, only sellers can add properties, and buyers can only view and purchase properties.”
-
-Would you like me to also show you step-by-step Angular code (like how you store the JWT in localStorage and check role in guards for routing)? That’s another interview follow-up they usually ask.
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////State Management
