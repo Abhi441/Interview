@@ -13,6 +13,7 @@ OBJECT - An object is an INSTANCE of a class.
 ->It occupies memory and can have unique value for its properties.
 
 
+
 //Real-World Example
 Example 1 : Car Blueprint
 Class : A blueprint of a Car defines.
