@@ -39,6 +39,7 @@ Explain the replicated in SQL Server
 Define the referential integration.
 What are TCL Command? and List down the the TCL Command available on SQL Server ?
 Write a SQL Server Query to get the letter 'e' in the name 'Jenna' from  the student table.
+
 As a SQL developer , how will you ensure that SQL server-based application  and database perform well ?
 when should Server-based cursors be used ?   .       
 What do you know about scheduled tasks in SQL Server ?  
