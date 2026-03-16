@@ -7956,11 +7956,74 @@ SET Status = CASE
 /////////////////////////////////////////////
 
 //////////////////////////////////////////////Give an example of a function in an SQL server that return the first non-null expression from more than one coloum in argument.
-Explain the one-to-many relationship in the SQL Server database.
-what is the significance of CHECK in SQL Server ?
-What is the significance of CHECK in SQL Server ?
-When the records be deleted from a view in SQL Server ?
-List down some of the feature of MS SQL Server ?
+The function in Microsoft SQL Server that returns the first non-NULL value from multiple columns is COALESCE.
+Simple Definition (very easy words)
+COALESCE() → returns the first value that is not NULL from a list of columns.
+Think like this:
+If the first value is empty, check the next one, then the next one, until a value is found.
+Syntax
+SQL
+COALESCE(column1, column2, column3, ...)
+It checks from left → right and returns the first non-NULL value.
+Example Table
+Student table
+Id
+Phone1
+Phone2
+Phone3
+1
+NULL
+9876543210
+NULL
+2
+NULL
+NULL
+8888888888
+3
+9999999999
+8888888888
+7777777777
+Query
+SQL
+SELECT 
+Id,
+COALESCE(Phone1, Phone2, Phone3) AS ContactNumber
+FROM Student;
+Output
+Id
+ContactNumber
+1
+9876543210
+2
+8888888888
+3
+9999999999
+Explanation:
+Row1 → Phone1 is NULL → takes Phone2
+Row2 → Phone1 NULL → Phone2 NULL → takes Phone3
+Row3 → Phone1 already has value → returns it
+Real Project Use (very common)
+Suppose a customer table has multiple contact fields:
+SQL
+Email
+Phone
+AlternatePhone
+You want one contact value.
+SQL
+SELECT 
+CustomerName,
+COALESCE(Email, Phone, AlternatePhone) AS Contact
+FROM Customers;
+One-line Interview Answer
+COALESCE() function returns the first non-NULL value from multiple expressions.
+Example:
+SQL
+SELECT COALESCE(column1, column2, column3)
+FROM TableName;
+If you want, I can also explain the difference between COALESCE() and ISNULL(), which is a very common SQL Server interview question.
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////List down some of the feature of MS SQL Server ?
 Which command can be used to get the version of SQL Server ?
 Explain the replicated in SQL Server
 Define the referential integration.
