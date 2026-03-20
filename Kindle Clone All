@@ -6552,6 +6552,11 @@ Show quoted text
 //////////////////////////////Routing
 //////////////////////////////RxJx
 //////////////////////////////HTTP/API Integration
+////////////////////////////////////////
+////////////////////////////////////////Styling /UI /CSS
+////////////////////////////////////////
+
+CSS is normal styling, while SCSS is an Advanced version of css that supports variable, nesting and reusable code 
 ///////////////////////////////
 ///////////////////////////////State Management
 /////////////////////////////////
@@ -9417,7 +9422,7 @@ import { Component } from '@angular/core';
 
   templateUrl: './status-message.component.html',
 
-  styleUrls: ['./status-message.component.css']
+  styleUrls: ['./status-message.component.']
 
 })
 
@@ -9481,7 +9486,7 @@ export class StatusMessageComponent {
 
 
 
-✅ Step 3: CSS → status-message.component.css
+✅ Step 3:  → status-message.component.css
 
 
 
