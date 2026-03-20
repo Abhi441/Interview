@@ -2814,6 +2814,8 @@ FUNCTION
 ->we can not call store Procedure inside the function.
 ->we can can not write try , catch , block in function.
 -> you can not write the ddl operation for function.
+
+///////////////////////////////////////////////////////////////////when to use the store Procedure and Function
 ////////////////////////////////////////////////////////////////////////87)
 HOW TO OPTIMIZE A STORED PROCEDURE OR SQL QUERY? 
 Below are some techniques to optimize a stored procedure: 
