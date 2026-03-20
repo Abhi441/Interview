@@ -20735,6 +20735,19 @@ Monitoring and logging
 /////////////////////////////////////ARM
 Central to how you manage Azure resourses.
 link : https://www.youtube.com/watch?v=D0_jF3LpEfQ
+
+What is ARM in Azure?
+✅ Smallest Answer (use when interviewer wants quick answer)
+ARM is the service in Azure that helps us create and manage resources like App Service, VM, and database.
+✅ Medium Answer (best for 5–8 years interview)
+Azure Resource Manager (ARM) is the management layer of Azure that allows us to create, update, and manage resources using templates, portal, or APIs. It helps in organizing resources and deploying them in a structured way.
+✅ Detailed Answer (when interviewer goes deeper)
+Azure Resource Manager (ARM) is the core management service in Azure that handles all resource creation and management. It uses ARM templates (JSON files) to define infrastructure as code, so we can deploy resources like virtual machines, databases, and app services in a repeatable and automated way.
+It also provides features like:
+Resource grouping
+Role-based access control (RBAC)
+Dependency management between resources
+Consistent deployment through templates
 //////////////////////////////////////////////////////////Azure Function
 Serverless event-driven logic.
 link : https://www.youtube.com/watch?v=uJyoMEjlahM
