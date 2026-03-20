@@ -6730,6 +6730,39 @@ One-Line Interview Answer
 Array.Clone() creates a shallow copy of the array and returns a new array object with the same elements.
 
 //////////////////////////////////////////////////////////////////////////////////////////what are Anonymous type in c#
+What is Anonymous Type in C#?
+✅ Smallest Answer (quick answer)
+Anonymous type allows us to create an object without defining a class.
+✅ Medium Answer (best for 5–8 years interview)
+Anonymous types in C# allow us to create objects without explicitly defining a class. The compiler automatically creates the type based on the properties we define, and they are mostly used in LINQ queries.
+✅ Detailed Answer (when interviewer goes deeper)
+Anonymous types are a feature in C# that allow developers to create temporary objects without creating a class. The compiler automatically generates the class with read-only properties based on the values assigned.
+They are commonly used in LINQ queries when we want to shape or project data into a new form without creating a separate model class.
+Example:
+Creating a temporary object with selected properties
+Returning only required fields from a query
+Limitations:
+Properties are read-only
+Scope is limited (cannot be returned easily from methods)
+Type name is not accessible directly
+💻 Code Example
+C#
+var person = new 
+{
+    Name = "Abhishek",
+    Age = 28
+};
+
+Console.WriteLine(person.Name); // Output: Abhishek
+🧠 LINQ Example (very important)
+C#
+var result = employees
+             .Select(e => new { e.Name, e.Salary });
+Here:
+No class is created
+Only required fields are selected
+🎯 One-line memory trick
+Anonymous Type = “Object without class”
 //////////////////////////////////////////////////////////////////////////////////////////what is the file handling in c#
 /////////////////////////////////////////////////////////////////////////////////////////What are the type of classes in c#
 
