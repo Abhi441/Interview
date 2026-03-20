@@ -20718,6 +20718,20 @@ Complexity: O(n)
 /////////////////////////////////////What is Azure App Services
 PaaS for Hosting Services.
 link : https://www.youtube.com/watch?v=pL2alDLo_no
+
+What is Azure App Service?
+✅ Smallest Answer (use when interviewer wants quick answer)
+Azure App Service is a cloud platform where we can deploy and run web applications, APIs, and backend services without managing servers.
+✅ Medium Answer (most useful in interviews – 5–8 yrs level)
+Azure App Service is a fully managed platform provided by Microsoft where we can host web applications, REST APIs, and backend services. It handles infrastructure like servers, scaling, and maintenance, so developers can focus only on code. It also supports features like auto-scaling, deployment from Git, and built-in security.
+✅ Detailed Answer (when interviewer goes deep)
+Azure App Service is a Platform as a Service (PaaS) offering by Microsoft that allows developers to build, deploy, and scale web apps and APIs without managing infrastructure. It supports multiple languages like .NET, Node.js, Java, and Python.
+It provides built-in features such as:
+Auto scaling based on traffic
+CI/CD integration with Git and pipelines
+Authentication and authorization
+Custom domains and SSL
+Monitoring and logging
 /////////////////////////////////////ARM
 Central to how you manage Azure resourses.
 link : https://www.youtube.com/watch?v=D0_jF3LpEfQ
