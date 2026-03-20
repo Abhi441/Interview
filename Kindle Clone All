@@ -2816,6 +2816,8 @@ FUNCTION
 -> you can not write the ddl operation for function.
 
 ///////////////////////////////////////////////////////////////////when to use the store Procedure and Function
+Use Stored Procedure when you want to perform operation like insert , update , delete or multiple steps.
+Use Function when you want to return a value and use it inside a query.
 ////////////////////////////////////////////////////////////////////////87)
 HOW TO OPTIMIZE A STORED PROCEDURE OR SQL QUERY? 
 Below are some techniques to optimize a stored procedure: 
