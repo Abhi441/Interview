@@ -11,11 +11,17 @@ ctr + shift + p
 5) Solid Preciple , Design patter , Creating Api (frontend ,backend , database). ,  Prepare for all the coding question that you have incounter(security + performance), cors, cross question. AI innterview question
 6)EF and Ado.net.
 
+//How to use this file
+All the index  
+All the question
+All the Answer
 
+->All the question diffrent section is divided by //// and sub section /// then sub section //  and any where question /
 
 
 
 //////////////////Correct Structure
+/// System Design / Architecture and Solid Principle
 /// Frontend
 /// Backend
 /// Database
@@ -105,6 +111,7 @@ Backend (.NET Core)
 │ ├ OOP
 │ ├ Collections
 │ ├ Generics
+  |-File Handling 
 │ ├ Delegates / Events
 │ ├ LINQ
 │ ├ Async / Await
@@ -189,6 +196,1189 @@ Cloud (Azure)
 
 
 
+//////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////All the Question
+////////////////////////////////////////////////////////////////////////////////////////
+
+
+///
+//System Design / Architecture
+///
+///
+
+///
+///Microservices
+///
+
+//How you have implemented Microservices.(UI)
+//Microservices (Backend)
+//Diffrence between Monolotic and Microservices.
+
+
+///
+///
+///Angular
+///
+
+///
+///Angular Basic
+///
+
+///
+///Component
+///
+
+//What are various ways to communicate between the component. 
+
+///
+///Directives
+///
+
+//what is Directive(both the answer keep it )
+//Create a custom Angular directive to convert color of highlighted text to green?
+//What is *ngIf Structural Directive?
+//What is *ngFor Structural Directive?
+//What is *ngSwitch Structural Directive?
+//What is [ngStyle] Attribute Directive?
+//What is [ngClass] Attribute Directive?
+//What is the difference between Component, Structural, and Attribute Directives?
+
+
+///
+///pipes
+///
+
+//final pipes
+//Async Pipes
+//Custum pipes  
+
+////
+///Data Binding
+///
+
+///
+/// TrackBy
+
+//what is TrackBy
+
+///
+///Routing
+///
+
+//
+//Lazy Loading
+
+//what is Lazy Loading in Angular?(this is correct inside the topics)
+
+////
+///RxJx
+///
+
+
+////Subjective Observable
+/////HTTP/API Integration 
+
+///
+///Dependency Injection
+///  
+
+//What is Dependency Injection in Angular ?
+
+///
+///Styling /UI /CSS
+/// 
+
+//CSS is normal styling, while SCSS is an Advanced version of css that supports variable, nesting and reusable code.
+
+////
+////State Management
+///  
+
+//Redux 
+//State Management
+//How many type of state management will be their in Angular ?
+//Signal
+
+
+
+////
+///Change Detection
+/// 
+
+//OnPuch Change Detection 
+
+///
+///Performance Optimization
+/// 
+
+//Optiming Imaze And Assets
+
+///
+///Authentication And Autherisation
+///
+
+//
+//Interceptors
+
+//what is the interceptor,When and why we should use 
+//What is an HTTP Interceptor in Angular?
+//Why & When to Use Interceptor?
+//Error handling via HttpInterceptor
+//15. How do you handle global API errors in Angular using interceptors?
+//3.How to implement HTTP Interceptor in Angular?
+// Error Handling and Global Interceptors
+//How does Authenticaton and Autherisation work in Angular.
+//How does the form work in Angular?
+
+
+///
+/// Testing
+/// 
+
+///
+/// General Question
+/// 
+
+////what are challenging task ou have done in Angular.
+
+
+///
+///
+///Backend
+/// 
+
+///
+/// c#
+/// 
+
+//What are the Main Concept of OOPS ? WHAT ARE CLASSES AND OBJECTS ?
+//What is Inheritance ? Why INHERITANCE IS IMPORTANT ?
+//What are the diffrence type of inheritance ?
+//why c# doesnot uses multiple inheritance
+//HOW TO PREVENT A CLASS FROM BEING INHERITED?
+//WHAT IS ABSTRACTION?
+//what is encapsulation.
+////WHAT IS POLYMORPHISM AND WHAT ARE ITS TYPES? 
+////What is Method Overloading ? In How many ways a methods can be overloaded ?
+/// //WHAT IS THE DIFFERENCE BETWEEN OVERLOADING AND OVERRIDING?
+//What is the diffrence between An Abstract class and An Interface ?
+//WHEN TO USE INTERFACE AND WHEN ABSTRACT CLASS? 
+//18 Boxing and UnBoxing
+//Difference between ArrayList and Hashtable in C#
+//what is Extensition Methods 
+//What is the constructor chaining.
+//what the diffrence between the Arrays.CopyTo() and Array.Clone()?
+////What are the type of classes in c#
+///what is the diffrence between the Is and As operators in c#
+
+
+/////
+//////Generic
+
+////Explain Generics in C# ? When And why to use Them ?
+//What are Generics in C#?
+//
+
+/////
+////File Handling
+
+//what is the file handling in c#
+
+//
+//Deligate
+
+//what is Deligate
+//What is use of delegate
+////What is Multiple delegate
+///What are ANonymous delegate in C#
+///What is the diffrence between Events And Delegate.
+/////what are Anonymous type in c#
+
+
+
+
+
+
+
+//
+//Angular Basic
+//
+//
+
+Q1. What is Angular?
+
+Q2. What are Angular advantages?
+
+Q3. What is the difference between AngularJS and Angular?
+
+Q4. What is NPM?
+
+Q5. What is CLI tool?
+
+Q6. What is Typescript? What are the advantages of Typescript over Javascript?
+
+Q7. Where to store static files in Angular project?
+
+Q8. What is the role of Angular.json file in Angular?
+
+Q9. What is the difference between JIT and AOT in Angular?
+
+
+///
+/// Components & Modules
+/// 
+/// 
+
+
+Q10. What are Components in Angular?
+
+Q11. What is a Selector and Template?
+
+Q12. What is Module in Angular? What is app.module.ts file?
+
+Q13. How an Angular App gets Loaded and Started? What are index.html, app-root, selector and main.ts?
+
+Q14. What is a Bootstrapped Module & Bootstrapped
+
+
+///
+/// Data Binding
+/// 
+/// 
+
+
+
+Q15. What is Data Binding in Angular?
+
+Q16. What is String Interpolation in Angular?
+
+Q17. What is Property Binding in Angular?
+
+Q18. What is Event Binding in Angular?
+
+Q19. What is Two way Binding in Angular?
+
+///
+///Directives
+/// 
+/// 
+
+
+
+Q20. What are Directives? What are the type of directives?
+
+Q21. What is *nglf Structural directive?
+
+Q22. What is "ngFor Structural directive?
+
+Q23. What is "ngSwitch Structural directive?
+
+Q24. What is [ngStyle] Attribute directive?
+
+Q25. What is [ngClass] Attribute directive?
+
+Q26. What is the difference between Component, Attribute and Structural Directives?
+
+
+///
+///Decorator & Pipes
+/// 
+/// 
+
+
+
+Q27. What is Decorator?
+
+Q28. What are the types of Decorator?
+
+Q29. What are Pipes? What are the types of Pipes & Parameterized Pipes?
+
+Q30. What is Chaining Pipes?
+
+
+///
+///Services & Depsp&nisependency
+/// 
+/// 
+
+
+
+
+Q31. Explain Services with Example?
+
+Q32. How to create Servicein Angular?
+
+Q33. How to use Dependency Injector with Services in Angular?
+
+Q34. What is Hierarchical Dependency Injection?
+
+Q35. What is Provider in Angular?
+
+Q36. What is the role of @Injectable Decorator in a Service?
+
+
+
+
+///
+///Decorators & Lifecycle-Hooks
+/// 
+/// 
+
+Q37. What are Parent-Child Components?
+
+Q38. What is @Input Decorator? How to transfer data from Parent component to Child component?
+
+Q39. What is @Output Decorator and Event Emitter?
+
+Q40. What are Lifecycle Hooks in Angular?
+
+Q41. What is a Constructor in Angular?
+
+Q42. What is ngOnChanges life cycle hook in Angular?
+
+Q43. What is ngOnInit life cycle hook in Angular?
+
+Q44. What is the difference between constructor and ngOnintit
+
+
+///
+///Routing
+/// 
+/// 
+
+
+
+Q45. What is Routing? How to setup Routing?
+
+Q46. What is router outlet?
+
+Q47. What are router links?
+
+
+
+
+
+
+///
+///Observables/HttpClient/RxJS
+///
+///
+ 
+
+Q48. What are Asynchronous operations?
+
+Q49. What is the difference between Promise and Observable?
+
+Q50. What is RxJS?
+
+051. What is Observable? How to implement Observable
+
+Q52. What is the role of HttpClient in Angular?
+
+Q53. What are the steps for fetching the data with HttpClient & Observable?
+
+Q54. How to do HTTP Error Handling in Angular?
+
+
+///
+///Typescript-Basics
+/// 
+/// 
+
+
+Q55. What is Typescript? Or What is the difference between Typescript and Javascript?
+
+Q56. How to install Typescript and check version?
+
+Q57. What is the difference between let and var keyword?
+
+Q58. What is Type annotation?
+
+Q59. What are Built in/ Primitive and User-Defined/Non-primitive Types in Typescript?
+
+Q60. What is "any" type in Typescript?
+
+Q61. What is Enum type in Typescript?
+
+Q62. What is the difference between void and never types in Typescript?
+
+Q63. What is Type Assertion in Typescript?
+
+Q64. What are Arrow Functions in Typescript?
+
+
+
+///
+///Angular FormAngular Forms
+/// 
+/// 
+
+Q75. What are Angular Forms? What are the type of Angular Forms?
+
+Q76. What is the difference between Template Driven Forms & Reactive Forms?
+
+Q77. How to setup Template Driven Forms?
+
+Q78. How to apply Required field validation in template driven forms?
+
+Q79. What is Form Group and Form Control in Angular?
+
+Q80. How to setup Reactive Forms?
+
+Q81. How to do validations in reactive forms?
+
+
+///
+/// Authentication/JWT Atticard/W/Auth/Gurad/ HTTP Interceptor
+/// 
+/// 
+
+Q82. What is Authentication & Authorization in Angular?
+
+Q83. What is JWT Token Authentication in Angular?
+
+Q84. How to Mock or Fake an API for JWT Authentication?
+
+Q85. How to implement the Authentication with JWT in Angular?
+
+Q86. What is Auth Guard?
+
+Q87. What is HTTP Interceptor?
+
+Q88. How to Retry automatically if there is an error response from API?
+
+Q89. What are the parts of JWT Token?
+
+Q90. What is Postman?
+
+Q91. Which part of the request has the token stored when sending to API?
+
+///
+///Components Communinting Communication
+/// 
+/// 
+
+
+
+Q92. What are the various ways to communicate between the components?
+
+Q93. What is ContentProjection? What is <ng-content>?
+
+Q94. What is Template Reference Variable in Angular?
+
+Q95. What is the role of ViewChild in Angular?
+
+Q96. How to access the child component from parent component with ViewChild?
+
+Q97. What is the difference between ViewChild and ViewChildren? What is QueryList?
+
+Q98. What is ContentChild?
+
+Q99. What is the difference between ContentChild & ContentChildren?
+
+Q100. Compare ng-Content, ViewChild, ViewChildren, ContentChild & ContentrChildren?
+
+
+////////////////
+///////////////Backend
+//////////////
+//////////////
+
+
+
+///////
+//////OOPS/C#
+///////
+
+
+01. WHAT ARE THE MAIN CONCEPTS OF OOPS? WHAT ARE CLASSES AND OBJECTS?
+
+02. WHAT IS INHERITANCE? WHY INHERITANCE IS IMPORTANT?
+
+Q3. WHAT ARE THE DIFFERENT TYPES OF INHERITANCE?
+
+04. HOW TO PREVENT A CLASS FROM BEING INHERITED?
+
+Q5. WHAT IS ABSTRACTION?
+
+06. WHAT IS ENCAPSULATION?
+
+Q7. WHAT IS POLYMORPHISM AND WHAT ARE ITS TYPES?
+
+Q8. WHAT IS METHOD OVERLOADING? IN HOW MANY WAYS A METHOD CAN BE OVERLOADED?
+
+09. WHAT IS THE DIFFERENCE BETWEEN OVERLOADING AND OVERRIDING?
+
+010. WHAT IS THE DIFFERENCE BETWEEN METHOD OVERRIDING AND METHOD HIDING?
+
+011. WHAT ARE THE ADVANTAGES AND LIMITATIONS OF OOPS?
+
+012. WHAT IS THE DIFFERENCE BETWEEN AN ABSTRACT CLASS AND AN INTERFACE?
+
+013. WHEN TO USE INTERFACE AND WHEN ABSTRACT CLASS?
+
+014. WHY TO EVEN CREATE INTERFACES?
+015. DO INTERFACE CAN HAVE A CONSTRUCTOR?
+
+016. CAN YOU CREATE AN INSTANCE OF AN ABSTRACT CLASS OR AN INTERFACE?
+
+017. WHAT ARE ACCESS SPECIFIERS? WHAT IS THE DEFAULT ACCESS MODIFIER IN A CLASS?
+
+WHAT IS BOXING AND UNBOXING? 018.
+
+019. WHAT IS THE DIFFERENCE BETWEEN “STRING" AND "STRINGBUILDER"? WHEN TO USE WHAT?
+
+020. WHAT ARE THE BASIC STRING OPERATIONS IN C#?
+
+021. WHAT ARE NULLABLE TYPES?
+
+022. EXPLAIN GENERICS IN C#? WHEN AND WHY TO USE THEM?
+
+023. HOW TO IMPLEMENT HANDLING IN C#? EXCEPTION
+
+024. CAN WE EXECUTE MULTIPLE CATCH BLOCKS?
+
+025. WHAT IS A FINALLY BLOCK AND GIVE AN EXAMPLE WHEN TO USE IT?
+
+026. CAN WE HAVE ONLY "TRY" BLOCK WITHOUT "CATCH" BLOCK?
+
+027. WHAT IS THE DIFFERENCE BETWEEN "THROW EX" AND "THROW"?
+
+028. WHAT ARE THE LOOP TYPES IN C#?
+
+029. WHAT IS THE DIFFERENCE BETWEEN "CONTINUE" AND "BREAK" STATEMENT?
+
+030. WHAT IS THE DIFFERENCE BETWEEN ARRAY AND ARRAYLIST?
+
+031. WHAT IS THE DIFFERENCE BETWEEN ARRAYLIST AND HASHTABLE?
+
+032. WHAT ARE COLLECTIONS IN C# AND WHAT ARE THEIR TYPES?
+
+033. WHAT IS IENUMERABLE IN C#?
+
+034. WHAT IS THE DIFFERENCE BETWEEN IENUMERABLE AND IENUMERATOR IN C#?
+
+035. WHAT IS THE DIFFERENCE BETWEEN IENUMERABLE AND IOUERYABLE IN C#? WHY TO USE IQUERYABLE IN SQL QUERIES?
+
+036. WHAT IS THE DIFFERENCE BETWEEN "OUT" AND "REF" PARAMETERS?
+
+037. WHAT IS THE PURPOSE OF "PARAMS" KEYWORD?
+
+038. WHAT IS A CONSTRUCTOR AND WHAT ARE ITS TYPES?
+
+039. WHEN TO USE PRIVATE CONSTRUCTOR?
+
+040. WHAT ARE EXTENSION METHODS IN C#? WHEN TO USE THEM?
+
+041. WHAT YOU MEAN BY DELEGATE? WHEN TO USE THEM?
+
+042. WHAT ARE MULTICAST DELEGATES?
+
+043. WHAT ARE ANONYMOUS DELEGATES IN C#?
+
+044. WHAT ARE THE DIFFERENCES BETWEEN EVENTS AND DELEGATES?
+
+045. WHAT IS "THIS" KEYWORD IN C#? WHEN TO USE IT?
+
+046. WHAT IS THE PURPOSE OF "USING" KEYWORD IN C#?
+
+047. WHAT IS THE DIFFERENCE BETWEEN "IS" AND "AS" OPERATORS?
+
+048. WHAT IS THE DIFFERENCE BETWEEN "READONLY" AND "CONSTANT" VARIABLES?
+
+049. IT? WHAT IS "STATIC" CLASS? WHEN TO USE
+
+050. WHAT IS THE DIFFERENCE BETWEEN "VAR" AND "DYNAMIC" IN C#?
+
+051. WHAT IS ENUM KEYWORD USED FOR?
+
+////
+////.NET FRAMEWORK
+/////
+//////
+
+052. WHAT ARE THE IMPORTANT COMPONENTS OF .NET FRAMEWORK? WHAT ARE THEIR ROLES?
+
+053. WHAT IS AN ASSEMBLY? WHAT ARE THE DIFFERENT TYPES OF ASSEMBLY IN.NET?
+
+054. WHAT IS GAC?
+
+055. WHAT IS GARBAGE COLLECTION(GC)?
+
+056. WHAT ARE GENERATIONS IN GARBAGE COLLECTION?
+
+057. WHAT IS THE DIFFERENCE BETWEEN "DISPOSE" AND "FINALIZE"?
+
+058. WHAT IS THE DIFFERENCE BETWEEN "FINALIZE" AND "FINALLY" METHODS?
+
+059. CAN WE FORCE GARBAGE COLLECTOR TO RUN?
+
+060. WHAT IS THE DIFFERENCE BETWEEN PROCESS AND THREAD?
+
+061. EXPLAIN MULTITHREADING?
+
+062. WHAT IS THE DIFFERENCE BETWEEN THREADS AND TASKS?
+
+063. WHAT IS THE ASYNC AND AWAIT IN TASK?
+
+064. WHAT IS REFLECTION?
+
+065. WHAT IS SERIALIZATION?
+
+066. WHAT IS MEANT BY GLOBALIZATION AND LOCALIZATION?
+
+067.WHAT ARE WINDOW SERVICES?
+
+///////
+//////SQL
+//////
+/////
+
+068. WHAT IS THE DIFFERENCE BETWEEN DBMS AND RDBMS?
+
+069.
+
+WHAT IS A CONSTRAINT IN SOL? WHAT ARE ITS TYPES.
+
+070.
+
+WHAT IS THE DIFFERENCE BETWEEN PRIMARY KEY AND UNIQUE KEY?
+
+071. WHAT ARE TRIGGERS AND TYPES OF TRIGGERS?
+
+072.
+
+WHAT IS A VIEW?
+
+073. WHAT IS THE DIFFERENCE BETWEEN HAVING CLAUSE AND WHERE CLAUSE?
+
+074. WHAT IS SUB QUERY OR NESTED QUERY OR INNER QUERY IN SOL?
+
+075. WHAT IS AUTO INCREMENT/ IDENTITY COLUMN IN SOL SERVER?
+
+076.
+
+WHAT ARE JOINS IN SOL?
+
+077. WHAT ARE THE TYPES OF JOINS IN SOL SERVER?
+
+078. WHAT IS SELF-JOIN?
+
+079. WRITE A SQL QUERY TO FETCH ALL THE EMPLOYEES WHO ARE ALSO MANAGERS?
+
+080. WHAT ARE INDEXES IN SQL SERVER?
+
+081. WHAT IS CLUSTERED INDEX?
+
+082.
+
+WHAT IS NON-CLUSTERED INDEX?
+
+083. WHAT IS THE DIFFERENCE BETWEEN CLUSTERED AND NON-CLUSTERED INDEX?
+
+084. HOW TO CREATE CLUSTERED AND NON-CLUSTERED INDEX IN A TABLE?
+
+085. IN WHICH COLUMN YOU WILL APPLY THE INDEXING TO OPTIMIZE THIS QUERY.
+
+086. WHAT IS THE DIFFERENCE BETWEEN STORED PROCEDURE AND FUNCTIONS?
+
+087. HOW TO OPTIMIZE A STORED PROCEDURE OR SOL QUERY?
+
+088. WHAT IS A CURSOR? WHY TO AVOID THEM?
+
+089. WHAT IS THE DIFFERENCE BETWEEN SCOPE IDENTITY AND @@IDENTITY?
+
+090. WHAT IS CTE IN SOL SERVER?
+
+091. WHAT IS THE DIFFERENCE BETWEEN DELETE, TRUNCATE AND DROP COMMANDS?
+
+092. HOW TO GET THE NTH HIGHEST SALARY OF AN EMPLOYEE?
+
+WHAT ARE ACID PROPERTIES? 093.
+
+094.
+
+WHAT ARE MAGIC TABLES IN SOL SERVER?
+
+////////
+/////// ASP.NET MVC
+////////
+///////
+
+095. WHAT IS MVC (MODEL CONTROLLER)? EXPLAIN MVC LIFE CYCLE. VIEW
+
+096. WHAT ARE THE ADVANTAGES OF MVC OVER WEB FORMS?
+
+097. WHAT ARE THE DIFFERENT RETURN TYPES OF A CONTROLLER ACTION METHOD?
+
+098. WHAT ARE FILTERS AND THEIR TYPES IN MVC?
+
+099. WHAT IS AUTHENTICATION AND AUTHORIZATION IN ASP.NET MVC?
+
+0100. WHAT ARE THE TYPES OF AUTHENTICATION IN ASP.NET MVC?
+
+0101. WHAT IS OUTPUT CACHING IN MVC? HOW TO IMPLEMENT IT?
+
+WHAT IS THE DIFFERENCE BETWEEN 0102. VIEWDATA, VIEWBAG & TEMPDATA?
+
+0103. HOW CAN WE PASS THE DATA FROM CONTROLLER TO VIEW IN MVC?
+
+0104. WHAT IS PARTIAL VIEW?
+
+0105. WHAT ARE AREAS IN MVC?
+
+0106. HOW VALIDATION WORKS IN MVC?
+
+0107. EXPLAIN THE CONCEPT OF MVC SCAFFOLDING?
+
+0108. WHAT
+
+IS BUNDLING AND MINIFICATION IN MVC?
+
+0109. HOW TO IMPLEMENT SECURITY IN WEB APPLICATIONS IN MVC?
+
+/////////////
+/////////////ASP.NET WEBFORMS
+////////////
+///////////
+
+
+Q110.
+
+WHAT ARE THE EVENTS IN PAGE LIFE CYCLE? IN WHICH EVENT ARE THE CONTROLS FULLY LOADED?
+
+WHAT IS THE DIFFERENCE BETWEEN 0111. SERVER.TRANSFER() AND RESPONSE.REDIRECT()?
+
+0112. WHERE THE VIEWSTATE IS STORED AFTER THE PAGE POSTBACK?
+
+0113. WHAT ARE THE DIFFERENT TYPES OF CACHING?
+
+0114. WHAT ARE THE DIFFERENT SESSION STATE MANAGEMENT OPTIONS AVAILABLE IN ASP.NET?
+
+0115. WHAT IS COOKIE LESS SESSION?
+
+0116. HOW TO FORCE ALL THE VALIDATION CONTROLS TO RUN IN A PAGE IN WEB FORMS?
+
+//////////
+/// ///////ADO.NET
+///////////
+///////////
+
+0117.
+
+WHAT ARE THE MAIN COMPONENTS OF ADO.NET?
+
+0118.
+
+WHAT IS CONNECTED ARCHITECTURE AND DISCONNECTED ARCHITECTURE?
+
+0119. WHAT ARE THE DIFFERENT EXECUTE METHODS OF ADO.NET?
+
+0120.
+
+WHAT ARE THE AUTHENTICATION TECHNIQUES USED TO CONNECT TO SQL SERVER?
+
+
+///////////
+///////////ENTITY FRAMEWORK
+///////////
+//////////
+
+
+
+
+
+0121. WHAT IS ORM? WHAT ARE THE DIFFERENT TYPES OF ORM?
+
+0122. WHAT IS ENTITY FRAMEWORK?
+
+0123. HOW WILL YOU DIFFERENTIATE
+
+ADO.NET FROM ENTITY FRAMEWORK?
+
+Q124.
+
+HOW ENTITY FRAMEWORK WORKS? OR HOW TO SETUP EF?
+
+Q125.
+
+WHAT IS MEANT BY DBCONTEXT AND DBSET?
+
+Q126.
+
+WHAT ARE THE DIFFERENT TYPES OF APPROACHES USED IN ENTITY FRAMEWORK?
+
+0127. WHAT IS THE DIFFERENCE BETWEEN LINO TO SOL AND ENTITY FRAMEWORK?
+
+
+////////////
+////////////DESIGN PATTERNS & SOLID PRINCIPLES
+///////////
+/// ///////
+
+
+
+
+0128.
+
+WHAT ARE SOLID PRINCIPLES? WHAT IS THE DIFFERENCE BETWEEN SOLID PRINCIPLES AND DESIGN PATTERNS?
+
+Q129.
+
+WHAT IS SINGLE RESPONSIBILITY PRINCIPLE?
+
+Q130. WHAT IS OPEN-CLOSED PRINCIPLE?
+
+0131.
+
+WHAT IS LISKOV SUBSTITUTION
+
+PRINCIPLE?
+
+0132. WHAT IS INTERFACE SEGREGATION PRINCIPLE?
+
+0133. WHAT IS DEPENDENCY INVERSION PRINCIPLE?
+
+0134.
+
+WHAT IS DRY PRINCIPLE?
+
+0135. WHAT ARE DESIGN PATTERNS AND WHAT PROBLEM THEY SOLVE?
+
+0136.
+
+WHAT ARE THE TYPES OF DESIGN
+
+PATTERNS?
+
+0137. PATTERNS? WHAT ARE CREATIONAL DESIGN
+
+0138. WHAT ARE STRUCTURAL DESIGN PATTERNS?
+
+0139. PATTERNS? WHAT ARE BEHAVIORAL DESIGN
+
+0140. WHAT IS SINGLETON DESIGN PATTERN?
+
+0141. HOW TO MAKE SINGLETON PATTERN
+
+THREAD SAFE?
+
+0142. WHAT IS FACTORY PATTERN? WHY TO USE FACTORY PATTERN?
+
+0143. HOW TO IMPLEMENT FACTORY
+
+METHOD PATTERN?
+
+
+///////////
+/// ///////WEB API
+/// /////////\
+/// /////////
+
+
+
+
+0144.
+
+WHAT IS WEB API? WHAT IS THE PURPOSE OF WEB API?
+
+Q145.
+
+WHAT ARE WEB API ADVANTAGES
+
+OVER WCF AND WEB SERVICES?
+
+0146. WHAT IS REST AND RESTFUL?
+
+0147. IS IT POSSIBLE TO USE WCF AS RESTFUL SERVICES?
+
+0148.
+
+WHAT ARE HTTP VERBS OR HTTP METHODS?
+
+0149. HOW TO CONSUME WEB API FROM A.NET MVC APPLICATION?
+
+0150.
+
+WHAT IS THE DIFFERENCE BETWEEN
+
+WEB API AND MVC CONTROLLER?
+
+
+0151.
+
+WHAT IS BASIC AUTHENTICATION IN
+
+WEB API?
+
+0152.
+
+WHAT IS API KEY AUTHENTICATION IN WEB API?
+
+0153.
+
+WHAT IS TOKEN BASED AUTHENTICATION?
+
+0154.
+
+WHAT IS OAUTH?
+
+Q155.
+
+WHAT IS JWT AUTHENTICATION?
+
+Q156. WHAT ARE THE PARTS OF JWT TOKEN?
+
+0157.
+
+WHERE JWT TOKEN RESIDE IN THE
+
+REQUEST?
+
+0158. HOW TO TEST WEB API? WHAT ARE THE TOOLS?
+
+0159.
+
+WHAT ARE MAIN RETURN TYPES SUPPORTED IN WEB API?
+
+0160. WHAT
+
+IS THE DIFFERENCE BETWEEN HTTPRESPONSEMESSAGE AND ІНТТРАСТІONRESULT?
+
+0161.
+
+WHAT IS CONTENT NEGOTIATION IN
+
+WEB API?
+
+0162. WHAT IS
+
+MEDIATYPEFORMATTER CLASS IN WEB API?
+
+0163.
+
+WHAT ARE RESPONSE CODES IN WEB API?
+
+Chapter 10 - .NET CORE
+
+0164.
+
+WHAT IS .NET CORE?
+
+0165.
+
+WHAT IS.NET STANDARD?
+
+0166.
+
+WHAT ARE THE ADVANTAGES OF.NET CORE OVER.NET FRAMEWORK?
+
+0167.
+
+WHAT IS THE ROLE OF PROGRAM.CS FILE IN ASP.NET CORE? OR WHAT IS CREATEHOSTBUILDER
+
+CREATEDEFAULTBUILDER?
+
+0168.
+
+WHAT IS THE ROLE OF STARTUP.CS
+
+FILE?
+
+0169.
+
+WHAT IS THE ROLE OF CONFIGURESERVICES METHOD?
+
+0170.
+
+WHAT IS THE ROLE OF CONFIGURE METHOD?
+
+0171.
+
+WHAT IS THE DIFFERENCE BETWEEN CONFIGURESERVICES & CONFIGURE METHOD?
+
+0172.
+
+WHAT IS DEPENDENCY INJECTION?
+
+0173.
+
+WHY TO USE DEPENDENCY INJECTION?
+
+OR WHAT PROBLEMS DOES DEPENDENCY INJECTION SOLVE?
+
+0174. HOW CAN WE INJECT THE DEPENDENCY INTO THE CONTROLLER?
+
+0175. WHAT ARE THE TYPES OF DEPENDENCY INJECTION?
+
+0176.
+
+HOW TO USE DEPENDENCY INJECTION IN VIEWS IN ASP.NET CORE?
+
+0177.
+
+WHAT ARE THE TYPES OF SERVICE LIFETIMES OF AN OBJECT/ INSTANCE IN ASP.NET CORE?
+
+Q178.
+
+WHAT IS ADDSINGLETON, ADDSOPED AND ADDTRANSIENT METHOD?
+
+0179. WHAT IS MIDDLEWARE IN ASP.NET
+
+CORE?
+
+0180. HOW ASP.NET CORE MIDDLEWARE IS DIFFERENT FROM HTTPMODULE?
+
+0181. WHAT IS CUSTOM MIDDLEWARE? HOW TO ADD CUSTOM MIDDLEWARE IN ASP.NET CORE?
+
+0182. WHAT IS REQUEST DELEGATE?
+
+0183.
+
+WHAT IS RUN(), USE() AND MAP()
+
+METHOD?
+
+0184.
+
+WHAT ARE THE TYPES OF HOSTING IN ASP.NET CORE? WHAT IS IN PROCESS AND OUT OF PROCESS HOSTING?
+
+0185. WHAT IS KESTREL? WHAT IS THE DIFFERENCE BETWEEN KESTREL AND IIS?
+
+0186. WHAT IS
+
+ROUTING? EXPLAIN
+
+ATTRIBUTE ROUTING IN ASP.NET CORE?
+
+0187.
+
+DESCRIBE THE COMPLETE REQUEST PROCESSING PIPELINE FOR ASP.NET CORE MVC?
+
+0188.
+
+EXPLAIN DEFAULT PROJECT
+
+STRUCTURE IN ASP.NET CORE APPLICATION?
+
+Q189.
+
+HOW ASP.NET CORE SERVE STATIC
+
+FILES?
+
+Q190. WHAT ARE THE MAIN JSON FILES AVAILABLE IN ASP.NET CORE?
+
+0191. WHAT ARE THE
+
+ROLES OF APPSETTINGS.JSON AND LAUNCHSETTING.JSON FILE IN ASP.NET CORE?
+
+Q192.
+
+WHAT IS THE DIFFERENCE BETWEEN APPSETTING.JSON AND LAUNCHSETTING.JSON
+
+FILE?
+
+0193.
+
+WHAT ARE THE VARIOUS TECHNIQUES TO SAVE CONFIGURATION SETTINGS IN ASP.NET CORE?
+
+0194. WHAT IS CACHING IN ASP.NET CORE?
+
+0195. WHAT IS IN-MEMORY CACHING & DISTRIBUTED CACHING? WHEN TO USE IN-MEMORY CACHING AND WHEN TO USE DISTRIBUTED CACHING?
+
+0196.
+
+WHAT IS CROSS-ORIGIN REQUESTS (CORS) IN ASP.NET CORE? WHY CORS RESTRICTION IS REQUIRED? HOW TO FIX CORS ERROR?
+
+0197.
+
+HOW TO HANDLE ERRORS IN ASP.NET
+
+CORE?
+
+0198.
+
+WHAT IS METAPACKAGE? WHAT IS THE NAME OF METAPACKAGE PROVIDED BY ASP.NET CORE?
+
+0199.
+
+WHAT IS THE DIFFERENCE BETWEEN.NET CORE AND .NET 5?
+
+0200. WHAT ARE RAZOR PAGES IN.NET
+
+CORE?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///
+///Backend
+///
+///
+
+
+///
+///MVC
+///
+
+///
+///State Management
+///
+
+
+///
+/// MVC
+/// 
+///
+1) What is the diffrence between ViewData,  ViewBAG And TempData.
+ 2) Q>Why ViewData require typeCasting.
 //////////////////////////////////////////////////////////////////////////////
 /// /////////////////////////////////////////////////////////////////////////System Design / Architecture
 /// ////////////////////////////////////////////////////////////////////////
@@ -846,1805 +2036,11 @@ s for Property App) so you can visualize and remember it better for interviews?
 
 
 
-//////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////All the Question
-////////////////////////////////////////////////////////////////////////////////////////
 
 
-////////////////////////////////////
-/// //////////////////////////////Backend
-/// /////////////////////////////
-/// ////////////////////////////
 
-////////////////////////////////
-/// ///////////////////////////MVC
-/// //////////////////////////
 
-////////////////////////
-/// ///////////////////State Management
 
- 1) What is the diffrence between ViewData,  ViewBAG And TempData.
- 2) Q>Why ViewData require typeCasting.
-
- 
-
-///////////////////////////////////////////////////////////////////////////////////////////////////102> What is the diffrence between ViewData,  ViewBAG And TempData
---> ViewData and ViewBag are used to pass data from CONTROLLER TO VIEW.
---> TempData is used to pass data from Controller TO Controller.
-ViewData is a dictionary object that requires typecasting and is available only for the current request.
-
-
-/////////////////////////////////////////
- /// ////////////////////////////////////Entity Framwork
- How to improve the perform of entity framework?
- How you can add two coloum in table by Entityframework?
-diffrence between  Database First, Code First , Model first in Entity framework in one line.
-Entity Framework vs ADO.NET
-What is Entity Framework Core?
-
-
-//////////////////////////////////////////////////////////////
-Q>Why ViewData require typeCasting
-
-////////////////////////////////////////////////////////////////////////////////////////////.Single() and Include()
-.Include() is used in Entity Framework(EF/EF core) to eager load relatedd entities(like a SQL JOIN) .
-.Include() = eager loading (load related data immediately).
-/////////////////////////////////////////////////////////////////////////
-How to improve the perform of entity framework?
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////How you can add two coloum in table by Entityframework
-In Entity Framework Core, you can add columns to an existing table by creating a migration and applying it to the database. Here’s how you can add two new columns to an existing table using Entity Framework in .NET Core.
-
-Step-by-Step Guide:
-1. Modify the Model
-Assume you have an existing model Employee in your project, and you want to add two new columns MiddleName and DateOfJoining.
-
-Original Model:
-
-csharp
-Copy code
-public class Employee
-{
-    public int EmployeeId { get; set; }
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
-}
-Modify the model to include the new columns:
-
-csharp
-Copy code
-public class Employee
-{
-    public int EmployeeId { get; set; }
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
-    
-    // New columns
-    public string MiddleName { get; set; }  // New column
-    public DateTime DateOfJoining { get; set; }  // New column
-}
-2. Create a Migration
-After modifying the model, you need to create a migration so that Entity Framework can update the database schema to match the model changes.
-
-Run the following command in the Package Manager Console or Terminal:
-
-bash
-Copy code
-dotnet ef migrations add AddMiddleNameAndDateOfJoiningToEmployee
-This will create a new migration file with the necessary code to add the columns to the Employee table.
-
-3. Inspect the Migration File
-The migration file will be generated in the Migrations folder. It should look something like this:
-
-csharp
-Copy code
-public partial class AddMiddleNameAndDateOfJoiningToEmployee : Migration
-{
-    protected override void Up(MigrationBuilder migrationBuilder)
-    {
-        migrationBuilder.AddColumn<string>(
-            name: "MiddleName",
-            table: "Employees",
-            type: "nvarchar(max)",
-            nullable: true);
-
-        migrationBuilder.AddColumn<DateTime>(
-            name: "DateOfJoining",
-            table: "Employees",
-            type: "datetime2",
-            nullable: false,
-            defaultValue: new DateTime(2024, 1, 1));  // Provide a default value for non-nullable column
-    }
-
-    protected override void Down(MigrationBuilder migrationBuilder)
-    {
-        migrationBuilder.DropColumn(
-            name: "MiddleName",
-            table: "Employees");
-
-        migrationBuilder.DropColumn(
-            name: "DateOfJoining",
-            table: "Employees");
-    }
-}
-The Up method adds the new columns to the table, while the Down method removes them if the migration is rolled back.
-
-4. Apply the Migration
-To apply the migration and update the database schema, run the following command:
-
-bash
-Copy code
-dotnet ef database update
-This will apply the migration, and the Employees table will now have the MiddleName and DateOfJoining columns added.
-
-Conclusion
-By following these steps, you can easily add new columns to an existing table using Entity Framework Core in .NET Core. The process involves modifying the model, creating a migration, and applying the migration to update the database schema.
-
-///////////////////////////////////////////////////////////////////////diffrence between  Database First, Code First , Model first in Entity framework in one line
-
-Sure! Here are the differences in one line each:
-
-Database First: The database schema is created first, and the code models are generated from the existing database.
-Code First: The code models are created first, and the database schema is generated from the code models.
-Model First: The conceptual model is designed first using a designer, and both the code models and database schema are generated from the model.
-
-////////////////////////////////////////////////////////////////////////////
-Entity Framework vs ADO.NET
-////////////////////////////////////////////////////////////////////////////////////
-🔹 8. What is Entity Framework Core?
-//////////////////////////////////////////////////////////////////////////////////////
-12. Why is DbContext used in Entity Framework Core for data access?
-
-
-
-////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////Interview Bit
-//////////////////////////////////////////////////////
-
-/////////////////////////////////////////////////////////////////////////1)which according to you is considered the best approach in Entity framework.
-->In real world , code-First is considered the best approach because 
--> Developers control the model using c# classes.
--> Database schema  is created/updated automatically using migration.
--> Works well with agile projects where database design keeps migrations.
--> Easier for version control(Git) since everything is in code.
-////////////////////////////////////////////////////////////////////////////2) Explain the advantages of the Entity Framework.
-Advantages
-///////////1) No need to write SQL manually
--> Normally, we have to write  long SQL quesries to fetch, insert , or update  data.
--> With EF, we can just write long c# code(dbContext.Products.ToList()) and it will generate the SQL behind the scenes.
-->Save time and reduces human errors in SQL.
-//Faster development (Productivity boost)
-->Developers can focus on business logic instead of spending hours writing and debugging  SQL queries.
-->EF provided LINQ (Language Integrated Query), which makes queries easier and type-safe.
-//Database independent (Multiple DB support)
-//Strong Types and IntelliSense support
-//Change Tracking 
-//Better for Complex Apps
-////////////////////////////////////////////////////////////////////////////////////////////////3) Describe some of the disadvantages of the entity Framework.
-//Slower than ADO.net 
-//Less control over SQL.
-//Performance issue in very large apps.
-//Learning curve 
-//Overhead(extra memory and processing).
-//////////////////////////////////////////////////////////////////////////////////////////////////4) what are the feature of the entity framework ?
-
-/////////////////////////////////////////////////////////////////////////////////////////5) what are the main component of Entity Framework
-///EDM has tree part
-1)Conceptual Model.
-2) Storage Module.
-3) Mapping Module.
-Conceptual model (c# world)
-Storage Model(DB world)
-Mapping Model(the transator in between).
-//2)Linq to Entities.
-//3)Entity SQL
-//4)Object Service
-//5)ADO.NET Data Provider
-/////////////////////////////////////////////////////////////////////////////////////6) explain diffrent parts of the entity data model.
-1) Conceptual Model(CSDL)
-This is how you see the data in c#(your entity classes).
-public class Student
-{
- public int Id {get ; set ;}
- public string Name {get ; set;}
-}
-
-2) Storage Model(SSDL)
-This is how the database actually look(tablets, columns , data types)
- create table Student
- (StudentId INT )
-3)
-///////////////////////////////////////////////////////////////////////////////////////7) Explain what the .edmx file contains.
-An .edmx file in Entity Framework is an XML-based file that contains three parts :
-CSDL(Conceptual Model : C# classes)
-SSDL(Stored Model : Database  tables)
-MSL(Mapping between them) : It basically acs as a bridge between the database and the application.
-///////////////////////////////////////////////////////////////////////////////////////////////////////8) what do you mean by migration ? Write its type ?
-Migration in Entity Framework is a ways to update and manage database schema changes in sync with your application's data model.
-->Automatic Migration :  Database updates automatically(good for quick dev, not production).
-->Code-Based Migration : Mamnual control using migration files (preferred).
-->Initial Migration : First migration to create DB.
-->Seed Migration : To add initial data.
-
-9) what do you mean by Deferred Execution in EF ?
-=> EXAMPLE :
-Var query = context.Employees.Where(e => e.Department == "IT");
-At this line -> No SQL query is send to the database yet.
-When you actually do something like :
-foreach(var emp in query)
-{
-Console.WriteLine(emp.Name);
-}
-Only then the query is executes, and EFsends SQL to the database.
-
-//Why Deferred Excution is Useful ?
-Performance Optimization -> Query is executed only when needed.
-Flexibility -> You can build queries step by step before execution.
-Less Load -> Prevents unnessary
-///////////////////////////////////////////////////////////////////////////////////////////10) What do you mean by the term navigation property in the entity framework ?
-11) What are diffrent entity state in EF ?
-12) Write the importance of the t4 entity in Entity Framework.
-13)Explain CSDL, SSDL , MSL selection in an Edmx file
-14) Write some XML generation methods provided b the dataset object.
-15) what do you mean by migration history table in Entity framework.
-16) Explain how EF suppots transactions.
-17) Write the steps to retrive data from database using Entity Framework in MVC.
-18) Explain the role of pluralize and Singularize in  the entity framework.
-19)What is the diffrence between Dapper and Entity Framework.
-20) Explain the POCO Clsses in EF.
-21) In EF , what are the ways to use stored Procedures ?
-22) Explain database concurrency and the ways to handle it.
-23) What are diffrence type of loading available to load related entities in EF.
-24) What do you mean by lazy loading and explicit loading.
-25) What are the pros and cons of different type of loading.
-26) Write diffrent type of inheritane support by entity Framework.
-27) Write Complex Type in Entity Framework.
-28) What do you mean by Micro ORM.
-29) Explain EF Data access Artichecture.
-30)What do you mean by SQL inject attack ?
-31) What is the best ways to handle SQL injection attacks in Entity Framework.
-32) Explain the OnjectSet in EF.
-33) Whta the namespace that is used to include .NET Data Provider for SQL server in .NET code.
-34) Eplain EDM and write the process to create it.
-35) What do you mean by DbEntityEntry Class in EF ?
-//////////Why Use Lazy Loading in .NET Core?
-In .NET Core applications, lazy loading is often used to delay the loading of related entities in Entity Framework Core, 
-an Object-Relational Mapping (ORM) framework used for database access. By default, Entity Framework Core uses lazy loading for navigation properties,
-allowing related entities to be loaded only when accessed, rather than loading all related entities eagerly.
-Q>What is diffrence between ADO.net and Entity framework ,(which part of code that I have to write so that we do not have to write much code in Entityframework).
-Use IQueryable in Entity Framework to generate efficient SQL queries automatically.
-
-//////////////////////////////////////what is diffrence between DbContext and DbSet
-DbContext : Manages the connection to the database.
-DbSet : Represent a table in the database and provide methods to interact with data in the table
-what is DBcontext and DBset.
-DbContext :
-Think of DbContext as a bridge between your c# code and your database. It is like a manager rthat handles the interaction with database, like retrieving, updating ,and saving data.
-
-what id does : It connects to the database and helps you work the data.
-Where it is used : In Entity Framework Core to represent your database connection.
-
-DbSet:
-DbSet is like a collection of a special type of data from the database(like a table).It allows yoiu to perform operations(add, delete,update etc.)
-on the table.
-
-What it does : Represent a table in your database and gives you access to the rows(records) of the table.
-Where it is used : Inside the DbContest to interract with specific table.
-6. What’s the use of AsNoTracking in Entity Framework Core?
-
-///////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////////.NetCore
-///////////////////////////////////////////////////////////////////164
-//what is .Net Core
-=> .Net Core is completely a New framework , which is a Free and Open-Source platorm developed and maintained by Microsoft.
-=> Cross Plateform(Windows , Linux , MacOS) 
-=> Open Source(Free to use , Modify , Distribute)
-=> Hosting(Kestral ,IIS , Nagix)
-=> Build-In Dependency Inje
-ction(Loosely Coupled Design , Reusability , Testability)
-=> Support Multiple IDE(Visual Studio, Visual Studio for Mac , Visual Studio Code).
-
-//////////////////////////////////////////////////////////////165
-What is .Net STANDARN ?
-=>.Net Standard is not a framework. .Net Standard define a set of API's or you can say libraries or set of rules.
-If any Framework will follow these rules that  means it is compliant with .NET standard Right now .NET Framework, .NET Core
-and Xamarin follow .Net standard.
-/////////////////////////////////////////////////////////////////166
-//What is the Advantages of .NetCore OVER .NET FRAMEWORK
-.Net core
-Cross Plateform => Window ,Linux ,MacOS
-OPEN SOURCE => Free to use , Modify, Distribution
-HOSTING =>Kestrel , IIS, Nginx.
-BUILD-IN DEPENDENCY INJECTION => Loosely Coupled Design, Reusability, Tesability.
-Support Multiple IDE => Visual Studio, Visual Studio for Mac , Visual Studio Code.
-
-
-.NETFRAMEWORK
-.Net Framework only supports Windows.
-.NET Framework is paid.
-.NET Framework only support IIS Hosting.
-.NET framework don't have build in dependency injection.
-.NET framework only support Visual Studio IDE.
-
-//.NET 5 /.NET 6 /.NET 7
-///.                       .NET 5       .Net 6          .Net 7
-Release Year              2020          2021             2022
-Support Type              STS           LTS              STS
-C# Version                 9             10              11
-Minimal Api                no            yes            yes(Improved)
-Hot Reload                 no            yes           yes(Improved)
-Performance                Good          Excellent       Best
-
-/////////////////////////////////////////////////////////////////////////////////////////170
-What is the role of configuration methods ? 
-=>Configuration method specifies how the app responds to Http request and responde .It is used to setup request pipeline. 
-it is not optional
-//Example :
-
-public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-{
-if (env.IsDevelopment())
-{
-app. UseDeveloperExceptionPage();
-}
-else
-{
-}
-
-app.UseExceptionHandler("/Home/Error");
-
-app.UseStaticFiles();
-
-app.UseRouting();
-
-app.UseAuthorization();
-
-app.UseEndpoints (endpoints =>
-
-{
-
-endpoints.MapControllerRoute(
-
-name: "default",
-
-pattern: "(controller-Home}/{action-Index}/{id?)");
-
-});
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////195 In-Memory Caching (local to one server) , Distributed Caching , Redis
-In-Memory Caching (local to one server)
-
-Cache is stored in the memory (RAM) of the application server.
-
-Very fast, but available only to that server.
-
-Real-world example:
-
-Imagine you run a blog website hosted on a single server.
-
-You want to show the Top 10 Most Read Articles.
-
-These results don't change very often, so instead of hitting the database each time, you store them in the server's memory (cache).
-
-Every time a user requests, you just return the cached result very fast.
-
-Best when:
-
-App runs on a single server.
-
-Data is small, frequent, and not critical to be shared across multiple servers.
-
-//////
-Distributed Caching (shared across servers/nodes)
-
-← Cache is stored in an external system (like Redis, SQL Server, or NCache).
-
-Accessible by multiple servers.
-
-Real-world example:
-
-Imagine you run an E-commerce app like Amazon hosted on multiple servers.
-
-Thousands of users add products to their shopping cart.
-
-If you store the cart in In-Memory cache, and the user's next request goes to a different server X their cart will be empty!
-
-Solution: Use a Distributed Cache (like Redis).
-
-Now all servers share the same cache store no matter which server the user lands on, their cart will be there.
-
-Best when:
-
-App runs on multiple servers (load balanced).
-
-Data is critical & needs to be consistent across servers.
-
-
-////Redis
- Definition (like a 5-year-old can say)
-
-> “Redis is like a super-fast notebook where your computer keeps things it wants to remember for a short time, so it doesn’t have to go find them again and again.”
-
-
-
-
----
-
-💡 Slightly more technical definition (interview-friendly)
-
-Redis is an in-memory data store used for caching, session storage, and real-time data processing.
-It stores data in RAM (memory), not on disk, which makes it very fast for reading and writing.
-
-Redis = Remote Dictionary Server.
-
-
----
-
-🧩 Example (with detailed explanation)
-
-Imagine your Buy & Sell Property App where users search for properties.
-If 1000 users search for “2BHK Flats in Mumbai”, your app should not call the database 1000 times — that’s slow.
-
-So what we do:
-
-1. The first time someone searches, we get data from the database and store it in Redis cache.
-
-
-2. Next time, when users search the same thing — we get data from Redis (memory) instantly instead of going to the database again.
-
-
-3. This makes the application faster and more scalable.
-
-
-
-
----
-
-🧑‍💻 Code Example (C# – Using Redis in .NET)
-
-// Step 1: Install Microsoft.Extensions.Caching.StackExchangeRedis package
-
-public class PropertyService
-{
-    private readonly IDistributedCache _cache;
-
-    public PropertyService(IDistributedCache cache)
-    {
-        _cache = cache;
-    }
-
-    public async Task<string> GetPropertiesAsync()
-    {
-        string cacheKey = "property_list";
-        var cachedData = await _cache.GetStringAsync(cacheKey);
-
-        if (cachedData != null)
-        {
-            // ✅ Return from Redis cache
-            return $"From Redis Cache: {cachedData}";
-        }
-
-        // 🚀 Simulate data from database
-        string dbData = "2BHK Flats, 3BHK Villas, Farmhouses";
-
-        // 🧠 Save to Redis for next time
-        await _cache.SetStringAsync(cacheKey, dbData, new DistributedCacheEntryOptions
-        {
-            AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(10)
-        });
-
-        return $"From Database: {dbData}";
-    }
-}
-
-
----
-
-🏗️ Project Use (Buy & Sell Properties App)
-
-In your project, Redis can be used for:
-
-Property search caching → to reduce DB load and speed up search results.
-
-User session storage → store user login info temporarily.
-
-Chat messages → for real-time buyer–seller communication.
-
-
-
----
-
-⚖️ Trade-offs
-
-Advantage Disadvantage
-
-Super fast (in-memory) Data lost if Redis server restarts (unless persisted)
-Reduces database load Requires additional setup & maintenance
-Supports distributed apps easily Slight learning curve for configuration
-
-
-
----
-
-💼 Business Impact
-
-✅ Faster application performance → Better user experience
-✅ Handles heavy traffic easily → More users can search at once
-✅ Reduces database cost → Fewer calls to SQL Server
-🚀 Direct impact: Your property platform feels instant and professional, like big apps (99acres, MagicBricks).
-
-
-///////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////END OF KINDLE
-///////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////Singleton
-✅ Interview-Friendly Answer:
-Q: What is a Singleton Class in C#?
-
-A Singleton is a special class where only one object (instance) can be created during the application's lifetime.
-It's useful when you need just one shared thing, like a single database connection, a logging service, or a settings manager.
-
-💡 Real-World Analogy:
-Think of a TV Remote in a room — you don’t need 10 remotes.
-Everyone uses the same one to control the TV.
-That’s how a Singleton works — one object shared everywhere.
-
-🧠 Why use Singleton?
-To share data across multiple places.
-To save memory and avoid creating duplicate objects.
-To make sure there’s only one access point to something.
-
-Singleton Pattern means → Only one object (instance) of a class exists in the whole application.
-
-It’s like:
-
-A Government → only one Prime Minister exists.
-
-A Logger Service → only one logging instance writing to the file.
-
-A Database Connection Pool → only one shared object controlling all DB connections.
-
-
-
-So, instead of creating multiple objects again and again, we use one shared object everywhere.
-✅ Simple Code Example:
-//Create a sealed class so that no one can inherit from this class.
-public sealed class SingletonLogger
-{
-  // Declare a static instance of this class
-    private static SingletonLogger _instance;
-
-    // Create a private constructor so that no one can create the object of this singleton class.
-    private SingletonLogger() { }
-
-    //Create a method which will check whether the instance is null , if yes then it will create the new instance and if not null
-    then it will return the same instance.
-    public static SingletonLogger GetInstance()
-    {
-        if (_instance == null)
-        {
-            _instance = new SingletonLogger();
-        }
-
-        return _instance;
-    }
-
-    public void Log(string message)
-    {
-        Console.WriteLine("Log: " + message);
-    }
-}
-🔄 How to Use It:
-class Program
-{
-    static void Main()
-    {
-        var logger1 = SingletonLogger.GetInstance();
-        var logger2 = SingletonLogger.GetInstance();
-
-        logger1.Log("App started");
-        logger2.Log("Something happened");
-
-        Console.WriteLine(logger1 == logger2); // true — same object
-    }
-}
-✅ Summary (for Interview):
-Singleton ensures only one instance of a class exists.
-Useful for things like Logger, Config Manager, DB Connection.
-It helps avoid duplication and keeps things centralized.
-Would you like me to show the Thread-safe version or how Singleton is used in ASP.NET Core (like in services)?
-
-
-
-
-
-Great question! Interviewers love asking about Thread-Safe Singleton — especially for multithreaded apps.
-
-
-
-
-
----
-
-
-
-✅ Interview-Friendly Explanation:
-
-
-
-Q: How to make Singleton thread-safe in C#?
-
-
-
-> In multithreaded apps, multiple threads might try to create the Singleton at the same time — which can break the "only one object" rule.
-
-So, we use locking to make sure only one thread can create the object — this is called thread-safe Singleton.
-
-
-
-
-
-
-
-////////////////////
-//How to make Signaloton Thread Safe
----
-
-
-
-💡 Think of a Bank ATM
-
-
-
-Only one person can withdraw at a time.
-
-If two people try at once, the system must lock the ATM temporarily — that’s thread safety.
-
-
-
-
-
----
-
-
-
-✅ Code: Thread-Safe Singleton (with lock)
-
-
-
-public sealed class SingletonLogger
-
-{
-
-    private static SingletonLogger _instance;
-
-    private static readonly object _lock = new object();
-
-
-
-    // Private constructor
-
-    private SingletonLogger() { }
-
-
-
-    public static SingletonLogger GetInstance()
-
-    {
-
-        // Lock to allow only one thread inside this block at a time
-
-        lock (_lock)
-
-        {
-
-            if (_instance == null)
-
-            {
-
-                _instance = new SingletonLogger();
-
-            }
-
-        }
-
-
-
-        return _instance;
-
-    }
-
-
-
-    public void Log(string message)
-
-    {
-
-        Console.WriteLine("Log: " + message);
-
-    }
-
-}
-
-
-
-
-
----
-
-
-
-🧪 How to Use:
-
-
-
-class Program
-
-{
-
-    static void Main()
-
-    {
-
-        var logger1 = SingletonLogger.GetInstance();
-
-        var logger2 = SingletonLogger.GetInstance();
-
-
-
-        Console.WriteLine(logger1 == logger2); // ✅ true: same object
-
-    }
-
-}
-
-
-
-
-
----
-
-
-
-✅ Summary (for interview):
-
-
-
-Use lock to make Singleton thread-safe.
-
-
-
-lock ensures only one thread creates the object.
-
-
-
-This avoids race conditions in multithreaded environments.
-
-////////////////////////////////////////////////////////////////////////////////////////////Single IR 
-Single IR in Live Data Processing
-🧒 Easiest Definition (5-year-old level)
-👉 Only one live data message is handled at a time.
-Like:
-Teacher asks one question
-You answer that one question fully
-Then teacher asks next
-Not many questions together.
-👶 Simple Human Definition
-Single IR means the system processes one incoming data record (or event) at a time, independently.
-Here:
-IR = Input Record / Input Request / Input Row
-Single IR = one record per processing cycle
-🧠 Slightly Technical (Still Easy)
-In live data processing, Single IR means the system processes each incoming event/message one by one, instead of processing them in batches.
-✅ Example (Very Clear)
-Live Payment System 💳
-User A makes a payment
-System processes that one payment
-Updates balance
-Sends confirmation
-Moves to next payment
-This is Single IR processing.
-////////////////////////////////////////////////////////////////
-//What is reference type and Value Type
---> “Value types store actual values in stack memory . Reference types store the memory address and point to shared data in heap. 
-
--->with value types, changes don’t affect others. But with reference types, changes reflect across all references.”
-
--->🔍 Common Value Types in C#:
-
-int, float, bool, char, double, struct
-
-
--->🔍 Common Reference Types in C#:
-
-class, string, array, object, interface.
-
--->
-EXAMPLE : 
-Code Example (Value Type):
-
-int a = 5;
-int b = a;
-b = 10;
-
-Console.WriteLine(a); // Output: 5
-Console.WriteLine(b); // Output: 10
-
-📌 a and b are separate copies, so changing b does not affect a.
--->
- Code Example (Reference Type):
-
-class Person
-{
-    public string Name;
-}
-
-Person p1 = new Person { Name = "Abhishek" };
-Person p2 = p1;
-p2.Name = "Sunil";
-
-Console.WriteLine(p1.Name); // Output: Sunil
-Console.WriteLine(p2.Name); // Output: Sunil
-/////////
-Definition (in simplest words)
-🧱 Value Type
-Think of a Value Type as a real object kept inside your own box.
-When you give it to someone, they get a copy of it — not the same box.
-🧠 Example:
-If you have one toy (like a car) and your friend wants one, you make a copy and give it.
-Both play separately — one breaks, the other is fine.
-
-📘 In C#:
-int, float, bool, struct, enum are Value Types.
-
-🔗 Reference Type
-Think of a Reference Type as a note with directions to where the object is kept.
-When you give that note to someone, you both point to the same object.
-🧠 Example:
-You and your friend both share one remote car — if your friend changes its color, you’ll see the same color change, because it’s the same object.
-
-📘 In C#:
-class, array, string, interface, delegate are Reference Types.
-
-💻 Example in Code
-int a = 10;
-int b = a;
-b = 20;
-Console.WriteLine(a); // Output: 10 — Value Type makes a copy
-
-Person p1 = new Person { Name = "Abhishek" };
-Person p2 = p1;
-p2.Name = "John";
-Console.WriteLine(p1.Name); // Output: John — Reference Type shares the same memory
-🏢 Project Use (Buy & Sell Properties App)
-When storing property details (like Price, Area, Id), you use Value Types because each property has its own independent value.
-When dealing with objects like User, Owner, or PropertyModel, you use Reference Types, since you want to work with shared data objects across layers (Controller → Service → Repository).
-⚖️ Trade-offs (Pros & Cons)
-Type	Pros	Cons
-Value Type	Faster to access (stored in stack), no side effects	Copies use more memory if many duplicates
-Reference Type	Can share data easily	Changes in one place affect all references, needs Garbage Collection
-💼 Business Impact
-✅ Using Value Types for independent data (like property price) keeps performance fast.
-✅ Using Reference Types for shared entities (like user sessions, property models) helps reuse data and avoid duplication.
-⚠️ But mixing them wrongly can lead to bugs or unnecessary memory use.
-
-////////////////////////////////////////////////////////////////////////////All the satus code
-
-//Frequently used
-200 OK. You'll hopefully see this response code in the majority of your API calls. ...
-201 Created. ...
-301 Moved Permanently. ...
-302 Found. ...
-404 Not Found. ...
-429 Too Many Requests. ...
-401 Unauthorized. ...
-500 Internal Server Error.
-
-//All Satus code
-
-
-1xx Informational:
-Indicates that the request was received and understood. These are temporary responses and consist of a Status-Line and optional headers, and are terminated by an empty line.
-100 Continue: The client should continue with its request.
-101 Switching Protocols: The server is switching protocols.
-2xx Success:
-Indicates that the client's request was successfully received, understood, and accepted. 
-200 OK: Standard success response for various requests.
-201 Created: The request has succeeded and a new resource has been created. Commonly used after a POST request. 
-202 Accepted: The request has been accepted for processing, but the processing is not yet complete.
-204 No Content: The server successfully processed the request, but is not returning any content.
-3xx Redirection:
-Indicates that further action needs to be taken by the user agent to fulfill the request.
-301 Moved Permanently: The resource has been permanently moved to a new URI.
-302 Found: The resource is temporarily located at a different URI.
-304 Not Modified: The client's cached version of the resource is still valid.
-4xx Client Error:
-Indicates that the client's request contains bad syntax or cannot be fulfilled. 
-400 Bad Request: The server cannot process the request due to a client error (e.g., malformed syntax).
-401 Unauthorized: The request requires user authentication.
-403 Forbidden: The server understood the request but refuses to authorize it.
-404 Not Found: The server cannot find the requested resource.
-405 Method Not Allowed: The HTTP method used is not supported for the requested resource.
-409 Conflict: The request could not be completed due to a conflict with the current state of the resource.
-429 Too Many Requests: The user has sent too many requests in a given amount of time.
-5xx Server Error:
-Indicates that the server failed to fulfill an apparently valid request. 
-500 Internal Server Error: A generic error message, given when an unexpected condition was encountered by the server.
-501 Not Implemented: The server does not support the functionality required to fulfill the request.
-503 Service Unavailable: The server is currently unable to handle the request due to temporary overloading or maintenance.
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////can you tell me what is 4xx erro, what we call ?
-/////////////////////////////////////////////////////////////////////////Web Api Security
-1. Authentication (Who are you?)
-This step checks who the user is.
-Example: Login with username/password → API gives a token (JWT or OAuth2).
-Every time the user calls API, they must send this token in the request header.
-If token is missing or fake → API rejects.
-👉 This makes sure only real users can call the API.
-
-2. Authorization (What can you do?)
-After knowing the user, we check what permissions they have.
-Example:
-A buyer can view properties but cannot delete.
-An admin can manage users and listings.
-This is usually role-based or policy-based in .NET.
-👉 This makes sure users cannot do operations outside their role.
-
-3. Data Protection (Keep data safe in travel)
-Use HTTPS so data is encrypted while moving between server and client.
-Use password hashing & encryption in database (never store plain text).
-Example: bcrypt, SHA-256.
-👉 This protects from hackers stealing sensitive info.
-
-4. Other API Security Best Practices
-CORS Policy → Only allow trusted websites/apps to use your API.
-Rate Limiting / Throttling → Prevent misuse by limiting requests per user.
-Input Validation → Avoid SQL Injection, XSS by cleaning user input.
-Logging & Monitoring → Keep track of suspicious activities.
-API Gateway / Firewall → Extra shield for enterprise systems.
-🚀 Example (in .NET + Angular project like yours):
-User logs in → API checks credentials → API returns a JWT token.
-Angular app stores token (in memory/local storage).
-For every API call → Angular sends token in Authorization header.
-.NET API middleware validates token → allows or denies request.
-
-
-//
-////////////////////Security Best Practises
-1.> How do you secure WEB APIs in .NET Core ?
--> Authentication(JWT,OAuth2 , OpenID Connect).
-->Authorization with poicies and roles.
-->Preventing over-posting with DTOs.
-
-////////////////////////////////////////////////////////////////////////////////////////Performance
-1. Use Asynchronous Code (async/await) –
-
-Don’t block the thread. Example: Instead of waiting for a database call to finish, let the app do other work in parallel.
-
-
-
-
-
-2. Caching –
-
-Store frequently used data in memory (like Redis or In-Memory Cache) so we don’t always hit the database.
-
-
-
-
-
-3. Database Optimization –
-
-
-
-Use AsNoTracking() in EF Core for read-only queries (it avoids unnecessary tracking).
-
-
-
-Write efficient SQL queries and indexes.
-
-
-
-
-
-
-
-4. Use Dependency Injection Wisely –
-
-Register services with correct lifetimes (Singleton, Scoped, Transient) so memory is not wasted.
-
-
-
-
-
-5. Reduce Startup Time –
-
-Only load what is needed when the application starts.
-
-
-
-
-
-6. Compression & Minification –
-
-Enable response compression (gzip/brotli) so data transfer is smaller.
-
-
-
-
-
-7. Logging & Monitoring –
-
-Use structured logging (Serilog, Application Insights) to find performance bottlenecks.
-
-
-
-
-
-8. Use Background Services –
-
-Heavy tasks (like sending emails, reports) should run in background jobs (Hangfire, Quartz) instead of blocking user requests.
-
-
-
-/////////////////////////////////////////////////////////////////////How do you implement security in an MVC application (Authentication/Authorization)?
-///////////////////////////////////////////////////Angular Specific (Performance + Security):
-1>How do you optimize Angular applications for better performance?
-
-Lazy Loading of modules.
-Ahead-of-Time (AOT) Compilation.
-Change detection strategy (OnPush).
-
-2>How do you prevent XSS attacks in Angular?
-Angular's DOM sanitization.
-Safe navigation ([innerHTML] with caution).
-
-3>How do you handle large list rendering in Angular?
-Using ngFor with trackBy.
-Virtual scrolling for large lists.
-
-
-//////////////////////////////////////////////////////////////////////////////////////
-
-///////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////What are design patter used in making Stock market application.
-1. Observer Pattern (very important in stock market apps)
-Why: Stock prices keep changing in real time. If one price changes, all users looking at that stock should get updated immediately.
-How: Observer pattern allows me to notify all users automatically whenever there is a change.
-Example in app: When the price of TCS shares changes, all traders' dashboards update instantly.
-2. Factory Pattern
-Why: The application might need to create different types of financial instruments (Stocks, Bonds, Mutual Funds, Options). Instead of writing messy new everywhere, a Factory can create objects in a clean way.
-Example in app: If tomorrow a new type of asset is added, we don’t have to change everywhere, just extend the factory.
-3. Singleton Pattern
-Why: Some components like logging service, configuration, cache, or database connection should have only one instance across the whole app.
-Example in app: One global configuration for connecting to stock market APIs.
-4. Strategy Pattern (optional, but good to mention)
-Why: Different users might have different order execution strategies (e.g., Market Order, Limit Order, Stop Loss). Strategy pattern allows plugging in new algorithms without rewriting code.
-Example in app: A trader can switch between "Market order" and "Limit order" easily.
-🎯 Final Easy Answer (interview-ready):
-
-"For a stock market application, I would use the Observer pattern to handle real-time stock price updates to all users, the Factory pattern to create different financial instruments cleanly, and the Singleton pattern for shared resources like logging or database connections. If we need different trading strategies, I can also use the Strategy pattern. These patterns will keep the system scalable, easy to maintain, and ready for future changes."
-
-/////////////////////////////////////////////////////////////////////////////////Observable Patter
-👉 "Observer Pattern is like a WhatsApp group.
-
-When the admin posts a message (event), all group members (subscribers) get notified immediately.
-In stock market applications:
- 1. Observer
-
-👉 An Observer is like a person waiting for updates.
-It says: “Tell me when something changes.”
-
-Example:
-You (Observer) subscribe to a YouTube channel. You don’t keep checking daily—YouTube tells you when a new video is uploaded.
-
-
----
-
-🔹 2. Observable
-
-👉 An Observable is the thing that produces updates.
-It’s the source of truth that others can watch.
-
-Example:
-The YouTube channel is the Observable. It produces videos (data/events) and notifies all subscribers (Observers).
-
-
----
-
-🔹 3. Subscriber
-
-👉 A Subscriber is the one who connects to the Observable to actually receive the updates.
-
-Example:
-When you click “Subscribe” on YouTube, you become a Subscriber. Now whenever a video is uploaded, you’ll get notified.
-
-
-The Stock is the subject (Observable).
-Investors/Traders are observers (Subscribers).
-When a stock price changes, the Stock notifies all Investors instantly.
-This way, we avoid checking prices again and again, and changes are pushed in real-time."
----
-🏢 Enterprise-Level Example: Stock Market
-We’ll implement a Stock Price Notification System using the Observer Pattern.
-Step 1: Create Observer Interface
-// IObserver.cs
-
-public interface IObserver
-
-{
-
-    void Update(string stockName, decimal price);
-
-}
-
-
-
-Step 2: Create Subject (Observable) Interface
-
-
-
-// IStock.cs
-
-public interface IStock
-
-{
-
-    void Attach(IObserver observer);
-
-    void Detach(IObserver observer);
-
-    void Notify();
-
-}
-
-
-
-Step 3: Concrete Subject (Stock)
-
-
-
-// Stock.cs
-
-using System.Collections.Generic;
-
-
-
-public class Stock : IStock
-
-{
-
-    private List<IObserver> _observers = new();
-
-    private string _stockName;
-
-    private decimal _price;
-
-
-
-    public Stock(string stockName, decimal price)
-
-    {
-
-        _stockName = stockName;
-
-        _price = price;
-
-    }
-
-
-
-    public void Attach(IObserver observer) => _observers.Add(observer);
-
-    public void Detach(IObserver observer) => _observers.Remove(observer);
-
-
-
-    public void SetPrice(decimal price)
-
-    {
-
-        _price = price;
-
-        Notify(); // Notify observers whenever price changes
-
-    }
-
-
-
-    public void Notify()
-
-    {
-
-        foreach (var observer in _observers)
-
-        {
-
-            observer.Update(_stockName, _price);
-
-        }
-
-    }
-
-}
-
-
-
-Step 4: Concrete Observer (Investor)
-
-
-
-// Investor.cs
-
-public class Investor : IObserver
-
-{
-
-    private string _name;
-
-
-
-    public Investor(string name)
-
-    {
-
-        _name = name;
-
-    }
-
-
-
-    public void Update(string stockName, decimal price)
-
-    {
-
-        Console.WriteLine($"Notification for {_name}: {stockName} is now ₹{price}");
-
-    }
-
-}
-
-
-
-Step 5: Test Implementation
-
-
-
-// Program.cs
-
-using System;
-
-
-
-class Program
-
-{
-    static void Main()
-
-    {
-
-        // Create Stock (Observable)
-
-        Stock reliance = new Stock("Reliance", 2500);
-
-
-
-        // Create Investors (Observers)
-
-        Investor abhishek = new Investor("Abhishek");
-
-        Investor rahul = new Investor("Rahul");
-
-
-
-        // Attach observers
-
-        reliance.Attach(abhishek);
-
-        reliance.Attach(rahul);
-
-
-
-        // Price Change -> Notifies Investors
-
-        reliance.SetPrice(2600);
-
-        reliance.SetPrice(2700);
-
-
-
-        // Rahul leaves the subscription
-
-        reliance.Detach(rahul);
-
-
-
-        // Only Abhishek gets notified
-
-        reliance.SetPrice(2800);
-
-    }
-
-}
-
-
-
-
-
----
-
-
-
-✅ Output
-
-
-
-Notification for Abhishek: Reliance is now ₹2600
-
-Notification for Rahul: Reliance is now ₹2600
-
-Notification for Abhishek: Reliance is now ₹2700
-
-Notification for Rahul: Reliance is now ₹2700
-
-Notification for Abhishek: Reliance is now ₹2800
-
-
-
-
-
----
-
-
-
-🏆 Where is this used in real enterprise apps?
-
-
-
-Stock Market / Trading Apps (price updates → traders)
-
-
-
-News Feeds (new post → followers)
-
-
-
-E-commerce (stock available → notify users)
-
-
-
-Event-driven Microservices (publish/subscribe model)
-
-////////////////////////////////////////////////////////////////////////////////Factory
-The Factory Pattern is one of the most commonly asked design patterns in interviews, especially for enterprise-level applications.
-
-
----
-
-🔹 What is Factory Pattern (easy words)
-
-Think of a Factory as a machine that creates objects for you.
-
-Instead of using new everywhere in your code, you tell the factory:
-👉 "Hey, I need an object of type X."
-👉 The factory decides which class to create and gives it to you.
-
-
-This makes your code:
-✅ Clean
-✅ Flexible
-✅ Easy to extend (you just add new products without changing existing code).
-
-
----
-
-🔹 Real-World Enterprise Example: Payment System
-
-Imagine you’re building an E-commerce application.
-
-Payment can be done via Credit Card, PayPal, or UPI.
-
-Instead of writing new CreditCardPayment() everywhere,
-we create a PaymentFactory that gives the right object.
-
-
-
----
-
-🔹 Step 1: Define Payment Interface
-
-public interface IPayment
-{
-    void Pay(decimal amount);
-}
-
-
----
-
-🔹 Step 2: Implement Different Payment Methods
-
-public class CreditCardPayment : IPayment
-{
-    public void Pay(decimal amount)
-    {
-        Console.WriteLine($"Paid {amount} using Credit Card.");
-    }
-}
-
-public class PayPalPayment : IPayment
-{
-    public void Pay(decimal amount)
-    {
-        Console.WriteLine($"Paid {amount} using PayPal.");
-    }
-}
-
-public class UpiPayment : IPayment
-{
-    public void Pay(decimal amount)
-    {
-        Console.WriteLine($"Paid {amount} using UPI.");
-    }
-}
-
-
----
-🔹 Step 3: Create Factory
-
-public class PaymentFactory
-{
-    public static IPayment GetPayment(string paymentType)
-    {
-        return paymentType.ToLower() switch
-        {
-            "creditcard" => new CreditCardPayment(),
-            "paypal" => new PayPalPayment(),
-            "upi" => new UpiPayment(),
-            _ => throw new ArgumentException("Invalid payment type")
-        };
-    }
-}
-
-
----
-
-🔹 Step 4: Use Factory in Application
-
-public class Program
-{
-    public static void Main(string[] args)
-    {
-        Console.WriteLine("Enter Payment Method (CreditCard / PayPal / UPI):");
-        string method = Console.ReadLine();
-
-        Console.WriteLine("Enter amount:");
-        decimal amount = Convert.ToDecimal(Console.ReadLine());
-
-        IPayment payment = PaymentFactory.GetPayment(method);
-        payment.Pay(amount);
-
-        Console.ReadKey();
-    }
-}
-
-
----
-
-🔹 Example Run
-
-Enter Payment Method (CreditCard / PayPal / UPI):
-paypal
-Enter amount:
-1500
-Output → Paid 1500 using PayPal.
-
-
----
-
-🔹 How This Helps in Enterprise Applications
-
-Suppose tomorrow your company adds Bitcoin Payment 🚀
-👉 You just add a new BitcoinPayment class and extend the factory.
-👉 No need to touch existing code → Open/Closed Principle (SOLID).
-
-
-
----
-
-✅ Easy answer for manager/interviewer:
-"I’ll use the Factory Pattern whenever I need to create objects of different types, like different payment methods in a stock market or e-commerce application. This way, adding new types is easy, and I don’t repeat object creation logic everywhere."
-
-
-
-//////////////////////////////////////////////////////////////////////////////////////////////////Which Design pattern you word.
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////abstract factory Design patter.
-/////////////////////////////////////////////////////////////////9>Singalton design patter.
-//////////////////What  is Singalton design patter.
-The Singleton design pattern ensures that a class has only one instance and provides a global point of access to that instance.
-/////////////////////Why Singalton design patter
-1>Ensure Single Instance
-2>Global Access
-3>Resource Sharing
-////////////////////////When to Use the Singleton Design Pattern
-1>There must be exactly one instance of a class, and it must be accessible globally.
-/////////////Why Even Use the Singleton Design Pattern
-1>Managing database connections: A Singleton class can be used to manage database connections, ensuring that only one connection
-is created and shared across multiple parts of the application.
-2>Logging: A Singleton logger class can be used to centralize logging functionality, allowing different components of the system to log 
-messages to the same log file or stream.
-3>Configuration settings: A Singleton configuration manager class can be used to load and cache application configuration settings, 
-ensuring that the settings are loaded once and accessed globally throughout the application.
-
-
-//why we are creating singlaton design pattern,instead of object.
-The Singleton design pattern is used to ensure that a class has only one instance and provides a global point of access to that instance. There are several reasons why you might choose to use the Singleton pattern instead of creating multiple instances of a class:
-
-Global Access Point:
-
-A Singleton provides a centralized point of access to its instance. This is useful when exactly one object is needed to coordinate actions across the system.
-Resource Sharing:
-
-If multiple instances of a class would share and modify the same resource, a Singleton pattern ensures that all modifications are done through the same instance, preventing conflicts and ensuring consistency.
-Resource Management:
-
-In some cases, creating multiple instances of a class might be resource-intensive or inefficient. Using a Singleton ensures that there is only one instance, saving resources.
-Configuration Management:
-
-Singletons are often used for managing configuration settings or global application state. Having a single instance makes it easy to maintain and manage these settings.
-Lazy Initialization:
-
-With a Singleton, you can implement lazy initialization, meaning the instance is created only when it is first requested. This can be beneficial for performance, especially if the initialization process is resource-intensive.
-Prevention of Multiple Instances:
-
-Some classes are designed to have only one instance due to their nature or purpose. The Singleton pattern enforces this constraint and ensures that there is only one instance of the class.
-Managing Shared Resources:
-
-In scenarios where multiple parts of the application need to share the same resource, a Singleton provides a way to centralize access and modifications to that resource.
-Maintaining State:
-
-Singletons are often used to maintain a consistent state across the application. Any changes made to the state are reflected in a single instance.
-However, it's important to note that the Singleton pattern also has its drawbacks, such as potential for global state, difficulty in testing, and limited flexibility in certain scenarios. Therefore, it's essential to carefully consider whether the Singleton pattern is appropriate for a particular use case.
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-What is latest version of c#
-
-The latest stable version of C# is C# 13.0, released with .NET 9. 
-
-If you need, I can also mention what new features came with C# 13 so it sounds strong in an interview.
-
-Perfect 👍 Let’s make this interview-ready and easy to remember.
-
-
----
-
-🔥 New Features in C# 13 (with .NET 9)
-
-Here are the highlight updates:
-
-1. Field keyword in Primary Constructors
-
-You can directly create a field inside a primary constructor parameter.
-
-
-class Student(string name, int age)
-{
-    private field int age = age; // new keyword 'field'
-}
-
-
-2. Partial Properties
-
-Just like partial classes, now properties can be declared as partial and implemented in another part of the class.
-
-
-partial class Person
-{
-    public partial string Name { get; }
-}
-
-
-3. Lock Object Simplification
-
-You can now lock on a value directly without creating a separate object.
-
-
-lock (someLock)
-{
-    // thread-safe code
-}
-
-
-4. ref readonly Parameters
-
-Allows passing parameters by reference without allowing modification.
-
-
-void Print(ref readonly int number)
-{
-    Console.WriteLine(number);
-}
-
-
-5. Method Group Natural Type Improvements
-
-Better support for method group conversions when passing methods as delegates.
-
-
-
-6. Improved Interpolated Strings
-
-More performance improvements when using $"..." interpolations.
-
-
-
-
-
----
-
-🎯 Interview-Friendly Answer
-
-> “The latest version of C# is 13, released with .NET 9. It introduced useful features like the field keyword in primary constructors, partial properties, ref readonly parameters, and better support for locks and interpolated strings. These updates make code more concise, safe, and developer-friendly.”
-
-
-
-
----
-
-👉 Do you want me to also make a simple diagram or table comparing C# 12 vs C# 13 so you can quickly revise before interviews?
-/////////////////////////////////////////
-What is Managed and umanged code interview questions
-
-
-Great one 👍 This is a very common C# interview question. Let’s break it down in simple words + interview style.
-
-
----
-
-⚡ Managed Code vs Unmanaged Code
-
-🔹 Managed Code
-
-Code that runs under the control of the .NET runtime (CLR).
-
-CLR takes care of memory management, garbage collection, type safety, and security.
-
-Example: Any C# or VB.NET code.
-
-
-// Example of Managed Code
-public class Test
-{
-    public void SayHello()
-    {
-        Console.WriteLine("Hello, Managed World!");
-    }
-}
-
-
----
-
-🔹 Unmanaged Code
-
-Code that runs directly on the operating system (outside CLR).
-
-You need to manually handle memory allocation and cleanup.
-
-Example: C, C++, COM components, Win32 APIs.
-
-
-// Example of Unmanaged Code (C++)
-#include <iostream>
-using namespace std;
-
-int main() {
-    cout << "Hello, Unmanaged World!";
-    return 0;
-}
-
-
----
-
-🎯 Interview-Friendly Answer
-
-> “Managed code is the code that runs under the control of CLR in .NET, where memory management and garbage collection are automatic. Unmanaged code runs directly on the OS, like C or C++ code, where the developer must manually manage memory and resources.”
-
-
-
-
----
-
-🤔 Possible Cross Questions
-
-1. Can .NET work with unmanaged code?
-✔ Yes, using P/Invoke (Platform Invocation Services) and COM Interop.
-
-
-2. Why is managed code safer?
-✔ Because CLR ensures type safety, garbage collection, and prevents memory leaks.
-
-
-3. Can you give an example where you need unmanaged code in a .NET project?
-✔ For performance-critical operations or using existing C/C++ libraries (like image processing, hardware drivers).
-
-
-
-
----
-
-👉 Do you want me to also prepare a short diagram showing CLR in between managed and unmanaged code for quick revision?
-
-
-Show quoted text
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//////////////////////////////////////////////////////Yet
 
 
 
@@ -11216,276 +10612,6 @@ When a property is added successfully → show green "Property added successfull
 When API call fails → show red "Failed to add property".
 
 
-
-
-////////////////////////////////////////////////what is the difference between readonly and const in C# 
-
-Perfect 👌 Let’s compare readonly vs const in the format you like (Definition → Project Use → Trade-offs → Business Impact) with super easy words.
-
-
-
-
-
-
----
-
-
-
-📖 Definition (Easy Words)
-
-
-
-const
-
-
-
-Value is fixed at compile-time (when you write code).
-
-
-
-Cannot change later.
-
-
-
-Only simple types allowed (int, string, double, etc.).
-
-
-
-
-
-readonly
-
-
-
-Value is fixed at runtime (when program starts / object created).
-
-
-
-Can be assigned in constructor or at declaration.
-
-
-
-Can hold even complex objects.
-
-
-
-
-
-
-
-👉 Shortcut Memory Rule:
-
-
-
-const → Stone 🪨 (written in code, never changes).
-
-
-
-readonly → Wet cement 🏗️ (can set when building object, then freezes).
-
-
-
-
-
-
-
----
-
-
-
-🏗️ Project Use (Buy & Sell Properties App)
-
-
-
-👉 Example 1 (Using const):
-
-
-
-Suppose we always charge 18% GST tax (fixed by law).
-
-
-
-
-
-public class Billing
-
-{
-
-    public const decimal GstRate = 0.18m;
-
-}
-
-
-
-Here const is perfect because GST won’t change while program is running.
-
-
-
-
-
----
-
-
-
-👉 Example 2 (Using readonly):
-
-
-
-Suppose we want to store the Database Connection String → It may vary per environment (Dev/Prod) but once app starts, it should not change.
-
-
-
-
-
-public class DatabaseConfig
-
-{
-
-    public readonly string ConnectionString;
-
-
-
-    public DatabaseConfig(string connectionString)
-
-    {
-
-        ConnectionString = connectionString;
-
-    }
-
-}
-
-
-
-Here readonly is better, because value is decided at runtime (when app starts), not at compile time.
-
-
-
-
-
----
-
-
-
-⚖️ Trade-offs
-
-
-
-✅ Const Pros
-
-
-
-Faster (replaced directly in code at compile-time).
-
-
-
-Good for universal fixed values.
-
-
-
-
-
-❌ Const Cons
-
-
-
-If value changes (e.g., GST law updates from 18% → 20%), you must recompile and redeploy code.
-
-
-
-
-
-
-
----
-
-
-
-✅ Readonly Pros
-
-
-
-Flexible (can assign in constructor at runtime).
-
-
-
-Supports both simple and complex types.
-
-
-
-
-
-❌ Readonly Cons
-
-
-
-Slightly slower than const (resolved at runtime).
-
-
-
-Cannot change once assigned → you must restart app if wrong.
-
-
-
-
-
-
-
----
-
-
-
-💼 Business Impact (Property App)
-
-
-
-Const: Used for fixed rules (e.g., GST rate, max property photo upload = 10).
-
-
-
-Readonly: Used for environment-dependent configs (e.g., API keys, DB connections).
-
-
-
-This gave us performance + flexibility balance.
-
-
-
-Trade-off: Too many consts → need redeploy if law/rule changes. Too many readonly → harder debugging if configs wrong at runtime.
-
-
-
-
-
-
-
----
-
-
-
-✅ Interview-Ready Short Answer
-
-
-
-“const is compile-time constant, used for values that never change (like GST rate = 18%).
-
-readonly is runtime constant, assigned in constructor and used for values like DB connection strings.
-
-In my property app, I used const for fixed rules like max photo upload, and readonly for runtime configs like DB connection string.
-
-Const gives performance, readonly gives flexibility. Together, they balanced speed and maintainability.”
-
-
-
-
-
----
-
-
-
-👉 D
-
-o you want me to also prepare a tiny table (side-by-side comparison of const vs readonly) so you can quickly recall in interviews?
 
 
 
@@ -27268,3 +26394,1859 @@ Template Driven Forms
 
 
  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////////////////
+/// //////////////////////////////Backend
+/// /////////////////////////////
+/// ////////////////////////////
+
+////////////////////////////////
+/// ///////////////////////////MVC
+/// //////////////////////////
+
+////////////////////////
+/// ///////////////////State Management
+
+ 1) What is the diffrence between ViewData,  ViewBAG And TempData.
+ 2) Q>Why ViewData require typeCasting.
+
+ 
+
+///////////////////////////////////////////////////////////////////////////////////////////////////102> What is the diffrence between ViewData,  ViewBAG And TempData
+--> ViewData and ViewBag are used to pass data from CONTROLLER TO VIEW.
+--> TempData is used to pass data from Controller TO Controller.
+ViewData is a dictionary object that requires typecasting and is available only for the current request.
+
+
+/////////////////////////////////////////
+ /// ////////////////////////////////////Entity Framwork
+ How to improve the perform of entity framework?
+ How you can add two coloum in table by Entityframework?
+diffrence between  Database First, Code First , Model first in Entity framework in one line.
+Entity Framework vs ADO.NET
+What is Entity Framework Core?
+
+
+//////////////////////////////////////////////////////////////
+Q>Why ViewData require typeCasting
+
+////////////////////////////////////////////////////////////////////////////////////////////.Single() and Include()
+.Include() is used in Entity Framework(EF/EF core) to eager load relatedd entities(like a SQL JOIN) .
+.Include() = eager loading (load related data immediately).
+/////////////////////////////////////////////////////////////////////////
+How to improve the perform of entity framework?
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////How you can add two coloum in table by Entityframework
+In Entity Framework Core, you can add columns to an existing table by creating a migration and applying it to the database. Here’s how you can add two new columns to an existing table using Entity Framework in .NET Core.
+
+Step-by-Step Guide:
+1. Modify the Model
+Assume you have an existing model Employee in your project, and you want to add two new columns MiddleName and DateOfJoining.
+
+Original Model:
+
+csharp
+Copy code
+public class Employee
+{
+    public int EmployeeId { get; set; }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+}
+Modify the model to include the new columns:
+
+csharp
+Copy code
+public class Employee
+{
+    public int EmployeeId { get; set; }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    
+    // New columns
+    public string MiddleName { get; set; }  // New column
+    public DateTime DateOfJoining { get; set; }  // New column
+}
+2. Create a Migration
+After modifying the model, you need to create a migration so that Entity Framework can update the database schema to match the model changes.
+
+Run the following command in the Package Manager Console or Terminal:
+
+bash
+Copy code
+dotnet ef migrations add AddMiddleNameAndDateOfJoiningToEmployee
+This will create a new migration file with the necessary code to add the columns to the Employee table.
+
+3. Inspect the Migration File
+The migration file will be generated in the Migrations folder. It should look something like this:
+
+csharp
+Copy code
+public partial class AddMiddleNameAndDateOfJoiningToEmployee : Migration
+{
+    protected override void Up(MigrationBuilder migrationBuilder)
+    {
+        migrationBuilder.AddColumn<string>(
+            name: "MiddleName",
+            table: "Employees",
+            type: "nvarchar(max)",
+            nullable: true);
+
+        migrationBuilder.AddColumn<DateTime>(
+            name: "DateOfJoining",
+            table: "Employees",
+            type: "datetime2",
+            nullable: false,
+            defaultValue: new DateTime(2024, 1, 1));  // Provide a default value for non-nullable column
+    }
+
+    protected override void Down(MigrationBuilder migrationBuilder)
+    {
+        migrationBuilder.DropColumn(
+            name: "MiddleName",
+            table: "Employees");
+
+        migrationBuilder.DropColumn(
+            name: "DateOfJoining",
+            table: "Employees");
+    }
+}
+The Up method adds the new columns to the table, while the Down method removes them if the migration is rolled back.
+
+4. Apply the Migration
+To apply the migration and update the database schema, run the following command:
+
+bash
+Copy code
+dotnet ef database update
+This will apply the migration, and the Employees table will now have the MiddleName and DateOfJoining columns added.
+
+Conclusion
+By following these steps, you can easily add new columns to an existing table using Entity Framework Core in .NET Core. The process involves modifying the model, creating a migration, and applying the migration to update the database schema.
+
+///////////////////////////////////////////////////////////////////////diffrence between  Database First, Code First , Model first in Entity framework in one line
+
+Sure! Here are the differences in one line each:
+
+Database First: The database schema is created first, and the code models are generated from the existing database.
+Code First: The code models are created first, and the database schema is generated from the code models.
+Model First: The conceptual model is designed first using a designer, and both the code models and database schema are generated from the model.
+
+////////////////////////////////////////////////////////////////////////////
+Entity Framework vs ADO.NET
+////////////////////////////////////////////////////////////////////////////////////
+🔹 8. What is Entity Framework Core?
+//////////////////////////////////////////////////////////////////////////////////////
+12. Why is DbContext used in Entity Framework Core for data access?
+
+
+
+////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////Interview Bit
+//////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////////1)which according to you is considered the best approach in Entity framework.
+->In real world , code-First is considered the best approach because 
+-> Developers control the model using c# classes.
+-> Database schema  is created/updated automatically using migration.
+-> Works well with agile projects where database design keeps migrations.
+-> Easier for version control(Git) since everything is in code.
+////////////////////////////////////////////////////////////////////////////2) Explain the advantages of the Entity Framework.
+Advantages
+///////////1) No need to write SQL manually
+-> Normally, we have to write  long SQL quesries to fetch, insert , or update  data.
+-> With EF, we can just write long c# code(dbContext.Products.ToList()) and it will generate the SQL behind the scenes.
+->Save time and reduces human errors in SQL.
+//Faster development (Productivity boost)
+->Developers can focus on business logic instead of spending hours writing and debugging  SQL queries.
+->EF provided LINQ (Language Integrated Query), which makes queries easier and type-safe.
+//Database independent (Multiple DB support)
+//Strong Types and IntelliSense support
+//Change Tracking 
+//Better for Complex Apps
+////////////////////////////////////////////////////////////////////////////////////////////////3) Describe some of the disadvantages of the entity Framework.
+//Slower than ADO.net 
+//Less control over SQL.
+//Performance issue in very large apps.
+//Learning curve 
+//Overhead(extra memory and processing).
+//////////////////////////////////////////////////////////////////////////////////////////////////4) what are the feature of the entity framework ?
+
+/////////////////////////////////////////////////////////////////////////////////////////5) what are the main component of Entity Framework
+///EDM has tree part
+1)Conceptual Model.
+2) Storage Module.
+3) Mapping Module.
+Conceptual model (c# world)
+Storage Model(DB world)
+Mapping Model(the transator in between).
+//2)Linq to Entities.
+//3)Entity SQL
+//4)Object Service
+//5)ADO.NET Data Provider
+/////////////////////////////////////////////////////////////////////////////////////6) explain diffrent parts of the entity data model.
+1) Conceptual Model(CSDL)
+This is how you see the data in c#(your entity classes).
+public class Student
+{
+ public int Id {get ; set ;}
+ public string Name {get ; set;}
+}
+
+2) Storage Model(SSDL)
+This is how the database actually look(tablets, columns , data types)
+ create table Student
+ (StudentId INT )
+3)
+///////////////////////////////////////////////////////////////////////////////////////7) Explain what the .edmx file contains.
+An .edmx file in Entity Framework is an XML-based file that contains three parts :
+CSDL(Conceptual Model : C# classes)
+SSDL(Stored Model : Database  tables)
+MSL(Mapping between them) : It basically acs as a bridge between the database and the application.
+///////////////////////////////////////////////////////////////////////////////////////////////////////8) what do you mean by migration ? Write its type ?
+Migration in Entity Framework is a ways to update and manage database schema changes in sync with your application's data model.
+->Automatic Migration :  Database updates automatically(good for quick dev, not production).
+->Code-Based Migration : Mamnual control using migration files (preferred).
+->Initial Migration : First migration to create DB.
+->Seed Migration : To add initial data.
+
+9) what do you mean by Deferred Execution in EF ?
+=> EXAMPLE :
+Var query = context.Employees.Where(e => e.Department == "IT");
+At this line -> No SQL query is send to the database yet.
+When you actually do something like :
+foreach(var emp in query)
+{
+Console.WriteLine(emp.Name);
+}
+Only then the query is executes, and EFsends SQL to the database.
+
+//Why Deferred Excution is Useful ?
+Performance Optimization -> Query is executed only when needed.
+Flexibility -> You can build queries step by step before execution.
+Less Load -> Prevents unnessary
+///////////////////////////////////////////////////////////////////////////////////////////10) What do you mean by the term navigation property in the entity framework ?
+11) What are diffrent entity state in EF ?
+12) Write the importance of the t4 entity in Entity Framework.
+13)Explain CSDL, SSDL , MSL selection in an Edmx file
+14) Write some XML generation methods provided b the dataset object.
+15) what do you mean by migration history table in Entity framework.
+16) Explain how EF suppots transactions.
+17) Write the steps to retrive data from database using Entity Framework in MVC.
+18) Explain the role of pluralize and Singularize in  the entity framework.
+19)What is the diffrence between Dapper and Entity Framework.
+20) Explain the POCO Clsses in EF.
+21) In EF , what are the ways to use stored Procedures ?
+22) Explain database concurrency and the ways to handle it.
+23) What are diffrence type of loading available to load related entities in EF.
+24) What do you mean by lazy loading and explicit loading.
+25) What are the pros and cons of different type of loading.
+26) Write diffrent type of inheritane support by entity Framework.
+27) Write Complex Type in Entity Framework.
+28) What do you mean by Micro ORM.
+29) Explain EF Data access Artichecture.
+30)What do you mean by SQL inject attack ?
+31) What is the best ways to handle SQL injection attacks in Entity Framework.
+32) Explain the OnjectSet in EF.
+33) Whta the namespace that is used to include .NET Data Provider for SQL server in .NET code.
+34) Eplain EDM and write the process to create it.
+35) What do you mean by DbEntityEntry Class in EF ?
+//////////Why Use Lazy Loading in .NET Core?
+In .NET Core applications, lazy loading is often used to delay the loading of related entities in Entity Framework Core, 
+an Object-Relational Mapping (ORM) framework used for database access. By default, Entity Framework Core uses lazy loading for navigation properties,
+allowing related entities to be loaded only when accessed, rather than loading all related entities eagerly.
+Q>What is diffrence between ADO.net and Entity framework ,(which part of code that I have to write so that we do not have to write much code in Entityframework).
+Use IQueryable in Entity Framework to generate efficient SQL queries automatically.
+
+//////////////////////////////////////what is diffrence between DbContext and DbSet
+DbContext : Manages the connection to the database.
+DbSet : Represent a table in the database and provide methods to interact with data in the table
+what is DBcontext and DBset.
+DbContext :
+Think of DbContext as a bridge between your c# code and your database. It is like a manager rthat handles the interaction with database, like retrieving, updating ,and saving data.
+
+what id does : It connects to the database and helps you work the data.
+Where it is used : In Entity Framework Core to represent your database connection.
+
+DbSet:
+DbSet is like a collection of a special type of data from the database(like a table).It allows yoiu to perform operations(add, delete,update etc.)
+on the table.
+
+What it does : Represent a table in your database and gives you access to the rows(records) of the table.
+Where it is used : Inside the DbContest to interract with specific table.
+6. What’s the use of AsNoTracking in Entity Framework Core?
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////.NetCore
+///////////////////////////////////////////////////////////////////164
+//what is .Net Core
+=> .Net Core is completely a New framework , which is a Free and Open-Source platorm developed and maintained by Microsoft.
+=> Cross Plateform(Windows , Linux , MacOS) 
+=> Open Source(Free to use , Modify , Distribute)
+=> Hosting(Kestral ,IIS , Nagix)
+=> Build-In Dependency Inje
+ction(Loosely Coupled Design , Reusability , Testability)
+=> Support Multiple IDE(Visual Studio, Visual Studio for Mac , Visual Studio Code).
+
+//////////////////////////////////////////////////////////////165
+What is .Net STANDARN ?
+=>.Net Standard is not a framework. .Net Standard define a set of API's or you can say libraries or set of rules.
+If any Framework will follow these rules that  means it is compliant with .NET standard Right now .NET Framework, .NET Core
+and Xamarin follow .Net standard.
+/////////////////////////////////////////////////////////////////166
+//What is the Advantages of .NetCore OVER .NET FRAMEWORK
+.Net core
+Cross Plateform => Window ,Linux ,MacOS
+OPEN SOURCE => Free to use , Modify, Distribution
+HOSTING =>Kestrel , IIS, Nginx.
+BUILD-IN DEPENDENCY INJECTION => Loosely Coupled Design, Reusability, Tesability.
+Support Multiple IDE => Visual Studio, Visual Studio for Mac , Visual Studio Code.
+
+
+.NETFRAMEWORK
+.Net Framework only supports Windows.
+.NET Framework is paid.
+.NET Framework only support IIS Hosting.
+.NET framework don't have build in dependency injection.
+.NET framework only support Visual Studio IDE.
+
+//.NET 5 /.NET 6 /.NET 7
+///.                       .NET 5       .Net 6          .Net 7
+Release Year              2020          2021             2022
+Support Type              STS           LTS              STS
+C# Version                 9             10              11
+Minimal Api                no            yes            yes(Improved)
+Hot Reload                 no            yes           yes(Improved)
+Performance                Good          Excellent       Best
+
+/////////////////////////////////////////////////////////////////////////////////////////170
+What is the role of configuration methods ? 
+=>Configuration method specifies how the app responds to Http request and responde .It is used to setup request pipeline. 
+it is not optional
+//Example :
+
+public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+{
+if (env.IsDevelopment())
+{
+app. UseDeveloperExceptionPage();
+}
+else
+{
+}
+
+app.UseExceptionHandler("/Home/Error");
+
+app.UseStaticFiles();
+
+app.UseRouting();
+
+app.UseAuthorization();
+
+app.UseEndpoints (endpoints =>
+
+{
+
+endpoints.MapControllerRoute(
+
+name: "default",
+
+pattern: "(controller-Home}/{action-Index}/{id?)");
+
+});
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////195 In-Memory Caching (local to one server) , Distributed Caching , Redis
+In-Memory Caching (local to one server)
+
+Cache is stored in the memory (RAM) of the application server.
+
+Very fast, but available only to that server.
+
+Real-world example:
+
+Imagine you run a blog website hosted on a single server.
+
+You want to show the Top 10 Most Read Articles.
+
+These results don't change very often, so instead of hitting the database each time, you store them in the server's memory (cache).
+
+Every time a user requests, you just return the cached result very fast.
+
+Best when:
+
+App runs on a single server.
+
+Data is small, frequent, and not critical to be shared across multiple servers.
+
+//////
+Distributed Caching (shared across servers/nodes)
+
+← Cache is stored in an external system (like Redis, SQL Server, or NCache).
+
+Accessible by multiple servers.
+
+Real-world example:
+
+Imagine you run an E-commerce app like Amazon hosted on multiple servers.
+
+Thousands of users add products to their shopping cart.
+
+If you store the cart in In-Memory cache, and the user's next request goes to a different server X their cart will be empty!
+
+Solution: Use a Distributed Cache (like Redis).
+
+Now all servers share the same cache store no matter which server the user lands on, their cart will be there.
+
+Best when:
+
+App runs on multiple servers (load balanced).
+
+Data is critical & needs to be consistent across servers.
+
+
+////Redis
+ Definition (like a 5-year-old can say)
+
+> “Redis is like a super-fast notebook where your computer keeps things it wants to remember for a short time, so it doesn’t have to go find them again and again.”
+
+
+
+
+---
+
+💡 Slightly more technical definition (interview-friendly)
+
+Redis is an in-memory data store used for caching, session storage, and real-time data processing.
+It stores data in RAM (memory), not on disk, which makes it very fast for reading and writing.
+
+Redis = Remote Dictionary Server.
+
+
+---
+
+🧩 Example (with detailed explanation)
+
+Imagine your Buy & Sell Property App where users search for properties.
+If 1000 users search for “2BHK Flats in Mumbai”, your app should not call the database 1000 times — that’s slow.
+
+So what we do:
+
+1. The first time someone searches, we get data from the database and store it in Redis cache.
+
+
+2. Next time, when users search the same thing — we get data from Redis (memory) instantly instead of going to the database again.
+
+
+3. This makes the application faster and more scalable.
+
+
+
+
+---
+
+🧑‍💻 Code Example (C# – Using Redis in .NET)
+
+// Step 1: Install Microsoft.Extensions.Caching.StackExchangeRedis package
+
+public class PropertyService
+{
+    private readonly IDistributedCache _cache;
+
+    public PropertyService(IDistributedCache cache)
+    {
+        _cache = cache;
+    }
+
+    public async Task<string> GetPropertiesAsync()
+    {
+        string cacheKey = "property_list";
+        var cachedData = await _cache.GetStringAsync(cacheKey);
+
+        if (cachedData != null)
+        {
+            // ✅ Return from Redis cache
+            return $"From Redis Cache: {cachedData}";
+        }
+
+        // 🚀 Simulate data from database
+        string dbData = "2BHK Flats, 3BHK Villas, Farmhouses";
+
+        // 🧠 Save to Redis for next time
+        await _cache.SetStringAsync(cacheKey, dbData, new DistributedCacheEntryOptions
+        {
+            AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(10)
+        });
+
+        return $"From Database: {dbData}";
+    }
+}
+
+
+---
+
+🏗️ Project Use (Buy & Sell Properties App)
+
+In your project, Redis can be used for:
+
+Property search caching → to reduce DB load and speed up search results.
+
+User session storage → store user login info temporarily.
+
+Chat messages → for real-time buyer–seller communication.
+
+
+
+---
+
+⚖️ Trade-offs
+
+Advantage Disadvantage
+
+Super fast (in-memory) Data lost if Redis server restarts (unless persisted)
+Reduces database load Requires additional setup & maintenance
+Supports distributed apps easily Slight learning curve for configuration
+
+
+
+---
+
+💼 Business Impact
+
+✅ Faster application performance → Better user experience
+✅ Handles heavy traffic easily → More users can search at once
+✅ Reduces database cost → Fewer calls to SQL Server
+🚀 Direct impact: Your property platform feels instant and professional, like big apps (99acres, MagicBricks).
+
+
+///////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////END OF KINDLE
+///////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////Singleton
+✅ Interview-Friendly Answer:
+Q: What is a Singleton Class in C#?
+
+A Singleton is a special class where only one object (instance) can be created during the application's lifetime.
+It's useful when you need just one shared thing, like a single database connection, a logging service, or a settings manager.
+
+💡 Real-World Analogy:
+Think of a TV Remote in a room — you don’t need 10 remotes.
+Everyone uses the same one to control the TV.
+That’s how a Singleton works — one object shared everywhere.
+
+🧠 Why use Singleton?
+To share data across multiple places.
+To save memory and avoid creating duplicate objects.
+To make sure there’s only one access point to something.
+
+Singleton Pattern means → Only one object (instance) of a class exists in the whole application.
+
+It’s like:
+
+A Government → only one Prime Minister exists.
+
+A Logger Service → only one logging instance writing to the file.
+
+A Database Connection Pool → only one shared object controlling all DB connections.
+
+
+
+So, instead of creating multiple objects again and again, we use one shared object everywhere.
+✅ Simple Code Example:
+//Create a sealed class so that no one can inherit from this class.
+public sealed class SingletonLogger
+{
+  // Declare a static instance of this class
+    private static SingletonLogger _instance;
+
+    // Create a private constructor so that no one can create the object of this singleton class.
+    private SingletonLogger() { }
+
+    //Create a method which will check whether the instance is null , if yes then it will create the new instance and if not null
+    then it will return the same instance.
+    public static SingletonLogger GetInstance()
+    {
+        if (_instance == null)
+        {
+            _instance = new SingletonLogger();
+        }
+
+        return _instance;
+    }
+
+    public void Log(string message)
+    {
+        Console.WriteLine("Log: " + message);
+    }
+}
+🔄 How to Use It:
+class Program
+{
+    static void Main()
+    {
+        var logger1 = SingletonLogger.GetInstance();
+        var logger2 = SingletonLogger.GetInstance();
+
+        logger1.Log("App started");
+        logger2.Log("Something happened");
+
+        Console.WriteLine(logger1 == logger2); // true — same object
+    }
+}
+✅ Summary (for Interview):
+Singleton ensures only one instance of a class exists.
+Useful for things like Logger, Config Manager, DB Connection.
+It helps avoid duplication and keeps things centralized.
+Would you like me to show the Thread-safe version or how Singleton is used in ASP.NET Core (like in services)?
+
+
+
+
+
+Great question! Interviewers love asking about Thread-Safe Singleton — especially for multithreaded apps.
+
+
+
+
+
+---
+
+
+
+✅ Interview-Friendly Explanation:
+
+
+
+Q: How to make Singleton thread-safe in C#?
+
+
+
+> In multithreaded apps, multiple threads might try to create the Singleton at the same time — which can break the "only one object" rule.
+
+So, we use locking to make sure only one thread can create the object — this is called thread-safe Singleton.
+
+
+
+
+
+
+
+////////////////////
+//How to make Signaloton Thread Safe
+---
+
+
+
+💡 Think of a Bank ATM
+
+
+
+Only one person can withdraw at a time.
+
+If two people try at once, the system must lock the ATM temporarily — that’s thread safety.
+
+
+
+
+
+---
+
+
+
+✅ Code: Thread-Safe Singleton (with lock)
+
+
+
+public sealed class SingletonLogger
+
+{
+
+    private static SingletonLogger _instance;
+
+    private static readonly object _lock = new object();
+
+
+
+    // Private constructor
+
+    private SingletonLogger() { }
+
+
+
+    public static SingletonLogger GetInstance()
+
+    {
+
+        // Lock to allow only one thread inside this block at a time
+
+        lock (_lock)
+
+        {
+
+            if (_instance == null)
+
+            {
+
+                _instance = new SingletonLogger();
+
+            }
+
+        }
+
+
+
+        return _instance;
+
+    }
+
+
+
+    public void Log(string message)
+
+    {
+
+        Console.WriteLine("Log: " + message);
+
+    }
+
+}
+
+
+
+
+
+---
+
+
+
+🧪 How to Use:
+
+
+
+class Program
+
+{
+
+    static void Main()
+
+    {
+
+        var logger1 = SingletonLogger.GetInstance();
+
+        var logger2 = SingletonLogger.GetInstance();
+
+
+
+        Console.WriteLine(logger1 == logger2); // ✅ true: same object
+
+    }
+
+}
+
+
+
+
+
+---
+
+
+
+✅ Summary (for interview):
+
+
+
+Use lock to make Singleton thread-safe.
+
+
+
+lock ensures only one thread creates the object.
+
+
+
+This avoids race conditions in multithreaded environments.
+
+////////////////////////////////////////////////////////////////////////////////////////////Single IR 
+Single IR in Live Data Processing
+🧒 Easiest Definition (5-year-old level)
+👉 Only one live data message is handled at a time.
+Like:
+Teacher asks one question
+You answer that one question fully
+Then teacher asks next
+Not many questions together.
+👶 Simple Human Definition
+Single IR means the system processes one incoming data record (or event) at a time, independently.
+Here:
+IR = Input Record / Input Request / Input Row
+Single IR = one record per processing cycle
+🧠 Slightly Technical (Still Easy)
+In live data processing, Single IR means the system processes each incoming event/message one by one, instead of processing them in batches.
+✅ Example (Very Clear)
+Live Payment System 💳
+User A makes a payment
+System processes that one payment
+Updates balance
+Sends confirmation
+Moves to next payment
+This is Single IR processing.
+////////////////////////////////////////////////////////////////
+//What is reference type and Value Type
+--> “Value types store actual values in stack memory . Reference types store the memory address and point to shared data in heap. 
+
+-->with value types, changes don’t affect others. But with reference types, changes reflect across all references.”
+
+-->🔍 Common Value Types in C#:
+
+int, float, bool, char, double, struct
+
+
+-->🔍 Common Reference Types in C#:
+
+class, string, array, object, interface.
+
+-->
+EXAMPLE : 
+Code Example (Value Type):
+
+int a = 5;
+int b = a;
+b = 10;
+
+Console.WriteLine(a); // Output: 5
+Console.WriteLine(b); // Output: 10
+
+📌 a and b are separate copies, so changing b does not affect a.
+-->
+ Code Example (Reference Type):
+
+class Person
+{
+    public string Name;
+}
+
+Person p1 = new Person { Name = "Abhishek" };
+Person p2 = p1;
+p2.Name = "Sunil";
+
+Console.WriteLine(p1.Name); // Output: Sunil
+Console.WriteLine(p2.Name); // Output: Sunil
+/////////
+Definition (in simplest words)
+🧱 Value Type
+Think of a Value Type as a real object kept inside your own box.
+When you give it to someone, they get a copy of it — not the same box.
+🧠 Example:
+If you have one toy (like a car) and your friend wants one, you make a copy and give it.
+Both play separately — one breaks, the other is fine.
+
+📘 In C#:
+int, float, bool, struct, enum are Value Types.
+
+🔗 Reference Type
+Think of a Reference Type as a note with directions to where the object is kept.
+When you give that note to someone, you both point to the same object.
+🧠 Example:
+You and your friend both share one remote car — if your friend changes its color, you’ll see the same color change, because it’s the same object.
+
+📘 In C#:
+class, array, string, interface, delegate are Reference Types.
+
+💻 Example in Code
+int a = 10;
+int b = a;
+b = 20;
+Console.WriteLine(a); // Output: 10 — Value Type makes a copy
+
+Person p1 = new Person { Name = "Abhishek" };
+Person p2 = p1;
+p2.Name = "John";
+Console.WriteLine(p1.Name); // Output: John — Reference Type shares the same memory
+🏢 Project Use (Buy & Sell Properties App)
+When storing property details (like Price, Area, Id), you use Value Types because each property has its own independent value.
+When dealing with objects like User, Owner, or PropertyModel, you use Reference Types, since you want to work with shared data objects across layers (Controller → Service → Repository).
+⚖️ Trade-offs (Pros & Cons)
+Type	Pros	Cons
+Value Type	Faster to access (stored in stack), no side effects	Copies use more memory if many duplicates
+Reference Type	Can share data easily	Changes in one place affect all references, needs Garbage Collection
+💼 Business Impact
+✅ Using Value Types for independent data (like property price) keeps performance fast.
+✅ Using Reference Types for shared entities (like user sessions, property models) helps reuse data and avoid duplication.
+⚠️ But mixing them wrongly can lead to bugs or unnecessary memory use.
+
+////////////////////////////////////////////////////////////////////////////All the satus code
+
+//Frequently used
+200 OK. You'll hopefully see this response code in the majority of your API calls. ...
+201 Created. ...
+301 Moved Permanently. ...
+302 Found. ...
+404 Not Found. ...
+429 Too Many Requests. ...
+401 Unauthorized. ...
+500 Internal Server Error.
+
+//All Satus code
+
+
+1xx Informational:
+Indicates that the request was received and understood. These are temporary responses and consist of a Status-Line and optional headers, and are terminated by an empty line.
+100 Continue: The client should continue with its request.
+101 Switching Protocols: The server is switching protocols.
+2xx Success:
+Indicates that the client's request was successfully received, understood, and accepted. 
+200 OK: Standard success response for various requests.
+201 Created: The request has succeeded and a new resource has been created. Commonly used after a POST request. 
+202 Accepted: The request has been accepted for processing, but the processing is not yet complete.
+204 No Content: The server successfully processed the request, but is not returning any content.
+3xx Redirection:
+Indicates that further action needs to be taken by the user agent to fulfill the request.
+301 Moved Permanently: The resource has been permanently moved to a new URI.
+302 Found: The resource is temporarily located at a different URI.
+304 Not Modified: The client's cached version of the resource is still valid.
+4xx Client Error:
+Indicates that the client's request contains bad syntax or cannot be fulfilled. 
+400 Bad Request: The server cannot process the request due to a client error (e.g., malformed syntax).
+401 Unauthorized: The request requires user authentication.
+403 Forbidden: The server understood the request but refuses to authorize it.
+404 Not Found: The server cannot find the requested resource.
+405 Method Not Allowed: The HTTP method used is not supported for the requested resource.
+409 Conflict: The request could not be completed due to a conflict with the current state of the resource.
+429 Too Many Requests: The user has sent too many requests in a given amount of time.
+5xx Server Error:
+Indicates that the server failed to fulfill an apparently valid request. 
+500 Internal Server Error: A generic error message, given when an unexpected condition was encountered by the server.
+501 Not Implemented: The server does not support the functionality required to fulfill the request.
+503 Service Unavailable: The server is currently unable to handle the request due to temporary overloading or maintenance.
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////can you tell me what is 4xx erro, what we call ?
+/////////////////////////////////////////////////////////////////////////Web Api Security
+1. Authentication (Who are you?)
+This step checks who the user is.
+Example: Login with username/password → API gives a token (JWT or OAuth2).
+Every time the user calls API, they must send this token in the request header.
+If token is missing or fake → API rejects.
+👉 This makes sure only real users can call the API.
+
+2. Authorization (What can you do?)
+After knowing the user, we check what permissions they have.
+Example:
+A buyer can view properties but cannot delete.
+An admin can manage users and listings.
+This is usually role-based or policy-based in .NET.
+👉 This makes sure users cannot do operations outside their role.
+
+3. Data Protection (Keep data safe in travel)
+Use HTTPS so data is encrypted while moving between server and client.
+Use password hashing & encryption in database (never store plain text).
+Example: bcrypt, SHA-256.
+👉 This protects from hackers stealing sensitive info.
+
+4. Other API Security Best Practices
+CORS Policy → Only allow trusted websites/apps to use your API.
+Rate Limiting / Throttling → Prevent misuse by limiting requests per user.
+Input Validation → Avoid SQL Injection, XSS by cleaning user input.
+Logging & Monitoring → Keep track of suspicious activities.
+API Gateway / Firewall → Extra shield for enterprise systems.
+🚀 Example (in .NET + Angular project like yours):
+User logs in → API checks credentials → API returns a JWT token.
+Angular app stores token (in memory/local storage).
+For every API call → Angular sends token in Authorization header.
+.NET API middleware validates token → allows or denies request.
+
+
+//
+////////////////////Security Best Practises
+1.> How do you secure WEB APIs in .NET Core ?
+-> Authentication(JWT,OAuth2 , OpenID Connect).
+->Authorization with poicies and roles.
+->Preventing over-posting with DTOs.
+
+////////////////////////////////////////////////////////////////////////////////////////Performance
+1. Use Asynchronous Code (async/await) –
+
+Don’t block the thread. Example: Instead of waiting for a database call to finish, let the app do other work in parallel.
+
+
+
+
+
+2. Caching –
+
+Store frequently used data in memory (like Redis or In-Memory Cache) so we don’t always hit the database.
+
+
+
+
+
+3. Database Optimization –
+
+
+
+Use AsNoTracking() in EF Core for read-only queries (it avoids unnecessary tracking).
+
+
+
+Write efficient SQL queries and indexes.
+
+
+
+
+
+
+
+4. Use Dependency Injection Wisely –
+
+Register services with correct lifetimes (Singleton, Scoped, Transient) so memory is not wasted.
+
+
+
+
+
+5. Reduce Startup Time –
+
+Only load what is needed when the application starts.
+
+
+
+
+
+6. Compression & Minification –
+
+Enable response compression (gzip/brotli) so data transfer is smaller.
+
+
+
+
+
+7. Logging & Monitoring –
+
+Use structured logging (Serilog, Application Insights) to find performance bottlenecks.
+
+
+
+
+
+8. Use Background Services –
+
+Heavy tasks (like sending emails, reports) should run in background jobs (Hangfire, Quartz) instead of blocking user requests.
+
+
+
+/////////////////////////////////////////////////////////////////////How do you implement security in an MVC application (Authentication/Authorization)?
+///////////////////////////////////////////////////Angular Specific (Performance + Security):
+1>How do you optimize Angular applications for better performance?
+
+Lazy Loading of modules.
+Ahead-of-Time (AOT) Compilation.
+Change detection strategy (OnPush).
+
+2>How do you prevent XSS attacks in Angular?
+Angular's DOM sanitization.
+Safe navigation ([innerHTML] with caution).
+
+3>How do you handle large list rendering in Angular?
+Using ngFor with trackBy.
+Virtual scrolling for large lists.
+
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////What are design patter used in making Stock market application.
+1. Observer Pattern (very important in stock market apps)
+Why: Stock prices keep changing in real time. If one price changes, all users looking at that stock should get updated immediately.
+How: Observer pattern allows me to notify all users automatically whenever there is a change.
+Example in app: When the price of TCS shares changes, all traders' dashboards update instantly.
+2. Factory Pattern
+Why: The application might need to create different types of financial instruments (Stocks, Bonds, Mutual Funds, Options). Instead of writing messy new everywhere, a Factory can create objects in a clean way.
+Example in app: If tomorrow a new type of asset is added, we don’t have to change everywhere, just extend the factory.
+3. Singleton Pattern
+Why: Some components like logging service, configuration, cache, or database connection should have only one instance across the whole app.
+Example in app: One global configuration for connecting to stock market APIs.
+4. Strategy Pattern (optional, but good to mention)
+Why: Different users might have different order execution strategies (e.g., Market Order, Limit Order, Stop Loss). Strategy pattern allows plugging in new algorithms without rewriting code.
+Example in app: A trader can switch between "Market order" and "Limit order" easily.
+🎯 Final Easy Answer (interview-ready):
+
+"For a stock market application, I would use the Observer pattern to handle real-time stock price updates to all users, the Factory pattern to create different financial instruments cleanly, and the Singleton pattern for shared resources like logging or database connections. If we need different trading strategies, I can also use the Strategy pattern. These patterns will keep the system scalable, easy to maintain, and ready for future changes."
+
+/////////////////////////////////////////////////////////////////////////////////Observable Patter
+👉 "Observer Pattern is like a WhatsApp group.
+
+When the admin posts a message (event), all group members (subscribers) get notified immediately.
+In stock market applications:
+ 1. Observer
+
+👉 An Observer is like a person waiting for updates.
+It says: “Tell me when something changes.”
+
+Example:
+You (Observer) subscribe to a YouTube channel. You don’t keep checking daily—YouTube tells you when a new video is uploaded.
+
+
+---
+
+🔹 2. Observable
+
+👉 An Observable is the thing that produces updates.
+It’s the source of truth that others can watch.
+
+Example:
+The YouTube channel is the Observable. It produces videos (data/events) and notifies all subscribers (Observers).
+
+
+---
+
+🔹 3. Subscriber
+
+👉 A Subscriber is the one who connects to the Observable to actually receive the updates.
+
+Example:
+When you click “Subscribe” on YouTube, you become a Subscriber. Now whenever a video is uploaded, you’ll get notified.
+
+
+The Stock is the subject (Observable).
+Investors/Traders are observers (Subscribers).
+When a stock price changes, the Stock notifies all Investors instantly.
+This way, we avoid checking prices again and again, and changes are pushed in real-time."
+---
+🏢 Enterprise-Level Example: Stock Market
+We’ll implement a Stock Price Notification System using the Observer Pattern.
+Step 1: Create Observer Interface
+// IObserver.cs
+
+public interface IObserver
+
+{
+
+    void Update(string stockName, decimal price);
+
+}
+
+
+
+Step 2: Create Subject (Observable) Interface
+
+
+
+// IStock.cs
+
+public interface IStock
+
+{
+
+    void Attach(IObserver observer);
+
+    void Detach(IObserver observer);
+
+    void Notify();
+
+}
+
+
+
+Step 3: Concrete Subject (Stock)
+
+
+
+// Stock.cs
+
+using System.Collections.Generic;
+
+
+
+public class Stock : IStock
+
+{
+
+    private List<IObserver> _observers = new();
+
+    private string _stockName;
+
+    private decimal _price;
+
+
+
+    public Stock(string stockName, decimal price)
+
+    {
+
+        _stockName = stockName;
+
+        _price = price;
+
+    }
+
+
+
+    public void Attach(IObserver observer) => _observers.Add(observer);
+
+    public void Detach(IObserver observer) => _observers.Remove(observer);
+
+
+
+    public void SetPrice(decimal price)
+
+    {
+
+        _price = price;
+
+        Notify(); // Notify observers whenever price changes
+
+    }
+
+
+
+    public void Notify()
+
+    {
+
+        foreach (var observer in _observers)
+
+        {
+
+            observer.Update(_stockName, _price);
+
+        }
+
+    }
+
+}
+
+
+
+Step 4: Concrete Observer (Investor)
+
+
+
+// Investor.cs
+
+public class Investor : IObserver
+
+{
+
+    private string _name;
+
+
+
+    public Investor(string name)
+
+    {
+
+        _name = name;
+
+    }
+
+
+
+    public void Update(string stockName, decimal price)
+
+    {
+
+        Console.WriteLine($"Notification for {_name}: {stockName} is now ₹{price}");
+
+    }
+
+}
+
+
+
+Step 5: Test Implementation
+
+
+
+// Program.cs
+
+using System;
+
+
+
+class Program
+
+{
+    static void Main()
+
+    {
+
+        // Create Stock (Observable)
+
+        Stock reliance = new Stock("Reliance", 2500);
+
+
+
+        // Create Investors (Observers)
+
+        Investor abhishek = new Investor("Abhishek");
+
+        Investor rahul = new Investor("Rahul");
+
+
+
+        // Attach observers
+
+        reliance.Attach(abhishek);
+
+        reliance.Attach(rahul);
+
+
+
+        // Price Change -> Notifies Investors
+
+        reliance.SetPrice(2600);
+
+        reliance.SetPrice(2700);
+
+
+
+        // Rahul leaves the subscription
+
+        reliance.Detach(rahul);
+
+
+
+        // Only Abhishek gets notified
+
+        reliance.SetPrice(2800);
+
+    }
+
+}
+
+
+
+
+
+---
+
+
+
+✅ Output
+
+
+
+Notification for Abhishek: Reliance is now ₹2600
+
+Notification for Rahul: Reliance is now ₹2600
+
+Notification for Abhishek: Reliance is now ₹2700
+
+Notification for Rahul: Reliance is now ₹2700
+
+Notification for Abhishek: Reliance is now ₹2800
+
+
+
+
+
+---
+
+
+
+🏆 Where is this used in real enterprise apps?
+
+
+
+Stock Market / Trading Apps (price updates → traders)
+
+
+
+News Feeds (new post → followers)
+
+
+
+E-commerce (stock available → notify users)
+
+
+
+Event-driven Microservices (publish/subscribe model)
+
+////////////////////////////////////////////////////////////////////////////////Factory
+The Factory Pattern is one of the most commonly asked design patterns in interviews, especially for enterprise-level applications.
+
+
+---
+
+🔹 What is Factory Pattern (easy words)
+
+Think of a Factory as a machine that creates objects for you.
+
+Instead of using new everywhere in your code, you tell the factory:
+👉 "Hey, I need an object of type X."
+👉 The factory decides which class to create and gives it to you.
+
+
+This makes your code:
+✅ Clean
+✅ Flexible
+✅ Easy to extend (you just add new products without changing existing code).
+
+
+---
+
+🔹 Real-World Enterprise Example: Payment System
+
+Imagine you’re building an E-commerce application.
+
+Payment can be done via Credit Card, PayPal, or UPI.
+
+Instead of writing new CreditCardPayment() everywhere,
+we create a PaymentFactory that gives the right object.
+
+
+
+---
+
+🔹 Step 1: Define Payment Interface
+
+public interface IPayment
+{
+    void Pay(decimal amount);
+}
+
+
+---
+
+🔹 Step 2: Implement Different Payment Methods
+
+public class CreditCardPayment : IPayment
+{
+    public void Pay(decimal amount)
+    {
+        Console.WriteLine($"Paid {amount} using Credit Card.");
+    }
+}
+
+public class PayPalPayment : IPayment
+{
+    public void Pay(decimal amount)
+    {
+        Console.WriteLine($"Paid {amount} using PayPal.");
+    }
+}
+
+public class UpiPayment : IPayment
+{
+    public void Pay(decimal amount)
+    {
+        Console.WriteLine($"Paid {amount} using UPI.");
+    }
+}
+
+
+---
+🔹 Step 3: Create Factory
+
+public class PaymentFactory
+{
+    public static IPayment GetPayment(string paymentType)
+    {
+        return paymentType.ToLower() switch
+        {
+            "creditcard" => new CreditCardPayment(),
+            "paypal" => new PayPalPayment(),
+            "upi" => new UpiPayment(),
+            _ => throw new ArgumentException("Invalid payment type")
+        };
+    }
+}
+
+
+---
+
+🔹 Step 4: Use Factory in Application
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Enter Payment Method (CreditCard / PayPal / UPI):");
+        string method = Console.ReadLine();
+
+        Console.WriteLine("Enter amount:");
+        decimal amount = Convert.ToDecimal(Console.ReadLine());
+
+        IPayment payment = PaymentFactory.GetPayment(method);
+        payment.Pay(amount);
+
+        Console.ReadKey();
+    }
+}
+
+
+---
+
+🔹 Example Run
+
+Enter Payment Method (CreditCard / PayPal / UPI):
+paypal
+Enter amount:
+1500
+Output → Paid 1500 using PayPal.
+
+
+---
+
+🔹 How This Helps in Enterprise Applications
+
+Suppose tomorrow your company adds Bitcoin Payment 🚀
+👉 You just add a new BitcoinPayment class and extend the factory.
+👉 No need to touch existing code → Open/Closed Principle (SOLID).
+
+
+
+---
+
+✅ Easy answer for manager/interviewer:
+"I’ll use the Factory Pattern whenever I need to create objects of different types, like different payment methods in a stock market or e-commerce application. This way, adding new types is easy, and I don’t repeat object creation logic everywhere."
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////Which Design pattern you word.
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////abstract factory Design patter.
+/////////////////////////////////////////////////////////////////9>Singalton design patter.
+//////////////////What  is Singalton design patter.
+The Singleton design pattern ensures that a class has only one instance and provides a global point of access to that instance.
+/////////////////////Why Singalton design patter
+1>Ensure Single Instance
+2>Global Access
+3>Resource Sharing
+////////////////////////When to Use the Singleton Design Pattern
+1>There must be exactly one instance of a class, and it must be accessible globally.
+/////////////Why Even Use the Singleton Design Pattern
+1>Managing database connections: A Singleton class can be used to manage database connections, ensuring that only one connection
+is created and shared across multiple parts of the application.
+2>Logging: A Singleton logger class can be used to centralize logging functionality, allowing different components of the system to log 
+messages to the same log file or stream.
+3>Configuration settings: A Singleton configuration manager class can be used to load and cache application configuration settings, 
+ensuring that the settings are loaded once and accessed globally throughout the application.
+
+
+//why we are creating singlaton design pattern,instead of object.
+The Singleton design pattern is used to ensure that a class has only one instance and provides a global point of access to that instance. There are several reasons why you might choose to use the Singleton pattern instead of creating multiple instances of a class:
+
+Global Access Point:
+
+A Singleton provides a centralized point of access to its instance. This is useful when exactly one object is needed to coordinate actions across the system.
+Resource Sharing:
+
+If multiple instances of a class would share and modify the same resource, a Singleton pattern ensures that all modifications are done through the same instance, preventing conflicts and ensuring consistency.
+Resource Management:
+
+In some cases, creating multiple instances of a class might be resource-intensive or inefficient. Using a Singleton ensures that there is only one instance, saving resources.
+Configuration Management:
+
+Singletons are often used for managing configuration settings or global application state. Having a single instance makes it easy to maintain and manage these settings.
+Lazy Initialization:
+
+With a Singleton, you can implement lazy initialization, meaning the instance is created only when it is first requested. This can be beneficial for performance, especially if the initialization process is resource-intensive.
+Prevention of Multiple Instances:
+
+Some classes are designed to have only one instance due to their nature or purpose. The Singleton pattern enforces this constraint and ensures that there is only one instance of the class.
+Managing Shared Resources:
+
+In scenarios where multiple parts of the application need to share the same resource, a Singleton provides a way to centralize access and modifications to that resource.
+Maintaining State:
+
+Singletons are often used to maintain a consistent state across the application. Any changes made to the state are reflected in a single instance.
+However, it's important to note that the Singleton pattern also has its drawbacks, such as potential for global state, difficulty in testing, and limited flexibility in certain scenarios. Therefore, it's essential to carefully consider whether the Singleton pattern is appropriate for a particular use case.
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+What is latest version of c#
+
+The latest stable version of C# is C# 13.0, released with .NET 9. 
+
+If you need, I can also mention what new features came with C# 13 so it sounds strong in an interview.
+
+Perfect 👍 Let’s make this interview-ready and easy to remember.
+
+
+---
+
+🔥 New Features in C# 13 (with .NET 9)
+
+Here are the highlight updates:
+
+1. Field keyword in Primary Constructors
+
+You can directly create a field inside a primary constructor parameter.
+
+
+class Student(string name, int age)
+{
+    private field int age = age; // new keyword 'field'
+}
+
+
+2. Partial Properties
+
+Just like partial classes, now properties can be declared as partial and implemented in another part of the class.
+
+
+partial class Person
+{
+    public partial string Name { get; }
+}
+
+
+3. Lock Object Simplification
+
+You can now lock on a value directly without creating a separate object.
+
+
+lock (someLock)
+{
+    // thread-safe code
+}
+
+
+4. ref readonly Parameters
+
+Allows passing parameters by reference without allowing modification.
+
+
+void Print(ref readonly int number)
+{
+    Console.WriteLine(number);
+}
+
+
+5. Method Group Natural Type Improvements
+
+Better support for method group conversions when passing methods as delegates.
+
+
+
+6. Improved Interpolated Strings
+
+More performance improvements when using $"..." interpolations.
+
+
+
+
+
+---
+
+🎯 Interview-Friendly Answer
+
+> “The latest version of C# is 13, released with .NET 9. It introduced useful features like the field keyword in primary constructors, partial properties, ref readonly parameters, and better support for locks and interpolated strings. These updates make code more concise, safe, and developer-friendly.”
+
+
+
+
+---
+
+👉 Do you want me to also make a simple diagram or table comparing C# 12 vs C# 13 so you can quickly revise before interviews?
+/////////////////////////////////////////
+What is Managed and umanged code interview questions
+
+
+Great one 👍 This is a very common C# interview question. Let’s break it down in simple words + interview style.
+
+
+---
+
+⚡ Managed Code vs Unmanaged Code
+
+🔹 Managed Code
+
+Code that runs under the control of the .NET runtime (CLR).
+
+CLR takes care of memory management, garbage collection, type safety, and security.
+
+Example: Any C# or VB.NET code.
+
+
+// Example of Managed Code
+public class Test
+{
+    public void SayHello()
+    {
+        Console.WriteLine("Hello, Managed World!");
+    }
+}
+
+
+---
+
+🔹 Unmanaged Code
+
+Code that runs directly on the operating system (outside CLR).
+
+You need to manually handle memory allocation and cleanup.
+
+Example: C, C++, COM components, Win32 APIs.
+
+
+// Example of Unmanaged Code (C++)
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "Hello, Unmanaged World!";
+    return 0;
+}
+
+
+---
+
+🎯 Interview-Friendly Answer
+
+> “Managed code is the code that runs under the control of CLR in .NET, where memory management and garbage collection are automatic. Unmanaged code runs directly on the OS, like C or C++ code, where the developer must manually manage memory and resources.”
+
+
+
+
+---
+
+🤔 Possible Cross Questions
+
+1. Can .NET work with unmanaged code?
+✔ Yes, using P/Invoke (Platform Invocation Services) and COM Interop.
+
+
+2. Why is managed code safer?
+✔ Because CLR ensures type safety, garbage collection, and prevents memory leaks.
+
+
+3. Can you give an example where you need unmanaged code in a .NET project?
+✔ For performance-critical operations or using existing C/C++ libraries (like image processing, hardware drivers).
+
+
+
+
+---
+
+👉 Do you want me to also prepare a short diagram showing CLR in between managed and unmanaged code for quick revision?
+
+
+Show quoted text
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
