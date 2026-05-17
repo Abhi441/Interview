@@ -1,3 +1,5 @@
+My Update: 13309
+
 My Revision strategies day1 -> 1 to 10000
 day2 -> 10000 to 20000
 day3 -> 20000 to 30000
@@ -576,6 +578,9 @@ WHAT IS NON-CLUSTERED INDEX?
 085. IN WHICH COLUMN YOU WILL APPLY THE INDEXING TO OPTIMIZE THIS QUERY.
 
 086. WHAT IS THE DIFFERENCE BETWEEN STORED PROCEDURE AND FUNCTIONS?
+86.1)Stored Procedure vs Function vs Trigger.
+86.2)How many multiple ways we can get the data from Stored Procedure.
+86.3)why we use function instead of stored procedure.
 
 087. HOW TO OPTIMIZE A STORED PROCEDURE OR SOL QUERY?
 
@@ -1321,6 +1326,8 @@ Error Handling
 
 
 
+///////////////////////////////////////Linq
+left join of linq query.
 
 
 
@@ -1334,6 +1341,50 @@ Error Handling
 
 
 
+
+/////////////////////////////////Random
+/// Explicit and Explicity type.
+what the pakage use for creating new JWT Token.
+Angular Fock
+//How you are implement the lazy loading in the Angular.
+//Rxjs() -->tell more about the things
+//Do we nessary to keep constructor in .ts file.
+//can we use jquery in javaScript.
+//JoSet.
+//what the ID that you are using.
+//Where does managing your code.
+//Can we write the code for generarting jwt token.
+//Angular : if I have to send the multiple request(like three times) for checking response will not give the error(same error) , 
+if all the time will give then I will responde to to Ui that error.
+//What is flex box.
+//Rxjs() -->tell more about the things
+//Do we nessary to keep constructor in .ts file.
+//can we use jquery in javaScript.
+//JoSet.
+//what the ID that you are using.
+//Where does managing your code.
+//Can we write the code for generarting jwt token.
+/////////////////////////////////////What are ways we can return multiple method(tuple) ?
+////////////////////////////////////If multiple tread what to access to signaloton how to pretect(lock).
+///////////////////////////////////what is output od javascript ?
+"Test" + 1 + 2  => "Test12"
+1 + 2 + "Test" + 1 + 2 => "3Test12"
+/////////////////////////////////////////////////Scedocode in css
+//////////////////////////////////////////////bootstrap DTO
+/////////////////////////////////////////////JavaScript OOP
+/////////////////////////////////////////////Deadlock lock.
+////////////////////////////////////////////class and struct 
+////////////////////////////////////////////Hashtable and dictionary.
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////ness
+///////////////////////////////////////////////////////////////
+//How to track the Health of application ?
+//Write the dictionary code for , Adding , retriving , removing , without using in build function in c#
+//How t
+Standlone component
+How the 2 services communicate with each other(if you are bringing data from one services and sending back to another services , How to get this is done from response).
+////I want to update the data by put request but that data is not available , what will happen ?
+/////////////Data Anotation in .net
 
 
 
@@ -4421,7 +4472,7 @@ ArrayList → Storing a random collection like UI controls, logs, temporary mixe
 
 Hashtable → Storing user settings ("Theme" → "Dark"), phone books, ID → Names.
 
-/////////////////////////////////////////////Q40
+/////////////////////////////////////////////Q40 what is Extensition Methods
 what is Extensition Methods :::
 Extension method is a method injected (added) into an existing class
 (or struct or interfaces), without modifying the sourse code of that 
@@ -4476,7 +4527,8 @@ namespace Programs
   }
 }
 
-//As the base library
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////As the base library
 public static class IntExtensition
 {
     public static int DoubleIt(this int number)
@@ -4494,6 +4546,143 @@ class Program
         Console.WriteLine(result); // Output: 10
     }
 }
+
+
+Perfect 👌 Let’s explain Extension Method in the 4 parts (Definition → Project Use → Trade-offs → Business Impact) in super easy words.
+
+📖 Definition (Easy Words)
+
+An Extension Method is like giving extra power (new methods) to an existing class without changing its code.
+
+It’s just a static method written in a static class, but it looks like a normal method of the class you are extending.
+
+👉 Think of it like adding a new app in your old phone 📱. You didn’t change the phone’s hardware, but you added more functionality.
+
+🏗️ Project Use (Buy & Sell Properties App)
+
+Example: Suppose we often display property prices in Indian Rupees format.
+
+Instead of rewriting formatting code everywhere, we create an extension method for decimal.
+
+Extension Method Code
+
+public static class PriceExtensions
+
+{
+
+    public static string ToINR(this decimal price)
+
+    {
+
+        return "₹" + price.ToString("N2"); // Example: 120000 → ₹1,20,000.00
+
+    }
+
+}
+
+Usage in Project
+
+decimal propertyPrice = 120000;
+
+Console.WriteLine(propertyPrice.ToINR());  
+
+// Output: ₹1,20,000.00
+
+
+
+👉 In my Property App:
+
+
+
+Used ToINR() everywhere in UI (Admin Panel, Buyer Screen, Seller Dashboard) to keep formatting consistent.
+
+⚖️ Trade-offs
+
+✅ Pros
+
+Code Reuse: No need to repeat the same logic again and again.
+
+Cleaner Code: Makes code more readable.
+
+
+
+No Modifications Needed: You don’t need to edit the original class (which may be sealed or from a library).
+
+
+
+
+
+❌ Cons
+
+
+
+Overuse = Confusion: Too many extension methods can make code confusing.
+
+
+
+Discoverability: New developers may not know which extension methods exist.
+
+
+
+Name Conflicts: If two libraries add the same extension name, clashes may happen.
+
+
+
+
+
+
+
+---
+
+
+
+💼 Business Impact (In Property App)
+
+
+
+Saves Development Time: One method (ToINR) reused in 50+ places.
+
+
+
+Consistency: All prices look the same across Buyer, Seller, and Admin screens.
+
+
+
+Maintainability: If tomorrow formatting changes (e.g., “USD format”), we just update the extension method once.
+
+
+
+Business Value: Users see clear, consistent price info → builds trust in the platform.
+
+
+
+
+
+
+
+---
+
+
+
+✅ In short (Interview-Ready Answer):
+
+“Extension Methods allow us to add new functionality to existing classes without modifying them.
+
+In my Buy & Sell Property app, I used an extension method ToINR() to format prices consistently.
+
+It improved reusability and readability, though too many extension methods can sometimes cause confusion.”
+
+
+
+
+
+---
+
+
+
+Do you want me to also prepare a small diagram (flow) of how Extension Method works behind the scen
+
+es (Compiler → Static Method → Instance Call)? That helps in interviews when they go deep.
 //////////////////////////////////////////////////////////Q41
 => Delegate is a variable that holds the refrences to a methods.Or you can say it's a pointer to a function.
 => A delegate can  refre to more  than one methods  of same return  type and parameters.
@@ -5675,8 +5864,8 @@ Stateful = Server remembers
 ////////////////////////////////
 
 ///////////////////////////////
-/// //////////////////////////Model Bindling
-/// //////////////////////////
+//////////////////////////////Model Bindling
+///////////////////////////////
 
 ////////////////////////////////////////////////////////////////////Model binding
 This is a very common ASP.NET Core interview question. Let’s explain it in very simple words.
@@ -7529,7 +7718,7 @@ Age int
 );
 
 ///////////////////////////////////////////////////
-Stored Procedure vs Function vs Trigger
+
 ///////////////////////////////////76)
 WHAT ARE JOINS IN SQL?
 
@@ -7635,25 +7824,6 @@ Use it
 -> You Serch frequently by coloumns other than the primary key.
 Example : SELECT * FROM EMPLOYEE WHERE Name = 'Abhishek';
 
-//////////////////////////85)
-IN WHICH COLUMN YOU WILL APPLY THE INDEXING TO OPTIMIZE THIS QUERY. “select id, class from student where name=”happy””? The column after WHERE condition, which is “name” here.
-/////////////////////86)
-WHAT IS THE DIFFERENCE BETWEEN STORED PROCEDURE AND FUNCTIONS?
-Store Procedure
--> Store Procedure may or may not return value.
-->Insert and update function used in Store Procedure.
-->we can write Transaction in Store Procedure.
-->we can call the function in stored procedure
-->we can use try catch block for runtime exception.
--> we can write ddl operation for Store Procedure.
-
-FUNCTION
--> It will return value.
-->Function we can only use select because it retriving the data.
-->we can not write Transaction in function.
-->we can not call store Procedure inside the function.
-->we can can not write try , catch , block in function.
--> you can not write the ddl operation for function.
 
 ///////////////////////////////////////////////////////////////////when to use the store Procedure and Function
 Use Stored Procedure when you want to perform operation like insert , update , delete or multiple steps.
@@ -7717,16 +7887,7 @@ Secure queries = No data leaks / hacking risk.
 
 👉 Do you want me to also add Indexes optimization (clustered vs non-clustered) into this answer? That often comes as a cross-question in SQL interviews.
 
-/////////////////////////////////////////////////////////////////////15>Write the basic syntax of store procedure.
-CREATE PROCEDURE procedure_name
-    @parameter1 datatype,
-    @parameter2 datatype,
-    ...
-AS
-    -- SQL statements to define the stored procedure logic
-    -- This can include SELECT, INSERT, UPDATE, DELETE, and more
 
-GO
 
 /////////////////////////////////////////////////////////////////////////////
 Q)How you debugging the store procedure in Sql server
@@ -9612,11 +9773,7 @@ What kind of work you are doing for in Angular.
 2. ⁠Can we create object of it
 3. ⁠What is constructor
 5. ⁠Decorator in angular
-6. ⁠What is middleware 
 7. ⁠What is middlelayer
-8. ⁠Stored procedure 
-What is middleware
-Extension method 
 Ref and out different 
 Read-only and constant difference 
 Routing
@@ -9653,7 +9810,6 @@ How pass data component to component Angular?
 What is standard alone in Angular and Implementation?
 What is App model in Angular?
 What is Auth guard and implementation in Angular?
-Custom middleware
 How handled the exception in .Net Core?
 Explain Project
 How implement Authentication in .Net Core?
@@ -10382,7 +10538,7 @@ C# code example of CQRS (Command + Query handlers) so you can mention it confide
 
 
 
-////////////////////////////////////////////////////////////////////Write code to change color of text red and green if any error occurs in Angular18
+////////////////////////////////////////////////////////////////////Write code to change color of text red and green if any error occurs in Angular18(Not Important Question)
 
 
 Perfect 👍 let’s solve this step by step.
@@ -10599,21 +10755,63 @@ When API call fails → show red "Failed to add property".
 
 
 
-/////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Diffrence between out and ref (Single place)
 
 Great question 👍 Let’s break down ref and out in the same structure you like (Definition → Project Use → Trade-offs → Business Impact) with super easy words.
 
+By using ref and out keywords we can pass parameters by reference. 
+
+When you want to return more than one values from a method then you can use out and ref parameters. Here are the differences between ref and out
+
+
+Here are the differences between ref and out
 
 
 
+static void Main(string[] args)
 
----
+{
 
+int a;
+
+int b = 5;
+
+WithRefOutq new WithRefOut();
+
+int y q.Update(out a, ref b);
+
+Console.WriteLine("WithRefOut "+a+" "+b);
+
+Console.ReadLine();
+
+}
+
+
+public class WithRefOut
+{
+public int Update(out int c, ref int d)
+{
+
+c = 100;
+
+return c + d;
+
+}
+
+}
+
+1. No need to initialize out parameter before passing it.
+
+1. Must initialize ref parameter else error.
+
+2. Out parameter must be initialized before returning.
+
+2. Initialize not necessary, you can comment this line still fine.
+
+In short you will use out parameter to assign a new value. Whereas you will use ref to modify a value
 
 
 📖 Definition (Easy Words)
-
-
 
 Both ref and out are used to pass arguments by reference instead of by value.
 
@@ -10621,29 +10819,11 @@ Both ref and out are used to pass arguments by reference instead of by value.
 
 This means if a method changes the variable, the change also reflects outside the method.
 
-
-
-
-
 🔑 Difference:
-
-
 
 ref → Variable must be initialized before passing. (like giving a filled box 📦 to someone)
 
-
-
 out → Variable must be assigned inside the method before returning. (like giving an empty box 📦 and the method must fill it before giving back).
-
-
-
-
-
-
-
----
-
-
 
 🏗️ Project Use (Buy & Sell Properties App)
 
@@ -10654,10 +10834,6 @@ out → Variable must be assigned inside the method before returning. (like givi
 
 
 In our property search, we sometimes need to apply dynamic discounts.
-
-
-
-
 
 public void ApplyDiscount(ref decimal price, decimal discountPercent)
 
@@ -10681,23 +10857,11 @@ Console.WriteLine(propertyPrice); // 90000
 
 Here, ref helped us directly update the property price variable without creating a new return object.
 
-
-
-
-
 ---
-
-
 
 👉 Example 2 (Using out):
 
-
-
 When validating a buyer, we need both validation result and reason.
-
-
-
-
 
 public bool ValidateBuyer(int buyerId, out string reason)
 
@@ -10719,8 +10883,6 @@ public bool ValidateBuyer(int buyerId, out string reason)
 
 }
 
-
-
 // Usage
 
 string resultMessage;
@@ -10732,14 +10894,6 @@ Console.WriteLine($"{isValid} - {resultMessage}");
 
 
 Here, out allowed us to return extra data (reason) without creating a custom object.
-
-
-
-
-
----
-
-
 
 ⚖️ Trade-offs
 
@@ -10831,237 +10985,40 @@ They are efficient, but overusing them can reduce readability, so for larger API
 
 mory diagram (Box before & after method call for ref/out) that will make it 10× easier to explain in interviews?
 
-
-
-/////////////////////////////////
-
-Perfect 👌 Let’s explain Extension Method in the 4 parts (Definition → Project Use → Trade-offs → Business Impact) in super easy words.
-
-
-
-
-
----
-
-
-
-📖 Definition (Easy Words)
-
-
-
-An Extension Method is like giving extra power (new methods) to an existing class without changing its code.
-
-
-
-It’s just a static method written in a static class, but it looks like a normal method of the class you are extending.
-
-
-
-
-
-👉 Think of it like adding a new app in your old phone 📱. You didn’t change the phone’s hardware, but you added more functionality.
-
-
-
-
-
----
-
-
-
-🏗️ Project Use (Buy & Sell Properties App)
-
-
-
-Example: Suppose we often display property prices in Indian Rupees format.
-
-Instead of rewriting formatting code everywhere, we create an extension method for decimal.
-
-
-
-Extension Method Code
-
-
-
-public static class PriceExtensions
-
-{
-
-    public static string ToINR(this decimal price)
-
-    {
-
-        return "₹" + price.ToString("N2"); // Example: 120000 → ₹1,20,000.00
-
-    }
-
-}
-
-
-
-Usage in Project
-
-
-
-decimal propertyPrice = 120000;
-
-Console.WriteLine(propertyPrice.ToINR());  
-
-// Output: ₹1,20,000.00
-
-
-
-👉 In my Property App:
-
-
-
-Used ToINR() everywhere in UI (Admin Panel, Buyer Screen, Seller Dashboard) to keep formatting consistent.
-
-
-
-
-
-
-
----
-
-
-
-⚖️ Trade-offs
-
-
-
-✅ Pros
-
-
-
-Code Reuse: No need to repeat the same logic again and again.
-
-
-
-Cleaner Code: Makes code more readable.
-
-
-
-No Modifications Needed: You don’t need to edit the original class (which may be sealed or from a library).
-
-
-
-
-
-❌ Cons
-
-
-
-Overuse = Confusion: Too many extension methods can make code confusing.
-
-
-
-Discoverability: New developers may not know which extension methods exist.
-
-
-
-Name Conflicts: If two libraries add the same extension name, clashes may happen.
-
-
-
-
-
-
-
----
-
-
-
-💼 Business Impact (In Property App)
-
-
-
-Saves Development Time: One method (ToINR) reused in 50+ places.
-
-
-
-Consistency: All prices look the same across Buyer, Seller, and Admin screens.
-
-
-
-Maintainability: If tomorrow formatting changes (e.g., “USD format”), we just update the extension method once.
-
-
-
-Business Value: Users see clear, consistent price info → builds trust in the platform.
-
-
-
-
-
-
-
----
-
-
-
-✅ In short (Interview-Ready Answer):
-
-“Extension Methods allow us to add new functionality to existing classes without modifying them.
-
-In my Buy & Sell Property app, I used an extension method ToINR() to format prices consistently.
-
-It improved reusability and readability, though too many extension methods can sometimes cause confusion.”
-
-
-
-
-
----
-
-
-
-Do you want me to also prepare a small diagram (flow) of how Extension Method works behind the scen
-
-es (Compiler → Static Method → Instance Call)? That helps in interviews when they go deep.
-
-
-
-/////////////////////////////
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////85)
+IN WHICH COLUMN YOU WILL APPLY THE INDEXING TO OPTIMIZE THIS QUERY. “select id, class from student where name=”happy””? The column after WHERE condition, which is “name” here.
+/////////////////////86)
+WHAT IS THE DIFFERENCE BETWEEN STORED PROCEDURE AND FUNCTIONS?
+Store Procedure
+-> Store Procedure may or may not return value.
+->Insert and update function used in Store Procedure.
+->we can write Transaction in Store Procedure.
+->we can call the function in stored procedure
+->we can use try catch block for runtime exception.
+-> we can write ddl operation for Store Procedure.
+
+FUNCTION
+-> It will return value.
+->Function we can only use select because it retriving the data.
+->we can not write Transaction in function.
+->we can not call store Procedure inside the function.
+->we can can not write try , catch , block in function.
+-> you can not write the ddl operation for function.
+
+///////////////////////////////////////////////////////(Single place)
 Great question 👌 Let’s break Stored Procedure into the 4 parts you asked for: Definition → Project Use → Trade-offs → Business Impact, all in super easy words.
 
-
-
-
-
----
-
-
-
 📖 Definition (Easy Words)
-
-
 
 A Stored Procedure (SP) is like a pre-saved recipe 🍲 in the database.
 
-
-
 Instead of writing the same SQL query again and again, you store it once and just call its name whenever needed.
-
-
 
 It can take inputs, do calculations, and return results.
 
-
-
-
-
 👉 Think of it like ordering “Masala Dosa” in a restaurant. You don’t explain ingredients each time — the chef already knows the stored recipe.
-
-
-
-
-
----
-
-
 
 🏗️ Project Use (Buy & Sell Properties App)
 
@@ -11089,17 +11046,7 @@ END;
 
 👉 In the app: Instead of writing SELECT ... query in C# every time, we just call EXEC GetActiveProperties;.
 
-
-
-
-
----
-
-
-
 Example 2: Add a new property
-
-
 
 CREATE PROCEDURE AddProperty 
 
@@ -11125,17 +11072,7 @@ END;
 
 👉 In the app: When a seller adds a property, we just call AddProperty with inputs.
 
-
-
-
-
----
-
-
-
 ⚖️ Trade-offs
-
-
 
 ✅ Pros:
 
@@ -11237,99 +11174,181 @@ tored procedure from .NET Core (ADO.NET + EF)? That will make your answer even s
 
 
 
-///////////////////////////////
 
-Perfect 👍 Let’s break Middleware in .NET Core into the four parts you asked for: Definition → Project Use → Trade-offs → Business Impact in very easy words.
+/////////
+/////////////////////////////////////////////////////////////////////15>Write the basic syntax of store procedure.(single place)
+CREATE PROCEDURE procedure_name
+    @parameter1 datatype,
+    @parameter2 datatype,
+    ...
+AS
+    -- SQL statements to define the stored procedure logic
+    -- This can include SELECT, INSERT, UPDATE, DELETE, and more
 
+GO
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Advanced SQL Syntax(single place)
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
+Sure! A Stored Procedure in SQL is a precompiled collection of SQL statements that can be executed as a single unit. Stored procedures help improve performance, security, and reusability.
 
 
 ---
 
+1. Basic Syntax of a Stored Procedure
 
+CREATE PROCEDURE ProcedureName
+AS
+BEGIN
+    -- SQL Statements
+    SELECT * FROM Employees;
+END;
+
+Executing the Procedure:
+
+EXEC ProcedureName;
+
+
+---
+
+2. Stored Procedure with Input Parameter
+
+CREATE PROCEDURE GetEmployeesByDepartment
+    @DeptID INT
+AS
+BEGIN
+    SELECT EmployeeID, FirstName, LastName
+    FROM Employees
+    WHERE DepartmentID = @DeptID;
+END;
+
+Executing the Procedure with a Parameter:
+
+EXEC GetEmployeesByDepartment @DeptID = 3;
+
+
+---
+
+3. Stored Procedure with Output Parameter
+
+CREATE PROCEDURE GetEmployeeCountByDepartment
+    @DeptID INT,
+    @EmployeeCount INT OUTPUT
+AS
+BEGIN
+    SELECT @EmployeeCount = COUNT(*) FROM Employees WHERE DepartmentID = @DeptID;
+END;
+
+Executing the Procedure with an Output Parameter:
+
+DECLARE @Count INT;
+EXEC GetEmployeeCountByDepartment @DeptID = 3, @EmployeeCount = @Count OUTPUT;
+PRINT @Count;
+
+
+---
+
+4. Stored Procedure with Multiple Parameters
+
+CREATE PROCEDURE UpdateEmployeeSalary
+    @EmpID INT,
+    @NewSalary DECIMAL(10,2)
+AS
+BEGIN
+    UPDATE Employees
+    SET Salary = @NewSalary
+    WHERE EmployeeID = @EmpID;
+END;
+
+Executing the Procedure with Multiple Parameters:
+
+EXEC UpdateEmployeeSalary @EmpID = 101, @NewSalary = 75000.00;
+
+
+---
+
+5. Stored Procedure with Transactions & Error Handling
+
+CREATE PROCEDURE TransferSalary
+    @FromEmpID INT,
+    @ToEmpID INT,
+    @Amount DECIMAL(10,2)
+AS
+BEGIN
+    BEGIN TRANSACTION;
+
+    BEGIN TRY
+        UPDATE Employees SET Salary = Salary - @Amount WHERE EmployeeID = @FromEmpID;
+        UPDATE Employees SET Salary = Salary + @Amount WHERE EmployeeID = @ToEmpID;
+
+        COMMIT TRANSACTION;
+    END TRY
+    BEGIN CATCH
+        ROLLBACK TRANSACTION;
+        PRINT 'Error occurred during transaction.';
+    END CATCH;
+END;
+
+Executing the Procedure:
+
+EXEC TransferSalary @FromEmpID = 101, @ToEmpID = 102, @Amount = 5000.00;
+
+
+---
+
+Key Benefits of Stored Procedures:
+
+✔ Performance Improvement – Precompiled SQL code runs faster
+✔ Security – Reduces SQL injection risks by parameterized execution
+✔ Reusability – Can be used multiple times with different parameters
+✔ Transaction Management – Ensures data consistency with COMMIT/ROLLBACK
+
+Would you like an example for dynamic SQL stored procedures as well?
+
+
+////////////////////////////////////////////////////////////////////////(single place)
+176. WHAT IS RECURSIVE STORED PROCEDURE?
+A stored procedure which calls by itself until it reaches some boundary condition.
+This recursive function or procedure helps programmers to use the same set of
+code any number of times.
+
+
+//////////////////////////////////////////////////////////////////////////////
+
+Perfect 👍 Let’s break Middleware in .NET Core into the four parts you asked for: Definition → Project Use → Trade-offs → Business Impact in very easy words.
 
 📖 Definition (Easy Words)
 
-
-
 Middleware is like a pipeline in your .NET Core app.
-
-
 
 Every request from the user (like “Show me properties”) goes through a series of small steps before reaching your controller.
 
-
-
 Each step can check, modify, stop, or pass the request further.
-
-
-
-
 
 👉 Think of it like security gates in an apartment society 🏢.
 
 When a visitor enters:
 
-
-
 1. Security Guard checks ID → (Authentication middleware)
-
-
-
-
 
 2. Receptionist checks which flat → (Routing middleware)
 
-
-
-
-
 3. CCTV records entry → (Logging middleware)
-
-
-
-
-
-
 
 Same way, middleware processes each HTTP request.
 
-
-
-
-
----
-
-
-
 🏗️ Project Use (Buy & Sell Properties App)
-
-
 
 Example 1: Authentication Middleware
 
-
-
 Used to check if the user is logged in.
-
-
 
 app.UseAuthentication();
 
 app.UseAuthorization();
 
-
-
 👉 In your app: If someone wants to post a property for sale, middleware first checks → “Are you a valid seller?”
-
-
-
-
-
----
-
-
 
 Example 2: Custom Logging Middleware
 
@@ -11480,16 +11499,6 @@ Middleware in .NET Core is a pipeline of small components that handle every requ
 In my Buy & Sell Properties app, I used middleware for authentication (check user role), logging (track property views), and exception handling (payment errors).
 
 This makes the app secure and maintainable, though too many middleware can slow performance.
-
-
-
-
-
----
-
-
-
-
 
 Would you like me to also give you a diagram explanation (pipeline flow) that you can draw quickly in interviews to impress?
 
@@ -11796,11 +11805,6 @@ export class PropertyListComponent {
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 app
-
-
-
-
-
 ---
 
 
@@ -11985,7 +11989,7 @@ ike “what if we don’t use decorators?”, “what’s the difference between
 
 
 
-/////////////////////////
+////////////////////////////////////////////////////////////////////////
 
 Perfect 👌 Let’s go step by step with easy words + your Buy & Sell Properties project context:
 
@@ -12926,7 +12930,6 @@ Secure queries = No data leaks / hacking risk.
 /////////////////////////////////////neoSoft
 ////////////////////////////////////
 //what the pakage use for creating new JWT Token.
-//find the second highest salary in linq query.
 //Angular Fock
 //How you are implement the lazy loading in the Angular.
 
@@ -12936,9 +12939,8 @@ Secure queries = No data leaks / hacking risk.
 ///////////////////////////////////////////////////////HCL
 ///////////////////////////////////////////////////////
 Run.Lock
-Cursor
-How many multiple ways we can get the data from Stored Procedure.
-Rjax
+//////////////////////////////////////////////////////////////////////////////////////Cursor
+
 
 /////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////Persistance
@@ -12946,9 +12948,6 @@ Rjax
 ///////////////////////////css
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////What is flex box.
 Great question 👌 Let’s break Flexbox in CSS into easy words + project use + business impact.
-
-
----
 
 📖 Definition (Easy words)
 
@@ -13355,6 +13354,185 @@ Improves app reliability → fewer crashes due to bad input.
 > “Data Annotations in .NET Core are attributes we apply on model properties to perform validation automatically.
 In my Buy & Sell Property App, I used them to validate property details like price, name, and owner email before saving.
 It reduced code, improved data quality, and made the app more user-friendly.”
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Condition Data Annotation
@@ -18127,7 +18305,6 @@ Preparing for a .NET Developer Interview?
  
 
 
- ✅ Stored Procedure basics
  ✅ Clustered vs Non-Clustered Index
 
 🔹 2️⃣ Intermediate
@@ -18317,7 +18494,6 @@ What memory management challenges have you faced in .NET?
 👉 Clustered vs Non-Clustered Index.
 👉 Use of ROW_NUMBER(), RANK(), DENSE_RANK().
 👉 What is Normalization? Different Normal Forms?
-👉 What’s a Stored Procedure? How is it different from a Function?
 👉 How to find the second highest salary in SQL?
 👉 Common aggregate functions: SUM(), AVG(), etc.
 👉 Difference between IN, EXISTS, and ANY.
@@ -18573,7 +18749,6 @@ If you're preparing for a .NET Full Stack Developer role or mentoring someone wh
 
 1️⃣3️⃣ Write a SQL query to find the second highest salary from an Employee table.
 1️⃣5️⃣ What are indexes and how do they improve query performance?
-1️⃣6️⃣ How to optimize a slow-performing stored procedure?
 
 
 ---
@@ -19114,7 +19289,6 @@ Top 50 Full Stack Developer Interview Questions**, Mostly asked in MNCs like Del
 3. `WHERE` vs `HAVING` clause.
 5. Find the second highest salary.
 7. What are indexes?
-8. Stored procedures & use-cases.
 9. Transactions in SQL.
 10. Optimizing slow queries.
 
@@ -19177,7 +19351,6 @@ Asp .Net
 5. Explain the middleware pipeline order in .NET Core.
 7. How would you implement soft delete in EF Core?
 8. Write a LINQ query to replace all negative values in a column with the column’s max value.
-9. How do you optimize a slow SQL stored procedure?
 10. Explain different SQL isolation levels.
 
 Angular
@@ -19238,16 +19411,7 @@ Angular
 
 13. Write a SQL query to find the second highest salary from an Employee table.
 
-
-
-
 15. What are indexes and how do they impact performance?
-
-
-16. How do you optimize a slow-performing stored procedure?
-
-
-
 🔹 Angular
 
 17. What is the difference between ngOnInit() and constructor() in Angular?
@@ -19344,9 +19508,6 @@ Angular
 4. Explain middleware and how can we create custom middleware in .NET Core?
 
 5. What is the difference between throw and throw ex?
-
-6. What is an extension method in C#?
-
 7. What design patterns are you using in your current project?
 
 8. I have the following API function, what error will it throw?
@@ -19475,135 +19636,6 @@ Angular – Front-End Development
 
 
 9. When changing the selected value of a dropdown, which Angular lifecycle hook(s) would typically be executed?.
-
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Advanced SQL Syntax
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-Sure! A Stored Procedure in SQL is a precompiled collection of SQL statements that can be executed as a single unit. Stored procedures help improve performance, security, and reusability.
-
-
----
-
-1. Basic Syntax of a Stored Procedure
-
-CREATE PROCEDURE ProcedureName
-AS
-BEGIN
-    -- SQL Statements
-    SELECT * FROM Employees;
-END;
-
-Executing the Procedure:
-
-EXEC ProcedureName;
-
-
----
-
-2. Stored Procedure with Input Parameter
-
-CREATE PROCEDURE GetEmployeesByDepartment
-    @DeptID INT
-AS
-BEGIN
-    SELECT EmployeeID, FirstName, LastName
-    FROM Employees
-    WHERE DepartmentID = @DeptID;
-END;
-
-Executing the Procedure with a Parameter:
-
-EXEC GetEmployeesByDepartment @DeptID = 3;
-
-
----
-
-3. Stored Procedure with Output Parameter
-
-CREATE PROCEDURE GetEmployeeCountByDepartment
-    @DeptID INT,
-    @EmployeeCount INT OUTPUT
-AS
-BEGIN
-    SELECT @EmployeeCount = COUNT(*) FROM Employees WHERE DepartmentID = @DeptID;
-END;
-
-Executing the Procedure with an Output Parameter:
-
-DECLARE @Count INT;
-EXEC GetEmployeeCountByDepartment @DeptID = 3, @EmployeeCount = @Count OUTPUT;
-PRINT @Count;
-
-
----
-
-4. Stored Procedure with Multiple Parameters
-
-CREATE PROCEDURE UpdateEmployeeSalary
-    @EmpID INT,
-    @NewSalary DECIMAL(10,2)
-AS
-BEGIN
-    UPDATE Employees
-    SET Salary = @NewSalary
-    WHERE EmployeeID = @EmpID;
-END;
-
-Executing the Procedure with Multiple Parameters:
-
-EXEC UpdateEmployeeSalary @EmpID = 101, @NewSalary = 75000.00;
-
-
----
-
-5. Stored Procedure with Transactions & Error Handling
-
-CREATE PROCEDURE TransferSalary
-    @FromEmpID INT,
-    @ToEmpID INT,
-    @Amount DECIMAL(10,2)
-AS
-BEGIN
-    BEGIN TRANSACTION;
-
-    BEGIN TRY
-        UPDATE Employees SET Salary = Salary - @Amount WHERE EmployeeID = @FromEmpID;
-        UPDATE Employees SET Salary = Salary + @Amount WHERE EmployeeID = @ToEmpID;
-
-        COMMIT TRANSACTION;
-    END TRY
-    BEGIN CATCH
-        ROLLBACK TRANSACTION;
-        PRINT 'Error occurred during transaction.';
-    END CATCH;
-END;
-
-Executing the Procedure:
-
-EXEC TransferSalary @FromEmpID = 101, @ToEmpID = 102, @Amount = 5000.00;
-
-
----
-
-Key Benefits of Stored Procedures:
-
-✔ Performance Improvement – Precompiled SQL code runs faster
-✔ Security – Reduces SQL injection risks by parameterized execution
-✔ Reusability – Can be used multiple times with different parameters
-✔ Transaction Management – Ensures data consistency with COMMIT/ROLLBACK
-
-Would you like an example for dynamic SQL stored procedures as well?
-
-
-
-
-
-
-
-
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -21681,7 +21713,6 @@ Now, I am ready to bring both my past 5 years of experience and my new skills to
 //////////////////////L1 round topis
 //C#
 1. OOP Concepts (Polymorphism)
-1.1 extension method - 18 june.
 2. Exception Handling (try-catch-finally, custom exceptions)
 3. Collections (List, Dictionary, HashSet, Queue, Stack)
 4. LINQ (Filtering, Projections, Joins, Aggregations)
@@ -22315,78 +22346,6 @@ Method Hiding:
  
 
 /////////////////////////////////////////////
-what is Extensition Methods :::
-Extension method is a method injected (added) into an existing class
-(or struct or interfaces), without modifying the sourse code of that 
-class(or struct or interface).
-
---> Create the class without extensions method.
---> Create the static class with static method.
--->static class that uses the this keyword before the first parameter 
---> to extend the functionality of an existing type without modifying the original type
-
-
-///As developer
-//
-namespace Products
-{
-    public class Product
-    {
-        public int WorkingHours ;
-        public int WorkingPerWages;
-    }
-}
-//
-
-using Products;
-
-namespace ProductExtensions
-{
-
-    public static class ProductExtension
-    {
-        public static int CalculateSalary(this Product product)
-        {
-           return  product.WorkingHours * product.WorkingPerWages;
-        }
-    }
-}
-//
-using Products;
-
-using ProductExtensions;
-
-namespace Programs
-{
-  class program
-  {
-        public static void Main(string[] args)
-        {
-            Product p = new Product() { WorkingHours = 100 ,
-         WorkingPerWages = 500 };
-            Console.WriteLine(p.CalculateSalary());
-        }
-  }
-}
-
-//As the base library
-public static class IntExtensition
-{
-    public static int DoubleIt(this int number)
-    {
-        return number * 2;
-    }
-}
-
-class Program
-{
-    static void Main()
-    {
-        int x = 5;
-        int result = x.DoubleIt();// Calls the extensitiom method
-        Console.WriteLine(result); // Output: 10
-    }
-}
 
 //////////////////////////////////////////////////
 ////////////////////////////////////////////////SQL
@@ -29546,10 +29505,6 @@ SQL clause is defined to limit the result set by providing condition to the quer
 This usually filters some rows from the whole set of records.
 Example – Query that has WHERE condition
 Query that has HAVING condition.
-176. WHAT IS RECURSIVE STORED PROCEDURE?
-A stored procedure which calls by itself until it reaches some boundary condition.
-This recursive function or procedure helps programmers to use the same set of
-code any number of times.
 177. WHAT IS UNION, MINUS AND INTERACT COMMANDS?
 UNION operator is used to combine the results of two tables, and it eliminates
 duplicate rows from the tables.
