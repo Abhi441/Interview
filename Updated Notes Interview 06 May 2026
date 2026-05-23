@@ -1,4 +1,5 @@
-My Update: 13309
+16155 till revision
+My Update: 2822 state management
 
 My Revision strategies day1 -> 1 to 10000
 day2 -> 10000 to 20000
@@ -1324,6 +1325,10 @@ Error Handling
 
 
 
+////////////////////////////////////////////
+/// ///////////////////////////////////////Coding question
+/// //////////////////////////////////////
+
 
 
 ///////////////////////////////////////Linq
@@ -1344,36 +1349,26 @@ left join of linq query.
 
 /////////////////////////////////Random
 /// Explicit and Explicity type.
-what the pakage use for creating new JWT Token.
-Angular Fock
+//what the pakage use for creating new JWT Token.
+//Angular Fock
 //How you are implement the lazy loading in the Angular.
-//Rxjs() -->tell more about the things
 //Do we nessary to keep constructor in .ts file.
 //can we use jquery in javaScript.
 //JoSet.
 //what the ID that you are using.
 //Where does managing your code.
 //Can we write the code for generarting jwt token.
-//Angular : if I have to send the multiple request(like three times) for checking response will not give the error(same error) , 
-if all the time will give then I will responde to to Ui that error.
+//Angular : if I have to send the multiple request(like three times) for checking response will not give the error(same error) , if all the time will give then I will responde to to Ui that error.
 //What is flex box.
-//Rxjs() -->tell more about the things
-//Do we nessary to keep constructor in .ts file.
-//can we use jquery in javaScript.
-//JoSet.
-//what the ID that you are using.
-//Where does managing your code.
-//Can we write the code for generarting jwt token.
 /////////////////////////////////////What are ways we can return multiple method(tuple) ?
 ////////////////////////////////////If multiple tread what to access to signaloton how to pretect(lock).
-///////////////////////////////////what is output od javascript ?
+///////////////////////////////////what is output of this javascript ?
 "Test" + 1 + 2  => "Test12"
 1 + 2 + "Test" + 1 + 2 => "3Test12"
 /////////////////////////////////////////////////Scedocode in css
 //////////////////////////////////////////////bootstrap DTO
 /////////////////////////////////////////////JavaScript OOP
 /////////////////////////////////////////////Deadlock lock.
-////////////////////////////////////////////class and struct 
 ////////////////////////////////////////////Hashtable and dictionary.
 ///////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////ness
@@ -1383,8 +1378,44 @@ if all the time will give then I will responde to to Ui that error.
 //How t
 Standlone component
 How the 2 services communicate with each other(if you are bringing data from one services and sending back to another services , How to get this is done from response).
-////I want to update the data by put request but that data is not available , what will happen ?
 /////////////Data Anotation in .net
+/// /Condition Data Annotation
+//How to know the Store Proceure if we do not have access to code base , I have Access of UI.
+//what is the exception handling.
+//AsNo tracking
+What are Delegates, Func, Action, Predicate?
+Type of NgOn Chnages
+Object vs Dynamic
+Task.Sleep
+What is latest version of c# and feature.
+9>what is Singalton design patter.
+//Why Singalton design patter
+/When to Use the Singleton Design Pattern
+////Why Even Use the Singleton Design Pattern
+//why we are creating singlaton design pattern,instead of object.
+////How to make Signaloton Thread Safe
+////Factory design patter
+//////Observable Patter
+////What are design patter used in making Stock market application.
+///How do you implement security in an MVC application (Authentication/Authorization)?
+//How do you optimize Angular applications for better performance?
+////Web Api Security
+////can you tell me what is 4xx erro, what we call ?
+///////All the satus code
+////////Single IR 
+///Q: What is a Singleton Class in C#?
+///////195 In-Memory Caching (local to one server) , Distributed Caching , Redis
+//////Why Use Lazy Loading in .NET Core?
+//Q>Why ViewData require typeCasting.
+////How you have implemented Microservices.(UI)
+//////////////////////////////////////////////////////////Microservices (Backend)
+///////////////////Diffrence between Monolotic and Microservices
+////////final pipes
+////////Async Pipes
+////TrackBy 
+////////What is Dependency Injection in Angular ?
+/////State Management
+///////How many type of state management will be their in Angular ?
 
 
 
@@ -1393,25 +1424,111 @@ How the 2 services communicate with each other(if you are bringing data from one
 
 
 
-///
-///Backend
-///
-///
+////How many type of state management will be their in Angular ?
+//Signal
+/////Change Detection
+/////Performance Optimization in Angular
+////////Authentication And Autherisation in Angular.
+///////Interceptors
+///Error handling via HttpInterceptor
+//3.How to implement HTTP Interceptor in Angular?
+//9. Error Handling and Global Interceptors
+////what are challenging task ou have done in Angular
+////What is the diffrence between a class and an Object ?
+////Can you create an object without a class ?
+////Can you have multiple Onject
+///why c# doesnot uses multiple inheritance
+//
+
+///DSA
+//Reverse String the string
+//input : Abhishek kumar singh , output : singh kumar Abhishek
+///Find the First Non-Repeating Character in a String
+Problem Statement:
+
+> Given a string, find and return the first non-repeating character.
+If there is no such character, return -1.
+
+Example 1:
+
+Input:  "aabbcddbe"
+Output: 'c'
+
+Example 2:
+
+//Q.2: How to find if the given string is a palindrome or not?
+////Q.4: How to reverse each word in a given string?
+Ans.: The user will input a sentence and we need to reverse each word individually without changing its position in the sentence.
+input: Welcome to Csharp corner, output: emocleW ot prahsC renroc
+////Q.5: How to count the occurrence of each character in a string?
+///////
+//input :1,2,3,1,2,3,4
+//o/p - 4
+///Q.6: How to remove duplicate characters from a string?
+The user will input a string and the method should remove multiple occurrences of characters in the string
+input: csharpcorner, output: csharpone
+///Q.7: How to find all possible substring of a given string?
+//input: abcd , output : a ab abc abcd b bc bcd c cd d
+Input:  "aabbcc"
+Output: -1
+//Q.8: How to perform Left circular rotation of an array?
+ How to perform Left circular rotation of an array?
+Ans.: The user will input an integer array and the method should shift each element of input array to its Left by one position in circular fashion. The logic is to iterate loop from Length-1 to 0 and swap each element with last element.
+
+input: 1 2 3 4 5, output: 2 3 4 5 1
+using System;
+/////Q.9: How to perform Right circular rotation of an array?
+input: 1 2 3 4 5, output: 5,1,2,3,4
+////Q.11: How to find the sum of digits of a positive integer?
+input: 168, output: 15
+
+//Q.13: How to find third largest integer in an array using only one loop?
+input: 3 2 1 5 4, output: 3
+
+////Q.14: How to convert a two-dimensional array to a one-dimensional array?
+
+//input: { { 1, 2, 3 }, { 4, 5, 6 } }, output: 1 4 2 5 3 6
+
+//Q.15: How to convert a one-dimensional array to a two-dimensional array?
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+ //input: {1, 2, 3, 4, 5, 6} ,2 ,3
+//output:
+//1 2 3
+//4 5 6
+
+Q.16: How to find the angle between hour and minute hands of a clock at any given time?
+Q.17: Explain Bubble Sort Algorithm In C#
+Q.18: Explain Quick Sort Algorithm In C#
+Q.19: Explain Merge Sort Algorithm In C#
+Q. 20: Explain Insertion Sort Algorithm In C#
+Q. 21: Explain Selection Sort Algorithm In C#
+Q. 22: Explain Binary Search In C#
+//////
+//input : "Hello World"
+//output : "Hello dlroW"
+
+//My Experience
+//ReverseDictionaryValue
+////Move the zeros to end
+//how to add 2 number without using the + operatir
+
+//////////
+//////////UI
+//////////
+
+/////////
+Find Palidrom
+
+///////////////////////////////
+///////////////////////////////Sql
+//1. Find the second highest salary
 
 
-///
-///MVC
-///
-
-///
-///State Management
-///
 
 
-///
-/// MVC
-/// 
-///
+
+
 1) What is the diffrence between ViewData,  ViewBAG And TempData.
  2) Q>Why ViewData require typeCasting.
 //////////////////////////////////////////////////////////////////////////////
@@ -3224,6 +3341,21 @@ Output : Car started;
 //
 EXAMPLE 2 : In Book
 
+
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////CLASS And OBJECT
+///////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////Basic Question
+//What is the diffrence between a class and an Object ?
+class :-> Blueprint , doesn't occupy memory.
+Object :-> Instance of a class. Occupies memory and represent real-world entity.
+
+//////////////////////////////////////////////////////////Can you create an object without a class ?
+No, in oops  object are instance of classes . you need a class to create an object.
+
+///////////////////////////////////////////////////////////Can you have multiple Onject
 ////////////////////////////////////////////////////////////////////////////////////2)
 What is Inheritance ? Why INHERITANCE IS IMPORTANT ?
 -> Inheritance is creating a PARENT-CHLD relationship between two classes where child automaticallyy get the properties and
@@ -3544,6 +3676,39 @@ public void Cat() {
 Console.WriteLine("Dog");
 }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //////////////////////////////////////////why c# doesnot uses multiple inheritance
 /////////////1>Avoiding the Diamond Problem
@@ -9558,96 +9723,7 @@ SET Status = CASE
              END;
 
 /////////////////////////////////////////////////How to concanate the 2 coloum in string.
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /////////////////////////////////yet to restructure
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /////////////////////////////////////////////
 
 //////////////////////////////////////////////Give an example of a function in an SQL server that return the first non-null expression from more than one coloum in argument.
@@ -9739,15 +9815,6 @@ Define alternate key.
 Define Join. What are the diffrence types of Joins ?
 Tell about the use of UPDATE STATICS.
 Define Full backup.
-
-
-
-
-
-
-
-
-
 In SQL, what is meant by the identity column ?
 Explain the UNIQUE KEY constraint.
 Define the process of de-normalization.
@@ -13354,187 +13421,6 @@ Improves app reliability → fewer crashes due to bad input.
 > “Data Annotations in .NET Core are attributes we apply on model properties to perform validation automatically.
 In my Buy & Sell Property App, I used them to validate property details like price, name, and owner email before saving.
 It reduced code, improved data quality, and made the app more user-friendly.”
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Condition Data Annotation
 🧠 Definition (Simple words like for a 5-year-old):
 Conditional Data Annotation means —
@@ -13628,107 +13514,6 @@ Here’s a very easy-to-understand explanation of “Data Annotation in .NET Cor
 
 ---
 
-🧠 Definition (5-year-old can understand):
-
-> “Data Annotations” are small labels (attributes) we put on our model properties to give extra meaning — like saying “this field is required,” “this should look like an email,” or “this number can’t be more than 100.”
-
-
-
-In short, they help validate data automatically before saving it to the database or processing it.
-
-
----
-
-🧩 Example (with simple explanation):
-
-Let’s say we have a Property model in our Buy & Sell Property Application:
-
-using System.ComponentModel.DataAnnotations;
-
-public class Property
-{
-    [Key]
-    public int Id { get; set; }
-
-    [Required(ErrorMessage = "Property Name is required")]
-    [StringLength(100, ErrorMessage = "Property Name can't be longer than 100 characters")]
-    public string Name { get; set; }
-
-    [Range(100000, 100000000, ErrorMessage = "Price must be between 1 lakh and 10 crore")]
-    public decimal Price { get; set; }
-
-    [EmailAddress(ErrorMessage = "Please enter a valid email address")]
-    public string OwnerEmail { get; set; }
-}
-
-🔍 Explanation:
-
-[Key] → Marks Id as the Primary Key.
-
-[Required] → Makes sure Name cannot be empty.
-
-[StringLength(100)] → Limits the text length.
-
-[Range()] → Sets a price range.
-
-[EmailAddress] → Ensures a valid email format.
-
-
-
----
-
-🧰 How it works in the project (Project Use):
-
-In the Buy & Sell Property App,
-
-When a user adds a property through a form, these annotations automatically check if the entered data is valid.
-
-If the name or price is missing, the API will return an error message before saving it to the database.
-
-This helps maintain clean and reliable data.
-
-
-
----
-
-⚖️ Trade-Off:
-
-Advantage Disadvantage
-
-✅ Less manual code — validation happens automatically ❌ Only works for simple validation; for complex logic, you need custom validation attributes
-✅ Improves data consistency and security ❌ May not cover complex business rules directly
-
-
-
----
-
-💼 Business Impact:
-
-Fewer bugs and cleaner data → users can’t submit wrong info.
-
-Faster development → less manual validation code.
-
-Improves app reliability → fewer crashes due to bad input.
-
-
-
----
-
-🎯 **Interview Answer (Short & Impressive):
-
-> “Data Annotations in .NET Core are attributes we apply on model properties to perform validation automatically.
-In my Buy & Sell Property App, I used them to validate property details like price, name, and owner email before saving.
-It reduced code, improved data quality, and made the app more user-friendly.”
-
-
-
-//////////////////////////////////////
-//////////////////////////////////////citiesTech
-
-
-What is no tracking in Ef ?
-
-
 /////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////Acqueon Technologies
 /////////////////////////////////////////////////////////////////////////
@@ -13784,11 +13569,269 @@ Case	When to Use
 💼 Business Impact
 Helps users easily view sorted and ranked data (like Top Properties, Top Sellers).
 Improves data presentation and analytics, which helps business users take decisions faster.
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////PartisionBy
 
-//Angular
-Interpretors
-//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 Explain async/await and Task vs ValueTask vs IAsyncEnumerable
 1. What is async and await?
@@ -13930,7 +13973,7 @@ Cost Saves hosting cost due to better scalability
 
 
 ///////////////////////////////////////////////////////////////////////////////////////
-What are Delegates, Func, Action, Predicate?
+
 
 ////////////////////////////////////////////////////Func
 How to Explain Func in C# (L2 Interview Level) Easily:
@@ -15006,20 +15049,7 @@ Answer: The nearest catch block that matches the exception type will handle it.
 👉 Scenario: You’re closing a file in finally and that itself throws.
 Answer: Yes, it can throw, and if it does, the new exception hides the original one. This can make debugging harder.
 
-/////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////CLASS And OBJECT
-///////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////
 
-////////////////////////////////////////////////////Basic Question
-//What is the diffrence between a class and an Object ?
-class :-> Blueprint , doesn't occupy memory.
-Object :-> Instance of a class. Occupies memory and represent real-world entity.
-
-//////////////////////////////////////////////////////////Can you create an object without a class ?
-No, in oops  object are instance f classes . you need a class to create an object.
-
-///////////////////////////////////////////////////////////Can you have multiple Onject
 
 
 
@@ -15167,7 +15197,7 @@ It follows disconnected architecture.
 
 dataadaptet - A DataAdapter bridges the gap between the disconnected DataSet/ DataTable objects and the physical database. 
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////What is filter and types.
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////What is filter and types.(Single place)
 Definition (In very simple words):
 
 > ASP.NET MVC Filter is a custom class where you can write custom logic to excute before an after an action method executes.
@@ -15329,18 +15359,14 @@ I have created new file one you can see
 A function in C# is a group of statements that perform a specific task and return a value
 Q>what are the various ways to communicate between the components.
 1>@Input @Output
-2>Ng - content
-3>@ViewChild   @ViewChildren
-4>@ContentChild @ContentChilren
 ///////////////////////////////
 Authentiation,authorisation
 How can I consume Api
 ////////////////Swagger(starting point of swagger)
 https://validator.swagger.io/
 
-//Interview Mistake
-Be Prepared for Team Or zoom.
-Plan to revisition once all the question(mindset).
+//////Interview Mistake
+
 
 ////////////
 N - tier Artitecture
@@ -15349,7 +15375,7 @@ OOps
 Solid Pattern
 
 ///////////////////////////////Gagan
-Q> What is Threading in C# ?
+Q> What is Multi Threading in C# ?
 
 Multithreading in C# is a process in which multiple threads work simultaneously. 
 It is a process to achieve multitasking. It saves time because multiple tasks are being executed at a time.
@@ -15955,6 +15981,318 @@ Summary:
 Partial classes in C# allow you to split the definition of a class into multiple files for better organization and management.
 During compilation, the parts of the class from different files are combined to create the complete class.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ////////////////////////////////////////////////////////////////////////////////////////////////13>What is global exceptional handling.
 
 Sure, let's break down the concept of global exception handling in simple terms:
@@ -16434,60 +16772,6 @@ Q>Crossed question for Injection.
 
 ////////////////////////////////////////////////////////////////////
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //////////////////////////////////////////////////////////////////////////////////////////////Kindle Question Simplyfied
 WHAT ARE SOLID PRINCIPLES? WHAT IS THE DIFFERENCE BETWEEN SOLID PRINCIPLES AND DESIGN PATTERNS?
 /////////What is SOLID PRINCIPLES
@@ -16582,45 +16866,6 @@ Principle and makes the code easier to maintain and understand.
 
 /////////////////////////////////////////////////////////////////////////////WHAT IS OPEN-CLOSED PRINCIPLE?
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-,
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //////////////////////////////////////////////////////////////////////////////////////////Angular
 /////What is a Selector and Template ?
 
@@ -16694,26 +16939,7 @@ Polymorphism is a powerful concept in C# that allows you to write flexible, reus
 Can you write the program that take n number of input as give the output sum, even , count.
 Callback, map, filter, Session, Storage.
 Http filter, Component of .net, dynamic polymorphis,
-Q> What is == , and === in Variable.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Q> What is == , and === in Variable
 ////////////////////////////////////////////////////
 Q)Explain how dependency injection works in ASP.NET Core?
  It involves supplying dependencies to a class from outside the class itself. The most common way to do this in ASP.NET Core
@@ -20652,20 +20878,6 @@ Answer: The nearest catch block that matches the exception type will handle it.
 👉 Scenario: You’re closing a file in finally and that itself throws.
 Answer: Yes, it can throw, and if it does, the new exception hides the original one. This can make debugging harder.
 
-/////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////CLASS And OBJECT
-///////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////
-
-////////////////////////////////////////////////////Basic Question
-//What is the diffrence between a class and an Object ?
-class :-> Blueprint , doesn't occupy memory.
-Object :-> Instance of a class. Occupies memory and represent real-world entity.
-
-//////////////////////////////////////////////////////////Can you create an object without a class ?
-No, in oops  object are instance f classes . you need a class to create an object.
-
-///////////////////////////////////////////////////////////Can you have multiple Onject
 
 
 
@@ -26633,6 +26845,166 @@ Only then the query is executes, and EFsends SQL to the database.
 Performance Optimization -> Query is executed only when needed.
 Flexibility -> You can build queries step by step before execution.
 Less Load -> Prevents unnessary
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ///////////////////////////////////////////////////////////////////////////////////////////10) What do you mean by the term navigation property in the entity framework ?
 11) What are diffrent entity state in EF ?
 12) Write the importance of the t4 entity in Entity Framework.
@@ -27931,7 +28303,7 @@ messages to the same log file or stream.
 ensuring that the settings are loaded once and accessed globally throughout the application.
 
 
-//why we are creating singlaton design pattern,instead of object.
+//////////////////////////////////////////////////////////////////////why we are creating singlaton design pattern,instead of object.
 The Singleton design pattern is used to ensure that a class has only one instance and provides a global point of access to that instance. There are several reasons why you might choose to use the Singleton pattern instead of creating multiple instances of a class:
 
 Global Access Point:
@@ -29150,16 +29522,7 @@ return JSON(new { prop1 = “Test1”, prop2 = “Test2” });
 APPLICATION?
 1. RequireHttpsAttribute
 2. AuthorizeAttribute
-115. WHAT IS DATA ANNOTATION VALIDATOR ATTRIBUTES IN MVC?
-Data Annotations are nothing but certain validations that we put in our models to
-validate the input from the user. ASP.NET MVC provides a unique feature in which
-we can validate the models using the Data Annotation attribute. Import the
-following namespace to use data annotations in the application.
-51
-Example
-[Required(ErrorMessage = "Please enter name"), MaxLength(30)]
-[Display(Name = "Student Name")]
-public string Name { get; set; }
+
 116. WHAT ARE THE EXCEPTION FILTERS IN MVC?
 Exception filter in MVC provides an ability to handle the exceptions for all the
 controller methods at a single location. This is by creating a class, which inherits
