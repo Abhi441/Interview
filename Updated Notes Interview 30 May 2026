@@ -1,5 +1,4 @@
-16155 till revision
-My Update: 2822 state management
+Perfection , Depth , Breath .
 
 My Revision strategies day1 -> 1 to 10000
 day2 -> 10000 to 20000
@@ -1410,21 +1409,11 @@ What is latest version of c# and feature.
 ////How you have implemented Microservices.(UI)
 //////////////////////////////////////////////////////////Microservices (Backend)
 ///////////////////Diffrence between Monolotic and Microservices
-////////final pipes
 ////////Async Pipes
 ////TrackBy 
 ////////What is Dependency Injection in Angular ?
 /////State Management
 ///////How many type of state management will be their in Angular ?
-
-
-
-
-
-
-
-
-////How many type of state management will be their in Angular ?
 //Signal
 /////Change Detection
 /////Performance Optimization in Angular
@@ -1438,7 +1427,12 @@ What is latest version of c# and feature.
 ////Can you create an object without a class ?
 ////Can you have multiple Onject
 ///why c# doesnot uses multiple inheritance
-//
+//How can I secure our configuration in production of .Net Application?
+//ready to write the code one api from controller to database connection(entity framework).
+////ready to write the code one api from controller to model binding (query string , route data , form data).
+
+
+
 
 ///DSA
 //Reverse String the string
@@ -1522,8 +1516,132 @@ Find Palidrom
 
 ///////////////////////////////
 ///////////////////////////////Sql
-//1. Find the second highest salary
 
+//PDF Linked 
+//1. Find the second highest salary
+2. Find employees with duplicate salaries.
+3. Find employees who joined in the last 3 months.
+4. Get department-wise average salary.
+5. Fetch nth highest salary (e.g., 3rd).
+6. Find employees with salary more than their manager.
+7. Find all employees without a manager
+8. Get count of employees in each role
+9. Find top 3 highest paid employees.
+10. Find common employees in two tables.
+11. Find employees who earn the same as someone in 'Sales' department
+12. List departments with more than 2 employees
+13. Get employee names that start with A
+14. Get employees who dont belong to any department
+15. Join employees with department names
+16. Find employees with the highest salary in each department
+17. Get number of employees who joined each year
+18. Find employees whose name contains ar
+19. Rank employees by salary
+20. Delete duplicate records (keeping one).
+
+
+//My Interview Experience:
+//Suppose that you have one table, in that you have a column called name, status and address. So
+in status column is Boolean column. Suppose that in this particular table have six rows,
+three is on and three is off in status coloum . So what I have to update the table to write the SQL queries, to change the on to off and off to on in status coloum .
+
+
+/How to concanate the 2 coloum in string.
+
+//GreekForGreek
+link : https://www.geeksforgeeks.org/sql/sql-query-interview-questions/
+1)1. Write a SQL query to fetch "FIRST_NAME" from the Student table in upper case and use ALIAS name as STUDENT_NAME.
+2)2. Write a SQL query to fetch unique values of MAJOR Subjects from Student table.
+3)3. Write a SQL query to print the first 3 characters of FIRST_NAME from Student table.
+4)4. Write a SQL query to find the position of alphabet ('a') int the first name column 'Shivansh' from Student table.
+5)5. Write a SQL query that fetches the unique values of MAJOR Subjects from Student table and print its length.
+6. Write a SQL query to print FIRST_NAME from the Student table after replacing 'a' with 'A'.
+7)7. Write a SQL query to print the FIRST_NAME and LAST_NAME from Student table into single column COMPLETE_NAME.
+8)8. Write a SQL query to print all Student details from Student table order by FIRST_NAME Ascending and MAJOR Subject descending .
+9)9. Write a SQL query to print details of the Students with the FIRST_NAME as 'Prem' and 'Shivansh' from Student table.
+10)10. Write a SQL query to print details of the Students excluding FIRST_NAME as 'Prem' and 'Shivansh' from Student table.
+11)11. Write a SQL query to print details of the Students whose FIRST_NAME ends with 'a'.
+12)12. Write an SQL query to print details of the Students whose FIRST_NAME ends with ‘a’ and contains five alphabets.
+13. Write an SQL query to print details of the Students whose GPA lies between 9.00 and 9.99.
+14)14. Write an SQL query to fetch the count of Students having Major Subject ‘Computer Science’.
+15)15. Write an SQL query to fetch Students full names with GPA >= 8.5 and <= 9.5.
+16)16. Write an SQL query to fetch the no. of Students for each MAJOR subject in the descending order.
+17. Display the details of students who have received scholarships, including their names, scholarship amounts, and scholarship dates.
+18. Write an SQL query to show only odd rows from Student table.
+19. Write an SQL query to show only even rows from Student table
+20. List all students and their scholarship amounts if they have received any. If a student has not received a scholarship, display NULL for the scholarship details.
+21. Write an SQL query to show the top n (say 5) records of Student table order by descending GPA.
+22. Write an SQL query to determine the nth (say n=5) highest GPA from a table.
+23. Write an SQL query to determine the 5th highest GPA without using LIMIT keyword.
+24. Write an SQL query to fetch the list of Students with the same GPA.
+25. Write an SQL query to show the second highest GPA from a Student table using sub-query.
+26. Write an SQL query to show one row twice in results from a table.
+27. Write an SQL query to list STUDENT_ID who does not get Scholarship.
+28. Write an SQL query to fetch the first 50% records from a table.
+29. Write an SQL query to fetch the MAJOR subject that have less than 4 people in it.
+30. Write an SQL query to show all MAJOR subject along with the number of people in there.
+31. Write an SQL query to show the last record from a table.
+32. Write an SQL query to fetch the first row of a table.
+33. Write an SQL query to fetch the last five records from a table.
+34. Write an SQL query to fetch three max GPA from a table using co-related subquery.
+35. Write an SQL query to fetch three min GPA from a table using Correlated subquery.
+36. Write an SQL query to fetch nth max GPA from a table.
+37. Write an SQL query to fetch MAJOR subjects along with the max GPA in each of these MAJOR subjects.
+38. Write an SQL query to fetch the names of Students who has highest GPA.
+39. Write an SQL query to show the current date and time.
+40. Write a query to create a new table which consists of data and structure copied from the other table (say Student) or clone the table named Student.
+41. Write an SQL query to update the GPA of all the students in 'Computer Science' MAJOR subject to 7.5.
+42. Write an SQL query to find the average GPA for each major.
+43. Write an SQL query to show the top 3 students with the highest GPA.
+44. Write an SQL query to find the number of students in each major who have a GPA greater than 7.5.
+45. Write an SQL query to find the students who have the same GPA as 'Shivansh Mahajan.
+
+
+//Median ; 
+//Link : https://skphd.medium.com/top-20-sql-queries-interview-questions-with-answers-56e70e4878d2
+Write a query to find the 2nd highest salary from an employee table.
+
+Write a SQL query to find employees who have the same manager.
+
+Write a query to find the first and last record for each employee based on the ‘hire_date’ column.
+
+Write a query to find the most recent transaction for each customer.
+
+Write a query to find the total salary of each department and display departments with a total salary greater than a specified value.
+
+Write a query to find the running total of orders for each customer sorted by order date.
+
+Write a query to get the total number of employees hired per month and year.
+
+Write a query to display all employees who earn more than the average salary for their department.
+
+Write a query to get the second-lowest salary from the employee table without using LIMIT or OFFSET.
+
+Write a query to list all products that have never been ordered.
+
+Write a query to list all the employees who are also managers.
+
+Write a query to find employees who have joined in the same month and year.
+
+Write a SQL query to get a list of employees who are older than the average age of employees in their department.
+
+Write a query to display the employee(s) with the longest tenure at the company.
+
+Write a query to delete all records from a table where the column value is NULL.
+
+Write a query to find all pairs of products that were ordered together at least once.
+
+Write a query to find the average order value by customer for each month.
+
+Write a query to identify customers who made a purchase every month for the past year.
+
+Write a query to find the total revenue for each region in a given quarter.
+
+Write a query to find the first purchase date of each customer.
+
+Write a query to calculate the year-on-year growth of revenue.
+
+Write a query to find the ‘Nth’ highest salary from the employee table.
 
 
 
@@ -1531,6 +1649,21 @@ Find Palidrom
 
 1) What is the diffrence between ViewData,  ViewBAG And TempData.
  2) Q>Why ViewData require typeCasting.
+ Super Simple Answer
+ViewData stores data as object type, so we must convert it back to original type using type casting.
+✅ Example
+Controller
+C#
+ViewData["Name"] = "Abhishek";
+Internally:
+Plain text
+ViewData stores everything as object
+View
+C#
+string name = (string)ViewData["Name"];
+👉 We do type casting because:
+ViewData returns object
+C# does not know actual type automatically
 //////////////////////////////////////////////////////////////////////////////
 /// /////////////////////////////////////////////////////////////////////////System Design / Architecture
 /// ////////////////////////////////////////////////////////////////////////
@@ -2122,15 +2255,6 @@ Complexity Easier to understand initially More complex (needs API communication,
 Fault Isolation One bug may crash the whole app Bug in one service won’t stop others
 
 
-
-
-
-
-
----
-
-
-
 💼 Business Impact
 
 
@@ -2142,7 +2266,6 @@ Monolithic:
 💡 Faster time-to-market but scaling later is painful.
 
 
-
 Microservices:
 
 👉 Best for large enterprise apps with many users and features (like OLX, 99Acres, MagicBricks).
@@ -2150,18 +2273,7 @@ Microservices:
 💡 Costs more initially (infra + DevOps), but in long run → better performance, scalability, fault-tolerance.
 
 
-
-
-
-
-
----
-
-
-
 ✅ Interview-Friendly Short Answer
-
-
 
 > “Monolithic is like one big container where everything is together — simple but hard to scale.
 
@@ -2169,84 +2281,14 @@ Microservices break the app into small independent services — complex to build
 
 In our Buy & Sell Properties app, we started with a monolith to go live quickly, but later moved to microservices for Payments, Notifications, and Property Listing so each could scale independently as the business grew.”
 
-
-
-
-
-
-
-
-
 ---
-
-
 
 👉 Do you want me to also create a real diagram (Monolith vs Microservice
 
-s for Property App) so you can visualize and remember it better for interviews?
+s for Property App) so you can visualize and remember it better for interviews
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//////////////////////////
-/////////////////////////
-////////////////////////Angular
-////////////////////////
-/////////////////////////////////Angular Basic
-
-////////////////////////////////
-/////////////////////////////// Component
-/////////////////////////////// 
-
-//////////////////////////////////Q92
-//What are various ways to communicate between the component.
-Q>what are the various ways to communicate between the components.
-1>@Input @Output
-/////////////////////////////////////////////////////////////////////////////////////////////Parent child communication
-////////////////////////////Parent -> Child
-parent send the data down to child
-
-<h2>Parent Component</h2>
-<app-child [message] = "parentMessage"></app-child>
-
-imports : [ChildComponent],
-export class ParentComponent
-{
- parentMessage = "Hello from Parent";
-}
-
-export class ChildChildren
-{
-  @Input() message!: string ;
-  // data comes from parent. 
-}
-
-
-////////////////////////////////////////////////
-////////////////////////////////////////////////Directives
-////////////////////////////////////////////////
-
-
-//////////////////////////////////////////////////what is Directive(both the answer keep it )
+///////////////////////////////////////////////////////////////////////////////////////what is Directive(both the answer keep it )
 Great 👍 let’s simplify Directives in Angular with the same structure:
 
 ---
@@ -2550,11 +2592,8 @@ ngClass is used to toggle CSS class based on isError flag.
 
 When a property is added successfully → show green "Property added successfully".
 When API call fails → show red "Failed to add property".
-///////////////////////////////////////////////////////////////////////////////////////////////////
-Create a custom Angular directive to convert color of highlighted text to green?
+///////////////////////////////////////////////////////////////////////////////////////////////////Create a custom Angular directive to convert color of highlighted text to green?
 <div>Hello</div>, on hoving hello it will change the colour in Angular 18
-
-
 //
 Here’s how you can create a custom Angular 18 directive that changes the color of the text to green when you hover over it:
 
@@ -2744,20 +2783,263 @@ Attribute = Styles or behaviors applied to HTML
 
 Let me know if you'd like a quiz or real project task using these!
 
-////////////////////////////////
-/// ///////////////////////////pipes
-/// ///////////////////////////
-
-/////////////////////////////////////////////////////////////final pipes
 ////////////////////////////////////////////////////////////////////////////////////////////////////Async Pipes  
 Use Async Pipes :- Helps Angular handle data without extra manual subscription.
+🎯 What is async Pipe in Angular ?
+✅ Easiest Definition
+Async pipe is used to automatically get data from Observable or Promise in Angular templates.
+🧠 Super Simple Human Meaning
+Imagine:
+Plain text
+Observable = Water Pipe
+Data is continuously flowing inside it.
+async pipe:
+listens to data
+gets latest value
+automatically updates UI
+🎯 Why do we use Async Pipe?
+Without async pipe:
+we manually subscribe()
+manually unsubscribe()
+With async pipe:
+Angular does automatically
+👉 Cleaner and safer code.
+✅ Basic Example
+Component
+TypeScript
+users$ = this.userService.getUsers();
+Here:
+users$ is Observable
+$ means observable convention
+HTML
+HTML
+<div *ngFor="let user of users$ | async">
+  {{ user.name }}
+</div>
+🧠 What happens internally?
+Step 1
+Observable sends data:
+Plain text
+[
+ { name: 'Abhishek' },
+ { name: 'Rahul' }
+]
+Step 2
+async pipe receives it automatically.
+Step 3
+UI updates automatically.
+Output:
+Plain text
+Abhishek
+Rahul
+🎯 Without Async Pipe
+You write:
+TypeScript
+users: any[];
+
+ngOnInit() {
+   this.userService.getUsers()
+      .subscribe(data => {
+         this.users = data;
+      });
+}
+❌ Problems
+Manual subscribe
+Manual unsubscribe
+Memory leak risk
+✅ With Async Pipe
+HTML
+<div *ngFor="let user of users$ | async">
+👉 Angular handles:
+subscribe
+unsubscribe
+UI update
+automatically.
+🏠 Project Use (Buy & Sell Property Project)
+Suppose:
+property list comes from API
+Component
+TypeScript
+properties$ = this.propertyService.getProperties();
+HTML
+HTML
+<div *ngFor="let property of properties$ | async">
+   {{ property.name }}
+</div>
+🧠 Real Benefit in Your Project
+When:
+new property added
+price updated
+data refreshed
+👉 UI updates automatically.
+💼 Business Impact
+✅ Good Impact
+Benefit
+Meaning
+Cleaner code
+Less manual handling
+Better memory management
+Auto unsubscribe
+Real-time UI updates
+Better user experience
+Less bugs
+Safer async handling
+❌ Trade-offs / Problems
+Problem
+Meaning
+Harder debugging
+Async flow confusion
+Multiple async pipes
+Performance overhead
+Null initially
+UI may show empty first
+⚠️ Important Interview Point
+Async Pipe automatically:
+✅ subscribes
+✅ unsubscribes
+👉 This prevents:
+Plain text
+Memory Leaks
+Very important interview point 🔥
+🎯 Small Interview Answer
+Async pipe is used to automatically subscribe and unsubscribe Observable or Promise data inside Angular templates.
 
 //////////////////////////////////////////////////////////////////////////////////////////////Custum pipes 
+What are Custom Pipes in Angular ?
+✅ Easiest Definition
+Custom Pipe is a user-created pipe used to transform data in our own custom way.
+🧠 Super Simple Human Meaning
+Angular already gives built-in pipes:
+Plain text
+uppercase
+date
+currency
+But sometimes business needs special formatting.
+Example:
+Plain text
+7500000
+Business wants:
+Plain text
+75 Lakhs
+Angular does not have this built-in.
+👉 So we create our own pipe.
+That is called:
+Plain text
+Custom Pipe
+🎯 Why Custom Pipes are Needed?
+To apply:
+custom business formatting
+reusable UI logic
+cleaner templates
+✅ Basic Example
+Suppose:
+Plain text
+7500000
+You want:
+Plain text
+75 Lakhs
+✅ Step 1 — Create Pipe
+TypeScript
+import { Pipe, PipeTransform } from '@angular/core';
 
+@Pipe({
+  name: 'priceFormat'
+})
+export class PriceFormatPipe implements PipeTransform {
 
-///////////////////////////////////////////////////////
-//////////////////////////////////////////////////////Data Binding
-//////////////////////////////////////////////////////
+  transform(value: number): string {
+    return (value / 100000).toFixed(0) + ' Lakhs';
+  }
+
+}
+🧠 Understanding Line by Line
+✅ @Pipe
+TypeScript
+@Pipe()
+Tells Angular:
+“This class is a pipe.”
+✅ name: 'priceFormat'
+TypeScript
+name: 'priceFormat'
+Pipe name used in HTML.
+✅ transform()
+TypeScript
+transform(value: number)
+This method receives original value.
+Example:
+Plain text
+7500000
+✅ Logic
+TypeScript
+(value / 100000)
+Converts:
+Plain text
+7500000 → 75
+✅ Final Return
+TypeScript
+75 Lakhs
+✅ Step 2 — Use in HTML
+HTML
+{{ property.price | priceFormat }}
+✅ Output
+Plain text
+75 Lakhs
+🏠 Project Use (Buy & Sell Property Project)
+Your project:
+Plain text
+Property Buying & Selling Application
+✅ Example 1 — Property Price
+Database stores:
+Plain text
+7500000
+UI shows:
+Plain text
+75 Lakhs
+Better for Indian users.
+✅ Example 2 — Property Area
+Database:
+Plain text
+1200
+Custom pipe:
+Plain text
+1200 Sq Ft
+✅ Example 3 — Property Status
+Database:
+Plain text
+1
+Custom pipe converts:
+Plain text
+Available
+💼 Business Impact
+✅ Good Impact
+Benefit
+Meaning
+Cleaner UI
+Better readability
+Reusable logic
+Use everywhere
+Less duplicate code
+Easier maintenance
+Better business formatting
+Professional application
+❌ Trade-offs
+Problem
+Meaning
+Too many custom pipes
+Hard maintenance
+Heavy calculations
+Performance issues
+Impure pipes
+Frequent UI rendering
+⚠️ Important Interview Point
+Pure Pipe (default)
+Runs only when input changes.
+✅ Better performance
+Impure Pipe
+Runs every change detection cycle.
+❌ Can slow application
+🎯 Small Interview Answer
+Custom pipe is a user-created pipe used to transform data based on custom business requirements.
 
 ////////////////
 /// ///////////TrackBy
@@ -2765,26 +3047,162 @@ Use Async Pipes :- Helps Angular handle data without extra manual subscription.
 3. TrackBy in ngFor :- Reuse existing list items  instead of rebuilding them.
 ///////////////////////////////Forms
 
-//////////////////////////////
-//////////////////////////////Routing
-//////////////////////////////
+
 
  LozyLoading :- Load only the parts of the app when they are needed.
-
-/////////////////////////////////
-////////////////////////////////RxJx
-//////////////////////////////// 
-
-/////////////////////////////////////////////////////////////////////////////////////////////////Subjective Observable
-
-
-//////////////////////////////HTTP/API Integration
-
-/// ////////////////////////////
-/// ////////////////////////////Dependency Injection
-/// ///////////////////////////
-
 /////////////////////////////////////////////////////What is Dependency Injection in Angular ?
+🎯 What is Dependency Injection (DI) in Angular ?
+✅ Easiest Definition
+Dependency Injection means giving required objects/services to a class instead of creating them manually inside the class.
+🧠 Super Simple Human Meaning
+Imagine:
+Plain text
+Component = Employee
+Service = Tool
+Employee needs tool to work.
+❌ Without Dependency Injection
+Employee buys tool himself.
+Plain text
+Hard to manage
+✅ With Dependency Injection
+Company provides tool automatically.
+Plain text
+Easy management
+👉 Angular does same thing.
+It automatically gives required services to components.
+🎯 Why DI is Needed?
+Without DI:
+TypeScript
+let service = new PropertyService();
+Problems:
+Tight coupling
+Hard testing
+Hard maintenance
+With DI:
+Angular automatically provides service.
+👉 Cleaner architecture.
+✅ Basic Example
+Step 1 — Create Service
+TypeScript
+@Injectable({
+  providedIn: 'root'
+})
+export class PropertyService {
+
+  getProperties() {
+    return ['House', 'Villa'];
+  }
+
+}
+🧠 Understanding
+✅ @Injectable()
+TypeScript
+@Injectable()
+Tells Angular:
+Plain text
+“This class can be injected.”
+✅ providedIn: 'root'
+TypeScript
+providedIn: 'root'
+Means:
+Plain text
+Create only ONE shared object
+for whole application.
+👉 Singleton service.
+Step 2 — Inject into Component
+TypeScript
+constructor(private propertyService: PropertyService) {
+
+}
+🧠 What happens here?
+Angular automatically creates object:
+TypeScript
+new PropertyService()
+and gives it to component.
+🎯 Real Meaning
+Instead of:
+TypeScript
+let service = new PropertyService();
+Angular does automatically:
+Plain text
+Injecting dependency
+Step 3 — Use Service
+TypeScript
+properties = this.propertyService.getProperties();
+Output:
+Plain text
+House
+Villa
+🧠 Full Flow
+Plain text
+Component needs service
+       ↓
+Angular Injector checks
+       ↓
+Creates service object
+       ↓
+Provides to component
+🏠 Project Use (Buy & Sell Property Project)
+Your project:
+Plain text
+Property Buying & Selling Application
+✅ Example 1 — Property API Service
+Service:
+TypeScript
+PropertyService
+used for:
+get property list
+add property
+update property
+Injected into:
+Home component
+Property detail component
+Admin component
+✅ Example 2 — Authentication Service
+TypeScript
+AuthService
+Used for:
+login
+logout
+token management
+Injected everywhere.
+✅ Example 3 — Notification Service
+TypeScript
+NotificationService
+Used for:
+success message
+error message
+alerts
+💼 Business Impact
+✅ Good Impact
+Benefit
+Meaning
+Reusable code
+Same service everywhere
+Cleaner architecture
+Better project structure
+Easier testing
+Mock services easily
+Better maintenance
+Centralized logic
+❌ Trade-offs
+Problem
+Meaning
+Too many services
+Hard understanding
+Wrong scope
+Extra memory usage
+Over-engineering
+Unnecessary complexity
+⚠️ Important Interview Point
+Angular has built-in Injector System
+Angular automatically:
+creates objects
+manages lifecycle
+injects dependencies
+👉 This is Angular DI container.
+🎯 Small Interview Answer
+Dependency Injection is a design pattern where Angular automatically provides required services or objects to components.
 
 ////////////////////////////////////////
 ////////////////////////////////////////Styling /UI /CSS
@@ -2904,8 +3322,145 @@ For example, in my property app, once a user logs in, we issue a JWT token store
 
 
 Show quoted text
-
 //////////////////////////////////////////////////////////////////How many type of state management will be their in Angular ?
+
+✅ Easiest Definition
+State Management means managing and sharing application data between components.
+Example:
+Logged-in user
+Property list
+Cart items
+Selected filters
+🧠 Super Simple Human Meaning
+Imagine:
+Plain text
+Application Memory = State
+Example:
+Plain text
+Current User
+Selected Property
+Dark Mode
+Search Filters
+Angular needs to manage this data properly.
+That is called:
+Plain text
+State Management
+🎯 Main Types of State Management in Angular
+There are mainly 4 common types.
+✅ 1. Local Component State
+🧠 Meaning
+Data stored inside same component.
+Example
+TypeScript
+isLoading = true;
+Used only inside:
+HomeComponent
+Best For
+Small UI data
+Button toggle
+Loader
+Modal open/close
+🏠 Property Project Example
+Plain text
+Property details popup open/close
+✅ 2. Parent–Child State Management
+Using:
+@Input()
+@Output()
+🧠 Meaning
+Sharing data between connected components.
+Example
+Parent sends:
+TypeScript
+@Input()
+Child sends back:
+TypeScript
+@Output()
+🏠 Property Project Example
+Plain text
+Parent sends property details to child card component
+✅ 3. Shared Service State Management
+Using:
+Service
+RxJS Subject / BehaviorSubject
+🧠 Meaning
+Multiple unrelated components share same data.
+Example
+TypeScript
+private user = new BehaviorSubject(null);
+🏠 Property Project Example
+Plain text
+Logged-in user shared across:
+- Navbar
+- Profile
+- Dashboard
+✅ 4. Global State Management
+Using:
+NgRx
+Redux
+Signals Store
+🧠 Meaning
+Entire application state managed centrally.
+Think:
+Plain text
+One central store
+🏠 Property Project Example
+Plain text
+Complete property data
+favorites
+filters
+authentication
+managed centrally.
+🎯 Modern Angular State Management
+✅ Signals (Angular Modern)
+Angular introduced:
+Plain text
+Signals
+for reactive state management.
+Example
+TypeScript
+count = signal(0);
+Benefits
+Simpler
+Faster
+Less boilerplate than NgRx
+📊 Simple Comparison
+Type
+Best For
+Local State
+Small component data
+Parent–Child
+Connected components
+Shared Service
+Medium applications
+NgRx / Redux
+Large enterprise apps
+Signals
+Modern reactive state
+💼 Business Impact
+✅ Good State Management
+Better performance
+Cleaner architecture
+Easier maintenance
+Predictable data flow
+❌ Bad State Management
+Data confusion
+Bugs
+Hard debugging
+Duplicate API calls
+⚠️ Trade-offs
+Approach
+Problem
+Local State
+Hard to share
+Services
+Can become messy
+NgRx
+Complex learning
+Signals
+Still evolving
+🎯 Small Interview Answer
+State management in Angular is used to manage and share application data between components.
 
 /// /////////////////////////////Signal
 => A Signal is a reactive variable that automatically notifies Angular when its value changes.
@@ -2913,13 +3468,180 @@ Show quoted text
 ///////////////////////////////////////
 /// //////////////////////////////////Change Detection
 /// /////////////////////////////////
+What is Change Detection in Angular ?
+✅ Easiest Definition
+Change Detection is the process Angular uses to detect data changes and automatically update the UI.
+🧠 Super Simple Human Meaning
+Imagine:
+Plain text
+Data changes
+     ↓
+Angular checks changes
+     ↓
+UI updates automatically
+That checking process is called:
+Plain text
+Change Detection
+🎯 Real-Life Example
+Suppose:
+TypeScript
+name = "Abhishek";
+HTML:
+HTML
+<h1>{{ name }}</h1>
+🧠 Initial Output
+Plain text
+Abhishek
+Now button changes value:
+TypeScript
+this.name = "Rahul";
+🧠 What Angular Does?
+Angular detects:
+Plain text
+“Oh! data changed”
+Then UI updates automatically.
+✅ New Output
+Plain text
+Rahul
+🎯 Why Change Detection is Needed?
+Without it:
+Plain text
+Data changes
+BUT
+UI does not update
+Bad user experience.
+🧠 Internal Flow
+Plain text
+Event Happens
+(click/API/timer)
+      ↓
+Angular runs Change Detection
+      ↓
+Checks component values
+      ↓
+Updates UI
+✅ Events that Trigger Change Detection
+Angular runs change detection when:
+Event
+Example
+Button click
+(click)
+API response
+HttpClient
+Timer
+setTimeout()
+Input typing
+[(ngModel)]
+Observable update
+RxJS
+🎯 Types of Change Detection
+✅ 1. Default Change Detection
+🧠 Meaning
+Angular checks:
+entire component tree
+every time change happens.
+Example
+TypeScript
+changeDetection: ChangeDetectionStrategy.Default
+✅ Advantage
+Easy to use.
+❌ Problem
+Large applications become slower.
+🏠 Property Project Example
+Suppose:
+1000 property cards
+One small button click happens.
+Angular checks:
+all property cards
+👉 unnecessary checking.
+✅ 2. OnPush Change Detection
+🧠 Meaning
+Angular checks component ONLY when:
+Input reference changes
+Event happens
+Observable emits new value
+Example
+TypeScript
+changeDetection: ChangeDetectionStrategy.OnPush
+🧠 Human Meaning
+Instead of checking everything:
+Plain text
+Check only important changed parts
+👉 Faster performance.
+🏠 Property Project Example
+Suppose:
+property list has 5000 cards
+User changes:
+one favorite icon
+With OnPush: ✅ only affected card updates
+Without OnPush: ❌ whole UI checks again
+💼 Business Impact
+✅ Good Impact
+Benefit
+Meaning
+Faster UI
+Better user experience
+Better performance
+Less CPU usage
+Scalable app
+Handles large data
+Smooth scrolling
+Better property listing UI
+❌ Bad Impact (Without Proper Strategy)
+Problem
+Meaning
+Slow application
+Laggy UI
+Excess rendering
+Wasted processing
+Performance bottlenecks
+Poor scalability
+⚠️ Trade-offs
+Strategy
+Trade-off
+Default
+Easier but slower
+OnPush
+Faster but needs immutability understanding
+🧠 Important Interview Point
+Angular uses:
+Plain text
+Zone.js
+to know:
+when async work finishes
+when UI should update
+🎯 Simple Example
+Component
+TypeScript
+count = 0;
 
-/////////////////////////////////////////////////  OnPuch Change Detection :- Update only what changes instead of checking everything.
+increase() {
+   this.count++;
+}
+HTML
+HTML
+<button (click)="increase()">Add</button>
+
+<h1>{{ count }}</h1>
+🧠 Flow
+Plain text
+Button Click
+   ↓
+count changes
+   ↓
+Angular detects change
+   ↓
+UI updates
+🎯 Small Interview Answer
+Change Detection is the mechanism Angular uses to detect data changes and automatically update the UI.z
 
 ////////////////////////////////
 /// ///////////////////////////Performance Optimization
 /// ///////////////////////////
-
+1. LozyLoading :- Load only the parts of the app when they are needed.
+2. OnPuch Change Detection :- Update only what changes instead of checking everything.
+3. TrackBy in ngFor :- Reuse existing list items  instead of rebuilding them.
+4. ///////////////////////////////////////////Optiming Imaze And Assets :- Call only when required ,and cache results if posssible.
 ///////////////////////////////////////////Optiming Imaze And Assets :- Call only when required ,and cache results if posssible.
 Exalanation
 Great question 👍. Optimizing images and assets in Angular is an important part of making your app fast, especially when it runs in browsers with slow internet or on mobile. Let me break it down simply and practically (and how you can say in an interview):
@@ -3243,8 +3965,189 @@ Also improves scalability: once security or logging is added in the interceptor,
 ---
 
 Would you like to also learn how to handle errors with Interceptor or practice a mock interview-style question?
-///////////////////////////////////////////////////
-Error handling via HttpInterceptor
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Error handling via HttpInterceptor
+/// Error Handling via HttpInterceptor in Angular
+✅ Easiest Definition
+HttpInterceptor is used to catch and handle API request/response errors globally in Angular.
+🧠 Super Simple Human Meaning
+Imagine:
+Plain text
+Every API call passes through one security gate
+That gate is:
+Plain text
+HttpInterceptor
+It can:
+modify request
+add token
+handle errors
+log requests
+for ALL APIs centrally.
+🎯 Why Error Handling Needed?
+Suppose API fails:
+Plain text
+500 Server Error
+401 Unauthorized
+404 Not Found
+Without interceptor: ❌ write error handling in every component
+Very repetitive.
+✅ With HttpInterceptor
+One central place handles all API errors.
+👉 Cleaner architecture.
+🎯 Basic Flow
+Plain text
+Component
+   ↓
+HttpInterceptor
+   ↓
+Backend API
+   ↓
+Response/Error
+   ↓
+HttpInterceptor handles error
+✅ Example Code
+Step 1 — Create Interceptor
+TypeScript
+import {
+  HttpInterceptor,
+  HttpRequest,
+  HttpHandler,
+  HttpEvent,
+  HttpErrorResponse
+} from '@angular/common/http';
+
+import { Injectable } from '@angular/core';
+import { Observable, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
+
+@Injectable()
+export class ErrorInterceptor implements HttpInterceptor {
+
+  intercept(
+    req: HttpRequest<any>,
+    next: HttpHandler
+  ): Observable<HttpEvent<any>> {
+
+    return next.handle(req).pipe(
+
+      catchError((error: HttpErrorResponse) => {
+
+        if (error.status === 401) {
+          alert('Unauthorized User');
+        }
+
+        else if (error.status === 500) {
+          alert('Server Error');
+        }
+
+        return throwError(() => error);
+
+      })
+
+    );
+  }
+
+}
+🧠 Step-by-Step Explanation
+✅ intercept()
+TypeScript
+intercept()
+This method catches:
+every request
+every response
+✅ next.handle(req)
+TypeScript
+next.handle(req)
+Sends request to backend.
+✅ pipe()
+TypeScript
+.pipe()
+Used to process response.
+✅ catchError()
+TypeScript
+catchError()
+Catches API errors.
+✅ error.status
+TypeScript
+error.status
+Checks HTTP status code.
+Example:
+Code
+Meaning
+401
+Unauthorized
+404
+Not Found
+500
+Server Error
+🎯 Real Example
+Suppose API fails:
+Plain text
+500 Internal Server Error
+Interceptor catches it.
+Then:
+TypeScript
+alert('Server Error');
+runs automatically.
+🏠 Project Use (Buy & Sell Property Project)
+Your project:
+Plain text
+Property Buying & Selling Application
+✅ Example 1 — Unauthorized User
+Suppose token expired.
+Backend returns:
+Plain text
+401 Unauthorized
+Interceptor:
+catches error
+redirects login page
+✅ Example 2 — Server Down
+Property API fails.
+Interceptor shows:
+Plain text
+Server temporarily unavailable
+instead of crashing UI.
+✅ Example 3 — Network Failure
+No internet.
+Interceptor handles:
+common error popup
+retry logic
+💼 Business Impact
+✅ Good Impact
+Benefit
+Meaning
+Centralized error handling
+Cleaner code
+Better user experience
+Friendly messages
+Reusable logic
+No duplicate code
+Better security
+Handle unauthorized access
+❌ Trade-offs
+Problem
+Meaning
+Too much logic in interceptor
+Hard maintenance
+Global handling sometimes wrong
+Different screens may need different behavior
+Debugging complexity
+Error flow becomes indirect
+⚠️ Important Interview Point
+Interceptor can also:
+add JWT token
+logging
+retry failed API
+request modification
+👉 Very important enterprise concept.
+🎯 Where does this topic belong?
+Plain text
+Frontend (Angular)
+   ├ HTTP / API Integration
+       ├ HttpInterceptor
+       ├ Error Handling
+🎯 Small Interview Answer
+HttpInterceptor is used to globally handle HTTP requests, responses, and API errors in Angular.
+
 
 ///////////////////////////////////////////////////
 15. How do you handle global API errors in Angular using interceptors?
@@ -3255,7 +4158,7 @@ Error handling via HttpInterceptor
 9. Error Handling and Global Interceptors
 
 
-////////////////////////////////////////////////////////////////////////////83
+////////////////////////////////////////////////////////////////////////////83How does Authentication work in Angular?
 1)POST(USERNAME, Password).
 2)Authenticate and Create JET Token.
 3)Return Reponse(JWT Tokens)
@@ -3586,176 +4489,9 @@ Example
 // }
 //}
 
-/////////////////////////////////////////////////////////////////////////////////3)
-What are the diffrence type of inheritance ?
--> Single Inheritance : One bae class with one derived class
-Example : 
-class BaseClass1
-{
-public void Animal()
-{
-Console.WriteLine("Animals");
-}
-}
-class DerivedClass1 : BaseClass
-{
-public void Dog()
-{
-Console.WriteLine("Dog");
-}
-}
-
-->Multiple Inheritance :Multiple Inheritance - In this case Multiple Base classes can be there for single derived class. Remember in C#,
-multiple inheritance can only be achieved with the help of interfaces. Which means only one base or
-abstract class is allowed, and rest must be interfaces.
-
-Example:
-class BaseClass2
-{
-public void Animal() {
-Console.WriteLine("Animal");
-}
-}
-interface I2
-{
-public void Fly();
-}
-
-class DerivedClass2: BaseClass2, I2
-{
-public void Eagle() {
-Console.WriteLine("Eagle");
-}
-public void Fly() {
-Console.WriteLine("Fly");
-
-}
-}
-
-->Multilevel inheritance – In this, there is a GrandParent class then there is a Parent class which is derived from GrandParent class and then there is Child class which is derived from Parent class.
-Grandparent class -> Parent class -> Child class Here the Child class will get the properties
-of both Parent class and GrandParent class automatically.
-
-class BaseClass2
-{
-public void Animal() {
-Console.WriteLine("Animal"); }
-}
-class DerivedClass3: BaseClass2
-{
-public void Dog() {
-Console.WriteLine("Dog");
-}
-}
-class DerivedClass4 : DerivedClass3
-{
-public void Labrador() {
-
- Console.WriteLine("Labrador");
-}
-
-->Hierarchal inheritance - In this One, child class is derived more from than one base class. This is the most used type of inheritance.
-EXAMPLE :
-class BaseClass4
-{
-public void Animal() {
-Console.WriteLine("Animal");
-}
-}
-
-class DerivedClass5: BaseClass4
-{
-public void Dog() 
-{
-Console.WriteLine("Dog");
-}
-}
-class DerivedClass6: BaseClass4
-{
-public void Cat() {
-Console.WriteLine("Dog");
-}
-}
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//////////////////////////////////////////why c# doesnot uses multiple inheritance
-/////////////1>Avoiding the Diamond Problem
-    Class A
-   /      \
-Class B   Class C
-   \      /
-    Class D
-
-The diamond problem occurs when a class inherits from two classes that both inherit from a common base class.
-This can cause ambiguity in determining which version of a method or property should be inherited from the base class.
-In this scenario, if Class B and Class C both inherit a method from Class A, then Class D could inherit two conflicting versions of that method. C# avoids this ambiguity by allowing only single inheritance,
-ensuring that each class has a clear and singular parent class.
-
-///////////////////////////
-why c# doesnot uses multiple inheritance
-
--->C# does not support multiple class inheritance to avoid ambiguity(Diamond Problem).
--->But you can use multiple interfaces, which gives flexibility without confusion.
---> Because it can create confusion and conflicts especially when two parent classes have the same method or property name.
---> This is called the diamond Problem - and c# avoids it by not allowing a class to inherit from more than one class.
-
-Real life example
-Two bosses -->  diffrent instructions -->  same task --> now you are confuse.
-
-Class A
-   /      \
-Class B   Class C
-   \      /
-    Class D
-
-In this scenario, if Class B and Class C both inherit a method from Class A, then Class D could inherit two conflicting versions of that method. C# avoids this ambiguity by allowing only single inheritance,
-ensuring that each class has a clear and singular parent class.
-
-///////////////////////////////////////////////////////////////////////////////////////Q4)
-//HOW TO PREVENT A CLASS FROM BEING INHERITED?
-
-By using SEALED keyword in class.
-
-See the screenshot below, you marked the class ABC as sealed. If you will try to derive this class "ABC" in a child class "XYZ" then
-it will give a compiler error because ABC is marked as Sealed.
-
-EXAMPLE : 
-sealed class ABC {}
-class XYZ: ABC { } //Invalid
-class Sealed ClassEx.ABC
-CS0509: 'XYZ': cannot derive from sealed type 'ABC
 
 ///////////////////////////////////////////////////////////////////////////////////////Q5)
 WHAT IS ABSTRACTION? 
@@ -4519,12 +5255,10 @@ Instead, use Generics (List<T>, Dictionary<TKey, TValue>) to prevent unnecessary
 > “Boxing is when a value type is wrapped inside an object, and unboxing is when we extract it back.
 In my project, I faced this while using non-generic collections like ArrayList, so I moved to generic List<int> to improve performance and avoid unnecessary boxing and unboxing.”
 
-//////////////////////////////////////////////////////////////What is Boxing and UnBoxing.
+//////////////////////////////////////////////////////////////Value type and reference type.
 value type - int, char, double, and bool are built-in value types in C#.
 refrence type - string and object are built-in reference types in C#.
-////////////////////////////////Q> 32
-
-Difference between ArrayList and Hashtable in C#
+////////////////////////////////Q> 32 Difference between ArrayList and Hashtable in C#
 
 🔷 1. ArrayList in C#
 
@@ -4848,8 +5582,9 @@ It improved reusability and readability, though too many extension methods can s
 Do you want me to also prepare a small diagram (flow) of how Extension Method works behind the scen
 
 es (Compiler → Static Method → Instance Call)? That helps in interviews when they go deep.
-//////////////////////////////////////////////////////////Q41
-=> Delegate is a variable that holds the refrences to a methods.Or you can say it's a pointer to a function.
+
+
+//////////////////////////////////////////////////////////Q41 => Delegate is a variable that holds the refrences to a methods.Or you can say it's a pointer to a function.
 => A delegate can  refre to more  than one methods  of same return  type and parameters.
 
 Think of it like :
@@ -4887,74 +5622,207 @@ Hello Abhishek
 
 //
 
-> A delegate is like a function pointer in C#.
+-> A delegate is like a function pointer in C#.
 It lets us pass methods as arguments or call them indirectly.
 It's useful when we want to decouple logic or use event-based programming.
 1. Passing methods as arguments using a delegate
 
+It came into picture because developers wanted:
+ 1) Pass methods like data
+ 2)Call different methods dynamically
+ 3)Reduce hardcoded logic
+ 4)Make code flexible and reusable
 
-2. Decoupling logic via event-like behavior
 
-
-
-
----
-
-✅ 1. Passing Methods as Arguments (Callback-style)
-
-using System;
-
-//////////////////////////////////////////////////////////Q41
-=> Delegate is a variable that holds the refrences to a methods.Or you can say it's a pointer to a function.
-=> A delegate can  refre to more  than one methods  of same return  type and parameters.
-
-Think of it like :
-"You give someone your contact number(delegate), they can call you(method) when needed".
-
-//
-👨‍💻 Code Example (Super Easy):
-
-using System;
-
-public class Program
+//Real Life Understanding
+Imagine you order food using an app.
+The app does not know:
+Will you pay by UPI?
+Credit Card?
+Cash?
+So the app keeps a placeholder for payment method.
+At runtime, you choose the method.
+Delegate works exactly like this.
+It stores which method should run later.
+Without Delegate Problem
+Suppose you have this:
+C#
+public void Add()
 {
-    // Step 1: Declare a delegate
-    public delegate void GreetDelegate(string name);
-
-    // Step 2: Create a method to point to
-    public static void SayHello(string name)
-    {
-        Console.WriteLine("Hello " + name);
-    }
-
-    public static void Main()
-    {
-        // Step 3: Create delegate instance and assign method
-        GreetDelegate greet = SayHello;
-
-        // Step 4: Call method using delegate
-        greet("Abhishek");
-    }
+    Console.WriteLine("Add Method");
 }
 
+public void Subtract()
+{
+    Console.WriteLine("Subtract Method");
+}
+Now suppose another method wants to execute different operations dynamically.
+Without delegate:
+C#
+if(type == "add")
+{
+    Add();
+}
+else
+{
+    Subtract();
+}
+Problem:
+Too many if-else
+Tight coupling
+Hard to extend
+Difficult maintenance
+Delegate Solution
+Delegate allows:
+"Send the method itself as parameter"
+Easiest Definition
+Delegate is a type-safe function pointer.
+Now easiest human meaning:
+Delegate is an object that points to a method.
+Example (Very Easy)
+C#
+using System;
+
+public delegate void MyDelegate();
+
+class Program
+{
+    static void Hello()
+    {
+        Console.WriteLine("Hello");
+    }
+
+    static void Main()
+    {
+        MyDelegate obj = Hello;
+
+        obj();
+    }
+}
+What Happened Here?
+C#
+public delegate void MyDelegate();
+This says:
+"Only methods with no parameter and no return type can be stored."
+C#
+MyDelegate obj = Hello;
+Meaning:
+Store Hello method inside delegate variable.
+C#
+obj();
+Meaning:
+Execute the method stored inside delegate.
 Output:
+Plain text
+Hello
+Why Microsoft Introduced Delegate?
+Because many real-world software problems need:
+Problem
+Delegate Solution
+Dynamic method execution
+Store methods
+Event handling
+Button click events
+Callback methods
+Notify later
+Flexible architecture
+Plug different logic
+Remove hardcoded conditions
+Pass behavior
 
-Hello Abhishek
+Biggest Real Usage in Real Projects
+1. Event Handling
+In:
+ASP.NET
+Angular backend APIs
+Windows Forms
+WPF
+Example:
+C#
+button.Click += SaveData;
+Here:
+SaveData method is attached using delegate.
+Without delegates:
+Events would not work.
+2. LINQ Uses Delegates Everywhere
+Example:
+C#
+var result = numbers.Where(x => x > 5);
+Behind the scenes:
+C#
+x => x > 5
+is converted into delegate.
+Delegate tells:
+"Which filtering logic should run"
+3. Callbacks
+Example:
+C#
+ProcessOrder(SendEmail);
+Now ProcessOrder can execute any method later.
+Very useful in:
+Payment systems
+Notification systems
+Background jobs
+Delegate = Behavior Passing
+Normally we pass:
+int
+string
+object
+Delegate allows:
+passing METHOD itself
+This was revolutionary.
+Easy Real Project Example (.NET)
+Suppose in your property buying/selling application:
+You want different notifications:
+Email
+SMS
+Push Notification
+Without delegate:
+C#
+if(type == "email")
+With delegate:
+C#
+SendNotification(SendEmail);
+SendNotification(SendSMS);
+Very clean architecture.
+Types of Delegates
+1. Single Delegate
+Stores one method.
+C#
+MyDelegate d = Hello;
+2. Multicast Delegate
+Stores multiple methods.
+C#
+d += Hi;
+d += Bye;
+All methods execute.
+Modern C# Uses
+Today mostly:
+Action
+Func
+Predicate
+are used instead of custom delegates.
+Example
+Action
+C#
+Action a = Hello;
+a();
+Func
+C#
+Func<int, int, int> add = (a, b) => a + b;
+Super Simple Final Understanding
+Delegate was introduced because:
+C# needed a way to treat methods like variables.
+This helped create:
+Events
+LINQ
+Callbacks
+Flexible architectures
+Decoupled systems
+Modern frameworks
+One-Line Interview Answer
+Delegate in C# is a type-safe object that holds the reference of a method and allows methods to be passed as parameters for dynamic and flexible programming.
 
-//
-
-> A delegate is like a function pointer in C#.
-It lets us pass methods as arguments or call them indirectly.
-It's useful when we want to decouple logic or use event-based programming.
-1. Passing methods as arguments using a delegate
-
-
-2. Decoupling logic via event-like behavior
-
-
-
-
----
 
 ✅ 1. Passing Methods as Arguments (Callback-style)
 
@@ -5040,7 +5908,65 @@ PaymentService doesn’t care how the notification is shown — it's decoupled.
 
 We just inject the logic using a delegate
 
+
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////What is use of delegate 
+
+Biggest Real Usage in Real Projects
+//1. Event Handling
+In:
+ASP.NET
+Angular backend APIs
+Windows Forms
+WPF
+Example:
+C#
+button.Click += SaveData;
+Here:
+SaveData method is attached using delegate.
+Without delegates:
+Events would not work.
+//2. LINQ Uses Delegates Everywhere
+Example:
+C#
+var result = numbers.Where(x => x > 5);
+Behind the scenes:
+C#
+x => x > 5
+is converted into delegate.
+Delegate tells:
+"Which filtering logic should run"
+//3. Callbacks
+Example:
+C#
+ProcessOrder(SendEmail);
+Now ProcessOrder can execute any method later.
+Very useful in:
+Payment systems
+Notification systems
+Background jobs
+Delegate = Behavior Passing
+Normally we pass:
+int
+string
+object
+Delegate allows:
+passing METHOD itself
+This was revolutionary.
+Easy Real Project Example (.NET)
+Suppose in your property buying/selling application:
+You want different notifications:
+Email
+SMS
+Push Notification
+Without delegate:
+C#
+if(type == "email")
+With delegate:
+C#
+SendNotification(SendEmail);
+SendNotification(SendSMS);
+Very clean architecture.
 -) Delegates enable loose coupling, callbacks, and event-driven programming in C#.
 ////////////////////////////////////
 
@@ -5238,15 +6164,9 @@ redicate) with real project examples in the same Buy & Sell Properties context?
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 22 )Explain Generics in C# ? When And why to use Them ?
 Definition (In Easy Words)
 
-Generics in C# means — writing code once that can work with any data type.
+Generics allow us to create classes, methods, and interfaces that work with any data type in a type-safe way.
 
-💬 Like saying:
-
-> “I don’t care whether it’s int, string, or Customer — I’ll handle it in a type-safe way.”
-
-
-
-So instead of creating multiple methods or classes for different data types, you can write one generic method or class that works for all types.
+Instead of writing the same code for different types (like int, string, etc.), we write it once using generics — and it will work for any type.
 
 
 ---
@@ -5387,20 +6307,6 @@ Cleaner and DRY code Reflection and serialization sometimes tricky
 In my Buy & Sell Property app, I used Generics in Repository and API Response classes to make my data layer reusable and maintainable.
 It reduced code duplication and improved performance.”
 
-////////////////////////////////////////////////////What is the Diffrence Between Generic Vs Non Generic
-Collection are categorized into two parts Generic and Non Generics
-Generic Collection :
-Type Safety : Generic collections provide strong type safety.
-Usability : Generic collections are more user-friendly because they eliminate the need for explicit casting.
-Performance : Generic collections are generally more efficient in terms of both execution speed and memory
-because they avoid the overhead of boxing and unboxing.
-
-Non-Generic Collection:
-Type Safety : Non-generic collections are not type-safe because they store elements as object types.
-Usability : Non-generic collections are less user-friendly because they involve casting and boxing/unboxing.
-Performance : Non-generic collections may have performance overhead due to the need for boxing (converting value types to reference types) and unboxing
-(converting reference types back to value types).
-
 ///////////////////////Generic
 What are Generics in C#?
 
@@ -5439,6 +6345,19 @@ public class Calculator
     }
 }
 
+////////////////////////////////////////////////////What is the Diffrence Between Generic Vs Non Generic
+Collection are categorized into two parts Generic and Non Generics
+Generic Collection :
+Type Safety : Generic collections provide strong type safety.
+Usability : Generic collections are more user-friendly because they eliminate the need for explicit casting.
+Performance : Generic collections are generally more efficient in terms of both execution speed and memory
+because they avoid the overhead of boxing and unboxing.
+
+Non-Generic Collection:
+Type Safety : Non-generic collections are not type-safe because they store elements as object types.
+Usability : Non-generic collections are less user-friendly because they involve casting and boxing/unboxing.
+Performance : Non-generic collections may have performance overhead due to the need for boxing (converting value types to reference types) and unboxing
+(converting reference types back to value types).
 
 ////////////////////////////////////////////////////////////////Q 42
 //What is Multiple delegate 
@@ -5664,51 +6583,435 @@ Use case When you want to pass a method When you want to notify subscribers
 
 > Delegates hold a reference to methods; Events use delegates to notify when something happens, and only the class that defines the event can raise it.
 /////////////////////////////////////////////////////////////////What is the constructor chaining.
+Easiest Definition
+Constructor Chaining means calling one constructor from another constructor of the same class or parent class.
+🧠 Super Simple Human Meaning
+Imagine:
+Plain text
+One constructor already has some setup code.
+Instead of writing same code again:
+👉 another constructor calls it.
+That is called:
+Plain text
+Constructor Chaining
+🎯 Why Constructor Chaining is Needed?
+To:
+avoid duplicate code
+reuse constructor logic
+make code cleaner
+✅ Simple Example
+C#
+class Employee
+{
+    public Employee()
+    {
+        Console.WriteLine("Default Constructor");
+    }
+
+    public Employee(string name) : this()
+    {
+        Console.WriteLine(name);
+    }
+}
+🧠 Step-by-Step Explanation
+✅ First Constructor
+C#
+public Employee()
+Default constructor.
+Runs:
+Plain text
+Default Constructor
+✅ Second Constructor
+C#
+public Employee(string name) : this()
+🧠 Important Part
+C#
+: this()
+means:
+Plain text
+Call current class constructor first
+🎯 Flow
+Suppose:
+C#
+Employee emp = new Employee("Abhishek");
+🧠 Internal Execution
+Step 1
+C#
+this()
+calls:
+C#
+Employee()
+Output:
+Plain text
+Default Constructor
+Step 2
+Then second constructor continues:
+Plain text
+Abhishek
+✅ Final Output
+Plain text
+Default Constructor
+Abhishek
+🎯 Types of Constructor Chaining
+✅ 1. Same Class Constructor Chaining
+Using:
+C#
+this()
+Calls constructor of same class.
+✅ 2. Parent Class Constructor Chaining
+Using:
+C#
+base()
+Calls parent constructor.
+✅ Example of base()
+C#
+class Person
+{
+    public Person()
+    {
+        Console.WriteLine("Person Constructor");
+    }
+}
+
+class Employee : Person
+{
+    public Employee() : base()
+    {
+        Console.WriteLine("Employee Constructor");
+    }
+}
+✅ Output
+Plain text
+Person Constructor
+Employee Constructor
+🏠 Real Project Use (Buy & Sell Property Project)
+Suppose:
+Plain text
+Base API response setup
+already exists in one constructor.
+Other constructors can reuse it.
+Example:
+default property setup
+database connection setup
+logging setup
+💼 Business Impact
+✅ Good Impact
+Benefit
+Meaning
+Less duplicate code
+Cleaner codebase
+Better maintainability
+Easier updates
+Reusable initialization
+Faster development
+❌ Trade-offs
+Problem
+Meaning
+Too much chaining
+Hard debugging
+Complex constructor flow
+Readability issue
+🎯 Where does this topic belong?
+Plain text
+Backend → .NET Core → C# → OOPS → Constructors
+🎯 Small Interview Answer
+Constructor chaining means calling one constructor from another constructor using this() or base().
 ////////////////////////////////////////////////////////////////what the diffrence between the Arrays.CopyTo() and Array.Clone()?
 
-Array.Clone() creates a copy of an array.
-It returns a new array object with the same elements as the original array.
-Simple Definition (Interview Line)
-Array.Clone() creates a shallow copy of an array.
-Example
-Csharp
-Copy code
-int[] arr1 = { 1, 2, 3, 4 };
+Difference Between Array.Copy() and Array.Clone()
+Technology: C Sharp
+✅ Topic Placement
+Plain text
+Backend → .NET Core → C# → Collections / Arrays
+🧠 Easiest Understanding
+Imagine:
+Plain text
+arr1 = [1,2,3]
+You want another array.
+✅ Clone() → Creates NEW array automatically
+C#
+int[] arr2 = (int[])arr1.Clone();
+👉 Clone():
+creates new array
+copies all elements automatically
+✅ Copy() → Copies into already existing array
+C#
+int[] arr2 = new int[3];
+
+Array.Copy(arr1, arr2, 3);
+👉 Copy():
+does NOT create array
+copies data into existing array
+🎯 Main Difference Table
+Feature
+Clone()
+Copy()
+Creates new array automatically
+✅ Yes
+❌ No
+Need destination array first
+❌ No
+✅ Yes
+Copies whole array
+✅ Yes
+✅ Can copy partial also
+Flexibility
+Less
+More
+✅ Clone() Detailed Example
+C#
+int[] arr1 = { 1, 2, 3 };
 
 int[] arr2 = (int[])arr1.Clone();
 
 arr2[0] = 100;
 
-Console.WriteLine(arr1[0]); // 1
-Console.WriteLine(arr2[0]); // 100
-Explanation
-Copy code
+Console.WriteLine(arr1[0]);
+🧠 Output
+Plain text
+1
+Because:
+new separate array created
+✅ Copy() Detailed Example
+C#
+int[] arr1 = { 1, 2, 3 };
 
-arr1 = [1,2,3,4]
-arr2 = [1,2,3,4] ← copied array
-When we change arr2, arr1 does not change.
-Because Clone() creates a new array object.
-Important Point (Interview)
-Array.Clone() makes a shallow copy.
-Meaning:
-Value types → copied completely
-Reference types → only reference is copied, not the actual object
-Example with Reference Type
-Csharp
-Copy code
-string[] arr1 = { "A", "B" };
-string[] arr2 = (string[])arr1.Clone();
-Both arrays will point to the same string objects.
-Key Points for Interview
-Array.Clone() creates a copy of the array
-It performs a shallow copy
-It returns object type, so casting is required
+int[] arr2 = new int[3];
+
+Array.Copy(arr1, arr2, 3);
+
+arr2[0] = 100;
+
+Console.WriteLine(arr1[0]);
+🧠 Output
+Plain text
+1
+Because:
+data copied into another array
+🎯 Important Interview Point
+✅ Clone()
+Plain text
+Whole duplicate array creation
+✅ Copy()
+Plain text
+Controlled copying of elements
 Example:
-Csharp
-Copy code
-int[] arr2 = (int[])arr1.Clone();
-One-Line Interview Answer
-Array.Clone() creates a shallow copy of the array and returns a new array object with the same elements.
+copy first 2 elements only
+🏠 Real Project Use
+Suppose:
+original property data should remain safe
+temporary modified copy needed
+You can:
+use Clone()
+or Copy()
+💼 Business Impact
+✅ Good
+Benefit
+Meaning
+Data safety
+Original array protected
+Better memory control
+Controlled copying
+Cleaner logic
+Separate array operations
+❌ Trade-offs
+Problem
+Meaning
+Extra memory usage
+Duplicate arrays
+Large array copy cost
+Performance overhead
+🎯 Small Interview Answer
+Clone() creates a new duplicate array automatically, while Copy() copies elements into an already existing array.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //////////////////////////////////////////////////////////////////////////////////////////what are Anonymous type in c#
 What is Anonymous Type in C#?
@@ -13570,268 +14873,6 @@ Case	When to Use
 Helps users easily view sorted and ranked data (like Top Properties, Top Sellers).
 Improves data presentation and analytics, which helps business users take decisions faster.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 Explain async/await and Task vs ValueTask vs IAsyncEnumerable
 1. What is async and await?
@@ -15357,8 +16398,6 @@ Q>Framework that is using in  EntityFramework
 //////////////////Q>How you can add two coloum in table by Entityframework.
 I have created new file one you can see
 A function in C# is a group of statements that perform a specific task and return a value
-Q>what are the various ways to communicate between the components.
-1>@Input @Output
 ///////////////////////////////
 Authentiation,authorisation
 How can I consume Api
@@ -15980,318 +17019,6 @@ Useful in scenarios where different developers work on different parts of the sa
 Summary:
 Partial classes in C# allow you to split the definition of a class into multiple files for better organization and management.
 During compilation, the parts of the class from different files are combined to create the complete class.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ////////////////////////////////////////////////////////////////////////////////////////////////13>What is global exceptional handling.
 
@@ -18499,11 +19226,9 @@ Most Frequently Asked .NET Full Stack Interview Questions(covering .NET MVC, .NE
 1. Difference between AngularJS vs Angular.
 3. Explain Data Binding types (Interpolation, Property Binding, Event Binding, Two-way Binding).
 4. Difference between ngIf vs hidden.
-5. What is Dependency Injection in Angular?
 6. What is RxJS (Observables, Subject, BehaviorSubject)?
 7. Explain Routing & Route Guards (AuthGuard, CanActivate, CanDeactivate).
 8. What are Pipes? Difference between Pure vs Impure pipes.
-9. What is Change Detection in Angular?
 10. Difference between Template-driven forms vs Reactive forms.
 ---
 These are the most commonly repeated questions.
@@ -25309,16 +26034,6 @@ subscribe method to get result from the observable.
 6) Inside service set API url()apiurl.
 7) Setup HTTPCLIENT to send the request using API url.
 8)Use Observable to received the data or token from the request and return it to the component. 
-//////////////////////////////////Q92
-//What are various ways to communicate between the component.
-Q>what are the various ways to communicate between the components.
-1>@Input @Output
-2>Ng - content
-3>@ViewChild   @ViewChildren
-4>@ContentChild @ContentChilren
-
-
-
 
 /////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////Interciew Question
