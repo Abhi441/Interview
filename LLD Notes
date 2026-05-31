@@ -1,0 +1,964 @@
+///////////////////strategy design pattern 
+
+Strategy Design Pattern in C# (A to Z) – Interview + Real Project Explanation
+
+1. Why Strategy Pattern Came Into Picture?
+
+Imagine you are building a Buy & Sell Property Application.
+
+A customer can pay using:
+
+Credit Card
+
+UPI
+
+Net Banking
+
+Wallet
+
+
+Without Strategy Pattern:
+
+public class PaymentService
+{
+    public void ProcessPayment(string paymentType)
+    {
+        if(paymentType == "CreditCard")
+        {
+            Console.WriteLine("Processing Credit Card Payment");
+        }
+        else if(paymentType == "UPI")
+        {
+            Console.WriteLine("Processing UPI Payment");
+        }
+        else if(paymentType == "Wallet")
+        {
+            Console.WriteLine("Processing Wallet Payment");
+        }
+    }
+}
+
+Problem
+
+Suppose tomorrow business says:
+
+Add PayPal
+
+Add Crypto
+
+Add EMI
+
+
+You must modify the existing class again and again.
+
+This violates the Open/Closed Principle:
+
+> Software should be open for extension but closed for modification.
+
+
+
+
+---
+
+2. What is Strategy Pattern?
+
+Easy Definition
+
+Strategy Pattern allows us to put different algorithms (behaviors) into separate classes and choose one at runtime.
+
+Interview Definition
+
+Strategy Design Pattern defines a family of algorithms, encapsulates each one, and makes them interchangeable at runtime.
+
+
+---
+
+Real Life Example
+
+Think about Google Maps.
+
+You want to go from Bangalore to Mysore.
+
+Google Maps gives options:
+
+Car
+
+Bike
+
+Walking
+
+Bus
+
+
+Destination is same.
+
+Only route calculation strategy changes.
+
+Source -------> Destination
+
+Car Strategy
+Bike Strategy
+Walking Strategy
+Bus Strategy
+
+Google Maps selects strategy dynamically.
+
+This is Strategy Pattern.
+
+
+---
+
+3. Structure of Strategy Pattern
+
+Three main components:
+
+1. Strategy Interface
+
+Common contract.
+
+IPaymentStrategy
+
+
+---
+
+2. Concrete Strategies
+
+Actual implementations.
+
+CreditCardPayment
+UPIPayment
+WalletPayment
+
+
+---
+
+3. Context
+
+Uses selected strategy.
+
+PaymentService
+
+
+---
+
+Diagram
+
+IPaymentStrategy
+                   |
+     -----------------------------
+     |             |             |
+CreditCard      UPI         Wallet
+Strategy      Strategy     Strategy
+
+                   ^
+                   |
+             PaymentService
+
+
+---
+
+4. Step-by-Step Coding
+
+Step 1: Create Strategy Interface
+
+public interface IPaymentStrategy
+{
+    void Pay(decimal amount);
+}
+
+This is the contract.
+
+Every payment method must implement Pay().
+
+
+---
+
+Step 2: Credit Card Strategy
+
+public class CreditCardPayment : IPaymentStrategy
+{
+    public void Pay(decimal amount)
+    {
+        Console.WriteLine($"Paid {amount} using Credit Card");
+    }
+}
+
+
+---
+
+Step 3: UPI Strategy
+
+public class UPIPayment : IPaymentStrategy
+{
+    public void Pay(decimal amount)
+    {
+        Console.WriteLine($"Paid {amount} using UPI");
+    }
+}
+
+
+---
+
+Step 4: Wallet Strategy
+
+public class WalletPayment : IPaymentStrategy
+{
+    public void Pay(decimal amount)
+    {
+        Console.WriteLine($"Paid {amount} using Wallet");
+    }
+}
+
+
+---
+
+Step 5: Context Class
+
+public class PaymentService
+{
+    private readonly IPaymentStrategy _paymentStrategy;
+
+    public PaymentService(IPaymentStrategy paymentStrategy)
+    {
+        _paymentStrategy = paymentStrategy;
+    }
+
+    public void MakePayment(decimal amount)
+    {
+        _paymentStrategy.Pay(amount);
+    }
+}
+
+Context doesn't know:
+
+Credit Card logic
+
+UPI logic
+
+Wallet logic
+
+
+It only knows:
+
+Pay()
+
+This is called Loose Coupling.
+
+
+---
+
+5. Client Code
+
+class Program
+{
+    static void Main()
+    {
+        IPaymentStrategy strategy =
+                new UPIPayment();
+
+        PaymentService paymentService =
+                new PaymentService(strategy);
+
+        paymentService.MakePayment(5000);
+    }
+}
+
+Output:
+
+Paid 5000 using UPI
+
+
+---
+
+Runtime Switching
+
+IPaymentStrategy strategy =
+        new CreditCardPayment();
+
+Output:
+
+Paid 5000 using Credit Card
+
+No code changes inside PaymentService.
+
+Only strategy changes.
+
+
+---
+
+6. How Execution Happens Internally
+
+Step 1
+
+new UPIPayment();
+
+Object created.
+
+
+---
+
+Step 2
+
+new PaymentService(strategy);
+
+Strategy injected.
+
+
+---
+
+Step 3
+
+paymentService.MakePayment(5000);
+
+Called.
+
+
+---
+
+Step 4
+
+_paymentStrategy.Pay(5000);
+
+Executed.
+
+Since actual object is UPIPayment:
+
+UPIPayment.Pay()
+
+runs.
+
+This is Runtime Polymorphism.
+
+
+---
+
+7. Property Portal Example
+
+Suppose users can search properties by:
+
+Price
+
+Location
+
+Area
+
+
+Different search algorithms.
+
+
+---
+
+Interface
+
+public interface IPropertySearchStrategy
+{
+    void Search();
+}
+
+
+---
+
+By Price
+
+public class PriceSearchStrategy
+      : IPropertySearchStrategy
+{
+    public void Search()
+    {
+        Console.WriteLine("Searching by Price");
+    }
+}
+
+
+---
+
+By Location
+
+public class LocationSearchStrategy
+      : IPropertySearchStrategy
+{
+    public void Search()
+    {
+        Console.WriteLine("Searching by Location");
+    }
+}
+
+
+---
+
+Context
+
+public class PropertySearchService
+{
+    private readonly IPropertySearchStrategy _strategy;
+
+    public PropertySearchService(
+          IPropertySearchStrategy strategy)
+    {
+        _strategy = strategy;
+    }
+
+    public void SearchProperty()
+    {
+        _strategy.Search();
+    }
+}
+
+
+---
+
+8. Strategy Pattern + Dependency Injection
+
+Very common in .NET projects.
+
+builder.Services.AddTransient<
+        IPaymentStrategy,
+        UPIPayment>();
+
+Inject:
+
+public class PaymentController
+{
+    private readonly IPaymentStrategy _strategy;
+
+    public PaymentController(
+         IPaymentStrategy strategy)
+    {
+        _strategy = strategy;
+    }
+}
+
+
+---
+
+9. Real World Uses in .NET
+
+Payment Gateway
+
+RazorPay
+Stripe
+PayPal
+
+Different payment strategies.
+
+
+---
+
+Logging
+
+File Logging
+Database Logging
+Cloud Logging
+
+Different logging strategies.
+
+
+---
+
+Notification
+
+Email
+SMS
+Push Notification
+WhatsApp
+
+Different notification strategies.
+
+
+---
+
+Tax Calculation
+
+India Tax
+US Tax
+UK Tax
+
+Different tax strategies.
+
+
+---
+
+10. Advantages
+
+1. Open Closed Principle
+
+Add new strategy.
+
+No modification.
+
+
+---
+
+2. Loose Coupling
+
+Context doesn't know implementation.
+
+
+---
+
+3. Cleaner Code
+
+No giant if-else blocks.
+
+
+---
+
+4. Easy Testing
+
+Mock strategy easily.
+
+Mock<IPaymentStrategy>()
+
+
+---
+
+5. Runtime Flexibility
+
+Change behavior dynamically.
+
+
+---
+
+11. Disadvantages
+
+More Classes
+
+Instead of:
+
+1 class
+
+you may get:
+
+Interface
++
+5 Strategy Classes
++
+Context
+
+
+---
+
+Slightly More Complex
+
+For very small logic:
+
+if-else
+
+may be simpler.
+
+
+---
+
+12. Difference Between Strategy and Factory
+
+Strategy	Factory
+
+Changes behavior	Creates objects
+Focus on algorithm	Focus on object creation
+Runtime behavior selection	Runtime object creation
+
+
+Example:
+
+Factory
+
+PaymentFactory.Create("UPI");
+
+creates object.
+
+Strategy
+
+payment.Pay();
+
+executes behavior.
+
+Factory creates.
+
+Strategy behaves.
+
+
+---
+
+13. Interview Answer (2-Minute Version)
+
+What is Strategy Pattern?
+
+> Strategy Pattern is a behavioral design pattern that defines a family of algorithms, encapsulates each algorithm in a separate class, and allows them to be interchangeable at runtime. It helps remove large if-else or switch statements and follows the Open/Closed Principle.
+
+
+
+Example:
+
+> In a property-buying application, users can pay using Credit Card, UPI, or Wallet. Each payment method is implemented as a separate strategy class implementing a common IPaymentStrategy interface. The PaymentService uses the selected strategy at runtime without knowing the actual implementation.
+
+
+
+
+---
+
+Easy Memory Formula
+
+Strategy Pattern =
+
+1. Interface
+      ↓
+2. Multiple Implementations
+      ↓
+3. Context Uses Interface
+      ↓
+4. Select Behavior At Runtime
+
+Think:
+
+Google Maps
+
+Destination = Same
+
+Car Strategy
+Bike Strategy
+Walking Strategy
+
+Only algorithm changes.
+
+That is the Strategy Design Pattern.
+
+
+//////////////////////////////////what is the runtime  polymorphism 
+
+Great follow-up question. Runtime Polymorphism is actually one of the main reasons why the Strategy Pattern works.
+
+What is Runtime Polymorphism?
+
+Easy Definition
+
+> Runtime Polymorphism means the method that will execute is decided while the program is running, not while it is being compiled.
+
+
+
+Think:
+
+One Interface
+      ↓
+Many Implementations
+      ↓
+Actual Method Chosen At Runtime
+
+
+---
+
+Real Life Example
+
+Suppose you have a TV remote.
+
+Remote → Power Button
+
+You press the same button.
+
+But depending on what device the remote is connected to:
+
+TV turns ON
+
+AC turns ON
+
+Projector turns ON
+
+
+Same button.
+
+Different behavior.
+
+Chosen at runtime.
+
+This is Runtime Polymorphism.
+
+
+---
+
+C# Example
+
+Parent Interface
+
+public interface IAnimal
+{
+    void MakeSound();
+}
+
+
+---
+
+Dog Class
+
+public class Dog : IAnimal
+{
+    public void MakeSound()
+    {
+        Console.WriteLine("Dog says Woof");
+    }
+}
+
+
+---
+
+Cat Class
+
+public class Cat : IAnimal
+{
+    public void MakeSound()
+    {
+        Console.WriteLine("Cat says Meow");
+    }
+}
+
+
+---
+
+Client Code
+
+IAnimal animal = new Dog();
+
+animal.MakeSound();
+
+Output:
+
+Dog says Woof
+
+
+---
+
+Now change only this line:
+
+IAnimal animal = new Cat();
+
+Output:
+
+Cat says Meow
+
+
+---
+
+Notice:
+
+animal.MakeSound();
+
+is exactly the same.
+
+But different methods execute.
+
+Why?
+
+Because CLR checks the actual object at runtime.
+
+animal → Dog Object
+
+or
+
+animal → Cat Object
+
+and calls the correct method.
+
+This is Runtime Polymorphism.
+
+
+---
+
+How Strategy Pattern Uses Runtime Polymorphism
+
+Remember:
+
+public interface IPaymentStrategy
+{
+    void Pay(decimal amount);
+}
+
+
+---
+
+UPI Strategy
+
+public class UPIPayment : IPaymentStrategy
+{
+    public void Pay(decimal amount)
+    {
+        Console.WriteLine("UPI Payment");
+    }
+}
+
+
+---
+
+Credit Card Strategy
+
+public class CreditCardPayment : IPaymentStrategy
+{
+    public void Pay(decimal amount)
+    {
+        Console.WriteLine("Credit Card Payment");
+    }
+}
+
+
+---
+
+Context
+
+public class PaymentService
+{
+    private readonly IPaymentStrategy _strategy;
+
+    public PaymentService(IPaymentStrategy strategy)
+    {
+        _strategy = strategy;
+    }
+
+    public void MakePayment(decimal amount)
+    {
+        _strategy.Pay(amount);
+    }
+}
+
+
+---
+
+Case 1
+
+IPaymentStrategy strategy =
+       new UPIPayment();
+
+PaymentService payment =
+       new PaymentService(strategy);
+
+payment.MakePayment(5000);
+
+Output:
+
+UPI Payment
+
+
+---
+
+Case 2
+
+IPaymentStrategy strategy =
+       new CreditCardPayment();
+
+PaymentService payment =
+       new PaymentService(strategy);
+
+payment.MakePayment(5000);
+
+Output:
+
+Credit Card Payment
+
+
+---
+
+Notice:
+
+_strategy.Pay(amount);
+
+never changes.
+
+But the method executed changes.
+
+That's Runtime Polymorphism.
+
+
+---
+
+What Happens Internally?
+
+Suppose:
+
+IPaymentStrategy strategy =
+       new UPIPayment();
+
+Memory:
+
+strategy
+    |
+    ↓
+UPIPayment Object
+
+
+---
+
+Then:
+
+strategy.Pay(5000);
+
+CLR asks:
+
+What actual object is strategy pointing to?
+
+Answer:
+
+UPIPayment
+
+So CLR executes:
+
+UPIPayment.Pay()
+
+If tomorrow:
+
+strategy = new CreditCardPayment();
+
+CLR executes:
+
+CreditCardPayment.Pay()
+
+Decision happens at runtime.
+
+Hence the name:
+
+Runtime Polymorphism
+
+Runtime = While program is running
+
+Poly = Many
+
+Morph = Forms
+
+One Interface
+Many Forms
+Chosen At Runtime
+
+
+---
+
+Interview Answer
+
+What is Runtime Polymorphism?
+
+> Runtime Polymorphism is the ability of a base class or interface reference to call different implementations of the same method based on the actual object assigned at runtime. It is achieved using method overriding or interface implementation.
+
+
+
+Example
+
+IAnimal animal = new Dog();
+animal.MakeSound();
+
+At runtime, the CLR sees that animal points to a Dog object and calls Dog.MakeSound().
+
+
+---
+
+Easy Memory Trick
+
+Interface Reference
+        ↓
+Can Point To
+        ↓
+Dog
+Cat
+Lion
+Tiger
+        ↓
+Same Method Call
+        ↓
+Different Execution
+        ↓
+Runtime Polymorphism
+
+This concept is one of the pillars behind Strategy Pattern, Dependency Injection, and most modern ASP.NET Core applications.
