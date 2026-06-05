@@ -1,5 +1,5 @@
 Perfection , Depth , Breath .
-
+15830
 My Revision strategies day1 -> 1 to 10000
 day2 -> 10000 to 20000
 day3 -> 20000 to 30000
@@ -214,6 +214,51 @@ Q32. How to create Servicein Angular?
 Q33. How to use Dependency Injector with Services in Angular?
 
 Q34. What is Hierarchical Dependency Injection?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Q35. What is Provider in Angular?
 
@@ -1433,9 +1478,19 @@ What is latest version of c# and feature.
 ////what is guard in Angular ,typeofguard in Angular
 ///How to test the services.
 //How to Mock the Services in Angular.
+//Can we update the data in by Post method
+//if we give the condition in  transaction can it be rollback all the thing  like 5 record are came in database with some condition.
+//what is HTMLhelper.
+//How does token refresh work in Angular if after default time the token is expire and how to get the new token without asking user to login again.
+//
 
 
-///DSA
+
+/////////////////////////////////////////////////////////////////////////////
+/// /////////////////////////////////////////////////////////////////////////
+/// //////////////////////////////////////////////////////////////////////////Coding Question
+
+
 //Reverse String the string
 //input : Abhishek kumar singh , output : singh kumar Abhishek
 ///Find the First Non-Repeating Character in a String
@@ -1518,6 +1573,8 @@ Find Palidrom
 ///////////////////////////////
 ///////////////////////////////Sql
 
+
+Paste in chrome : file:///C:/Users/Abhishek/Desktop/Sql.pdf (you can used below solution);
 //PDF Linked 
 //1. Find the second highest salary
 2. Find employees with duplicate salaries.
@@ -10928,6 +10985,7 @@ class Program
           }
      }
 }
+
 ///////////////////////////////////Q.9: How to perform Right circular rotation of an array?
 input: 1 2 3 4 5, output: 5,1,2,3,4
 
@@ -10954,7 +11012,7 @@ public class HelloWorld
         }
     }
 }
-Q.10: How to find if a positive integer is a prime number or not?
+//////////////////////////////////////////////////////////////////////////////////Q.10: How to find if a positive integer is a prime number or not?
 using System;
 class HelloWorld
 {
@@ -11010,7 +11068,7 @@ class Program
     }
 }
 
-Find the second largest element in array.
+/////////////////////////////////////////////////////////////////////////////////////////////////////Find the second largest element in array.
 
 class Program
 {
@@ -11324,9 +11382,192 @@ return a ;
 
 
 
-/////////////////////////////////////////////////////////////////////////////////////////////////Leetcode And Striver
+/////////////////////////////////////////////////////////////////////////////////////////////////
+/// /////////////////////////////////////////////////////////////////////////////////////////////
+/// /////////////////////////////////////////////////////////////////////////////////////////////
+/// /////////////////////////////////////////////////////////////////////////////////////////////Leetcode And Striver
 
-LeetCode 100 question : 
+////////////////////////////////////////////////////////////////////////////////////////////////
+/// ////////////////////////////////////////////////////////////////////////////////////////////LeetCode 100 question : 
+/// 
+/// 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## 📚 Array / String
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////- Merge Sorted Array  
@@ -11354,8 +11595,44 @@ class Program
     }
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////- Remove Element  
+
+Example 1 : 
+Input: nums = [3,2,2,3], val = 3
+Output: 2, nums = [2,2,_,_]
+
+Example 2 : 
+Input: nums = [0,1,2,2,3,0,4,2], val = 2
+Output: 5, nums = [0,1,4,0,3,_,_,_]
+
+public class Solution {
+    public int RemoveElement(int[] nums, int val) {
+         int tall1 = 0;
+    int tall2 = 0;
+    while(tall2 < nums.Length) 
+    {
+        if(nums[tall2] != val)
+        {
+            nums[tall1] = nums[tall2];
+            tall1++;
+            tall2++;
+        }
+        else
+        tall2++;
+    }
+    return tall1;
+}
+   
+    }
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////- Remove Duplicates from Sorted Array(Ankit sharma coding question also contain)  
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////- Remove Duplicates from Sorted Array II  
+Example 1: 
+Input: nums = [1,1,1,2,2,3]
+Output: 5, nums = [1,1,2,2,3,_]
+
+Example 2 :
+Input: nums = [0,0,1,1,1,1,2,3,3]
+Output: 7, nums = [0,0,1,1,2,3,3,_,_]
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////- Majority Element
 
 Example 1:
@@ -11432,8 +11709,61 @@ public class Solution {
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////- Best Time to Buy and Sell Stock II  
+
+Example 1:
+
+Input: prices = [7,1,5,3,6,4]
+Output: 7
+Explanation: Buy on day 2 (price = 1) and sell on day 3 (price = 5), profit = 5-1 = 4.
+Then buy on day 4 (price = 3) and sell on day 5 (price = 6), profit = 6-3 = 3.
+Total profit is 4 + 3 = 7.
+
+Example 2:
+
+Input: prices = [1,2,3,4,5]
+Output: 4
+Explanation: Buy on day 1 (price = 1) and sell on day 5 (price = 5), profit = 5-1 = 4.
+Total profit is 4.
+
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////- Jump Game  
+
+Example 1:
+
+Input: nums = [2,3,1,1,4]
+Output: true
+Explanation: Jump 1 step from index 0 to 1, then 3 steps to the last index.
+Example 2:
+
+Input: nums = [3,2,1,0,4]
+Output: false
+Explanation: You will always arrive at index 3 no matter what. Its maximum jump length is 0, which makes it impossible to reach the last index.
+
+class Solution {
+    public boolean canJump(int[] nums) {
+     int reachable = 0;
+        for(int i = 0; i < nums.length; i++){
+            if(i > reachable){
+                return false;
+            }
+            reachable = Math.max(reachable , nums[i] + i);
+        }
+        return true ;
+    }
+}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////- Jump Game II  
+
+Example 1:
+
+Input: nums = [2,3,1,1,4]
+Output: 2
+Explanation: The minimum number of jumps to reach the last index is 2. Jump 1 step from index 0 to 1, then 3 steps to the last index.
+Example 2:
+
+Input: nums = [2,3,0,1,4]
+Output: 2
+
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////- H-Index  
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////- Insert Delete GetRandom O(1)  
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////- Product of Array Except Self  
@@ -11800,6 +12130,201 @@ public class Program
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
 
+Paste in chrome : file:///C:/Users/Abhishek/Desktop/Sql.pdf (you can used below solution);
+//PDF Linked 
+/////////////////////////////////////////////////////////////////////////////////////////////////////1. Find the second highest salary
+Table: employees(id, name, salary)
+Values:
+1, Shubham, 5000
+2, Debug, 6000
+3, WIth, 7000
+Expected Output:6000
+SELECT MAX(salary)
+FROM employees
+WHERE salary < (SELECT MAX(salary) FROM employees);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////2. Find employees with duplicate salaries.
+/// 
+3. Find employees who joined in the last 3 months.
+4. Get department-wise average salary.
+5. Fetch nth highest salary (e.g., 3rd).
+6. Find employees with salary more than their manager.
+7. Find all employees without a manager
+8. Get count of employees in each role
+9. Find top 3 highest paid employees.
+10. Find common employees in two tables.
+11. Find employees who earn the same as someone in 'Sales' department
+12. List departments with more than 2 employees
+13. Get employee names that start with A
+14. Get employees who dont belong to any department
+15. Join employees with department names
+16. Find employees with the highest salary in each department
+17. Get number of employees who joined each year
+18. Find employees whose name contains ar
+19. Rank employees by salary
+20. Delete duplicate records (keeping one).
 
 
 ////////////////////Write a Sql query to fetch the second highest salary from the employee table.(You can try by rank() and dence rank() )
@@ -14077,6 +14602,136 @@ export class PropertyListComponent {
 👉 Used for UI components like Property List, Property Detail, User Profile.
 
 
+
+/////////////////////////////////////
+
+Absolutely, Abhishek! Here's a very easy-to-remember, interview-friendly, and code-based explanation for each Angular question (Q27 to Q30 + repeated Q20). Think of these as smart short answers with real understanding.
+
+
+---
+
+✅ Q27. What is a Decorator in Angular?
+
+> Decorator is a special function in Angular that adds extra features to classes, properties, methods, or parameters.
+
+
+
+You’ll see them starting with @ symbol like @Component, @Input, @Injectable.
+
+
+---
+
+✅ Example:
+
+@Component({
+  selector: 'app-user',
+  templateUrl: './user.component.html'
+})
+export class UserComponent {}
+
+🧠 This tells Angular:
+“Hey, this class is a component and it has a selector + template.”
+
+
+---
+
+✅ Q28. What are the types of Decorators in Angular?
+
+There are 4 main types:
+
+Decorator	Use Case	Example
+
+@Component()	Declares a class as a component	@Component({...})
+@Directive()	Declares a custom directive	@Directive({...})
+@Injectable()	Marks a class for Dependency Injection	@Injectable()
+@Input() / @Output()	For component communication (parent-child)	@Input() name: string;
+
+
+
+---
+
+✅ Q29. What are Pipes in Angular?
+
+> Pipes are used to transform data in the template.
+
+
+
+🧠 Example: Format dates, currency, uppercase/lowercase.
+
+
+---
+
+✅ Built-in Pipe Example:
+
+<p>{{ today | date:'fullDate' }}</p>
+
+today = new Date();
+
+Output: Wednesday, May 29, 2025
+
+
+---
+
+✅ Types of Pipes:
+
+Type	Example	Description
+
+Built-in	date, uppercase, currency, json, percent	Already provided by Angular
+Custom	You create your own	@Pipe({ name: 'myPipe' })
+
+
+
+---
+
+✅ Parameterized Pipe:
+
+> You pass a parameter to the pipe for customization.
+
+
+
+✅ Example:
+
+<p>{{ price | currency:'INR':'symbol' }}</p>
+
+Converts number to: ₹1,000.00
+
+
+---
+
+✅ Q30. What is Chaining Pipes?
+
+> You can apply multiple pipes together, one after the other.
+
+
+
+✅ Example:
+
+<p>{{ name | uppercase | slice:0:4 }}</p>
+
+If name = "abhishek", output = ABHI
+(First uppercase, then slice first 4 letters)
+
+
+---
+
+🔚 Summary Table (Quick Glance)
+
+Feature	Purpose	Example
+
+Decorator	Add metadata to class/property	@Component, @Input
+Pipe	Transform data in template	`{{ name
+Directive	Control HTML layout/behavior	*ngIf, [ngClass]
+
+
+
+---
+
+Let me know if you'd like mock interview questions or project-based tasks using these!
+
+--> Where to show.
+
+Absolutely, Abhishek! Here's the interview-ready, simple explanation, and code examples for each question from Q31 to Q36 — one by one. You’ll be able to explain these like a top 1% developer in the most human-friendly way!
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 app
 ---
@@ -15500,10 +16155,529 @@ Secure queries = No data leaks / hacking risk.
 /////////////////////////////////////neoSoft
 ////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////what the pakage use for creating new JWT Token.
-//Angular Fock
-//How you are implement the lazy loading in the Angular.
+
+=>In Angular
+@auth0/angular-jwt
+
+=>In .Net
+System.IdentityModel.Tokens.Jwt
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Angular Fock
+
+🎯 What is forkJoin in Angular?
+
+✅ Easiest Definition
+
+> forkJoin is an RxJS operator used to execute multiple API calls in parallel and get all results together when all of them are completed.
 
 
+
+
+---
+
+🧠 Super Simple Human Meaning
+
+Imagine you order:
+
+Pizza
+Burger
+Juice
+
+You don't want to eat until all items arrive.
+
+forkJoin works the same way.
+
+API 1 Complete ✅
+API 2 Complete ✅
+API 3 Complete ✅
+        ↓
+Return all results together
+
+
+---
+
+✅ Example
+
+Suppose your Property Application needs:
+
+1. Property List
+
+
+2. Property Types
+
+
+3. Cities
+
+
+
+at the same time.
+
+import { forkJoin } from 'rxjs';
+
+forkJoin({
+  properties: this.propertyService.getProperties(),
+  cities: this.propertyService.getCities(),
+  types: this.propertyService.getPropertyTypes()
+})
+.subscribe(result => {
+
+  console.log(result.properties);
+  console.log(result.cities);
+  console.log(result.types);
+
+});
+
+
+---
+
+🏠 Project Use (Buy & Sell Property)
+
+When Home Page loads:
+
+Property List API
+City API
+Property Type API
+User Profile API
+
+Instead of waiting one by one:
+
+1 sec + 1 sec + 1 sec + 1 sec = 4 sec
+
+Run all together:
+
+1 sec total
+
+using forkJoin.
+
+
+---
+
+⚠️ Important Interview Point
+
+forkJoin returns data only when:
+
+ALL observables complete
+
+If one API fails:
+
+forkJoin fails
+
+unless error handling is added.
+
+
+---
+
+🎯 Small Interview Answer
+
+> forkJoin is an RxJS operator that executes multiple Observables in parallel and returns the final results when all Observables complete.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////How you are implement the lazy loading in the Angular.
+
+ Easiest Definition
+
+> Lazy Loading means loading a module only when it is needed, instead of loading the entire application at startup.
+
+
+
+
+---
+
+🧠 Super Simple Human Meaning
+
+Imagine your property website has:
+
+Home
+Property
+Admin
+User Profile
+Reports
+
+Without Lazy Loading:
+
+User opens website
+     ↓
+Angular loads ALL modules
+
+Even if user never visits Admin page.
+
+❌ Slower startup.
+
+
+---
+
+With Lazy Loading:
+
+User opens website
+     ↓
+Only Home Module loads
+
+When user clicks:
+
+Admin
+
+Then:
+
+Admin Module loads
+
+✅ Faster application startup.
+
+
+---
+
+🎯 Why Use Lazy Loading?
+
+Benefits:
+
+Faster initial page load
+
+Better performance
+
+Smaller bundle size
+
+Better user experience
+
+
+
+---
+
+✅ Step 1: Create Feature Module
+
+Example:
+
+ng generate module admin --routing
+
+Creates:
+
+admin.module.ts
+admin-routing.module.ts
+
+
+---
+
+✅ Step 2: Configure Routing
+
+In app-routing.module.ts
+
+const routes: Routes = [
+
+  {
+    path: 'admin',
+    loadChildren: () =>
+      import('./admin/admin.module')
+      .then(m => m.AdminModule)
+  }
+
+];
+
+
+---
+
+🧠 What Happens Here?
+
+loadChildren
+
+means:
+
+Don't load Admin Module now.
+Load it only when user visits /admin
+
+
+---
+
+✅ Step 3: Admin Routing
+
+const routes: Routes = [
+  {
+    path: '',
+    component: AdminComponent
+  }
+];
+
+
+---
+
+🎯 Flow
+
+Application Starts
+      ↓
+Home Module Loaded
+      ↓
+User Clicks Admin
+      ↓
+Admin Module Downloaded
+      ↓
+Admin Page Opens
+
+
+---
+
+🏠 Project Use (Buy & Sell Property)
+
+Suppose your application has:
+
+Home
+Property
+Admin
+Reports
+User Profile
+Payments
+
+
+---
+
+Without Lazy Loading:
+
+All modules loaded on startup
+
+Result:
+
+Slower website
+
+
+---
+
+With Lazy Loading:
+
+Home Module loads first
+
+Only when needed:
+
+Admin Module
+Reports Module
+Payments Module
+
+load later.
+
+Result:
+
+Faster website
+Better user experience
+
+
+---
+
+💼 Business Impact
+
+✅ Good Impact
+
+Benefit Impact
+
+Faster startup Better user experience
+Reduced bundle size Faster downloads
+Better performance More responsive app
+Scalable architecture Easier maintenance
+
+
+
+---
+
+❌ Trade-offs
+
+Problem Meaning
+
+First navigation delay Module downloads when first opened
+More routing setup Slightly more configuration
+Debugging complexity Large apps need careful structure
+
+
+
+---
+
+🎯 Interview Answer (Small)
+
+> Lazy Loading is a technique in Angular where modules are loaded only when they are needed, improving application startup performance.
+
+
+
+
+---
+
+🎯 Interview Answer (Medium)
+
+> I implement Lazy Loading using Angular routing with loadChildren. Feature modules such as Admin, Reports, or Payments are loaded only when users navigate to those routes, reducing the initial bundle size and improving application performance.
 
 ///////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////HCL
@@ -15606,15 +16780,6 @@ Easier maintenance → developers spend less time fixing alignment bugs.
 ////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////
 ////////////
-css
-//What is flex box.
-//Rxjs() -->tell more about the things
-//Do we nessary to keep constructor in .ts file.
-//can we use jquery in javaScript.
-//JoSet.
-//what the ID that you are using.
-//Where does managing your code.
-//Can we write the code for generarting jwt token.
 
 //////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////LTFS
@@ -17589,8 +18754,6 @@ OOp
 /////////////////////////////////////////sigalton
 we do not use Singalton code Manually , we use built-in Dependency Injection framework BECAUSE Thread-Safety , Simplicity ,Lifetime Management.
 All 5 also 
-////////////////Sql
-sql querying
 
 ///////////////////////Simens Technology
 Q>Artichecture of Project : https://www.youtube.com/watch?v=X7CGyBZrEh8
@@ -21598,8 +22761,6 @@ Angular – Front-End Development
 
 1. What is a component in Angular, and what is the purpose of each file typically associated with it?
 
-
-2. Explain the concept of decorators in Angular.
 4. Explain @Input() and @Output() bindings in Angular.
 
 
@@ -26269,139 +27430,6 @@ export class AppComponent {
 It lets data flow one-way (from component to UI or UI to component), or two-way using ngModel.
 Angular supports 4 types: Interpolation, Property Binding, Event Binding, and Two-Way Binding."
 
-
-
-/////////////////////////////////////
-
-Absolutely, Abhishek! Here's a very easy-to-remember, interview-friendly, and code-based explanation for each Angular question (Q27 to Q30 + repeated Q20). Think of these as smart short answers with real understanding.
-
-
----
-
-✅ Q27. What is a Decorator in Angular?
-
-> Decorator is a special function in Angular that adds extra features to classes, properties, methods, or parameters.
-
-
-
-You’ll see them starting with @ symbol like @Component, @Input, @Injectable.
-
-
----
-
-✅ Example:
-
-@Component({
-  selector: 'app-user',
-  templateUrl: './user.component.html'
-})
-export class UserComponent {}
-
-🧠 This tells Angular:
-“Hey, this class is a component and it has a selector + template.”
-
-
----
-
-✅ Q28. What are the types of Decorators in Angular?
-
-There are 4 main types:
-
-Decorator	Use Case	Example
-
-@Component()	Declares a class as a component	@Component({...})
-@Directive()	Declares a custom directive	@Directive({...})
-@Injectable()	Marks a class for Dependency Injection	@Injectable()
-@Input() / @Output()	For component communication (parent-child)	@Input() name: string;
-
-
-
----
-
-✅ Q29. What are Pipes in Angular?
-
-> Pipes are used to transform data in the template.
-
-
-
-🧠 Example: Format dates, currency, uppercase/lowercase.
-
-
----
-
-✅ Built-in Pipe Example:
-
-<p>{{ today | date:'fullDate' }}</p>
-
-today = new Date();
-
-Output: Wednesday, May 29, 2025
-
-
----
-
-✅ Types of Pipes:
-
-Type	Example	Description
-
-Built-in	date, uppercase, currency, json, percent	Already provided by Angular
-Custom	You create your own	@Pipe({ name: 'myPipe' })
-
-
-
----
-
-✅ Parameterized Pipe:
-
-> You pass a parameter to the pipe for customization.
-
-
-
-✅ Example:
-
-<p>{{ price | currency:'INR':'symbol' }}</p>
-
-Converts number to: ₹1,000.00
-
-
----
-
-✅ Q30. What is Chaining Pipes?
-
-> You can apply multiple pipes together, one after the other.
-
-
-
-✅ Example:
-
-<p>{{ name | uppercase | slice:0:4 }}</p>
-
-If name = "abhishek", output = ABHI
-(First uppercase, then slice first 4 letters)
-
-
----
-
-🔚 Summary Table (Quick Glance)
-
-Feature	Purpose	Example
-
-Decorator	Add metadata to class/property	@Component, @Input
-Pipe	Transform data in template	`{{ name
-Directive	Control HTML layout/behavior	*ngIf, [ngClass]
-
-
-
----
-
-Let me know if you'd like mock interview questions or project-based tasks using these!
-
-
-
-
---> Where to show.
-
-Absolutely, Abhishek! Here's the interview-ready, simple explanation, and code examples for each question from Q31 to Q36 — one by one. You’ll be able to explain these like a top 1% developer in the most human-friendly way!
 
 
 ---
