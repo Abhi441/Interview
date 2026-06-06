@@ -215,51 +215,6 @@ Q33. How to use Dependency Injector with Services in Angular?
 
 Q34. What is Hierarchical Dependency Injection?
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Q35. What is Provider in Angular?
 
 Q36. What is the role of @Injectable Decorator in a Service?
@@ -11393,182 +11348,6 @@ return a ;
 /// 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## 📚 Array / String
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////- Merge Sorted Array  
 
@@ -12121,6 +11900,150 @@ public class Program
 191. Celebrity Problem  
 
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// /////////////////////////////////////////////////////////////////////////////////////////////////////////////////Linq
+/// /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+//You are given a list of Order objects. Each order has a CustomerName, OrderId, and OrderDate. Write a method that:
+Groups orders by customer name.
+Sorts each customer’s orders by OrderDate descending.
+Returns a dictionary: Dictionary<string, List<Order>> where the key is the customer name and the value is the list of sorted orders.
+//8. Write a LINQ query to replace all negative values in a column with the column’s max value.
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////🔹 7. How do you perform Left Join in LINQ?
+
+var leftJoin = employees
+    .GroupJoin(
+        departments,                     // right table
+        e => e.DeptId,                   // key from employees
+        d => d.DeptId,                   // key from departments
+        (emp, dept) => new { emp, dept } // result selector
+    )
+    .SelectMany(
+        x => x.dept.DefaultIfEmpty(),    // ensures left join (include even if no dept match)
+        (x, d) => new
+        {
+            EmployeeName = x.emp.Name,
+            DepartmentName = d?.DeptName ?? "No Department"
+        }
+    );
+
+/////////////////////////////////////Select the first row from a table
+//Using LINQ Method Syntax(Most common)
+var firstRow = table.FirstOrDefault();
+
+This will return the first row of the table.
+
+//apply condition
+var firstRow = table.FirstOrDefault(x => x.Age > 25);
+
+/////////////////////////////////////////////////////////////////////////////////////🔹 9. Can you write a LINQ query to count how many employees per department?
+
+var countByDept = employees
+    .GroupBy(e => e.Department)
+    .Select(g => new { Dept = g.Key, Count = g.Count() });
+
+
+////////////////////////////////////////////////////////////////////////////Max Salary from Employee
+var maxSalary = employee.Max(e => e.Salary);
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////🔹 4. How do you find the second highest salary using LINQ?
+
+var secondHighest = employees
+    .Select(e => e.Salary)
+    .Distinct()
+    .OrderByDescending(s => s)
+    .Skip(1)
+    .FirstOrDefault();
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////🔹 6. What is GroupBy in LINQ?
+
+Used to group elements by a key (like SQL GROUP BY).
+
+var grouped = employees
+    .GroupBy(e => e.Department)
+    .Select(g => new { Department = g.Key, Count = g.Count() });
+
+
+---
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////🔹 7. How do you perform Left Join in LINQ?
+
+var leftJoin = employees
+    .GroupJoin(
+        departments,                     // right table
+        e => e.DeptId,                   // key from employees
+        d => d.DeptId,                   // key from departments
+        (emp, dept) => new { emp, dept } // result selector
+    )
+    .SelectMany(
+        x => x.dept.DefaultIfEmpty(),    // ensures left join (include even if no dept match)
+        (x, d) => new
+        {
+            EmployeeName = x.emp.Name,
+            DepartmentName = d?.DeptName ?? "No Department"
+        }
+    );
+
+foreach (var item in leftJoin)
+{
+    Console.WriteLine($"{item.EmployeeName} - {item.DepartmentName}");
+}
+
+///////////////////////////// Do the left join in Linq
+var result = students.GroupJoin(departments,
+                               s => s.DepartmentId , 
+                               d=> DepartmentId
+                               (s, dGroup) => new {s, dGroup })
+                .SelectMany(
+                 x => x.dGroup.DefaultIfEmpty(),
+                 (x,d) => new 
+                  {
+                  x.s.StudentId,
+                  x.s.StudentName,
+                  x.s.Departmet,
+                  DepartmentName = d?.DepartmentName
+                  });
+
+
+/////////////////////////////////
+Q5:
+
+You have two collections:
+
+List<int> list1 = new List<int> { 1, 2, 3, 4, 5 };
+List<int> list2 = new List<int> { 4, 5, 6, 7, 8 };
+
+👉 Question:
+Using LINQ, find the common elements between list1 and list2.
+
+Solution: 
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class Program
+{
+    public static void Main()
+    {
+        List<int> list1 = new List<int> { 1, 2, 3, 4, 5 };
+        List<int> list2 = new List<int> { 4, 5, 6, 7, 8 };
+
+        var common = list1
+                     .Where(x => list2.Contains(x))
+                     .ToList();
+
+        Console.WriteLine("Common elements: " + string.Join(", ", common));
+    }
+}
+//////////////////////////////////////////////////////Write the linq query to filter age. is grater than 25.
+People.Where(p => p.Age > 25).ToList();
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -12143,168 +12066,6 @@ SELECT MAX(salary)
 FROM employees
 WHERE salary < (SELECT MAX(salary) FROM employees);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////2. Find employees with duplicate salaries.
 /// 
 3. Find employees who joined in the last 3 months.
@@ -12314,7 +12075,13 @@ WHERE salary < (SELECT MAX(salary) FROM employees);
 7. Find all employees without a manager
 8. Get count of employees in each role
 9. Find top 3 highest paid employees.
-10. Find common employees in two tables.
+//////////////////////////////////////////////////////////////////////////////////////////////////////10. Find common employees in two tables.
+/// SELECT e.name
+FROM employees e
+INNER JOIN contractors c
+ON e.name = c.name;
+Works everywhere.
+
 11. Find employees who earn the same as someone in 'Sales' department
 12. List departments with more than 2 employees
 13. Get employee names that start with A
@@ -12322,12 +12089,27 @@ WHERE salary < (SELECT MAX(salary) FROM employees);
 15. Join employees with department names
 16. Find employees with the highest salary in each department
 17. Get number of employees who joined each year
-18. Find employees whose name contains ar
+////////////////////////////////////////////////////////////////////////////////////////////////////////18. Find employees whose name contains ar
+18. Name Contains 'ar'
+Data:
+
+Shubham
+Kumar
+Maurya
+Query:
+
+SELECT *
+FROM employees
+WHERE name LIKE '%ar%';
+Output:
+
+Maurya
+Not Shubham and Kumar.
 19. Rank employees by salary
 20. Delete duplicate records (keeping one).
 
 
-////////////////////Write a Sql query to fetch the second highest salary from the employee table.(You can try by rank() and dence rank() )
+////////////////////Write a Sql query to fetch the second highest salary from the employee table.
 SELECT DISTINCT salary 
 FROM EMPLOYEE 
 ORDER BY salary DESC 
@@ -20628,40 +20410,6 @@ public class orderGrouper
 }
 
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Linq mosted asked question
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-You are given a list of Order objects. Each order has a CustomerName, OrderId, and OrderDate. Write a method that:
-Groups orders by customer name.
-Sorts each customer’s orders by OrderDate descending.
-Returns a dictionary: Dictionary<string, List<Order>> where the key is the customer name and the value is the list of sorted orders.
-
-public class Order
-{
-public string CustomerName{get ; set;};
-public int OrderId {get ; set ;}
-public DataTime OrderDate {get ; set ;}
-}
-
-public class orderGrouper
-{
- public static Dictionary<string , List<order>> GASO(List<Order> orders)
-{
-  var groupedOrders = orders.GroupBY(o=> o.customername);
-
- var result = new Disctionary<string,List<List<Order>>();
- foreach(var group in groupedOrders)
- {
-   var sorttedOrder = group.OrderByDescending(o => o.OrderDate).ToList();
-   
-   result[group.Key] = sortedOrders;
- }
- return result;
-} 
-
-}
-
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////Tarun Kumar
@@ -22493,7 +22241,6 @@ Asp .Net
 4. How do you implement Web API versioning in .NET Core?
 5. Explain the middleware pipeline order in .NET Core.
 7. How would you implement soft delete in EF Core?
-8. Write a LINQ query to replace all negative values in a column with the column’s max value.
 10. Explain different SQL isolation levels.
 
 Angular
@@ -24036,42 +23783,6 @@ var secondHighest = employees
 ---
 
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////🔹 7. How do you perform Left Join in LINQ?
-
-var leftJoin = employees
-    .GroupJoin(
-        departments,                     // right table
-        e => e.DeptId,                   // key from employees
-        d => d.DeptId,                   // key from departments
-        (emp, dept) => new { emp, dept } // result selector
-    )
-    .SelectMany(
-        x => x.dept.DefaultIfEmpty(),    // ensures left join (include even if no dept match)
-        (x, d) => new
-        {
-            EmployeeName = x.emp.Name,
-            DepartmentName = d?.DeptName ?? "No Department"
-        }
-    );
-
-/////////////////////////////////////Select the first row from a table
-//Using LINQ Method Syntax(Most common)
-var firstRow = table.FirstOrDefault();
-
-This will return the first row of the table.
-
-//apply condition
-var firstRow = table.FirstOrDefault(x => x.Age > 25);
-
-/////////////////////////////////////////////////////////////////////////////////////🔹 9. Can you write a LINQ query to count how many employees per department?
-
-var countByDept = employees
-    .GroupBy(e => e.Department)
-    .Select(g => new { Dept = g.Key, Count = g.Count() });
-
-
-////////////////////////////////////////////////////////////////////////////Max Salary from Employee
-var maxSalary = employee.Max(e => e.Salary);
 
 
 /////////////////////////////////////////////////////////////////////////////////
@@ -24416,17 +24127,6 @@ Use SelectMany() when you want to work with all nested elements together.
 ---
 
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////🔹 4. How do you find the second highest salary using LINQ?
-
-var secondHighest = employees
-    .Select(e => e.Salary)
-    .Distinct()
-    .OrderByDescending(s => s)
-    .Skip(1)
-    .FirstOrDefault();
-
-
----
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////🔹 5. What is the difference between First(), FirstOrDefault(), Single(), and SingleOrDefault()?
 
@@ -24563,40 +24263,6 @@ namespace LinqExamples
 
 ---
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////🔹 6. What is GroupBy in LINQ?
-
-Used to group elements by a key (like SQL GROUP BY).
-
-var grouped = employees
-    .GroupBy(e => e.Department)
-    .Select(g => new { Department = g.Key, Count = g.Count() });
-
-
----
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////🔹 7. How do you perform Left Join in LINQ?
-
-var leftJoin = employees
-    .GroupJoin(
-        departments,                     // right table
-        e => e.DeptId,                   // key from employees
-        d => d.DeptId,                   // key from departments
-        (emp, dept) => new { emp, dept } // result selector
-    )
-    .SelectMany(
-        x => x.dept.DefaultIfEmpty(),    // ensures left join (include even if no dept match)
-        (x, d) => new
-        {
-            EmployeeName = x.emp.Name,
-            DepartmentName = d?.DeptName ?? "No Department"
-        }
-    );
-
-foreach (var item in leftJoin)
-{
-    Console.WriteLine($"{item.EmployeeName} - {item.DepartmentName}");
-}
-
 
 ---
 
@@ -24665,27 +24331,6 @@ Can we able to do CRUD in a single linq statement ?
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-
-
-
-
-
-
-///////////////////////////// Do the left join in Linq
-var result = students.GroupJoin(departments,
-                               s => s.DepartmentId , 
-                               d=> DepartmentId
-                               (s, dGroup) => new {s, dGroup })
-                .SelectMany(
-                 x => x.dGroup.DefaultIfEmpty(),
-                 (x,d) => new 
-                  {
-                  x.s.StudentId,
-                  x.s.StudentName,
-                  x.s.Departmet,
-                  DepartmentName = d?.DepartmentName
-                  });
-
 /////////////////////////////////////Select the first row from a table
 //Using LINQ Method Syntax(Most common)
 var firstRow = table.FirstOrDefault();
@@ -24702,36 +24347,7 @@ var firstRow = (from t in table select t).FirstOrDefault();
 
 //////////////////////////////////You're doing great!
 
-🔹 Q5:
-
-You have two collections:
-
-List<int> list1 = new List<int> { 1, 2, 3, 4, 5 };
-List<int> list2 = new List<int> { 4, 5, 6, 7, 8 };
-
-👉 Question:
-Using LINQ, find the common elements between list1 and list2.
-
-Solution: 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
-class Program
-{
-    public static void Main()
-    {
-        List<int> list1 = new List<int> { 1, 2, 3, 4, 5 };
-        List<int> list2 = new List<int> { 4, 5, 6, 7, 8 };
-
-        var common = list1
-                     .Where(x => list2.Contains(x))
-                     .ToList();
-
-        Console.WriteLine("Common elements: " + string.Join(", ", common));
-    }
-}
-
+🔹 
 
 
 
@@ -28368,8 +27984,6 @@ If you want next:
 ////////////////////////////////////////////////////////////////////////////////////////Css. xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ///////////////////////////////////////////////////////////////////////////////////////How does microservices trigger by  Azure. xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ///////////////////////////////////////////////////////////////////////////////////////Does microservices have multiple reposetory. xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-//////////////////////////////////////////////////////////////////////////////////////Write the linq query to filter age. is grater than 25.
-People.Where(p => p.Age > 25).ToList();
       
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////
