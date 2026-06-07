@@ -280,7 +280,7 @@ Q52. What is the role of HttpClient in Angular?
 
 Q53. What are the steps for fetching the data with HttpClient & Observable?
 
-Q54. How to do HTTP Error Handling in Angular?
+Q54. How to do HTTP Error Handling in Angular? (V.IMP)
 
 
 ///
@@ -483,7 +483,7 @@ WHAT IS BOXING AND UNBOXING? 018.
 
 048. WHAT IS THE DIFFERENCE BETWEEN "READONLY" AND "CONSTANT" VARIABLES?
 
-049. IT? WHAT IS "STATIC" CLASS? WHEN TO USE
+049.  WHAT IS STATIC CLASS? WHEN TO USE it ?
 
 050. WHAT IS THE DIFFERENCE BETWEEN "VAR" AND "DYNAMIC" IN C#?
 
@@ -543,9 +543,7 @@ WHAT IS THE DIFFERENCE BETWEEN PRIMARY KEY AND UNIQUE KEY?
 
 071. WHAT ARE TRIGGERS AND TYPES OF TRIGGERS?
 
-072.
-
-WHAT IS A VIEW?
+072.WHAT IS A VIEW?
 
 073. WHAT IS THE DIFFERENCE BETWEEN HAVING CLAUSE AND WHERE CLAUSE?
 
@@ -567,9 +565,7 @@ WHAT ARE JOINS IN SOL?
 
 081. WHAT IS CLUSTERED INDEX?
 
-082.
-
-WHAT IS NON-CLUSTERED INDEX?
+082.WHAT IS NON-CLUSTERED INDEX?
 
 083. WHAT IS THE DIFFERENCE BETWEEN CLUSTERED AND NON-CLUSTERED INDEX?
 
@@ -594,16 +590,17 @@ WHAT IS NON-CLUSTERED INDEX?
 
 092. HOW TO GET THE NTH HIGHEST SALARY OF AN EMPLOYEE?
 
-WHAT ARE ACID PROPERTIES? 093.
+093.WHAT ARE ACID PROPERTIES? 
 
-094.
-
-WHAT ARE MAGIC TABLES IN SOL SERVER?
+094.WHAT ARE MAGIC TABLES IN SOL SERVER?
 
 ////////
 /////// ASP.NET MVC
 ////////
 ///////
+/// 
+/// 
+/// 
 
 095. WHAT IS MVC (MODEL CONTROLLER)? EXPLAIN MVC LIFE CYCLE. VIEW
 
@@ -719,9 +716,7 @@ WHAT ARE THE DIFFERENT TYPES OF APPROACHES USED IN ENTITY FRAMEWORK?
 
 
 
-0128.
-
-WHAT ARE SOLID PRINCIPLES? WHAT IS THE DIFFERENCE BETWEEN SOLID PRINCIPLES AND DESIGN PATTERNS?
+0128.WHAT ARE SOLID PRINCIPLES? WHAT IS THE DIFFERENCE BETWEEN SOLID PRINCIPLES AND DESIGN PATTERNS?
 
 Q129.
 
@@ -1005,9 +1000,7 @@ WHAT IS METAPACKAGE? WHAT IS THE NAME OF METAPACKAGE PROVIDED BY ASP.NET CORE?
 
 WHAT IS THE DIFFERENCE BETWEEN.NET CORE AND .NET 5?
 
-0200. WHAT ARE RAZOR PAGES IN.NET
-
-CORE?
+0200. WHAT ARE RAZOR PAGES IN.NET CORE?
 
 
 
@@ -1019,55 +1012,55 @@ CORE?
 /// //////////////////////////////////////////////////
 
 OOPS Concepts
-1) WHAT IS THE DIFFERENCE BETWEEN A CLASS AND A STRUCTURE?
+1) WHAT IS THE DIFFERENCE BETWEEN A CLASS AND A STRUCTURE? (Consider)
 2) WHAT IS OPERATOR OVERLOADING?
-3) CAN YOU CALL THE BASE CLASS METHOD WITHOUT CREATING AN INSTANCE?
+3) CAN YOU CALL THE BASE CLASS METHOD WITHOUT CREATING AN INSTANCE? (Consider)
 4) WHAT ARE VIRTUAL FUNCTIONS AND PURE VIRTUAL FUNCTIONS?
 5) WHICH OOPS CONCEPT EXPOSES ONLY THE NECESSARY INFORMATION TO THE CALLING FUNCTIONS?
-6) IS IT ALWAYS NECESSARY TO CREATE OBJECTS FROM CLASS?
-7) WHAT IS EARLY AND LATE BINDING?
-8) WHICH OOPS CONCEPT IS USED AS A REUSE MECHANISM?
+6) IS IT ALWAYS NECESSARY TO CREATE OBJECTS FROM CLASS? (Consider)
+7) WHAT IS EARLY AND LATE BINDING? (Consider)
+8) WHICH OOPS CONCEPT IS USED AS A REUSE MECHANISM? (Consider)
 
 Exception Handling
-9) IN TRY BLOCK IF WE ADD RETURN STATEMENT WHETHER FINALLY BLOCK IS EXECUTED?
+9) IN TRY BLOCK IF WE ADD RETURN STATEMENT WHETHER FINALLY BLOCK IS EXECUTED? (Consider)
 10) WHAT YOU MEAN BY INNER EXCEPTION?
-11) LIST OUT SOME OF THE EXCEPTIONS?
+11) LIST OUT SOME OF THE EXCEPTIONS? (Consider)
 
 Collections & Arrays
 12) WHAT IS THE DIFFERENCE BETWEEN STACK AND QUEUE COLLECTIONS?
-13) EXPLAIN JAGGED ARRAYS?
+13) EXPLAIN JAGGED ARRAYS? (Consider)
 14) EXPLAIN MULTIDIMENSIONAL ARRAYS?
 15) EXPLAIN INDEXERS?
-16) WHAT IS THE DIFFERENCE BETWEEN SYSTEM.ARRAY.CLONE() AND SYSTEM.ARRAY.COPYTO()?
+16) WHAT IS THE DIFFERENCE BETWEEN SYSTEM.ARRAY.CLONE() AND SYSTEM.ARRAY.COPYTO()? (Consider)
 
 Data Types / Variables
-17) WHAT ARE VALUE TYPE AND REFERENCE TYPES?
+17) WHAT ARE VALUE TYPE AND REFERENCE TYPES? (Consider)
 18) CAN WE OVERRIDE PRIVATE VIRTUAL METHOD?
 19) EXPLAIN CIRCULAR REFERENCE?
 20) EXPLAIN OBJECT POOL?
 
 Delegates / Events / Generics
-21) WHAT ARE THE TYPES OF DELEGATES?
-22) WHAT ARE THE THREE TYPES OF GENERIC DELEGATES?
-23) WHAT ARE THE USES OF DELEGATES?
-24) CAN WE USE DELEGATES FOR ASYNCHRONOUS METHOD CALLS?
+21) WHAT ARE THE TYPES OF DELEGATES? (Consider)
+22) WHAT ARE THE THREE TYPES OF GENERIC DELEGATES? 
+23) WHAT ARE THE USES OF DELEGATES? (Consider)
+24) CAN WE USE DELEGATES FOR ASYNCHRONOUS METHOD CALLS? (Consider)
 
 Strings / Parsing / Regex
 25) WHAT IS AN ESCAPE SEQUENCE? NAME SOME STRING ESCAPE SEQUENCES IN C#
 26) WHAT ARE REGULAR EXPRESSIONS?
-32) WHICH STRING METHOD IS USED FOR CONCATENATION OF TWO STRINGS?
-33) WHAT IS PARSING? HOW TO PARSE A DATE TIME STRING?
+32) WHICH STRING METHOD IS USED FOR CONCATENATION OF TWO STRINGS? (Consider)
+33) WHAT IS PARSING? HOW TO PARSE A DATE TIME STRING? 
 
 Threading / Synchronization
 27) WHY TO USE LOCK STATEMENT?
 28) WHAT IS "EXTERN" KEYWORD?
 29) WHAT IS "SIZEOF" OPERATOR?
-30) CAN WE USE "THIS" INSIDE A STATIC METHOD?
+30) CAN WE USE "THIS" INSIDE A STATIC METHOD? (Consider)
 31) WHAT IS THE DIFFERENCE BETWEEN CTYPE AND DIRECTCAST?
 
 Properties / Modern C#
-34) EXPLAIN PARTIAL CLASS?
-35) EXPLAIN ANONYMOUS TYPE?
+34) EXPLAIN PARTIAL CLASS? (Consider)
+35) EXPLAIN ANONYMOUS TYPE? (Consider)
 36) EXPLAIN GET AND SET ACCESSOR PROPERTIES?
 
 Data Types (continued)
@@ -1077,9 +1070,9 @@ Data Types (continued)
 .NET Framework
 
 CLR / Execution
-39) WHAT IS JIT?
-40) WHAT IS MSIL?
-41) WHAT IS MEANT BY MANAGED AND UNMANAGED CODE?
+39) WHAT IS JIT?(Consider)
+40) WHAT IS MSIL? (Consider)
+41) WHAT IS MEANT BY MANAGED AND UNMANAGED CODE? ( Repeated Consider)
 
 Assemblies / Namespace / Manifest
 42) WHAT IS DIFFERENCE BETWEEN NAMESPACE AND ASSEMBLY?
@@ -1092,14 +1085,14 @@ Application Domain / Security
 47) EXPLAIN CAS (CODE ACCESS SECURITY).
 
 Threading / Synchronization
-48) WHAT ARE SYNCHRONOUS AND ASYNCHRONOUS OPERATIONS?
-49) WHAT IS MULTI-TASKING?
-50) NAME SOME PROPERTIES OF THREAD CLASS.
-51) WHAT ARE THE DIFFERENT STATES OF A THREAD?
+48) WHAT ARE SYNCHRONOUS AND ASYNCHRONOUS OPERATIONS? (Consider)
+49) WHAT IS MULTI-TASKING? (Consider)
+50) NAME SOME PROPERTIES OF THREAD CLASS. (Consider)
+51) WHAT ARE THE DIFFERENT STATES OF A THREAD? 
 52) CAN WE HAVE MULTIPLE THREADS IN ONE APP DOMAIN?
 53) WHICH NAMESPACE HAS THREADING?
 54) EXPLAIN LOCK, MONITORS, AND MUTEX OBJECT IN THREADING.
-55) WHAT IS THREAD.SLEEP() IN THREADING?
+55) WHAT IS THREAD.SLEEP() IN THREADING? (Consider)
 56) WHAT IS SUSPEND AND RESUME IN THREADING?
 57) WHAT IS THE WAY TO STOP A LONG RUNNING THREAD?
 58) WHY WE NEED MULTI-THREADING IN OUR PROJECT?
@@ -1124,8 +1117,8 @@ MVC Basics
 67) IS IT POSSIBLE TO SHARE A VIEW ACROSS MULTIPLE CONTROLLERS?
 
 Routing
-68) WHAT IS ROUTE IN MVC? WHAT IS DEFAULT ROUTE IN MVC?
-69) WHERE ARE THE ROUTING RULES DEFINED IN AN ASP.NET MVC APPLICATION?
+68) WHAT IS ROUTE IN MVC? WHAT IS DEFAULT ROUTE IN MVC?( Repeated Consider)
+69) WHERE ARE THE ROUTING RULES DEFINED IN AN ASP.NET MVC APPLICATION? 
 
 Validation
 70) WHAT IS VALIDATION SUMMARY IN MVC?
@@ -1660,6 +1653,697 @@ Write a query to find the ‘Nth’ highest salary from the employee table.
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////What is the magic table in SQL Server?
+Magic tables are the temporary logical tables that are created by the SQL server whenever there are insertion or deletion or update( D.M.L) operations. 
+
+=>Types of magic tables: 
+INSERTED – The recently inserted row gets added to the INSERTED magic table. 
+DELETED – The recently deleted row gets added to the DELETED magic table. The use of magic tables are TRIGGERS.
+
+
+////////////////////////////////////////////////////////////////////////////////////////////WHAT ARE THE DIFFERENCES BETWEEN EVENTS AND DELEGATES?
+
+✅ Easiest Definition
+
+Delegate
+
+> A Delegate is a type-safe function pointer that holds the reference of a method.
+
+
+
+Method → Delegate
+
+Delegate knows which method should be called.
+
+
+---
+
+Event
+
+> An Event is a notification mechanism built on top of delegates.
+
+
+
+Method → Delegate → Event
+
+Event knows when to notify interested objects.
+
+
+---
+
+🧠 Relationship
+
+Functions
+    ↓
+Delegates
+    ↓
+Events
+
+As mentioned in your note:
+
+Delegate depends on Function
+
+Event depends on Delegate
+
+Without Delegate:
+
+No Event
+
+Without Function:
+
+No Delegate
+
+
+---
+
+🎯 Real-Life Example
+
+Delegate
+
+Imagine:
+
+TV Remote
+
+The remote knows:
+
+Which TV function to call
+Volume Up
+Volume Down
+Power Off
+
+This is Delegate.
+
+
+---
+
+Event
+
+Imagine:
+
+Door Bell
+
+When someone presses the bell:
+
+Notification sent
+
+People inside the house react.
+
+This is Event.
+
+
+---
+
+🎯 Main Differences
+
++----------------------+----------------------------------+--------------------------------+
+| Feature | Delegate | Event |
++----------------------+----------------------------------+--------------------------------+
+| Purpose | Call a method | Notify subscribers |
++----------------------+----------------------------------+--------------------------------+
+| Depends On | Method | Delegate |
++----------------------+----------------------------------+--------------------------------+
+| Can Exist Alone? | Yes | No |
++----------------------+----------------------------------+--------------------------------+
+| Invocation | Can be called directly | Usually raised by owner class |
++----------------------+----------------------------------+--------------------------------+
+| Security | Less secure | More secure |
++----------------------+----------------------------------+--------------------------------+
+| Usage | Callback methods | Notifications |
++----------------------+----------------------------------+--------------------------------+
+| Example | Calculate(), Print() | Button Click, Email Sent |
++----------------------+----------------------------------+--------------------------------+
+
+
+---
+
+✅ Delegate Example
+
+public delegate void MyDelegate();
+
+class Program
+{
+    static void Show()
+    {
+        Console.WriteLine("Hello");
+    }
+
+    static void Main()
+    {
+        MyDelegate del = Show;
+
+        del();
+    }
+}
+
+Output:
+
+Hello
+
+Flow:
+
+Show Method
+      ↓
+Delegate stores reference
+      ↓
+Delegate invokes method
+
+
+---
+
+✅ Event Example
+
+public delegate void Notify();
+
+class Order
+{
+    public event Notify OrderPlaced;
+
+    public void PlaceOrder()
+    {
+        Console.WriteLine("Order Placed");
+
+        OrderPlaced?.Invoke();
+    }
+}
+
+Subscriber:
+
+Order order = new Order();
+
+order.OrderPlaced += () =>
+{
+    Console.WriteLine("Email Sent");
+};
+
+order.PlaceOrder();
+
+Output:
+
+Order Placed
+Email Sent
+
+Flow:
+
+Order Placed
+      ↓
+Event Raised
+      ↓
+Subscribers Notified
+
+
+---
+
+🏠 Property Buy/Sell Project Example
+
+Delegate
+
+Calculate EMI
+Calculate Commission
+Calculate Tax
+
+Delegate can point to any calculation method.
+
+
+---
+
+Event
+
+Property Added
+Payment Completed
+Property Sold
+User Registered
+
+When event occurs:
+
+Send Email
+Send SMS
+Push Notification
+
+All subscribers get notified.
+
+
+---
+
+🎯 Why Event is Called a Wrapper Over Delegate?
+
+Your note says:
+
+> Event is like a wrapper over Delegate to improve security.
+
+
+
+Correct.
+
+Example:
+
+Delegate
+
+public MyDelegate del;
+
+Anyone can:
+
+del = null;
+del();
+
+Dangerous.
+
+
+---
+
+Event
+
+public event MyDelegate MyEvent;
+
+Outside class:
+
+MyEvent += Handler;
+MyEvent -= Handler;
+
+Only subscribe/unsubscribe.
+
+Cannot directly invoke it.
+
+✅ More secure.
+
+
+---
+
+🎯 Interview Answer (2-3 Lines)
+
+> A Delegate is a type-safe function pointer that holds a reference to a method. An Event is a notification mechanism built on top of delegates. Delegates are used to call methods, whereas events are used to notify subscribers when something happens. Events depend on delegates and provide additional security by restricting direct invocation.
+
+
+
+
+---
+
+🧠 One-Line Memory Trick
+
+Function → Delegate → Event
+
+Delegate = "Who should be called?"
+
+Event = "Who should be notified?"
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////017. WHAT ARE ACCESS SPECIFIERS? WHAT IS THE DEFAULT ACCESS MODIFIER IN A CLASS?
+
+
+> Access Specifiers are keywords that control who can access a class, method, property, variable, or constructor.
+
+
+
+Think of them as:
+
+Access Specifier = Security Guard
+
+They decide:
+
+Who can access my code?
+Who cannot access my code?
+
+
+---
+
+🎯 Why Are Access Specifiers Needed?
+
+To:
+
+Hide sensitive data
+
+Protect business logic
+
+Control access
+
+Improve security
+
+Follow OOP principles
+
+
+
+---
+
+📌 Types of Access Specifiers
+
+public
+private
+protected
+internal
+protected internal
+private protected
+
+
+---
+
+1️⃣ Public
+
+Definition
+
+> Accessible from anywhere.
+
+
+
+Example
+
+public class Employee
+{
+    public string Name;
+}
+
+Access
+
+✅ Same Class
+
+✅ Same Project
+
+✅ Different Project
+
+
+---
+
+Real-Life Example
+
+Company Website
+
+Everyone can access.
+
+
+---
+
+2️⃣ Private
+
+Definition
+
+> Accessible only inside the same class.
+
+
+
+Example
+
+class Employee
+{
+    private int salary;
+}
+
+Access
+
+✅ Same Class
+
+❌ Child Class
+
+❌ Outside Class
+
+
+---
+
+Real-Life Example
+
+ATM PIN
+
+Only owner can access.
+
+
+---
+
+3️⃣ Protected
+
+Definition
+
+> Accessible inside the same class and derived (child) classes.
+
+
+
+Example
+
+class Person
+{
+    protected string Name;
+}
+
+class Employee : Person
+{
+    public void Show()
+    {
+        Console.WriteLine(Name);
+    }
+}
+
+Access
+
+✅ Same Class
+
+✅ Child Class
+
+❌ Outside Class
+
+
+---
+
+Real-Life Example
+
+Family Property
+
+Only family members can access.
+
+
+---
+
+4️⃣ Internal
+
+Definition
+
+> Accessible anywhere within the same assembly (project).
+
+
+
+Example
+
+internal class Employee
+{
+}
+
+Access
+
+✅ Same Project
+
+❌ Different Project
+
+
+---
+
+Real-Life Example
+
+Employees inside same company
+
+Outside companies cannot access.
+
+
+---
+
+5️⃣ Protected Internal
+
+Definition
+
+> Accessible from:
+
+Same Assembly
+
+Derived Classes in other assemblies
+
+
+
+
+Example
+
+protected internal int salary;
+
+Access
+
+✅ Same Project
+
+✅ Child Class
+
+❌ Unrelated External Classes
+
+
+---
+
+6️⃣ Private Protected
+
+Definition
+
+> Accessible only by derived classes within the same assembly.
+
+
+
+Example
+
+private protected int salary;
+
+Access
+
+✅ Child Class (same project)
+
+❌ Child Class (different project)
+
+❌ Other Classes
+
+
+---
+
+🎯 Quick Comparison Table
+
++---------------------+------------+------------+------------+------------+------------+
+| Access Modifier | Same Class | Child Same Project | Other Same Project | Child Different Project | Other Different Project |
++---------------------+------------+------------+------------+------------+------------+
+| Public | ✓ | ✓ | ✓ | ✓ | ✓ |
++---------------------+------------+------------+------------+------------+------------+
+| Private | ✓ | ✗ | ✗ | ✗ | ✗ |
++---------------------+------------+------------+------------+------------+------------+
+| Protected | ✓ | ✓ | ✗ | ✓ | ✗ |
++---------------------+------------+------------+------------+------------+------------+
+| Internal | ✓ | ✓ | ✓ | ✗ | ✗ |
++---------------------+------------+------------+------------+------------+------------+
+| Protected Internal | ✓ | ✓ | ✓ | ✓ | ✗ |
++---------------------+------------+------------+------------+------------+------------+
+| Private Protected | ✓ | ✓ | ✗ | ✗ | ✗ |
++---------------------+------------+------------+------------+------------+------------+
+
+
+---
+
+🎯 What is the Default Access Modifier of a Class?
+
+Interview Question
+
+Answer
+
+> The default access modifier of a top-level class in C# is internal.
+
+
+
+Example
+
+class Employee
+{
+}
+
+Compiler treats it as:
+
+internal class Employee
+{
+}
+
+
+---
+
+🎯 What is the Default Access Modifier of Class Members?
+
+If no access modifier is specified for fields, methods, or properties:
+
+class Employee
+{
+    int salary;
+}
+
+Default is:
+
+private
+
+
+---
+
+🎯 Interview Answer (Small)
+
+> Access specifiers control the visibility of classes and members. The main access specifiers in C# are Public, Private, Protected, Internal, Protected Internal, and Private Protected. The default access modifier of a class is Internal, while the default access modifier of class members is Private.
+
+
+
+
+---
+
+🎯 Interview Answer (5–8 Years Experience)
+
+> Access specifiers are used to enforce encapsulation and control accessibility of types and members. C# provides Public, Private, Protected, Internal, Protected Internal, and Private Protected access levels. Public provides unrestricted access, Private restricts access to the containing type, Protected allows inheritance-based access, Internal limits access to the same assembly, and the combined modifiers provide more granular control. By default, top-level classes are Internal and class members are Private.
+
+
+
+
+---
+
+📌 Topic Placement
+
+Backend (.NET Core)
+ └── C#
+      └── OOP
+           └── Access Specifiers
+                ├── Public
+                ├── Private
+                ├── Protected
+                ├── Internal
+                ├── Protected Internal
+                └── Private Protected
+
+🧠 Memory Trick
+
+Public → Everyone
+Private → Only Me
+Protected → Me + My Children
+Internal → My Project
+Protected Internal → My Project or Child Classes
+Private Protected → Project And children
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////Auth guardis
+Auth guardis used for guarding the routes.
+
+For example, suppose you are at this login url. Now without entering the username and password, by just changing the url manually, you want to go to the home component. This is not right. So, to prevent this action we use auth guards.
+
+This guard will redirect your request to some other component which you will set in the guard or to the login component only.
+
+http://localhost:4200/login
+
+STOP
+
+http://localhost:4200/home
+
+http://localhost:4200/login
+
+
+/////////////////////////////////////////////////////////////////////////////////////Q54. How to do HTTP Error Handling in Angular? (V.IMP)
+HTTP Error Handling can be done by using catchError and throwError functions from rxjx.
+
+return this.http.get('api/data').pipe(
+  catchError(error => {
+    // Handle the error here (e.g., log it, show a message to the user)
+    console.error('An error occurred:', error);
+    // Rethrow the error if you want to propagate it further
+    return throwError(() => new Error('Something went wrong; please try again later.'));
+  })
+);
+
+
 ///////////////////////////////////////////////////////////////////////////////1) What is the diffrence between ViewData,  ViewBAG And TempData.
  ////////////////////////////////////////////////////2) Q>Why ViewData require typeCasting.
  Super Simple Answer
@@ -2157,14 +2841,195 @@ Downtime is reduced → better customer trust.
 
 (API gateway + one service) so you can demonstrate technically how microservices work in your project?
 
-//////////////////////////////////////////////Diffrence between Monolotic and Microservices
-
-Which is better Monolotic or Microservices,(Defination, Project use ,Trade-off + Business Impact ) with so easy word for human being.
+/////////////////////////////////////////////////////////////////////Diffrence between Monolotic and Microservices
 
 
+Most interviewers get impressed when you explain the 3 biggest business differences clearly:
+
+
+---
+
+1. Deployment ⭐ (Most Important)
+
+Monolithic
+
+User Module
+Product Module
+Order Module
+Payment Module
+
+= One Application
+
+If you change:
+
+Payment Module
+
+You must deploy:
+
+Entire Application
+
+
+---
+
+Microservices
+
+User Service
+Product Service
+Order Service
+Payment Service
+
+All are independent.
+
+If you change:
+
+Payment Service
+
+Deploy only:
+
+Payment Service
+
+Interview Line
+
+> In Monolithic architecture, even a small change requires redeploying the whole application. In Microservices, each service can be deployed independently.
 
 
 
+
+---
+
+2. Scaling ⭐⭐⭐ (Most Asked)
+
+Suppose:
+
+1000 users
+
+using Product Service
+
+but
+
+100,000 users
+
+using Payment Service.
+
+
+---
+
+Monolithic
+
+Must scale entire application.
+
+User
+Product
+Order
+Payment
+
+↑
+Scale Everything
+
+More server cost.
+
+
+---
+
+Microservices
+
+Scale only:
+
+Payment Service
+
+Save money.
+
+Interview Line
+
+> Monolithic scales the entire application, whereas Microservices allow scaling only the service that needs additional resources.
+
+
+
+
+---
+
+3. Database ⭐⭐
+
+Monolithic
+
+One Database
+
+Users
+Products
+Orders
+Payments
+
+all inside same DB.
+
+
+---
+
+Microservices
+
+User Service → User DB
+
+Product Service → Product DB
+
+Order Service → Order DB
+
+Payment Service → Payment DB
+
+Independent ownership.
+
+Interview Line
+
+> In Monolithic architecture, all modules typically share one database. In Microservices, each service generally owns its own database.
+
+
+
+
+---
+
+One Interview Answer That Impresses
+
+> The biggest difference is that Monolithic applications are deployed, scaled, and managed as a single unit, whereas Microservices are independently deployable and scalable services. This gives Microservices better flexibility for large applications but increases architectural complexity.
+
+
+
+
+---
+
+If Interviewer Asks "Which One Would You Choose?"
+
+Small Project
+
+Choose:
+
+Monolithic
+
+Because:
+
+Faster development
+
+Easier debugging
+
+Less infrastructure
+
+
+
+---
+
+Enterprise Application
+
+Choose:
+
+Microservices
+
+Because:
+
+Independent deployment
+
+Independent scaling
+
+Better team ownership
+
+
+//////////////////////////////////////////////////////////////////////////
 
 
 Great question 👌 This one is asked a lot in .NET + Angular full-stack interviews.
@@ -5268,6 +6133,210 @@ In my project, I faced this while using non-generic collections like ArrayList, 
 //////////////////////////////////////////////////////////////Value type and reference type.
 value type - int, char, double, and bool are built-in value types in C#.
 refrence type - string and object are built-in reference types in C#.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ////////////////////////////////Q> 32 Difference between ArrayList and Hashtable in C#
 
 🔷 1. ArrayList in C#
@@ -9867,27 +10936,37 @@ Supose we want to increse the performance of store Procedure then
 ->we should avoid ddl operation on store Procedure.
 ->we will use table varible instead of temp table.
 
-/////////////////////////////88)
-WHAT IS A CURSOR? WHY TO AVOID THEM? A database Cursor is a control which enables traversal/ iteration over the rows or records in the table. 
-It’s a 5-step process: 1. Declare 2. Open 3. Fetch using while loop 4. Close 5. Deallocate
-Example of Cursor
-Suppose we have a table:
-Employees
-Id
-Name
-Salary
-1
-Rahul
-5000
-2
-Amit
-6000
-3
-John
-7000
+/////////////////////////////88)WHAT IS A CURSOR? WHY TO AVOID THEM?
+
+Here’s your note aligned neatly without changing the content:
+
+---
+
+### Cursor in SQL Server  
+➡️ A database Cursor is a control which enables traversal/iteration over the rows or records in a table.  
+➡️ It’s a 5‑step process:  
+1. Declare  
+2. Open  
+3. Fetch using while loop  
+4. Close  
+5. Deallocate  
+
+---
+
+### Example of Cursor  
+Suppose we have a table:  
+
+**Employees**  
+```
+Id   Name   Salary
+1    Rahul  5000
+2    Amit   6000
+3    John   7000
+```
+
 We want to increase salary one by one.
-Sql
-Copy code
+
+```sql
 DECLARE @Name VARCHAR(50)
 
 DECLARE emp_cursor CURSOR FOR
@@ -9905,28 +10984,48 @@ END
 
 CLOSE emp_cursor
 DEALLOCATE emp_cursor
-👉 This processes employees one row at a time.
-4️⃣ Why Should We Avoid Cursors?
-Because they are slow and heavy.
-SQL Server is designed to process sets of data, not rows one by one.
-Problems with Cursors
-1️⃣ Very slow performance
-2️⃣ High memory usage
-3️⃣ Locks tables for long time
-4️⃣ Bad scalability
-Example:
-Processing 1 million rows
-Using cursor → very slow
-Using set-based query → very fast
-5️⃣ Better Alternative (Set-Based Query)
-Instead of cursor:
-Sql
-Copy code
+```
+
+---
+
+✅ This alignment keeps your notes structured with headings, steps, and examples clearly separated.  
+
+
+Here’s your note aligned neatly, keeping the content exactly as you wrote it:
+
+---
+
+/////////////////////////////////////////////////////////////////////// Why Should We Avoid Cursors?  
+Because they are slow and heavy.  
+SQL Server is designed to process sets of data, not rows one by one.  
+
+---
+
+### ⚠️ Problems with Cursors  
+1️⃣ Very slow performance  
+2️⃣ High memory usage  
+3️⃣ Locks tables for long time  
+4️⃣ Bad scalability  
+
+**Example:**  
+Processing 1 million rows  
+- Using cursor → very slow  
+- Using set‑based query → very fast  
+
+---
+
+### ✅ Better Alternative (Set‑Based Query)  
+Instead of cursor:  
+
+```sql
 UPDATE Employees
 SET Salary = Salary + 1000
-👉 SQL updates all rows together.
-Much faster.
-///////////////////////////////////
+```
+
+👉 SQL updates all rows together.  
+Much faster.  
+
+//////////////////////////////////
 when should Server-based cursors be used ?
 When Should Server-Based Cursors Be Used?
 Cursors should be used only when row-by-row logic is required.
@@ -10209,36 +11308,6 @@ If any operation fails -> everthing is rolled back.
 
 so the database never stays in half-completed state.
 
-/////////////////////////////
-WHAT ARE ACID PROPERTIES?
-
-ACID properties are used when you are handling transac-tions in SQL.
-
-Atomicity
-
-Each transaction is "all or nothing"
-
-Consistency
-
-Data should be valid according to all defined rules
-
-Isolation
-
-Transactions do not affect each other
-
-Durability
-
-Committed data would not be lost, even after power failure.
-
-
-////////////////////////////////////////////////////////////
-👉 What is a Transaction? 
-=> A transaction is a group of database operation that must happen together as one single unit.
-
-If all operation succeed -> transaction is committed
-If any operation fails -> everthing is rolled back.
-
-so the database never stays in half-completed state.
 
 //////////////////////////////94
 WHAT ARE MAGIC TABLES IN SQL SERVER? Magic tables are the temporary logical tables that are created by the SQL server whenever there are insertion or deletion or update( D.M.L) operations. Types of magic tables: INSERTED – The recently inserted row gets added to the
@@ -14910,7 +15979,7 @@ ors (default, parameterized, static) with examples from your project so you’re
 
 
 
-//////////////////////////////////
+//////////////////////////////////Can we create an object of a static class ?
 
 Great question 👍 Let’s break it down step by step with simple words + your Buy and Sell Properties project context:
 
@@ -14939,10 +16008,7 @@ Since all members inside a static class are shared across the whole application,
 
 
 
-
-
-
----
+////////////////////////////////////////////////////////////////////////////////////WHAT IS STATIC CLASS? WHEN TO USE it ?
 
 
 
@@ -14957,7 +16023,6 @@ Static Class: A class declared with static keyword.
 It cannot be instantiated (no object creation).
 
 
-
 All methods and variables inside it must be static.
 
 
@@ -14965,15 +16030,7 @@ All methods and variables inside it must be static.
 Stored in memory only once for the whole application.
 
 
-
-
-
-
-
-
-
 ---
-
 
 
 🏗️ Project Use (Buy & Sell Properties App)
@@ -24908,7 +25965,7 @@ c.Show(); // Child Show Method
 Parent pc  = new Child();
 pc.Child(); // Parent show Method(hidding , not overring)
 
-///////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////// WHAT IS THE DIFFERENCE BETWEEN ARRAY AND ARRAYLIST ?
 using System.Security.AccessControl;
 
 What is the diffrence between arr and arralist :::
@@ -24991,19 +26048,20 @@ public class Employee
 --> IEnumerable is lazy - loaded — it fetches data only when you access it. This is great for performance 
     when dealing with large datasets.
 
-///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////WHAT IS THE DIFFERENCE BETWEEN IENUMERABLE AND IENUMERATOR IN C#
 
 
 What is the diffrence betwenn Inumerator and Inumerable :::
 
     IEnumerable
+    --> List is using IEnmerable internally  ans similarly IEnumberable will use IEnurmerator internally .
     -- > It represents a collection that can be iterated (looped) using foreach.
     -- > It has one method: GetEnumerator(), which returns an IEnumerator
 
     IEnumerable<string> fruits = new List<string> { "Apple", "Banana" };
 
 IEnumerator
-
+    
     It is used to loop through each item one by one in a collection
     It has two main methods:
 
@@ -25012,9 +26070,7 @@ MoveNext() → moves to next item
 Current → gives the current item
 
     Real-Life Analogy:
-IEnumerable = TV Remote(it lets you go through channels)
-
-IEnumerator = Finger that presses Next button (moves from one channel to another)
+For simplicity, just say that IEnumebale is a box contains IEnumerator functionality inside it.
 
     using System;
 using System.Collections;
