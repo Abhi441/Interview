@@ -124,6 +124,184 @@ Q7. Where to store static files in Angular project?
 
 Q8. What is the role of Angular.json file in Angular?
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Q9. What is the difference between JIT and AOT in Angular?
 
 
@@ -1317,6 +1495,64 @@ Error Handling
 
 
 
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// //////////////////////////////////////////////////////////////////////////////////////////////////////////Azure
+/// //////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// //////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+https://youtu.be/xxDRrZPahR8?si=TaHx37ibN_ssmMNf
+
+1. What is cloud computing? What is Azure? (0:01:11)
+
+2. What are the main cloud service models? (Difference between laaS, PaaS, and SaaS) (0:06:26)
+
+3. What is Hybrid Cloud? (0:12:49)
+
+4. What cloud model fits best for using existing on-prem servers with Azure? (0:14:44)
+
+5. What is a resource in Azure? How is it different from a service? (0:16:14)
+
+6. What are Resource Groups in Azure and why are they used? (0:19:31)
+
+7. Explain Azure Regions and Availability Zones. (0:22:42)
+
+8. What happens to resources if you accidentally delete a resource group? (0:25:32)
+
+9. What is the best way to allow a user to manage resources in one project but not another? (0:26:17)
+
+10. What are Azure Virtual Machines and when to use them? (0:26:51)
+
+11. What are VM Scale Sets and when to use them? (0:28:29)
+
+12. What is Azure App Service and its purpose? (0:31:10)
+
+13. What is the difference between Azure VMs and Azure App Services? (0:33:48).
+14. What are Deployment Slots in App Service and why are they useful? (0:36:49)
+
+15. How to host a web app quickly with minimum infrastructure management? (0:38:26)
+
+16. What are Azure Functions? (0:39:01)
+
+17. What are Azure Logic Apps? (0:45:06)
+
+18. What is Azure Storage and its types? (0:46:59)
+
+19. What is Azure Blob Storage and when to use it? (0:49:19)
+
+20. Difference between Azure SQL Managed Instance and Azure SQL Database? (0:52:12)
+
+21. What is a Virtual Network (VNet) and why is it needed? (0:54:48)
+
+22. What is Azure CDN and when/why to use it? (0:57:36)
+
+23. What is Azure Key Vault and when to use it? (1:01:25)
+
+24. What is a CI/CD pipeline? (1:05:32)
+
+25. Note: The video covers these 24 core topics, and the host mentions additional concepts like 'Front Door' are included in their full interview course.
+
 ////////////////////////////////////////////
 /// ///////////////////////////////////////Coding question
 /// //////////////////////////////////////
@@ -1430,7 +1666,14 @@ What is latest version of c# and feature.
 //if we give the condition in  transaction can it be rollback all the thing  like 5 record are came in database with some condition.
 //what is HTMLhelper.
 //How does token refresh work in Angular if after default time the token is expire and how to get the new token without asking user to login again.
-//
+//What is NullRefrenceException and how to handle it.
+//when to use IQurable and when to use IEnumerable in LINQ with code.
+//Your team registered a DbContext as Singleton instead of Scoped. The app works fine in testing but breaks in production under load. Why?
+//Two users submit property bids simultaneously and you start seeing deadlock errors in logs. How do you investigate and resolve this?
+//How do you investigate deadlock ?
+
+
+
 
 
 
@@ -1669,10 +1912,12 @@ Write a query to find the ‘Nth’ highest salary from the employee table.
 
 
 
+///////////////////////////////////////////////////////What is the role of Angular.Json file in Angular ?
+The Angular.Json file is Primary configuration file for Angular Project.
 
 
-
-
+///////////////////////////////////////////////////////////////////////////////Where to store static files in Angular project?
+assets folder in Angular
 
 /////////////////////////////////////////////////////////////////What is the magic table in SQL Server?
 Magic tables are the temporary logical tables that are created by the SQL server whenever there are insertion or deletion or update( D.M.L) operations. 
@@ -6135,208 +6380,6 @@ value type - int, char, double, and bool are built-in value types in C#.
 refrence type - string and object are built-in reference types in C#.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ////////////////////////////////Q> 32 Difference between ArrayList and Hashtable in C#
 
 🔷 1. ArrayList in C#
@@ -6520,7 +6563,7 @@ class Program
     static void Main()
     {
         int x = 5;
-        int result = x.DoubleIt();// Calls the extensitiom method
+        int result = IntExtensition.DoubleIt(x);// Calls the extensitiom method
         Console.WriteLine(result); // Output: 10
     }
 }
@@ -6991,62 +7034,218 @@ We just inject the logic using a delegate
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////What is use of delegate 
 
-Biggest Real Usage in Real Projects
-//1. Event Handling
-In:
-ASP.NET
-Angular backend APIs
-Windows Forms
-WPF
-Example:
-C#
+Here’s your note aligned neatly, without changing any of the content:
+
+---
+
+### 📌 Biggest Real Usage in Real Projects  
+
+#### 1️⃣ Event Handling  
+In:  
+- ASP.NET  
+- Angular backend APIs  
+- Windows Forms  
+- WPF  
+
+**Example (C#):**  
+```csharp
 button.Click += SaveData;
-Here:
-SaveData method is attached using delegate.
-Without delegates:
-Events would not work.
-//2. LINQ Uses Delegates Everywhere
-Example:
-C#
+```
+Here:  
+- `SaveData` method is attached using delegate.  
+- Without delegates, events would not work.  
+
+---
+
+#### 2️⃣ LINQ Uses Delegates Everywhere  
+**Example (C#):**  
+```csharp
 var result = numbers.Where(x => x > 5);
-Behind the scenes:
-C#
+```
+Behind the scenes:  
+```csharp
 x => x > 5
-is converted into delegate.
-Delegate tells:
-"Which filtering logic should run"
-//3. Callbacks
-Example:
-C#
+```
+is converted into a delegate.  
+Delegate tells: *"Which filtering logic should run"*  
+
+---
+
+#### 3️⃣ Callbacks  
+**Example (C#):**  
+```csharp
 ProcessOrder(SendEmail);
-Now ProcessOrder can execute any method later.
-Very useful in:
-Payment systems
-Notification systems
-Background jobs
-Delegate = Behavior Passing
-Normally we pass:
-int
-string
-object
-Delegate allows:
-passing METHOD itself
-This was revolutionary.
-Easy Real Project Example (.NET)
-Suppose in your property buying/selling application:
-You want different notifications:
-Email
-SMS
-Push Notification
-Without delegate:
-C#
+```
+Now `ProcessOrder` can execute any method later.  
+
+Very useful in:  
+- Payment systems  
+- Notification systems  
+- Background jobs  
+
+---
+
+### 🔑 Delegate = Behavior Passing  
+Normally we pass:  
+- int  
+- string  
+- object  
+
+Delegate allows: **passing METHOD itself**  
+This was revolutionary.  
+
+---
+
+### 🏗 Easy Real Project Example (.NET)  
+Suppose in your property buying/selling application:  
+You want different notifications:  
+- Email  
+- SMS  
+- Push Notification  
+
+Without delegate:  
+```csharp
 if(type == "email")
-With delegate:
-C#
+```
+
+With delegate:  
+```csharp
 SendNotification(SendEmail);
 SendNotification(SendSMS);
-Very clean architecture.
--) Delegates enable loose coupling, callbacks, and event-driven programming in C#.
+```
+
+Very clean architecture.  
+
+---
+
+### ✅ Key Takeaway  
+Delegates enable **loose coupling, callbacks, and event‑driven programming** in C#.  
+
+---
+
+This alignment keeps your notes structured, scannable, and interview‑ready while preserving your original wording.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ////////////////////////////////////
 
 Perfect 👍 Let’s break down Delegates in the same simple structure:
@@ -7797,113 +7996,138 @@ Backend → .NET Core → C# → OOPS → Constructors
 Constructor chaining means calling one constructor from another constructor using this() or base().
 ////////////////////////////////////////////////////////////////what the diffrence between the Arrays.CopyTo() and Array.Clone()?
 
-Difference Between Array.Copy() and Array.Clone()
-Technology: C Sharp
-✅ Topic Placement
-Plain text
-Backend → .NET Core → C# → Collections / Arrays
-🧠 Easiest Understanding
-Imagine:
-Plain text
+Here’s your note aligned neatly, keeping everything exactly as you wrote it:
+
+---
+
+### 🔄 Difference Between Array.Copy() and Array.Clone()  
+**Technology:** C#  
+
+---
+
+#### ✅ Topic Placement  
+Plain text  
+Backend → .NET Core → C# → Collections / Arrays  
+
+---
+
+#### 🧠 Easiest Understanding  
+Imagine:  
+```
 arr1 = [1,2,3]
-You want another array.
-✅ Clone() → Creates NEW array automatically
-C#
+```
+You want another array.  
+
+- ✅ **Clone() → Creates NEW array automatically**  
+```csharp
 int[] arr2 = (int[])arr1.Clone();
-👉 Clone():
-creates new array
-copies all elements automatically
-✅ Copy() → Copies into already existing array
-C#
+```
+👉 Clone():  
+- creates new array  
+- copies all elements automatically  
+
+- ✅ **Copy() → Copies into already existing array**  
+```csharp
+int[] arr2 = new int[3];
+Array.Copy(arr1, arr2, 3);
+```
+👉 Copy():  
+- does NOT create array  
+- copies data into existing array  
+
+---
+
+#### 🎯 Main Difference Table  
+
+| Feature | Clone() | Copy() |
+|---------|---------|--------|
+| Creates new array automatically | ✅ Yes | ❌ No |
+| Need destination array first | ❌ No | ✅ Yes |
+| Copies whole array | ✅ Yes | ✅ Can copy partial also |
+| Flexibility | Less | More |
+
+---
+
+#### ✅ Clone() Detailed Example  
+```csharp
+int[] arr1 = { 1, 2, 3 };
+int[] arr2 = (int[])arr1.Clone();
+
+arr2[0] = 100;
+Console.WriteLine(arr1[0]);
+```
+
+🧠 Output  
+```
+1
+```
+Because: new separate array created  
+
+---
+
+#### ✅ Copy() Detailed Example  
+```csharp
+int[] arr1 = { 1, 2, 3 };
 int[] arr2 = new int[3];
 
 Array.Copy(arr1, arr2, 3);
-👉 Copy():
-does NOT create array
-copies data into existing array
-🎯 Main Difference Table
-Feature
-Clone()
+
+arr2[0] = 100;
+Console.WriteLine(arr1[0]);
+```
+
+🧠 Output  
+```
+1
+```
+Because: data copied into another array  
+
+---
+
+#### 🎯 Important Interview Point  
+- ✅ **Clone()** → Whole duplicate array creation  
+- ✅ **Copy()** → Controlled copying of elements  
+
+Example: copy first 2 elements only  
+
+---
+
+#### 🏠 Real Project Use  
+Suppose: original property data should remain safe, temporary modified copy needed.  
+You can: use **Clone()** or **Copy()**  
+
+---
+
+#### 💼 Business Impact  
+
+**✅ Good**  
+- Data safety → Original array protected  
+- Better memory control → Controlled copying  
+- Cleaner logic → Separate array operations  
+
+**❌ Trade‑offs**  
+- Extra memory usage → Duplicate arrays  
+- Large array copy cost → Performance overhead  
+
+---
+
+#### 🎯 Small Interview Answer  
+**Clone()** creates a new duplicate array automatically, while **Copy()** copies elements into an already existing array.  
+
+---
+
+This alignment makes your notes structured, scannable, and interview‑ready while preserving your original wording.
+
+
+=> when to clone() and when to use copy()
+
 Copy()
-Creates new array automatically
-✅ Yes
-❌ No
-Need destination array first
-❌ No
-✅ Yes
-Copies whole array
-✅ Yes
-✅ Can copy partial also
-Flexibility
-Less
-More
-✅ Clone() Detailed Example
-C#
-int[] arr1 = { 1, 2, 3 };
+    = Existing array available
+    = Copy data into it
 
-int[] arr2 = (int[])arr1.Clone();
-
-arr2[0] = 100;
-
-Console.WriteLine(arr1[0]);
-🧠 Output
-Plain text
-1
-Because:
-new separate array created
-✅ Copy() Detailed Example
-C#
-int[] arr1 = { 1, 2, 3 };
-
-int[] arr2 = new int[3];
-
-Array.Copy(arr1, arr2, 3);
-
-arr2[0] = 100;
-
-Console.WriteLine(arr1[0]);
-🧠 Output
-Plain text
-1
-Because:
-data copied into another array
-🎯 Important Interview Point
-✅ Clone()
-Plain text
-Whole duplicate array creation
-✅ Copy()
-Plain text
-Controlled copying of elements
-Example:
-copy first 2 elements only
-🏠 Real Project Use
-Suppose:
-original property data should remain safe
-temporary modified copy needed
-You can:
-use Clone()
-or Copy()
-💼 Business Impact
-✅ Good
-Benefit
-Meaning
-Data safety
-Original array protected
-Better memory control
-Controlled copying
-Cleaner logic
-Separate array operations
-❌ Trade-offs
-Problem
-Meaning
-Extra memory usage
-Duplicate arrays
-Large array copy cost
-Performance overhead
-🎯 Small Interview Answer
-Clone() creates a new duplicate array automatically, while Copy() copies elements into an already existing array.
-
-
+Clone()
+    = Need a complete duplicate array
+    = New array created automatically
 //////////////////////////////////////////////////////////////////////////////////////////what are Anonymous type in c#
 What is Anonymous Type in C#?
 ✅ Smallest Answer (quick answer)
@@ -8453,6 +8677,147 @@ Singleton Class LoggerService
 /// ////////////////////////////////////////////////////Filter
 
 ///////////////////////////////////////////////////////////////////Explain Action Filters, Result Filters, Exception Filters.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /// //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////2. Explain Action Filters, Result Filters, Exception Filters
 🧩 Definition (in super easy words)
 
@@ -8790,107 +9155,143 @@ Client → Program.cs → Middleware → Routing → Controller → Response
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Stateless and statefulless.
 
-This is a very common interview question in Web API / .NET / system design.
-1️⃣ 5-Year-Old Explanation
-Imagine a shop.
-🟢 Stateful
-You go to the shop today and say:
-“Remember me? I came yesterday.”
-The shopkeeper remembers you and your previous order.
-That is stateful.
-🔵 Stateless
-You go to the shop and every time you must say:
-“My name is Abhishek and I want pizza.”
-The shopkeeper does not remember anything from previous visit.
-That is stateless.
-2️⃣ Simple Technical Definition
-🔹 Stateless
-A stateless system does not store information about previous requests. Every request is independent.
-Example: Web APIs.
-Each request must contain all required information.
-🔹 Stateful
-A stateful system stores information about previous interactions.
-Example: Applications that maintain session data.
-3️⃣ Example in Web Applications
-Stateless Example
-REST API in **ASP.NET Core.
-Request:
-Text
-Copy code
+### 📌 Common Interview Question in Web API / .NET / System Design  
+
+---
+
+#### 1️⃣ 5‑Year‑Old Explanation  
+Imagine a shop.  
+
+🟢 **Stateful**  
+You go to the shop today and say:  
+“Remember me? I came yesterday.”  
+The shopkeeper remembers you and your previous order.  
+That is stateful.  
+
+🔵 **Stateless**  
+You go to the shop and every time you must say:  
+“My name is Abhishek and I want pizza.”  
+The shopkeeper does not remember anything from previous visit.  
+That is stateless.  
+
+---
+
+#### 2️⃣ Simple Technical Definition  
+🔹 **Stateless**  
+A stateless system does not store information about previous requests. Every request is independent.  
+Example: Web APIs.  
+Each request must contain all required information.  
+
+🔹 **Stateful**  
+A stateful system stores information about previous interactions.  
+Example: Applications that maintain session data.  
+
+---
+
+#### 3️⃣ Example in Web Applications  
+**Stateless Example**  
+REST API in **ASP.NET Core**.  
+Request:  
+```text
 GET /api/property/5
 Authorization: Bearer token
-Server does not remember previous request.
-Each request sends token again.
-Stateful Example
-Traditional web apps using Session.
-User logs in.
-Server stores:
-Copy code
+```
+Server does not remember previous request.  
+Each request sends token again.  
 
+**Stateful Example**  
+Traditional web apps using Session.  
+User logs in.  
+Server stores:  
+```text
 SessionID
 UserId
 Login state
-Next request uses stored session.
-4️⃣ Comparison Table
-Stateless
-Stateful
-Server does not store client data
-Server stores client data
-Each request independent
-Requests depend on previous state
-Highly scalable
-Less scalable
-Used in REST APIs
-Used in session-based apps
-5️⃣ Real Project Example (Buy & Sell Property App)
-Stateless
-API request:
-Copy code
+```
+Next request uses stored session.  
 
+---
+
+#### 4️⃣ Comparison Table  
+
+| Stateless | Stateful |
+|-----------|----------|
+| Server does not store client data | Server stores client data |
+| Each request independent | Requests depend on previous state |
+| Highly scalable | Less scalable |
+| Used in REST APIs | Used in session‑based apps |
+
+---
+
+#### 5️⃣ Real Project Example (Buy & Sell Property App)  
+**Stateless**  
+API request:  
+```text
 GET /api/properties
-Every request includes:
-Copy code
-
+```
+Every request includes:  
+```text
 Authorization Token
-Server does not store login session.
-Stateful
-User logs in.
-Server stores:
-Copy code
+```
+Server does not store login session.  
 
+**Stateful**  
+User logs in.  
+Server stores:  
+```text
 User session
 Shopping cart
 Selected properties
-Server remembers user.
-6️⃣ Trade-Off
-Stateless Advantages
-✔ Easy scaling
-✔ Better performance in cloud
-✔ Simpler server design
-Stateless Disadvantages
-❌ Client must send data every request
-Stateful Advantages
-✔ Server remembers user data
-✔ Easier session handling
-Stateful Disadvantages
-❌ Hard to scale
-❌ Requires session management
-7️⃣ Business Impact
-Modern cloud systems prefer stateless architecture because:
-✔ Better scalability
-✔ Easy load balancing
-✔ Better microservices design
-That is why REST APIs are stateless.
-8️⃣ Perfect Interview Answer
-You can say:
-A stateless system does not store any client information between requests, so each request must contain all necessary data. A stateful system stores client state on the server and remembers previous interactions.
-9️⃣ One-Line Memory Trick
-Copy code
+```
+Server remembers user.  
 
+---
+
+#### 6️⃣ Trade‑Off  
+
+**Stateless Advantages**  
+✔ Easy scaling  
+✔ Better performance in cloud  
+✔ Simpler server design  
+
+**Stateless Disadvantages**  
+❌ Client must send data every request  
+
+**Stateful Advantages**  
+✔ Server remembers user data  
+✔ Easier session handling  
+
+**Stateful Disadvantages**  
+❌ Hard to scale  
+❌ Requires session management  
+
+---
+
+#### 7️⃣ Business Impact  
+Modern cloud systems prefer stateless architecture because:  
+✔ Better scalability  
+✔ Easy load balancing  
+✔ Better microservices design  
+
+That is why REST APIs are stateless.  
+
+---
+
+#### 8️⃣ Perfect Interview Answer  
+You can say:  
+*A stateless system does not store any client information between requests, so each request must contain all necessary data. A stateful system stores client state on the server and remembers previous interactions.*  
+
+---
+
+#### 9️⃣ One‑Line Memory Trick  
+```text
 Stateless = No memory
 Stateful = Server remembers
+```
 
+---
 
+✅ This alignment keeps your notes structured, scannable, and interview‑ready while preserving your original wording.
 /////////////////////////////////
 ////////////////////////////////Middleware
 ////////////////////////////////
@@ -8899,245 +9300,168 @@ Stateful = Server remembers
 //////////////////////////////Model Bindling
 ///////////////////////////////
 
-////////////////////////////////////////////////////////////////////Model binding
-This is a very common ASP.NET Core interview question. Let’s explain it in very simple words.
-1️⃣ 5-Year-Old Explanation
-Imagine a user fills a form on a website:
-Name = Abhishek
-Age = 25
-The browser sends this data to the server.
-On the server, ASP.NET Core automatically puts that data into a C# object.
-This automatic matching is called Model Binding.
-2️⃣ Simple Technical Definition
-Model Binding in ASP.NET Core is the process of automatically mapping HTTP request data (query string, form data, route data, or body) to action method parameters or model objects.
-In simple words:
-Text
-Copy code
-User Request Data → C# Model Object
-3️⃣ Example
-Model
-Csharp
-Copy code
-public class User
-{
-    public string Name { get; set; }
-    public int Age { get; set; }
-}
-Controller
-Csharp
-Copy code
-[HttpPost]
-public IActionResult CreateUser(User user)
-{
-    return Ok(user);
-}
-Request Body (JSON)
-Json
-Copy code
-{
-  "name": "Abhishek",
-  "age": 25
-}
-What happens?
-ASP.NET Core automatically converts this into:
-Csharp
-Copy code
-User user = new User
-{
-   Name = "Abhishek",
-   Age = 25
-};
-This automatic mapping is Model Binding.
-4️⃣ Where Model Binding Gets Data From
-ASP.NET Core can bind data from:
-Source
-Example
-Query String
-/users?id=10
-Route Data
-/users/10
-Form Data
-HTML form submission
-Request Body
-JSON from API
-Headers
-HTTP headers
-5️⃣ Example with Query String
-Request:
-Text
-Copy code
-/api/user?id=5
-Controller:
-Csharp
-Copy code
-public IActionResult GetUser(int id)
-{
-    return Ok(id);
-}
-Here id is automatically bound.
-6️⃣ Real Project Example (Buy & Sell Property App)
-User submits property form:
-Json
-Copy code
-{
- "title":"3BHK Apartment",
- "price":50000,
- "city":"Delhi"
-}
-Controller:
-Csharp
-Copy code
-[HttpPost]
-public IActionResult AddProperty(Property property)
-{
-   // property object is automatically filled
-}
-ASP.NET Core binds JSON to Property model automatically.
-7️⃣ Trade-Off
-Advantages:
-✔ Less manual coding
-✔ Cleaner controllers
-✔ Automatic validation support
-Disadvantages:
-❌ Wrong binding if property names mismatch
-❌ Large models may impact performance
-8️⃣ Business Impact
-Model binding helps:
-✔ Faster API development
-✔ Cleaner code
-✔ Easier maintenance
-✔ Less manual parsing
-9️⃣ Perfect Interview Answer
-You can say:
-Model Binding in ASP.NET Core is the process that automatically maps HTTP request data such as query string, route values, form data, or JSON body to action method parameters or model objects.
-🔟 One-Line Memory Trick
-Text
-Copy code
-Request Data → C# Object
-That is Model Binding.
-If you want, I can also explain the very important follow-up interview questions often asked after this:
-Model Binding vs Model Validation
-[FromBody] vs [FromQuery] vs [FromRoute]
-This is a very common ASP.NET Core interview question. Let’s explain it in very simple words.
-1️⃣ 5-Year-Old Explanation
-Imagine a user fills a form on a website:
-Name = Abhishek
-Age = 25
-The browser sends this data to the server.
-On the server, ASP.NET Core automatically puts that data into a C# object.
-This automatic matching is called Model Binding.
-2️⃣ Simple Technical Definition
-Model Binding in ASP.NET Core is the process of automatically mapping HTTP request data (query string, form data, route data, or body) to action method parameters or model objects.
-In simple words:
-Text
-Copy code
-User Request Data → C# Model Object
-3️⃣ Example
-Model
-Csharp
-Copy code
-public class User
-{
-    public string Name { get; set; }
-    public int Age { get; set; }
-}
-Controller
-Csharp
-Copy code
-[HttpPost]
-public IActionResult CreateUser(User user)
-{
-    return Ok(user);
-}
-Request Body (JSON)
-Json
-Copy code
-{
-  "name": "Abhishek",
-  "age": 25
-}
-What happens?
-ASP.NET Core automatically converts this into:
-Csharp
-Copy code
-User user = new User
-{
-   Name = "Abhishek",
-   Age = 25
-};
-This automatic mapping is Model Binding.
-4️⃣ Where Model Binding Gets Data From
-ASP.NET Core can bind data from:
-Source
-Example
-Query String
-/users?id=10
-Route Data
-/users/10
-Form Data
-HTML form submission
-Request Body
-JSON from API
-Headers
-HTTP headers
-5️⃣ Example with Query String
-Request:
-Text
-Copy code
-/api/user?id=5
-Controller:
-Csharp
-Copy code
-public IActionResult GetUser(int id)
-{
-    return Ok(id);
-}
-Here id is automatically bound.
-6️⃣ Real Project Example (Buy & Sell Property App)
-User submits property form:
-Json
-Copy code
-{
- "title":"3BHK Apartment",
- "price":50000,
- "city":"Delhi"
-}
-Controller:
-Csharp
-Copy code
-[HttpPost]
-public IActionResult AddProperty(Property property)
-{
-   // property object is automatically filled
-}
-ASP.NET Core binds JSON to Property model automatically.
-7️⃣ Trade-Off
-Advantages:
-✔ Less manual coding
-✔ Cleaner controllers
-✔ Automatic validation support
-Disadvantages:
-❌ Wrong binding if property names mismatch
-❌ Large models may impact performance
-8️⃣ Business Impact
-Model binding helps:
-✔ Faster API development
-✔ Cleaner code
-✔ Easier maintenance
-✔ Less manual parsing
-9️⃣ Perfect Interview Answer
-You can say:
-Model Binding in ASP.NET Core is the process that automatically maps HTTP request data such as query string, route values, form data, or JSON body to action method parameters or model objects.
-🔟 One-Line Memory Trick
-Text
-Copy code
-Request Data → C# Object
-That is Model Binding.
-If you want, I can also explain the very important follow-up interview questions often asked after this:
-Model Binding vs Model Validation
-[FromBody] vs [FromQuery] vs [FromRoute]
-Model Binding pipeline in ASP.NET Core (very popular senior-level question).
+/////////////////////////////////////////////////////////////////////////////////////////////////Model binding
 
+### 📌 ASP.NET Core Interview Question – Model Binding  
+
+---
+
+#### 1️⃣ 5‑Year‑Old Explanation  
+Imagine a user fills a form on a website:  
+```
+Name = Abhishek
+Age = 25
+```
+The browser sends this data to the server.  
+On the server, ASP.NET Core automatically puts that data into a C# object.  
+This automatic matching is called **Model Binding**.  
+
+---
+
+#### 2️⃣ Simple Technical Definition  
+Model Binding in ASP.NET Core is the process of automatically mapping HTTP request data (query string, form data, route data, or body) to model objects.  
+
+In simple words:  
+```
+User Request Data → C# Model Object
+```
+
+---
+
+#### 3️⃣ Example  
+
+**Model (C#):**  
+```csharp
+public class User
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+}
+```
+
+**Controller (C#):**  
+```csharp
+[HttpPost]
+public IActionResult CreateUser(User user)
+{
+    return Ok(user);
+}
+```
+
+**Request Body (JSON):**  
+```json
+{
+  "name": "Abhishek",
+  "age": 25
+}
+```
+
+What happens?  
+ASP.NET Core automatically converts this into:  
+```csharp
+User user = new User
+{
+   Name = "Abhishek",
+   Age = 25
+};
+```
+
+This automatic mapping is **Model Binding**.  
+
+---
+
+#### 4️⃣ Where Model Binding Gets Data From  
+
+| Source        | Example              |
+|---------------|----------------------|
+| Query String  | `/users?id=10`       |
+| Route Data    | `/users/10`          |
+| Form Data     | HTML form submission |
+| Request Body  | JSON from API        |
+| Headers       | HTTP headers         |
+
+---
+
+#### 5️⃣ Example with Query String  
+
+**Request:**  
+```
+/api/user?id=5
+```
+
+**Controller (C#):**  
+```csharp
+public IActionResult GetUser(int id)
+{
+    return Ok(id);
+}
+```
+
+Here `id` is automatically bound.  
+
+---
+
+#### 6️⃣ Real Project Example (Buy & Sell Property App)  
+
+**User submits property form (JSON):**  
+```json
+{
+ "title":"3BHK Apartment",
+ "price":50000,
+ "city":"Delhi"
+}
+```
+
+**Controller (C#):**  
+```csharp
+[HttpPost]
+public IActionResult AddProperty(Property property)
+{
+   // property object is automatically filled
+}
+```
+
+ASP.NET Core binds JSON to `Property` model automatically.  
+
+---
+
+#### 7️⃣ Trade‑Off  
+
+**Advantages:**  
+✔ Less manual coding  
+✔ Cleaner controllers  
+✔ Automatic validation support  
+
+**Disadvantages:**  
+❌ Wrong binding if property names mismatch  
+❌ Large models may impact performance  
+
+---
+
+#### 8️⃣ Business Impact  
+Model binding helps:  
+✔ Faster API development  
+✔ Cleaner code  
+✔ Easier maintenance  
+✔ Less manual parsing  
+
+---
+
+#### 9️⃣ Perfect Interview Answer  
+You can say:  
+*Model Binding in ASP.NET Core is the process that automatically maps HTTP request data such as query string, route values, form data, or JSON body to action method parameters or model objects.*  
+
+---
+
+#### 🔟 One‑Line Memory Trick  
+```
+Request Data → C# Object
+That is Model Binding.
+```
+
+---
+
+This alignment keeps your notes structured, scannable, and interview‑ready while preserving your original wording. Would you like me to also align the **follow‑up interview questions** you mentioned (Model Binding vs Model Validation, [FromBody] vs [FromQuery] vs [FromRoute], Model Binding pipeline) in the same style?
 
 ///////////////////////////////Dependency Injection
 ///////////////////////////////Authentication and Autherisation
@@ -9712,7 +10036,7 @@ Would you like a diagram or real-world scenario to help remember this even bette
 
 
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////7. What is a navigation property in EF?
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////7. What is a navigation property in EF? (Not Important)
 Here’s how you can explain Navigation Property in Entity Framework in the most interview-friendly and simple way, with easy words and code examples:
 
 
@@ -10028,7 +10352,7 @@ Let me know if you want me to show this using SQL Server + .NET Core sample CRUD
 
 
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////12. What are shadow properties?
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////12. What are shadow properties?(Not Important)
 Great question! Let me explain Shadow Properties in Entity Framework (EF Core) in very simple, human-friendly words — with code examples.
 
 
@@ -10245,7 +10569,127 @@ So when I call SaveChanges(), EF knows what to update in the database — withou
 
 //////////////////////////////////////////////////////////////////////////////without giving any kind of keyword in Model like primary key ,How can you tell that this coloum should Primary key in c# in EF
 
+ Without using [Key] attribute or Fluent API, how does Entity Framework know which column is the Primary Key?
 
+
+
+
+---
+
+✅ Easiest Answer
+
+Entity Framework follows Convention over Configuration.
+
+It automatically looks for these property names:
+
+Id
+
+or
+
+<ClassName>Id
+
+and treats them as the Primary Key.
+
+
+---
+
+Example 1
+
+public class Employee
+{
+    public int Id { get; set; }
+
+    public string Name { get; set; }
+}
+
+EF automatically understands:
+
+Id = Primary Key
+
+No [Key] attribute required.
+
+
+---
+
+Example 2
+
+public class Employee
+{
+    public int EmployeeId { get; set; }
+
+    public string Name { get; set; }
+}
+
+EF automatically understands:
+
+EmployeeId = Primary Key
+
+because:
+
+Class Name + Id
+Employee + Id
+=
+EmployeeId
+
+
+---
+
+Example 3
+
+public class Employee
+{
+    public int EmpNumber { get; set; }
+
+    public string Name { get; set; }
+}
+
+Now EF cannot identify the Primary Key automatically.
+
+You must specify it:
+
+[Key]
+public int EmpNumber { get; set; }
+
+or use Fluent API.
+
+
+---
+
+Why Does EF Do This?
+
+Because of a concept called:
+
+Convention Over Configuration
+
+Meaning:
+
+Follow common naming rules
+and EF will configure things automatically.
+
+
+---
+
+Interview Answer (Short)
+
+> Entity Framework uses conventions to identify the Primary Key. If a property is named Id or <ClassName>Id, EF automatically treats it as the Primary Key without requiring the [Key] attribute or Fluent API configuration.
+
+
+
+
+---
+
+Topic Placement
+
+Entity Framework
+ └── Code First
+      └── Conventions
+           ├── Primary Key Convention
+           ├── Foreign Key Convention
+           └── Table Naming Convention
+
+So this question belongs under:
+
+Entity Framework → Code First → Conventions
 ///////////////////////////////////ADO.net 
 ////////////////////////////////////API Design /Architecture
 /////////////////////////////////////Performance and Caching
@@ -11168,30 +11612,27 @@ WHERE EmployeeId IN (
 
 ////////////////////////////////////////////////////////////////////////////////////Q>CTE vs Temp Table.
 You asked for only two main differences — so here they are clearly.
-✅ 1️⃣ Storage & Lifetime
-CTE (Common Table Expression)
-Exists only during one query execution
-Not stored physically
-Disappears immediately after query finishes
-Temp Table
-Stored physically in tempdb
-Exists for the entire session (or until dropped)
-Can be reused in multiple queries
-👉 Simple line:
-CTE is temporary logic. Temp table is temporary storage.
-✅ 2️⃣ Performance & Indexing
-CTE
-Cannot create indexes
-Re-executes if referenced multiple times
-Better for small or readable queries
-Temp Table
-Can create indexes
-Better for large data processing
-Improves performance in complex multi-step queries
-👉 Simple line:
-CTE is good for readability. Temp table is good for heavy data work.
-🎯 Interview 1-Line Answer
-CTE exists only for a single query and does not store data physically, while a temp table is stored in tempdb, can be indexed, and can be reused within the session.
+Here’s your note aligned neatly into a **tabular format of differences**, keeping everything exactly as you wrote it:
+
+---
+
+### 📌 Difference Between CTE and Temp Table  
+
+|                        Aspect                                       |                CTE (Common Table Expression)                       |                Temp Table                       |
+|---------------------------------------------------------------------|--------------------------------------------------------------------|-------------------------------------------------|
+| ✅ 1️⃣ Storage & Lifetime                                           | Exists only during one query execution<br>Not stored physically<br>Disappears immediately after query finishes | Stored physically in **tempdb**<br>Exists for the entire session (or until dropped)<br>Can be reused in multiple queries |
+| 👉 Simple Line                                                      | CTE is temporary logic                                                                                        | Temp table is temporary storage |
+| ✅ 2️⃣ Performance & Indexing                                       | Cannot create indexes<br>Re‑executes if referenced multiple times<br>Better for small or readable queries     | Can create indexes<br>Better for large data processing<br>Improves performance in complex multi‑step queries |
+| 👉 Simple Line | CTE is good for readability | Temp table is good for heavy data work |
+
+---
+
+### 🎯 Interview 1‑Line Answer  
+**CTE exists only for a single query and does not store data physically, while a temp table is stored in tempdb, can be indexed, and can be reused within the session.**
+
+---
+
+This alignment makes your notes structured, scannable, and interview‑ready while preserving your original wording.
 
 Simple line :
 CTE is Temporary logic. Temp table is 
@@ -11481,9 +11922,97 @@ If you want next: ✅ Difference between Trigger vs Stored Procedure
 Just say 👍
 
 
-////////////////////////List down some of the feature of MS SQL Server ?
-/////////////////////////////Diffrence between rollback and commit.
+
 ///////////////////////Write a SQL Server Query to get the letter 'e' in the name 'Jenna' from  the student table.
+
+Assume table:
+
+Student
+----------------
+Id
+Name
+
+Data:
+
+Id Name
+1 Jenna
+
+
+---
+
+Method 1: Using SUBSTRING()
+
+SELECT SUBSTRING(Name, 2, 1) AS Letter
+FROM Student
+WHERE Name = 'Jenna';
+
+Output
+
+Letter
+------
+e
+
+Explanation
+
+SUBSTRING(string, start_position, length)
+
+Name = Jenna
+
+J = 1
+e = 2
+n = 3
+n = 4
+a = 5
+
+SUBSTRING(Name, 2, 1)
+
+Start from position 2
+Take 1 character
+
+Result = e
+
+---
+
+Method 3: Direct String Value
+
+If interviewer only asks for the string itself:
+
+SELECT SUBSTRING('Jenna', 2, 1);
+
+Output:
+
+e
+
+
+---
+
+Interview Answer
+
+> To get the letter 'e' from 'Jenna', I can use the SUBSTRING() function. Since 'e' is at position 2, the query is:
+
+
+
+SELECT SUBSTRING(Name, 2, 1)
+FROM Student;
+
+
+---
+
+Topic Placement
+
+SQL Server
+ └── String Functions
+      ├── SUBSTRING()
+      ├── LEFT()
+      ├── RIGHT()
+      ├── LEN()
+      ├── CHARINDEX()
+      └── REPLACE()
+
+This question belongs to:
+
+SQL Server → String Functions → SUBSTRING()
+
 ///////////////////////////////////
 //////////////////////////////////*********************************Function***********************************
 //////////////////////////////////
@@ -13377,6 +13906,276 @@ FROM TableName;
 If you want, I can also explain the difference between COALESCE() and ISNULL(), which is a very common SQL Server interview question.
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //////////////////////////////////////////////////////////////////////////////////////////////List down some of the feature of MS SQL Server ?
 Which command can be used to get the version of SQL Server ?
 Explain the replicated in SQL Server
@@ -13388,7 +14187,7 @@ As a SQL developer , how will you ensure that SQL server-based application  and 
 when should Server-based cursors be used ?   .       
 What do you know about scheduled tasks in SQL Server ?  
 Mention a query that return the list of triggers in a database 
-Diffrence between rollback and commit.                    
+///////////////////////////////////////////////////////////////////////Diffrence between rollback and commit.                    
 Explain how to create a table in SQL ?
 what is the function of a foreign key in a database
 Tell us the steps to hide SQL Server Instances.
@@ -16669,327 +17468,6 @@ Secure queries = No data leaks / hacking risk.
 //////////////////////
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //////////////////////////////////////
 /////////////////////////////////////neoSoft
 ////////////////////////////////////
@@ -17109,189 +17587,6 @@ unless error handling is added.
 🎯 Small Interview Answer
 
 > forkJoin is an RxJS operator that executes multiple Observables in parallel and returns the final results when all Observables complete.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////How you are implement the lazy loading in the Angular.
 
@@ -17634,7 +17929,6 @@ Easier maintenance → developers spend less time fixing alignment bugs.
 //////////////////////////////////////////////bootstrap DTO
 /////////////////////////////////////////////JavaScript OOP
 /////////////////////////////////////////////Deadlock lock.
-////////////////////////////////////////////class and struct 
 ////////////////////////////////////////////Hashtable and dictionary.
 
 
@@ -19421,7 +19715,7 @@ to///////////////////////////////////////////////////OOPs
 //}
 
    
-//////////////////////////Reflection
+/////////////////////////////////////////////////////////////////////////Reflection
 /////////what is reflection in c#
 reflection in C# is a way for your program to look at itself. It lets you inspect the structure of types (like classes, methods, properties) at runtime
 //////////Why we use reflection in c#
@@ -20160,8 +20454,6 @@ Defines the middleware pipeline.
 Also called at application startup.
 In simpler terms, ConfigureServices is where you say, "Hey, application, these are the services we're going to need," and Configure is where you say, "Alright, application, this is how we're going to handle requests and responses." Both methods play a crucial role in setting up and configuring your ASP.NET Core application.
 
-
-
 //////////////////////////////////////////////////////////////////////////////////////////12>How does you right Authentication in Program.cs file
 /////////////////////////////////////////////////////////////////////////13>How does partial class compiles if same name with two class .
 What it is:
@@ -20222,6 +20514,163 @@ Summary:
 Partial classes in C# allow you to split the definition of a class into multiple files for better organization and management.
 During compilation, the parts of the class from different files are combined to create the complete class.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ////////////////////////////////////////////////////////////////////////////////////////////////13>What is global exceptional handling.
 
 Sure, let's break down the concept of global exception handling in simple terms:
@@ -20278,6 +20727,33 @@ Allows you to log error details, report issues, or take other actions when an un
 Summary:
 Global exception handling is like having a safety net for your application. It catches unexpected errors, preventing them from causing the entire application to crash. This mechanism provides a way to gracefully handle errors, log relevant information, and potentially recover from certain issues.
 
+/////////////////////////////////////////////////////How to handle the error in Asp.netcore.
+
+Global- Error Handling - so the whole app doesn't crash:
+
+if(app.Enviroment.IsDevelopment())
+{
+app.UseDeveloperExceptionPage();//Show detailed error in development;
+}
+else
+{
+ app.UseExceptionHandler("/Home/Error");//Show friendly erro page in Production.
+}
+
+Try-catch Block -for specific code
+try
+{
+
+}
+catch(Exception ex)
+{
+_logger.LogError(ex,"Something went wrong.");
+return StatusCode(500, "An error occured.");
+}
+
+-> Global error handling saves the full app.
+-> Try-Catch handles errors in specific code blocks.
+-> Logging helps us track the issue.
 /////////////////////////////////////////////////////////////////////////////////////////13>Excecution of catch block.
 
 In most programming languages, including C# (which is commonly used in ASP.NET Core), the catch blocks are evaluated in the order in which they appear. The first catch block that matches the type of the thrown exception is executed, and subsequent catch blocks are ignored.
@@ -20582,41 +21058,565 @@ Performance:
 Class: Because classes are reference types, they are allocated on the heap.accessing them involves an extra level
 Struct: Structs are value types, and they are typically allocated on the stack.Accessing struct members is generally faster than accessing class members.
 Uses:
-Class: Classes are commonly used to model complex entities with behavior and state.
-Struct: Structs are often used for lightweight objects that represent simple data structures
+Class → Think of it like a big machine.
+It can do things (behavior) and also store data (state).
+👉 Use it when you need to model something complex, like a Car with speed, fuel, and methods to drive.
 
-////////////////////////////////////////////////What is diffrence between ArrayLIst and List
+Struct → Think of it like a small box.
+It just holds simple data (like numbers or coordinates), no heavy behavior.
+👉 Use it when you only need lightweight storage, like a Point with X and Y.
+
+Q> What is the diffrence between Class and Struct
+
+🔹 Example of a Class (Reference Type)
+
+class Car
+{
+    public string Brand;
+}
+
+class Program
+{
+    static void Main()
+    {
+        Car car1 = new Car();
+        car1.Brand = "Tesla";
+
+        Car car2 = car1;  // Reference is copied (not a new object)
+        car2.Brand = "BMW";
+
+        Console.WriteLine(car1.Brand);  // Output: BMW (same reference)
+    }
+}
+
+✅ Key Takeaway:
+
+car1 and car2 point to the same object in memory.
+
+Changing car2.Brand also changes car1.Brand.
+
+
+---
+
+🔹 Example of a Struct (Value Type)
+
+struct Car
+{
+    public string Brand;
+}
+
+class Program
+{
+    static void Main()
+    {
+        Car car1 = new Car();
+        car1.Brand = "Tesla";
+
+        Car car2 = car1;  // Copy is created (separate memory)
+        car2.Brand = "BMW";
+
+        Console.WriteLine(car1.Brand);  // Output: Tesla (original unchanged)
+    }
+}
+
+✅ Key Takeaway:
+
+car1 and car2 are separate copies in memory.
+
+Changing car2.Brand does NOT affect car1.Brand.
+
+///////////////////////////////////////////////////////////////////////////////////////////////What is diffrence between ArrayLIst and List
 //ArraList :
 Type Safety : ArrayList is not type-safe as it can store any type of object.
 Performance: ArrayList may be slower due to boxing/unboxing.
 Code Readability : ArrayList may require explicit type casting.
 .NET Version : ArrayList was introduced in earlier versions of .NET framework (2.0)
-Flexibility : List can only store elements of the specified type.
+Flexibility : ArrayList can store elements of any type.
 //List
 Type Safety : List is Type-safe as it can store elements of a specific type only.
 Performance : List performs better as it avoids boxing/unboxing.
 .NET Version : List was introduced in .NET 3.0
-Flexibility : ArrayList can store elements of any type.
+Flexibility :  List can only store elements of the specified type.
 
 Code Readability : List provides clear type specification to improved readability.
 
 Performance : List performs better as it avoids boxing/unboxing.
 
-/////////////////////////////Principle of Rest API
-1> Client-Server Architecture : In our example, the client will be a web browser or a mobile application, while the server will be
-an ASP.NET Core web application hosting the RESTful API.
+//////////////////////////////////////////////////////////////////////////////Principle of Rest API
+REST stands for:
 
-Statelessness:
-Each HTTP request from the client to the server will contain all the information needed for the server to process the request. For example, when creating a new blog post, the request will 
-include the post data (title, content, etc.), and the server will process the request based on this information.
-2> Uniform Interface:
-We'll use standard HTTP methods to perform CRUD operations on resources. For example:
-GET /api/posts to retrieve all blog posts.
-POST /api/posts to create a new blog post.
-PUT /api/posts/{id} to update an existing blog post.
-DELETE /api/posts/{id} to delete a blog post.
+REpresentational State Transfer
 
-///////////////////////////////////////////What is Collection in C#
+REST APIs follow a few important principles (constraints).
+
+
+---
+
+1. Client-Server Architecture
+
+Definition
+
+The client and server should be separate.
+
+Angular / React / Mobile App
+            ↓
+         REST API
+            ↓
+        Database
+
+Example
+
+Angular UI → .NET Web API → SQL Server
+
+Benefit
+
+Frontend and backend can be developed independently.
+
+Easier maintenance.
+
+
+
+---
+
+2. Stateless
+
+Definition
+
+Every request should contain all the information required to process it.
+
+The server should not remember previous requests.
+
+Example
+
+Request 1:
+
+GET /api/properties
+Authorization: Bearer xyz
+
+Request 2:
+
+GET /api/users
+Authorization: Bearer xyz
+
+Each request carries its own authentication token.
+
+Benefit
+
+Better scalability.
+
+Easier load balancing.
+
+
+
+---
+
+3. Uniform Interface
+
+Definition
+
+Use standard HTTP methods and resource-based URLs.
+
+Good Example
+
+GET /api/properties
+GET /api/properties/10
+POST /api/properties
+PUT /api/properties/10
+DELETE /api/properties/10
+
+Bad Example
+
+/getProperties
+/deleteProperty
+/updateProperty
+
+Benefit
+
+APIs become predictable and easy to use.
+
+
+
+---
+
+4. Resource-Based
+
+Definition
+
+Everything should be treated as a resource.
+
+Examples:
+
+Property
+User
+Order
+Product
+Employee
+
+URL:
+
+/api/properties
+/api/users
+/api/orders
+
+Not:
+
+/api/getAllProperties
+
+
+---
+
+5. Cacheable
+
+Definition
+
+Responses should indicate whether they can be cached.
+
+Example
+
+Cache-Control: max-age=3600
+
+Benefit
+
+Faster responses.
+
+Reduced server load.
+
+
+
+---
+
+6. Layered System
+
+Definition
+
+Client should not know whether it is talking directly to the server or through intermediaries.
+
+Client
+   ↓
+Load Balancer
+   ↓
+API Gateway
+   ↓
+Web API
+   ↓
+Database
+
+Benefit
+
+Security
+
+Scalability
+
+Maintainability
+
+
+
+---
+
+7. Code on Demand (Optional)
+
+Definition
+
+Server can send executable code to the client.
+
+Example:
+
+JavaScript sent to browser
+
+⚠️ Rarely used in modern REST APIs.
+
+
+---
+
+REST API Principles Summary
+
+1. Client-Server
+2. Stateless
+3. Uniform Interface
+4. Resource-Based
+5. Cacheable
+6. Layered System
+7. Code on Demand (Optional)
+
+
+---
+
+Property Buy/Sell Project Example
+
+Resource
+
+/api/properties
+
+Create Property
+
+POST /api/properties
+
+Get Property
+
+GET /api/properties/101
+
+Update Property
+
+PUT /api/properties/101
+
+Delete Property
+
+DELETE /api/properties/101
+
+Stateless Authentication
+
+Authorization: Bearer JWT_TOKEN
+
+Every request sends the token.
+
+
+---
+
+Interview Answer (Short)
+
+> REST API follows Client-Server architecture, Stateless communication, Uniform Interface, Resource-based URLs, Cacheability, and Layered Architecture. The most important principle is Statelessness, where each request contains all information required to process it without relying on previous requests.**
+
+
+
+Topic Placement
+
+Web API
+ └── REST API
+      ├── REST Principles
+      ├── HTTP Methods
+      ├── Status Codes
+      ├── Routing
+      ├── Content Negotiation
+      └── Versioning
+
+////////////////////////////////////////Rest Api
+REST API: Refers to any API that adheres to the principles of REST (Representational State Transfer). 
+It might not fully implement all the constraints of REST architecture.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////What is Collection in C#
 
 C# collection types are designed to store, manage and manipulate similar data more efficiently. Data manipulation includes adding, removing, finding, and inserting data in the collection. Collection types implement the following common functionality: 
 
@@ -20653,19 +21653,179 @@ Specific type
 Array Size is not fixed
 Elements can be added/removed at runtime.
 
-////////////////////////////////What is Jagged Array
-A jagged array in C# is an array whose elements are arrays. The elements of a jagged array can be of different dimensions and sizes.
-A jagged array is sometimes called an "array of arrays." A special type of array is introduced in C#.
-A Jagged Array is an array of an array in which the length of each array index can differ.
+///////////////////////////////////////////////////////////////////What is Jagged Array
+Jagged Array in C# (Easiest Explanation)
 
-Example: Movies Counter
+Definition
 
-Uses : you have a data structure where the size of each "inner" array varies.
+> A Jagged Array is an array of arrays where each row can have a different number of columns.
 
 
-/////////////////////////////////reflection
+
+Think:
+
+Normal Array
+-------------
+10 20 30
+
+2D Array
+-------------
+10 20 30
+40 50 60
+70 80 90
+
+Jagged Array
+-------------
+10 20
+30 40 50
+60
+70 80 90 100
+
+Notice:
+
+Row 1 = 2 elements
+
+Row 2 = 3 elements
+
+Row 3 = 1 element
+
+Row 4 = 4 elements
+
+Each row can have a different size.
+
+
+---
+
+Syntax
+
+int[][] numbers = new int[3][];
+
+Meaning:
+
+3 rows
+
+Each row is an array
+
+
+---
+
+Example
+
+int[][] numbers = new int[3][];
+
+numbers[0] = new int[] { 1, 2 };
+numbers[1] = new int[] { 3, 4, 5 };
+numbers[2] = new int[] { 6 };
+
+foreach (var row in numbers)
+{
+    foreach (var item in row)
+    {
+        Console.Write(item + " ");
+    }
+
+    Console.WriteLine();
+}
+
+Output:
+
+1 2
+
+3 4 5
+
+6
+
+
+---
+
+Jagged Array vs 2D Array
+
+2D Array Jagged Array
+
+Fixed columns Variable columns
+Matrix structure Array of arrays
+All rows same size Rows can have different sizes
+
+
+2D Array
+
+int[,] arr =
+{
+    {1,2,3},
+    {4,5,6}
+};
+
+Every row has:
+
+3 columns
+
+
+---
+
+Jagged Array
+
+int[][] arr =
+{
+    new int[] {1,2},
+    new int[] {3,4,5},
+    new int[] {6}
+};
+
+Rows can have different lengths.
+
+
+---
+
+Real-Life Example
+
+Suppose you have students and subjects:
+
+Student A → Math, Science
+
+Student B → Math, Science, English
+
+Student C → Math
+
+Different students have different numbers of subjects.
+
+Jagged Array fits perfectly.
+
+
+---
+
+Interview Answer
+
+> A Jagged Array is an array of arrays where each row can have a different number of elements. Unlike a 2D array, all rows are not required to have the same size. It is useful when data is irregular and each row contains a different amount of information.
+
+
+
+
+---
+
+Memory Trick
+
+2D Array
+=
+Same number of columns
+
+Jagged Array
+=
+Different number of columns
+
+Topic Placement
+
+C#
+ └── Arrays
+      ├── Single Dimensional Array
+      ├── Multi Dimensional Array
+      └── Jagged Array
+
+🎯 One-line interview answer:
+
+> A Jagged Array is an array of arrays where each row can have a different number of elements.
+
+
 ///////////////////////////////////////////////////////////////////////////////////Oracle Interview Question
-Q> What is diffrence between Extensition Methed and Overloading
 Q> Can we inject the class Those who inheriting the implemented class of dependenncies injection.
 ////////////////////////////////////Q>Lasy Loading
 ///////What is LazyLoading
@@ -20801,10 +21961,6 @@ Principle and makes the code easier to maintain and understand.
 /////////////////////////////////////Diffrence between api , Restapi, Restfulapi
 In .NET Core, an API is a general interface for communication between systems, while a REST API specifically follows REST
 principles and uses HTTP for resource-based communication.
-
-////////////////////////////////////////Rest Api
-REST API: Refers to any API that adheres to the principles of REST (Representational State Transfer). 
-It might not fully implement all the constraints of REST architecture.
 
 //////////////////////////////////////RESTful API:
 RESTful API: Specifically refers to APIs that strictly adhere to REST principles, including statelessness, 
@@ -21127,80 +22283,6 @@ public class HelloWorld
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Interview Question Experience Part 2
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-Q> What is the diffrence between Class and Struct
-
-🔹 Example of a Class (Reference Type)
-
-class Car
-{
-    public string Brand;
-}
-
-class Program
-{
-    static void Main()
-    {
-        Car car1 = new Car();
-        car1.Brand = "Tesla";
-
-        Car car2 = car1;  // Reference is copied (not a new object)
-        car2.Brand = "BMW";
-
-        Console.WriteLine(car1.Brand);  // Output: BMW (same reference)
-    }
-}
-
-✅ Key Takeaway:
-
-car1 and car2 point to the same object in memory.
-
-Changing car2.Brand also changes car1.Brand.
-
-
----
-
-🔹 Example of a Struct (Value Type)
-
-struct Car
-{
-    public string Brand;
-}
-
-class Program
-{
-    static void Main()
-    {
-        Car car1 = new Car();
-        car1.Brand = "Tesla";
-
-        Car car2 = car1;  // Copy is created (separate memory)
-        car2.Brand = "BMW";
-
-        Console.WriteLine(car1.Brand);  // Output: Tesla (original unchanged)
-    }
-}
-
-✅ Key Takeaway:
-
-car1 and car2 are separate copies in memory.
-
-Changing car2.Brand does NOT affect car1.Brand.
-
-
----
-
-🔹 Interview-Friendly Answer
-
-1. Class is a reference type (stored in Heap), Struct is a value type (stored in Stack).
-
-2. Class supports inheritance, Struct does not.
-
-3. Class objects are passed by reference, Structs are copied.
-
-4. Use Struct for small, lightweight objects (like Point), and Class for large, complex objects (like Car).
-
-
-
 /////////////////////////////Access Modifier
 revision from udemy courses.
 
@@ -26697,34 +27779,6 @@ Do you want me to also show you the difference between IMemoryCache vs Distribut
 Open-Sourse
 Cross-plateform
 Used for building modern web apps,APIs,cloud services, console apps and more. 
-/////////////////////////////////////////////////////How to handle the error in Asp.netcore.
-
-Global- Error Handling - so the whole app doesn't crash:
-
-if(app.Enviroment.IsDevelopment())
-{
-app.UseDeveloperExceptionPage();//Show detailed error in development;
-}
-else
-{
- app.UseExceptionHandler("/Home/Error");//Show friendly erro page in Production.
-}
-
-Try-catch Block -for specific code
-try
-{
-
-}
-catch(Exception ex)
-{
-_logger.LogError(ex,"Something went wrong.");
-return StatusCode(500, "An error occured.");
-}
-
--> Global error handling saves the full app.
--> Try-Catch handles errors in specific code blocks.
--> Logging helps us track the issue.
-
 ////////////////////////////////////
 ///////////////////////////////////Some of important question
 ///////////////////////////////////
@@ -29985,78 +31039,6 @@ Template Driven Forms
 -> Add ReactiveModule in AppModule to Activate it.
 -> Best for large App Application and have more control.
 
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ////////////////////////////////////
 /// //////////////////////////////Backend
 /// /////////////////////////////
@@ -30496,7 +31478,7 @@ on the table.
 
 What it does : Represent a table in your database and gives you access to the rows(records) of the table.
 Where it is used : Inside the DbContest to interract with specific table.
-6. What’s the use of AsNoTracking in Entity Framework Core?
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////.NetCore
@@ -31012,7 +31994,7 @@ Updates balance
 Sends confirmation
 Moves to next payment
 This is Single IR processing.
-////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////What is reference type and Value Type
 //What is reference type and Value Type
 --> “Value types store actual values in stack memory . Reference types store the memory address and point to shared data in heap. 
 
@@ -31178,12 +32160,7 @@ For every API call → Angular sends token in Authorization header.
 .NET API middleware validates token → allows or denies request.
 
 
-//
-////////////////////Security Best Practises
-1.> How do you secure WEB APIs in .NET Core ?
--> Authentication(JWT,OAuth2 , OpenID Connect).
-->Authorization with poicies and roles.
-->Preventing over-posting with DTOs.
+
 
 ////////////////////////////////////////////////////////////////////////////////////////Performance
 1. Use Asynchronous Code (async/await) –
@@ -31253,6 +32230,337 @@ Use structured logging (Serilog, Application Insights) to find performance bottl
 8. Use Background Services –
 
 Heavy tasks (like sending emails, reports) should run in background jobs (Hangfire, Quartz) instead of blocking user requests.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -31774,7 +33082,7 @@ Maintaining State:
 Singletons are often used to maintain a consistent state across the application. Any changes made to the state are reflected in a single instance.
 However, it's important to note that the Singleton pattern also has its drawbacks, such as potential for global state, difficulty in testing, and limited flexibility in certain scenarios. Therefore, it's essential to carefully consider whether the Singleton pattern is appropriate for a particular use case.
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////The latest stable version of C# is C# 13.0, released with .NET 9
 
 What is latest version of c#
 
@@ -31861,7 +33169,7 @@ More performance improvements when using $"..." interpolations.
 ---
 
 👉 Do you want me to also make a simple diagram or table comparing C# 12 vs C# 13 so you can quickly revise before interviews?
-/////////////////////////////////////////
+/////////////////////////////////////////What is Managed and umanged code
 What is Managed and umanged code interview questions
 
 
@@ -31945,1967 +33253,5 @@ int main() {
 
 
 Show quoted text
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//////////////////////////////////////////////////////////////////////////////
-/// /////////////////////////////////////////////////////////////////////////
-/// /////////////////////////////////////////////////////////////////////////Part 2 Happy Coding
-/// ////////////////////////////////////////////////////////////////////////
-/// ////////////////////////////////////////////////////////////////////////
-
-
-
-1
-2
-ABOUT THE BOOK
-Part II - This book contains 250 more interview
-questions.
-ABOUT THE AUTHOR
-Happy Rawat has around 15 years of experience in
-software development. He helps candidates in
-clearing technical interview in tech companies.
-
-PREFACE
-3
-Topic
-Part II
-(Number of Questions)
-OOPS/ C# 38
-.NET FRAMEWORK 27
-SQL 25
-ASP.NET MVC 52
-ASP.NET WEBFORMS 35
-ADO.NET & EF 10
-WEB API 37
-.NET CORE 17
-SOLID PRINCIPLES 0
-DESIGN PATTERNS 9
-TOTAL 250
-4
-OOPS
-1. WHAT IS THE DIFFERENCE BETWEEN A CLASS AND A STRUCTURE?
-CLASS: User-defined blueprint from which objects are created. It consists
-of methods or set of instructions that are to be performed on the objects.
-STRUCTURE: A structure is basically a user-defined collection of variables
-which are of different data types.
-2. WHAT IS OPERATOR OVERLOADING?
-Operator overloading refers to implementing operators using user-defined
-types based on the arguments passed along with it.
-3. CAN YOU CALL THE BASE CLASS METHOD WITHOUT CREATING AN
-INSTANCE?
-• Yes, you can call the base class without instantiating it if:
-It is a static method.
-The base class is inherited by some other subclass.
-4. WHAT ARE VIRTUAL FUNCTIONS AND PURE VIRTUAL FUNCTIONS?
-5
-Virtual functions are functions that are present in the parent class and are
-overridden by the subclass. These functions are used to achieve runtime
-polymorphism.
-Pure virtual functions or abstract functions are functions that are only declared
-in the base class. This means that they do not contain any definition in the
-base class and need to be redefined in the subclass.
-5. WHICH OOPS CONCEPT EXPOSES ONLY THE NECESSARY INFORMATION TO
-THE CALLING FUNCTIONS?
-Encapsulation
-6. IS IT ALWAYS NECESSARY TO CREATE OBJECTS FROM CLASS?
-No, it is possible to call a base class method if it is defined as a static method.
-7. WHAT IS EARLY AND LATE BINDING?
-Early binding refers to the task of values to variables during plan time, whereas
-late Binding refers to the assignment of values to variables during run time.
-8. WHICH OOPS CONCEPT IS USED AS A REUSE MECHANISM?
-Inheritance is the OOPS concept that can be used as a reuse mechanism.
-6
-9. IN TRY BLOCK IF WE ADD RETURN STATEMENT WHETHER FINALLY BLOCK IS
-EXECUTED?
-Yes. Finally block will still be executed in presence of return statement in try
-block.
-10. WHAT YOU MEAN BY INNER EXCEPTION?
-Inner exception is a property of exception class which will give you a brief insight
-of the exception i.e, parent exception and child exception details.
-11.LIST OUT SOME OF THE EXCEPTIONS?
-Below are some of the exceptions -
-• NullReferenceException
-• ArgumentNullException
-• DivideByZeroException
-• IndexOutOfRangeException
-• InvalidOperationException
-• StackOverflowException etc.
-12. WHAT IS THE DIFFERENCE BETWEEN STACK AND QUEUE COLLECTIONS?
-A stack is a linear data structure in which elements can be inserted and deleted
-only from one side of the list, called the top. A stack follows the LIFO (Last In First
-7
-Out) principle, i.e., the element inserted at the last is the first element to come
-out.
-A queue is a linear data structure in which elements can be inserted only from
-one side of the list called rear, and the elements can be deleted only from the
-other side called the front. The queue data structure follows the FIFO (First In
-First Out) principle, i.e. the element inserted at first in the list, is the first element
-to be removed from the list.
-13.EXPLAIN JAGGED ARRAYS?
-If the elements of an array is an array then it’s called as jagged array. The
-elements can be of different sizes and dimensions.
-14.EXPLAIN MULTIDIMENSIONAL ARRAYS?
-A multi-dimensional array in C# is an array that contains more than one rows to
-store the data. The multidimensional array can be declared by adding commas in
-the square brackets.
-15.EXPLAIN INDEXERS?
-Indexers are used for allowing the classes to be indexed like arrays. Indexers will
-resemble the property structure but only difference is indexer’s accessors will
-take parameters. For example,
-class MyCollection<T>
-{
-private T[] myArr = new T[100];
-public T this[int t]
-8
-{
-get
-{
-return myArr[t];
-}
-set
-{
-myArr[t] = value;
-}
-}
-}
-16.WHAT IS THE DIFFERENCE BETWEEN METHODS – “SYSTEM.ARRAY.CLONE()”
-AND “SYSTEM.ARRAY.COPYTO()”?
-• “CopyTo()” method can be used to copy the elements of one array to other.
-• “Clone()” method is used to create a new array to contain all the elements
-which are in the original array.
-17.WHAT ARE VALUE TYPE AND REFERENCE TYPES?
-Value types stored in a stack.
-Here are the value types:
-• Decimal, int, byte, enum, double, long, float
-Reference types are stored in a heap.
-Below are the list of reference types -
-• Class, string, interface, object
-9
-18.CAN WE OVERRIDE PRIVATE VIRTUAL METHOD?
-No. We can’t override private virtual methods as it is not accessible outside the
-class.
-19.EXPLAIN CIRCULAR REFERENCE?
-This is a situation where in, multiple resources are dependent on each other and
-this causes a lock condition and this makes the resource to be unused.
-20.EXPLAIN OBJECT POOL?
-Object pool is used to track the objects which are being used in the code. So
-object pool reduces the object creation overhead.
-21.WHAT ARE THE TYPES OF DELEGATES?
-Below are the uses of delegates -
-• Single Delegate
-• Multicast Delegate
-• Generic Delegate
-22.WHAT ARE THE THREE TYPES OF GENERIC DELEGATES?
-Below are the three types of generic delegates -
-• Func
-10
-• Action
-• Predicate
-23.WHAT ARE THE USES OF DELEGATES?
-Below are the list of uses of delegates -
-• Callback Mechanism
-• Asynchronous Processing
-• Abstract and Encapsulate method
-• Multicasting
-24.CAN WE USE DELEGATES FOR ASYNCHRONOUS METHOD CALLS?
-Yes. We can use delegates for asynchronous method calls.
-25.WHAT IS AN ESCAPE SEQUENCE? NAME SOME STRING ESCAPE SEQUENCES
-IN C#.
-An Escape sequence is denoted by a backslash (\). The backslash indicates that
-the character that follows it should be interpreted literally or it is a special
-character. An escape sequence is considered as a single character.
-26.WHAT ARE REGULAR EXPRESSIONS?
-11
-Regular expression is a template to match a set of input. The pattern can consist
-of operators, constructs or character literals. Regex is used for string parsing and
-replacing the character string.
-27.WHY TO USE LOCK STATEMENT?
-Lock will make sure one thread will not intercept the other thread which is
-running the part of code. So lock statement will make the thread wait, block till
-the object is being released.
-28.WHAT IS “EXTERN” KEYWORD?
-The extern modifier is used to declare a method that is implemented externally.
-A common use of the extern modifier is with the DllImport attribute when
-you are using Interop services to call into unmanaged code.
-[DllImport("avifil32.dll")]
-private static extern void AVIFileInit();
-29.WHAT IS “SIZEOF” OPERATOR?
-The sizeof operator returns the number of bytes occupied by a variable of a given
-type. The argument to the sizeof operator must be the name of an unmanaged
-type or a type parameter that is constrained to be an unmanaged type.
-Console.WriteLine(sizeof(byte)); // output: 1
-12
-30.CAN WE USE “THIS” INSIDE A STATIC METHOD?
-No. We can’t use “this” in static method.
-31.WHAT IS THE DIFFERENCE BETWEEN CTYPE AND DIRECTCAST?
-• CType is used for conversion between type and the expression.
-• Directcast is used for converting the object type which requires run time
-type to be the same as specified type.
-32.WHICH STRING METHOD IS USED FOR CONCATENATION OF TWO STRINGS?
-“Concat” method of String class is used to concatenate two strings. For example,
-string.Concat(firstStr, secStr)
-33.WHAT IS PARSING? HOW TO PARSE A DATE TIME STRING?
-Parsing converts a string into another data type.
-For Example:
-string text = “500”;
-int num = int.Parse(text);
-500 is an integer. So, the Parse method converts the string 500 into its own base
-type, i.e int.
-Follow the same method to convert a DateTime string.
-string dateTime = “Jan 1, 2018”;
-DateTime parsedValue = DateTime.Parse(dateTime);
-13
-34.EXPLAIN PARTIAL CLASS?
-Partial classes concept added in .Net Framework 2.0 and it allows us to split the
-business logic in multiple files with the same class name along with “partial”
-keyword.
-35.EXPLAIN ANONYMOUS TYPE?
-This is being added 3.0 version. This feature enables us to create an object at
-compile time. Below is the sample code for the same –
-Var myTestCategory = new { CategoryId = 1, CategoryName = “Category1”};
-36.EXPLAIN GET AND SET ACCESSOR PROPERTIES?
-Get and Set are called Accessors. These are made use by Properties. The property
-provides a mechanism to read, write the value of a private field. For accessing
-that private field, these accessors are used.
-Get Property is used to return the value of a property
-Set Property accessor is used to set the value.
-37.WHAT IS THE DIFFERENCE BETWEEN VAR AND DYNAMIC IN C#?
-VAR TYPE - VAR are those variables which are declared without specifying the
-.NET type explicitly. In implicitly typed variable, the type of the variable is
-automatically deduced at compile time by the compiler from the value used to
-initialize the variable.
-14
-var a = 'f';
-DYNAMIC TYPE - It is used to avoid the compile-time type checking. The compiler
-does not check the type of the dynamic type variable at compile time, instead of
-this, the compiler gets the type at the run time. The dynamic type variable is
-created using dynamic keyword.
-dynamic val1 = "Interview";
-38.WHAT IS COVARIANCE IN C#?
-Covariance enables you to pass a derived type where a base type is expected.
-Small sml = new Bigger();
-
-15
-.NET FRAMEWORK
-39. WHAT IS JIT?
-JIT stands for Just In Time. JIT is a compiler that converts Intermediate Language
-to a Native code.
-The code is converted into Native language during execution. Native code is
-nothing but hardware specifications that can be read by the CPU. The native code
-can be stored so that it is accessible for subsequent calls.
-40.WHAT IS MSIL?
-MSIL stands for Microsoft Intermediate Language.
-MSIL provides instructions for calling methods, initializing and storing values,
-operations such as memory handling, exception handling and so on. All .Net codes
-are first compiled to IL.
-41.WHAT IS MEANT BY MANAGED AND UNMANAGED CODE?
-The code that is managed by the CLR is called Managed code. This code runs
-inside the CLR. Hence, it is necessary to install the .Net framework in order to
-execute the managed code. CLR manages the memory through garbage collection
-and also uses the other features like CAS and CTS for efficient management of the
-code.
-Unmanaged code is any code that does not depend on CLR for execution. It
-means it is developed by any other language independent of .Net framework. It
-uses its own runtime environment for compiling and execution.
-16
-Though it is not running inside the CLR, the unmanaged code will work properly if
-all the other parameters are correctly followed.
-42.WHAT IS DIFFERENCE BETWEEN NAMESPACE AND ASSEMBLY?
-Following are the differences between namespace and assembly:
-• Assembly is physical grouping of logical units, Namespace, logically groups
-classes.
-• Namespace can span multiple assembly.
-43.WHAT IS MANIFEST?
-Assembly metadata is stored in Manifest. Manifest contains all the metadata
-needed to do the
-following things (See Figure Manifest View for more details):
-• Version of assembly.
-• Security identity.
-• Scope of the assembly.
-• Resolve references to resources and classes.
-44.WHERE IS VERSION INFORMATION STORED OF AN ASSEMBLY?
-Version information is stored in assembly inside the manifest.
-17
-45.IS VERSIONING APPLICABLE TO PRIVATE ASSEMBLIES?
-Versioning concept is only applicable to global assembly cache (GAC) as private
-assembly lie in
-their individual folders. This does not mean versioning is not needed , you can still
-version it to
-have better version control on the project.
-46.WHAT IS THE APPLICATION DOMAIN?
-An Application Domain is a logical container for a set of assemblies in which an
-executable is hosted. As you have seen, a single process may contain multiple
-Application Domains, each of which is hosting a .NET executable.
-47.EXPLAIN CAS (CODE ACCESS SECURITY).
-.Net provides a security model that prevents unauthorized access to resources.
-CAS is a part of that security model. CAS is present in the CLR. It enables the users
-to set permissions at a granular level for the code.
-48. WHAT ARE SYNCHRONOUS AND ASYNCHRONOUS OPERATIONS?
-1. Synchronization is a way to create a thread-safe code where only one thread
-can access the resource at any given time. The asynchronous call waits for
-the method to complete before continuing with the program flow.
-2. Synchronous programming badly affects the UI operations when the user
-tries to perform time-consuming operations since only one thread will be
-used. In Asynchronous operation, the method call will immediately return so
-18
-that the program can perform other operations while the called method
-completes its work in certain situations.
-49.WHAT IS MULTI-TASKING?
-It is a feature of modern operating systems with which we can run multiple
-programs at same
-time example Word, Excel etc.
-50.NAME SOME PROPERTIES OF THREAD CLASS.
-Few Properties of thread class are:
-• IsAlive – contains value True when a thread is Active.
-• Name – Can return the name of the thread. Also, can set a name for the
-thread.
-• Priority – returns the prioritized value of the task set by the operating
-system.
-• IsBackground – gets or sets a value which indicates whether a thread
-should be a background process or foreground.
-• ThreadState– describes the thread state.
-51.WHAT ARE THE DIFFERENT STATES OF A THREAD?
-Different states of a thread are:
-• Unstarted – Thread is created.
-• Running – Thread starts execution.
-• WaitSleepJoin – Thread calls sleep, calls wait on another object and calls
-join on another thread.
-• Suspended – Thread has been suspended.
-19
-• Aborted – Thread is dead but not changed to state stopped.
-• Stopped – Thread has stopped.
-52.CAN WE HAVE MULTIPLE THREADS IN ONE APP DOMAIN?
-One or more threads run in an AppDomain. An AppDomain is a runtime
-representation of a
-logical process within a physical process. Each AppDomain is started with a single
-thread, but
-can create additional threads from any of its threads.
-53.WHICH NAMESPACE HAS THREADING?
-‘Systems.Threading’ has all the classes related to implement threading.
-54.EXPLAIN LOCK, MONITORS, AND MUTEX OBJECT IN THREADING.
-Lock keyword ensures that only one thread can enter a particular section of the
-code at any given time. In the above Example, lock(ObjA) means the lock is placed
-on ObjA until this process releases it, no other thread can access ObjA.
-Mutex is also like a lock but it can work across multiple processes at a time.
-WaitOne() is used to lock and ReleaseMutex() is used to release the lock. But
-Mutex is slower than lock as it takes time to acquire and release it.
-Monitor.Enter and Monitor.Exit implements lock internally. a lock is a shortcut for
-Monitors. lock(objA) internally calls.
-Monitor.Enter(ObjA);
-try
-20
-{
-}
-Finally {Monitor.Exit(ObjA));}
-55.WHAT IS THREAD.SLEEP () IN THREADING?
-Thread's execution can be paused by calling the Thread.Sleep method. This
-method takes an
-integer value that determines how long the thread should sleep. Example
-Thread.CurrentThread.Sleep(2000).
-56.WHAT IS SUSPEND AND RESUME IN THREADING?
-Suspend() method is called to suspend the thread. Resume() method is
-called to resume the suspended thread. Start() method is used to send a
-thread into runnable State.
-57.WHAT THE WAY TO STOP A LONG RUNNING THREAD?
-Thread.Abort() stops the thread execution at that moment itself.
-58. WHY WE NEED MULTI-THREADING IN OUR PROJECT?
-21
-Multi-threading is running the multiple threads simultaneously. Some main
-advantages are:
-▪ You can do multiple tasks simultaneously. For e.g. saving the details of user
-to a file while at the same time retrieving something from a web service.
-▪ Threads are much lightweight than process. They don't get their own
-resources. They used the resources allocated to a process.
-▪ Context-switch between threads takes less time than process.
-59. HOW TO START A THREAD IN C#?
-We have to use the Thread class provided by System.Threading namespace. In the
-constructor of the class, we have to pass the method name which we want to run
-in separate thread. After than we have to call the start method of Thread class.
-Below is the example.
-60. WHAT IS RACE CONDITION?
-A race condition happens when two or more threads want to update shared data
-at the same time.
-61. WHAT IS LIVELOCK?
-A livelock is very similar to deadlock except involved threads states are continually
-changing their state but still they cannot complete their work.
-A real-world example of livelock occurs when two people meet in a narrow
-corridor, and each tries to be polite by moving aside to let the other pass, but
-22
-they end up swaying from side to side without making any progress because they
-both repeatedly move the same way at the same time.
-62.WHAT IS IMMUTABLE OBJECT?
-An immutable object is an object which states cannot be changed after creation.
-Immutable objects are useful in concurrent programming as they are thread-safe.
-"String" objects are examples of immutable object because we can cannot change
-the value of string after it is created.
-63.HOW MANAGED CODE IS EXECUTED?
-Managed code is a code whose execution is managed by Common Language
-Runtime. It gets the managed code and compiles it into machine code. After that,
-the code is executed. The runtime here i.e. CLR provides automatic memory
-management, type safety, etc.
-64.WHAT IS THE DIFFERENCE BETWEEN SYSTEM EXCEPTIONS AND
-APPLICATION EXCEPTIONS?
-In general System exceptions occurred whenever some non-recoverable or fatal
-error is encountered, like a database crash, bound errors etc.
-While in case of Application level exceptions some error which is recoverable is
-encountered, for instance, the wrong type of input data, arithmetic exceptions
-etc.
-23
-65.WHAT IS XSD?
-XSD (XML Schema Definition), a recommendation of the World Wide Web
-Consortium (W3C), specifies how to formally describe the elements in an
-Extensible Markup Language (XML) document. It can be used by programmers to
-verify each piece of item content in a document.
-24
-ASP.NET MVC
-66.IN WHICH ASSEMBLY IS THE MVC FRAMEWORK DEFINED?
-System.Web.Mvc
-67.IS IT POSSIBLE TO SHARE A VIEW ACROSS MULTIPLE CONTROLLERS?
-Yes, put the view into the shared folder. This will automatically make the view
-available across multiple controllers.
-68.WHAT IS ROUTE IN MVC? WHAT IS DEFAULT ROUTE IN MVC?
-A route is a URL pattern that is mapped to a handler. The handler can be a
-physical file, such as a .aspx file in a Web Forms application. A handler can also be
-a class that processes the request, such as a controller in an MVC application. To
-define a route, you create an instance of the Route class by specifying the URL
-pattern, the handler, and optionally a name for the route.
-You add the route to the application by adding the Route object to the static
-Routes property of the RouteTable class. The Routesproperty is a RouteCollection
-object that stores all the routes for the application.
-You typically do not have to write code to add routes in an MVC application.
-Visual Studio project templates for MVC include preconfigured URL routes. These
-are defined in the MVC Application class, which is defined in the Global.asax file.
-25
-Default Route
-The default ASP.NET MVC project templates add a generic route that uses the
-following URL convention to break the URL for a given request into three named
-segments.
-URL: "{controller}/{action}/{id}"
-This route pattern is registered via a call to the MapRoute() extension method of
-RouteCollection.
-69.WHERE ARE THE ROUTING RULES DEFINED IN AN ASP.NET MVC
-APPLICATION?
-In Application_Start event in Global.asax
-70.WHAT IS VALIDATION SUMMARY IN MVC?
-26
-The ValidationSummary helper method generates an unordered list (ul element)
-of validation messages that are in the ModelStateDictionary object.
-The ValidationSummary can be used to display all the error messages for all the
-fields. It can also be used to display custom error messages.
-71.DIFFERENCES BETWEEN RAZOR AND ASPX VIEW ENGINE IN MVC?
-Razor View Engine VS ASPX View Engine
-The Razor View Engine is a bit slower than the ASPX View Engine.
-Conclusion
-Razor provides a new view engine with a streamlined code for focused
-templating. Razor's syntax is very compact and improves the readability of the
-markup and code. By default, MVC supports ASPX (web forms) and Razor View
-Engine. MVC also supports third-party view engines like Spark, Nhaml, NDjango,
-SharpDOM and so on. ASP.NET MVC is open source.
-
-72.WHAT ARE THE MAIN RAZOR SYNTAX RULES?
-• Razor code blocks are enclosed in @{ ... }
-• Inline expressions (variables and functions) start with @
-• Code statements end with semicolon
-• Variables are declared with the var keyword
-27
-• Strings are enclosed with quotation marks
-• C# code is case sensitive
-• C# files have the extension .cshtml
-73.HOW DO YOU IMPLEMENT FORMS AUTHENTICATION IN MVC?
-Authentication is giving access to the user for a specific service by verifying
-his/her identity using his/her credentials like username and password or email
-and password. It assures that the correct user is authenticated or logged in for a
-specific service and the right service has been provided to the specific user based
-on their role that is nothing but authorization.
-ASP.NET forms authentication occurs after IIS authentication is completed. You
-can configure forms authentication by using forms element with in web.config file
-of your application. The default attribute values for forms authentication are
-shown below,
-<system.web>
- <authenticationmode="Forms">
- <formsloginUrl="Login.aspx" protection="All" timeout="30" name=
-".ASPXAUTH" path="/" requireSSL="false" slidingExpiration="true" defa
-ultUrl="default.aspx" cookieless="UseDeviceProfile" enableCrossApp
-Redirects="false" />
- </authentication>
-</system.web>
-The FormsAuthentication class creates the authentication cookie automatically
-when SetAuthCookie() or RedirectFromLoginPage() methods are called. The value
-of authentication cookie contains a string representation of the encrypted and
-signed FormsAuthenticationTicket object.
-28
-74.HOW WE CAN REGISTER THE AREA IN ASP.NET MVC?
-When we have created an area make sure this will be registered in
-“Application_Start” event in Global.asax. Below is the code snippet where area
-registration is done :
-protected void Application_Start()
-{
-AreaRegistration.RegisterAllAreas();
-}
-75.EXPLAIN THE NEED OF DISPLAY MODE IN MVC?
-DisplayModes give you another level of flexibility on top of the default capabilities
-we saw in the last section. DisplayModes can also be used along with the previous
-feature so we will simply build off of the site we just created.
-Using display modes involves in 2 steps
-1. We should register Display Mode with a suffix for particular browser using
-“DefaultDisplayMode”e class inApplication_Start() method in the
-Global.asax file.
-29
-2. View name for particular browser should be appended with suffix mentioned
-in first step.
-1. Desktop browsers (without any suffix. e.g.: Index.cshtml, _Layout.cshtml).
-2. Mobile browsers (with a suffix “Mobile”. e.g.:
-Index.Mobile.cshtml,Layout.Mobile.cshtml)
-If you want design different pages for different mobile device browsers (any
-different browsers) and render them depending on the browser requesting. To
-handle these requests you can register custom display modes. We can do that
-using DisplayModeProvider.Instance.Modes.Insert(int index, IDisplayMode item)
-method.
-76.WHAT IS ROUTE CONSTRAINTS IN MVC?
-Routing is a great feature of MVC, it provides a REST based URL that is very easy
-to remember and improves page ranking in search engines.
-30
-This article is not an introduction to Routing in MVC, but we will learn a few
-features of routing and by implementing them we can develop a very flexible and
-user-friendly application. So, let's start without wasting valuable time.
-Add constraint to URL
-This is very necessary for when we want to add a specific constraint to our URL.
-Say, for example we want a URL.
-So, we want to set some constraint string after our host name. Fine, let's see how
-to implement it.
-It's very simple to implement, just open the RouteConfig.cs file and you will find
-the routing definition in that. And modify the routing entry as in the following. We
-will see that we have added “abc” before.
-Controller name, now when we browse we need to specify the string in the URL,
-as in the following:
-31
-77.WHAT ARE THE FOLDERS IN MVC APPLICATION SOLUTIONS?
-Understanding the folders
-When you create a project a folder structure gets created by default under the
-name of your project which can be seen in solution explorer. Below i will give you
-a brief explanation of what these folders are for.
-Model
-This folder contains classes that is used to provide data. These classes can contain
-data that is retrived from the database or data inserted in the form by the user to
-update the database.
-Controllers
-These are the classes which will perform the action invoked by the user. These
-classes contains methods known as "Actions" which responds to the user action
-accordingly.
-Views
-These are simple pages which uses the model class data to populate the HTML
-controls and renders it to the client browser.
-32
-App_Start
-Contains Classes such as FilterConfig, RoutesConfig, WebApiConfig. As of now we
-need to understand the RouteConfig class. This class contains the default format
-of the url that should be supplied in the browser to navigate to a specified page.
-78.WHAT ARE THE METHODS OF HANDLING AN ERROR IN MVC?
-Exception handling may be required in any application, whether it is a web
-application or a Windows Forms application.
-ASP.Net MVC has an attribute called "HandleError" that provides built-in
-exception filters. The HandleError attribute in ASP.NET MVC can be applied over
-the action method as well as Controller or at the global level. The HandleError
-attribute is the default implementation of IExceptionFilter. When we create a
-MVC application, the HandleError attribute is added within the Global.asax.cs file
-and registered in the Application_Start event.
-1. public static void RegisterGlobalFilters(GlobalFilterCollection filters)
-2. {
-3. filters.Add(new HandleErrorAttribute());
-4. }
-5. protected void Application_Start()
-6. {
-7. AreaRegistration.RegisterAllAreas();
-8. RegisterGlobalFilters(GlobalFilters.Filters);
-9. RegisterRoutes(RouteTable.Routes);
-10.}
-33
-Important properties of HandleError attribute
-The HandleError Error attribute has a couple for properties that are very useful in
-handling the exception.
-ExceptionType
-Type of exception to be catch. If this property is not specified then the
-HandleError filter handles all exceptions.
-View
-Name of the view page for displaying the exception information.
-Master
-Master View for displaying the exception.
-Order
-Order in which the action filters are executed. The Order property has an integer
-value and it specifies the priority from 1 to any positive integer value. 1 means
-highest priority and the greater the value of the integer is, the lower is the priority
-of the filter.
-AllowMultiple
-34
-It indicates whether more than one instance of the error filter attribute can be
-specified.
-Example
-[HandleError(View = "Error")]
-public class HomeController: Controller
-{
- public ActionResult Index()
- {
- ViewBag.Message = "Welcome to ASP.NET MVC!";
- int u = Convert.ToInt32(""); // Error line
- return View();
- }
-}
-HandleError Attribute at Action Method Level,
-[HandleError(View = "Error")]
-public ActionResult Index()
-{
- ViewBag.Message = "Welcome to ASP.NET MVC!";
- int u = Convert.ToInt32(""); // Error line
- return View();
-}
-35
-79.WHAT IS VIEWSTART?
-Razor View Engine introduced a new layout named _ViewStart which is applied on
-all view automatically. Razor View Engine firstly executes the _ViewStart and then
-start rendering the other view and merges them.
-Example of Viewstart
-@ {
- Layout = "~/Views/Shared/_v1.cshtml";
-} < !DOCTYPE html >
- < html >
- < head >
- < meta name = "viewport"
-content = "width=device-width" / >
- < title > ViewStart < /title> < /head> < body >
- < /body> < /html>
-80.HOW CAN WE DONE CUSTOM ERROR PAGE IN MVC?
-The HandleErrorAttribute allows you to use a custom page for this error. First you
-need to update your web.config file to allow your application to handle custom
-errors.
-1. <system.web>
-2. <customErrors mode="On">
-3. </system.web>
-36
-Then, your action method needs to be marked with the atttribute.
-1. [HandleError]
-2. public class HomeController: Controller
-3. {
-4. [HandleError]
-5. publicActionResultThrowException()
-6. {
-7. throw new ApplicationException();
-8. }
-9. }
-By calling the ThrowException action, this would then redirect the user to the
-default error page. In our case though, we want to use a custom error page and
-redirect the user there instead.So, let's create our new custom view page.
-37
-Next, we simply need to update the HandleErrorAttribute on the action method.
-1. [HandleError]
-2. public class HomeController: Controller
-3. {
-4. [HandleError(View = "CustomErrorView")]
-5. publicActionResultThrowException()
-6. {
-7. throw new ApplicationException();
-8. }
-9. }
-81.WHAT IS SERVER SIDE VALIDATION IN MVC?
-The ASP.NET MVC Framework validates any data passed to the controller action
-that is executing, It populates a ModelState object with any validation failures
-that it finds and passes that object to the controller. Then the controller actions
-can query the ModelState to discover whether the request is valid and react
-accordingly.
-I will use two approaches in this article to validate a model data. One is to
-manually add an error to the ModelState object and another uses the Data
-Annotation API to validate the model data.
-Approach 1 - Manually Add Error to ModelState object
-38
-I create a User class under the Models folder. The User class has two properties
-"Name" and "Email". The "Name" field has required field validations while the
-"Email" field has Email validation. So let's see the procedure to implement the
-validation. Create the User Model as in the following,
-1. namespace ServerValidation.Models
-2. {
-3. public class User
-4. {
-5. public string Name
-6. {
-7. get;
-8. set;
-9. }
-10. public string Email
-11. {
-12. get;
-13. set;
-14. }
-15. }
-16.}
-After that I create a controller action in User Controller (UserController.cs under
-Controllers folder). That action method has logic for the required validation for
-Name and Email validation on the Email field. I add an error message on
-ModelState with a key and that message will be shown on the view whenever the
-data is not to be validated in the model.
-1. using System.Text.RegularExpressions;
-2. using System.Web.Mvc;
-3. namespace ServerValidation.Controllers
-4. {
-5. public class UserController: Controller
-6. {
-7. public ActionResult Index()
-8. {
-9. return View();
-10. }
-39
-11. [HttpPost]
-12. public ActionResult Index(ServerValidation.Models.User model)
-13. {
-14.
-15. if (string.IsNullOrEmpty(model.Name))
-16. {
-17. ModelState.AddModelError("Name", "Name is required");
-18. }
-19. if (!string.IsNullOrEmpty(model.Email))
-20. {
-21. string emailRegex = @ "^([a-zA-Z0-9_\-\.]+)@((\[[0-
-9]{1,3}" +
-22. @ "\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-
-]+\" +
-23. @ ".)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$";
-24. Regex re = new Regex(emailRegex);
-25. if (!re.IsMatch(model.Email))
-26. {
-27. ModelState.AddModelError("Email", "Email is not val
-id");
-28. }
-29. } else {
-30. ModelState.AddModelError("Email", "Email is required")
-;
-31. }
-32. if (ModelState.IsValid)
-33. {
-34. ViewBag.Name = model.Name;
-35. ViewBag.Email = model.Email;
-36. }
-37. return View(model);
-38. }
-39. }
-40.}
-Thereafter I create a view (Index.cshtml) for the user input under the User folder.
-40
-1. @model ServerValidation.Models.User
-2. @ {
-3. ViewBag.Title = "Index";
-4. }
-5. @using(Html.BeginForm())
-6. {
-7. if (@ViewData.ModelState.IsValid)
-8. {
-9. if (@ViewBag.Name != null)
-10. { < b >
-11. Name: @ViewBag.Name < br / >
-12. Email: @ViewBag.Email < /b>
-13. }
-14. } < fieldset >
-15. < legend > User < /legend> < div class = "editor-label" >
-16. @Html.LabelFor(model => model.Name) < /div> < div class = "edi
-tor-field" >
-17. @Html.EditorFor(model => model.Name)
-18. @if(!ViewData.ModelState.IsValid)
-19.{
-20.< span class = "field-validationerror" > @ViewData.ModelState["Name"].Errors[0].ErrorMessage < /spa
-n>
-21.
-22.}
-23.< /div> < div class = "editor-label" >
-24.
-25. @Html.LabelFor(model => model.Email) < /div> < div class = "edi
-tor-field" >
-26. @Html.EditorFor(model => model.Email)
-27. @if(!ViewData.ModelState.IsValid)
-28. {
-29.< span class = "field-validationerror" > @ViewData.ModelState["Email"].Errors[0].ErrorMessage < /sp
-an>
-30. }
-41
-31. < /div> < p >
-32. < input type = "submit"
-33. value = "Create" / >
-34. < /p> < /fieldset>
-35.}
-82.WHAT IS THE USE OF REMOTE VALIDATION IN MVC?
-Remote validation is the process where we validate specific data posting data to a
-server without posting the entire form data to the server. Let's see an actual
-scenario, in one of my projects I had a requirement to validate an email address,
-whetehr it already exists in the database. Remote validation was useful for that;
-without posting all the data we can validate only the email address supplied by
-the user.
-Practical Explanation
-Let's create a MVC project and name it accordingly, for me its
-“TestingRemoteValidation”. Once the project is created let's create a model
-named UserModel that will look like:
-1. public class UserModel
-2. {
-3. [Required]
-4. public string UserName
-5. {
-6. get;
-7. set;
-8. }
-9. [Remote("CheckExistingEmail", "Home", ErrorMessage = "Email
-already exists!")]
-42
-10. public string UserEmailAddress
-11. {
-12. get;
-13. set;
-14. }
-15.}
-Let's get some understanding of the remote attribute used, so the very first
-parameter “CheckExistingEmail” is the the name of the action. The second
-parameter “Home” is referred to as controller so to validate the input for the
-UserEmailAddress the “CheckExistingEmail” action of the “Home” controller is
-called and the third parameter is the error message. Let's implement the
-“CheckExistingEmail” action result in our home controller.
-1. public ActionResult CheckExistingEmail(string UserEmailAddress)
-2. {
-3. bool ifEmailExist = false;
-4. try
-5. {
-6. ifEmailExist = UserEmailAddress.Equals("mukeshknayak@gmail.c
-om") ? true : false;
-7. return Json(!ifEmailExist, JsonRequestBehavior.AllowGet);
-8. } catch (Exception ex)
-9. {
-10. return Json(false, JsonRequestBehavior.AllowGet);
-11. }
-12.}
-83.EXPLAIN RENDERSECTION IN MVC?
-RenderSection() is a method of the WebPageBase class. Scott wrote at one point,
-The first parameter to the "RenderSection()" helper method specifies the name of
-the section we want to render at that location in the layout template. The second
-43
-parameter is optional, and allows us to define whether the section we are
-rendering is required or not. If a section is "required", then Razor will throw an
-error at runtime if that section is not implemented within a view template that is
-based on the layout file (that can make it easier to track down content errors). It
-returns the HTML content to render.
-1. <div id="body">
-2. @RenderSection("featured", required: false)
-3. <section class="content-wrapper main-content clearfix">
-4. @RenderBody()
-5. </section>
-6. </div>
-84.WHAT IS THE SIGNIFICANCE OF NONACTIONATTRIBUTE?
-In general, all public methods of a controller class are treated as action methods.
-If you want prevent this default behavior, just decorate the public method with
-NonActionAttribute.
-85.HOW ROUTE TABLE IS CREATED IN ASP.NET MVC?
-When an MVC application first starts, the Application_Start() method is called.
-This method, in turn, calls the RegisterRoutes() method. The RegisterRoutes()
-method creates the route table.
-86.ASP.NET MVC APPLICATION, MAKES USE OF SETTINGS AT 2 PLACES FOR
-ROUTING TO WORK CORRECTLY. WHAT ARE THESE 2 PLACES?
-44
-1. Web.Config File : ASP.NET routing has to be enabled here.
-2. Global.asax File : The Route table is created in the application Start event
-handler, of the Global.asax file.
-87.WHAT IS THE USE OF THE FOLLOWING DEFAULT ROUTE?
-{resource}.axd/{*pathInfo}
-This route definition, prevent requests for the Web resource files such as
-WebResource.axd or ScriptResource.axd from being passed to a controller.
-88.WHAT IS THE DIFFERENCE BETWEEN ADDING ROUTES, TO A WEBFORMS
-APPLICATION AND TO AN MVC APPLICATION?
-To add routes to a webforms application, we use MapPageRoute() method of the
-RouteCollection class, where as to add routes to an MVC application we use
-MapRoute() method.
-89.IF I HAVE MULTIPLE FILTERS IMPLEMENTED, WHAT IS THE ORDER IN WHICH
-THESE FILTERS GET EXECUTED?
-1. Authorization filters
-2. Action filters
-3. Response filters
-4. Exception filters
-90.WHICH FILTER EXECUTES FIRST IN AN ASP.NET MVC APPLICATION?
-Authorization filter
-45
-91.WHAT ARE THE LEVELS AT WHICH FILTERS CAN BE APPLIED IN AN ASP.NET
-MVC APPLICATION?
-1. Action Method
-2. Controller
-3. Application
-92.IS IT POSSIBLE TO CREATE A CUSTOM FILTER?
-Yes
-93.WHAT FILTERS ARE EXECUTED IN THE END?
-Exception Filters
-94.IS IT POSSIBLE TO CANCEL FILTER EXECUTION?
-Yes
-95.WHAT TYPE OF FILTER DOES OUTPUTCACHEATTRIBUTE CLASS REPRESENTS?
-Result Filter
-96.WHAT ARE THE 2 POPULAR ASP.NET MVC VIEW ENGINES?
-46
-1. Razor
-2. .aspx
-97.WHAT SYMBOL WOULD YOU USE TO DENOTE, THE START OF A CODE BLOCK
-IN RAZOR VIEWS?
-@
-98.WHAT SYMBOL WOULD YOU USE TO DENOTE, THE START OF A CODE BLOCK
-IN ASPX VIEWS?
-<%= %>
-In razor syntax, what is the escape sequence character for @ symbol?
-The escape sequence character for @ symbol, is another @ symbol
-99.WHAT ARE SECTIONS?
-Layout pages, can define sections, which can then be overriden by specific views
-making use of the layout. Defining and overriding sections is optional.
-100. WHAT ARE THE FILE EXTENSIONS FOR RAZOR VIEWS?
-1. .cshtml – If the programming lanugaue is C#
-2. .vbhtml – If the programming lanugaue is VB
-47
-101. HOW DO YOU SPECIFY COMMENTS USING RAZOR SYNTAX?
-Razor syntax makes use of @* to indicate the begining of a comment and *@ to
-indicate the end.
-102. IS IT POSSIBLE TO COMBINE ASP.NET WEBFORMS AND ASP.MVC AND
-DEVELOP A SINGLE WEB APPLICATION?
-Yes, it is possible to combine ASP.NET webforms and ASP.MVC and develop a
-single web application.
-103. WHAT IS THE USE OF VIEWMODEL IN MVC?
-ViewModel is a plain class with properties, which is used to bind it to strongly
-typed view. ViewModel can have the validation rules defined for its properties
-using data annotations.
-104. EXPLAIN BUNDLE.CONFIG IN MVC4?
-“BundleConfig.cs” in MVC4 is used to register the bundles by the bundling and
-minification system. Many bundles are added by default including jQuery libraries
-like – jquery.validate, Modernizr, and default CSS references.
-105. HOW WE CAN HANDLE THE EXCEPTION AT CONTROLLER LEVEL IN
-ASP.NET MVC?
-Exception Handling is made simple in ASP.Net MVC and it can be done by just
-overriding “OnException” and set the result property of the filtercontext object
-(as shown below) to the view detail, which is to be returned in case of exception.
-48
-protected overrides void OnException(ExceptionContext filterContext)
-{
-}
-106. DOES TEMPDATA HOLD THE DATA FOR OTHER REQUEST IN ASP.NET
-MVC?
-If Tempdata is assigned in the current request then it will be available for the
-current request and the subsequent request and it depends whether data in
-TempData read or not. If data in Tempdata is read then it would not be available
-for the subsequent requests.
-107. EXPLAIN KEEP METHOD IN TEMPDATA IN ASP.NET MVC?
-As explained above in case data in Tempdata has been read in current request
-only then “Keep” method has been used to make it available for the subsequent
-request.
-@TempData[“TestData”];
-TempData.Keep(“TestData”);
-108. EXPLAIN PEEK METHOD IN TEMPDATA IN ASP.NET MVC?
-Similar to Keep method we have one more method called “Peek” which is used
-for the same purpose. This method used to read data in Tempdata and it
-maintains the data for subsequent request.
-string A4str = TempData.Peek(“TT”).ToString();
-49
-109. WHAT ARE CHILD ACTIONS IN ASP.NET MVC?
-To create reusable widgets child actions are used and this will be embedded into
-the parent views. In ASP.Net MVC Partial views are used to have reusability in the
-application. Child action mainly returns the partial views.
-110. EXPLAIN THE TOOLS USED FOR UNIT TESTING IN ASP.NET MVC?
-Below are the tools used for unit testing :
-NUnit
-xUnit.NET
-Ninject 2
-Moq
-111. CAN I USE RAZOR CODE IN JAVASCRIPT IN ASP.NET MVC?
-Yes. We can use the razor code in javascript in cshtml by using <text> element.
-< script type=”text/javascript”>
-@foreach (var item in Model) {
-< text >
-//javascript goes here which uses the server values
-< text >
-}
-< script>
-112. HOW CAN I RETURN STRING RESULT FROM ACTION IN ASP.NET MVC?
-50
-Below is the code snippet to return string from action method :
-public ActionResult TestAction() {
-return Content(“Hello Test !!”);
-}
-113. HOW TO RETURN THE JSON FROM ACTION METHOD IN ASP.NET
-MVC?
-Below is the code snippet to return string from action method :
-public ActionResult TestAction() {
-return JSON(new { prop1 = “Test1”, prop2 = “Test2” });
-}
-114. GIVE AN EXAMPLE FOR AUTHORIZATION FILTERS IN AN ASP.NET MVC
-APPLICATION?
-1. RequireHttpsAttribute
-2. AuthorizeAttribute
-
-116. WHAT ARE THE EXCEPTION FILTERS IN MVC?
-Exception filter in MVC provides an ability to handle the exceptions for all the
-controller methods at a single location. This is by creating a class, which inherits
-from the FilterAttribute and IExceptionFilter interface.
-117. WHICH APPROACH PROVIDES BETTER SUPPORT FOR TEST DRIVEN
-DEVELOPMENT – ASP.NET MVC OR ASP.NET WEBFORMS?
-ASP.NET MVC
-52
-ASP.NET WEBFORMS
-118. WHAT'S THE USE OF RESPONSE.OUTPUT.WRITE()?
-We can write formatted output using Response.Output.Write().
-119. IN WHICH EVENT OF PAGE CYCLE IS THE VIEWSTATE AVAILABLE?
-After the Init() and before the Page_Load().
-120. FROM WHICH BASE CLASS ALL WEB FORMS ARE INHERITED?
-Page class.
-121. WHICH VALIDATOR CONTROL YOU USE IF YOU NEED TO MAKE SURE
-THE VALUES IN TWO DIFFERENT CONTROLS MATCHED?
-Compare Validator control.
-122. WHAT IS VIEWSTATE?
-53
-ViewState is used to retain the state of server-side objects between page post
-backs.
-123. HOW LONG THE ITEMS IN VIEWSTATE EXISTS?
-They exist for the life of the current page.
-124. WHAT ARE THE DIFFERENT VALIDATORS IN ASP.NET?
-1. Required field Validator
-2. Range Validator
-3. Compare Validator
-4. Custom Validator
-5. Regular expression Validator
-6. Summary Validator
-125. HOW YOU CAN ADD AN EVENT HANDLER?
-Using the Attributes property of server side control.
-e.g.
-btnSubmit.Attributes.Add("onMouseOver","JavascriptCode();")
-126. WHICH TYPE OF CACHING WILL BE USED IF WE WANT TO CACHE THE
-PORTION OF A PAGE INSTEAD OF WHOLE PAGE?
-54
-Fragment Caching: It caches the portion of the page generated by the request.
-For that, we can create user controls with the below code:
-<%@ OutputCache Duration="120" VaryByParam="CategoryID;SelectedID"%>
-127. CAN WE HAVE A WEB APPLICATION RUNNING WITHOUT WEB.CONFIG
-FILE?
-Yes
-128. CAN WE ADD CODE FILES OF DIFFERENT LANGUAGES IN APP_CODE
-FOLDER?
-No. The code files must be in same language to be kept in App_code folder.
-129. WHAT IS PROTECTED CONFIGURATION?
-It is a feature used to secure connection string information.
-130. WRITE CODE TO SEND E-MAIL FROM AN ASP.NET APPLICATION?
-MailMessage mailMess = new MailMessage ();
-mailMess.From = "abc@gmail.com";
-mailMess.To = "xyz@gmail.com";
-mailMess.Subject = "Test email";
-mailMess.Body = "Hi This is a test mail.";
-55
-SmtpMail.SmtpServer = "localhost";
-SmtpMail.Send (mailMess);
-MailMessage and SmtpMail are classes defined System.Web.Mail namespace.
-131. HOW CAN WE PREVENT BROWSER FROM CACHING AN ASPX PAGE?
-We can SetNoStore on HttpCachePolicy object exposed by the Response object's
-Cache property:
-Response.Cache.SetNoStore ();
-Response.Write (DateTime.Now.ToLongTimeString ());
-132. WHAT IS THE GOOD PRACTICE TO IMPLEMENT VALIDATIONS IN ASPX
-PAGE?
-Client-side validation is the best way to validate data of a web page. It reduces the
-network traffic and saves server resources.
-133. WHAT ARE THE EVENT HANDLERS THAT WE CAN HAVE IN
-GLOBAL.ASAX FILE?
-Application Events: Application_Start , Application_End,
-Application_AcquireRequestState, Application_AuthenticateRequest,
-Application_AuthorizeRequest, Application_BeginRequest, Application_Disposed,
-Application_EndRequest, Application_Error,
-Application_PostRequestHandlerExecute,
-Application_PreRequestHandlerExecute,Application_PreSendRequestContent,
-56
-Application_PreSendRequestHeaders, Application_ReleaseRequestState,
-Application_ResolveRequestCache, Application_UpdateRequestCache
-Session Events: Session_Start,Session_End
-134. WHICH PROTOCOL IS USED TO CALL A WEB SERVICE?
-HTTP Protocol
-135. EXPLAIN ROLE BASED SECURITY?
-Role Based Security used to implement security based on roles assigned to user
-groups in the organization.
-Then we can allow or deny users based on their role in the organization. Windows
-defines several built-in groups, including Administrators, Users, and Guests.
-<AUTHORIZATION>< authorization >
-< allow roles="Domain_Name\Administrators" / > < !-- Allow Administrators in
-domain. -- >
-< deny users="*" / > < !-- Deny anyone else. -- >
-< /authorization >
-136. HOW CAN WE APPLY THEMES TO AN ASP.NET APPLICATION?
-We can specify the theme in web.config file. Below is the code example to apply
-theme:
-<configuration>
-57
-<system.web>
-<pages theme="Windows7" />
-</system.web>
-</configuration>
-137. WHAT IS REDIRECTPERMANENT IN ASP.NET?
-RedirectPermanent Performs a permanent redirection from the requested URL to
-the specified URL. Once the redirection is done, it also returns 301 Moved
-Permanently responses.
-138. EXPLAIN THE WORKING OF PASSPORT AUTHENTICATION.
-First of all it checks passport authentication cookie. If the cookie is not available
-then the application redirects the user to Passport Sign on page. Passport service
-authenticates the user details on sign on page and if valid then stores the
-authenticated cookie on client machine and then redirect the user to requested
-page
-139. WHAT ARE THE ADVANTAGES OF PASSPORT AUTHENTICATION?
-All the websites can be accessed using single login credentials. So no need to
-remember login credentials for each web site.
-Users can maintain his/ her information in a single location.
-58
-140. WHAT ARE THE ASP.NET SECURITY CONTROLS?
-• <asp:Login>: Provides a standard login capability that allows the users to
-enter their credentials
-• <asp:LoginName>: Allows you to display the name of the logged-in user
-• <asp:LoginStatus>: Displays whether the user is authenticated or not
-• <asp:LoginView>: Provides various login views depending on the selected
-template
-• <asp:PasswordRecovery>: email the users their lost password
-141. HOW DO YOU REGISTER JAVASCRIPT FOR WEBCONTROLS ?
-We can register javascript for controls using <CONTROL -
-name>Attribtues.Add(scriptname,scripttext) method.
-142. DIFFERENTIATE STRONG TYPING AND WEAK TYPING
-In strong typing, the data types of variable are checked at compile time. On the
-other hand, in case of weak typing the variable data types are checked at runtime.
-In case of strong typing, there is no chance of compilation error. Scripts use weak
-typing and hence issues arises at runtime.
-143. LIST ALL TEMPLATES OF THE REPEATER CONTROL.
-• ItemTemplate
-• AlternatingltemTemplate
-• SeparatorTemplate
-• HeaderTemplate
-• FooterTemplate
-59
-144. LIST THE MAJOR BUILT-IN OBJECTS IN ASP.NET?
-• Application
-• Request
-• Response
-• Server
-• Session
-• Context
-• Trace
-145. WHAT IS THE APPSETTINGS SECTION IN THE WEB.CONFIG FILE?
-The appSettings block in web config file sets the user-defined values for the whole
-application.
-For example, in the following code snippet, the specified ConnectionString section
-is used throughout the project for database connection:
-<em><configuration>
-<appSettings>
-<add key="ConnectionString" value="server=local; pwd=password;
-database=default" />
-</appSettings></em>
-146. WHICH NAMESPACES ARE NECESSARY TO CREATE A LOCALIZED
-APPLICATION?
-System.Globalization
-60
-System.Resources
-147. WHAT ARE THE DIFFERENT TYPES OF COOKIES IN ASP.NET?
-Session Cookie - Resides on the client machine for a single session until the user
-does not log out.
-Persistent Cookie - Resides on a user's machine for a period specified for its
-expiry, such as 10 days, one month, and never.
-148. WHAT IS THE FILE EXTENSION OF WEB SERVICE?
-Web services have file extension .asmx.
-149. IS IT POSSIBLE TO CREATE WEB APPLICATION WITH BOTH WEBFORMS
-AND MVC?
-Yes. We have to include below mvc assembly references in the web forms
-application to create hybrid application.
-System.Web.Mvc
-System.Web.Razor
-System.ComponentModel.DataAnnotations
-150. CAN WE HAVE MULTIPLE WEB CONFIG FILES FOR AN ASP.NET
-APPLICATION?
-Yes, one can create different folders and create a config for the specific folder.
-61
-151. WHAT IS THE DIFFERENCE BETWEEN WEB CONFIG AND MACHINE
-CONFIG?
-Web config file is specific to a web application where as machine config is specific
-to a machine or server. There can be multiple web config files into an application
-where as we can have only one machine config file on a server.
-Web config fields will override machine configurations.
-152. WHAT IS CROSS PAGE POSTING?
-When we click submit button on a web page, the page post the data to the same
-page. The technique in which we post the data to different pages is called Cross
-Page posting. This can be achieved by setting POSTBACKURL property of the
-button that causes the postback. Findcontrol method of PreviousPage can be
-used to get the posted values on the page to which the page has been posted.
-62
-ADO.NET
-153. WHAT IS OBJECT POOLING?
-Object pooling is nothing but a repository of the objects in memory which can be
-used later. This object pooling reduces the load of object creation when it is
-needed. Whenever there is a need of object, object pool manager will take the
-request and serve accordingly.
-154. WHAT IS CONNECTION POOLING?
-Connection pooling consists of database connection so that the connection can be
-used or reused whenever there is request to the database. This pooling technique
-enhances the performance of executing the database commands. This pooling
-definitely reduces our time and effort.
-155. WHAT IS THE DIFFERENCE BETWEEN DATAREADER AND DATASET?
-a) Datareader is FORWARD and READ only
-b) Dataset used to UPDATE records.
-a) Datareader is CONNECTED architecture
-b) Dataset is DISCONNECTED Recordset
-a) Datareader contains single table
-63
-b) Datareader can contains multiple tables.
-a) Datareader Occupies Less Memory
-b) Dataset Occupies More memory
-156. WHAT ARE ALL COMPONENTS OF ADO.NET DATA PROVIDER?
-Following are the components of ADO.Net Data provider:
-Connection object – Represents connection to the Database
-Command object – Used to execute stored procedure and command on
-Database
-ExecuteNonQuery – Executes command but doesn’t return any value
-ExecuteScalar – Executes and returns single value
-ExecuteReader – Executes and returns result set
-DataReader – Forward and read only recordset
-DataAdapter – This acts as a bridge between database and a dataset.
-157. IS IT POSSIBLE TO LOAD MULTIPLE TABLES IN A DATASET?
-Yes, it is possible to load multiple tables in a single dataset.29. Which provider is
-used to connect MS Access, Oracle, etc…?
-OLEDB Provider and ODBC Provider are used to connect to MS Access and Oracle.
-Oracle Data Provider is also used to connect exclusively for oracle database.
-64
-158. WHAT ARE DIFFERENT LAYERS OF ADO.NET?
-There are three different layers of ADO.Net:
-• Presentation Layer
-• Business Logic Layer
-• Database Access Layer
-159. WHAT ARE ALL THE CLASSES THAT ARE AVAILABLE IN SYSTEM.DATA
-NAMESPACE?
-Following are the classes that are available in System.Data Namespace:
-• Dataset.
-• DataTable.
-• DataColumn.
-• DataRow.
-• DataRelation.
-• Constraint.
-160. WHAT ARE THE DATA PROVIDERS IN ADO.NET?
-Following are the Data Providers used in ADO.Net:.
-• MS SQL Server.
-• OLEDB.
-• ODBC.
-65
-161. WHAT IS THE DIFFERENCE BETWEEN EXECUTESCALAR AND
-EXECUTENONQUERY?
-1. ExecuteScalar returns output value where as ExecuteNonQuery does not
-return any value but the number of rows affected by the query.
-2. ExecuteScalar used for fetching a single value and ExecuteNonQuery used
-to execute Insert and Update statements.
-162. WHICH METHOD IS USED BY COMMAND CLASS TO EXECUTE SQL
-STATEMENTS THAT RETURN SINGLE VALUE?
-ExecuteScalar
-66
-SQL
-163. WHAT IS DENORMALIZATION.
-DeNormalization is a technique used to access the data from higher to lower
-normal forms of database. It is also process of introducing redundancy into a
-table by incorporating data from the related tables.
-164. WHAT ARE ALL THE DIFFERENT NORMALIZATIONS?
-The normal forms can be divided into 5 forms, and they are explained below -.
-First Normal Form (1NF):.
-This should remove all the duplicate columns from the table. Creation of tables
-for the related data and identification of unique columns.
-Second Normal Form (2NF):.
-Meeting all requirements of the first normal form. Placing the subsets of data in
-separate tables and Creation of relationships between the tables using primary
-keys.
-Third Normal Form (3NF):.
-This should meet all requirements of 2NF. Removing the columns which are not
-dependent on primary key constraints.
-Fourth Normal Form (4NF):.
-Meeting all the requirements of third normal form and it should not have multivalued dependencies.
-67
-165. WHAT IS A RELATIONSHIP AND WHAT ARE THEY?
-Database Relationship is defined as the connection between the tables in a
-database. There are various data basing relationships, and they are as follows:.
-• One to One Relationship.
-• One to Many Relationship.
-• Many to One Relationship.
-• Self-Referencing Relationship.
-166. WHAT ARE THE TYPES OF SUBQUERY?
-There are two types of subquery – Correlated and Non-Correlated.
-A correlated subquery cannot be considered as independent query, but it can
-refer the column in a table listed in the FROM the list of the main query.
-A Non-Correlated sub query can be considered as independent query and the
-output of subquery are substituted in the main query.
-167. WHAT ARE LOCAL AND GLOBAL VARIABLES AND THEIR DIFFERENCES?
-Local variables are the variables which can be used or exist inside the function.
-They are not known to the other functions and those variables cannot be referred
-or used. Variables can be created whenever that function is called.
-Global variables are the variables which can be used or exist throughout the
-program. Same variable declared in global cannot be used in functions. Global
-variables cannot be created whenever that function is called.
-68
-168. WHAT IS DATA INTEGRITY?
-Data Integrity defines the accuracy and consistency of data stored in a database.
-It can also define integrity constraints to enforce business rules on the data when
-it is entered into the application or database.
-169. WHAT IS DATAWAREHOUSE?
-Datawarehouse is a central repository of data from multiple sources of
-information. Those data are consolidated, transformed and made available for
-the mining and online processing. Warehouse data have a subset of data called
-Data Marts.
-170. WHAT IS CROSS-JOIN?
-Cross join defines as Cartesian product where number of rows in the first table
-multiplied by number of rows in the second table. If suppose, WHERE clause is
-used in cross join then the query will work like an INNER JOIN.
-171. WHAT IS COLLATION?
-Collation is defined as set of rules that determine how character data can be
-sorted and compared. This can be used to compare A and, other language
-characters and also depends on the width of the characters.
-ASCII value can be used to compare these character data.
-69
-172. WHAT ARE ALL DIFFERENT TYPES OF COLLATION SENSITIVITY?
-Following are different types of collation sensitivity -.
-• Case Sensitivity – A and a and B and b.
-• Accent Sensitivity.
-• Kana Sensitivity – Japanese Kana characters.
-• Width Sensitivity – Single byte character and double byte character.
-173. ADVANTAGES AND DISADVANTAGES OF STORED PROCEDURE?
-Stored procedure can be used as a modular programming – means create once,
-store and call for several times whenever required. This supports faster execution
-instead of executing multiple queries. This reduces network traffic and provides
-better security to the data.
-Disadvantage is that it can be executed only in the Database and utilizes more
-memory in the database server.
-174. WHAT IS ONLINE TRANSACTION PROCESSING (OLTP)?
-Online Transaction Processing (OLTP) manages transaction based applications
-which can be used for data entry, data retrieval and data processing. OLTP makes
-data management simple and efficient. Unlike OLAP systems goal of OLTP systems
-is serving real-time transactions.
-Example – Bank Transactions on a daily basis.
-70
-175. WHAT IS CLAUSE?
-SQL clause is defined to limit the result set by providing condition to the query.
-This usually filters some rows from the whole set of records.
-Example – Query that has WHERE condition
-Query that has HAVING condition.
-177. WHAT IS UNION, MINUS AND INTERACT COMMANDS?
-UNION operator is used to combine the results of two tables, and it eliminates
-duplicate rows from the tables.
-MINUS operator is used to return rows from the first query but not from the
-second query. Matching records of first and second query and other rows from
-the first query will be displayed as a result set.
-INTERSECT operator is used to return rows returned by both the queries.
-178. WHAT IS AN ALIAS COMMAND?
-ALIAS name can be given to a table or column. This alias name can be referred in
-WHERE clause to identify the table or column.
-Example-.
-71
-Select st.StudentID, Ex.Result from student st, Exam as Ex where st.studentID =
-Ex. StudentID
-Here, st refers to alias name for student table and Ex refers to alias name for
-exam table.
-179. HOW CAN YOU CREATE AN EMPTY TABLE FROM AN EXISTING TABLE?
-Example will be -.
-Select * into studentcopy from student where 1=2
-Here, we are copying student table to another table with the same structure with
-no rows copied.
-180. HOW TO FETCH COMMON RECORDS FROM TWO TABLES?
-Common records result set can be achieved by -.
-Select studentID from student INTERSECT Select StudentID from Exam
-181. HOW TO FETCH ALTERNATE RECORDS FROM A TABLE?
-Records can be fetched for both Odd and Even row numbers -.
-To display even numbers-.
-Select studentId from (Select rowno, studentId from student) where
-mod(rowno,2)=0
-To display odd numbers-.
-Select studentId from (Select rowno, studentId from student) where
-mod(rowno,2)=1
-72
-from (Select rowno, studentId from student) where mod(rowno,2)=1.[/sql]
-182. HOW TO SELECT UNIQUE RECORDS FROM A TABLE?
-Select unique records from a table by using DISTINCT keyword.
-Select DISTINCT StudentID, StudentName from Student.
-183. WHAT IS THE COMMAND USED TO FETCH FIRST 5 CHARACTERS OF
-THE STRING?
-There are many ways to fetch first 5 characters of the string -.
-Select SUBSTRING(StudentName,1,5) as studentname from student
-Select LEFT(Studentname,5) as studentname from student
-184. WHAT ARE ALL TYPES OF USER DEFINED FUNCTIONS?
-Three types of user defined functions are.
-• Scalar Functions.
-• Inline Table valued functions.
-• Multi statement valued functions.
-185. WHAT ARE AGGREGATE AND SCALAR FUNCTIONS?
-Aggregate functions are used to evaluate mathematical calculation and return
-single values. This can be calculated from the columns in a table. Scalar functions
-return a single value based on the input value.
-73
-Example -.
-Aggregate – max(), count - Calculated with respect to numeric.
-Scalar – UCASE(), NOW() – Calculated with respect to strings.
-186. WHICH OPERATOR IS USED IN QUERY FOR PATTERN MATCHING?
-LIKE operator is used for pattern matching, and it can be used as -.
-% - Matches zero or more characters.
-_(Underscore) – Matching exactly one character.
-Example -.
-Select * from Student where studentname like 'a%'
-Select * from Student where studentname like 'ami_'
-187. DEFINE MAGIC TABLES IN SQL SERVER?
-A Table which is automatically created and managed by SQL server internally to
-store the inserted, updated values for any DML (SELECT, DELETE, UPDATE, etc.)
-operation, is called as Magic tables in SQL server. The triggers preferably use it.
-74
-DESIGN PATTERNS
-188. WHAT IS PROTOTYPE DESIGN PATTERN?
-Prototype Design patterns:
-Prototype pattern specifies the kind of objects to create using a prototypical
-instance, and create new objects by copying this prototype.
-It is used to create a duplicate object or clone of the current object to
-enhance performance.
-189. WHAT IS BUILDER DESIGN PATTERN?
-Builder Design patterns:
-Separate the construction of a complex object from its representation so that
-the same construction process can create different representations.
-In other words,you will have to design the system in such a way that the
-client application will simply specify the parameters that should be used to
-create the complex object and the builder will take care of building the
-complex object.
-190. WHAT IS ADAPTER DESIGN PATTERN?
-Adapter Design patterns:
-The adapter pattern is adapting between classes and objects
-75
-This pattern involves a single class called adapter which is responsible for
-communication between two independent or incompatible interfaces
-This works like a bridge between two incompatible interfaces
-191. WHAT IS BRIDGE DESIGN PATTERN?
-Bridge Design patterns:
-Bridge Pattern separates abstraction from its implementation, so that both
-can be modified Independently
-Bridge Pattern behaves like a bridge between abstraction class and
-Implementer class.
-192. WHAT IS COMPOSITE DESIGN PATTERN?
-Composite Design patterns:
-Composite pattern composes objects in term of a tree structure to represent
-part as well as whole hierarchies.
-Composite pattern creates a class contains group of its own objects. This
-class provides ways to modify its group of same objects.
-Composite pattern is used when we need to treat a group of objects and a
-single object in the same way
-193. WHAT IS DECORATOR DESIGN PATTERN?
-Decorator Design patterns:
-76
-Decorator pattern is used to add new functionality to an existing object
-without changing its structure.
-Decorators provide a flexible alternative to subclass for extending
-functionality.
-This pattern creates a decorator class which wraps the original class and add
-new behaviors/operations to an object at run-time.
-194. WHAT IS FACADE DESIGN PATTERN?
-Facade Design patterns:
-Facade Design Pattern makes a software library easier to use, understand
-and test
-Facade Design Pattern make the library more readable
-Facade Design Pattern reduce dependencies of outside code on the inner
-workings of a library
-Facade Design Pattern wrap a poorly designed collection of APIs with a
-single well-designed API.
-195. WHAT IS FLYWEIGHT DESIGN PATTERN?
-Flyweight Design patterns:
-Flyweight design pattern is an object that minimizes memory use by sharing
-as much data as possible with other similar objects
-Flyweight pattern is used to reduce the number of objects created, to
-decrease memory and resource usage. As a result it increase performance
-Flyweight design pattern provides a way to use objects in large numbers
-when a simple repeated representation would use an unacceptable amount of
-memory.
-The flyweight pattern uses the concepts of intrinsic and extrinsic
-data.Intrinsic datais held in the properties of the shared flyweight objects.
-This information is stateless and generally remains unchanged, if any change
-77
-occurs it would be reflected among all of the objects that reference the
-flyweight.Extrinsic data is computed on the fly means at runtime and it is
-held outside of a flyweight object. Hence it can be stateful.
-196. WHAT IS PROXY DESIGN PATTERN?
-Proxy Design patterns:
-Proxy Design pattern involves a class, called proxy class, which represents
-functionality of another class.
-Proxy is a wrapper or agent object that is being called by the client to access
-the real serving object behind the scenes.
-78
-WEB API / WEB SERVICE / WCF
-197. IS IT RIGHT THAT ASP.NET WEB API HAS REPLACED WCF?
-It's a not at all true that ASP.NET Web API has replaced WCF. In fact, it is another
-way of building non-SOAP based services, i.e., plain XML or JSON string.
-198. WEB API SUPPORTS WHICH PROTOCOL?
-Web App supports HTTP protocol.
-199. WHICH .NET FRAMEWORK SUPPORTS WEB API?
-NET 4.0 and above version supports web API.
-200. WEB API USES WHICH OF THE FOLLOWING OPEN-SOURCE LIBRARY
-FOR JSON SERIALIZATION?
-Web API uses Json.NET library for JSON serialization.
-79
-201. BY DEFAULT, WEB API SENDS HTTP RESPONSE WITH WHICH OF THE
-FOLLOWING STATUS CODE FOR ALL UNCAUGHT EXCEPTION?
-500 - Internal Server Error
-202. WHAT IS SOAP?
-SOAP is an XML message format used in web service interactions. It allows to
-send messages over HTTP or JMS, but other transport protocols can be used. It is
-also an XML-based messaging protocol for exchanging information among
-computers.
-203. WHAT IS THE BENEFIT OF USING REST IN WEB API?
-REST is used to make fewer data transfers between client and server which make
-it an ideal for using it in mobile apps. Web API also supports HTTP protocol.
-Therefore, it reintroduces the traditional way of the HTTP verbs for
-communication.
-204. HOW CAN WE USE WEB API WITH ASP.NET WEB FORM?
-Web API can be used with ASP.NET Web Form
-It can be performed in three simple steps:
-1. Create a Web API Controller,
-2. Add a routing table to Application_Start method of Global.sax
-3. Then you need to make a jQuery AJAX Call to Web API method and get
-data.
-80
-205. HOW YOU CAN RETURN VIEW FROM ASP.NET WEB API METHOD?
-No, we can't return a view from ASP.NET Web API Method. Web API creates HTTP
-services that render raw data. However, it's also possible in ASP.NET MVC
-application.
-206. HOW TO REGISTER EXCEPTION FILTER GLOBALLY?
-It is possible to register exception filter globally using following codeGlobalConfiguration.Configuration.Filters.Add(new
-MyTestCustomerStore.NotImplExceptionFilterAttribute());
-207. HOW CAN YOU RESTRICT ACCESS METHODS TO SPECIFIC HTTP VERBS
-IN WEB API?
-With the help of Attributes (like HTTP verbs), It is possible to implement access
-restrictions in Web API.
-It is possible to define HTTP verbs as an attribute to restrict access. Example:
-[HttpPost]
-public void Method1(Class obj)
-{
-//logic
-81
-208. WHO CAN CONSUME WEBAPI?
-WebAPI can be consumed by any client which supports HTTP verbs such as GET,
-PUT, DELETE, POST. As WebAPI services don’t need any configuration, they are
-very easy to consume by any client. Infract, even portable devices like Mobile
-devices can easily consume WebAPI which is certainly the biggest advantages of
-this technology.
-209. WHAT ARE WEB SERVICES?
-Web services are open standard (XML, SOAP, HTTP etc.) based Web applications
-that interact with other web applications for the purpose of exchanging data.
-Web Services can convert your existing applications into Web-applications.
-210. WHAT ARE THE FEATURES OF WEB SERVICES?
-Following are the features of Web service −
-• It is available over the Internet or private (intranet) networks.
-• It uses a standardized XML messaging system.
-• It is not tied to any one operating system or programming language.
-• It is self-describing via a common XML grammar.
-• It is discoverable via a simple find mechanism.
-211. WHAT THE COMPONENTS OF A WEB SERVICE?
-82
-The basic web services platform is XML + HTTP. All the standard web services
-work using the following components −
-• SOAP (Simple Object Access Protocol)
-• UDDI (Universal Description, Discovery and Integration)
-• WSDL (Web Services Description Language)
-212. HOW DOES A WEB SERVICE WORK?
-A web service enables communication among various applications by using open
-standards such as HTML, XML, WSDL, and SOAP.
-You can also use C# to build new web services on Windows that can be invoked
-from your web application that is based on JavaServer Pages (JSP) and runs on
-Linux.
-213. WHAT IS THE PURPOSE OF XML IN A WEB SERVICE?
-A web services takes the help of XML to tag the data, format the data.
-214. WHAT ARE THE BENEFITS OF WEB SERVICES?
-Following are the benefits of using web services −
-• Exposing the Existing Function on the network − Web services allows you
-to expose the functionality of your existing code over the network. Once it is
-exposed on the network, other application can use the functionality of your
-program.
-• Interoperability − Web services allow various applications to talk to each
-other and share data and services among themselves.
-83
-• Standardized Protocol − Web services use standardized industry standard
-protocol for the communication. All the four layers (Service Transport,
-XML Messaging, Service Description, and Service Discovery layers) use
-well-defined protocols in the web services protocol stack.
-• Low Cost of Communication − Web services use SOAP over HTTP
-protocol, so you can use your existing low-cost internet for implementing
-web services.
-215. WHAT DO YOU MEAN BY INTEROPERABILITY OF WEB SERVICES?
-Web services allow various applications to talk to each other and share data and
-services among themselves. Other applications can also use the web services. For
-example, a VB or .NET application can talk to Java web services and vice versa.
-Web services are used to make the application platform and technology
-independent.
-216. WHAT DO YOU MEAN BY LOOSELY COUPLED ARCHITECTURE OF WEB
-SERVICES?
-A consumer of a web service is not tied to that web service directly. The web
-service interface can change over time without compromising the client's ability
-to interact with the service. A tightly coupled system implies that the client and
-server logic are closely tied to one another, implying that if one interface changes,
-the other must be updated. Adopting a loosely coupled architecture tends to
-make software systems more manageable and allows simpler integration
-between different systems.
-217. WHAT IS HTTP?
-84
-HTTP stands for Hyper Text Transfer Protocol.Currently, HTTP is the most popular
-option for service transport. HTTP is simple, stable, and widely deployed.
-Furthermore, most firewalls allow HTTP traffic. This allows XML-RPC or SOAP
-messages to masquerade as HTTP messages.
-218. WHAT IS WSDL?
-WSDL is an XML-based language for describing web services and how to access
-them. WSDL stands for Web Services Description Language.
-219. WHAT IS UDDI?
-UDDI is an XML-based standard for describing, publishing, and finding web
-services. UDDI stands for Universal Description, Discovery, and Integration.
-220. EXPLAIN WHAT IS WCF?
-WCF (Windows Communication Framework) is Microsoft framework to make
-inter-process communication easier. Through various means, it lets you do the
-communication like MS messaging Queuing, Services, Remoting and so on. It also
-allows you talk with other.NET apps, or non-Microsoft technologies (like J2EE).
-221. MENTION WHAT ARE THE MAIN COMPONENTS OF WCF?
-Main components of WCF are
-• Service: The working logic
-• Host: The path where the data is saved. E.g., .exe, process, windows service
-• Endpoints: The way the service is exposed to the outside world
-85
-222. EXPLAIN HOW DOES WCF WORKS?
-WCF follows the “Software as a Service” model, where all units of functionality
-are defined as services. For communication, each point is a portal or connection
-either with the client or other services. It is a program that exposes a collection of
-endpoints.
-223. EXPLAIN WHAT IS THE DIFFERENCE BETWEEN ASMX WEB SERVICES
-AND WCF?
-The difference between WCF and ASMX or ASP.net web service is that ASMX is
-designed to send and receive messages using SOAP over HTTP only. While the
-WCF can exchange messages using any format over any transport protocol.
-224. WHAT ARE THE TRANSPORT SCHEMAS DOES WCF SUPPORTS?
-It supports
-• HTTP
-• TCP
-• Peer network
-• IPC ( Inter Process Communication)
-• MSMQ
-225. MENTION WHAT ARE THE WAYS OF HOSTING A WCF SERVICE?
-The ways of hosting a WCF service are
-• IIS
-86
-• Self-Hosting
-• WAS (Windows Activation Service)
-226. MENTION THE ADDRESS SYNTAX AND THE DIFFERENT FORMATS OF
-WCF TRANSPORT SCHEME?
-Address syntax of WCF transport scheme is
-[transport]:// [machine or domain] [: optional port] format
-227. IN WCF WHAT ARE DUPLEX CONTRACTS?
-Duplex messaging or call-back is used in WCF to communicate with the client.
-Over different transport system Duplex messaging in WCF is done like TCP,
-Named pipe and even HTTP. Collectively this is known as duplex contracts in
-WCF.
-228. MENTION WHAT ARE THE DIFFERENT INSTANCE MODES IN WCF?
-To a particular service instance WCF binds an incoming message request, so the
-available modes are
-• Per Call: This instance is created for each call, efficient in terms of memory
-but need to maintain session
-• Per Session: For a complete session of a user instance are created
-• Single: One instance is created which is shared among all the users and
-shared among all. In terms of memory it is least efficient.
-87
-229. EXPLAIN WHAT IS SOA?
-SOA (Service Oriented Architectural) is a collection of services that determines
-how two computing entities will communicate with each other to achieve certain
-business functionality and also how one entity can work on behalf of another
-entity.
-230. WHAT ARE THE TYPES OF DATA CONTRACTS IN WCF?
-There are two types of Data Contracts
-• Data Contract: Attribute used to define the class
-• Data Member: Attribute used to define the properties
-231. WHAT ARE THE THREE TYPES OF TRANSACTION MANAGER WCF
-SUPPORTS?
-The types of the transaction manager that WCF supports are
-• Light Weight
-• WS- Atomic Transaction
-• OLE Transaction
-232. NAME THE NAMESPACE THAT IS USED TO ACCESS WCF SERVICE?
-System.ServiceModel is used to access WCF service
-233. WHAT IS SOA STANDS FOR?
-88
-Service Oriented Architecture
-.NET CORE
-234. WHAT IS HOST IN ASP.NET CORE?
-Host encapsulates all the resources for the app. On startup, ASP.NET Core
-application creates the host. The Resources which are encapsulated by the host
-include:
-HTTP Server implementation
-Dependency Injection
-Configuration
-Logging
-Middleware components
-235. DESCRIBE THE GENERIC HOST AND WEB HOST?
-The host setup the server, request pipeline and responsible for app startup and
-lifetime management. There are two hosts:
-.NET Generic Host
-ASP.NET Core Web Host
-.NET Generic Host is recommended and ASP.NET Core template builds a .NET
-Generic Host on app startup.
-ASP.NET Core Web host is only used for backwards compatibility.
-89
-// Host creation
-public class Program
-{
- public static void Main(string[] args)
- {
- CreateWebHostBuilder(args).Build().Run();
- }
- public static IWebHostBuilder
-CreateWebHostBuilder(string[] args) =>
- WebHost.CreateDefaultBuilder(args)
- .UseStartup();
-}
-236. DESCRIBE THE SERVERS IN ASP.NET CORE?
-Server is required to run any application. ASP.NET Core provides an in-process
-HTTP server implementation to run the app. This server implementation listen for
-HTTP requests and surface them to the application as a set of request features
-composed into an HttpContext.
-ASP.NET Core use the Kestrel web server by default. ASP.NET Core comes with:
-Default Kestrel web server that's cross platform HTTP server
-implementation.
-IIS HTTP Server that's in-process server for IIS.
-HTTP.sys server that's a Windows-only HTTP server and it's based on the
-HTTP.sys kernel driver and HTTP Server API.
-90
-237. HOW CONFIGURATION WORKS IN ASP.NET CORE?
-In ASP.NET Core, Configuration is implemented using various configuration
-providers. Configuration data is present in the form of key value pairs that can be
-read by configuration providers as key value from different configuration sources
-as below.
-appsettings.json - settings file
-Azure Key Vault
-Environment variables
-In-memory .Net objects
-Command Line Arguments
-Custom Providers
-By default apps are configured to read the configuration data from
-appsettings.json, environment variables, command line arguments etc. While
-reading the data, values from environment variables override appsettings.json
-data values. 'CreateDefaultBuilder' method provide default configuration.
-238. HOW TO READ VALUES FROM APPSETTINGS.JSON FILE?
-You can read values from appsettings.json using below code.
-class Test{
-// requires using Microsoft.Extensions.Configuration;
-private readonly IConfiguration Configuration;
- public TestModel(IConfiguration configuration)
- {
- Configuration = configuration;
- }
-// public void ReadValues(){
-91
-var val = Configuration["key"]; // reading direct key values
-var name = Configuration["Employee:Name"]; // read complex
-values
-}
-}
-Default configuration provider first load the values from appsettings.json and
-then from appsettings.Environment.json file.
-Environment specific values override the values from appsettings.json file. In
-development environment appsettings.Development.json file values override the
-appsettings.json file values, same apply to production environment.
-239. WHAT IS THE OPTIONS PATTERN IN ASP.NET CORE?
-Options Pattern allow you to access related configuration settings in Strongly
-typed way using some classes. When you are accessing the configuration settings
-with the isolated classes, The app should adhere these two principles.
-Interface Segregation Principle (ISP) or Encapsulation: The class the
-depend on the configurations, should depend only on the configuration
-settings that they use.
-Separation of Concerns: Settings for different classes should not be related
-or dependent on one another.
-240. HOW TO USE MULTIPLE ENVIRONMENTS IN ASP.NET CORE?
-ASP.NET Core use environment variables to configure application behavior based
-on runtime environment. launchSettings.json file
-sets ASPNETCORE_ENVIRONMENT to Development on local Machine.
-92
-241. HOW ASP.NET CORE SERVE STATIC FILES?
-In ASP.NET Core, Static files such as CSS, images, JavaScript files, HTML are the
-served directly to the clients. ASP.NET Core template provides a root folder
-called wwwroot which contains all these static files. UseStaticFiles() method
-inside Startup.Configure enables the static files to be served to client.
-You can serve files outside of this webroot folder by configuring Static File
-Middleware as following.
-app.UseStaticFiles(new StaticFileOptions
- {
- FileProvider = new PhysicalFileProvider(
- Path.Combine(env.ContentRootPath,
-"MyStaticFiles")), // MyStaticFiles is new folder
- RequestPath = "/StaticFiles" // this is requested
-path by client
- });
-// now you can use your file as below
-<img src="/StaticFiles/images/profile.jpg" class="img"
-alt="A red rose" />
-// profile.jpg is image inside MyStaticFiles/images folder
-242. EXPLAIN SESSION AND STATE MANAGEMENT IN ASP.NET CORE?
-As we know HTTP is a stateless protocol. HTTP requests are independent and
-does not retain user values. There are different ways to maintain user state
-between multiple HTTP requests.
-Cookies
-Session State
-TempData
-93
-Query strings
-Hidden fields
-HttpContext.Items
-Cache
-243. CAN ASP.NET APPLICATION BE RUN IN DOCKER CONTAINERS?
-Yes, you can run an ASP.NET application or .NET Core application in Docker
-containers.
-244. EXPLAIN THE CACHING OR RESPONSE CACHING IN ASP.NET CORE?
-Caching significantly improves the performance of an application by reducing the
-number of calls to actual data source. It also improves the scalability. Response
-caching is best suited for data that changes infrequently. Caching makes the copy
-of data and store it instead of generating data from original source.
-Response caching headers control the response
-caching. ResponseCache attribute sets these caching headers with additional
-properties.
-245. WHAT IS IN-MEMORY CACHE?
-In-memory cache is the simplest way of caching by ASP.NET Core that stores the
-data in memory on web server.
-Apps running on multiple server should ensure that sessions are sticky if they are
-using in-memory cache. Sticky Sessions responsible to redirect subsequent client
-requests to same server. In-memory cache can store any object but distributed
-94
-cache only stores byte[].
-IMemoryCache interface instance in the constructor enables the In-memory
-caching service via ASP.NET Core dependency Injection.
-246. WHAT IS DISTRIBUTED CACHING?
-Applications running on multiple servers (Web Farm) should ensure that sessions
-are sticky. For Non-sticky sessions, cache consistency problems can
-occur. Distributed caching is implemented to avoid cache consistency issues. It
-offloads the memory to an external process. Distributed caching has certain
-advantages as below.
-Data is consistent across client requests to multiple server
-Data keeps alive during server restarts and deployments.
-Data does not use local memory
-IDistributedCache interface instance from any constructor enable distributed
-caching service via Dependency Injection.
-247. WHAT IS XSRF OR CSRF? HOW TO PREVENT CROSS-SITE REQUEST
-FORGERY (XSRF/CSRF) ATTACKS IN ASP.NET CORE?
-Cross-Site Request Forgery (XSRF/CSRF) is an attack where attacker that acts as a
-trusted source send some data to a website and perform some action. An
-attacker is considered a trusted source because it uses the authenticated cookie
-information stored in browser.
-For example a user visits some site 'www.abc.com' then browser performs
-authentication successfully and stores the user information in cookie and perform
-some actions, In between user visits some other malicious site 'www.baduser.com' and this site contains some code to make a request to vulnerable site
-(www.abc.com). It's called cross site part of CSRF.
-How to prevent CSRF?
-In ASP.NET Core 2.0 or later FormTaghelper automatically inject the
-antiforgery tokens into HTML form element.
-95
-You can add manually antiforgery token in HTML forms by
-using @Html.AntiForgeryToken() and then you can validate it in
-controller by ValidateAntiForgeryToken() method.
-For more you can visit Prevent Cross-Site Request Forgery (XSRF/CSRF)
-248. EXPLAIN SESSION AND STATE MANAGEMENT IN ASP.NET CORE.
-As we know HTTP is a stateless protocol. HTTP requests are independent and
-does not retain user values. There are different ways to maintain user state
-between multiple HTTP requests.
-Cookies
-Session State
-TempData
-Query strings
-Hidden fields
-249. HOW TO ACCESS HTTPCONTEXT IN ASP.NET CORE?
-ASP.NET Core apps access HttpContext through the IHttpContextAccessor
-interface.
-250. EXPLAIN THE CACHING AND RESPONSE CACHING IN ASP.NET CORE.
-Caching significantly improves the performance of an application by reducing the
-number of calls to actual data source. It also improves the scalability.
-Three types of caching
-IN-MEMORY CACHING – Good for single server
-DISTRIBUTED CACHE – Good for web farm
-RESPONSECACHE attribute
-96
-Response caching is best suited for data that changes infrequently.
-Response caching headers control the response caching. ResponseCache attribute
-sets these caching headers with additional properties.
-[ResponseCache(Duration = 60)]
-public class HomeController : Controller
-{
- public IActionResult Index()
- {
- return View(new HomeOutputModel
- {
- LastUpdated = DateTime.Now
- });
- }
-}
-
-97
-THE END…
-BEST OF LUCK FOR
-INTERVIEWS
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
