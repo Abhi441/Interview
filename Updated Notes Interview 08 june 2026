@@ -124,184 +124,6 @@ Q7. Where to store static files in Angular project?
 
 Q8. What is the role of Angular.json file in Angular?
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Q9. What is the difference between JIT and AOT in Angular?
 
 
@@ -780,13 +602,52 @@ WHAT ARE JOINS IN SOL?
 /// 
 /// 
 
-095. WHAT IS MVC (MODEL CONTROLLER)? EXPLAIN MVC LIFE CYCLE. VIEW
+095. WHAT IS MVC (MODEL view CONTROLLER)? EXPLAIN MVC LIFE CYCLE.
 
-096. WHAT ARE THE ADVANTAGES OF MVC OVER WEB FORMS?
+096. WHAT ARE THE ADVANTAGES OF MVC OVER WEB FORMS?(Not IMPORTANT)
 
 097. WHAT ARE THE DIFFERENT RETURN TYPES OF A CONTROLLER ACTION METHOD?
 
 098. WHAT ARE FILTERS AND THEIR TYPES IN MVC?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 099. WHAT IS AUTHENTICATION AND AUTHORIZATION IN ASP.NET MVC?
 
@@ -818,9 +679,7 @@ IS BUNDLING AND MINIFICATION IN MVC?
 ///////////
 
 
-Q110.
-
-WHAT ARE THE EVENTS IN PAGE LIFE CYCLE? IN WHICH EVENT ARE THE CONTROLS FULLY LOADED?
+Q110.WHAT ARE THE EVENTS IN PAGE LIFE CYCLE? IN WHICH EVENT ARE THE CONTROLS FULLY LOADED?
 
 WHAT IS THE DIFFERENCE BETWEEN 0111. SERVER.TRANSFER() AND RESPONSE.REDIRECT()?
 
@@ -1671,7 +1530,9 @@ What is latest version of c# and feature.
 //Your team registered a DbContext as Singleton instead of Scoped. The app works fine in testing but breaks in production under load. Why?
 //Two users submit property bids simultaneously and you start seeing deadlock errors in logs. How do you investigate and resolve this?
 //How do you investigate deadlock ?
-
+//How does in microservices architecture two DB connect with each other ?
+//when one tread will going to complete after comming to response the same thread will do the task again , How does this thing will going to happen ?
+//artitectue of our application ? controller -> service -> repository -> database (every thing ready along with code)
 
 
 
@@ -1894,21 +1755,1320 @@ Write a query to find the ‘Nth’ highest salary from the employee table.
 
 
 
+//////////////////////////////////////////////////////////////////////////////////////////////WHAT ARE THE DIFFERENT RETURN TYPES OF A CONTROLLER ACTION METHOD?
+Easiest Definition
+
+> Action Method Return Types define what response the Controller sends back to the browser.
+
+
+
+Simple flow:
+
+User Request
+     ↓
+Controller Action
+     ↓
+Return Response
+
+
+---
+
+1. ViewResult
+
+Definition
+
+> Returns an HTML View to the browser.
+
+
+
+Most common in MVC.
+
+Example:
+
+public ViewResult Index()
+{
+    return View();
+}
+
+Output:
+
+Returns HTML Page
+
+Used when:
+
+Show Screen/UI
+
+Example:
+
+Home Page
+Property List
+Login Page
+
+
+---
+
+2. PartialViewResult
+
+Definition
+
+> Returns only part of a View.
+
+
+
+Example:
+
+public PartialViewResult Menu()
+{
+    return PartialView();
+}
+
+Output:
+
+Only Partial HTML
+
+Used:
+
+Header
+Footer
+Sidebar
+
+
+---
+
+3. RedirectResult
+
+Definition
+
+> Redirects to another URL.
+
+
+
+Example:
+
+public RedirectResult Go()
+{
+    return Redirect(
+        "/Home/About");
+}
+
+Browser moves to:
+
+/Home/About
+
+
+---
+
+4. RedirectToRouteResult
+
+Definition
+
+> Redirects using MVC Routing.
+
+
+
+Example:
+
+public RedirectToRouteResult Go()
+{
+    return RedirectToAction(
+        "Index",
+        "Home");
+}
+
+Output:
+
+Redirect using Route
+
+
+---
+
+5. JsonResult
+
+Definition
+
+> Returns JSON data.
+
+
+
+Very common for:
+
+AJAX
+Angular
+React
+API Calls
+
+Example:
+
+public JsonResult GetData()
+{
+    return Json(
+        new
+        {
+            Name="Abhishek"
+        });
+}
+
+Output:
+
+{
+ "Name":"Abhishek"
+}
+
+
+---
+
+6. ContentResult
+
+Definition
+
+> Returns plain text.
+
+
+
+Example:
+
+public ContentResult Hello()
+{
+    return Content(
+        "Welcome");
+}
+
+Output:
+
+Welcome
+
+
+---
+
+7. EmptyResult
+
+Definition
+
+> Returns nothing.
+
+
+
+Example:
+
+public EmptyResult Test()
+{
+    return new EmptyResult();
+}
+
+Output:
+
+No Response
+
+
+---
+
+8. FileResult
+
+Definition
+
+> Returns files.
+
+
+
+Example:
+
+public FileResult Download()
+{
+ return File(
+ "test.pdf",
+ "application/pdf");
+}
+
+Output:
+
+PDF Download
+
+Used:
+
+Excel
+PDF
+Images
+
+
+---
+
+9. HttpStatusCodeResult
+
+Definition
+
+> Returns HTTP Status Code.
+
+
+
+Example:
+
+return new
+HttpStatusCodeResult(404);
+
+Output:
+
+404 Not Found
+
+
+---
+
+10. ActionResult (Most Common)
+
+Definition
+
+> Base class for all Action Results.
+
+
+
+Example:
+
+public ActionResult Index()
+{
+    return View();
+}
+
+Can return:
+
+View
+Json
+File
+Redirect
+
+
+---
+
+11. IActionResult (.NET Core)
+
+Definition
+
+> Modern version of ActionResult in ASP.NET Core.
+
+
+
+Example:
+
+public IActionResult Get()
+{
+    return Ok();
+}
+
+Used:
+
+MVC
+
+Web API
+
+
+---
+
+Comparison Table
+
++----------------------+-------------------------+
+| Return Type | Purpose |
++----------------------+-------------------------+
+| ViewResult | Return HTML View |
+| PartialViewResult | Return Partial View |
+| RedirectResult | Redirect URL |
+| RedirectToRouteResult| Redirect Action |
+| JsonResult | Return JSON |
+| ContentResult | Return Text |
+| EmptyResult | Return Nothing |
+| FileResult | Download File |
+| HttpStatusCodeResult | Return Status Code |
+| ActionResult | Generic Return Type |
+| IActionResult | ASP.NET Core Return |
++----------------------+-------------------------+
+
+
+---
+
+🏠 Property Buy/Sell Project Example
+
+Property List
+      ↓
+return View()
+
+Property API
+      ↓
+return Json()
+
+Download Invoice
+      ↓
+return File()
+
+After Login
+      ↓
+return Redirect()
+
+
+---
+
+Interview Answer (Short)
+
+> Controller Action Methods can return ViewResult, PartialViewResult, RedirectResult, JsonResult, ContentResult, FileResult, EmptyResult, ActionResult, and IActionResult. These return types determine what response is sent back to the client.
 
 
 
 
+---
+
+📌 Topic Placement
+
+ASP.NET MVC
+ ├── Controller
+ │ ├── Action Method
+ │ ├── Return Types
+ │ ├── Model Binding
+ │ └── Filters
+
+🧠 Memory Trick
+
+View → HTML
+
+Json → Data
+
+File → Download
+
+Redirect → Move
+
+Content → Text
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////// WHAT IS MVC (MODEL view CONTROLLER)? EXPLAIN MVC LIFE CYCLE.
+What is MVC (Model View Controller)?
+
+MVC stands for:
+
+M → Model
+V → View
+C → Controller
+
+MVC is an architectural pattern used to separate an application into Data, UI, and Business Logic.
+
+Simple idea:
+
+Model → Data (What data)
+
+View → UI (What user sees)
+
+Controller → Decision Maker (What to do)
+
+
+---
+
+🧠 Real-Life Example (Restaurant)
+
+Imagine you go to a restaurant.
+
+Customer
+   ↓
+Waiter
+   ↓
+Chef
+
+Mapping to MVC:
+
+Customer → User
+
+Waiter → Controller
+
+Chef → Model
+
+Food → View
+
+Flow:
+
+Customer Orders
+      ↓
+Waiter Takes Request
+      ↓
+Chef Prepares
+      ↓
+Waiter Returns Food
+
+Exactly like MVC.
+
+
+---
+
+1. Model
+
+Definition
+
+> Model contains application data and business logic.
+
+
+
+It communicates with:
+
+Database
+Business Rules
+Services
+
+Example:
+
+public class Property
+{
+    public int Id { get; set; }
+
+    public string Name { get; set; }
+
+    public decimal Price { get; set; }
+}
+
+Model stores:
+
+Property Data
+
+
+---
+
+2. View
+
+Definition
+
+> View is responsible for displaying data to the user.
+
+
+
+Example:
+
+<h1>Property Details</h1>
+
+<p>@Model.Name</p>
+
+View means:
+
+What User Sees
+
+
+---
+
+3. Controller
+
+Definition
+
+> Controller receives requests, processes business logic, and returns a View.
+
+
+
+Example:
+
+public class PropertyController
+    : Controller
+{
+    public IActionResult Index()
+    {
+        return View();
+    }
+}
+
+Controller means:
+
+Traffic Police
+
+It decides where request should go.
+
+
+---
+
+MVC Architecture
+
+User
+ ↓
+Controller
+ ↓
+Model
+ ↓
+Database
+ ↓
+Model
+ ↓
+Controller
+ ↓
+View
+ ↓
+User
+
+
+---
+
+🎯 MVC Life Cycle
+
+This is the important interview question.
+
+
+---
+
+Step 1 — Browser Sends Request
+
+User enters:
+
+https://localhost:5001/property/index
+
+Request reaches:
+
+Program.cs
+
+
+---
+
+Step 2 — Routing Executes
+
+Routing decides:
+
+Which Controller?
+
+Which Action Method?
+
+Example:
+
+/property/index
+
+↓
+
+PropertyController
+
+Index()
+
+
+---
+
+Step 3 — Controller Executes
+
+public IActionResult Index()
+{
+    return View();
+}
+
+Controller handles request.
+
+
+---
+
+Step 4 — Model Executes
+
+Controller requests data.
+
+var properties =
+_db.Properties.ToList();
+
+Model talks to database.
+
+
+---
+
+Step 5 — Data Returned to Controller
+
+Database
+ ↓
+Model
+ ↓
+Controller
+
+
+---
+
+Step 6 — Controller Returns View
+
+return View(properties);
+
+
+---
+
+Step 7 — View Renders HTML
+
+<h2>Property List</h2>
+
+HTML generated.
+
+
+---
+
+Step 8 — Browser Receives Response
+
+User sees:
+
+Property Page
+
+
+---
+
+Complete MVC Life Cycle
+
+Browser
+   ↓
+Program.cs
+   ↓
+Routing
+   ↓
+Controller
+   ↓
+Model
+   ↓
+Database
+   ↓
+Model
+   ↓
+Controller
+   ↓
+View
+   ↓
+HTML
+   ↓
+Browser
+
+
+---
+
+Property Buy/Sell Project Example
+
+User opens:
+
+/property/details/10
+
+Flow:
+
+Request
+ ↓
+PropertyController
+ ↓
+PropertyService
+ ↓
+PropertyRepository
+ ↓
+Database
+ ↓
+Controller
+ ↓
+View
+ ↓
+Browser
+
+
+---
+
+Interview Answer (Short)
+
+> MVC stands for Model View Controller. Model manages data and business logic, View displays UI, and Controller handles requests and coordinates between Model and View. MVC life cycle starts from Browser → Routing → Controller → Model → Database → Controller → View → Browser.
 
 
 
 
+---
+
+Topic Placement
+
+ASP.NET MVC
+ ├── MVC Architecture
+ ├── Model
+ ├── View
+ ├── Controller
+ ├── Routing
+ ├── Model Binding
+ ├── Filters
+ └── MVC Life Cycle
+
+🧠 Memory Trick
+
+Model
+=
+Data
+
+View
+=
+UI
+
+Controller
+=
+Decision Maker
+
+/////////////////////////////////////////////////////////////////////////////////////////////How does multithreading work with real world example 
+Waiter takes order
+
+Gives it to chef
+
+Serves other customers
+
+Chef finishes
+
+Any waiter delivers food
+
+///////////////////////////////////////////////////////////////////////////////////////////////WHAT ARE WINDOW SERVICES?
+
+Easiest Definition
+
+Windows service is a computer program that runs in the BACKGROUND to execute some tasks. 
+
+You can see the window services in your system by running services.msc command.
+
+ Windows services can be started AUTOMATICALLY or manually. You can also manually pause, stop and restart Windows services.
+
+
+🧠 Real-Life Example
+
+When you start your computer:
+
+Windows Starts
+      ↓
+Antivirus Starts
+      ↓
+Print Service Starts
+      ↓
+Windows Update Starts
+
+You don't manually open them.
+
+They run automatically in the background.
+
+These are examples of Windows Services.
+
+
+---
+
+Examples of Windows Services
+
+Windows Update Service
+
+SQL Server Service
+
+Print Spooler Service
+
+Antivirus Service
+
+Email Sending Service
+
+
+---
+
+Why Use Windows Service?
+
+Suppose your Property Buy/Sell Website needs:
+
+Send Email Every 5 Minutes
+
+Generate Reports at Midnight
+
+Backup Database Daily
+
+Process Property Images
+
+Send Notifications
+
+These tasks should run even if:
+
+No User Logged In
+No Browser Open
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////WHAT IS THE DIFFERENCE BETWEEN "DISPOSE" AND "FINALIZE"
+ Easiest Definition
+
+Dispose()
+
+> Dispose is a method of IDisposable interface. Inside this method developer has to write the code to clean or destroy the objects which are no more required.
+
+
+
+Example resources:
+
+Database Connection
+File
+Network Connection
+Memory resources
+
+
+---
+
+Finalize()
+
+> Finalize is called by GARBAGE COLLECTOR automatically and need not to be called by the user code to run..
+
+
+
+It is used as a safety mechanism to release unmanaged resources.
+
+
+---
+
+🧠 Simple Real-Life Example
+
+Imagine you rent a car.
+
+Dispose()
+
+You return the car yourself:
+
+Use car
+   ↓
+Finish work
+   ↓
+Return car
+
+You control when it is released.
+
+
+---
+
+Finalize()
+
+You forget to return the car.
+
+Later:
+
+Company finds it
+   ↓
+Takes it back automatically
+
+Garbage Collector does this.
+
+
+---
+
+Code Example
+
+Dispose()
+
+class FileManager : IDisposable
+{
+    public void Dispose()
+    {
+        Console.WriteLine("Resource Released");
+    }
+}
+
+Usage:
+
+using(FileManager file = new FileManager())
+{
+    // Use file
+}
+
+When using ends:
+
+Dispose() automatically called
+
+
+---
+
+Finalize Example
+
+class Employee
+{
+    ~Employee()
+    {
+        Console.WriteLine("Finalize called");
+    }
+}
+
+This is a destructor.
+
+The Garbage Collector calls it.
+
+
+---
+
+Main Differences
+
++----------------+---------------------------+---------------------------+
+| Feature | Dispose() | Finalize() |
++----------------+---------------------------+---------------------------+
+| Called By | Developer / using block | Garbage Collector |
++----------------+---------------------------+---------------------------+
+| Timing | Immediately | Unknown time |
++----------------+---------------------------+---------------------------+
+| Control | Manual control | Automatic control |
++----------------+---------------------------+---------------------------+
+| Performance | Faster | Slower |
++----------------+---------------------------+---------------------------+
+| Interface | IDisposable | Object class method |
++----------------+---------------------------+---------------------------+
+| Usage | Managed + unmanaged | Mainly unmanaged resource |
++----------------+---------------------------+---------------------------+
+
+
+---
+
+Why Prefer Dispose()?
+
+Because:
+
+You know exactly when resource is no longer needed
+
+Example:
+
+Database:
+
+using(SqlConnection con = new SqlConnection())
+{
+    con.Open();
+}
+
+After block:
+
+Connection closed immediately
+
+
+---
+
+Property Buy/Sell Project Example
+
+Suppose your application uploads property images.
+
+You open:
+
+File Stream
+
+Bad:
+
+Wait for Garbage Collector
+
+Better:
+
+using(FileStream fs = new FileStream("image.jpg"))
+{
+    // upload image
+}
+
+Resource released immediately.
+
+
+---
+
+Interview Answer (Short)
+
+> Dispose() is used to manually release resources by implementing IDisposable, and it is called explicitly or through a using statement. Finalize() is called automatically by the Garbage Collector before an object is destroyed. Dispose provides deterministic cleanup, while Finalize provides non-deterministic cleanup.
 
 
 
 
+---
+
+🧠 Memory Trick
+
+Dispose()
+=
+I release it myself
+
+Finalize()
+=
+.NET releases it later
+
+
+---
+
+Topic Placement
+
+C#
+ └── Memory Management
+      ├── Garbage Collection
+      ├── Dispose()
+      ├── Finalize()
+      ├── IDisposable
+      └── Using Statement
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////What are Lifecycle Hooks in Angular?
+What are Lifecycle Hooks in Angular?
+
+Here are some details about the hooks:
+
+constructor
+
+It is a default method of the typescript class that is executed when the class is instantiated.
+
+It always run before any angular hook and it is not a part of Lifecycle Hooks.
+
+
+---
+
+ngOnChanges
+
+Called when input property changes.
+
+
+---
+
+ngOnInit
+
+Called when the component is created.
+
+
+---
+
+ngDoCheck
 
 
 
+
+---
+
+ngAfterContentInit
+
+Called for component children.
+
+
+---
+
+ngAfterContentChecked
+
+Called for component children.
+
+
+---
+
+ngAfterViewInit
+
+Called for component children.
+
+
+---
+
+ngAfterViewChecked
+
+Called for component children.
+
+
+---
+
+ngOnDestroy
+
+Called when the component is destroyed.
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////How an Angular App gets Loaded and Started? What are index.html, app-root, selector and main.ts
+
+
+5 Steps executed when client sends request from browser:
+
+1.First, request hits index.html page.
+
+2.Second, index.html will invoke main.js file (which is the JavaScript version of main.ts file).
+
+3.Third, main.ts compiles the web-app and bootstraps the app.module.ts file.
+
+4.Fourth, App-Module file will then bootstrap the app-component.
+5.Finally, the App-component HTML will be displayed.
+
+Flow Diagram
+
+Client Request
+      │
+      ▼
+1. index.html
+      │
+      ▼
+2. main.ts
+      │
+      ▼
+3. app.module.ts
+      │
+      ▼
+4. app-component
+      │
+      ▼
+5. Display App-Component HTML
+
+
+
+/////////////////////////////////////////////////////////////////////what is the diffrence between JIT and AOT in Angular ? 
+ Easiest Definition
+
+JIT (Just-In-Time Compilation)
+
+> Angular compiles the application in the browser when the application runs.
+
+
+
+Code
+  ↓
+Browser
+  ↓
+Compilation
+  ↓
+Run
+
+
+---
+
+AOT (Ahead-Of-Time Compilation)
+
+> Angular compiles the application before deployment during the build process.
+
+
+
+Code
+  ↓
+Build Time
+  ↓
+Compilation
+  ↓
+Deploy
+  ↓
+Run
+
+
+---
+
+🧠 Super Simple Real-Life Example
+
+Imagine an exam.
+
+JIT
+
+Go to exam hall
+Read chapter
+Study there
+Write exam
+
+Compilation happens at runtime.
+
+
+---
+
+AOT
+
+Study at home
+Go to exam hall
+Directly write exam
+
+Compilation already done.
+
+
+---
+
+Comparison Table
+
++----------------------+--------------------------+--------------------------+
+| Feature | JIT | AOT |
++----------------------+--------------------------+--------------------------+
+| Full Form | Just-In-Time | Ahead-Of-Time |
++----------------------+--------------------------+--------------------------+
+| Compilation Time | Runtime | Build Time |
++----------------------+--------------------------+--------------------------+
+| Startup Speed | Slower | Faster |
++----------------------+--------------------------+--------------------------+
+| Bundle Size | Larger | Smaller |
++----------------------+--------------------------+--------------------------+
+| Performance | Lower | Better |
++----------------------+--------------------------+--------------------------+
+| Error Detection | Runtime | Build Time |
++----------------------+--------------------------+--------------------------+
+| Used In | Development | Production |
++----------------------+--------------------------+--------------------------+
+
+
+---
+
+Why AOT is Better?
+
+Suppose your Property Website has:
+
+Home
+Property List
+Admin
+Payments
+Reports
+
+With JIT:
+
+User opens website
+     ↓
+Browser compiles Angular code
+     ↓
+Application starts
+
+⏳ Slower startup.
+
+
+---
+
+With AOT:
+
+Angular already compiled during build
+     ↓
+User opens website
+     ↓
+Application starts immediately
+
+🚀 Faster startup.
+
+
+---
+
+Angular Commands
+
+Development (JIT)
+
+ng serve
+
+Traditionally uses JIT for faster development experience.
+
+
+---
+
+Production (AOT)
+
+ng build --configuration production
+
+Uses AOT.
+
+
+---
+
+Project Use (Buy & Sell Property)
+
+For production:
+
+Property Portal
+Admin Portal
+Payment Module
+Reports Module
+
+Use:
+
+AOT
+
+Benefits:
+
+✅ Faster page load
+
+✅ Smaller bundle size
+
+✅ Better performance
+
+✅ Errors caught during build
+
+
+---
+
+Interview Answer (Small)
+
+> JIT compiles Angular code in the browser at runtime, whereas AOT compiles the code during the build process before deployment. AOT provides better performance, faster startup time, and earlier error detection.
+
+
+
+
+---
+
+Interview Answer (5–8 Years Experience)
+
+> JIT (Just-In-Time) compilation happens at runtime in the browser and is commonly used during development. AOT (Ahead-Of-Time) compilation occurs during the build process, generating optimized JavaScript before deployment. In production applications, AOT is preferred because it improves startup performance, reduces bundle size, and catches template errors during build time rather than at runtime.
+
+
+
+
+---
+
+📌 Topic Placement
+
+Angular
+ └── Build & Deployment
+      ├── JIT Compilation
+      ├── AOT Compilation
+      ├── Optimization
+      └── Production Build
+
+🧠 Memory Trick
+
+JIT = Compile Later (Runtime)
+
+AOT = Compile Earlier (Build Time)
 
 
 
@@ -8835,7 +9995,7 @@ There are different types based on when they run.
 
 Runs before and after a controller action executes.
 
-Use it when you want to do something like logging, validating input, or checking user permissions.
+Use it when you want to do something like logging, validating input
 
 
 public class LogActionFilter : IActionFilter
@@ -16350,7 +17510,7 @@ Converts number to: ₹1,000.00
 
 ✅ Q30. What is Chaining Pipes?
 
-> You can apply multiple pipes together, one after the other.
+> if we have  apply multiple pipes together, one after the other.
 
 
 
@@ -16359,29 +17519,49 @@ Converts number to: ₹1,000.00
 <p>{{ name | uppercase | slice:0:4 }}</p>
 
 If name = "abhishek", output = ABHI
-(First uppercase, then slice first 4 letters)
+(First uppercase, then slice first 4 letters).
+
+✅ Q31. What is a Service in Angular?
+
+> A Service is a reusable TypeScript class in Angular used to share logic, fetch data, or hold values across components.
+
+
+
+🧠 Think of a service like a helper file.
 
 
 ---
 
-🔚 Summary Table (Quick Glance)
+✅ Q32. How to create a Service in Angular?
 
-Feature	Purpose	Example
+Use Angular CLI:
 
-Decorator	Add metadata to class/property	@Component, @Input
-Pipe	Transform data in template	`{{ name
-Directive	Control HTML layout/behavior	*ngIf, [ngClass]
+ng generate service my-data
+
+This creates:
+
+my-data.service.ts
 
 
 
 ---
 
-Let me know if you'd like mock interview questions or project-based tasks using these!
+✅ Example:
 
---> Where to show.
+// my-data.service.ts
+import { Injectable } from '@angular/core';
 
-Absolutely, Abhishek! Here's the interview-ready, simple explanation, and code examples for each question from Q31 to Q36 — one by one. You’ll be able to explain these like a top 1% developer in the most human-friendly way!
+@Injectable({
+  providedIn: 'root'
+})
+export class MyDataService {
+  getUserName() {
+    return "Abhishek Singh";
+  }
+}
 
+
+---
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 app
 ---
@@ -17903,7 +19083,6 @@ Faster UI development → quicker feature delivery.
 Cleaner responsive design → better user experience.
 
 Easier maintenance → developers spend less time fixing alignment bugs.
-//Rxjs() -->tell more about the things
 //Do we nessary to keep constructor in .ts file.
 //can we use jquery in javaScript.
 //JoSet.
@@ -21956,7 +23135,6 @@ Principle and makes the code easier to maintain and understand.
 /////////////////////////////////////////////////////////////////////////////WHAT IS OPEN-CLOSED PRINCIPLE?
 
 //////////////////////////////////////////////////////////////////////////////////////////Angular
-/////What is a Selector and Template ?
 
 /////////////////////////////////////Diffrence between api , Restapi, Restfulapi
 In .NET Core, an API is a general interface for communication between systems, while a REST API specifically follows REST
@@ -22340,6 +23518,285 @@ Ensures an employee must belong to a valid department.
 4. Unique Key is used for unique constraints (like emails), Foreign Key is used for table relationships (like Employee-Department).
 
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+Difference Between IEnumerable and IQueryable
+
+This is one of the most common C# / Entity Framework interview questions.
+
+
+---
+
+✅ Easiest Definition
+
+IEnumerable
+
+> IEnumerable fetches data first and then applies filtering in memory.
+
+
+
+Database
+    ↓
+Fetch All Data
+    ↓
+Filter in C# Memory
+
+
+---
+
+IQueryable
+
+> IQueryable sends the filtering to the database and fetches only the required data.
+
+
+
+Database
+    ↓
+Apply Filter in SQL
+    ↓
+Fetch Required Data
+
+
+---
+
+Example
+
+Suppose Employee table has:
+
+100000 Records
+
+
+---
+
+IEnumerable Example
+
+IEnumerable<Employee> employees =
+    context.Employees;
+
+var result =
+    employees.Where(x => x.Id == 1);
+
+What happens?
+
+SQL Executed:
+
+SELECT * FROM Employees
+
+100000 records come from database.
+
+Then:
+
+Where(x => x.Id == 1)
+
+runs in C# memory.
+
+
+---
+
+IQueryable Example
+
+IQueryable<Employee> employees =
+    context.Employees;
+
+var result =
+    employees.Where(x => x.Id == 1);
+
+Generated SQL:
+
+SELECT *
+FROM Employees
+WHERE Id = 1
+
+Only required record comes from database.
+
+
+---
+
+Real-Life Example
+
+Imagine a library with:
+
+100,000 books
+
+
+---
+
+IEnumerable
+
+Bring all 100,000 books to me
+
+Then I will find C# book
+
+❌ Slow
+
+
+---
+
+IQueryable
+
+Go to shelf
+
+Find C# book
+
+Bring only that book
+
+✅ Fast
+
+
+---
+
+Comparison Table
+
++----------------+------------------------+------------------------+
+| Feature | IEnumerable | IQueryable |
++----------------+------------------------+------------------------+
+| Namespace | System.Collections | System.Linq |
++----------------+------------------------+------------------------+
+| Filtering | In Memory | In Database |
++----------------+------------------------+------------------------+
+| Performance | Slower for large data | Faster for large data |
++----------------+------------------------+------------------------+
+| SQL Generated | No | Yes |
++----------------+------------------------+------------------------+
+| Best For | Small Data | Large Data |
++----------------+------------------------+------------------------+
+| Deferred Exec | Yes | Yes |
++----------------+------------------------+------------------------+
+
+
+---
+
+When to Use IEnumerable?
+
+Use when:
+
+Data is already in memory
+
+Small collection
+
+Array
+
+List<T>
+
+Example:
+
+List<int> numbers =
+    new List<int> {1,2,3,4,5};
+
+IEnumerable<int> result =
+    numbers.Where(x => x > 3);
+
+Perfect.
+
+
+---
+
+When to Use IQueryable?
+
+Use when:
+
+Entity Framework
+
+Database Queries
+
+Large Tables
+
+Pagination
+
+Example:
+
+var employees =
+    context.Employees
+           .Where(x => x.Salary > 50000);
+
+Perfect.
+
+
+---
+
+Property Project Example
+
+Suppose:
+
+Property Table
+
+contains:
+
+10,00,000 Properties
+
+
+---
+
+Bad (IEnumerable)
+
+IEnumerable<Property> properties =
+    context.Properties;
+
+var result =
+    properties.Where(x => x.City == "Bangalore");
+
+Loads all properties first.
+
+❌ Huge memory usage.
+
+
+---
+
+Good (IQueryable)
+
+IQueryable<Property> properties =
+    context.Properties;
+
+var result =
+    properties.Where(x => x.City == "Bangalore");
+
+Generated SQL:
+
+SELECT *
+FROM Properties
+WHERE City = 'Bangalore'
+
+✅ Fast
+
+✅ Efficient
+
+
+---
+
+Interview Answer (Small)
+
+> IEnumerable performs filtering in memory after fetching data, whereas IQueryable builds a SQL query and executes filtering at the database level. IQueryable is generally preferred with Entity Framework because it improves performance by retrieving only the required data.
+
+
+
+
+---
+
+🧠 Memory Trick
+
+IEnumerable
+=
+Get All → Then Filter
+
+IQueryable
+=
+Filter First → Then Get
+
+
+---
+
+Topic Placement
+
+Backend
+ └── C#
+      └── LINQ
+           ├── IEnumerable
+           ├── IQueryable
+           ├── Deferred Execution
+           └── LINQ Operators
+
+One-Line Interview Revision
+
+> IEnumerable filters data in application memory, while IQueryable filters data in the database and is preferred for Entity Framework queries.
 /////////////////////////////////////////////////////////////////////////IEnumerable and IQuerable and ICollection and List
 Difference Between IEnumerable and IQueryable in C# (Easy Explanation for Interviews)
 🔹 Example of IEnumerable (Client-Side Execution, Inefficient for Databases)
@@ -24367,7 +25824,6 @@ Top 50 Full Stack Developer Interview Questions**, Mostly asked in MNCs like Del
 47. Angular Dependency Injection.
 48. Observables & RxJS.
 49. Angular Routing.
-50. Angular Lifecycle Hooks.
 
 ////////////////////////////////////////////////////////////////////////////////////
 #LTIMindtree .NET Angular Full Stack Developer Interview
@@ -24384,7 +25840,6 @@ Asp .Net
 
 Angular
 
-11. What are Angular lifecycle hooks?
 12. Difference between reactive forms and template-driven forms?
 13. How do route guards work in Angular?
 14. Observables vs Promises – key differences?
@@ -24486,7 +25941,6 @@ Angular
 
 ### ✅ **Angular**
 
-16. Difference between Observable and Promise in Angular.
 17. Template-driven vs Reactive Forms in Angular.
 19. What is Change Detection and how does it work in Angular?
 20. How do you call and bind REST API data in Angular component?
@@ -26693,12 +28147,218 @@ Ahead-of-Time(AOT)  Compile your application and libraries at build time.
 
 -->All the latest Angulae versions use AOT to compile Typescript to Javascript.
 ////////////////////////
-What is a Selector and Template
-Selector :- A selector is used to identify each component uniquely into the component tree.
---> Where to show.
+These are two very common Angular interview questions.
 
-Templete --> A Templete is a HTML View of an Angular component.
-Templete --> What to show
+
+---
+
+1️⃣ Selector
+
+✅ Easiest Definition
+
+> A Selector is used to uniquely identify a component and tell Angular where to display that component.
+
+
+
+Simple Meaning
+
+Selector = Where to Show
+
+
+---
+
+Example
+
+@Component({
+  selector: 'app-property-list',
+  templateUrl: './property-list.component.html'
+})
+export class PropertyListComponent
+{
+}
+
+Selector:
+
+'app-property-list'
+
+Used in HTML:
+
+<app-property-list></app-property-list>
+
+What happens?
+
+Angular finds:
+<app-property-list>
+
+        ↓
+
+Loads PropertyListComponent
+
+        ↓
+
+Displays its HTML
+
+
+---
+
+Real-Life Example
+
+Think of Selector as:
+
+Home Address
+
+If someone knows your address:
+
+They know WHERE to come.
+
+Similarly:
+
+Selector tells Angular WHERE to render the component.
+
+
+---
+
+2️⃣ Template
+
+✅ Easiest Definition
+
+> A Template is the HTML view of an Angular component.
+
+
+
+Simple Meaning
+
+Template = What to Show
+
+
+---
+
+Example
+
+<h2>Property List</h2>
+
+<p>Available Properties</p>
+
+This HTML is the Template.
+
+
+---
+
+What happens?
+
+Selector
+    ↓
+Find Component
+    ↓
+Load Template
+    ↓
+Display HTML
+
+
+---
+
+🏠 Property Project Example
+
+Component
+
+@Component({
+  selector: 'app-property',
+  templateUrl: './property.component.html'
+})
+export class PropertyComponent
+{
+}
+
+
+---
+
+Template
+
+<h2>Property Details</h2>
+
+<p>Price: ₹50 Lakhs</p>
+
+<p>Location: Bangalore</p>
+
+
+---
+
+Usage
+
+<app-property></app-property>
+
+Angular:
+
+Selector
+    ↓
+app-property
+    ↓
+Find Component
+    ↓
+Load Template
+    ↓
+Show Property Details HTML
+
+
+---
+
+Interview Notes
+
+Selector
+--------
+Definition:
+Used to uniquely identify a component and tell Angular where to display it.
+
+Easy Meaning:
+Where to Show
+
+Example:
+selector: 'app-property'
+
+Usage:
+<app-property></app-property>
+
+
+Template
+--------
+Definition:
+The HTML view of an Angular component.
+
+Easy Meaning:
+What to Show
+
+Example:
+<h2>Property Details</h2>
+
+Usage:
+Displays UI to the user.
+
+
+---
+
+🎯 Interview Answer (30 Seconds)
+
+> A Selector is used to uniquely identify a component and tells Angular where to render the component in the UI. A Template is the HTML view of the component and defines what content should be displayed. In simple words, Selector = Where to Show and Template = What to Show.
+
+
+
+📌 Topic Placement
+
+Angular
+ └── Components
+      ├── Selector
+      ├── Template
+      ├── TemplateUrl
+      ├── Styles
+      └── Component Lifecycle
+
+🧠 Memory Trick
+
+Selector = Where to Show
+
+Template = What to Show
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ->
 ->
@@ -26718,6 +28378,7 @@ moving to the next one.
           ->
 
 
+///////////////////////////////////////////////////////////////////////////////////////////////What is the difference between Promise and Observable?
 
 Observables                                 Promises
 
@@ -26731,9 +28392,286 @@ Observables                                 Promises
 -> have cancell by using unsubcribe.            -> Are not cancelled.
 
 
-/////////////////////////
-RxJx
-Rxjs is library of javaScript used in angular for handling asynchrouns data such as Api calls. It provide observables.
+////////////////////////////////////////////////////////////////////////////////////////////////////////RxJx
+Easiest Definition
+
+> RxJS (Reactive Extensions for JavaScript) is a library used to handle asynchronous data streams such as API calls, user events, timers, and real-time data.
+
+
+
+Simple Meaning
+
+RxJS = Handle data that comes later
+
+or
+
+RxJS = Listen for data and react when it arrives
+
+
+---
+
+🧠 Real-Life Example
+
+Suppose you order food online.
+
+Order Food
+    ↓
+Wait
+    ↓
+Food Arrives
+    ↓
+Take Action
+
+You don't continuously check the restaurant.
+
+The restaurant notifies you when the food is ready.
+
+This is exactly how RxJS works.
+
+
+---
+
+Why RxJS is Needed?
+
+Without RxJS:
+
+API Call
+    ↓
+Wait
+    ↓
+Get Data
+
+Managing many asynchronous operations becomes difficult.
+
+RxJS provides:
+
+Observables
+Operators
+Subscriptions
+
+to handle them easily.
+
+
+---
+
+Core Concepts of RxJS
+
+1️⃣ Observable
+
+Definition
+
+> Observable is a stream of data that can emit values over time.
+
+
+
+Example:
+
+import { Observable } from 'rxjs';
+
+const numbers = new Observable(observer => {
+
+  observer.next(1);
+  observer.next(2);
+  observer.next(3);
+
+});
+
+Think:
+
+Observable = Data Producer
+
+
+---
+
+2️⃣ Observer / Subscribe
+
+Definition
+
+> Subscribe is used to receive data from an Observable.
+
+
+
+numbers.subscribe(data => {
+   console.log(data);
+});
+
+Output:
+
+1
+2
+3
+
+Think:
+
+Subscribe = Data Consumer
+
+
+---
+
+Angular HTTP Example
+
+this.http.get('/api/properties')
+.subscribe(data => {
+   console.log(data);
+});
+
+Flow:
+
+API
+ ↓
+Observable
+ ↓
+Subscribe
+ ↓
+Receive Data
+
+
+---
+
+🏠 Property Project Example
+
+Suppose:
+
+Get Properties
+Get Users
+Get Payments
+Get Notifications
+
+All these APIs return:
+
+Observable<T>
+
+Example:
+
+getProperties(): Observable<Property[]>
+{
+   return this.http.get<Property[]>('/api/properties');
+}
+
+
+---
+
+Common RxJS Operators
+
+map()
+
+Transform data.
+
+this.http.get('/api/users')
+.pipe(
+   map(users => users.length)
+)
+
+
+---
+
+filter()
+
+Filter data.
+
+of(1,2,3,4,5)
+.pipe(
+   filter(x => x > 3)
+)
+
+Output:
+
+4
+5
+
+
+---
+
+debounceTime()
+
+Used in search boxes.
+
+debounceTime(500)
+
+Meaning:
+
+Wait 500ms
+Then call API
+
+
+---
+
+switchMap()
+
+Cancel previous API call.
+
+Very common in:
+
+Search Functionality
+Auto Complete
+
+
+---
+
+Subject
+
+A special Observable that can both:
+
+Send Data
+Receive Data
+
+const subject = new Subject<string>();
+
+subject.next("Hello");
+
+Used for:
+
+Parent-Child Communication
+Shared Service Communication
+
+
+---
+
+Interview Answer (Small)
+
+> RxJS is a reactive programming library used in Angular to handle asynchronous operations such as API calls, user events, timers, and real-time updates. It provides Observables, Observers, Subjects, and Operators for managing data streams efficiently.
+
+
+
+
+---
+
+Interview Answer (5–8 Years Experience)
+
+> Angular heavily relies on RxJS for reactive programming. HTTP requests, form events, routing events, and state changes are all represented as Observables. RxJS operators such as map, filter, switchMap, and debounceTime help transform and manage asynchronous data streams efficiently while keeping the code clean and maintainable.
+
+
+
+
+---
+
+📌 Topic Placement
+
+Angular
+ └── RxJS
+      ├── Observable
+      ├── Observer
+      ├── Subscription
+      ├── Operators
+      │ ├── map
+      │ ├── filter
+      │ ├── switchMap
+      │ └── debounceTime
+      ├── Subject
+      ├── BehaviorSubject
+      └── Async Pipe
+
+🧠 Memory Trick
+
+Observable = Produces Data
+
+Subscribe = Receives Data
+
+RxJS = Manages Asynchronous Data
+
+One-Line Revision
+
+> RxJS is a library that helps Angular handle asynchronous data streams using Observables, Subscriptions, Subjects, and Operators.
 
 ////////////////////////
 What is observable? How to implement it.
@@ -29037,9 +30975,6 @@ Ahead-of-Time(AOT)  Compile your application and libraries at build time.
 
 
 -->All the latest Angulae versions use AOT to compile Typescript to Javascript.
-////////////////////////
-What is a Selector and Template
-Selector :- A selector is used to identify each component uniquely into the component tree.
 
 ///////////////////////////////15
 What is Data Binding in Angular?V. IMP.
@@ -30186,9 +32121,7 @@ Ahead-of-Time(AOT)  Compile your application and libraries at build time.
 
 
 -->All the latest Angulae versions use AOT to compile Typescript to Javascript.
-////////////////////////
-What is a Selector and Template
-Selector :- A selector is used to identify each component uniquely into the component tree.
+
 
 ///////////////////////////////15
 What is Data Binding in Angular?V. IMP.
@@ -30307,155 +32240,7 @@ Angular supports 4 types: Interpolation, Property Binding, Event Binding, and Tw
 
 
 
-/////////////////////////////////////
 
-Absolutely, Abhishek! Here's a very easy-to-remember, interview-friendly, and code-based explanation for each Angular question (Q27 to Q30 + repeated Q20). Think of these as smart short answers with real understanding.
-
-
----
-
-✅ Q27. What is a Decorator in Angular?
-
-> Decorator is a special function in Angular that adds extra features to classes, properties, methods, or parameters.
-
-
-
-You’ll see them starting with @ symbol like @Component, @Input, @Injectable.
-
-
----
-
-✅ Example:
-
-@Component({
-  selector: 'app-user',
-  templateUrl: './user.component.html'
-})
-export class UserComponent {}
-
-🧠 This tells Angular:
-“Hey, this class is a component and it has a selector + template.”
-
-
----
-
-✅ Q28. What are the types of Decorators in Angular?
-
-There are 4 main types:
-
-Decorator	Use Case	Example
-
-@Component()	Declares a class as a component	@Component({...})
-@Directive()	Declares a custom directive	@Directive({...})
-@Injectable()	Marks a class for Dependency Injection	@Injectable()
-@Input() / @Output()	For component communication (parent-child)	@Input() name: string;
-
-
-
----
-
-✅ Q29. What are Pipes in Angular?
-
-> Pipes are used to transform data in the template.
-
-
-
-🧠 Example: Format dates, currency, uppercase/lowercase.
-
-
----
-
-✅ Built-in Pipe Example:
-
-<p>{{ today | date:'fullDate' }}</p>
-
-today = new Date();
-
-Output: Wednesday, May 29, 2025
-
-
----
-
-✅ Types of Pipes:
-
-Type	Example	Description
-
-Built-in	date, uppercase, currency, json, percent	Already provided by Angular
-Custom	You create your own	@Pipe({ name: 'myPipe' })
-
-
-
----
-
-✅ Parameterized Pipe:
-
-> You pass a parameter to the pipe for customization.
-
-
-
-✅ Example:
-
-<p>{{ price | currency:'INR':'symbol' }}</p>
-
-Converts number to: ₹1,000.00
-
-
----
-
-✅ Q30. What is Chaining Pipes?
-
-> You can apply multiple pipes together, one after the other.
-
-
-
-✅ Example:
-
-<p>{{ name | uppercase | slice:0:4 }}</p>
-
-If name = "abhishek", output = ABHI
-(First uppercase, then slice first 4 letters).
-
-✅ Q31. What is a Service in Angular?
-
-> A Service is a reusable TypeScript class in Angular used to share logic, fetch data, or hold values across components.
-
-
-
-🧠 Think of a service like a helper file.
-
-
----
-
-✅ Q32. How to create a Service in Angular?
-
-Use Angular CLI:
-
-ng generate service my-data
-
-This creates:
-
-my-data.service.ts
-
-
-
----
-
-✅ Example:
-
-// my-data.service.ts
-import { Injectable } from '@angular/core';
-
-@Injectable({
-  providedIn: 'root'
-})
-export class MyDataService {
-  getUserName() {
-    return "Abhishek Singh";
-  }
-}
-
-
----
 
 //////////////////////////////////////////////////////////////////////✅ Q33. How to use Dependency Injection with a Service in Angular?
 
@@ -30556,30 +32341,6 @@ This is useful when:
 You want separate copies of a service (e.g., counters, temporary storage).
 
 
-
----
-
-✅ Q35. What is a Provider in Angular?
-
-> A provider tells Angular how to create and inject a service.
-
-
-
-You define it in:
-
-@Injectable({ providedIn: 'root' }) → auto global provider.
-
-OR inside providers: [] in module/component.
-
-
-✅ Example:
-
-@NgModule({
-  providers: [MyDataService]  // this is a provider
-})
-
-
----
 
 ✅ Q36. What is the role of @Injectable in a Service?
 
