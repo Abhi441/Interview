@@ -1409,3 +1409,677 @@ Uploads Video
         ↓
 All Subscribers Get Notification
 That is the Observer Design Pattern in its simplest form.
+
+
+
+/////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
+
+Abhishek, this is a classic Low Level Design (LLD) interview question.
+Interviewers ask this to check:
+
+OOP concepts
+
+SOLID principles
+
+Clean code
+
+Extensibility
+
+Class design
+
+Thinking process
+
+
+I’ll explain it in an interview-style approach.
+
+Design Tic Tac Toe Game in C# (LLD)
+
+
+---
+
+1. Requirement Gathering (Always Start Here in Interview)
+
+Before coding, clarify requirements.
+
+Functional Requirements
+
+Two players
+
+N × N board (not hardcoded 3×3)
+
+Players take turns
+
+Player marks cell
+
+Prevent invalid moves
+
+Detect winner
+
+Detect draw
+
+Show board
+
+
+
+---
+
+Non Functional Requirements
+
+Extensible
+
+Easy to test
+
+OOP based
+
+Maintainable
+
+
+
+---
+
+2. Identify Entities
+
+From requirements:
+
+Game
+Board
+Cell
+Player
+Symbol
+
+
+---
+
+3. Class Diagram
+
+Game
+ |
+ |------ Board
+ |
+ |------ Player
+ |
+ |------ Player
+
+Board
+ |
+ |------ Cell[][]
+
+Player
+ |
+ |------ Name
+ |------ Symbol
+
+
+---
+
+4. Enum
+
+Symbol
+
+public enum Symbol
+{
+    X,
+    O
+}
+
+
+---
+
+5. Cell Class
+
+Single square.
+
+public class Cell
+{
+    public Symbol? Symbol { get; private set; }
+
+    public bool IsEmpty()
+    {
+        return Symbol == null;
+    }
+
+    public void Mark(Symbol symbol)
+    {
+        Symbol = symbol;
+    }
+}
+
+
+---
+
+Why Symbol?
+
+X
+O
+Empty
+
+
+---
+
+6. Player Class
+
+Represents player.
+
+public class Player
+{
+    public string Name { get; }
+
+    public Symbol Symbol { get; }
+
+    public Player(
+        string name,
+        Symbol symbol)
+    {
+        Name = name;
+        Symbol = symbol;
+    }
+}
+
+
+---
+
+Example
+
+Player1 → Abhishek → X
+Player2 → John → O
+
+
+---
+
+7. Board Class
+
+Core logic.
+
+public class Board
+{
+    private readonly Cell[,] _cells;
+
+    public int Size { get; }
+
+    public Board(int size)
+    {
+        Size = size;
+
+        _cells =
+            new Cell[size, size];
+
+        Initialize();
+    }
+
+    private void Initialize()
+    {
+        for(int i=0;i<Size;i++)
+        {
+            for(int j=0;j<Size;j++)
+            {
+                _cells[i,j]=
+                    new Cell();
+            }
+        }
+    }
+
+    public bool PlaceMove(
+        int row,
+        int col,
+        Symbol symbol)
+    {
+        if(row<0 ||
+           row>=Size ||
+           col<0 ||
+           col>=Size)
+            return false;
+
+        if(!_cells[row,col]
+                .IsEmpty())
+            return false;
+
+        _cells[row,col]
+             .Mark(symbol);
+
+        return true;
+    }
+
+    public bool IsFull()
+    {
+        for(int i=0;i<Size;i++)
+        {
+            for(int j=0;j<Size;j++)
+            {
+                if(
+                    _cells[i,j]
+                    .IsEmpty())
+                    return false;
+            }
+        }
+
+        return true;
+    }
+
+    public Cell GetCell(
+        int row,
+        int col)
+    {
+        return _cells[row,col];
+    }
+
+    public void Print()
+    {
+        for(int i=0;i<Size;i++)
+        {
+            for(int j=0;j<Size;j++)
+            {
+                Console.Write(
+                _cells[i,j]
+                .Symbol?.ToString()
+                ?? "-");
+
+                Console.Write(" ");
+            }
+
+            Console.WriteLine();
+        }
+    }
+}
+
+
+---
+
+8. Win Strategy
+
+Separate winner logic.
+
+Interviewers love this.
+
+public interface IWinningStrategy
+{
+    bool HasWon(
+        Board board,
+        Symbol symbol);
+}
+
+
+---
+
+9. Default Winning Strategy
+
+public class DefaultWinningStrategy
+    : IWinningStrategy
+{
+    public bool HasWon(
+        Board board,
+        Symbol symbol)
+    {
+        int size =
+            board.Size;
+
+        for(int i=0;i<size;i++)
+        {
+            bool row=true;
+
+            for(int j=0;j<size;j++)
+            {
+                if(board
+                    .GetCell(i,j)
+                    .Symbol
+                    != symbol)
+                {
+                    row=false;
+
+                    break;
+                }
+            }
+
+            if(row)
+                return true;
+        }
+
+        for(int j=0;j<size;j++)
+        {
+            bool col=true;
+
+            for(int i=0;i<size;i++)
+            {
+                if(board
+                    .GetCell(i,j)
+                    .Symbol
+                    != symbol)
+                {
+                    col=false;
+
+                    break;
+                }
+            }
+
+            if(col)
+                return true;
+        }
+
+        bool diag=true;
+
+        for(int i=0;i<size;i++)
+        {
+            if(
+                board
+                .GetCell(i,i)
+                .Symbol
+                != symbol)
+            {
+                diag=false;
+            }
+        }
+
+        if(diag)
+            return true;
+
+        diag=true;
+
+        for(int i=0;i<size;i++)
+        {
+            if(
+                board
+                .GetCell(
+                    i,
+                    size-i-1)
+                .Symbol
+                != symbol)
+            {
+                diag=false;
+            }
+        }
+
+        return diag;
+    }
+}
+
+
+---
+
+Why Strategy Pattern?
+
+Tomorrow:
+
+4 in row
+5 in row
+Custom rules
+
+No Game class change.
+
+
+---
+
+10. Game Class
+
+Orchestrator.
+
+public class Game
+{
+    private readonly Board _board;
+
+    private readonly Player[] _players;
+
+    private readonly
+        IWinningStrategy
+        _winningStrategy;
+
+    private int turn;
+
+    public Game(
+        int size,
+        Player p1,
+        Player p2)
+    {
+        _board =
+            new Board(size);
+
+        _players =
+            new[]
+            {
+                p1,
+                p2
+            };
+
+        _winningStrategy =
+            new DefaultWinningStrategy();
+    }
+
+    public void Play(
+        int row,
+        int col)
+    {
+        var player =
+            _players[turn];
+
+        bool placed =
+            _board
+            .PlaceMove(
+                row,
+                col,
+                player.Symbol);
+
+        if(!placed)
+        {
+            Console.WriteLine(
+                "Invalid Move");
+
+            return;
+        }
+
+        _board.Print();
+
+        if(
+            _winningStrategy
+            .HasWon(
+                _board,
+                player.Symbol))
+        {
+            Console.WriteLine(
+                $"{player.Name} Wins");
+
+            return;
+        }
+
+        if(
+            _board.IsFull())
+        {
+            Console.WriteLine(
+                "Draw");
+
+            return;
+        }
+
+        turn =
+            (turn+1)%2;
+    }
+}
+
+
+---
+
+11. Main Method
+
+class Program
+{
+    static void Main()
+    {
+        var game =
+            new Game(
+                3,
+
+                new Player(
+                    "Abhishek",
+                    Symbol.X),
+
+                new Player(
+                    "John",
+                    Symbol.O)
+            );
+
+        game.Play(0,0);
+
+        game.Play(1,0);
+
+        game.Play(0,1);
+
+        game.Play(1,1);
+
+        game.Play(0,2);
+    }
+}
+
+
+---
+
+Output
+
+X - -
+- - -
+- - -
+
+X - -
+O - -
+- - -
+
+X X -
+O - -
+- - -
+
+X X -
+O O -
+- - -
+
+X X X
+O O -
+
+Abhishek Wins
+
+
+---
+
+12. Time Complexity
+
+Move:
+
+O(1)
+
+Win Check:
+
+O(N²)
+
+Optimized approach:
+
+Maintain:
+
+Row Count
+Column Count
+Diagonal Count
+
+Then:
+
+Winner Check → O(1)
+
+
+---
+
+13. SOLID Principles Used
+
+S
+
+Board → Board Logic
+Player → Player Info
+Game → Orchestration
+
+
+---
+
+O
+
+Add:
+
+Ultimate TicTacToe
+Custom Winner
+
+without modification.
+
+
+---
+
+D
+
+IWinningStrategy
+
+Dependency inversion.
+
+
+---
+
+14. Interview Answer Flow
+
+When asked:
+
+Design Tic Tac Toe
+
+Answer:
+
+Requirements
+↓
+Entities
+↓
+Class Diagram
+↓
+Interfaces
+↓
+Implementation
+↓
+Complexity
+↓
+Extensibility
+
+That is a production-style Tic Tac Toe Low Level Design in C#.
+
+abhishek singh
+11:27 PM (21 minutes ago)
+This video covers 30 essential System Design interview questions, categorized by experience level. Here is the full list of questions discussed: System Design Q
+
+abhishek singh <abhisheksinghchauhan442@gmail.com>
+11:29 PM (18 minutes ago)
+to me
+
+This video covers 30 High Level Design (HLD) interview questions, categorized by experience level. Here is the full list:
+
+Freshers / Beginners:
+1. What is high level design (HLD)? (0:01:15)
+2. What are the main components of HLD? (0:02:21)
+3. Why is HLD important in system design? (0:03:21)
+4. What is the difference between HLD and LLD? (0:04:09)
+5. What is scalability in HLD? (0:05:04)
+6. What are the functional and non-functional requirements in HLD? (0:05:52)
+7. What is the role of APIs in HLD? (0:06:45)
+8. What is latency and why is it important in system design? (0:07:36)
+9. What is load balancing in HLD? (0:08:26)
+10. How would you design a URL shortener like Bitly? (0:09:21)
+
+Intermediate (1-3 years experience):
+11. What is a microservices architecture in HLD? (0:10:19)
+12. What is eventual consistency, and where is it used? (0:11:20)
+13. How would you design a scalable notification service? (0:12:15)
+14. What is sharding in database design? (0:13:05)
+15. What is caching and why is it used? (0:13:47)
+16. What is a message queue and why is it important? (0:14:37)
+17. How would you design a real-time chat application? (0:15:27)
+18. What is CAP theorem and its importance? (0:16:13)
+19. What is a CDN and how does it improve performance? (0:17:04)
+20. How would you design an online food delivery system like Swiggy or Zomato? (0:18:00)
+
+Advanced (Experienced candidates):
+21. What is high availability (HA) architecture? (0:18:56)
+22. What is fault tolerance and how is it designed? (0:20:00)
+23. How would you design a distributed logging system? (0:20:50)
+24. What is CQRS and where is it used? (0:21:41)
+25. What is event sourcing? (0:22:30)
+26. How to design a large scale video streaming platform like Netflix? (0:23:16)
+27. What is a read replica architecture and why is it used? (0:24:03)
+28. What are design bottlenecks and how do you identify them? (0:24:51)
+29. How would you design a payment processing system? (0:25:41)
+30. What is multi-region architecture and why is it needed? (0:26:21)
