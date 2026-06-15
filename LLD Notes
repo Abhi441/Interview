@@ -1,16 +1,1033 @@
 This video covers 30 High Level Design (HLD) interview questions, categorized by experience level. Here is the full list:
 
 Freshers / Beginners:
-1. What is high level design (HLD)? (0:01:15)
-2. What are the main components of HLD? (0:02:21)
-3. Why is HLD important in system design? (0:03:21)
-4. What is the difference between HLD and LLD? (0:04:09)
+//////////////////////////////////////////////////////////////////////////////////////////1. What is high level design (HLD)?
+ Easiest Definition
+
+> High Level Design (HLD) explains the overall architecture of the system and shows how major components communicate with each other.
+
+
+
+Simple meaning:
+
+High Level Design
+=
+Big Picture of System
+
+or
+
+HLD
+=
+What components exist
++
+How they talk
+
+
+---
+
+🧠 Real-Life Example
+
+Suppose someone wants to build a house.
+
+Before building:
+
+They decide:
+
+Kitchen
+
+Bedroom
+
+Bathroom
+
+Hall
+
+Connections
+
+They do NOT decide:
+
+Tile Color
+
+Door Size
+
+Wall Thickness
+
+That comes later.
+
+This first plan is:
+
+High Level Design
+
+
+---
+
+In Software
+
+Suppose we build:
+
+Property Buy/Sell Application
+
+High Level Design asks:
+
+Frontend?
+
+Backend?
+
+Database?
+
+Cache?
+
+Authentication?
+
+Notifications?
+
+
+---
+
+Example HLD
+
+Users
+  ↓
+Angular Frontend
+  ↓
+API Gateway
+  ↓
+.NET Web API
+  ↓
+Business Services
+  ↓
+SQL Server
+
+Extra Components:
+
+Redis Cache
+
+Azure Blob Storage
+
+Email Service
+
+Payment Gateway
+
+Notice:
+
+We are NOT writing code.
+
+We are deciding:
+
+Major Components
++
+Communication
+
+
+---
+
+Main Parts of HLD
+
+1. Architecture
+
+Example:
+
+Monolith
+
+Microservices
+
+Layered Architecture
+
+
+---
+
+2. Components
+
+Example:
+
+Frontend
+
+Backend
+
+Database
+
+Cache
+
+
+---
+
+3. Communication
+
+Example:
+
+REST API
+
+HTTP
+
+Message Queue
+
+
+---
+
+4. Scalability
+
+Example:
+
+Load Balancer
+
+Multiple Servers
+
+
+---
+
+5. Security
+
+Example:
+
+JWT
+
+Authentication
+
+Authorization
+
+
+---
+
+6. Storage
+
+Example:
+
+SQL Server
+
+MongoDB
+
+Blob Storage
+
+
+---
+
+HLD vs LLD
+
++----------------------+----------------------+
+| HLD | LLD |
++----------------------+----------------------+
+| Big Picture | Detailed Code Design |
++----------------------+----------------------+
+| Components | Classes |
++----------------------+----------------------+
+| Architecture | Methods |
++----------------------+----------------------+
+| System Flow | Implementation |
++----------------------+----------------------+
+| Example | Microservices | 
+| | Class Diagram |
++----------------------+----------------------+
+
+
+---
+
+Example
+
+HLD
+
+User
+ ↓
+Angular
+ ↓
+.NET API
+ ↓
+SQL Server
+
+
+---
+
+LLD
+
+PropertyController
+
+PropertyService
+
+PropertyRepository
+
+DTO
+
+Entity
+
+
+---
+
+Property Buy/Sell Project HLD
+
+Buyer / Seller
+       ↓
+Angular Frontend
+       ↓
+API Gateway
+       ↓
+Authentication
+       ↓
+.NET Web API
+       ↓
+Business Layer
+       ↓
+SQL Server
+       ↓
+Redis Cache
+
+Extra:
+
+Email Service
+
+Payment Service
+
+Notification Service
+
+
+---
+
+Interview Answer (Short)
+
+> High Level Design (HLD) defines the overall architecture of a system and describes major components, their interactions, communication, scalability, and deployment strategy without going into implementation details.
+
+
+
+
+---
+
+Interview Answer (5 Years Experience)
+
+> High Level Design focuses on system architecture and component interaction. It defines modules such as frontend, backend, databases, APIs, caching, authentication, scalability, and deployment. HLD helps teams understand how the complete application works before starting detailed implementation.
+
+
+
+
+---
+
+📌 Topic Placement
+
+System Design
+ ├── High Level Design (HLD)
+ │ ├── Architecture
+ │ ├── Components
+ │ ├── Scalability
+ │ ├── Security
+ │ └── Communication
+ │
+ └── Low Level Design (LLD)
+       ├── Classes
+       ├── Interfaces
+       ├── Design Patterns
+       └── Implementation
+
+🧠 Memory Trick
+
+HLD
+=
+What to Build
+
+LLD
+=
+How to Build
+
+One-Line Revision
+
+> High Level Design shows the big-picture architecture of the system and how major components interact.
+////////////////////////////////////////////////////////////////////////////////////////////2. What are the main components of HLD?
+What are the Main Components of High Level Design (HLD)?
+
+✅ Easiest Definition
+
+> HLD components are the major building blocks of a system and define how the complete application will work.
+
+
+
+Simple meaning:
+
+HLD
+=
+System Blueprint
+=
+Major Components + Connections
+
+
+---
+
+Main Components of HLD
+
+1. Client / UI
+2. Application / Backend
+3. Database
+4. API Communication
+5. Authentication & Security
+6. Cache
+7. Storage
+8. Scalability
+9. Messaging / Queue
+10. Monitoring & Logging
+11. Deployment & Infrastructure
+
+
+---
+
+1. Client / UI Layer
+
+Purpose
+
+Shows screens to users.
+
+Examples:
+
+Angular
+React
+Mobile App
+MVC Views
+
+Example:
+
+Property Listing
+Login Page
+Admin Dashboard
+
+
+---
+
+2. Backend / Application Layer
+
+Purpose
+
+Handles:
+
+Business Logic
+Validation
+Processing
+Rules
+
+Examples:
+
+.NET Web API
+
+Java Spring
+
+Node.js
+
+Example:
+
+Calculate EMI
+
+Register User
+
+Search Property
+
+
+---
+
+3. Database Layer
+
+Purpose
+
+Stores application data.
+
+Examples:
+
+SQL Server
+
+MySQL
+
+MongoDB
+
+Stores:
+
+Users
+
+Properties
+
+Orders
+
+
+---
+
+4. Communication Layer (API)
+
+Purpose
+
+Allows components to talk.
+
+Examples:
+
+REST API
+
+HTTP
+
+GraphQL
+
+gRPC
+
+Flow:
+
+Angular
+ ↓
+API
+ ↓
+.NET
+
+
+---
+
+5. Authentication & Security
+
+Purpose
+
+Control access.
+
+Examples:
+
+JWT
+
+OAuth
+
+Identity
+
+Example:
+
+Login
+
+Roles
+
+Permissions
+
+
+---
+
+6. Cache Layer
+
+Purpose
+
+Improve performance.
+
+Examples:
+
+Redis
+
+Memory Cache
+
+Flow:
+
+Request
+ ↓
+Cache
+ ↓
+Database
+
+
+---
+
+7. Storage Layer
+
+Purpose
+
+Store files.
+
+Examples:
+
+Azure Blob
+
+AWS S3
+
+Local Storage
+
+Stores:
+
+Images
+
+Documents
+
+Videos
+
+
+---
+
+8. Scalability Layer
+
+Purpose
+
+Handle many users.
+
+Examples:
+
+Load Balancer
+
+Auto Scaling
+
+Multiple Servers
+
+Flow:
+
+Users
+ ↓
+Load Balancer
+ ↓
+Server1
+Server2
+Server3
+
+
+---
+
+9. Messaging / Queue
+
+Purpose
+
+Background processing.
+
+Examples:
+
+RabbitMQ
+
+Kafka
+
+Azure Service Bus
+
+Example:
+
+Send Email
+
+Notification
+
+
+---
+
+10. Monitoring & Logging
+
+Purpose
+
+Track issues.
+
+Examples:
+
+Serilog
+
+Application Insights
+
+ELK
+
+Track:
+
+Errors
+
+Performance
+
+Logs
+
+
+---
+
+11. Deployment & Infrastructure
+
+Purpose
+
+Run application.
+
+Examples:
+
+Docker
+
+Kubernetes
+
+Azure
+
+AWS
+
+
+---
+
+Complete HLD Diagram
+
+Users
+   ↓
+Frontend (Angular)
+   ↓
+API Gateway
+   ↓
+Authentication
+   ↓
+Backend (.NET)
+   ↓
+Cache (Redis)
+   ↓
+Database (SQL Server)
+   ↓
+Storage (Blob)
+
+Extra:
+Queue
+Monitoring
+Deployment
+
+
+---
+
+Property Buy/Sell Project HLD
+
+Buyer / Seller
+      ↓
+Angular UI
+      ↓
+JWT Authentication
+      ↓
+.NET Web API
+      ↓
+Business Layer
+      ↓
+Redis
+      ↓
+SQL Server
+      ↓
+Azure Blob
+
+Background:
+RabbitMQ
+Email Service
+
+Monitoring:
+Serilog
+
+
+---
+
+Interview Answer (Short)
+
+> Main HLD components are Client/UI, Backend, Database, APIs, Authentication, Cache, Storage, Scalability, Messaging, Monitoring, and Deployment Infrastructure. These components together define the architecture of the application.
+
+
+
+
+---
+
+Topic Placement
+
+System Design
+ └── High Level Design
+      ├── Client
+      ├── Backend
+      ├── Database
+      ├── Communication
+      ├── Security
+      ├── Cache
+      ├── Storage
+      ├── Scalability
+      ├── Messaging
+      └── Deployment
+
+🧠 Memory Trick
+
+UI
+↓
+API
+↓
+Backend
+↓
+Cache
+↓
+Database
+↓
+Storage
+↓
+Deployment
+
+One-Line Revision
+
+> HLD components define the major building blocks and communication of the complete system.
+///////////////////////////////////////////////////////////////////////////////////////////////////////////3. Why is HLD important in system design?
+Easiest Definition
+
+> HLD (High Level Design) is important because it gives the complete blueprint of the system before development starts.
+
+
+
+Simple meaning:
+
+HLD
+=
+Think First
+Build Later
+
+Without HLD:
+
+People start coding
+↓
+Requirements change
+↓
+Code becomes messy
+↓
+Time and money increase
+
+
+---
+
+1. Gives Big Picture of System
+
+HLD shows:
+
+Frontend
+
+Backend
+
+Database
+
+Cache
+
+API
+
+Storage
+
+Example:
+
+User
+ ↓
+Angular
+ ↓
+.NET API
+ ↓
+SQL Server
+
+Everyone understands:
+
+How system works
+
+
+---
+
+2. Prevents Wrong Architecture Decisions
+
+Suppose your property application expects:
+
+100 users
+
+Monolith may work.
+
+But if:
+
+10 Million users
+
+You may need:
+
+Microservices
+Load Balancer
+Cache
+
+HLD helps choose early.
+
+
+---
+
+3. Improves Scalability
+
+HLD answers:
+
+If users increase
+
+Can system grow?
+
+Example:
+
+Without HLD:
+
+1 Server
+
+After traffic:
+
+Website Down
+
+With HLD:
+
+Load Balancer
+Multiple Servers
+
+
+---
+
+4. Improves Team Communication
+
+Many teams work together:
+
+Frontend Team
+
+Backend Team
+
+Database Team
+
+DevOps Team
+
+HLD gives everyone:
+
+Same understanding
+
+
+---
+
+5. Reduces Development Cost
+
+Bad Design:
+
+Build
+↓
+Find Problem
+↓
+Rewrite
+
+Good HLD:
+
+Design
+↓
+Review
+↓
+Build Once
+
+Less:
+
+Time
+Money
+Rework
+
+
+---
+
+6. Helps Identify Risks Early
+
+Questions found early:
+
+Can DB handle load?
+
+Need cache?
+
+Need queue?
+
+Need authentication?
+
+
+---
+
+7. Improves Performance
+
+HLD decides:
+
+Redis
+
+CDN
+
+Load Balancer
+
+Async Processing
+
+before coding.
+
+
+---
+
+8. Makes Maintenance Easier
+
+Future developers can understand:
+
+How components connect
+
+instead of reading:
+
+100,000 lines of code
+
+
+---
+
+🏠 Property Buy/Sell Project Example
+
+Without HLD:
+
+Angular
+ ↓
+.NET
+ ↓
+SQL
+
+Problems:
+
+Slow Search
+
+Slow Images
+
+Server Crash
+
+With HLD:
+
+Angular
+ ↓
+API Gateway
+ ↓
+JWT
+ ↓
+.NET API
+ ↓
+Redis
+ ↓
+SQL Server
+ ↓
+Blob Storage
+ ↓
+RabbitMQ
+
+Result:
+
+Fast
+Secure
+Scalable
+
+
+---
+
+Interview Answer (Short)
+
+> HLD is important because it provides the overall architecture of the system before implementation. It helps in scalability, performance, communication between teams, reducing development cost, and identifying risks early.
+
+
+
+
+---
+
+Interview Answer (5 Years Experience)
+
+> High Level Design is important because it establishes the architectural foundation of the application. It defines system components, communication, scalability, security, deployment, and integration strategy. A good HLD reduces rework and enables efficient development and maintenance.
+
+
+
+
+---
+
+📌 Topic Placement
+
+System Design
+ └── High Level Design
+      ├── Importance of HLD
+      ├── Architecture
+      ├── Scalability
+      ├── Security
+      ├── Performance
+      └── Deployment
+
+🧠 Memory Trick
+
+No HLD
+=
+Code First → Problems Later
+
+HLD
+=
+Think First → Build Better
+
+One-Line Revision
+
+> HLD is important because it defines the system blueprint and helps build scalable, maintainable, and efficient applications.
+//////////////////////////////////////////////////////////////////////////////////////////////4. What is the difference between HLD and LLD? (0:04:09)
 5. What is scalability in HLD? (0:05:04)
 6. What are the functional and non-functional requirements in HLD? (0:05:52)
 7. What is the role of APIs in HLD? (0:06:45)
 8. What is latency and why is it important in system design? (0:07:36)
 9. What is load balancing in HLD? (0:08:26)
 10. How would you design a URL shortener like Bitly? (0:09:21)
+Rate Limiting
+Idempotency
+Data Privacy/Compliance
 
 Intermediate (1-3 years experience):
 11. What is a microservices architecture in HLD? (0:10:19)
