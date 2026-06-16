@@ -1318,7 +1318,342 @@ One-Line Revision
 
 > HLD = What to Build, LLD = How to Build.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////// What is scalability in HLD?
-6. What are the functional and non-functional requirements in HLD? (0:05:52)
+What is Scalability in HLD (High Level Design)?
+
+✅ Easiest Definition
+
+> Scalability means the ability of a system to handle increasing users, traffic, and data without slowing down or crashing.
+
+
+
+Simple meaning:
+
+Scalability
+=
+More Users
++
+System Still Works Fast
+
+or
+
+Grow without breaking
+
+
+---
+
+🧠 Real-Life Example
+
+Suppose you own a restaurant.
+
+Initially:
+
+10 Customers
+↓
+1 Chef
+
+Everything works.
+
+Now:
+
+1000 Customers
+
+One chef cannot handle it.
+
+So you add:
+
+More Chefs
+More Tables
+More Counters
+
+Restaurant still works.
+
+This is:
+
+Scalability
+
+
+---
+
+In Software
+
+Suppose your Property Buy/Sell website has:
+
+Day 1:
+
+100 Users
+
+Everything works.
+
+After marketing:
+
+10,00,000 Users
+
+Without scalability:
+
+Server Crash
+Slow API
+Timeout
+
+With scalability:
+
+Add More Servers
+System Continues Running
+
+
+---
+
+Types of Scalability
+
+1. Vertical Scalability (Scale Up)
+
+Definition
+
+Increase power of existing server.
+
+Example:
+
+CPU ↑
+RAM ↑
+Storage ↑
+
+Before:
+
+Server
+8GB RAM
+
+After:
+
+Server
+64GB RAM
+
+Diagram:
+
+One Server
+   ↓
+Bigger Server
+
+Pros
+
+✅ Easy
+
+Cons
+
+❌ Limited
+
+
+---
+
+2. Horizontal Scalability (Scale Out)
+
+Definition
+
+Add more servers.
+
+Before:
+
+1 Server
+
+After:
+
+Server 1
+Server 2
+Server 3
+
+Diagram:
+
+Users
+ ↓
+Load Balancer
+ ↓
+Server1
+Server2
+Server3
+
+Pros
+
+✅ Highly scalable
+
+Cons
+
+❌ More complex
+
+
+---
+
+Example in HLD
+
+Without Scalability:
+
+Users
+ ↓
+Angular
+ ↓
+.NET API
+ ↓
+SQL
+
+Problem:
+
+Too Many Users
+↓
+Server Down
+
+
+---
+
+With Scalability:
+
+Users
+ ↓
+Load Balancer
+ ↓
+API Server1
+API Server2
+API Server3
+ ↓
+Redis Cache
+ ↓
+SQL Server
+
+System survives heavy traffic.
+
+
+---
+
+Components Used for Scalability
+
+Load Balancer
+
+Distributes requests.
+
+User1 → Server1
+User2 → Server2
+User3 → Server3
+
+
+---
+
+Cache
+
+Reduce database load.
+
+Example:
+
+Redis
+
+Flow:
+
+Request
+ ↓
+Cache
+ ↓
+Database
+
+
+---
+
+Database Scaling
+
+Techniques:
+
+Read Replica
+
+Partitioning
+
+Sharding
+
+
+---
+
+Queue
+
+Background processing.
+
+Examples:
+
+RabbitMQ
+
+Kafka
+
+
+---
+
+Property Buy/Sell Project Example
+
+Suppose:
+
+Property Search
+
+receives:
+
+10000 requests/sec
+
+Scalable HLD:
+
+Users
+ ↓
+Angular
+ ↓
+Load Balancer
+ ↓
+.NET APIs
+ ↓
+Redis
+ ↓
+SQL Server
+ ↓
+Blob Storage
+
+Result:
+
+Fast Search
+No Crash
+
+
+---
+
+Interview Answer (Short)
+
+> Scalability in HLD means designing a system so it can handle increasing users, requests, and data while maintaining performance. It is achieved using techniques such as horizontal scaling, vertical scaling, load balancing, caching, and distributed architecture.
+
+
+
+
+---
+
+Interview Answer (5 Years Experience)
+
+> Scalability is the ability of a system to grow under increasing load without degrading performance. During HLD, scalability decisions include choosing between vertical and horizontal scaling, introducing load balancers, caching, database optimization, and distributed services.
+
+
+
+
+---
+
+📌 Topic Placement
+
+System Design
+ └── HLD
+      ├── Architecture
+      ├── Scalability
+      │ ├── Vertical Scaling
+      │ ├── Horizontal Scaling
+      │ ├── Load Balancer
+      │ ├── Cache
+      │ └── Queue
+      └── Deployment
+
+🧠 Memory Trick
+
+Scalability
+=
+More Users
+Same Performance
+
+One-Line Revision
+
+> Scalability is the ability of a system to handle growth efficiently without performance degradation.
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////What are the functional and non-functional requirements in HLD?
 7. What is the role of APIs in HLD? (0:06:45)
 8. What is latency and why is it important in system design? (0:07:36)
 9. What is load balancing in HLD? (0:08:26)
