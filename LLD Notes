@@ -1654,7 +1654,683 @@ One-Line Revision
 
 > Scalability is the ability of a system to handle growth efficiently without performance degradation.
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////What are the functional and non-functional requirements in HLD?
-7. What is the role of APIs in HLD? (0:06:45)
+What are Functional and Non-Functional Requirements in HLD?
+
+This is one of the most important System Design / HLD interview questions.
+
+Before creating HLD, we first understand:
+
+What system should do
+AND
+How well system should do
+
+
+---
+
+1. Functional Requirements (FR)
+
+✅ Easiest Definition
+
+> Functional Requirements define WHAT the system should do.
+
+
+
+Simple meaning:
+
+Functional Requirement
+=
+Features
+=
+Business Requirements
+
+These describe:
+
+System Behavior
+
+
+---
+
+🧠 Real-Life Example
+
+For a Car:
+
+Functional requirements:
+
+Start Engine
+
+Move Forward
+
+Brake
+
+Turn Left
+
+These are actual functions.
+
+
+---
+
+Software Example (Property Buy/Sell Project)
+
+Suppose we build:
+
+Property Buy/Sell Application
+
+Functional Requirements:
+
+User Registration
+
+User Login
+
+Search Property
+
+Add Property
+
+Upload Images
+
+Buy Property
+
+Make Payment
+
+Send Notification
+
+Generate Invoice
+
+These are things users can do.
+
+
+---
+
+Example User Story
+
+Requirement:
+
+User should search property.
+
+Functional Requirement:
+
+Search by City
+
+Search by Price
+
+Search by Property Type
+
+
+---
+
+2. Non-Functional Requirements (NFR)
+
+✅ Easiest Definition
+
+> Non-Functional Requirements define HOW WELL the system should work.
+
+
+
+Simple meaning:
+
+Non-Functional
+=
+Quality Attributes
+
+These describe:
+
+Performance
+Security
+Scalability
+Availability
+
+
+---
+
+🧠 Real-Life Example
+
+Car Example:
+
+Speed
+
+Fuel Efficiency
+
+Safety
+
+Comfort
+
+Car already works.
+
+Now quality matters.
+
+
+---
+
+Property Project Example
+
+Non-Functional Requirements:
+
+Support 1 Million Users
+
+Response Time < 2 Seconds
+
+99.99% Availability
+
+Secure Authentication
+
+High Performance
+
+Scalable Architecture
+
+
+---
+
+Common Non-Functional Requirements
+
+Performance
+
+API Response < 1 sec
+
+
+---
+
+Scalability
+
+Handle 10 lakh users
+
+
+---
+
+Availability
+
+99.9% uptime
+
+
+---
+
+Security
+
+JWT
+
+Authorization
+
+Encryption
+
+
+---
+
+Reliability
+
+No data loss
+
+
+---
+
+Maintainability
+
+Easy code changes
+
+
+---
+
+Monitoring
+
+Logging
+
+Alerts
+
+
+---
+
+Disaster Recovery
+
+Backup
+
+Restore
+
+
+---
+
+Comparison Table
+
++----------------------+------------------------------+-----------------------------+
+| Feature | Functional Requirement | Non-Functional Requirement |
++----------------------+------------------------------+-----------------------------+
+| Meaning | What system does | How system performs |
++----------------------+------------------------------+-----------------------------+
+| Focus | Features | Quality |
++----------------------+------------------------------+-----------------------------+
+| Example | Login | Login in < 2 sec |
++----------------------+------------------------------+-----------------------------+
+| Business Concern | User Actions | System Quality |
++----------------------+------------------------------+-----------------------------+
+
+
+---
+
+Example Together
+
+Requirement:
+
+Login System
+
+Functional:
+
+User enters username
+
+Validate password
+
+Generate JWT
+
+Non-Functional:
+
+Login < 1 sec
+
+Support 10000 users
+
+Secure authentication
+
+
+---
+
+HLD Flow
+
+Requirements
+      ↓
+Functional Requirements
+      ↓
+Non-Functional Requirements
+      ↓
+High Level Design
+      ↓
+Low Level Design
+      ↓
+Development
+
+
+---
+
+Property Buy/Sell Project HLD Example
+
+Functional
+
+Login
+
+Property Search
+
+Payments
+
+Notifications
+
+Non-Functional
+
+1 Million Users
+
+99.99% Availability
+
+Fast Search
+
+Secure Payment
+
+
+---
+
+Interview Answer (Short)
+
+> Functional requirements define what the system should do, such as login, registration, and search features. Non-functional requirements define how well the system should perform, including scalability, performance, security, reliability, and availability.
+
+
+
+
+---
+
+📌 Topic Placement
+
+System Design
+ └── Requirement Gathering
+      ├── Functional Requirements
+      ├── Non-Functional Requirements
+      ├── HLD
+      └── LLD
+
+🧠 Memory Trick
+
+Functional
+=
+WHAT
+
+Non-Functional
+=
+HOW WELL
+
+One-Line Revision
+
+> Functional requirements describe features; Non-functional requirements describe quality attributes.
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// What is the role of APIs in HLD? 
+What is the Role of API in HLD (High Level Design)?
+
+✅ Easiest Definition
+
+> API (Application Programming Interface) acts as a communication bridge between different components of a system.
+
+
+
+Simple meaning:
+
+API
+=
+Messenger
+=
+Talk between systems
+
+or
+
+API
+=
+How components communicate
+
+
+---
+
+🧠 Real-Life Example
+
+Suppose you are in a restaurant.
+
+Customer
+   ↓
+Waiter
+   ↓
+Kitchen
+
+You do not directly talk to the kitchen.
+
+The waiter transfers requests.
+
+Here:
+
+Waiter = API
+
+
+---
+
+In HLD
+
+API connects:
+
+Frontend
+↓
+Backend
+↓
+Database
+
+Example:
+
+Angular
+   ↓
+REST API
+   ↓
+.NET Backend
+   ↓
+SQL Server
+
+Without API:
+
+Frontend cannot talk to Backend
+
+
+---
+
+Example Flow
+
+Suppose user searches property.
+
+User
+ ↓
+Angular
+ ↓
+GET /api/properties
+ ↓
+.NET API
+ ↓
+SQL Server
+ ↓
+Response
+ ↓
+Angular
+
+API becomes the communication layer.
+
+
+---
+
+Main Roles of API in HLD
+
+1. Communication Between Components
+
+Example:
+
+Angular
+↓
+API
+↓
+Backend
+
+API transfers:
+
+Requests
+Responses
+
+
+---
+
+2. Decoupling (Loose Coupling)
+
+Without API:
+
+Frontend tightly connected
+to database
+
+Bad.
+
+With API:
+
+Frontend
+↓
+API
+↓
+Backend
+
+Frontend changes do not affect backend.
+
+
+---
+
+3. Security
+
+API controls access.
+
+Example:
+
+User
+ ↓
+JWT Token
+ ↓
+API
+ ↓
+Validate
+
+Protects:
+
+Database
+Business Logic
+
+
+---
+
+4. Scalability
+
+API allows scaling.
+
+Example:
+
+Users
+ ↓
+Load Balancer
+ ↓
+API Servers
+ ↓
+Database
+
+Add more APIs as users increase.
+
+
+---
+
+5. Reusability
+
+One API can serve:
+
+Web App
+
+Mobile App
+
+Admin Portal
+
+Example:
+
+GET /api/properties
+
+used everywhere.
+
+
+---
+
+6. Integration with External Systems
+
+Example:
+
+Property App
+ ↓
+Payment API
+ ↓
+Bank
+
+or
+
+Property App
+ ↓
+Email API
+ ↓
+Email Service
+
+
+---
+
+Property Buy/Sell Project Example
+
+Suppose user clicks:
+
+Buy Property
+
+Flow:
+
+Angular
+ ↓
+POST /api/payment
+ ↓
+.NET API
+ ↓
+Payment Gateway
+ ↓
+Database
+ ↓
+Response
+
+API handles communication.
+
+
+---
+
+API in HLD Diagram
+
+Users
+ ↓
+Angular Frontend
+ ↓
+REST API
+ ↓
+Authentication
+ ↓
+.NET Backend
+ ↓
+Redis
+ ↓
+SQL Server
+ ↓
+Storage
+
+Notice:
+
+API
+=
+Center of Communication
+
+
+---
+
+API Types Used in HLD
+
+REST API
+
+GraphQL
+
+gRPC
+
+WebSocket
+
+Most common:
+
+REST API
+
+
+---
+
+Interview Answer (Short)
+
+> API plays the role of a communication layer in HLD. It enables interaction between frontend, backend, databases, and external services while providing scalability, security, loose coupling, and reusability.
+
+
+
+
+---
+
+Interview Answer (5 Years Experience)
+
+> In HLD, APIs define service contracts and communication between distributed components. APIs decouple frontend and backend, enable integration, support scalability, enforce security, and allow independent evolution of system modules.
+
+
+
+
+---
+
+📌 Topic Placement
+
+System Design
+ └── HLD
+      ├── Components
+      ├── API Layer
+      ├── Communication
+      ├── Security
+      ├── Scalability
+      └── Integration
+
+🧠 Memory Trick
+
+UI
+↓
+API
+↓
+Backend
+↓
+Database
+
+One-Line Revision
+
+> API is the communication bridge that allows different system components to interact in HLD.
 8. What is latency and why is it important in system design? (0:07:36)
 9. What is load balancing in HLD? (0:08:26)
 10. How would you design a URL shortener like Bitly? (0:09:21)
