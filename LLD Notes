@@ -1018,8 +1018,306 @@ Think First → Build Better
 One-Line Revision
 
 > HLD is important because it defines the system blueprint and helps build scalable, maintainable, and efficient applications.
-//////////////////////////////////////////////////////////////////////////////////////////////4. What is the difference between HLD and LLD? (0:04:09)
-5. What is scalability in HLD? (0:05:04)
+//////////////////////////////////////////////////////////////////////////////////////////////4. What is the difference between HLD and LLD?
+Difference Between HLD and LLD
+
+This is one of the most asked System Design interview questions.
+
+
+---
+
+✅ Easiest Definition
+
+HLD (High Level Design)
+
+> HLD shows the big picture architecture of the system.
+
+
+
+Simple meaning:
+
+HLD
+=
+What to Build
+
+Focus:
+
+Major Components
+Communication
+Architecture
+
+
+---
+
+LLD (Low Level Design)
+
+> LLD shows the internal implementation details of the system.
+
+
+
+Simple meaning:
+
+LLD
+=
+How to Build
+
+Focus:
+
+Classes
+Methods
+Objects
+Code
+
+
+---
+
+🧠 Real-Life Example (Building a House)
+
+HLD
+
+Before building:
+
+Bedroom
+
+Kitchen
+
+Hall
+
+Bathroom
+
+Decide:
+
+What rooms?
+How connected?
+
+No detailed measurements.
+
+
+---
+
+LLD
+
+Now decide:
+
+Door size
+
+Tile design
+
+Window location
+
+Wall thickness
+
+Detailed implementation.
+
+
+---
+
+Software Example
+
+Suppose we build:
+
+Property Buy/Sell Application
+
+
+---
+
+HLD
+
+Architecture:
+
+Users
+ ↓
+Angular
+ ↓
+.NET API
+ ↓
+SQL Server
+ ↓
+Redis
+
+Questions:
+
+Which database?
+
+Need cache?
+
+Need microservices?
+
+Need load balancer?
+
+
+---
+
+LLD
+
+Implementation:
+
+PropertyController
+
+PropertyService
+
+PropertyRepository
+
+DTO
+
+Entity
+
+Interfaces
+
+Questions:
+
+Which classes?
+
+Methods?
+
+Relationships?
+
+Design Patterns?
+
+
+---
+
+Comparison Table
+
++----------------------+----------------------------+----------------------------+
+| Feature | HLD | LLD |
++----------------------+----------------------------+----------------------------+
+| Full Form | High Level Design | Low Level Design |
++----------------------+----------------------------+----------------------------+
+| Focus | Architecture | Implementation |
++----------------------+----------------------------+----------------------------+
+| Purpose | What to Build | How to Build |
++----------------------+----------------------------+----------------------------+
+| Level | System Level | Code Level |
++----------------------+----------------------------+----------------------------+
+| Components | Modules | Classes |
++----------------------+----------------------------+----------------------------+
+| Includes | DB/API/UI | Methods/Objects |
++----------------------+----------------------------+----------------------------+
+| Audience | Architects | Developers |
++----------------------+----------------------------+----------------------------+
+| Output | Architecture Diagram | Class Diagram |
++----------------------+----------------------------+----------------------------+
+
+
+---
+
+Example Using Login Feature
+
+HLD
+
+User
+ ↓
+Angular
+ ↓
+Authentication API
+ ↓
+JWT
+ ↓
+Database
+
+Question answered:
+
+How overall login works?
+
+
+---
+
+LLD
+
+LoginController
+
+AuthService
+
+UserRepository
+
+GenerateToken()
+
+Question answered:
+
+How code works?
+
+
+---
+
+Property Buy/Sell Project
+
+HLD
+
+Buyer
+ ↓
+Angular
+ ↓
+API Gateway
+ ↓
+.NET API
+ ↓
+SQL Server
+ ↓
+Redis
+ ↓
+Blob Storage
+
+
+---
+
+LLD
+
+PropertyController
+
+PropertyService
+
+PaymentService
+
+NotificationService
+
+Repository Pattern
+
+DTO
+
+
+---
+
+Interview Answer (Short)
+
+> HLD defines the overall architecture and major system components, while LLD defines detailed implementation such as classes, methods, objects, and design patterns. In simple words, HLD tells what to build and LLD tells how to build it.
+
+
+
+
+---
+
+Topic Placement
+
+System Design
+│
+├── High Level Design (HLD)
+│ ├── Architecture
+│ ├── Scalability
+│ └── Components
+│
+└── Low Level Design (LLD)
+       ├── Classes
+       ├── Interfaces
+       ├── Design Patterns
+       └── Implementation
+
+🧠 Memory Trick
+
+HLD
+=
+Google Map
+(Big Picture)
+
+LLD
+=
+Street View
+(Detailed View)
+
+One-Line Revision
+
+> HLD = What to Build, LLD = How to Build.
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////// What is scalability in HLD?
 6. What are the functional and non-functional requirements in HLD? (0:05:52)
 7. What is the role of APIs in HLD? (0:06:45)
 8. What is latency and why is it important in system design? (0:07:36)
