@@ -6,7 +6,8 @@ Here’s the full breakdown:
 ---
 
 ## 📘 Arrays (24 problems)
-1. Set Matrix Zeroes  
+//////////////////////////////////////////////////////////////////////////////////////1. Set Matrix Zeroes
+brute force revision done
 2. Pascal’s Triangle  
 3. Next Permutation  
 4. Maximum Subarray Sum (Kadane’s Algorithm)  
