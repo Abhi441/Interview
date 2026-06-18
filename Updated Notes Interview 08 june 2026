@@ -610,45 +610,6 @@ WHAT ARE JOINS IN SOL?
 
 098. WHAT ARE FILTERS AND THEIR TYPES IN MVC?
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 099. WHAT IS AUTHENTICATION AND AUTHORIZATION IN ASP.NET MVC?
 
 0100. WHAT ARE THE TYPES OF AUTHENTICATION IN ASP.NET MVC?
@@ -1033,11 +994,9 @@ CORE?
 
 WHAT IS METAPACKAGE? WHAT IS THE NAME OF METAPACKAGE PROVIDED BY ASP.NET CORE?
 
-0199.
+0199.WHAT IS THE DIFFERENCE BETWEEN.NET CORE AND .NET 5?
 
-WHAT IS THE DIFFERENCE BETWEEN.NET CORE AND .NET 5?
-
-0200. WHAT ARE RAZOR PAGES IN.NET CORE?
+0200. WHAT ARE RAZOR PAGES IN.NET CORE? (Not Important)
 
 
 
@@ -1753,6 +1712,253 @@ Write a query to calculate the year-on-year growth of revenue.
 
 Write a query to find the ‘Nth’ highest salary from the employee table.
 
+////////////////////////////////////////////////////////////////////////////////////////////////////
+/// First understand one important thing:
+
+> .NET 5 is not a competitor of .NET Core.
+
+.NET 5 is actually the next evolution after .NET Core 3.1.
+
+
+
+Timeline:
+
+.NET Framework
+      ↓
+.NET Core 1.0
+      ↓
+.NET Core 2.0
+      ↓
+.NET Core 3.1
+      ↓
+.NET 5
+      ↓
+.NET 6
+      ↓
+.NET 7
+      ↓
+.NET 8
+
+Notice:
+
+.NET Core renamed
+↓
+.NET 5
+
+
+---
+
+✅ Easiest Definition
+
+.NET Core
+
+> Cross-platform version of .NET introduced to modernize .NET Framework.
+
+
+
+
+---
+
+.NET 5
+
+> Unified .NET platform that continued .NET Core and brought one platform for Web, Cloud, Mobile, Desktop, and APIs.
+
+
+
+
+---
+
+Comparison Table
+
++----------------------+------------------------------+-----------------------------+
+| Feature | .NET Core | .NET 5 |
++----------------------+------------------------------+-----------------------------+
+| Release | 2016 | 2020 |
++----------------------+------------------------------+-----------------------------+
+| Current Status | Older Generation | Successor of .NET Core |
++----------------------+------------------------------+-----------------------------+
+| Naming | .NET Core | Unified .NET |
++----------------------+------------------------------+-----------------------------+
+| Cross Platform | Yes | Yes |
++----------------------+------------------------------+-----------------------------+
+| Performance | Fast | Faster |
++----------------------+------------------------------+-----------------------------+
+| Support | Limited (older versions) | Modern Platform |
++----------------------+------------------------------+-----------------------------+
+| Application Types | Web/API | Web/Desktop/Cloud |
++----------------------+------------------------------+-----------------------------+
+| Future Direction | Stopped after 3.1 | Continued to .NET 6/7/8 |
++----------------------+------------------------------+-----------------------------+
+
+
+---
+
+Biggest Difference
+
+.NET Core
+
+Separate modern runtime.
+
+Example:
+
+ASP.NET Core
+Console
+API
+
+
+---
+
+.NET 5
+
+Microsoft unified:
+
+.NET Core
++
+Xamarin
++
+Mono
++
+Future Development
+
+into:
+
+One .NET
+
+
+---
+
+Example
+
+.NET Core 3.1
+
+Angular
+ ↓
+ASP.NET Core API
+ ↓
+SQL Server
+
+
+---
+
+.NET 5
+
+Angular
+ ↓
+.NET 5 API
+ ↓
+SQL Server
+ ↓
+Cloud
+ ↓
+Containers
+
+Better performance and unified ecosystem.
+
+
+---
+
+Code Example
+
+.NET Core
+
+public class Program
+{
+    public static void Main()
+    {
+        CreateHostBuilder(args)
+            .Build()
+            .Run();
+    }
+}
+
+
+---
+
+.NET 5
+
+Same concept but cleaner ecosystem.
+
+var builder =
+WebApplication.CreateBuilder(args);
+
+(Then later .NET 6 simplified hosting further.)
+
+
+---
+
+For Interviews (Important)
+
+If interviewer asks:
+
+"Which should we use today?"
+
+Answer:
+
+Do not start new projects in .NET Core 3.1.
+
+Use:
+.NET 8
+(or latest LTS)
+
+Because:
+
+.NET Core stopped at 3.1
+
+
+---
+
+Property Buy/Sell Project Example
+
+If building today:
+
+Frontend → Angular
+
+Backend → .NET 8 Web API
+
+Database → SQL Server
+
+Cache → Redis
+
+Avoid:
+
+New .NET Core 3.1 project
+
+
+---
+
+Interview Answer (Short)
+
+> .NET Core is the modern cross-platform framework introduced after .NET Framework, while .NET 5 is the next version after .NET Core 3.1 that unified the .NET ecosystem into a single platform. .NET 5 continued the evolution of .NET Core.
+
+
+
+
+---
+
+📌 Topic Placement
+
+Backend (.NET)
+ └── .NET Platform
+      ├── .NET Framework
+      ├── .NET Core
+      ├── .NET 5
+      ├── .NET 6
+      ├── .NET 8
+      └── Migration
+
+🧠 Memory Trick
+
+.NET Core
+=
+Modern .NET
+
+.NET 5
+=
+Next Version of .NET Core
+
+One-Line Revision
+
+> .NET 5 is the continuation and renamed evolution of .NET Core, not a separate technology.
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////WHAT ARE THE DIFFERENT RETURN TYPES OF A CONTROLLER ACTION METHOD?
