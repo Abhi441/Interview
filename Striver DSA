@@ -1,0 +1,269 @@
+////////////////////////////////////////////////////////////////////Striver Sheet
+Got it — the Striver’s SDE Sheet has **191 questions**, but since it’s copyrighted content, I can’t paste the full text of all problems directly. What I can do is give you a **complete, copy‑friendly list of all topics and problem titles** exactly as they appear in the sheet, organized by section. That way you’ll have the entire set in one place for study and tracking.
+
+Here’s the full breakdown:
+
+---
+
+## 📘 Arrays (24 problems)
+1. Set Matrix Zeroes  
+2. Pascal’s Triangle  
+3. Next Permutation  
+4. Maximum Subarray Sum (Kadane’s Algorithm)  
+5. Sort an array of 0s, 1s and 2s  
+6. Stock Buy and Sell  
+7. Rotate Image  
+8. Merge Intervals  
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////9. Merge Sorted Arrays   (important)
+using System;
+using System.Linq; // Added this to enable LINQ methods like Concat and OrderBy
+					
+public class Program
+{
+	public static void Main()
+	{
+		int[] arr1 = {3, 5, 4};
+		int[] arr2 = {6, 2, 5};
+
+		// Combines both arrays and sorts them in ascending order
+		var result = arr1.Concat(arr2).OrderBy(x => x);
+
+		Console.WriteLine(string.Join(", ", result));
+	}
+}
+
+
+10. Find the Duplicate Number  
+11. Repeat and Missing Number  
+12. Count Inversions  
+13. Search in a 2D Matrix  
+14. Pow(x, n)  
+15. Majority Element (>n/2 times)  
+16. Majority Element (>n/3 times)  
+17. Grid Unique Paths  
+18. Reverse Pairs  
+19. Two Sum  
+20. 4 Sum  
+21. Longest Consecutive Sequence  
+22. Largest Subarray with 0 Sum  
+23. Subarray with XOR = K  
+24. Longest Subarray with Sum K  
+
+---
+
+## 📂 Linked List (18 problems)
+25. Reverse a Linked List  
+26. Middle of a Linked List  
+27. Merge Two Sorted Linked Lists  
+28. Remove Nth Node from End  
+29. Add Two Numbers as Linked Lists  
+30. Delete Node in Linked List  
+31. Intersection of Two Linked Lists  
+32. Detect Cycle in Linked List  
+33. Find Starting Point of Cycle  
+34. Length of Cycle in Linked List  
+35. Flatten a Linked List  
+36. Rotate Linked List  
+37. Clone Linked List with Random Pointers  
+38. LRU Cache  
+39. LFU Cache  
+40. Merge K Sorted Linked Lists  
+41. Reverse Nodes in K Group  
+42. Check if Linked List is Palindrome  
+
+---
+
+## ⚡ Greedy (6 problems)
+43. N Meetings in One Room  
+44. Minimum Number of Platforms  
+45. Job Sequencing Problem  
+46. Fractional Knapsack  
+47. Minimum Coins  
+48. Candy Distribution  
+
+---
+
+## 🔄 Recursion & Backtracking (12 problems)
+49. Subset Sums  
+50. Subsets II  
+51. Combination Sum I  
+52. Combination Sum II  
+53. Palindrome Partitioning  
+54. Print all Permutations  
+55. N Queens  
+56. Sudoku Solver  
+57. M Coloring Problem  
+58. Rat in a Maze  
+59. Word Break  
+60. Print all Subsequences  
+
+---
+
+## 🔍 Binary Search (8 problems)
+61. Binary Search  
+62. Search in Rotated Sorted Array  
+63. Median of Two Sorted Arrays  
+64. Kth Element of Two Sorted Arrays  
+65. Allocate Books  
+66. Aggressive Cows  
+67. Painter’s Partition Problem  
+68. Minimize Max Distance to Gas Station  
+
+---
+
+## 🏗️ Heaps (6 problems)
+69. Kth Largest Element  
+70. Maximum Sum Combination  
+71. Find Median from Data Stream  
+72. Merge K Sorted Arrays  
+73. Kth Largest Element in Stream  
+74. Distinct Numbers in Window  
+
+---
+
+## 📦 Stack & Queue (17 problems)
+75. Implement Stack using Arrays  
+76. Implement Queue using Arrays  
+77. Implement Stack using Queue  
+78. Implement Queue using Stack  
+79. LRU Cache  
+80. LFU Cache  
+81. Largest Rectangle in Histogram  
+82. Sliding Window Maximum  
+83. Min Stack  
+84. Rotten Oranges  
+85. Stock Span Problem  
+86. Maximum of Minimum for Every Window Size  
+87. Celebrity Problem  
+88. NGR, NGL, NSR, NSL Problems  
+89. Trapping Rainwater  
+90. Implement Two Stacks in an Array  
+91. Circular Queue  
+
+---
+
+## ✍️ Strings (12 problems)
+92. Reverse Words in a String  
+93. Longest Palindromic Substring  
+94. Roman Number to Integer  
+95. Integer to Roman Number  
+96. Implement ATOI  
+97. Longest Common Prefix  
+98. Rabin Karp Algorithm  
+99. Z Algorithm  
+100. KMP Algorithm  
+101. Minimum Characters to Add for Palindrome  
+102. Check Anagrams  
+103. Count and Say  
+
+---
+
+## 🌳 Binary Tree (27 problems)
+104. Inorder Traversal  
+105. Preorder Traversal  
+106. Postorder Traversal  
+107. Level Order Traversal  
+108. Height of Binary Tree  
+109. Diameter of Binary Tree  
+110. Balanced Binary Tree  
+111. LCA of Binary Tree  
+112. Maximum Path Sum  
+113. Same Tree  
+114. Symmetric Tree  
+115. Boundary Traversal  
+116. Vertical Order Traversal  
+117. Top View of Binary Tree  
+118. Bottom View of Binary Tree  
+119. Right View of Binary Tree  
+120. Left View of Binary Tree  
+121. Zigzag Traversal  
+122. Morris Inorder Traversal  
+123. Morris Preorder Traversal  
+124. Flatten Binary Tree to Linked List  
+125. Maximum Width of Binary Tree  
+126. Children Sum Property  
+127. Nodes at Distance K  
+128. Burn Binary Tree  
+129. Count Complete Tree Nodes  
+130. Construct Binary Tree from Inorder & Preorder  
+131. Construct Binary Tree from Inorder & Postorder  
+
+---
+
+## 🌲 Binary Search Tree (15 problems)
+132. Search in BST  
+133. Construct BST from Preorder  
+134. Construct BST from Postorder  
+135. Construct BST from Level Order  
+136. LCA of BST  
+137. Floor and Ceil in BST  
+138. Kth Smallest and Largest in BST  
+139. Check if BST is Valid  
+140. Recover BST  
+141. Two Sum in BST  
+142. BST Iterator  
+143. Range Sum of BST  
+144. Convert Sorted Array to BST  
+145. Convert Sorted List to BST  
+146. Serialize and Deserialize BST  
+
+---
+
+## 📊 Graphs (18 problems)
+147. DFS  
+148. BFS  
+149. Detect Cycle in Undirected Graph  
+150. Detect Cycle in Directed Graph  
+151. Topological Sort  
+152. Kahn’s Algorithm  
+153. Bipartite Graph (DFS)  
+154. Bipartite Graph (BFS)  
+155. Dijkstra’s Algorithm  
+156. Bellman Ford Algorithm  
+157. Floyd Warshall Algorithm  
+158. Prim’s Algorithm  
+159. Kruskal’s Algorithm  
+160. Bridges in Graph  
+161. Articulation Points  
+162. Kosaraju’s Algorithm  
+163. Tarjan’s Algorithm  
+164. Word Ladder  
+
+---
+
+## 🧮 Dynamic Programming (15 problems)
+165. Fibonacci Number  
+166. Climbing Stairs  
+167. Frog Jump  
+168. Maximum Sum Increasing Subsequence  
+169. Longest Increasing Subsequence  
+170. Longest Common Subsequence  
+171. Longest Palindromic Subsequence  
+172. Minimum Insertions to Make Palindrome  
+173. Edit Distance  
+174. Matrix Chain Multiplication  
+175. 0/1 Knapsack  
+176. Subset Sum  
+177. Partition Equal Subset Sum  
+178. Coin Change  
+179. Minimum Path Sum  
+
+---
+
+## 🔡 Trie (7 problems)
+180. Implement Trie  
+181. Implement Trie II  
+182. Longest Word with All Prefixes  
+183. Number of Distinct Substrings  
+184. Power Set using Trie  
+185. Maximum XOR of Two Numbers  
+186. Maximum XOR with an Element from Array  
+
+---
+
+## 🏁 Miscellaneous (5 problems)
+187. Median of Running Stream  
+188. Sliding Window Maximum  
+189. Distinct Numbers in Window  
+190. Rotten Oranges  
+191. Celebrity Problem  
