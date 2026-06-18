@@ -731,7 +731,7 @@ Deployment
 One-Line Revision
 
 > HLD components define the major building blocks and communication of the complete system.
-///////////////////////////////////////////////////////////////////////////////////////////////////////////3. Why is HLD important in system design?
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////3. Why is HLD important in system design?
 Easiest Definition
 
 > HLD (High Level Design) is important because it gives the complete blueprint of the system before development starts.
@@ -2700,6 +2700,340 @@ One-Line Revision
 
 > Microservices split one large application into multiple small independently deployable services.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////What is eventual consistency, and where is it used?
+Easiest Definition
+
+> Eventual Consistency means data may not become updated everywhere immediately, but after some time all systems become consistent.
+
+
+
+Simple meaning:
+
+Update Now
+↓
+Some Systems Wait
+↓
+After Few Seconds
+↓
+All Systems Match
+
+or
+
+Eventually
+=
+Everyone gets same data
+
+
+---
+
+🧠 Real-Life Example (WhatsApp)
+
+Suppose you send:
+
+"Hello"
+
+Message flow:
+
+Your Phone
+↓
+Server
+↓
+Friend Phone
+
+Sometimes:
+
+Your phone → Sent ✓
+
+Friend → Receives after 2 seconds
+
+Not immediate.
+
+But eventually both phones show same message.
+
+This is:
+
+Eventual Consistency
+
+
+---
+
+Example in Software
+
+Suppose user buys property.
+
+Normal expectation:
+
+Payment Success
+↓
+Property Status Sold
+↓
+Email Sent
+↓
+Notification Sent
+
+But in distributed systems:
+
+Payment Updated Immediately
+
+Email after 2 sec
+
+Notification after 5 sec
+
+System becomes correct eventually.
+
+
+---
+
+Why Eventual Consistency Needed?
+
+In large distributed systems:
+
+Multiple Servers
+
+Multiple Databases
+
+Microservices
+
+Updating all instantly is expensive.
+
+Instead:
+
+Update Main Service
+↓
+Sync Others Later
+
+
+---
+
+Architecture Example
+
+User
+ ↓
+Order Service
+ ↓
+Event Queue
+ ↓
+Payment Service
+ ↓
+Notification Service
+ ↓
+Analytics Service
+
+Flow:
+
+Order Updated
+↓
+Other services update later
+
+
+---
+
+Example Timeline
+
+User places order.
+
+Time = 0 sec
+
+Order DB
+Status = Completed
+
+Time = 2 sec
+
+Notification DB
+Updated
+
+Time = 5 sec
+
+Analytics DB
+Updated
+
+Now:
+
+All systems match
+
+
+---
+
+Strong Consistency vs Eventual Consistency
+
++----------------------+------------------------+----------------------+
+| Feature | Strong Consistency | Eventual Consistency |
++----------------------+------------------------+----------------------+
+| Update Time | Immediate | Delayed |
++----------------------+------------------------+----------------------+
+| Data Accuracy | Instant | Eventually |
++----------------------+------------------------+----------------------+
+| Performance | Slower | Faster |
++----------------------+------------------------+----------------------+
+| Scalability | Lower | Higher |
++----------------------+------------------------+----------------------+
+
+
+---
+
+Where is Eventual Consistency Used?
+
+1. Microservices
+
+Example:
+
+Order Service
+↓
+Inventory Service
+↓
+Email Service
+
+All update separately.
+
+
+---
+
+2. Distributed Databases
+
+Example:
+
+Primary DB
+ ↓
+Replica1
+ ↓
+Replica2
+
+Replication takes time.
+
+
+---
+
+3. E-commerce
+
+Example:
+
+Order
+↓
+Payment
+↓
+Shipment
+
+
+---
+
+4. Social Media
+
+Example:
+
+Post Uploaded
+↓
+Followers receive later
+
+
+---
+
+5. Messaging Systems
+
+Examples:
+
+Kafka
+
+RabbitMQ
+
+Messages processed asynchronously.
+
+
+---
+
+6. Caching Systems
+
+Example:
+
+Database Updated
+↓
+Redis Updated Later
+
+
+---
+
+Property Buy/Sell Project Example
+
+User buys property.
+
+Property Service
+↓
+Payment Service
+↓
+Notification Service
+↓
+Analytics Service
+
+Immediately:
+
+Property Sold
+
+Later:
+
+Email Sent
+
+Dashboard Updated
+
+This is:
+
+Eventual Consistency
+
+
+---
+
+How It Is Usually Implemented?
+
+Techniques:
+
+Event Driven Architecture
+
+Message Queue
+
+Retry Mechanism
+
+Saga Pattern
+
+CDC (Change Data Capture)
+
+Examples:
+
+RabbitMQ
+
+Kafka
+
+
+---
+
+Interview Answer (Short)
+
+> Eventual Consistency is a consistency model where data updates are not immediately reflected across all systems, but after some time all systems become synchronized. It is commonly used in microservices, distributed databases, caching, and event-driven systems.
+
+
+
+
+---
+
+📌 Topic Placement
+
+System Design
+ └── HLD
+      ├── Distributed Systems
+      ├── Scalability
+      ├── Microservices
+      ├── Messaging
+      └── Eventual Consistency
+
+🧠 Memory Trick
+
+Strong Consistency
+=
+Update Now
+
+Eventual Consistency
+=
+Update Soon
+
+One-Line Revision
+
+> Eventual Consistency means all systems may not update immediately, but they become consistent after some time.
 
 13. How would you design a scalable notification service? (0:12:15)
 14. What is sharding in database design? (0:13:05)
