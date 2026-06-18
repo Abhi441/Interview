@@ -2699,7 +2699,8 @@ Many Small Apps
 One-Line Revision
 
 > Microservices split one large application into multiple small independently deployable services.
-12. What is eventual consistency, and where is it used? (0:11:20)
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////What is eventual consistency, and where is it used?
+
 13. How would you design a scalable notification service? (0:12:15)
 14. What is sharding in database design? (0:13:05)
 15. What is caching and why is it used? (0:13:47)
