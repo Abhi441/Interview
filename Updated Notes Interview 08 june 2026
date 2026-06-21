@@ -1414,7 +1414,7 @@ left join of linq query.
 /////////////////////////////////////////////////Scedocode in css
 //////////////////////////////////////////////bootstrap DTO
 /////////////////////////////////////////////JavaScript OOP
-/////////////////////////////////////////////Deadlock lock.
+/////////////////////////////////////////////Explain Deadlock and how to handle it..
 ////////////////////////////////////////////Hashtable and dictionary.
 ///////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////ness
@@ -19313,7 +19313,6 @@ Easier maintenance → developers spend less time fixing alignment bugs.
 /////////////////////////////////////////////////Scedocode in css
 //////////////////////////////////////////////bootstrap DTO
 /////////////////////////////////////////////JavaScript OOP
-/////////////////////////////////////////////Deadlock lock.
 ////////////////////////////////////////////Hashtable and dictionary.
 
 
@@ -21710,7 +21709,6 @@ There are lots of built-in methods and atttributes for model binder.
 
 
 //////////////////////////////////////////////
-1>DeadLock
 2>Why Donet Project are used.
 3>repository
 4>logging
@@ -24961,9 +24959,370 @@ Just tell me!
 Most Frequently Asked .NET Full Stack Interview Questions(covering .NET MVC, .NET Core, Web API, EF Core, SQL Server, Angular)
 
 
-8. What are Transactions and Isolation Levels?
-9. How to optimize SQL queries?
-10. Explain Deadlock and how to handle it.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////10. Explain Deadlock and how to handle it.
 ---
 🔹 Angular
 1. Difference between AngularJS vs Angular.
@@ -33037,10 +33396,6 @@ diffrence between  Database First, Code First , Model first in Entity framework 
 Entity Framework vs ADO.NET
 What is Entity Framework Core?
 
-
-//////////////////////////////////////////////////////////////
-Q>Why ViewData require typeCasting
-
 ////////////////////////////////////////////////////////////////////////////////////////////.Single() and Include()
 .Include() is used in Entity Framework(EF/EF core) to eager load relatedd entities(like a SQL JOIN) .
 .Include() = eager loading (load related data immediately).
@@ -35002,6 +35357,367 @@ Suppose tomorrow your company adds Bitcoin Payment 🚀
 
 //////////////////////////////////////////////////////////////////////////////////////////////////Which Design pattern you word.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////abstract factory Design patter.
+
+First understand one line:
+
+Factory → Creates ONE object
+
+Abstract Factory → Creates FAMILY of related objects
+
+ Abstract Factory Pattern
+
+Easy Definition
+
+> Abstract Factory creates groups (families) of related objects.
+
+
+
+Think:
+
+Factory of factories
+
+Creates:
+
+Button
+Textbox
+Checkbox
+
+all together.
+
+
+---
+
+Real Life Example
+
+Furniture Store.
+
+Modern style:
+
+Modern Chair
+Modern Table
+Modern Sofa
+
+Victorian style:
+
+Victorian Chair
+Victorian Table
+Victorian Sofa
+
+One style creates multiple related products.
+
+
+---
+
+Structure
+
+Abstract Factory
+↓
+Concrete Factory
+
+Factory creates
+
+Multiple Products
+
+
+---
+
+Example:
+
+UI Library.
+
+Need:
+
+Button
+Textbox
+
+
+---
+
+Product Interfaces
+
+public interface IButton
+{
+    void Draw();
+}
+
+
+---
+
+public interface ITextbox
+{
+    void Draw();
+}
+
+
+---
+
+Concrete Products
+
+Windows
+
+public class WindowsButton
+    : IButton
+{
+    public void Draw()
+    {
+        Console.WriteLine(
+            "Windows Button");
+    }
+}
+
+
+---
+
+public class WindowsTextbox
+    : ITextbox
+{
+    public void Draw()
+    {
+        Console.WriteLine(
+            "Windows Textbox");
+    }
+}
+
+
+---
+
+Mac
+
+public class MacButton
+    : IButton
+{
+    public void Draw()
+    {
+        Console.WriteLine(
+            "Mac Button");
+    }
+}
+
+
+---
+
+public class MacTextbox
+    : ITextbox
+{
+    public void Draw()
+    {
+        Console.WriteLine(
+            "Mac Textbox");
+    }
+}
+
+
+---
+
+Abstract Factory
+
+public interface IUIFactory
+{
+    IButton CreateButton();
+
+    ITextbox CreateTextbox();
+}
+
+
+---
+
+Windows Factory
+
+public class WindowsFactory
+    : IUIFactory
+{
+    public IButton
+        CreateButton()
+    {
+        return
+        new WindowsButton();
+    }
+
+    public ITextbox
+        CreateTextbox()
+    {
+        return
+        new WindowsTextbox();
+    }
+}
+
+
+---
+
+Mac Factory
+
+public class MacFactory
+    : IUIFactory
+{
+    public IButton
+        CreateButton()
+    {
+        return
+        new MacButton();
+    }
+
+    public ITextbox
+        CreateTextbox()
+    {
+        return
+        new MacTextbox();
+    }
+}
+
+
+---
+
+Usage
+
+IUIFactory factory =
+new WindowsFactory();
+
+var button =
+factory.CreateButton();
+
+var textbox =
+factory.CreateTextbox();
+
+button.Draw();
+
+textbox.Draw();
+
+Output:
+
+Windows Button
+Windows Textbox
+
+
+---
+
+Visual:
+
+WindowsFactory
+     ↓
+Button
+Textbox
+
+
+MacFactory
+     ↓
+Button
+Textbox
+
+
+---
+
+Difference Table
+
+Factory Abstract Factory
+
+Creates one object Creates family of objects
+Simple More complex
+One factory Factory of factories
+One product type Multiple related products
+Lower abstraction Higher abstraction
+
+
+
+---
+
+Property Portal Example
+
+Factory:
+
+Create payment.
+
+PaymentFactory
+
+UPI
+Card
+Wallet
+
+Only one.
+
+
+---
+
+Abstract Factory:
+
+Create entire environment.
+
+IndiaFactory
+
+Tax
+Currency
+Notification
+
+OR
+
+USFactory
+
+Tax
+Currency
+Notification
+
+Multiple related objects.
+
+
+---
+
+Memory Trick
+
+Factory
+
+Restaurant
+
+Order Pizza
+
+Get Pizza
+
+ONE item.
+
+
+---
+
+Abstract Factory
+
+Restaurant Combo
+
+Burger
+Fries
+Drink
+
+Multiple related items.
+
+
+---
+
+Interview Answer (Short)
+
+Factory Pattern
+
+> Creates one object and hides creation logic.
+
+
+
+Abstract Factory Pattern
+
+> Creates families of related objects without specifying concrete classes.
+
+
+
+Example:
+
+Factory
+↓
+Create Car
+
+
+Abstract Factory
+↓
+Create Car
+Create Engine
+Create Dashboard
+
+One creates one thing.
+
+The other creates a complete set.
 /////////////////////////////////////////////////////////////////9>Singalton design patter.
 //////////////////What  is Singalton design patter.
 The Singleton design pattern ensures that a class has only one instance and provides a global point of access to that instance.
