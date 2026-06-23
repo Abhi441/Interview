@@ -3942,6 +3942,396 @@ http://localhost:4200/home
 http://localhost:4200/login
 
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Explain Routing & Route Guards (AuthGuard, CanActivate, CanDeactivate)
+Explain Routing & Route Guards (AuthGuard, CanActivate, CanDeactivate) in Angular
+This is one of the most asked Angular interview questions.
+
+First understand:
+
+Routing
+=
+Move Between Pages
+
+Route Guard
+=
+Control Who Can Enter / Leave
+1. What is Routing in Angular?
+✅ Easiest Definition
+Routing allows navigation from one component/page to another without refreshing the browser.
+
+Simple meaning:
+
+Routing
+=
+Page Navigation
+Example:
+
+Home
+↓
+Property List
+↓
+Property Details
+↓
+Payment
+Angular changes pages inside SPA.
+
+SPA:
+
+Single Page Application
+Without Routing
+www.site.com/home.html
+Page reload.
+
+With Angular Routing
+localhost:4200/home
+
+localhost:4200/property
+
+localhost:4200/login
+No full reload.
+
+Example Routing
+app.routes.ts
+import { Routes } from '@angular/router';
+
+export const routes: Routes = [
+
+{
+path:'home',
+component:HomeComponent
+},
+
+{
+path:'login',
+component:LoginComponent
+},
+
+{
+path:'property',
+component:PropertyComponent
+}
+
+];
+Meaning:
+
+/home
+→ HomeComponent
+
+/login
+→ LoginComponent
+
+/property
+→ PropertyComponent
+Add Router Outlet
+app.component.html
+<router-outlet></router-outlet>
+Meaning:
+
+Show selected component here
+Flow:
+
+URL
+ ↓
+Router
+ ↓
+Component
+ ↓
+router-outlet
+Route Guards
+✅ Easiest Definition
+Route Guards decide whether users can enter, leave, or access routes.
+
+Simple meaning:
+
+Security Check
+Before Navigation
+Example:
+
+Login Required?
+Unsaved Changes?
+Role Check?
+Types of Route Guards
+CanActivate
+CanDeactivate
+CanLoad
+CanMatch
+Resolve
+Today focus:
+
+AuthGuard
+CanActivate
+CanDeactivate
+2. What is AuthGuard?
+✅ Definition
+AuthGuard checks whether user is authenticated before opening a page.
+
+Simple meaning:
+
+Logged In?
+↓
+Yes → Enter
+
+No → Redirect
+Example:
+
+Login Required
+Flow:
+
+User
+ ↓
+Dashboard
+
+Guard Checks
+
+Logged In?
+
+Yes → Open
+
+No → Login
+Example AuthGuard
+Generate:
+
+ng generate guard auth
+Code:
+
+import {
+CanActivateFn
+}
+from '@angular/router';
+
+export const authGuard:
+CanActivateFn =
+() => {
+
+const logged =
+localStorage
+.getItem('token');
+
+return !!logged;
+
+};
+Meaning:
+
+Token Exists
+↓
+Allow Access
+Use in Routes
+{
+path:'dashboard',
+
+component:
+DashboardComponent,
+
+canActivate:
+[authGuard]
+}
+Flow:
+
+Open Dashboard
+ ↓
+Guard
+ ↓
+Token?
+ ↓
+Open/Reject
+Property Project Example
+Login
+ ↓
+JWT Token
+ ↓
+Property Dashboard
+If no token:
+
+Redirect Login
+3. What is CanActivate?
+✅ Definition
+CanActivate decides whether a route can be opened.
+
+Simple meaning:
+
+Can User Enter?
+Example:
+
+Admin Only
+Code:
+
+export const authGuard:
+CanActivateFn =
+() => {
+
+if(userLogged)
+return true;
+
+return false;
+
+};
+Route:
+
+{
+path:'admin',
+
+component:
+AdminComponent,
+
+canActivate:
+[authGuard]
+}
+Flow:
+
+Request Page
+ ↓
+CanActivate
+ ↓
+Allow?
+Real Example
+Guest
+↓
+Admin Page
+↓
+Blocked
+4. What is CanDeactivate?
+✅ Definition
+CanDeactivate checks before leaving current page.
+
+Simple meaning:
+
+Can User Exit?
+Example:
+
+User typing:
+
+Property Form
+Clicks Back.
+
+Guard asks:
+
+Save changes?
+Example
+export class FormGuard
+{
+
+canDeactivate(
+component:any
+)
+{
+return component
+.hasSaved
+||
+
+confirm(
+'Leave page?'
+);
+
+}
+
+}
+Route:
+
+{
+path:'edit',
+
+component:
+EditComponent,
+
+canDeactivate:
+[FormGuard]
+}
+Flow
+Edit Page
+ ↓
+Click Exit
+ ↓
+CanDeactivate
+ ↓
+Unsaved?
+ ↓
+Ask User
+Property Buy/Sell Example
+User edits property:
+
+Change Price
+Change Address
+Clicks:
+
+Back
+Popup:
+
+Unsaved changes.
+Leave?
+Comparison Table
++----------------+-------------------------+
+| Guard          | Purpose                 |
++----------------+-------------------------+
+| AuthGuard      | Authentication Check    |
++----------------+-------------------------+
+| CanActivate    | Before Entering Page    |
++----------------+-------------------------+
+| CanDeactivate  | Before Leaving Page     |
++----------------+-------------------------+
+Full Flow
+User
+ ↓
+Route Request
+ ↓
+AuthGuard
+ ↓
+CanActivate
+ ↓
+Component Opens
+ ↓
+CanDeactivate
+ ↓
+Leave Page
+Trade-Off
+Advantages
+Security
+
+Better UX
+
+Protect Routes
+Disadvantages
+Extra Navigation Logic
+
+Too Many Guards
+=
+Complex App
+Business Impact
+Property Application:
+
+Without Guards:
+
+Anyone opens payment page
+With Guards:
+
+Only Logged Users
+Safer.
+
+Interview Answer (Short)
+Routing in Angular enables navigation between components without reloading the page. Route Guards protect routes and control navigation. AuthGuard checks authentication, CanActivate controls route entry, and CanDeactivate prevents users from leaving pages with unsaved changes.
+
+📌 Topic Placement
+Angular
+ └── Routing
+      ├── Routes
+      ├── RouterOutlet
+      ├── Route Guards
+      │      ├── AuthGuard
+      │      ├── CanActivate
+      │      └── CanDeactivate
+🧠 Memory Trick
+Routing
+=
+Move
+
+CanActivate
+=
+Enter
+
+CanDeactivate
+=
+Exit
+One-Line Revision
+Routing moves users between pages, and Route Guards control who can enter or leave those pages.
 /////////////////////////////////////////////////////////////////////////////////////Q54. How to do HTTP Error Handling in Angular? (V.IMP)
 HTTP Error Handling can be done by using catchError and throwError functions from rxjx.
 
@@ -5811,7 +6201,7 @@ For example, in my property app, once a user logs in, we issue a JWT token store
 
 
 Show quoted text
-//////////////////////////////////////////////////////////////////How many type of state management will be their in Angular ?
+///////////////////////////////////////////////////////////////////////////////////////////How many type of state management will be their in Angular ?
 
 ✅ Easiest Definition
 State Management means managing and sharing application data between components.
@@ -24958,454 +25348,891 @@ Just tell me!
 ////////////////////////////////////////////////////////////////////////https://www.linkedin.com/in/tarun-kumar-480601184/recent-activity/all/
 Most Frequently Asked .NET Full Stack Interview Questions(covering .NET MVC, .NET Core, Web API, EF Core, SQL Server, Angular)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////10. Explain Deadlock and how to handle it.
+
+Absolutely. This code is a classic example to demonstrate Deadlock in C#.
+
+We will execute line by line.
+
+
 ---
-🔹 Angular
-1. Difference between AngularJS vs Angular.
-3. Explain Data Binding types (Interpolation, Property Binding, Event Binding, Two-way Binding).
-4. Difference between ngIf vs hidden.
-6. What is RxJS (Observables, Subject, BehaviorSubject)?
-7. Explain Routing & Route Guards (AuthGuard, CanActivate, CanDeactivate).
-8. What are Pipes? Difference between Pure vs Impure pipes.
-10. Difference between Template-driven forms vs Reactive forms.
+
+Full Goal of This Program
+
+Program creates:
+
+2 Threads
+2 Locks
+
+And both threads wait for each other forever.
+
+Result:
+
+Deadlock
+
+
 ---
-These are the most commonly repeated questions.
+
+Step 1 → Create Lock Objects
+
+static object lock1 =
+    new object();
+
+static object lock2 =
+    new object();
+
+Meaning:
+
+lock1 → Resource A
+lock2 → Resource B
+
+Think:
+
+Room A Key
+Room B Key
+
+Only one thread can hold one lock at a time.
+
+Memory:
+
+lock1 = 🔐
+lock2 = 🔐
 
 
-/////////////////////////////////////////////////////////////////////
-Ultimate .NET Interview Questions – Freshers to Seniors 🚀
-Preparing for a .NET Developer Interview?
+---
 
- Here’s your complete .NET Roadmap with questions covering C#, ASP.NET Core, MVC, Web API, and SQL Server — from Freshers → Intermediate → Senior 👇
+Step 2 → Method1 Starts
 
-🔹 1️⃣ Entry / Freshers
+static void Method1()
+{
+    lock(lock1)
 
-📌 C# / .NET Basics
- ✅ .NET Framework vs .NET Core / .NET 5+
- ✅ OOP concepts with real C# examples
- ✅ Garbage Collection in .NET
- ✅ Exception handling in C#
- ✅ == vs .Equals(), ref vs out parameters
- ✅ Boxing & Unboxing
+Thread1 enters.
 
-📌 MVC / Web Basics
- ✅ MVC pattern – Controller, Action, View
- ✅ Razor View vs ASPX
+Thread1 takes:
+
+lock1
+
+State:
+
+Thread1 → lock1 ✅
+Thread2 → nothing
+
+Output:
+
+Thread1 Locked lock1
+
+
+---
+
+Step 3 → Sleep
+
+Thread.Sleep(1000);
+
+Meaning:
+
+Pause 1 second
+
+Why?
+
+To give Thread2 time.
+
+Current state:
+
+Thread1
+Holding lock1
+Sleeping
+
+
+---
+
+Step 4 → Main Starts Thread2
+
+new Thread(Method2).Start();
+
+Thread2 starts.
+
+
+---
+
+Step 5 → Method2 Lock
+
+lock(lock2)
+
+Thread2 takes:
+
+lock2
+
+State:
+
+Thread1 → lock1 ✅
+Thread2 → lock2 ✅
+
+Output:
+
+Thread2 Locked lock2
+
+
+---
+
+Step 6 → Thread2 Sleeps
+
+Thread.Sleep(1000);
+
+State:
+
+Thread1 → lock1
+Thread2 → lock2
+
+
+---
+
+Step 7 → Thread1 Wakes Up
+
+Thread1 continues:
+
+lock(lock2)
+
+Thread1 says:
+
+I need lock2
+
+But:
+
+Thread2 already owns lock2
+
+Thread1 waits.
+
+State:
+
+Thread1 → Waiting for lock2 ❌
+
+
+---
+
+Step 8 → Thread2 Wakes Up
+
+Thread2 executes:
+
+lock(lock1)
+
+Thread2 says:
+
+I need lock1
+
+But:
+
+Thread1 already owns lock1
+
+Thread2 waits.
+
+State:
+
+Thread2 → Waiting for lock1 ❌
+
+
+---
+
+Final Situation
+
+Thread1
+Holding lock1
+Waiting lock2
+
+Thread2
+Holding lock2
+Waiting lock1
+
+Diagram:
+
+Thread1
+ ↓
+lock1
+
+Waiting
+ ↓
+lock2
+
+
+Thread2
+ ↓
+lock2
+
+Waiting
+ ↓
+lock1
+
+Nobody releases.
+
+Nobody continues.
+
+Application freezes.
+
+This is:
+
+DEADLOCK
+
+
+---
+
+Console Output
+
+You will usually see:
+
+Thread1 Locked lock1
+Thread2 Locked lock2
+
+Then:
+
+Program Hangs
+
+No further output.
+
+Because:
+
+Both waiting forever
+
+
+---
+
+Visual Execution Timeline
+
+Time=0
+
+Thread1
+↓
+lock1
+
+
+Time=1
+
+Thread2
+↓
+lock2
+
+
+Time=2
+
+Thread1 wants lock2
+WAIT
+
+
+Time=3
+
+Thread2 wants lock1
+WAIT
+
+
+Deadlock
+
+
+---
+
+How to Fix?
+
+Use same lock order.
+
+Correct:
+
+static void Method2()
+{
+    lock(lock1)
+    {
+        Thread.Sleep(1000);
+
+        lock(lock2)
+        {
+
+        }
+    }
+}
+
+Now:
+
+Thread1
+lock1→lock2
+
+Thread2
+lock1→lock2
+
+No circular waiting.
+
+
+---
+
+Easy Memory Trick
+
+Thread A:
+I need your key
+
+Thread B:
+I need your key
+
+↓
+
+Nobody moves
+
+↓
+
+Deadlock
+
+
+---
+
+Interview Answer (Short)
+
+> In this code, Thread1 locks lock1 and waits for lock2, while Thread2 locks lock2 and waits for lock1. Since both threads wait indefinitely, the application enters a deadlock state. This can be avoided by acquiring locks in a consistent order.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Difference between Pure vs Impure pipes.
+
+This is a very common Angular interview question.
+
+First understand:
+
+Pipe means:
+
+Input Data
+   ↓
+Pipe
+   ↓
+Formatted Output
+
+Example:
+
+5000000
+↓
+price pipe
+↓
+50 Lakhs
+
+Now Angular pipes are mainly of 2 types:
+
+1. Pure Pipe
+2. Impure Pipe
+
+
+---
+
+1. What is Pure Pipe?
+
+✅ Easiest Definition
+
+> Pure Pipe executes only when Angular detects a change in the input value (reference/value changes).
+
+
+
+Simple meaning:
+
+Input Changed
+↓
+Pipe Runs
+
+Input Not Changed
+↓
+Pipe Does Not Run
+
+This is Angular default behavior.
+
+
+---
+
+Example
+
+price.pipe.ts
+
+import {
+Pipe,
+PipeTransform
+}
+from '@angular/core';
+
+@Pipe({
+name:'priceFormat'
+})
+
+export class PricePipe
+implements PipeTransform
+{
+transform(
+value:number
+)
+{
+return value +
+' Rs';
+}
+}
+
+Use:
+
+{{price | priceFormat}}
+
+Component:
+
+price = 1000;
+
+Output:
+
+1000 Rs
+
+Change:
+
+price = 2000;
+
+Output:
+
+2000 Rs
+
+Pipe runs because:
+
+Value Changed
+
+
+---
+
+Internal Working
+
+Angular Change Detection
+          ↓
+Input Changed?
+     ↓
+YES → Execute Pipe
+
+NO → Skip Pipe
+
+Advantage:
+
+Fast
+
+
+---
+
+Pure Pipe Example with Array
+
+Component:
+
+properties =
+['Flat',
+'Villa'];
+
+HTML:
+
+{{properties
+| json}}
+
+Now:
+
+properties.push(
+'House'
+);
+
+Sometimes UI may not update because:
+
+Reference same
+
+
+---
+
+Update correctly:
+
+properties = [
+...properties,
+'House'
+];
+
+Now:
+
+Reference Changed
+
+Pipe runs.
+
+
+---
+
+2. What is Impure Pipe?
+
+✅ Easiest Definition
+
+> Impure Pipe executes during every Angular change detection cycle.
+
+
+
+Simple meaning:
+
+Anything Changes
+↓
+Pipe Runs Again
+
+Even if input remains same.
+
+
+---
+
+Create Impure Pipe
+
+@Pipe({
+
+name:'price',
+
+pure:false
+
+})
+
+Notice:
+
+pure:false
+
+
+---
+
+Example
+
+@Pipe({
+name:'custom',
+
+pure:false
+})
+
+Component:
+
+properties =
+['Flat'];
+
+Update:
+
+properties.push(
+'Villa'
+);
+
+Output updates immediately.
+
+Because:
+
+Pipe executes again
+
+
+---
+
+Internal Working
+
+Angular Change Detection
+          ↓
+Execute Pipe
+Every Time
+
+
+---
+
+Comparison Table
+
++----------------------+-----------------------+----------------------+
+| Feature | Pure Pipe | Impure Pipe |
++----------------------+-----------------------+----------------------+
+| Execution | Input Change Only | Every Change Cycle |
++----------------------+-----------------------+----------------------+
+| Performance | Faster | Slower |
++----------------------+-----------------------+----------------------+
+| Default | Yes | No |
++----------------------+-----------------------+----------------------+
+| Array Mutation | Not Detect Sometimes | Detects |
++----------------------+-----------------------+----------------------+
+| Use Case | Formatting | Dynamic Data |
++----------------------+-----------------------+----------------------+
+
+
+---
+
+Property Buy/Sell Project Example
+
+Pure Pipe
+
+Format price.
+
+5000000
+↓
+50 Lakhs
+
+Pipe:
+
+{{property.price
+| priceFormat}}
+
+Reason:
+
+Price rarely changes
+
+
+---
+
+Impure Pipe
+
+Search filter.
+
+User types:
+
+A
+AB
+ABC
+
+Filter updates continuously.
+
+propertyList
+| searchPipe
+
+Need:
+
+pure:false
+
+
+---
+
+Trade-Off
+
+Pure Pipe
+
+Advantages:
+
+Fast
+
+Less CPU
+
+Disadvantage:
+
+May miss object mutation
+
+
+---
+
+Impure Pipe
+
+Advantages:
+
+Dynamic Updates
+
+Disadvantage:
+
+More Change Detection
+Slower
+
+
+---
+
+Business Impact
+
+Wrong usage:
+
+Many Impure Pipes
+↓
+Slow Application
+
+Correct usage:
+
+Pure Pipe
+↓
+Better Performance
+
+
+---
+
+Interview Answer (Short)
+
+> Pure Pipes execute only when input values or references change and provide better performance. Impure Pipes execute during every change detection cycle and are useful for dynamic or frequently changing data.
+
+
+
+
+---
+
+📌 Topic Placement
+
+Angular
+ └── Pipes
+      ├── Built-in Pipes
+      ├── Custom Pipes
+      ├── Pure Pipe
+      └── Impure Pipe
+
+🧠 Memory Trick
+
+Pure
+=
+Change → Run
+
+Impure
+=
+Always Run
+
+One-Line Revision
+
+> Pure pipes run only when input changes, while impure pipes run on every Angular change detection cycle.
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////== vs .Equals()
+
+ ///////////////////////////////////////////////////////////////////////////////////////////////////////////////Designing scalable & fault-tolerant applications
+ ////////////////////////////////////////////////////////////////////////////////////////////////////////////////Logging, Monitoring & Exception Handling in Production
+
+
+ //////////////////////////////////////////////////////////////////////////////////////////////////////////////// Securing APIs with JWT, OAuth, Claims-based Auth
  
 
-
- ✅ Clustered vs Non-Clustered Index
-
-🔹 2️⃣ Intermediate
-
-📌 C# / .NET Core
- ⚡ Dependency Injection & why it matters
- ⚡ IEnumerable vs IQueryable
- ⚡ Async / Await implementation
- ⚡ Task vs Thread
-
-📌 MVC / Web API
- ⚡ Routing in MVC & Web API
- ⚡ RESTful API in .NET Core
- ⚡ IActionResult vs ActionResult
- ⚡ Model Binding & Validation
-
-📌 SQL Server
- ⚡ Query Optimization with Indexes & Execution Plans
+ ///////////////////////////////////////////////////////////////////////////////////////////////////////////Normalized DB design for large applications
+ //////////////////////////////////////////////////////////////////////////////////////////////////////////////SQL Server vs NoSQL in enterprise solutions
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////Handling Concurrency & Deadlocks
  
-
-🔹 3️⃣ Advanced / Senior
-
-📌 Architecture / .NET Advanced
- 🔥 Designing scalable & fault-tolerant applications
- 🔥 Middleware Pipeline in ASP.NET Core
- 🔥 Caching strategies (MemoryCache, Redis)
- 🔥 Logging, Monitoring & Exception Handling in Production
-
-📌 Web API / MVC
- 🛡 Securing APIs with JWT, OAuth, Claims-based Auth
- 🛡 API Versioning best practices
- 🛡 Async Endpoints for high performance
-
-
-📌 SQL Server / DB Design
- 🗄 Normalized DB design for large applications
- 🗄 SQL Server vs NoSQL in enterprise solutions
- 🗄 Handling Concurrency & Deadlocks
- 
-
-💡 Pro Tips:
- ✨ Freshers → OOP, MVC basics, SQL queries
- ✨ Intermediate → EF Core, async programming, DB optimization
- ✨ Senior → Architecture, CI/CD, Performance tuning, Secure APIs
-🔗 Over to you:
- 👉 Which .NET interview question challenged you the most?
- 💬 Drop it in the comments — let’s learn together!
-
 ///////////////////////////////////////////////////////////////////////////////////
 op 10 Most Asked .NET / Web API Interview Questions
 
@@ -25617,12 +26444,10 @@ hashtag
 📌 Whether you're a beginner or experienced dev preparing for Angular interviews, these 50 most frequently asked questions will help you crack real-world rounds with confidence! 💯
 
 🟢 Basics & Fundamentals
-What is Angular and how is it different from AngularJS?
 Key features of Angular?
 What are Components in Angular?
 What is a Module in Angular?
 What is Data Binding and its types?
-Interpolation vs Property Binding
 What is Event Binding?
 How is Two-Way Binding implemented?
 Role of ngModel
@@ -25643,7 +26468,6 @@ Use of @Injectable() & providedIn: 'root'
 What is Angular Routing?
 How to configure routes?
 Use of routerLink & router-outlet
-What are route guards (CanActivate, CanDeactivate)?
 Route parameters & navigation
 Lazy loading modules
 
@@ -26387,7 +27211,6 @@ Top 50 Full Stack Developer Interview Questions**, Mostly asked in MNCs like Del
 45. Services in Angular.
 46. HTTPClient in Angular.
 47. Angular Dependency Injection.
-48. Observables & RxJS.
 49. Angular Routing.
 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -26406,7 +27229,6 @@ Asp .Net
 Angular
 
 12. Difference between reactive forms and template-driven forms?
-13. How do route guards work in Angular?
 14. Observables vs Promises – key differences?
 
 
@@ -28960,7 +29782,7 @@ Observables                                 Promises
 ////////////////////////////////////////////////////////////////////////////////////////////////////////RxJx
 Easiest Definition
 
-> RxJS (Reactive Extensions for JavaScript) is a library used to handle asynchronous data streams such as API calls, user events, timers, and real-time data.
+> RxJS (Reactive Extensions for JavaScript) is a library used to handle asynchronous data streams such as API calls.
 
 
 
@@ -31462,21 +32284,7 @@ Angular is a component-based framework for building structured, scalable and sin
 4>Writing Reusable code is easy.
 5> Testing is easy.
 
-//What is the diffrence between Angular and Angular JS ? or What are the advantages of Angularover AngularJS ?
- ///Angular js
-1> It is only supports javaScript.
-2> This framework has a model-view-controller(MVC) architecture.
-3>It does have CLI tool.
-4>It does not use Dependency Injection.
-5> It is not a so fast.
 
-/////Angular
-1>It support both JavaScript and TypeScript.
-2> This framework has a component archotecture.
-3> It has CLI
-4> It uses Dependency Injection.
-5> It also support moble browser.
-6> It is very fast.
 
 //////////////
 Study from File.
@@ -32608,21 +33416,7 @@ Angular is a component-based framework for building structured, scalable and sin
 4>Writing Reusable code is easy.
 5> Testing is easy.
 
-//What is the diffrence between Angular and Angular JS ? or What are the advantages of Angularover AngularJS ?
- ///Angular js
-1> It is only supports javaScript.
-2> This framework has a model-view-controller(MVC) architecture.
-3>It does have CLI tool.
-4>It does not use Dependency Injection.
-5> It is not a so fast.
 
-/////Angular
-1>It support both JavaScript and TypeScript.
-2> This framework has a component archotecture.
-3> It has CLI
-4> It uses Dependency Injection.
-5> It also support moble browser.
-6> It is very fast.
 
 //////////////
 Study from File.
