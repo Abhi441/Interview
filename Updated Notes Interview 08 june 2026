@@ -1351,13 +1351,13 @@ https://youtu.be/xxDRrZPahR8?si=TaHx37ibN_ssmMNf
 
 15. How to host a web app quickly with minimum infrastructure management? (0:38:26)
 
-16. What are Azure Functions? (0:39:01)
+16. What are Azure Functions ?
 
-17. What are Azure Logic Apps? (0:45:06)
+17. What are Azure Logic Apps? 
 
-18. What is Azure Storage and its types? (0:46:59)
+18. What is Azure Storage and its types?
 
-19. What is Azure Blob Storage and when to use it? (0:49:19)
+19. What is Azure Blob Storage and when to use it? 
 
 20. Difference between Azure SQL Managed Instance and Azure SQL Database? (0:52:12)
 
@@ -1493,7 +1493,13 @@ What is latest version of c# and feature.
 //when one tread will going to complete after comming to response the same thread will do the task again , How does this thing will going to happen ?
 //artitectue of our application ? controller -> service -> repository -> database (every thing ready along with code)
 
-
+//What is Monolithic frotend Artitecture .
+//Diffrence between Collection and Middleware.
+//What is Git And Github.
+//What are packages that we are using for Iqurables and Ienumerables.
+//Task and Tread (5 diffrence)
+//What is memory leak and how do you identified it?
+//FormBody.
 
 
 
@@ -8880,128 +8886,6 @@ Delegates enable **loose coupling, callbacks, and event‑driven programming** i
 ---
 
 This alignment keeps your notes structured, scannable, and interview‑ready while preserving your original wording.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ////////////////////////////////////
 
 Perfect 👍 Let’s break down Delegates in the same simple structure:
@@ -10433,146 +10317,6 @@ Singleton Class LoggerService
 /// ////////////////////////////////////////////////////Filter
 
 ///////////////////////////////////////////////////////////////////Explain Action Filters, Result Filters, Exception Filters.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /// //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////2. Explain Action Filters, Result Filters, Exception Filters
 🧩 Definition (in super easy words)
@@ -15662,378 +15406,33 @@ FROM TableName;
 If you want, I can also explain the difference between COALESCE() and ISNULL(), which is a very common SQL Server interview question.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //////////////////////////////////////////////////////////////////////////////////////////////List down some of the feature of MS SQL Server ?
-Which command can be used to get the version of SQL Server ?
-Explain the replicated in SQL Server
-Define the referential integration.
-What are TCL Command? and List down the the TCL Command available on SQL Server ?
-Write a SQL Server Query to get the letter 'e' in the name 'Jenna' from  the student table.
-
-As a SQL developer , how will you ensure that SQL server-based application  and database perform well ?
-when should Server-based cursors be used ?   .       
-What do you know about scheduled tasks in SQL Server ?  
-Mention a query that return the list of triggers in a database 
+////////////////////////////////////////////////////////////////////////////////////////////////////////Which command can be used to get the version of SQL Server ?
+//////////////////////////////////////////////////////////////////////////////////////Explain the replicated in SQL Server
+////////////////////////////////////////////////////////////////////////////////Define the referential integration.
+////////////////////////////////////////////////////////////////////////////////////////////What are TCL Command? and List down the the TCL Command available on SQL Server ?
+///////////////////////////////////////////////////////////////////////////////////////////////////Write a SQL Server Query to get the letter 'e' in the name 'Jenna' from  the student table.
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////when should Server-based cursors be used ?   .       
+/////////////////////////////////////////////////////////////////////////////////////What do you know about scheduled tasks in SQL Server ?  
+////////////////////////////////////////////////////////////////////////////////Mention a query that return the list of triggers in a database 
 ///////////////////////////////////////////////////////////////////////Diffrence between rollback and commit.                    
-Explain how to create a table in SQL ?
-what is the function of a foreign key in a database
-Tell us the steps to hide SQL Server Instances.
-Explain the DBCC command and its use.
-Describe the SIGN function.
-Define alternate key.
-Define Join. What are the diffrence types of Joins ?
-Tell about the use of UPDATE STATICS.
-Define Full backup.
-In SQL, what is meant by the identity column ?
-Explain the UNIQUE KEY constraint.
-Define the process of de-normalization.
-Show how table type constraint can be applied to a table.
-35. Differentiate between derived persistent attribute and derived attribute.
 
+////////////////////////////////////////////////////////////////Describe the SIGN function.
+///////////////////////////////////////////////////////////////////Define alternate key.
 
-///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////Tell about the use of UPDATE STATICS.
 
-Have you used any static tools.
-What are you following to make the standard.
-Tell me about the Project.
-What kind of work you are doing for in Angular.
+/////////////////////////////////////////////////////////////////Explain the UNIQUE KEY constraint.
+////////////////////////////////////////////////////////////////////////////////Define the process of de-normalization.
+////////////////////////////////////////////////////////////////////////////////////////////////////////Show how table type constraint can be applied to a table.
+//////////////////////////////////////////////////////////////////////////////////////////////////////////// Differentiate between derived persistent attribute and derived attribute.
 
 
 
-
-////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////Capgemini
-//////////////////////////////////////////////////////////////////////////
-
-1. Diff of const, static
-2. ⁠Can we create object of it
-3. ⁠What is constructor
-5. ⁠Decorator in angular
-7. ⁠What is middlelayer
-Ref and out different 
-Read-only and constant difference 
-Routing
-Delegates
-Garbage collector in .net
-Idisposable interface 
-Standalone component and how it improves application 
-Explain Database first approach
-
- 
-Opps concept
-Routing
-Diff btw Prinary key unique
-What is view
-Coding :Try catch output
-Mvc lifecycle
-Sessions
-Exception handling 
-Usage of using block in dot net
-Unit testing
-Types of routing 
-Authentication in dot net
-
-Questions:
-The questions were based on more real time.
-How do you overcome production issues.
-What is diff const read static
-What is DI and it's types 
-Write code to change color of text red and green if any error occurs 
-What are types of exception handler and what are custom exception handler
-
-How connect Angular to API?
-How pass data component to component Angular?
-What is standard alone in Angular and Implementation?
-What is App model in Angular?
-What is Auth guard and implementation in Angular?
-How handled the exception in .Net Core?
-Explain Project
-How implement Authentication in .Net Core?
-How many types in Routing?
-How implement dp in Angular?
-
-Basically on authentication and authorisation, 
-exception handling, middlewares, 
-oops, 
-solid principles, 
-
-What is IConfiguration in .net core.
-How to implement Caching.
-How to use IMemory Caching.
-A C# program to send a zero to end in a array.
-A C# program to Reverse the sentence.
-What is Dense_Rank, Rank, row number.
-What is WildCard Routing in Angular.
-Which Design pattern you word.
+///////////////////////////////////////////////////////////////////////////////////////////////////Have you used any static tools.
+/////////////////////////////////////////////////////////////////////////////////////////////////What are you following to make the standard.
+////////////////////////////////////////////////////////////////////////////////////Tell me about the Project.
+///////////////////////////////////////////////////////////////////////////////////////What kind of work you are doing for in Angular.
 
 
 ////////////////////////////////////////////
@@ -22288,162 +21687,6 @@ Partial classes in C# allow you to split the definition of a class into multiple
 During compilation, the parts of the class from different files are combined to create the complete class.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ////////////////////////////////////////////////////////////////////////////////////////////////13>What is global exceptional handling.
 
 Sure, let's break down the concept of global exception handling in simple terms:
@@ -23165,230 +22408,6 @@ Web API
 ////////////////////////////////////////Rest Api
 REST API: Refers to any API that adheres to the principles of REST (Representational State Transfer). 
 It might not fully implement all the constraints of REST architecture.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ////////////////////////////////////////////////////////////////////////////////What is Collection in C#
 
 C# collection types are designed to store, manage and manipulate similar data more efficiently. Data manipulation includes adding, removing, finding, and inserting data in the collection. Collection types implement the following common functionality: 
@@ -25683,158 +24702,6 @@ Interview Answer (Short)
 
 > In this code, Thread1 locks lock1 and waits for lock2, while Thread2 locks lock2 and waits for lock1. Since both threads wait indefinitely, the application enters a deadlock state. This can be avoided by acquiring locks in a consistent order.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Difference between Pure vs Impure pipes.
 
 This is a very common Angular interview question.
@@ -26232,38 +25099,8 @@ One-Line Revision
  ///////////////////////////////////////////////////////////////////////////////////////////////////////////Normalized DB design for large applications
  //////////////////////////////////////////////////////////////////////////////////////////////////////////////SQL Server vs NoSQL in enterprise solutions
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////Handling Concurrency & Deadlocks
- 
-///////////////////////////////////////////////////////////////////////////////////
-op 10 Most Asked .NET / Web API Interview Questions
-
-Preparing for your next ASP.NET Core / Web API interview?
-Here are some of the most frequently asked questions that can help you brush up your concepts 👇
-
-⸻
-
-🔟 Top 10 Questions
-
-1️⃣ What is the difference between IActionResult and ActionResult in ASP.NET Core?
-
-2️⃣ How does Dependency Injection (DI) work in .NET Core?
-
-3️⃣ Explain the difference between HttpGet, HttpPost, HttpPut, and HttpDelete in Web API.
-
-4️⃣ What is Middleware in ASP.NET Core? Can you create a custom middleware?
-
-5️⃣ How does Routing work in Web API? What’s the role of [Route] and [Http…] attributes?
-
-6️⃣ What are Filters in ASP.NET Core? Explain the types (Authorization, Action, Exception, etc.).
-
-7️⃣ How do you implement Token-based authentication using JWT in Web API?
-
-8️⃣ Difference between Synchronous vs Asynchronous methods in .NET API? Why prefer async?
-
-9️⃣ What is Model Binding and Model Validation in ASP.NET Core?
-
-🔟 How do you secure your Web API? Mention best practices.
-
-
+/////////////////////////////////////////////////////////////////////////////////////How does Routing work in Web API? What’s the role of [Route] and [Http…] attributes?
+////////////////////////////////////////////////////////////////////////////////////////What is Model Binding and Model Validation in ASP.NET Core?
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 My Friend: DSA is tough.
 Me: Not for me. I follow the 3-7-15 Rule. 
@@ -26283,40 +25120,22 @@ By the 4th time, your brain stops panicking.
 You recognize patterns instantly.
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
-Dot .NET C# Developer Interview Coding Questions
 
-In recent interviews at companies like TCS, Infosys, Wipro, Accenture, Capgemini, Cognizant, and HCL, I noticed that many coding questions repeat — especially for .NET Developer roles using C#.
 
-These questions focus on logic building, DSA basics, and problem-solving — perfect for freshers and early-career professionals.
+ ///////////////////////////////////////////////////////////////////////////////////////////////////Check if a number is Prime.
+ ///////////////////////////////////////////////////////////////////////////////////////////////////Find the factorial of a number using recursion.
+ 
+////////////////////////////////////////////////////////////////////////////////////////////////////// Write a program to find the GCD of two numbers.
+///////////////////////////////////////////////////////////////////////////////////////////////////Swap two numbers without using a temporary variable.
+//////////////////////////////////////////////////////////////////////////////////////////////Check if two strings are anagrams.
+//////////////////////////////////////////////////////////////////////////////////////////////Write a program to find the missing number in an array of 1 to N.
 
-Top 20 C# Coding Questions Asked in Interviews:
+//////////////////////////////////////////////////////////////////////////////////////////Check if a number is Armstrong.
 
- 1. Write a program to reverse a string without using in-built functions.
- 2. Check if a number is Prime.
- 3. Find the factorial of a number using recursion.
- 4. Count the number of vowels and consonants in a string.
- 5. Find the second largest element in an array.
- 6. Write a program to check for Palindrome (number or string).
- 7. Print Fibonacci series up to N terms (recursive and iterative).
- 8. Sort an array using Bubble Sort.
- 9. Find duplicate elements in an array.
-10. Write a program to find the GCD of two numbers.
-11. Swap two numbers without using a temporary variable.
-12. Check if two strings are anagrams.
-13. Write a program to find the missing number in an array of 1 to N.
-14. Find the frequency of characters in a string.
-15. Check if a number is Armstrong.
-16. Merge two sorted arrays.
-17. Left rotate an array by D positions.
-18. Find the first non-repeating character in a string.
-19. Write a program to implement Linear Search and Binary Search.
-20. Convert binary number to decimal and vice versa.
-21. Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements. 
+//////////////////////////////////////////////////////////////////////////////////////////////////Left rotate an array by D positions.
 
-Practice each question in C#
-
-Comment ,Like Share
-
+/////////////////////////////////////////////////////////////////////////////////////////////////////Convert binary number to decimal and vice versa.
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements. 
 
 
 
@@ -26367,40 +25186,30 @@ Let’s build .NET apps that are not just functional—but also smart and sustai
 What memory management challenges have you faced in .NET?
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
-📌 Top 20 SQL Interview Questions:
-👉 What’s the difference between WHERE and HAVING clause?
-👉 Difference: Primary Key vs Unique Key vs Foreign Key.
-👉 What is a View? Can we update it?
-👉 Clustered vs Non-Clustered Index.
-👉 Use of ROW_NUMBER(), RANK(), DENSE_RANK().
-👉 What is Normalization? Different Normal Forms?
-👉 How to find the second highest salary in SQL?
-👉 Common aggregate functions: SUM(), AVG(), etc.
-👉 Difference between IN, EXISTS, and ANY.
-👉 ISNULL() vs COALESCE() — which to use when?
-👉 Temporary Table vs Table Variable.
-👉 What is an Index? When and why to create one?
-👉 How to optimize a slow-running SQL query?
+//////////////////////////////////////////////////////////////////////////////////////////////////Difference: Primary Key vs Unique Key vs Foreign Key.
+///////////////////////////////////////////////////////////////////////////////////////////////////What is a View? Can we update it?
+
+/////////////////////////////////////////////////////////////////////////////////////////////// Use of ROW_NUMBER(), RANK(), DENSE_RANK().
+////////////////////////////////////////////////////////////////////////////////////////////////Difference between IN, EXISTS, and ANY.
+////////////////////////////////////////////////////////////////////////////////////////////////ISNULL() vs COALESCE() — which to use when?
+////////////////////////////////////////////////////////////////////////////////////////////////Temporary Table vs Table Variable.
+////////////////////////////////////////////////////////////////////////////////////////////////What is an Index? When and why to create one?
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
- 🔹 1. .NET Core vs .NET Framework
- 🔹 2. Explain MVC Architecture
- 🔹 3. What is Dependency Injection?
- 🔹 4. What is Middleware?
- 🔹 5. How does Routing work?
- 🔹 6. AddSingleton vs AddScoped vs AddTransient
- 🔹 7. Role of Startup.cs
- 🔹 9. Model Binding explained
- 🔹 10. Tag Helpers vs HTML Helpers
- 🔹 11. What is a ViewModel?
- 🔹 12. Types of Filters in MVC Core
- 🔹 14. What is Kestrel Web Server?
- 🔹 15. IActionResult vs ActionResult
- 🔹 16. Exception Handling approaches
- 🔹 17. Razor Pages vs MVC
- 🔹 18. Authentication & Authorization
- 🔹 19. Consuming Web APIs via HttpClient
- 🔹 20. Configuration using appsettings.json & IConfiguration
+
+
+
+ 
+
+ 
+ //////////////////////////////////////////////////////////////////// Role of Startup.cs
+ ///////////////////////////////////////////////////////////////// Tag Helpers vs HTML Helpers
+ ///////////////////////////////////////////////////////////////////////What is a ViewModel?
+ //////////////////////////////////////////////////////////////////////////What is Kestrel Web Server?
+ /////////////////////////////////////////////////////////////////////////////IActionResult vs ActionResult
+ ////////////////////////////////////////////////////////////////////////////////Consuming Web APIs via HttpClient
+
 
 
 
@@ -26437,222 +25246,54 @@ Making the right choice can improve performance and prevent memory issues.
 hashtag
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-✅ Top 50 Angular Interview Questions (2024-2025)
-
-🚀 Asked in MNCs like TCS, Infosys, Accenture, Capgemini, Wipro & more!
-
-📌 Whether you're a beginner or experienced dev preparing for Angular interviews, these 50 most frequently asked questions will help you crack real-world rounds with confidence! 💯
-
-🟢 Basics & Fundamentals
-Key features of Angular?
-What are Components in Angular?
-What is a Module in Angular?
-What is Data Binding and its types?
-What is Event Binding?
-How is Two-Way Binding implemented?
-Role of ngModel
-What is Angular CLI?
+/////////////////////////////////////////////////////////////////////////////////////Role of ngModel
+////////////////////////////////////////////////////////////////////////////////////////What is Angular CLI?
 
 
 
-*ngIf vs *ngFor vs *ngSwitch
-Use of ngClass and ngStyle
+//////////////////////////////////////////////////////////////////*ngIf vs *ngFor vs *ngSwitch
+////////////////////////////////////////////////////////////////////////////////////////////Use of ngClass and ngStyle
 
-🟣 Services & Dependency Injection
-What are Services in Angular?
-What is Dependency Injection?
-How to create & inject a service?
-Use of @Injectable() & providedIn: 'root'
-
-🔵 Routing & Navigation
-What is Angular Routing?
-How to configure routes?
-Use of routerLink & router-outlet
-Route parameters & navigation
-Lazy loading modules
-
-🟠 Forms in Angular
-Template-Driven vs Reactive Forms
-Creating a form using FormBuilder
-Form validation (default & custom)
-What is FormGroup, FormControl, FormArray?
-Dynamic form controls (add/remove)
-
-🔴 HTTP & APIs
-Making HTTP requests
-Use of HttpClientModule
-Observables vs Promises
-Cancelling HTTP requests
-
-🟤 Advanced Concepts
-What is Change Detection in Angular?
-Lifecycle hooks: ngOnInit, ngOnChanges, ngAfterViewInit
-Difference between ViewChild & ContentChild
-Subject vs BehaviorSubject vs ReplaySubject
-Performance optimization techniques
-
-⚫ Real-Time Use Cases
-Search with debounce time
-Dynamic forms from API data
-Sharing data between unrelated components
-State management (without NgRx)
-Role-Based Access Control (RBAC)
-
-⚪ Testing & Best Practices
-Testing components/services with Jasmine/Karma
-What is TestBed?
-Angular performance best practices
-AOT (Ahead-of-Time) compilation
-Securing Angular apps
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-🔥 **Top 50 Web API Interview Questions**
-
-for .NET Developers 👨‍💻👩‍💻
-
-Are you preparing for interviews in **.NET / ASP.NET Core Web API**?
-These **frequently asked questions** will help you **crack your next tech round** confidently! 💥
-
-📌 **Basics of Web API**
-
-▪️ What is Web API?
-▪️ Difference between Web API and WCF?
-▪️ Difference between Web API and REST API?
-▪️ What are the HTTP methods supported in Web API?
-▪️ What is REST? Key principles?
-▪️ PUT vs PATCH – what's the difference?
-▪️ Common HTTP status codes?
-▪️ 200 OK vs 201 Created vs 204 No Content
-▪️ 400 Bad Request vs 404 Not Found
-▪️ What is Media Type Formatter?
-
-🧭 **Routing & Versioning**
-
-▪️ What is attribute routing in Web API?
-▪️ What is convention-based routing?
-▪️ How to implement API versioning in ASP.NET Core?
-▪️ URL vs Header versioning – what’s better?
-▪️ How to restrict routes to specific HTTP methods?
-
-🔐 **Authentication & Authorization**
-
-▪️ How to implement token-based authentication in Web API?
-▪️ What is OAuth2 and how is it implemented?
-▪️ How is JWT used in Web API authentication?
-▪️ Authentication vs Authorization?
-▪️ Best practices to secure Web API endpoints?
-
-⚙️ **Dependency Injection & Middleware**
-
-▪️ How does Dependency Injection (DI) work in Web API?
-▪️ AddTransient vs AddScoped vs AddSingleton
-▪️ How to inject services into controllers?
-▪️ What is middleware in ASP.NET Core?
+/////////////////////////////////////////////////////////How to create & inject a service?
+//////////////////////////////////////////////////////////////Use of @Injectable() & providedIn: 'root'
 
 
-🗃️ **Data Handling & Model Binding**
-
-▪️ What is Model Binding?
-▪️ What is Model Validation?
-▪️ Use of `[FromBody]`, `[FromQuery]`, `[FromRoute]`
-▪️ `IHttpActionResult` vs `HttpResponseMessage`
-▪️ How to return custom error responses?
-▪️ How to handle exceptions globally?
-
-🧩 **Filters & Action Results**
-
-▪️ Types of Filters in ASP.NET Core
-▪️ How to create custom Action Filters?
-▪️ Using middleware for exception handling?
-
-🔄 **Serialization & Formatting**
-
-▪️ How is serialization handled in Web API?
-▪️ How to return JSON or XML?
-▪️ How to customize JSON formatting?
-
-📁 **File Upload / Download**
-
-▪️ How to upload files via Web API?
-▪️ How to return a file for download?
-
-🧪 **Testing & Debugging**
-
-▪️ How to test Web API using Postman?
-▪️ How to write unit tests for controllers?
-▪️ What is Swagger / OpenAPI?
-▪️ How to enable CORS in Web API?
-▪️ What is the purpose of `[ApiController]` attribute?
-
-🔍 **Advanced Topics**
-
-▪️ What is throttling in Web API?
-▪️ How to implement rate limiting?
-▪️ What is HATEOAS?
-▪️ What is the Repository Pattern?
-▪️ Synchronous vs Asynchronous in Web API
-▪️ How to improve performance & scalability?
-
-🔖 **Follow me for more tech content** on
-.NET | Angular | C# | SQL | Web API
+///////////////////////////////////////////////////////////////////////////////////////////////////////How to configure routes?
+/////////////////////////////////////////////////////////////////////////////////////////////////////////Use of routerLink & router-outlet
 
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-🔹 .NET Full Stack Developer Interview Questions (With Core Topics Across Backend, Database, and Frontend)
-hashtag#FullStackDeveloper hashtag#DotNetCore hashtag#Angular hashtag#SQLServer hashtag#InterviewPrep hashtag#LinkedInTech
 
-If you're preparing for a .NET Full Stack Developer role or mentoring someone who is, here’s a solid list of interview-ready questions across the stack:
-
-
----
-
-✅ .NET Framework / .NET Core / ASP.NET Core
-
-2️⃣ Explain the role of the Garbage Collector in .NET Framework.
-3️⃣ What are the different types of assemblies in .NET?
-4️⃣ How does the AppDomain work and when is it used?
-5️⃣ Key differences between .NET Framework and .NET Core.
-6️⃣ What is Middleware in ASP.NET Core and how does it work?
-7️⃣ How is Dependency Injection implemented in ASP.NET Core?
-8️⃣ What is the purpose of appsettings.json in configuration?
-9️⃣ What is the life cycle of an ASP.NET MVC request?
-1️⃣2️⃣ What is a partial view and when should you use one?
+//////////////////////////////////////////////////////////////////////////////////////////Creating a form using FormBuilder
+///////////////////////////////////////////////////////////////////////////Form validation (default & custom)
+//////////////////////////////////////////////////////////////////////////////////////What is FormGroup, FormControl, FormArray?
+///////////////////////////////////////////////////////////////////////////////////////Dynamic form controls (add/remove)
 
 
----
-
-✅ SQL Server (Backend DB Layer)
-
-1️⃣3️⃣ Write a SQL query to find the second highest salary from an Employee table.
-1️⃣5️⃣ What are indexes and how do they improve query performance?
+/////////////////////////////////////////////////////////////////////////////////////Making HTTP requests
+/////////////////////////////////////////////////////////////////////////////////////Use of HttpClientModule
+////////////////////////////////////////////////////////////////////////////////Observables vs Promises
+/////////////////////////////////////////////////////////////////////////////////////////////Cancelling HTTP requests
 
 
----
+////////////////////////////////////////////////////////////////////////////////////////Subject vs BehaviorSubject vs ReplaySubject
 
-✅ Angular (Frontend)
+//////////////////////////////////////////////////////////////////////////////////Role-Based Access Control (RBAC)
 
-1️⃣7️⃣ Difference between ngOnInit() and constructor() in Angular components.
-1️⃣8️⃣ Explain types of data binding in Angular (One-way, Two-way, Event, Property).
-1️⃣9️⃣ What are services in Angular and how do you inject them?
-2️⃣0️⃣ What is lazy loading in Angular and what are its performance benefits?
+/////////////////////////////////////////////////////////////////////////////////What is TestBed?
 
+//////////////////////////////////////////////////////////////////////////////▪️ What is Media Type Formatter?
 
----
+▪️ /////////////////////////////////////////////////////////////////////////////Use of `[FromBody]`, `[FromQuery]`, `[FromRoute]`
+▪️ 
+////////////////////////////////////////////////////////////////////////////// How to return custom error responses?
 
-💡 These questions are often asked in technical rounds and help assess both conceptual depth and real-world application. If you’re a job seeker or mentor, this list is your quick-glance revision and discussion starter.
+//////////////////////////////////////////////////////////////////////////////////////////▪️ How to write unit tests for controllers?
 
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-🎯 Top .NET Core MVC Interview Questions Asked by TCS, Infosys, Accenture, Capgemini, LTI, Cognizant, Deloitte & More!
-
-
-✅ 1–10: Basics of .NET Core MVC
-2. What is ASP.NET Core MVC?
-3. What is Middleware in .NET Core?
-4. What is the role of Startup.cs file in ASP.NET Core?
-5. What is the use of appsettings.json? How do you read values from it?
+▪️ /////////////////////////////////////////////////////////////////////////////////////////////What is throttling in Web API?
+▪️ ///////////////////////////////////////////////////////////////////////////////How to implement rate limiting?
+▪️ /////////////////////////////////////////////////////////////////////////////////////////////////////What is HATEOAS?
+▪️ 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////What are the different types of assemblies in .NET?
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////6. What is the difference between IActionResult and ActionResult<T>?
  1️⃣ Definition (in easiest words)
 
@@ -27124,386 +25765,63 @@ For example, in our Buy & Sell Property app, we have routes like /buy/property/{
 It improves SEO, gives clean URLs, and helps in modular structure of the app.”
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////14. What are filters in ASP.NET Core? Types of filters?
-16. What is Model Binding in ASP.NET Core MVC?
-17. How does model validation work in ASP.NET Core?
-18. Explain how to use DataAnnotations for validation.
-19. What is ModelState.IsValid?
-20. What is the use of BindProperty attribute?
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////17. How does model validation work in ASP.NET Core?
+////////////////////////////////////////////////////////////////////////////////////////////18. Explain how to use DataAnnotations for validation.
+///////////////////////////////////////////////////////////////////////////////////////////////////////19. What is ModelState.IsValid?
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////// What is the use of BindProperty attribute?
 
-✅ 21–30: Views, Razor and Tag Helpers
-21. What is Razor view engine?
-22. What are Tag Helpers? How are they different from HTML Helpers?
-23. How do you create a strongly-typed view in ASP.NET Core?
-24. How do you use layout pages in Razor Views?
-25. What are Partial Views and how to use them?
-26. How to pass data from controller to view?
-27. What is \_ViewStart.cshtml and \_ViewImports.cshtml?
-28. How do you implement custom tag helpers?
-29. What is the difference between synchronous and asynchronous actions in controllers?
-30. How do you handle form submission in Razor Pages?
 
-✅ 31–40: Advanced Topics
-31. What is Middleware Pipeline in ASP.NET Core?
-32. Explain Exception Handling in ASP.NET Core MVC.
-33. What are custom middleware and how to create one?
-34. What is the use of IApplicationBuilder and IServiceCollection?
-35. How to implement Authentication and Authorization in ASP.NET Core?
-36. What are Claims and Policies in Authorization?
-37. What is Identity in ASP.NET Core?
-38. How do you secure sensitive data in your appsettings.json file?
-39. What is the User.Identity.Name used for?
-40. What is CORS and how to enable it in .NET Core?
 
-Follow for more such content on .NET Core, Angular, and Full Stack interview prep!
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-Top 50 Full Stack Developer Interview Questions**, Mostly asked in MNCs like Deloitte, Accenture, Capgemini, LTI Mindtree, Cognizant, Infosys, Wipro, TCS, and HCL
+/////////////////////////////////////////////////////////////////////////////////////34. What is the use of IApplicationBuilder and IServiceCollection?
+//////////////////////////////////////////////////////////////////////////////////////What are Claims and Policies in Authorization?
+/////////////////////////////////////////////////////////////////////////////////////////What is Identity in ASP.NET Core?
+//////////////////////////////////////////////////////////////////////////////////////////How do you secure sensitive data in your appsettings.json file?
+///////////////////////////////////////////////////////////////////////////////////////////////What is the User.Identity.Name used for?
+////////////////////////////////////////////////////////////////////////////////////////////////////////What is CORS and how to enable it in .NET Core?
 
-#### 💾 **SQL (10 Questions)**
 
-2. Explain normalization – 1NF, 2NF, 3NF.
-3. `WHERE` vs `HAVING` clause.
-5. Find the second highest salary.
-7. What are indexes?
-9. Transactions in SQL.
-10. Optimizing slow queries.
+/////////////////////////////////////////////////////////////////////////////////////////////// Explain normalization – 1NF, 2NF, 3NF.
 
-#### 🎯 **ASP.NET MVC (10 Questions)**
 
-11. MVC architecture fundamentals.
-12. `ActionResult` vs `ViewResult`.
-13. Routing in MVC.
-14. Razor View Engine..
-16. What is a Partial View?
-17. Implementing validation in MVC.
-18. `Html.Partial` vs `Html.RenderPartial`.
-19. Dependency Injection in MVC.
-20. MVC vs WebForms.
 
-#### 🔧 **ASP.NET Core MVC (10 Questions)**
+////////////////////////////////////////////////////////////////////////////////// `Html.Partial` vs `Html.RenderPartial`.
 
-21. Middleware in Core.
-22. Purpose of `Startup.cs`.
-23. Logging in ASP.NET Core.
-24. `appsettings.json` configuration.
-27. Dependency Injection in Core.
-28. Model Binding vs Validation.
-29. Endpoint Routing.
-30. Global Exception Handling.
+
 
 #### 🌐 **Web API / .NET Core Web API (10 Questions)**
 
-31. What is REST API?
-32. HTTP Status Codes meaning.
-33. API versioning methods.
-34. Attribute Routing.
-35. Returning JSON from APIs.
-36. API testing in Angular/Postman.
-37. Swagger integration.
-38. What is CORS?
-39. Web API Exception Handling.
+//////////////////////////////////////////////////////////37. Swagger integration.
 
-#### ⚡ **Angular (10 Questions)**
+///////////////////////////////////////////////////////////////////////////////////////// How would you implement soft delete in EF Core?
+///////////////////////////////////////////////////////////////////////////////////10. Explain different SQL isolation levels.
 
-41. What is Angular?
-42. Components in Angular.
-43. Data Binding types.
-45. Services in Angular.
-46. HTTPClient in Angular.
-47. Angular Dependency Injection.
-49. Angular Routing.
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////What are the different types of assemblies in .NET?
 
-////////////////////////////////////////////////////////////////////////////////////
-#LTIMindtree .NET Angular Full Stack Developer Interview
 
-Asp .Net
+///////////////////////////////////////////////////////////////////////////////////////////////////////////How does the AppDomain work in .NET and when is it used?
 
-1. What is the difference between .NET Core and .NET Framework?
-2. How does dependency injection work in ASP.NET Core?
-3. What is the difference between IActionResult and ActionResult<T>?
-4. How do you implement Web API versioning in .NET Core?
-5. Explain the middleware pipeline order in .NET Core.
-7. How would you implement soft delete in EF Core?
-10. Explain different SQL isolation levels.
+////////////////////////////////////////////////////////////////////////////// How do you call and bind REST API data in Angular component?
 
-Angular
-
-12. Difference between reactive forms and template-driven forms?
-14. Observables vs Promises – key differences?
-
-
-15. Describe a major production issue you handled.
-16. Have you worked in Agile? What was your team structure?
-17. Why LTIMindtree?
-18. Any experience in cloud/DevOps pipelines?
-
-✅ Save this for your next interview prep!
-💬 Share your experience in the comments!
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////
-#Infosys .NET Full Stack Developer role
-
-🔹 .NET Framework / .NET Core / ASP.NET Core
-
-2. Explain the role of the Garbage Collector in .NET Framework.
-
-
-3. What are the different types of assemblies in .NET?
-
-
-4. How does the AppDomain work in .NET and when is it used?
-
-
-5. What are the key differences between .NET Framework and .NET Core?
-
-
-6. What is Middleware in ASP.NET Core and how does it work?
-
-
-7. How is Dependency Injection implemented in ASP.NET Core?
-
-
-8. What is the purpose of the appsettings.json file?
-
-
-9. What is the life cycle of an ASP.NET MVC request?
-
-
-
-
-11. How do you implement security in an MVC application?
-
-
-12. What is a partial view and when should it be used?
-
-
-
-🔹 SQL Server
-
-13. Write a SQL query to find the second highest salary from an Employee table.
-
-15. What are indexes and how do they impact performance?
-🔹 Angular
-
-17. What is the difference between ngOnInit() and constructor() in Angular?
-
-
-18. Explain the different types of data binding in Angular.
-
-
-19. What are Angular services and how are they injected into components?
-
-
-20. What is lazy loading in Angular and what are its benefits?
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-#Deloitte .NET Full Stack Developer Interview Questions** 
-
-### ✅ **.NET / .NET Core**
-
-1. What is the difference between .NET Framework and .NET Core?
-2. What is Dependency Injection in .NET Core?
-3. Explain the concept of Middleware in ASP.NET Core.
-4. What is the difference between AddScoped, AddSingleton, and AddTransient?
-5. What is the role of Program.cs and Startup.cs in .NET 6/7?
-6. How do you handle configuration and logging in .NET Core?
-
----
-
-### ✅ **ASP.NET MVC**
-
-7. Explain MVC architecture with a real-time project example.
-
-10. How does routing work in MVC? Explain attribute routing.
-
----
-
-### ✅ **SQL Server**
-
-11. Write a SQL query to find the second highest salary.
-12. Difference between Clustered and Non-Clustered Index.
-14. How to delete duplicate records from a table but keep one?
-
----
-
-### ✅ **Angular**
-
-17. Template-driven vs Reactive Forms in Angular.
-19. What is Change Detection and how does it work in Angular?
-20. How do you call and bind REST API data in Angular component?
-
----
-
-💼 **candidates, save and share this for your interview prep!
-
-//////////////////////////////////////////////////////////////////////////////////////////////
-#Wipro .NET Full Stack Developer Interview Questions
--------------------
- .NET
-------------------
-1.What is the difference between .NET Framework and .NET Core?
-2.What is Dependency Injection? How is it implemented in .NET Core?
-3.What are Middleware components in ASP.NET Core?
-4.Difference between AddScoped, AddSingleton, and AddTransient?
-5.How does routing work in ASP.NET Core?
-7.Explain MVC architecture with a real-time example.
-9.What is the use of Partial Views in MVC?
-10.What is Model Binding in MVC?
------------------
- SQL Server
------------------
-1.SQL query to get the second highest salary from a table.
-2.Clustered vs Non-Clustered Index in SQL Server?
-5.Methods to remove duplicates from a SQL table.
-------------------
- Angular
------------------
-1.Observable vs Promise in Angular – key differences?
-2.Reactive vs Template-Driven Forms in Angular?
-4.What is Change Detection in Angular and how does it work?
-5.How to call a REST API and display data in Angular component?
-
- Save & Share for revision!
- Comment if you know the answers too.
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-#Deloitte interview questions for both .NET Core Full Stack Developer Posistion.
-
-1. What is Async programming and why is it used?
-
-2. What is the difference between IEnumerable and IQueryable?
-
-3. What is Serialization and why is it used in C#?
-
-4. Explain middleware and how can we create custom middleware in .NET Core?
-
-5. What is the difference between throw and throw ex?
-7. What design patterns are you using in your current project?
-
-8. I have the following API function, what error will it throw?
+//////////////////////////////////////////////////////////////////I have the following API function, what error will it throw?
 
 [HttpGet]
 [HttpPut]
 public void GetAllUsers() {}
 
-9. What is the difference between PUT and POST?
+////////////////////////////////////////////////////////////////////////////////////How can you show/hide a column in a grid layout based on employee role (admin, manager, candidate)?
 
----------------Angular Questions ----------------
+//////////////////////////////////////////////////////////////////////////////////////////////////////If both foreign key and unique key columns are NOT NULL, which is better to use for uniqueness?
 
-1. What is the use of ngOnInit()?
+/////////////////////////////////////////////////////////////////////////////////////////////////////Write a SQL query to select all users created in the last year and order them by creation date.
 
-2. Explain FormBuilder and FormGroup in Angular.
 
-3. How can you show/hide a column in a grid layout based on employee role (admin, manager, candidate)?
+////////////////////////////////////////////////////////////////////////////////////////////////////////Describe how JSON serialization and deserialization work in .NET Core, and list common .NET types mapped to JSON.
 
-5. Explain pipes in Angular.
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////Explain the differences and appropriate use cases for IEnumerable and IQueryable in C#.
 
---------------------Database Questions:--------------
-
-1. What is the use of temp tables and table variables?
-
-2. If both foreign key and unique key columns are NOT NULL, which is better to use for uniqueness?
-
-3. Write a SQL query to select all users created in the last year and order them by creation date.
-
-
-🔔 Join me to improve your skills to clean code.
-
-👩‍💻 Please share and repost and help others to code better and clean code.
-Follow me 
-
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-#Accenture Interview questions .Net Full Stack Developer Position.
-
-C# – Foundational Concepts
-
-1. Explain the OOP's in C#.
-
-2. Differentiate between string and StringBuilder in C#, providing a real-time example of when to use each.
-
-
-3. Compare and contrast Array and ArrayList in C#.
-
-
-4. Elaborate on the significance and usage of common C# keywords (e.g., var, static, this, base, async, etc.).
-
-
-5. What is the difference between the const and readonly keywords in C#?
-
-
-6. Explain the SOLID principles of object-oriented design.
-
-
-7. Differentiate between the .NET Framework and .NET Core.
-
-
-8. What is the default access modifier when defining a function within an interface in C#?
-
-
-
-ASP.NET Core – Architecture and Development
-
-
-
-2. How are static files served in an ASP.NET Core application, and where are they typically located in the project structure?
-
-
-3. Explain the concept of middleware in ASP.NET Core, and provide an example of implementing custom middleware.
-
-
-4. Why is Cross-Origin Resource Sharing (CORS) used in ASP.NET Core applications?
-
-
-5. Describe the exception handling mechanisms in ASP.NET Core.
-
-
-6. Explain the difference between throw and throw ex in C# exception handling.
-
-
-7. What is a RESTful API, and why is it a popular choice for web service development?
-
-
-8. Discuss the common return types used in ASP.NET Core Web API actions.
-
-
-9. Describe how JSON serialization and deserialization work in .NET Core, and list common .NET types mapped to JSON.
-
-
-10. Between a GET and a POST request, which is generally considered more secure, and why?
-
-
-11. What is the purpose of the appsettings.json file in a .NET Core application (formerly web.config in older ASP.NET versions)?
-
-
-
-
-
-13. What is an Object-Relational Mapper (ORM), and why is it beneficial in .NET development?
-
-
-14. Explain the differences and appropriate use cases for IEnumerable and IQueryable in C#.
-
-Angular – Front-End Development
-
-1. What is a component in Angular, and what is the purpose of each file typically associated with it?
-
-4. Explain @Input() and @Output() bindings in Angular.
-
-
-5. What is the purpose and usage of [(ngModel)] in Angular?
-
-
-6. What is the role of a service class in Angular applications?
-
-
-7. Describe the typical data flow from a Web API to an Angular service class. Provide an example of how to inject APIs into a service.
-
-
-8. Explain Angular component lifecycle hooks, and specifically elaborate on the purpose of ngOnInit().
-
-
-9. When changing the selected value of a dropdown, which Angular lifecycle hook(s) would typically be executed?.
+////////////////////////////////////////////////////////////////////////////////////////////// Describe the typical data flow from a Web API to an Angular service class. Provide an example of how to inject APIs into a service.
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////When changing the selected value of a dropdown, which Angular lifecycle hook(s) would typically be executed?.
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -29434,56 +27752,39 @@ Now, I am ready to bring both my past 5 years of experience and my new skills to
 
 
 //////////////////////L1 round topis
-//C#
-1. OOP Concepts (Polymorphism)
-2. Exception Handling (try-catch-finally, custom exceptions)
-3. Collections (List, Dictionary, HashSet, Queue, Stack)
-4. LINQ (Filtering, Projections, Joins, Aggregations)
-5. Delegates and Events (Multicast Delegates, Event Handlers)
-6. Async and Await (Task, Task.Run, Parallel Programming)
-7. SOLID Principles and Design Patterns (Singleton, Factory, Repository)
-8. File I/O Operations (StreamReader, StreamWriter, FileInfo) // Less Important
-9. Memory Management (Garbage Collection, IDisposable, using statement)
-10. Reflection and Attributes //Not Yet Revision
+//C
+//////////////////////////////////////////////////////////////////////////////////////////3. Collections (List, Dictionary, HashSet, Queue, Stack)
+//////////////////////////////////////////////////////////////////////////////////////Async and Await (Task, Task.Run, Parallel Programming)
+///////////////////////////////////////////////////////////////////////////////////File I/O Operations (StreamReader, StreamWriter, FileInfo) // Less Important
+/////////////////////////////////////////////////////////////////////////////////////////Reflection and Attributes //Not Yet Revision
 
 //.Net Core
-1. Middleware and Request Pipeline
-2. Dependency Injection (Transient, Scoped, Singleton)
-3. Configuration Management (appsettings.json, Environment Variables)
-4. Logging (Serilog, NLog, Microsoft Extensions Logging)
-5. Entity Framework Core (Migrations, LINQ Queries, Relationships)
-6. Web API Development (GET, POST, PUT, DELETE, Versioning)
-7. Authentication and Authorization (JWT, Identity, Roles)
-9. Global Exception Handling
-10. API Documentation (Swagger)
+
+
+//////////////////////////////////////////////////////////////////////////4. Logging (Serilog, NLog, Microsoft Extensions Logging)
+////////////////////////////////////////////////////////////////////////////API Documentation (Swagger)
 
 //Angular
-1. Components and Modules (Lifecycle Hooks, Communication)
-2. Services and Dependency Injection
-3. Routing and Navigation (Lazy Loading, Guards)
-4. Forms (Template-driven, Reactive Forms, Validation)
-5. HTTP Client (GET, POST, PUT, DELETE, )
-6. Observables and RxJS (map, filter, switchMap, debounceTime)
-7. Component Communication (Input, Output, EventEmitter)
-10. Angular Material for UI Components
+
+////////////////////////////////////////////////////////////////////////////////////Observables and RxJS (map, filter, switchMap, debounceTime)
+////////////////////////////////////////////////////////////////////////////////////////////Component Communication (Input, Output, EventEmitter)
+/////////////////////////////////////////////////////////////////////////////////////////////Angular Material for UI Components
 
 //Ms Sql Server
 MS SQL Server
 
 1. Joins (Inner, Left, Right, Full Outer)
 2. CRUD Operations (Insert, Update, Delete, Select)
-5. Transactions and Locking Mechanisms
-7. Query Optimization and Execution Plans
-9. Data Types and Constraints
-10. Backup and Restore.
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////5. Transactions and Locking Mechanisms
+////////////////////////////////////////////////////////////////////////////////////////////////Data Types and Constraints
+///////////////////////////////////////////////////////////////////////////// Backup and Restore.
 
 
 ///Soft Skills & Concepts:
-1. Agile Methodologies (Scrum, Sprint Planning, Retrospectives)
-2. Code Review Practices and Best Coding Standards
-3. Debugging Techniques and Troubleshooting
-4. Communication Skills for Team Collaboration
-5. Time Management for Delivering Features on Time
+/////////////////////////////////////////////////////////////////////////////////////Agile Methodologies (Scrum, Sprint Planning, Retrospectives)
+///////////////////////////////////////////////////////////////////////////////Code Review Practices and Best Coding Standards
+///////////////////////////////////////////////////////////////////////////Debugging Techniques and Troubleshooting
+////////////////////////////////////////////////////////////////////////////////////Time Management for Delivering Features on Time
 
 //////////////////////L2 round topics
 
@@ -34385,166 +32686,6 @@ Only then the query is executes, and EFsends SQL to the database.
 Performance Optimization -> Query is executed only when needed.
 Flexibility -> You can build queries step by step before execution.
 Less Load -> Prevents unnessary
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ///////////////////////////////////////////////////////////////////////////////////////////10) What do you mean by the term navigation property in the entity framework ?
 11) What are diffrent entity state in EF ?
 12) Write the importance of the t4 entity in Entity Framework.
@@ -35346,339 +33487,6 @@ Use structured logging (Serilog, Application Insights) to find performance bottl
 8. Use Background Services –
 
 Heavy tasks (like sending emails, reports) should run in background jobs (Hangfire, Quartz) instead of blocking user requests.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /////////////////////////////////////////////////////////////////////How do you implement security in an MVC application (Authentication/Authorization)?
 ///////////////////////////////////////////////////Angular Specific (Performance + Security):
@@ -36731,4 +34539,1703 @@ int main() {
 
 Show quoted text
 
+////////////////////////////////////////////////////////////////////////////////////////////////What is Monolithic frotend Artitecture .
+////////////////////////////////////////////////////////////////////////////////////////////////Diffrence between Collection and Middleware.
+////////////////////////////////////////////////////////////////////////////////////////////////What is Git And Github.
+////////////////////////////////////////////////////////////////////////////////////////////////What are packages that we are using for Iqurables and Ienumerables.
+/// ///////////////////////////////////////////////////////////////Task and Tread (5 diffrence)
+////////////////////////////////////////////////////////////////////////////What is memory leak and how do you identified it?
+/// //////////////////////////////////////////////////////////////FormBody.
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// //////////////////////////////////////////////////////////////////////////////////////////////////////////Azure
+/// //////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
+https://youtu.be/xxDRrZPahR8?si=TaHx37ibN_ssmMNf
+
+1. What is cloud computing? What is Azure? (0:01:11)
+
+2. What are the main cloud service models? (Difference between laaS, PaaS, and SaaS) (0:06:26)
+
+3. What is Hybrid Cloud? (0:12:49)
+
+4. What cloud model fits best for using existing on-prem servers with Azure? (0:14:44)
+
+5. What is a resource in Azure? How is it different from a service? (0:16:14)
+
+6. What are Resource Groups in Azure and why are they used? (0:19:31)
+
+7. Explain Azure Regions and Availability Zones. (0:22:42)
+
+8. What happens to resources if you accidentally delete a resource group? (0:25:32)
+
+9. What is the best way to allow a user to manage resources in one project but not another? (0:26:17)
+
+10. What are Azure Virtual Machines and when to use them? (0:26:51)
+
+11. What are VM Scale Sets and when to use them? (0:28:29)
+
+12. What is Azure App Service and its purpose? (0:31:10)
+
+13. What is the difference between Azure VMs and Azure App Services? (0:33:48).
+14. What are Deployment Slots in App Service and why are they useful? (0:36:49)
+
+15. How to host a web app quickly with minimum infrastructure management? (0:38:26)
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////16. What are Azure Functions ?
+
+Azure Functions is a serverless compute service that allows us to run small pieces of code without creating or managing servers.
+
+
+
+Simple meaning:
+
+Write Code
+↓
+Deploy
+↓
+Azure Runs It
+
+You do not manage:
+
+Servers
+OS
+Scaling
+Infrastructure
+
+Azure manages everything.
+
+
+---
+
+🧠 Real-Life Example
+
+Suppose you hire a driver.
+
+Traditional hosting:
+
+Buy Car
+Maintain Car
+Pay Fuel
+
+Azure Functions:
+
+Call Driver
+Use
+Pay Only When Needed
+
+That is:
+
+Serverless
+
+(Server exists, but Azure manages it.)
+
+
+---
+
+Why Azure Functions Came?
+
+Traditional Web API:
+
+Create Server
+Deploy
+Scale
+Monitor
+
+Too much work.
+
+Azure Functions:
+
+Write Function
+Deploy
+Done
+
+
+---
+
+How Azure Function Works?
+
+Event Happens
+      ↓
+Function Triggered
+      ↓
+Code Executes
+      ↓
+Return Result
+
+Example:
+
+File Uploaded
+↓
+Resize Image
+↓
+Save
+
+
+---
+
+Architecture
+
+User
+ ↓
+Trigger
+ ↓
+Azure Function
+ ↓
+Database
+ ↓
+Response
+
+
+---
+
+Main Components
+
+1. Function
+
+Actual business logic.
+
+Example:
+
+public static void Run()
+{
+}
+
+
+---
+
+2. Trigger ⭐
+
+Defines when function runs.
+
+Examples:
+
+HTTP Trigger
+
+Timer Trigger
+
+Queue Trigger
+
+Blob Trigger
+
+Think:
+
+Trigger
+=
+Start Button
+
+
+---
+
+3. Binding
+
+Connect function to services.
+
+Examples:
+
+Input Binding
+
+Output Binding
+
+
+---
+
+Types of Triggers
+
+HTTP Trigger
+
+Runs when API called.
+
+Example:
+
+GET /property
+
+Code:
+
+[Function("GetUsers")]
+public IActionResult Run(
+[HttpTrigger]
+HttpRequest req)
+{
+ return new OkResult();
+}
+
+
+---
+
+Timer Trigger
+
+Runs automatically.
+
+Example:
+
+Every Day
+12 AM
+
+Use:
+
+Send Report
+
+
+---
+
+Queue Trigger
+
+Runs when message enters queue.
+
+Example:
+
+Order Queue
+↓
+Process Order
+
+
+---
+
+Blob Trigger
+
+Runs when file uploaded.
+
+Example:
+
+Image Upload
+↓
+Generate Thumbnail
+
+
+---
+
+Property Buy/Sell Project Example
+
+Suppose:
+
+User uploads property image.
+
+Flow:
+
+Upload
+ ↓
+Blob Storage
+ ↓
+Azure Function
+ ↓
+Resize Image
+ ↓
+Save
+
+No server needed.
+
+
+---
+
+Another example:
+
+Daily notifications.
+
+Timer Trigger
+ ↓
+Azure Function
+ ↓
+Send Email
+
+
+---
+
+Scaling (Big Advantage)
+
+If:
+
+10 Users
+
+Azure creates:
+
+1 Instance
+
+If:
+
+100000 Users
+
+Azure creates:
+
+More Instances
+
+Automatically.
+
+
+---
+
+Advantages
+
+No Server Management
+
+Azure handles server
+
+
+---
+
+Auto Scaling
+
+Traffic ↑
+Instances ↑
+
+
+---
+
+Pay Per Execution
+
+Use More
+Pay More
+
+
+---
+
+Fast Development
+
+Write Function
+Deploy
+
+
+---
+
+Disadvantages
+
+Cold Start
+
+First request may be slower.
+
+
+---
+
+Execution Time Limits
+
+Not ideal for long-running jobs.
+
+
+---
+
+Debugging Harder
+
+Compared to normal APIs.
+
+
+---
+
+Azure Function vs Web API
+
++-------------------+---------------------+-------------------+
+| Feature | Azure Function | Web API |
++-------------------+---------------------+-------------------+
+| Server Management | No | Yes |
++-------------------+---------------------+-------------------+
+| Scaling | Automatic | Manual |
++-------------------+---------------------+-------------------+
+| Pricing | Per Execution | Continuous |
++-------------------+---------------------+-------------------+
+| Best For | Events/Automation | Full APIs |
++-------------------+---------------------+-------------------+
+
+
+---
+
+When to Use?
+
+Use Azure Functions for:
+
+Background Jobs
+
+Notifications
+
+File Processing
+
+Scheduled Tasks
+
+Queue Processing
+
+Event Processing
+
+Avoid for:
+
+Complex Full Applications
+
+
+---
+
+Interview Answer (Short)
+
+> Azure Functions is a serverless compute service in Azure that allows developers to execute code based on events without managing infrastructure. It supports triggers like HTTP, Timer, Queue, and Blob and automatically scales based on demand.
+
+
+
+
+---
+
+📌 Topic Placement
+
+Cloud
+└── Azure
+     ├── App Service
+     ├── Azure Functions
+     ├── Blob Storage
+     ├── Service Bus
+     └── Azure SQL
+
+🧠 Memory Trick
+
+Trigger
+↓
+Function
+↓
+Execute
+↓
+Done
+
+One-Line Revision
+
+> Azure Functions are event-driven serverless code executions managed automatically by Azure.
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////17. What are Azure Logic Apps? 
+This is a common Azure interview question.
+
+Many people confuse:
+
+Azure Function
+vs
+Azure Logic App
+
+So first understand:
+
+
+---
+
+✅ Easiest Definition
+
+> Azure Logic Apps is a cloud service used to automate workflows between applications and services with little or no code.
+
+
+
+Simple meaning:
+
+Connect Systems
+↓
+Create Workflow
+↓
+Automation
+
+OR
+
+IF THIS
+↓
+DO THAT
+
+
+---
+
+🧠 Real-Life Example
+
+Imagine:
+
+When Gmail receives invoice
+↓
+Save in OneDrive
+↓
+Send Teams Notification
+
+You do not write backend code.
+
+That workflow is:
+
+Azure Logic App
+
+
+---
+
+Why Azure Logic Apps Came?
+
+Without Logic App:
+
+Write API
+
+Write Integration
+
+Deploy
+
+Monitor
+
+Too much code.
+
+With Logic App:
+
+Drag
+Connect
+Configure
+Done
+
+
+---
+
+How Logic App Works?
+
+Logic App mainly has:
+
+Trigger
+↓
+Action
+↓
+Action
+↓
+Action
+↓
+Result
+
+Think:
+
+Workflow Builder
+
+
+---
+
+Architecture
+
+Trigger
+ ↓
+Logic App
+ ↓
+Connectors
+ ↓
+Services
+ ↓
+Output
+
+
+---
+
+Main Components
+
+1. Trigger ⭐
+
+Starts workflow.
+
+Examples:
+
+Email Received
+
+HTTP Request
+
+Timer
+
+File Uploaded
+
+Example:
+
+New Property Added
+
+↓
+
+Start Logic App.
+
+
+---
+
+2. Actions
+
+Actual work performed.
+
+Examples:
+
+Send Email
+
+Insert SQL Data
+
+Call API
+
+Upload File
+
+
+---
+
+3. Connectors ⭐
+
+Prebuilt integrations.
+
+Examples:
+
+Outlook
+
+SQL
+
+Teams
+
+SharePoint
+
+Azure Blob
+
+Salesforce
+
+SAP
+
+Think:
+
+Connector
+=
+Ready-made Adapter
+
+
+---
+
+Example Workflow
+
+Suppose:
+
+Customer submits form.
+
+Logic App:
+
+Form Submitted
+↓
+Validate Data
+↓
+Save SQL
+↓
+Send Email
+↓
+Notify Teams
+
+No custom backend.
+
+
+---
+
+Property Buy/Sell Project Example
+
+Suppose user uploads property.
+
+Workflow:
+
+Property Added
+↓
+Logic App Trigger
+↓
+Save Database
+↓
+Send Email
+↓
+Send SMS
+↓
+Notify Admin
+
+Everything automated.
+
+
+---
+
+Example: Daily Report
+
+Timer Trigger
+↓
+Get SQL Data
+↓
+Generate Report
+↓
+Send Email
+
+
+---
+
+Azure Logic App vs Azure Function
+
++----------------------+------------------------+----------------------+
+| Feature | Logic App | Azure Function |
++----------------------+------------------------+----------------------+
+| Development | Low/No Code | Code Required |
++----------------------+------------------------+----------------------+
+| Best For | Workflow Automation | Custom Logic |
++----------------------+------------------------+----------------------+
+| UI | Visual Designer | Code |
++----------------------+------------------------+----------------------+
+| Integrations | Many Connectors | Manual Integration |
++----------------------+------------------------+----------------------+
+| Complexity | Simple Workflows | Complex Processing |
++----------------------+------------------------+----------------------+
+
+
+---
+
+Logic App + Azure Function Together
+
+Very common in enterprises:
+
+Logic App
+↓
+Trigger Workflow
+↓
+Call Azure Function
+↓
+Custom Processing
+↓
+Return
+
+Example:
+
+Upload File
+↓
+Logic App
+↓
+Azure Function
+↓
+Resize Image
+
+
+---
+
+Advantages
+
+Low Code
+
+Less Coding
+
+
+---
+
+Fast Integration
+
+Connect Many Systems
+
+
+---
+
+Visual Workflow
+
+Easy Monitoring
+
+
+---
+
+Enterprise Connectors
+
+SQL
+SAP
+Office
+Azure
+
+
+---
+
+Disadvantages
+
+Complex Logic Hard
+
+Large Workflow
+=
+Messy
+
+
+---
+
+Connector Cost
+
+Heavy Usage
+=
+Higher Cost
+
+
+---
+
+When to Use?
+
+Use Logic App for:
+
+Email Automation
+
+Notifications
+
+Workflow
+
+Data Integration
+
+Approval Process
+
+Avoid for:
+
+Heavy Business Logic
+
+
+---
+
+Interview Answer (Short)
+
+> Azure Logic Apps is a cloud-based workflow automation service that helps integrate applications and automate business processes using triggers, actions, and connectors with little or no code.
+
+
+
+
+---
+
+📌 Topic Placement
+
+Cloud
+└── Azure
+     ├── Azure Function
+     ├── Logic App
+     ├── Service Bus
+     ├── Blob Storage
+     └── Event Grid
+
+🧠 Memory Trick
+
+Trigger
+↓
+Workflow
+↓
+Actions
+↓
+Automation
+
+One-Line Revision
+
+> Azure Logic Apps automate workflows across systems using triggers, actions, and connectors with minimal code.
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////18. What is Azure Storage and its types?
+Easiest Definition
+
+> Azure Storage is a cloud service used to store data securely and access it from anywhere.
+
+
+
+Simple meaning:
+
+Azure Storage
+=
+Online Storage
+
+Store:
+
+Files
+
+Images
+
+Videos
+
+Database Data
+
+Logs
+
+Backups
+
+
+---
+
+🧠 Real-Life Example
+
+Think:
+
+Your phone storage:
+
+Photos
+Videos
+Files
+
+Azure Storage:
+
+Cloud Photos
+Cloud Files
+Cloud Data
+
+Accessible from:
+
+Mobile
+Laptop
+Server
+
+
+---
+
+Why Azure Storage?
+
+Without Azure:
+
+Buy Server
+Manage Disk
+Handle Backup
+
+With Azure:
+
+Create Storage
+Upload Data
+Done
+
+
+---
+
+Azure Storage Types
+
+Mainly 5 types:
+
+1. Blob Storage
+2. File Storage
+3. Queue Storage
+4. Table Storage
+5. Disk Storage
+
+
+---
+
+1. Blob Storage ⭐ (Most Used)
+
+Definition
+
+> Stores unstructured data.
+
+
+
+Simple meaning:
+
+Blob
+=
+Files Storage
+
+Store:
+
+Images
+
+Videos
+
+PDF
+
+Documents
+
+Backup
+
+Example:
+
+property-images
+
+ house1.jpg
+
+ house2.jpg
+
+Structure:
+
+Storage Account
+ ↓
+Container
+ ↓
+Blob(File)
+
+Think:
+
+Folder
+↓
+Files
+
+
+---
+
+Property Project Example
+
+User Uploads House Image
+↓
+Blob Storage
+↓
+Save URL
+
+
+---
+
+2. Azure File Storage
+
+Definition
+
+> Managed shared file system in cloud.
+
+
+
+Simple meaning:
+
+Shared Folder
+
+Store:
+
+Documents
+
+Logs
+
+Shared Files
+
+Example:
+
+Team Folder
+
+Access:
+
+Windows
+
+Linux
+
+Cloud
+
+
+---
+
+Property Example
+
+Agreement Documents
+↓
+Shared Folder
+
+
+---
+
+3. Queue Storage ⭐
+
+Definition
+
+> Stores messages for asynchronous processing.
+
+
+
+Simple meaning:
+
+Task Waiting Area
+
+Example:
+
+Upload Request
+↓
+Queue
+↓
+Process Later
+
+Structure:
+
+App
+↓
+Queue
+↓
+Worker
+
+
+---
+
+Property Project Example
+
+User Books Property
+↓
+Queue
+↓
+Payment Service
+
+
+---
+
+4. Table Storage
+
+Definition
+
+> NoSQL key-value storage.
+
+
+
+Simple meaning:
+
+Store Large Data
+Without SQL
+
+Example:
+
+UserLogs
+
+Analytics
+
+IoT
+
+Structure:
+
+Partition Key
+
+Row Key
+
+
+---
+
+Property Example
+
+Store Search History
+
+
+---
+
+5. Disk Storage
+
+Definition
+
+> Virtual disks attached to Azure VMs.
+
+
+
+Simple meaning:
+
+Cloud Hard Disk
+
+Types:
+
+SSD
+
+HDD
+
+Used:
+
+Virtual Machines
+
+
+---
+
+Storage Account Architecture
+
+Azure Storage Account
+        ↓
+ ┌──────────────┐
+ │ Blob │
+ │ File │
+ │ Queue │
+ │ Table │
+ │ Disk │
+ └──────────────┘
+
+
+---
+
+Comparison Table
+
++---------------+-------------------------+
+| Type | Used For |
++---------------+-------------------------+
+| Blob | Images, Videos |
++---------------+-------------------------+
+| File | Shared Files |
++---------------+-------------------------+
+| Queue | Async Messages |
++---------------+-------------------------+
+| Table | NoSQL Data |
++---------------+-------------------------+
+| Disk | VM Storage |
++---------------+-------------------------+
+
+
+---
+
+Example Full Property Flow
+
+Upload Image
+↓
+Blob Storage
+
+Agreement
+↓
+File Storage
+
+Booking
+↓
+Queue
+
+Logs
+↓
+Table Storage
+
+
+---
+
+Advantages
+
+Scalable
+
+Storage grows automatically
+
+
+---
+
+Secure
+
+Encryption
+
+
+---
+
+Global Access
+
+Anywhere
+
+
+---
+
+Low Maintenance
+
+Azure Manages
+
+
+---
+
+Interview Answer (Short)
+
+> Azure Storage is a cloud storage service used to store and manage data in Azure. The main storage types are Blob Storage for files, File Storage for shared folders, Queue Storage for asynchronous messaging, Table Storage for NoSQL data, and Disk Storage for virtual machines.
+
+
+
+
+---
+
+📌 Topic Placement
+
+Cloud
+└── Azure
+     ├── Storage
+     │ ├── Blob
+     │ ├── File
+     │ ├── Queue
+     │ ├── Table
+     │ └── Disk
+
+🧠 Memory Trick
+
+Blob → Files
+
+File → Shared Folder
+
+Queue → Messages
+
+Table → NoSQL
+
+Disk → VM
+
+One-Line Revision
+
+> Azure Storage provides cloud-based storage services for files, messages, NoSQL data, and virtual disks.
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////19. What is Azure Blob Storage and when to use it? 
+Azure Blob Storage is a cloud storage service used to store large amounts of unstructured data.
+
+
+
+Simple meaning:
+
+Blob Storage
+=
+Cloud File Storage
+
+Store things like:
+
+Images
+
+Videos
+
+PDF
+
+Documents
+
+Audio
+
+Backup Files
+
+Logs
+
+
+---
+
+What does Blob mean?
+
+Blob stands for:
+
+BLOB
+=
+Binary Large Object
+
+Meaning:
+
+Any File Data
+
+Examples:
+
+house.jpg
+
+resume.pdf
+
+video.mp4
+
+report.xlsx
+
+
+---
+
+🧠 Real-Life Example
+
+Think:
+
+Phone Gallery:
+
+Photos
+Videos
+
+Azure Blob Storage:
+
+Cloud Gallery
+
+Accessible from:
+
+Mobile
+Website
+Backend
+Anywhere
+
+
+---
+
+Why Blob Storage?
+
+Without Blob:
+
+Store files inside server
+
+Problem:
+
+Server Full
+
+Expensive
+
+Hard Backup
+
+With Blob:
+
+Upload
+↓
+Azure Stores
+↓
+Get URL
+
+
+---
+
+Architecture
+
+Application
+     ↓
+Storage Account
+     ↓
+Container
+     ↓
+Blob(File)
+
+Think:
+
+Storage Account
+=
+Drive
+
+Container
+=
+Folder
+
+Blob
+=
+File
+
+
+---
+
+Example Structure
+
+StorageAccount
+
+ property-images
+
+   house1.jpg
+
+   house2.jpg
+
+ documents
+
+   agreement.pdf
+
+
+---
+
+Example in ASP.NET Core
+
+Upload file:
+
+await blobClient
+.UploadAsync(file);
+
+Get URL:
+
+https://storage.blob.core.windows.net/
+property-images/house1.jpg
+
+Frontend displays:
+
+<img src="blob-url">
+
+
+---
+
+Types of Blob Storage
+
+There are mainly 3 types.
+
+
+---
+
+1. Block Blob ⭐ (Most Common)
+
+Definition
+
+Store files in blocks.
+
+Used for:
+
+Images
+
+Videos
+
+Documents
+
+Backups
+
+Example:
+
+profile.jpg
+
+
+---
+
+2. Append Blob
+
+Definition
+
+New data is always added at end.
+
+Used for:
+
+Logs
+
+Audit Files
+
+Example:
+
+System Log
+↓
+Keep Adding
+
+
+---
+
+3. Page Blob
+
+Definition
+
+Optimized for random read/write.
+
+Used for:
+
+Virtual Machine Disks
+
+Example:
+
+Azure VM
+
+
+---
+
+When to Use Azure Blob Storage?
+
+Use Blob Storage when storing:
+
+Images
+
+Property Images
+Product Images
+
+
+---
+
+Videos
+
+Tutorial Videos
+
+
+---
+
+Documents
+
+PDF
+
+Excel
+
+
+---
+
+Backup
+
+Database Backup
+
+
+---
+
+Static Website Files
+
+CSS
+
+JS
+
+HTML
+
+
+---
+
+Property Buy & Sell Project Example ⭐
+
+Suppose user uploads house images.
+
+Flow:
+
+Angular
+↓
+Upload Image
+↓
+ASP.NET Core API
+↓
+Azure Blob Storage
+↓
+Save URL in SQL
+↓
+Display Image
+
+Database:
+
+Property
+-----------------
+Id
+
+Name
+
+ImageUrl
+
+Store:
+
+Image URL only
+
+Not image itself.
+
+
+---
+
+Why not store image in SQL?
+
+Bad:
+
+Database becomes slow
+
+Better:
+
+SQL
+→ Metadata
+
+Blob
+→ Actual File
+
+
+---
+
+Advantages
+
+Unlimited Scaling
+
+Store TB/PB Data
+
+
+---
+
+Low Cost
+
+Pay Storage Used
+
+
+---
+
+High Availability
+
+Azure manages
+
+
+---
+
+Secure
+
+Encryption
+
+
+---
+
+Disadvantages
+
+Not Relational
+
+No SQL Queries
+
+
+---
+
+Network Dependency
+
+Internet Required
+
+
+---
+
+Blob Storage vs File Storage
+
++----------------+----------------------+
+| Blob | File Storage |
++----------------+----------------------+
+| Store Files | Shared Folder |
++----------------+----------------------+
+| HTTP Access | SMB Access |
++----------------+----------------------+
+| Web Apps | Shared Drive |
++----------------+----------------------+
+
+
+---
+
+Interview Answer (Short)
+
+> Azure Blob Storage is a cloud object storage service used to store unstructured data such as images, videos, documents, and backups. It organizes data into Storage Accounts, Containers, and Blobs and is commonly used for scalable file storage.
+
+
+
+
+---
+
+🧠 Memory Trick
+
+Storage Account
+↓
+Container
+↓
+Blob
+
+One-Line Revision
+
+> Azure Blob Storage is used to store files in the cloud and is ideal for images, videos, documents, and backups.
+
+20. Difference between Azure SQL Managed Instance and Azure SQL Database? (0:52:12)
+
+21. What is a Virtual Network (VNet) and why is it needed? (0:54:48)
+
+22. What is Azure CDN and when/why to use it? (0:57:36)
+
+23. What is Azure Key Vault and when to use it? (1:01:25)
+
+24. What is a CI/CD pipeline? (1:05:32)
+
+25. Note: The video covers these 24 core topics, and the host mentions additional concepts like 'Front Door' are included in their full interview course.
